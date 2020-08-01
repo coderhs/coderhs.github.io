@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Even - A super concise theme for Hugo</title>
+    <title>HsPS.in - A personal web page of Harisankar P S</title>
     <link>https://coderhs.github.io/</link>
-    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <description>Recent content on HsPS.in - A personal web page of Harisankar P S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Aug 2020 15:51:11 -0700</lastBuildDate>
@@ -27,6 +27,15 @@
       
       <guid>https://coderhs.github.io/posts/my-first-post/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>[TIL] Starting Ruby Method With Capital Letter</title>
+      <link>https://coderhs.github.io/posts/til-starting-ruby-method-with-capital-letter/</link>
+      <pubDate>Mon, 25 Apr 2016 12:30:00 +0530</pubDate>
+      
+      <guid>https://coderhs.github.io/posts/til-starting-ruby-method-with-capital-letter/</guid>
+      <description>[TIL] Starting Ruby Method With Capital Letter Last day while I was browing through some Java code online, I noticed that some method names it had were starting with capital letters. I have always used method names in ruby to be in small letter and use snake case. But it made me wonder if there was anything preventing us from using method names starting with capital letter, in ruby. So I started my irb and wrote the following code.</description>
     </item>
     
   </channel>

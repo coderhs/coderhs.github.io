@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Even - A super concise theme for Hugo</title>
+    <title>Categories on HsPS.in - A personal web page of Harisankar P S</title>
     <link>https://coderhs.github.io/categories/</link>
-    <description>Recent content in Categories on Even - A super concise theme for Hugo</description>
+    <description>Recent content in Categories on HsPS.in - A personal web page of Harisankar P S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 25 Apr 2016 12:30:00 +0530</lastBuildDate>
     
 	<atom:link href="https://coderhs.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TIL</title>
+      <link>https://coderhs.github.io/categories/til/</link>
+      <pubDate>Mon, 25 Apr 2016 12:30:00 +0530</pubDate>
+      
+      <guid>https://coderhs.github.io/categories/til/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
