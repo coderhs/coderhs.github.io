@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://coderhs.github.io/sitemap.xml
