@@ -2,40 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HsPS.in - A personal web page of Harisankar P S</title>
-    <link>https://coderhs.github.io/</link>
+    <link>/</link>
     <description>Recent content on HsPS.in - A personal web page of Harisankar P S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Aug 2020 15:51:11 -0700</lastBuildDate>
     
-	<atom:link href="https://coderhs.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://coderhs.github.io/about/</link>
-      <pubDate>Sat, 01 Aug 2020 15:51:11 -0700</pubDate>
-      
-      <guid>https://coderhs.github.io/about/</guid>
-      <description>So this is the about me page</description>
-    </item>
     
     <item>
-      <title>My First Post</title>
-      <link>https://coderhs.github.io/posts/my-first-post/</link>
-      <pubDate>Sat, 01 Aug 2020 15:42:46 -0700</pubDate>
+      <title></title>
+      <link>/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://coderhs.github.io/posts/my-first-post/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[TIL] Starting Ruby Method With Capital Letter</title>
-      <link>https://coderhs.github.io/posts/til-starting-ruby-method-with-capital-letter/</link>
-      <pubDate>Mon, 25 Apr 2016 12:30:00 +0530</pubDate>
-      
-      <guid>https://coderhs.github.io/posts/til-starting-ruby-method-with-capital-letter/</guid>
-      <description>[TIL] Starting Ruby Method With Capital Letter Last day while I was browing through some Java code online, I noticed that some method names it had were starting with capital letters. I have always used method names in ruby to be in small letter and use snake case. But it made me wonder if there was anything preventing us from using method names starting with capital letter, in ruby. So I started my irb and wrote the following code.</description>
+      <guid>/</guid>
+      <description>Harisankar P S   Simple but Jada [1]
+ is a motto that came into my vocabulary during my college days. I try to do justice to that phrase in the work, products, business, journeys and memories I build, create or be part of.
+Reference  [1] Jada : how we say colloquially awesome in malayalam  </description>
     </item>
     
   </channel>
