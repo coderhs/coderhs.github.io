@@ -16,20 +16,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/intro/</loc>
-    <lastmod>2020-08-29T14:58:11-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2020-08-30T11:46:25-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</loc>
     <lastmod>2020-08-30T11:46:25-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,6 +24,13 @@
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2020-08-30T11:46:25-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
     <lastmod>2020-08-30T11:46:25-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

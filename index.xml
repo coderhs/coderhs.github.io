@@ -12,20 +12,11 @@
     
     
     <item>
-      <title>About</title>
+      <title>About the man</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 29 Aug 2020 15:22:34 -0700</pubDate>
       
       <guid>http://localhost:1313/about/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Intro</title>
-      <link>http://localhost:1313/post/intro/</link>
-      <pubDate>Sat, 29 Aug 2020 14:58:11 -0700</pubDate>
-      
-      <guid>http://localhost:1313/post/intro/</guid>
       <description></description>
     </item>
     
