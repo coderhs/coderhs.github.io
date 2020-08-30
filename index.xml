@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HsPS.in - A personal web page of Harisankar P S</title>
-    <link>/</link>
-    <description>Recent content on HsPS.in - A personal web page of Harisankar P S</description>
+    <title>Harisankar P S | HsPS.in</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sat, 29 Aug 2020 15:22:34 -0700</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
-      <link>/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sat, 29 Aug 2020 15:22:34 -0700</pubDate>
       
-      <guid>/</guid>
-      <description>Harisankar P S   Simple but Jada [1]
- is a motto that came into my vocabulary during my college days. I try to do justice to that phrase in the work, products, business, journeys and memories I build, create or be part of.
-Reference  [1] Jada : how we say colloquially awesome in malayalam  </description>
+      <guid>http://localhost:1313/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intro</title>
+      <link>http://localhost:1313/post/intro/</link>
+      <pubDate>Sat, 29 Aug 2020 14:58:11 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/intro/</guid>
+      <description></description>
     </item>
     
   </channel>
