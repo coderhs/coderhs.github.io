@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TIL on HsPS.in - A personal web page of Harisankar P S</title>
-    <link>https://coderhs.github.io/categories/til/</link>
-    <description>Recent content in TIL on HsPS.in - A personal web page of Harisankar P S</description>
+    <title>TIL on Harisankar P S | HsPS.in</title>
+    <link>http://localhost:1313/categories/til/</link>
+    <description>Recent content in TIL on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Apr 2016 12:30:00 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 01 May 2016 00:00:00 +0530</lastBuildDate>
     
-	<atom:link href="https://coderhs.github.io/categories/til/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/til/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[TIL] Starting Ruby Method With Capital Letter</title>
-      <link>https://coderhs.github.io/posts/til-starting-ruby-method-with-capital-letter/</link>
-      <pubDate>Mon, 25 Apr 2016 12:30:00 +0530</pubDate>
+      <link>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</link>
+      <pubDate>Sun, 01 May 2016 00:00:00 +0530</pubDate>
       
-      <guid>https://coderhs.github.io/posts/til-starting-ruby-method-with-capital-letter/</guid>
-      <description>[TIL] Starting Ruby Method With Capital Letter Last day while I was browing through some Java code online, I noticed that some method names it had were starting with capital letters. I have always used method names in ruby to be in small letter and use snake case. But it made me wonder if there was anything preventing us from using method names starting with capital letter, in ruby. So I started my irb and wrote the following code.</description>
+      <guid>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</guid>
+      <description>Last day while I was browsing through some Java code online, I noticed that some method has names starting with capital letters. I Method names are written in small letters in ruby. This Java code made me wonder if there was anything preventing us from using method names starting with capital letter, in ruby. So I started my irb and wrote the following code.
+1 2 3  def Test puts &amp;#39;testing 123&amp;#39; end   And when I ran to call the method Test in the irb i got the following error.</description>
     </item>
     
   </channel>
