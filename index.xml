@@ -36,7 +36,7 @@
       <pubDate>Wed, 23 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/post/model-update_attribute-update_attributes/</guid>
-      <description></description>
+      <description>&lt;p&gt;Lot of people might have a confusing between the functionality of update_attribute and update_attributes. The purpose of these functions can be understood from their name itself. the first one update_attribute would update a single attribute of the model&lt;/p&gt;</description>
     </item>
     
     <item>
