@@ -21,5 +21,48 @@
 1 2 3  def Test puts &amp;#39;testing 123&amp;#39; end   And when I ran to call the method Test in the irb i got the following error.</description>
     </item>
     
+    <item>
+      <title>Model Update_attribute Update_attributes</title>
+      <link>http://localhost:1313/post/model-update_attribute-update_attributes/</link>
+      <pubDate>Wed, 23 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/model-update_attribute-update_attributes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Make Self Executing Ruby Scripts Linux</title>
+      <link>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</link>
+      <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</guid>
+      <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setup Postgresql and Its Libraries to Work With Rails</title>
+      <link>http://localhost:1313/post/setup-postgresql-and-its-libraries-to-work-with-rails/</link>
+      <pubDate>Tue, 27 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/setup-postgresql-and-its-libraries-to-work-with-rails/</guid>
+      <description>&lt;p&gt;Recently lot of people have been asking me why they are not able to install the pg (PostgreSQL) gem even after installing PostgreSQL server in their system?&lt;/p&gt;
+&lt;p&gt;Well the answer is simple, the pg gem, requires the PostgreSQL development libraries to build native extensions to communicate with the PostgreSQL server. Native extensions refer to building ruby extensions or wrappers for existing C or C++ library.&lt;/p&gt;
+&lt;p&gt;One can install the development libraries of PostgreSQL by installing the libpg-dev package.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install Ruby via Source Ubuntu</title>
+      <link>http://localhost:1313/post/install-ruby-via-source-ubuntu/</link>
+      <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/install-ruby-via-source-ubuntu/</guid>
+      <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;
+&lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In ubuntu you can have these libraries installed via the command line ( or if you are so old fashion you may google and find the source code for these packages as well)&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ruby on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/tags/ruby/</link>
-    <description>Recent content in Ruby on Harisankar P S | HsPS.in</description>
+    <title>Tech on Harisankar P S | HsPS.in</title>
+    <link>http://localhost:1313/tags/tech/</link>
+    <description>Recent content in Tech on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 01 May 2016 00:00:00 +0530</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</guid>
       <description>Last day while I was browsing through some Java code online, I noticed that some method has names starting with capital letters. I Method names are written in small letters in ruby. This Java code made me wonder if there was anything preventing us from using method names starting with capital letter, in ruby. So I started my irb and wrote the following code.
 1 2 3  def Test puts &amp;#39;testing 123&amp;#39; end   And when I ran to call the method Test in the irb i got the following error.</description>
-    </item>
-    
-    <item>
-      <title>Make Self Executing Ruby Scripts Linux</title>
-      <link>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</link>
-      <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</guid>
-      <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
     </item>
     
   </channel>

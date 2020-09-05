@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>404 page not found - Harisankar P S | HsPS.in</title>
+  <title>Model Update_attribute Update_attributes - Harisankar P S | HsPS.in</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="coderhs" /><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer." /><meta name="keywords" content="Harisankar P S, software, developer" />
+<meta name="author" content="coderhs" /><meta name="description" content="" /><meta name="keywords" content="Harisankar P S, software, developer" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.68.3 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/404.html" />
+<link rel="canonical" href="http://localhost:1313/post/model-update_attribute-update_attributes/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,15 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/404.html" />
+<meta property="og:title" content="Model Update_attribute Update_attributes" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/model-update_attribute-update_attributes/" />
+<meta property="article:published_time" content="2013-01-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-01-23T00:00:00+00:00" />
+<meta itemprop="name" content="Model Update_attribute Update_attributes">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2013-01-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-01-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="122">
 
-<meta itemprop="name" content="404 Page not found">
-<meta itemprop="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer."/>
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Model Update_attribute Update_attributes"/>
+<meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -113,20 +121,66 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <div class="not-found">
-  <h1 class="error-emoji"></h1>
-  <p class="error-text">/* 404 page not found. */</p>
-  <p class="error-link"><a href="/">↑ Back Home ↑</a></p>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Model Update_attribute Update_attributes</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2013-01-23 </span>
+        <div class="post-category">
+            <a href="/categories/rails/"> Rails </a>
+            </div>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>Lot of people might have a confusing between the functionality of update_attribute and update_attributes. The purpose of these functions can be understood from their name itself. the first one update_attribute would update a single attribute of the model</p>
+<p>Its used as</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rb" data-lang="rb"><span class="vi">@users</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="vi">@users</span><span class="o">.</span><span class="n">update_attribute</span><span class="p">(</span><span class="ss">:attribute_name</span><span class="p">,</span><span class="s2">&#34;attribute_value&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
-<script>
-  var errorEmojiContainer = document.getElementsByClassName('error-emoji')[0];
-  var emojiArray = [
-    '\\(o_o)/', '(o^^)o', '(˚Δ˚)b', '(^-^*)', '(≥o≤)', '(^_^)b', '(·_·)',
-    '(=\'X\'=)', '(>_<)', '(;-;)', '\\(^Д^)/',
-  ];
-  var errorEmoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
-  errorEmojiContainer.appendChild(document.createTextNode(errorEmoji));
-</script>
+</div><p>and the later update_attributes updates a whole set of values in the model</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rb" data-lang="rb"><span class="vi">@users</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="vi">@users</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="ss">attribute_1</span><span class="p">:</span><span class="s2">&#34;attribute_1_value&#34;</span><span class="p">,</span> <span class="ss">attribute_2</span><span class="p">:</span><span class="s2">&#34;attribute_2_value&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now the important differentiator of these two functions is that the first function update_attribute updates an attribute without running any of the validations mentioned..</p>
+<p>So keep that in mind when you are using the update_attribute function, else at times you will find values you didn’t expect to be entered into the database found in them.</p>
+    </div>
+
+    
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">[TIL] Starting Ruby Method With Capital Letter</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/make-self-executing-ruby-scripts-linux/">
+            <span class="next-text nav-default">Make Self Executing Ruby Scripts Linux</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
 
