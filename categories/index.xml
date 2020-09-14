@@ -6,10 +6,37 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 May 2016 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2020 18:42:35 -0700</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Emotions</title>
+      <link>http://localhost:1313/categories/emotions/</link>
+      <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
+      
+      <guid>http://localhost:1313/categories/emotions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Notes</title>
+      <link>http://localhost:1313/categories/notes/</link>
+      <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
+      
+      <guid>http://localhost:1313/categories/notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thoughts</title>
+      <link>http://localhost:1313/categories/thoughts/</link>
+      <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
+      
+      <guid>http://localhost:1313/categories/thoughts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>TIL</title>
