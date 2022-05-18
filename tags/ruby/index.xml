@@ -6,11 +6,7 @@
     <description>Recent content in Ruby on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 May 2016 00:00:00 +0530</lastBuildDate>
-    
-	<atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 01 May 2016 00:00:00 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TIL] Starting Ruby Method With Capital Letter</title>
       <link>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</link>

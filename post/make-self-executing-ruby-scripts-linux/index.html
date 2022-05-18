@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3 with theme even" />
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/make-self-executing-ruby-scripts-linux/" />
@@ -35,26 +35,22 @@
 
 
 
-<link href="/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Make Self Executing Ruby Scripts Linux" />
 <meta property="og:description" content="Make Self Executing Ruby Scripts Linux" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/make-self-executing-ruby-scripts-linux/" />
+<meta property="og:url" content="http://localhost:1313/post/make-self-executing-ruby-scripts-linux/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2012-12-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2012-12-05T00:00:00+00:00" />
+
 <meta itemprop="name" content="Make Self Executing Ruby Scripts Linux">
-<meta itemprop="description" content="Make Self Executing Ruby Scripts Linux">
-<meta itemprop="datePublished" content="2012-12-05T00:00:00+00:00" />
+<meta itemprop="description" content="Make Self Executing Ruby Scripts Linux"><meta itemprop="datePublished" content="2012-12-05T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2012-12-05T00:00:00+00:00" />
 <meta itemprop="wordCount" content="498">
-
-
-
-<meta itemprop="keywords" content="Ruby,Linux,bash,shell,unix," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Ruby,Linux,bash,shell,unix," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Make Self Executing Ruby Scripts Linux"/>
 <meta name="twitter:description" content="Make Self Executing Ruby Scripts Linux"/>
 
@@ -153,10 +149,10 @@
 <p>Now to make our ruby script executable we need to add to the first line the following statement</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/usr/bin/ruby
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/usr/bin/ruby
 </span></code></pre></td></tr></table>
 </div>
 </div><p><code>puts &quot;The ruby code, starts from line 2&quot;</code> How does this work?</p>
@@ -167,17 +163,17 @@
 <p>In Linux and any other UNIX like operating system no system can execute unless it is given the permission to execute. So we use the command chmod to give the permission to execute.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">$chmod</span> <span class="m">755</span> program_name.rb
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">$chmod</span> <span class="m">755</span> program_name.rb
 </code></pre></td></tr></table>
 </div>
 </div><p>Following these steps you can make a ruby scrip executable.</p>
 <p>Note :- The above mentioned method is not for ruby alone, any script can be made self executable using the above mentioned steps. We just have to change the program that is suppose to execute the program .</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -190,7 +186,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
 </span><span class="cp"></span>
 <span class="c1">#!/bin/csh</span>
 
@@ -206,10 +202,10 @@
 </div><p>Also the above mentioned is the location of the interpreter program if its in a different location then you will have to use that location or could use env – environment variable in linux thus the hash-bang statement changes to</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/usr/bin/env ruby
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/usr/bin/env ruby
 </span></code></pre></td></tr></table>
 </div>
 </div><p>That is the interpreter is searched among the environment variable, thus during run time the appropriate interpreter would be searched and used. For more details see the env wikipedia page</p>
@@ -283,7 +279,7 @@
   <span class="copyright-year">
     &copy; 
     2011 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>coderhs</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>coderhs</span>
   </span>
 </div>
 
@@ -300,7 +296,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 

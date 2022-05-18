@@ -6,10 +6,26 @@
     <description>Recent content on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Apr 2021 08:31:46 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 17 May 2022 17:21:51 -0700</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Count How Many Routes You Have</title>
+      <link>http://localhost:1313/post/count-how-many-routes-you-have/</link>
+      <pubDate>Tue, 17 May 2022 17:21:51 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/count-how-many-routes-you-have/</guid>
+      <description>It start with one, then two and it keeps on growing. The number of routes in your ruby on rails project can be a reflection of how complex your project is becoming. And if you are curious like me to know how many routes your project has, just run the following command in your rails console.
+1  ::Rails.application.routes.routes.size   To run without starting your rails console:
+1  rails r &amp;#39;puts ::Rails.</description>
+    </item>
     
-	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Books I Read 2021</title>
+      <link>http://localhost:1313/post/books-i-read-2021/</link>
+      <pubDate>Thu, 17 Feb 2022 10:03:49 -0800</pubDate>
+      
+      <guid>http://localhost:1313/post/books-i-read-2021/</guid>
+      <description>&lt;p&gt;As a followup on my 2020 article on the list of books I have read in 2020. Here is 2021 version. I aimed to read at least one book a month in 2021. During some months I was able to achieve more than one book a month, but sadly I couldn&amp;rsquo;t keep it up for the whole year. 2022 is another year, hope to be able to do one book a month minimum this year.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Consequences of saying NO</title>

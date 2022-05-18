@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rails on Harisankar P S | HsPS.in</title>
+    <link>http://localhost:1313/tags/rails/</link>
+    <description>Recent content in Rails on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 May 2022 17:21:51 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Count How Many Routes You Have</title>
+      <link>http://localhost:1313/post/count-how-many-routes-you-have/</link>
+      <pubDate>Tue, 17 May 2022 17:21:51 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/count-how-many-routes-you-have/</guid>
+      <description>It start with one, then two and it keeps on growing. The number of routes in your ruby on rails project can be a reflection of how complex your project is becoming. And if you are curious like me to know how many routes your project has, just run the following command in your rails console.
+1  ::Rails.application.routes.routes.size   To run without starting your rails console:
+1  rails r &amp;#39;puts ::Rails.</description>
+    </item>
+    
+  </channel>
+</rss>
