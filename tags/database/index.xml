@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on Harisankar P S | HsPS.in</title>
+    <link>http://localhost:1313/tags/database/</link>
+    <description>Recent content in database on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 19 May 2022 21:01:23 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GIN: Generalized Inverted iNdex (on text)</title>
+      <link>http://localhost:1313/post/generalized-inverted-index-gin-postgresql/</link>
+      <pubDate>Thu, 19 May 2022 21:01:23 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/generalized-inverted-index-gin-postgresql/</guid>
+      <description>&lt;p&gt;Indexes are an integral part of any production database. It improves the speed of your query, and which in tern speeds up your application. The faster you get your data, faster you can provide the result to your user, faster you can move on to your next user. Knowing different type of indexes allows you to choose which is the best for your data. As there is no silver bullet.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;PostgreSQL is the DB refereed to in this article&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This article is my humble attempt to explain and simplify what is Gin.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

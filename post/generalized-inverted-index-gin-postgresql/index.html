@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GIN: Generalized Inverted iNdex (on text) - Harisankar P S | HsPS.in</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Intro to inverted index and GIN index" /><meta name="keywords" content="PostgreSQL, GIN" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/generalized-inverted-index-gin-postgresql/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GIN: Generalized Inverted iNdex (on text)" />
+<meta property="og:description" content="Intro to inverted index and GIN index" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/generalized-inverted-index-gin-postgresql/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-19T21:01:23-07:00" />
+<meta property="article:modified_time" content="2022-05-19T21:01:23-07:00" />
+
+<meta itemprop="name" content="GIN: Generalized Inverted iNdex (on text)">
+<meta itemprop="description" content="Intro to inverted index and GIN index"><meta itemprop="datePublished" content="2022-05-19T21:01:23-07:00" />
+<meta itemprop="dateModified" content="2022-05-19T21:01:23-07:00" />
+<meta itemprop="wordCount" content="632">
+<meta itemprop="keywords" content="PostgreSQL,database," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GIN: Generalized Inverted iNdex (on text)"/>
+<meta name="twitter:description" content="Intro to inverted index and GIN index"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">HsPS.in</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Articles</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <script data-ad-client="ca-pub-7703037060376598" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="logo-wrapper">
+  <a href="/" class="logo">HsPS.in</a>
+  <br>
+  <i>In my opinion</i>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Articles</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GIN: Generalized Inverted iNdex (on text)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-05-19 </span>
+        
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>Indexes are an integral part of any production database. It improves the speed of your query, and which in tern speeds up your application. The faster you get your data, faster you can provide the result to your user, faster you can move on to your next user. Knowing different type of indexes allows you to choose which is the best for your data. As there is no silver bullet.</p>
+<p><em><strong>PostgreSQL is the DB refereed to in this article</strong></em></p>
+<p>This article is my humble attempt to explain and simplify what is Gin.</p>
+<p>Before explaining Inverted Indexes, a simple note on forward index.</p>
+<h2 id="forward-indexes">Forward Indexes</h2>
+<p>One of the common type of index we work with are called forward index. BTree is an example of forward index. In such index, you have an identifier pointing to the rest of the data. For example the primary key or id of your row. It points to which row the information you seek. Few examples of keys are user&rsquo;s email address, index with foreign key(s) or username. Basically you define and let the database know what exactly you want to index, and you know that this is the key you are looking for and using this key you can load the rest of the data with little or no overhead.</p>
+<h2 id="inverted-index">Inverted Index</h2>
+<p>Inverted index is opposite of forwards index. To explain it simply we have a huge block of text or data, and we don&rsquo;t know what is or what to use as a key. A text, doc, html page, array or json have a lot of data in it. Some words in a text are important, some are not. Example words like the, a, is, and, etc doesn&rsquo;t make much sense to be indexed. As the chances for you search for that word is less, and even if you do you would rather want a web page or doc titled &lsquo;And&rsquo; rather than all the web pages and docs in with the word &lsquo;and&rsquo; in it.</p>
+<p>Inverted index, parses and builds keys from the document and then create a list of documents that has this word in it.</p>
+<p>Thus the term inverted or opposite of forward index. This type of index is expensive when it come to insert/update. As on each insert/update we might need to update several rows in the index based on the new set of words that was added/removed from the doc. But the speed improvement it provides based on the volume of data is remarkable. One thing that GIN (PostgreSQL) does is that it delays the update/insert of the index by adding the keywords to an unsorted list of pending entries. This is the sorted and entered when postgres does auto vacuum or when this list get too big (default is 4 MB). The overhead of this approach is that when the regular index scan is done, the system will have to do some sequential scanning on this unsorted list.</p>
+<p>Eg: A table with over 7 million records, with one text field (with a maximum of 100-200 letters).</p>
+<p>Before Index:</p>
+<p><img src="/images/gin_index/before.png" alt="Before"></p>
+<p>Execution time: 1201.1 ms</p>
+<p>After Index:</p>
+<p><img src="/images/gin_index/after.png" alt="After"></p>
+<p>Execution time: 3.6 ms</p>
+<h2 id="how-to-use-gin-index-in-postgresql">How to use GIN index in postgresql</h2>
+<p>We need to enable the extension pg_trgm, this is not directly related to gin but this has some useful functions such as an english dictionary which GIN can use to classify words in a document.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="n">pg_trgm</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">users_activity_idx</span><span class="w">
+</span><span class="w">   </span><span class="k">ON</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="n">gin</span><span class="w"> </span><span class="p">(</span><span class="n">activity</span><span class="w"> </span><span class="n">gin_trgm_ops</span><span class="p">);</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>If you want to use this in rails you can define the migration like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">def</span> <span class="nf">change</span>
+    <span class="n">enable_extension</span><span class="p">(</span><span class="s2">&#34;pg_trgm&#34;</span><span class="p">);</span>
+    <span class="n">add_index</span><span class="p">(</span><span class="ss">:users</span><span class="p">,</span> <span class="ss">:user_activity</span><span class="p">,</span> <span class="ss">using</span><span class="p">:</span> <span class="s1">&#39;gin&#39;</span><span class="p">,</span> <span class="ss">opclass</span><span class="p">:</span> <span class="ss">:gin_trgm_ops</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="issues-with-this-index">Issues with this index</h2>
+<p>Issues that i have come across on my research.</p>
+<ul>
+<li>Since the sorting or cleaning of the unsorted list is executed during auto vacuum, it would increase the duration of the auto vacuum.</li>
+</ul>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/postgresql/">PostgreSQL</a>
+          <a href="/tags/database/">database</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/count-how-many-routes-you-have/">
+            <span class="next-text nav-default">Count How Many Routes You Have</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'hsps-in';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2011 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>coderhs</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

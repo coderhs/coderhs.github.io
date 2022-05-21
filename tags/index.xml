@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 May 2022 17:21:51 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 May 2022 21:01:23 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>database</title>
+      <link>http://localhost:1313/tags/database/</link>
+      <pubDate>Thu, 19 May 2022 21:01:23 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>http://localhost:1313/tags/postgresql/</link>
+      <pubDate>Thu, 19 May 2022 21:01:23 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Rails</title>
       <link>http://localhost:1313/tags/rails/</link>
