@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 21 May 2022 20:52:57 -0700</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 May 2022 20:10:36 -0700</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using String as Active Record Enum</title>
+      <link>http://localhost:1313/post/using-string-as-active-record-enum/</link>
+      <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/using-string-as-active-record-enum/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>PHP &#43; MySql a Deadly Combination: My introduction to the real world</title>
       <link>http://localhost:1313/post/php-plus-mysql-deadly-combination-there-was/</link>
@@ -35,6 +44,15 @@ I have been programming or aspiring to program (former/recovering imposter syndr
       
       <guid>http://localhost:1313/post/count-how-many-routes-you-have/</guid>
       <description>&lt;p&gt;It start with one, then two and it keeps on growing. The number of routes in your ruby on rails project can be a reflection of how complex your project is becoming. And if you are curious like me to know how many routes your project has, just run the following command in your rails console.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Books I Read 2021</title>
+      <link>http://localhost:1313/post/books-i-read-2021/</link>
+      <pubDate>Thu, 17 Feb 2022 10:03:49 -0800</pubDate>
+      
+      <guid>http://localhost:1313/post/books-i-read-2021/</guid>
+      <description>&lt;p&gt;As a followup on my 2020 article on the list of books I have read in 2020. Here is 2021 version. I aimed to read at least one book a month in 2021. During some months I was able to achieve more than one book a month, but sadly I couldn&amp;rsquo;t keep it up for the whole year. 2022 is another year, hope to be able to do one book a month minimum this year.&lt;/p&gt;</description>
     </item>
     
     <item>

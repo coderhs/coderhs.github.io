@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 21 May 2022 20:52:57 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 May 2022 20:10:36 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rails</title>
+      <link>http://localhost:1313/tags/rails/</link>
+      <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/rails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby</title>
+      <link>http://localhost:1313/tags/ruby/</link>
+      <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/ruby/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>experience</title>
       <link>http://localhost:1313/tags/experience/</link>
@@ -53,15 +71,6 @@
     </item>
     
     <item>
-      <title>Rails</title>
-      <link>http://localhost:1313/tags/rails/</link>
-      <pubDate>Tue, 17 May 2022 17:21:51 -0700</pubDate>
-      
-      <guid>http://localhost:1313/tags/rails/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>psychology</title>
       <link>http://localhost:1313/tags/psychology/</link>
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
@@ -76,15 +85,6 @@
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
       
       <guid>http://localhost:1313/tags/thoughts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ruby</title>
-      <link>http://localhost:1313/tags/ruby/</link>
-      <pubDate>Sun, 01 May 2016 00:00:00 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/ruby/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,16 @@
     <description>Recent content in Ruby on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 May 2016 00:00:00 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 May 2022 20:10:36 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using String as Active Record Enum</title>
+      <link>http://localhost:1313/post/using-string-as-active-record-enum/</link>
+      <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/using-string-as-active-record-enum/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[TIL] Starting Ruby Method With Capital Letter</title>
       <link>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</link>

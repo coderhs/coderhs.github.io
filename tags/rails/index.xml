@@ -6,7 +6,16 @@
     <description>Recent content in Rails on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 May 2022 17:21:51 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 May 2022 20:10:36 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using String as Active Record Enum</title>
+      <link>http://localhost:1313/post/using-string-as-active-record-enum/</link>
+      <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/using-string-as-active-record-enum/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Count How Many Routes You Have</title>
       <link>http://localhost:1313/post/count-how-many-routes-you-have/</link>
