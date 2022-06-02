@@ -8,12 +8,13 @@
     <language>en</language>
     <lastBuildDate>Tue, 31 May 2022 20:10:36 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/rails-tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Using String as Active Record Enum</title>
+      <title>Using String in Active Record(Rails) Enum</title>
       <link>http://localhost:1313/post/using-string-as-active-record-enum/</link>
       <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
       
       <guid>http://localhost:1313/post/using-string-as-active-record-enum/</guid>
-      <description></description>
+      <description>&lt;p&gt;Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.&lt;/p&gt;
+&lt;p&gt;Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.&lt;/p&gt;</description>
     </item>
     
   </channel>

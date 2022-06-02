@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Using String as Active Record Enum - Harisankar P S | HsPS.in</title>
+  <title>Using String in Active Record(Rails) Enum - Harisankar P S | HsPS.in</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="" /><meta name="keywords" content="Rails, ruby" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
+Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.
+" /><meta name="keywords" content="Rails, ruby" />
 
 
 
@@ -39,20 +41,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Using String as Active Record Enum" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Using String in Active Record(Rails) Enum" />
+<meta property="og:description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
+Enum is quite useful when you want to make sure that only a specified list of values are saved for a field." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/using-string-as-active-record-enum/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-05-31T20:10:36-07:00" />
 <meta property="article:modified_time" content="2022-05-31T20:10:36-07:00" />
 
-<meta itemprop="name" content="Using String as Active Record Enum">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-05-31T20:10:36-07:00" />
+<meta itemprop="name" content="Using String in Active Record(Rails) Enum">
+<meta itemprop="description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
+Enum is quite useful when you want to make sure that only a specified list of values are saved for a field."><meta itemprop="datePublished" content="2022-05-31T20:10:36-07:00" />
 <meta itemprop="dateModified" content="2022-05-31T20:10:36-07:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="644">
 <meta itemprop="keywords" content="ruby,rails," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Using String as Active Record Enum"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Using String in Active Record(Rails) Enum"/>
+<meta name="twitter:description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
+Enum is quite useful when you want to make sure that only a specified list of values are saved for a field."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,7 +132,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Using String as Active Record Enum</h1>
+      <h1 class="post-title">Using String in Active Record(Rails) Enum</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2022-05-31 </span>
@@ -140,7 +145,131 @@
 
     
     <div class="post-content">
-      
+      <p>Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.</p>
+<p>Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.</p>
+<p>Now the way active model enum works is tat you define an array of statuses, and then rails would save there indexes in the database. For example:</p>
+<p>pre rails 7 format</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+  <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:published</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>rails 7 format</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:published</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The status field is usually an integer field as shown the in rails documentation[https://api.rubyonrails.org/v5.2.4.4/classes/ActiveRecord/Enum.html]. The advantage of this approach is that it automatically creates a lot of magic functions (rails magic) like <code>article.draft?</code>, <code>article.published?</code>, and even make the indexes of these accessible through the method <code>Article.statuses[:draft]</code>.</p>
+<p>Now I haven&rsquo;t personally been a fan of this, a preferred to define my statuses as constants and a string.
+eg:</p>
+<p><code>DRAFT = 'draft'.freeze</code> or <code>DRAFT = 0</code>. Its just something i was used to since I started working in rails and its much more readable when i write raw queries (in my opinion). But the thing about working with teams is that you have to make sacrifices and keep with the most common known approach as much as possible so that developer of any level who read your code can understand. But, even if i do agree with using enum data type, its hard for us to use integer because we work with databases a lot. We have our analyst and support team checking the values of various fields in our database and it would be more easier for them to read the term &lsquo;draft&rsquo; rather than the value 0.</p>
+<p>Thus we come to the reason for this article, explaining and demonstrating how we can use string for enum in rails.</p>
+<p>The enum method in active record(rails) is actually expecting you to enter the field name and a hash with the mapping of various terms and its index values. When we enter an array of statuses, the method converts it to hash and then use it.</p>
+<p>Thus both this</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:published</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>and this</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="p">{</span> <span class="ss">draft</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="ss">published</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>are valid.</p>
+<p>So to use string in the database we just need to supply a has with string values, or convert an array to hash with itself.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+  <span class="no">DRAFT</span>     <span class="o">=</span> <span class="s1">&#39;draft&#39;</span><span class="o">.</span><span class="n">freeze</span>
+  <span class="no">PUBLISHED</span> <span class="o">=</span> <span class="s1">&#39;published&#39;</span><span class="o">.</span><span class="n">freeze</span>
+  <span class="no">STATUSES</span>  <span class="o">=</span> <span class="o">[</span><span class="no">DRAFT</span><span class="o">.</span> <span class="no">PUBLISHED</span><span class="o">]</span>
+  <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="no">STATUSES</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="no">STATUSES</span><span class="p">)</span><span class="o">.</span><span class="n">to_h</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In rails 7.0 its much more cleaner to use string.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="ss">draft</span><span class="p">:</span> <span class="s1">&#39;draft&#39;</span><span class="p">,</span> <span class="ss">published</span><span class="p">:</span> <span class="s1">&#39;published&#39;</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>They do say that it will lead to slower query, but just make sure that the field is indexed and we are good.</p>
+<p>Using string will make your code more readable.</p>
+<p>Before you had to do</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="no">Article</span><span class="o">.</span><span class="n">statuses</span><span class="p">(</span><span class="ss">:draft</span><span class="p">))</span>
+<span class="c1"># agree you do get the magic scop Article.drafts</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>but now you can do a more natural approach of</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="ss">:draft</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="s1">&#39;draft&#39;</span><span class="p">)</span>
+<span class="c1"># or like how i would like to do it</span>
+<span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="no">Article</span><span class="o">::</span><span class="no">DRAFT</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Happy Coding! :)</p>
     </div>
 
     
