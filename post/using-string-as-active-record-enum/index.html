@@ -53,7 +53,7 @@ Enum is quite useful when you want to make sure that only a specified list of va
 <meta itemprop="description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
 Enum is quite useful when you want to make sure that only a specified list of values are saved for a field."><meta itemprop="datePublished" content="2022-05-31T20:10:36-07:00" />
 <meta itemprop="dateModified" content="2022-05-31T20:10:36-07:00" />
-<meta itemprop="wordCount" content="644">
+<meta itemprop="wordCount" content="685">
 <meta itemprop="keywords" content="ruby,rails," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using String in Active Record(Rails) Enum"/>
 <meta name="twitter:description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
@@ -223,6 +223,31 @@ eg:</p>
   <span class="no">PUBLISHED</span> <span class="o">=</span> <span class="s1">&#39;published&#39;</span><span class="o">.</span><span class="n">freeze</span>
   <span class="no">STATUSES</span>  <span class="o">=</span> <span class="o">[</span><span class="no">DRAFT</span><span class="o">.</span> <span class="no">PUBLISHED</span><span class="o">]</span>
   <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="no">STATUSES</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="no">STATUSES</span><span class="p">)</span><span class="o">.</span><span class="n">to_h</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The above code is equivalent to writing like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+  <span class="no">DRAFT</span>     <span class="o">=</span> <span class="s1">&#39;draft&#39;</span><span class="o">.</span><span class="n">freeze</span>
+  <span class="no">PUBLISHED</span> <span class="o">=</span> <span class="s1">&#39;published&#39;</span><span class="o">.</span><span class="n">freeze</span>
+  <span class="no">STATUSES</span>  <span class="o">=</span> <span class="o">[</span><span class="no">DRAFT</span><span class="o">.</span> <span class="no">PUBLISHED</span><span class="o">]</span>
+  <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="p">{</span>
+    <span class="ss">draft</span><span class="p">:</span> <span class="no">DRAFT</span><span class="p">,</span>
+    <span class="ss">published</span><span class="p">:</span> <span class="no">PUBLISHED</span>
+  <span class="p">}</span>
 <span class="k">end</span>
 </code></pre></td></tr></table>
 </div>
