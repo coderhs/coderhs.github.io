@@ -8,6 +8,16 @@
     <language>en</language>
     <lastBuildDate>Tue, 31 May 2022 20:10:36 -0700</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Video</title>
+      <link>http://localhost:1313/videos/</link>
+      <pubDate>Sun, 05 Jun 2022 15:22:34 -0700</pubDate>
+      
+      <guid>http://localhost:1313/videos/</guid>
+      <description>Link to videos of my talks.
+ Ruby Conf Taiwan, 2016 - Using database to pull your applications weight Deccan Ruby Conf, 2017 - Using databases to pull your application weight  PostgreSQL Conf India, 2017 - Using databases to pull your application weight South Easy Ruby, 2017 (Nashville, USA) Ruby Conf Philippines, 2018 - Embracing Failures to Avoid Meltdown Rails Conf 2018, Pittsburgh, USA - Using databases to pull your application weight Ruby/Elixir Conf Taiwan, 2018 - Embracing failures to prevent meltdown  </description>
+    </item>
+    
+    <item>
       <title>Using String in Active Record(Rails) Enum</title>
       <link>http://localhost:1313/post/using-string-as-active-record-enum/</link>
       <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
