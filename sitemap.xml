@@ -2,29 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/videos/</loc>
-    <lastmod>2020-06-05T15:22:34-07:00</lastmod>
+    <loc>http://localhost:1313/post/append-to-file-using-bash/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/bash/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/bash/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2022-05-31T20:10:36-07:00</lastmod>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2022-05-31T20:10:36-07:00</lastmod>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2022-05-31T20:10:36-07:00</lastmod>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/til/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/ubuntu/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/ubuntu/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/videos/</loc>
+    <lastmod>2020-06-05T15:22:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -45,13 +101,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/ruby/</loc>
-    <lastmod>2022-05-31T20:10:36-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2022-05-31T20:10:36-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -235,20 +284,6 @@
   <url>
     <loc>http://localhost:1313/categories/rails/</loc>
     <lastmod>2013-01-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/bash/</loc>
-    <lastmod>2012-12-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/linux/</loc>
-    <lastmod>2012-12-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

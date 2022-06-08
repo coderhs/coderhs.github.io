@@ -6,7 +6,25 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 31 May 2022 20:10:36 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jun 2022 14:47:32 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bash</title>
+      <link>http://localhost:1313/categories/bash/</link>
+      <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
+      
+      <guid>http://localhost:1313/categories/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>http://localhost:1313/categories/ubuntu/</link>
+      <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
+      
+      <guid>http://localhost:1313/categories/ubuntu/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>rails tips</title>
       <link>http://localhost:1313/categories/rails-tips/</link>
