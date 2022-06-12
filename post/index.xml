@@ -6,7 +6,23 @@
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Jun 2022 14:47:32 -0700</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Jun 2022 10:49:39 -0700</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Setup Dark Theme in My Blog</title>
+      <link>http://localhost:1313/post/how-i-setup-dark-theme-in-my-blog/</link>
+      <pubDate>Sun, 12 Jun 2022 10:49:39 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/how-i-setup-dark-theme-in-my-blog/</guid>
+      <description>&lt;p&gt;Dark mode or night mode is becoming more and more popular these days. As the amount of time we are spending in front of the computer increases, we started to look more into on how to improve our experience. Dark mode/Night mode is one such setting. What it does (mainly) is it makes all the white part of the application to black - major chunk of which would be the background. When the color of the background is made black, it emits less light. Now not all displays are the same, each display creates the dark color in different ways. Like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On an &lt;strong&gt;&lt;code&gt;LCD screen&lt;/code&gt;&lt;/strong&gt;. The liquid crystal elements block the white light from the backlight. And this results in a dark (almost black) pixel.&lt;/li&gt;
+&lt;li&gt;On an &lt;strong&gt;&lt;code&gt;OLED screen&lt;/code&gt;&lt;/strong&gt;. The pixel is turned off, no light is emitted, this produces a deep black.&lt;/li&gt;
+&lt;li&gt;On a &lt;strong&gt;&lt;code&gt;CRT screen&lt;/code&gt;&lt;/strong&gt;. The electron beam is turned off as it passes the pixel. Producing no phosphorescent glow.&lt;/li&gt;
+&lt;li&gt;On an &lt;strong&gt;&lt;code&gt;e-Ink screen&lt;/code&gt;&lt;/strong&gt;. Little spherical beads which are half black/half white, are rotated so their black side is facing outwards.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Regardless as you can see, darker colors or more towards black the theme is the less lights are emitted and less strain to the eye. For me personally who spend more time in front of the computer than anything else having night color apps in your computer is god send. So when I myself have been a huge advocate of using night color/night mode in computer to improve developer health, but having a website so bright looked like an irony. Hence this article and why my blog has a dark mode now.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Append to File using Bash</title>
       <link>http://localhost:1313/post/append-to-file-using-bash/</link>
