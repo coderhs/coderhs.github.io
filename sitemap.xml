@@ -86,55 +86,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/bash/</loc>
-    <lastmod>2022-06-15T07:34:07-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/bash/</loc>
-    <lastmod>2022-06-15T07:34:07-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/ubuntu/</loc>
-    <lastmod>2022-06-15T07:34:07-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/writing-shell-script-accepting-agruments/</loc>
-    <lastmod>2022-06-15T07:34:07-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/command/</loc>
-    <lastmod>2022-06-12T17:02:57-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/htop-for-gpu-in-linux/</loc>
-    <lastmod>2022-06-12T17:02:57-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/til/</loc>
-    <lastmod>2022-06-12T17:02:57-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/css/</loc>
     <lastmod>2022-06-12T10:49:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,6 +108,34 @@
   
   <url>
     <loc>http://localhost:1313/post/append-to-file-using-bash/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/bash/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/bash/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/til/</loc>
+    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/ubuntu/</loc>
     <lastmod>2022-06-08T14:47:32-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

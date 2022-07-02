@@ -53,42 +53,6 @@
     </item>
     
     <item>
-      <title>bash</title>
-      <link>http://localhost:1313/tags/bash/</link>
-      <pubDate>Wed, 15 Jun 2022 07:34:07 -0700</pubDate>
-      
-      <guid>http://localhost:1313/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>http://localhost:1313/tags/ubuntu/</link>
-      <pubDate>Wed, 15 Jun 2022 07:34:07 -0700</pubDate>
-      
-      <guid>http://localhost:1313/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>command</title>
-      <link>http://localhost:1313/tags/command/</link>
-      <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
-      
-      <guid>http://localhost:1313/tags/command/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>til</title>
-      <link>http://localhost:1313/tags/til/</link>
-      <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
-      
-      <guid>http://localhost:1313/tags/til/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>css</title>
       <link>http://localhost:1313/tags/css/</link>
       <pubDate>Sun, 12 Jun 2022 10:49:39 -0700</pubDate>
@@ -103,6 +67,33 @@
       <pubDate>Sun, 12 Jun 2022 10:49:39 -0700</pubDate>
       
       <guid>http://localhost:1313/tags/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>http://localhost:1313/tags/bash/</link>
+      <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>til</title>
+      <link>http://localhost:1313/tags/til/</link>
+      <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/til/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>http://localhost:1313/tags/ubuntu/</link>
+      <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/ubuntu/</guid>
       <description></description>
     </item>
     
