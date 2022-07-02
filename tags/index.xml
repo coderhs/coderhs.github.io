@@ -26,11 +26,11 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <title>linux.</title>
+      <link>http://localhost:1313/tags/linux./</link>
       <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
       
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux./</guid>
       <description></description>
     </item>
     
@@ -202,6 +202,105 @@
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/tags/unix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>default</title>
+      <link>http://localhost:1313/tags/default/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/default/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>download</title>
+      <link>http://localhost:1313/tags/download/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/download/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>install</title>
+      <link>http://localhost:1313/tags/install/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probuntu</title>
+      <link>http://localhost:1313/tags/probuntu/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/probuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>http://localhost:1313/tags/programming/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reinstall</title>
+      <link>http://localhost:1313/tags/reinstall/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/reinstall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>setup</title>
+      <link>http://localhost:1313/tags/setup/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>http://localhost:1313/tags/software/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>softwares</title>
+      <link>http://localhost:1313/tags/softwares/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/softwares/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tool</title>
+      <link>http://localhost:1313/tags/tool/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCK</title>
+      <link>http://localhost:1313/tags/uck/</link>
+      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/uck/</guid>
       <description></description>
     </item>
     

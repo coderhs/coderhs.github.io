@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>http://localhost:1313/categories/linux/</loc>
     <lastmod>2022-07-01T22:58:41-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/linux/</loc>
+    <loc>http://localhost:1313/tags/linux./</loc>
     <lastmod>2022-07-01T22:58:41-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -410,6 +410,104 @@
   <url>
     <loc>http://localhost:1313/categories/ruby/</loc>
     <lastmod>2012-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/create-your-own-ubuntu/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/custom/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/default/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/download/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/install/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/probuntu/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/programming/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/reinstall/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/setup/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/software/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/softwares/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/tool/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/uck/</loc>
+    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/puts-hello-world/</loc>
+    <lastmod>2012-01-14T00:07:30-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
