@@ -8,12 +8,13 @@
     <language>en</language>
     <lastBuildDate>Sun, 12 Jun 2022 17:02:57 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/command/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Htop for Gpu in Linux</title>
+      <title>HTOP for GPU in Linux</title>
       <link>http://localhost:1313/post/htop-for-gpu-in-linux/</link>
       <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
       
       <guid>http://localhost:1313/post/htop-for-gpu-in-linux/</guid>
-      <description>&lt;p&gt;htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. If you ever wondered whats there equivalent for GPU (Graphic Cards) here is that below.&lt;/p&gt;</description>
+      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
+Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     </item>
     
   </channel>

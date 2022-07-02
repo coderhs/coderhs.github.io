@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Htop for Gpu in Linux - Harisankar P S | HsPS.in</title>
+  <title>HTOP for GPU in Linux - Harisankar P S | HsPS.in</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -36,8 +36,8 @@
   darkmode.showWidget();
   }
   window.addEventListener('load', addDarkmodeWidget);
-</script><meta name="description" content="htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. If you ever wondered whats there equivalent for GPU (Graphic Cards) here is that below.
-" /><meta name="keywords" content="linux, GPU, gaming, benchmarking" />
+</script><meta name="description" content="htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
+Note: I am talking about tools i tested in Ubuntu/Debian Linux" /><meta name="keywords" content="linux, GPU, gaming, benchmarking" />
 
 
 
@@ -60,20 +60,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Htop for Gpu in Linux" />
-<meta property="og:description" content="htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. If you ever wondered whats there equivalent for GPU (Graphic Cards) here is that below." />
+<meta property="og:title" content="HTOP for GPU in Linux" />
+<meta property="og:description" content="htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
+Note: I am talking about tools i tested in Ubuntu/Debian Linux" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/htop-for-gpu-in-linux/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-06-12T17:02:57-07:00" />
 <meta property="article:modified_time" content="2022-06-12T17:02:57-07:00" />
 
-<meta itemprop="name" content="Htop for Gpu in Linux">
-<meta itemprop="description" content="htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. If you ever wondered whats there equivalent for GPU (Graphic Cards) here is that below."><meta itemprop="datePublished" content="2022-06-12T17:02:57-07:00" />
+<meta itemprop="name" content="HTOP for GPU in Linux">
+<meta itemprop="description" content="htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
+Note: I am talking about tools i tested in Ubuntu/Debian Linux"><meta itemprop="datePublished" content="2022-06-12T17:02:57-07:00" />
 <meta itemprop="dateModified" content="2022-06-12T17:02:57-07:00" />
-<meta itemprop="wordCount" content="34">
+<meta itemprop="wordCount" content="92">
 <meta itemprop="keywords" content="til,Linux,command," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Htop for Gpu in Linux"/>
-<meta name="twitter:description" content="htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. If you ever wondered whats there equivalent for GPU (Graphic Cards) here is that below."/>
+<meta name="twitter:title" content="HTOP for GPU in Linux"/>
+<meta name="twitter:description" content="htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
+Note: I am talking about tools i tested in Ubuntu/Debian Linux"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -148,7 +151,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Htop for Gpu in Linux</h1>
+      <h1 class="post-title">HTOP for GPU in Linux</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2022-06-12 </span>
@@ -161,7 +164,24 @@
 
     
     <div class="post-content">
-      <p>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. If you ever wondered whats there equivalent for GPU (Graphic Cards) here is that below.</p>
+      <p>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.</p>
+<p>Note: I am talking about tools i tested in Ubuntu/Debian Linux</p>
+<p>For nvidia</p>
+<ul>
+<li>nvtop</li>
+<li>gpustat</li>
+</ul>
+<p>For intel (iRIS)</p>
+<ul>
+<li>intel_gpu_top (from intel-gpu-tools package)</li>
+</ul>
+<p>For AMD GPUs</p>
+<ul>
+<li>radeontop</li>
+</ul>
+<p>Link to Reference:</p>
+<p><a href="https://linuxhint.com/apps-monitor-amd-gpu-linux/">AMG GPU</a></p>
+
     </div>
 
     
@@ -172,9 +192,9 @@
           <a href="/tags/command/">command</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/writing-shell-script-accepting-agruments/">
+        <a class="prev" href="/post/adding-new-key-per-user-to-aws-ssh/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Writing Shell Script Accepting Arguments</span>
+            <span class="prev-text nav-default">Adding New Key per User to AWS EC2 Instance</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         <a class="next" href="/post/how-i-setup-dark-theme-in-my-blog/">
