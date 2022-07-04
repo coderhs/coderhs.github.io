@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/dev/</loc>
+    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/homelab/</loc>
+    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/remote/</loc>
+    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/remote-coding-using-tailscale-and-code-server/</loc>
+    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/vscode/</loc>
+    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/adding-new-key-per-user-to-aws-ssh/</loc>
     <lastmod>2022-07-01T22:58:41-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -23,21 +79,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2022-07-01T22:58:41-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/ec2/</loc>
-    <lastmod>2022-07-01T22:58:41-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2022-07-01T22:58:41-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -52,13 +94,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/linux./</loc>
-    <lastmod>2022-07-01T22:58:41-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/</loc>
     <lastmod>2022-07-01T22:58:41-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
