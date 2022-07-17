@@ -2,8 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/post/access-history-in-irb/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/irb/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/irb/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/rails/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/rails/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/ruby/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/ruby/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/til/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/til/</loc>
+    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -16,21 +100,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/categories/homelab/</loc>
-    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/</loc>
     <lastmod>2022-07-03T13:52:46-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -114,13 +184,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2022-07-01T22:58:41-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/command/</loc>
     <lastmod>2022-06-12T17:02:57-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -129,13 +192,6 @@
   
   <url>
     <loc>http://localhost:1313/post/htop-for-gpu-in-linux/</loc>
-    <lastmod>2022-06-12T17:02:57-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/til/</loc>
     <lastmod>2022-06-12T17:02:57-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -205,21 +261,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/rails/</loc>
-    <lastmod>2022-05-31T20:10:36-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/categories/rails-tips/</loc>
-    <lastmod>2022-05-31T20:10:36-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/ruby/</loc>
     <lastmod>2022-05-31T20:10:36-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -283,13 +325,6 @@
   
   <url>
     <loc>http://localhost:1313/post/count-how-many-routes-you-have/</loc>
-    <lastmod>2022-05-17T17:21:51-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/til/</loc>
     <lastmod>2022-05-17T17:21:51-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -401,13 +436,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/rails/</loc>
-    <lastmod>2013-01-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</loc>
     <lastmod>2012-12-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -437,13 +465,6 @@
   
   <url>
     <loc>http://localhost:1313/post/install-ruby-via-source-ubuntu/</loc>
-    <lastmod>2012-11-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/ruby/</loc>
     <lastmod>2012-11-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

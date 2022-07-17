@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TIL on Harisankar P S | HsPS.in</title>
+    <title>til on Harisankar P S | HsPS.in</title>
     <link>http://localhost:1313/categories/til/</link>
-    <description>Recent content in TIL on Harisankar P S | HsPS.in</description>
+    <description>Recent content in til on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 May 2022 17:21:51 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 13:15:49 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Access History in IRB</title>
+      <link>http://localhost:1313/post/access-history-in-irb/</link>
+      <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/access-history-in-irb/</guid>
+      <description>Accessing the list of commands you have ran in your irb or rails console.
+Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
+    </item>
+    
     <item>
       <title>Count How Many Routes You Have</title>
       <link>http://localhost:1313/post/count-how-many-routes-you-have/</link>

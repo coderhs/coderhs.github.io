@@ -6,7 +6,43 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Jul 2022 13:52:46 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 13:15:49 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>irb</title>
+      <link>http://localhost:1313/categories/irb/</link>
+      <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
+      
+      <guid>http://localhost:1313/categories/irb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rails</title>
+      <link>http://localhost:1313/categories/rails/</link>
+      <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
+      
+      <guid>http://localhost:1313/categories/rails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ruby</title>
+      <link>http://localhost:1313/categories/ruby/</link>
+      <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
+      
+      <guid>http://localhost:1313/categories/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>til</title>
+      <link>http://localhost:1313/categories/til/</link>
+      <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
+      
+      <guid>http://localhost:1313/categories/til/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dev</title>
       <link>http://localhost:1313/categories/dev/</link>
@@ -89,15 +125,6 @@
     </item>
     
     <item>
-      <title>TIL</title>
-      <link>http://localhost:1313/categories/til/</link>
-      <pubDate>Tue, 17 May 2022 17:21:51 -0700</pubDate>
-      
-      <guid>http://localhost:1313/categories/til/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Emotions</title>
       <link>http://localhost:1313/categories/emotions/</link>
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
@@ -125,29 +152,11 @@
     </item>
     
     <item>
-      <title>Rails</title>
-      <link>http://localhost:1313/categories/rails/</link>
-      <pubDate>Wed, 23 Jan 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/categories/rails/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Tech</title>
       <link>http://localhost:1313/categories/tech/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/categories/tech/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ruby</title>
-      <link>http://localhost:1313/categories/ruby/</link>
-      <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/categories/ruby/</guid>
       <description></description>
     </item>
     

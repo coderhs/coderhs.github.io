@@ -6,7 +6,17 @@
     <description>Recent content on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Jul 2022 13:52:46 -0700</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 13:15:49 -0700</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Access History in IRB</title>
+      <link>http://localhost:1313/post/access-history-in-irb/</link>
+      <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/access-history-in-irb/</guid>
+      <description>Accessing the list of commands you have ran in your irb or rails console.
+Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
+    </item>
+    
     <item>
       <title>Remote Coding Using Tailscale and Code Server</title>
       <link>http://localhost:1313/post/remote-coding-using-tailscale-and-code-server/</link>
