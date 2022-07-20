@@ -6,7 +6,17 @@
     <description>Recent content in til on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Jul 2022 13:15:49 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 23:15:19 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Migrations From Console</title>
+      <link>http://localhost:1313/post/running-migrations-from-console/</link>
+      <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/running-migrations-from-console/</guid>
+      <description>&lt;p&gt;Note: I am using Aprtment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;
+&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name, it store&amp;rsquo;s the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schema&amp;rsquo;s has it rails thinks its already ran the migration. Rails look at the main / default schema to know if has ran the migrations then follow up on the rest.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Access History in IRB</title>
       <link>http://localhost:1313/post/access-history-in-irb/</link>
