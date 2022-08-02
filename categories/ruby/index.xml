@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ruby on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/categories/ruby/</link>
+    <link>https://hsps.in/categories/ruby/</link>
     <description>Recent content in ruby on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Jul 2022 13:15:49 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 13:15:49 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Access History in IRB</title>
-      <link>http://localhost:1313/post/access-history-in-irb/</link>
+      <link>https://hsps.in/post/access-history-in-irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/access-history-in-irb/</guid>
+      <guid>https://hsps.in/post/access-history-in-irb/</guid>
       <description>Accessing the list of commands you have ran in your irb or rails console.
 Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
     </item>
     
     <item>
       <title>Install Ruby via Source Ubuntu</title>
-      <link>http://localhost:1313/post/install-ruby-via-source-ubuntu/</link>
+      <link>https://hsps.in/post/install-ruby-via-source-ubuntu/</link>
       <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/install-ruby-via-source-ubuntu/</guid>
+      <guid>https://hsps.in/post/install-ruby-via-source-ubuntu/</guid>
       <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;
 &lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;

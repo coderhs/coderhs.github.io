@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>unix on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/tags/unix/</link>
+    <link>https://hsps.in/tags/unix/</link>
     <description>Recent content in unix on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Dec 2012 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/unix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Dec 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://hsps.in/tags/unix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Make Self Executing Ruby Scripts Linux</title>
-      <link>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</link>
+      <link>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</guid>
+      <guid>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</guid>
       <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>

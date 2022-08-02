@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vscode on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/categories/vscode/</link>
+    <link>https://hsps.in/categories/vscode/</link>
     <description>Recent content in vscode on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Jul 2022 13:52:46 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Jul 2022 13:52:46 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Remote Coding Using Tailscale and Code Server</title>
-      <link>http://localhost:1313/post/remote-coding-using-tailscale-and-code-server/</link>
+      <link>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/remote-coding-using-tailscale-and-code-server/</guid>
+      <guid>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</guid>
       <description>This tutorial or concept uses two softwares to make remote coding on your home machine possible.
  Tailscale code-server  Tailscale is basically a VPN using open source wireguard protocol. It created an encrypted point to point connections so that only your devices can talk to each other.
 So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if there are on a same network.</description>

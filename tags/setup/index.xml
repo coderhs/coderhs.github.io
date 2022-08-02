@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>setup on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/tags/setup/</link>
+    <link>https://hsps.in/tags/setup/</link>
     <description>Recent content in setup on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Jan 2012 00:07:30 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/setup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Jan 2012 00:07:30 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/setup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Create Your Own Ubuntu</title>
-      <link>http://localhost:1313/post/create-your-own-ubuntu/</link>
+      <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/create-your-own-ubuntu/</guid>
+      <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
       <description>Many a times I wanted to create my own customized ubuntu, why???
 Well 3 reasons
  I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>

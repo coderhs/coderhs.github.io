@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://hsps.in/post/</link>
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Aug 2022 18:59:18 -0700</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 18:59:18 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Amazing Emoji Keyboard in Linux</title>
-      <link>http://localhost:1313/post/amazing-emoji-keyboard-in-linux/</link>
+      <link>https://hsps.in/post/amazing-emoji-keyboard-in-linux/</link>
       <pubDate>Mon, 01 Aug 2022 18:59:18 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/amazing-emoji-keyboard-in-linux/</guid>
+      <guid>https://hsps.in/post/amazing-emoji-keyboard-in-linux/</guid>
       <description>&lt;p&gt;I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developers joruney 😆. So moving from
 windows to Linux was over 13-14 years ago. I didn&amp;rsquo;t much from the windows world other tham games and single executable
 files. But moving from macOS to Linux, has been a bit tough. KDE has been able to provide me with everything I want and
@@ -23,30 +23,30 @@ even terminal aliases. 😈 Not everyone was fan of my emoji usages, but i loved
     
     <item>
       <title>Running Migrations From Console</title>
-      <link>http://localhost:1313/post/running-migrations-from-console/</link>
+      <link>https://hsps.in/post/running-migrations-from-console/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/running-migrations-from-console/</guid>
+      <guid>https://hsps.in/post/running-migrations-from-console/</guid>
       <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;
 &lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name, it store&amp;rsquo;s the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schema&amp;rsquo;s has it rails thinks its already ran the migration. Rails look at the main / default schema to know if has ran the migrations then follow up on the rest.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Access History in IRB</title>
-      <link>http://localhost:1313/post/access-history-in-irb/</link>
+      <link>https://hsps.in/post/access-history-in-irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/access-history-in-irb/</guid>
+      <guid>https://hsps.in/post/access-history-in-irb/</guid>
       <description>Accessing the list of commands you have ran in your irb or rails console.
 Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
     </item>
     
     <item>
       <title>Remote Coding Using Tailscale and Code Server</title>
-      <link>http://localhost:1313/post/remote-coding-using-tailscale-and-code-server/</link>
+      <link>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/remote-coding-using-tailscale-and-code-server/</guid>
+      <guid>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</guid>
       <description>This tutorial or concept uses two softwares to make remote coding on your home machine possible.
  Tailscale code-server  Tailscale is basically a VPN using open source wireguard protocol. It created an encrypted point to point connections so that only your devices can talk to each other.
 So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if there are on a same network.</description>
@@ -54,10 +54,10 @@ So you can build a secure connection between your two computers over the interne
     
     <item>
       <title>Adding New Key per User to AWS EC2 Instance</title>
-      <link>http://localhost:1313/post/adding-new-key-per-user-to-aws-ssh/</link>
+      <link>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</link>
       <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/adding-new-key-per-user-to-aws-ssh/</guid>
+      <guid>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</guid>
       <description>&lt;p&gt;When we create a new server in aws, it allows us to generate a key pair and attach it to the server. Now imagine you want to share access to this multiple people in your team, but you don&amp;rsquo;t want to share your private key. This is what you need to do.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Generate new key for each member of your team or ask each member for there public keys&lt;/li&gt;
@@ -67,20 +67,20 @@ So you can build a secure connection between your two computers over the interne
     
     <item>
       <title>HTOP for GPU in Linux</title>
-      <link>http://localhost:1313/post/htop-for-gpu-in-linux/</link>
+      <link>https://hsps.in/post/htop-for-gpu-in-linux/</link>
       <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/htop-for-gpu-in-linux/</guid>
+      <guid>https://hsps.in/post/htop-for-gpu-in-linux/</guid>
       <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
 Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     </item>
     
     <item>
       <title>How I Setup Dark Theme in My Blog</title>
-      <link>http://localhost:1313/post/how-i-setup-dark-theme-in-my-blog/</link>
+      <link>https://hsps.in/post/how-i-setup-dark-theme-in-my-blog/</link>
       <pubDate>Sun, 12 Jun 2022 10:49:39 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/how-i-setup-dark-theme-in-my-blog/</guid>
+      <guid>https://hsps.in/post/how-i-setup-dark-theme-in-my-blog/</guid>
       <description>&lt;p&gt;Dark mode or night mode is becoming more and more popular these days. As the amount of time we are spending in front of the computer increases, we started to look more into on how to improve our experience. Dark mode/Night mode is one such setting. What it does (mainly) is it makes all the white part of the application to black - major chunk of which would be the background. When the color of the background is made black, it emits less light. Now not all displays are the same, each display creates the dark color in different ways. Like:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;On an &lt;strong&gt;&lt;code&gt;LCD screen&lt;/code&gt;&lt;/strong&gt;. The liquid crystal elements block the white light from the backlight. And this results in a dark (almost black) pixel.&lt;/li&gt;
@@ -93,39 +93,39 @@ Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     
     <item>
       <title>Append to File using Bash</title>
-      <link>http://localhost:1313/post/append-to-file-using-bash/</link>
+      <link>https://hsps.in/post/append-to-file-using-bash/</link>
       <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/append-to-file-using-bash/</guid>
+      <guid>https://hsps.in/post/append-to-file-using-bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Using String in Active Record(Rails) Enum</title>
-      <link>http://localhost:1313/post/using-string-as-active-record-enum/</link>
+      <link>https://hsps.in/post/using-string-as-active-record-enum/</link>
       <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/using-string-as-active-record-enum/</guid>
+      <guid>https://hsps.in/post/using-string-as-active-record-enum/</guid>
       <description>&lt;p&gt;Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.&lt;/p&gt;
 &lt;p&gt;Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP &#43; MySql a Deadly Combination: My introduction to the real world</title>
-      <link>http://localhost:1313/post/php-plus-mysql-deadly-combination-there-was/</link>
+      <link>https://hsps.in/post/php-plus-mysql-deadly-combination-there-was/</link>
       <pubDate>Sat, 21 May 2022 20:52:57 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/php-plus-mysql-deadly-combination-there-was/</guid>
+      <guid>https://hsps.in/post/php-plus-mysql-deadly-combination-there-was/</guid>
       <description>I am currently a senior Ruby on Rails programmer. This article is my tribute to PHP the language that introduced me to the real world.
 I have been programming or aspiring to program (former/recovering imposter syndrome addict) since I was a child. You can say I was programming as well if you consider lego programming and hello world in turbo c as programming. During upper primary and high school I spend my time learning Java, C and C++.</description>
     </item>
     
     <item>
       <title>GIN: Generalized Inverted iNdex (on text)</title>
-      <link>http://localhost:1313/post/generalized-inverted-index-gin-postgresql/</link>
+      <link>https://hsps.in/post/generalized-inverted-index-gin-postgresql/</link>
       <pubDate>Thu, 19 May 2022 21:01:23 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/generalized-inverted-index-gin-postgresql/</guid>
+      <guid>https://hsps.in/post/generalized-inverted-index-gin-postgresql/</guid>
       <description>&lt;p&gt;Indexes are an integral part of any production database. It improves the speed of your query, and which in tern speeds up your application. The faster you get your data, faster you can provide the result to your user, faster you can move on to your next user. Knowing different type of indexes allows you to choose which is the best for your data. As there is no silver bullet.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;PostgreSQL is the DB refereed to in this article&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;This article is my humble attempt to explain and simplify what is Gin.&lt;/p&gt;</description>
@@ -133,28 +133,28 @@ I have been programming or aspiring to program (former/recovering imposter syndr
     
     <item>
       <title>Count How Many Routes You Have</title>
-      <link>http://localhost:1313/post/count-how-many-routes-you-have/</link>
+      <link>https://hsps.in/post/count-how-many-routes-you-have/</link>
       <pubDate>Tue, 17 May 2022 17:21:51 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/count-how-many-routes-you-have/</guid>
+      <guid>https://hsps.in/post/count-how-many-routes-you-have/</guid>
       <description>&lt;p&gt;It start with one, then two and it keeps on growing. The number of routes in your ruby on rails project can be a reflection of how complex your project is becoming. And if you are curious like me to know how many routes your project has, just run the following command in your rails console.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Books I Read 2021</title>
-      <link>http://localhost:1313/post/books-i-read-2021/</link>
+      <link>https://hsps.in/post/books-i-read-2021/</link>
       <pubDate>Thu, 17 Feb 2022 10:03:49 -0800</pubDate>
       
-      <guid>http://localhost:1313/post/books-i-read-2021/</guid>
+      <guid>https://hsps.in/post/books-i-read-2021/</guid>
       <description>&lt;p&gt;As a followup on my 2020 article on the list of books I have read in 2020. Here is 2021 version. I aimed to read at least one book a month in 2021. During some months I was able to achieve more than one book a month, but sadly I couldn&amp;rsquo;t keep it up for the whole year. 2022 is another year, hope to be able to do one book a month minimum this year.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Consequences of saying NO</title>
-      <link>http://localhost:1313/post/no/</link>
+      <link>https://hsps.in/post/no/</link>
       <pubDate>Sat, 24 Apr 2021 08:31:46 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/no/</guid>
+      <guid>https://hsps.in/post/no/</guid>
       <description>&lt;p&gt;Disclaimer: This article is not against saying No. One should exercise no to protect ones individual wishes, freedom and mental health.&lt;/p&gt;
 &lt;p&gt;This article is about consequence of saying no or frequent no to your colleague(s), child or partner for something they want to do.&lt;/p&gt;
 &lt;p&gt;When you tell no, three things can happen.&lt;/p&gt;
@@ -174,10 +174,10 @@ I have been programming or aspiring to program (former/recovering imposter syndr
     
     <item>
       <title>Right vs Wrong (Part 1)</title>
-      <link>http://localhost:1313/post/right-vs-wrong-part-1/</link>
+      <link>https://hsps.in/post/right-vs-wrong-part-1/</link>
       <pubDate>Sun, 28 Mar 2021 01:24:05 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/right-vs-wrong-part-1/</guid>
+      <guid>https://hsps.in/post/right-vs-wrong-part-1/</guid>
       <description>&lt;p&gt;There is no better examples of evolving definition (during the lifetime of person) than the definition of right or wrong.&lt;/p&gt;
 &lt;p&gt;When we are little the definition of Right and Wrong is absolute. The adults define them (especially our parents). What the show as Right is Right and what they treat as Wrong is Wrong. That is the time when everyone see right and wrong as binary, the simpler times which our mind will ache for in future. Telling lies are wrong, stealing is wrong.&lt;/p&gt;
 &lt;p&gt;As we grow right around the time we start school, we learn that right and wrong are relative. There are little lies and big lies, little truths and honest truth. We learn to navigate this world with our friends and young foolish loves. This relative truths are based on the absolute truth from which we grew. Where in the absolute world a lie is wrong. In the relative world, simple and small lie here and there is fine. As long as it doesn’t hurt anyone, and it makes your life simpler.&lt;/p&gt;</description>
@@ -185,20 +185,20 @@ I have been programming or aspiring to program (former/recovering imposter syndr
     
     <item>
       <title>Books I Read 2020</title>
-      <link>http://localhost:1313/post/books-i-read-2020/</link>
+      <link>https://hsps.in/post/books-i-read-2020/</link>
       <pubDate>Sat, 13 Feb 2021 15:04:42 -0800</pubDate>
       
-      <guid>http://localhost:1313/post/books-i-read-2020/</guid>
+      <guid>https://hsps.in/post/books-i-read-2020/</guid>
       <description>&lt;p&gt;I have seen many people write about the favorite books that they read in (2020, 2019, etc). I have a friend who has been posting regularly for almost a decade. Feeling inspired from this, here is my list of books that I read in 2020. I do like reading books, but I haven&amp;rsquo;t been able to keep up with as much as I would have loved to read. 2020 allowed me to catch up a bit, and hope to continue that.&lt;/p&gt;
 &lt;p&gt;PS: Unlike most others who write their favorites, mine is pretty much just a list of books I read.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>What You Learn From Binge Watching</title>
-      <link>http://localhost:1313/post/what-you-learn-from-binge-watching/</link>
+      <link>https://hsps.in/post/what-you-learn-from-binge-watching/</link>
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/what-you-learn-from-binge-watching/</guid>
+      <guid>https://hsps.in/post/what-you-learn-from-binge-watching/</guid>
       <description>&lt;p&gt;Binge Watching or Marathon watching is the practice of watching multiple episodes of a television program in rapid succession, typically by means of DVDs or digital streaming (Source: Oxford Dictionary). It has become a more common pass time or activity for the common people. It has become something that is planned and prepared to do alone or as a group. The availability of shows on demand through streaming service is the reason behinds huge growth of this activity, from a casual reference here and there to a more common social activity.&lt;/p&gt;
 &lt;p&gt;There is the joy of waiting for each episode, per week. Discussing theories for the next episode and reviews of the previous one with friends or other fans. This is still there even when you binge watch. Just that instead of the next episode you are discussing about the next season.&lt;/p&gt;
 &lt;p&gt;But what I wanted to write is not about what binge watching is or how it is (or it is not) good. What I wanted to talk about is, what I learned or noticed binge watching old TV shows or a long 10/11 season TV shows. The good points that I feel like is good to know or keep in mind in ones life. The one here is me of course 😁.&lt;/p&gt;</description>
@@ -206,20 +206,20 @@ I have been programming or aspiring to program (former/recovering imposter syndr
     
     <item>
       <title>[TIL] Starting Ruby Method With Capital Letter</title>
-      <link>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</link>
+      <link>https://hsps.in/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</link>
       <pubDate>Sun, 01 May 2016 00:00:00 +0530</pubDate>
       
-      <guid>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</guid>
+      <guid>https://hsps.in/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</guid>
       <description>Last day while I was browsing through some Java code online, I noticed that some method has names starting with capital letters. I Method names are written in small letters in ruby. This Java code made me wonder if there was anything preventing us from using method names starting with capital letter, in ruby. So I started my irb and wrote the following code.
 1 2 3  def Test puts &amp;#39;testing 123&amp;#39; end   And when I ran to call the method Test in the irb i got the following error.</description>
     </item>
     
     <item>
       <title>When My Alarm Was Found to Be Not Working</title>
-      <link>http://localhost:1313/post/when-my-alarm-was-found-to-be-not-working/</link>
+      <link>https://hsps.in/post/when-my-alarm-was-found-to-be-not-working/</link>
       <pubDate>Fri, 15 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/when-my-alarm-was-found-to-be-not-working/</guid>
+      <guid>https://hsps.in/post/when-my-alarm-was-found-to-be-not-working/</guid>
       <description>&lt;p&gt;Due to some unfortunate events&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Loosing my phone&lt;/li&gt;
@@ -232,19 +232,19 @@ I have been programming or aspiring to program (former/recovering imposter syndr
     
     <item>
       <title>Model Update_attribute Update_attributes</title>
-      <link>http://localhost:1313/post/model-update_attribute-update_attributes/</link>
+      <link>https://hsps.in/post/model-update_attribute-update_attributes/</link>
       <pubDate>Wed, 23 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/model-update_attribute-update_attributes/</guid>
+      <guid>https://hsps.in/post/model-update_attribute-update_attributes/</guid>
       <description>&lt;p&gt;Lot of people might have a confusing between the functionality of update_attribute and update_attributes. The purpose of these functions can be understood from their name itself. the first one update_attribute would update a single attribute of the model&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Make Self Executing Ruby Scripts Linux</title>
-      <link>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</link>
+      <link>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</guid>
+      <guid>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</guid>
       <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
@@ -252,10 +252,10 @@ I have been programming or aspiring to program (former/recovering imposter syndr
     
     <item>
       <title>Setup Postgresql and Its Libraries to Work With Rails</title>
-      <link>http://localhost:1313/post/setup-postgresql-and-its-libraries-to-work-with-rails/</link>
+      <link>https://hsps.in/post/setup-postgresql-and-its-libraries-to-work-with-rails/</link>
       <pubDate>Tue, 27 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/setup-postgresql-and-its-libraries-to-work-with-rails/</guid>
+      <guid>https://hsps.in/post/setup-postgresql-and-its-libraries-to-work-with-rails/</guid>
       <description>&lt;p&gt;Recently lot of people have been asking me why they are not able to install the pg (PostgreSQL) gem even after installing PostgreSQL server in their system?&lt;/p&gt;
 &lt;p&gt;Well the answer is simple, the pg gem, requires the PostgreSQL development libraries to build native extensions to communicate with the PostgreSQL server. Native extensions refer to building ruby extensions or wrappers for existing C or C++ library.&lt;/p&gt;
 &lt;p&gt;One can install the development libraries of PostgreSQL by installing the libpg-dev package.&lt;/p&gt;</description>
@@ -263,10 +263,10 @@ I have been programming or aspiring to program (former/recovering imposter syndr
     
     <item>
       <title>Install Ruby via Source Ubuntu</title>
-      <link>http://localhost:1313/post/install-ruby-via-source-ubuntu/</link>
+      <link>https://hsps.in/post/install-ruby-via-source-ubuntu/</link>
       <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/install-ruby-via-source-ubuntu/</guid>
+      <guid>https://hsps.in/post/install-ruby-via-source-ubuntu/</guid>
       <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;
 &lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -275,10 +275,10 @@ I have been programming or aspiring to program (former/recovering imposter syndr
     
     <item>
       <title>Create Your Own Ubuntu</title>
-      <link>http://localhost:1313/post/create-your-own-ubuntu/</link>
+      <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/create-your-own-ubuntu/</guid>
+      <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
       <description>Many a times I wanted to create my own customized ubuntu, why???
 Well 3 reasons
  I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
@@ -286,10 +286,10 @@ Well 3 reasons
     
     <item>
       <title>puts &#34;Hello World&#34;</title>
-      <link>http://localhost:1313/post/puts-hello-world/</link>
+      <link>https://hsps.in/post/puts-hello-world/</link>
       <pubDate>Sat, 14 Jan 2012 00:07:30 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/puts-hello-world/</guid>
+      <guid>https://hsps.in/post/puts-hello-world/</guid>
       <description>Don&amp;rsquo;t know if it is the best way to start, but here it goes&amp;hellip;
 I am starting a technical blog, something that I wanted to do for a while&amp;hellip;
 So wish me luck =)</description>

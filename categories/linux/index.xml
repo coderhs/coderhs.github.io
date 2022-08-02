@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/categories/linux/</link>
+    <link>https://hsps.in/categories/linux/</link>
     <description>Recent content in Linux on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Jul 2022 22:58:41 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jul 2022 22:58:41 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adding New Key per User to AWS EC2 Instance</title>
-      <link>http://localhost:1313/post/adding-new-key-per-user-to-aws-ssh/</link>
+      <link>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</link>
       <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/adding-new-key-per-user-to-aws-ssh/</guid>
+      <guid>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</guid>
       <description>&lt;p&gt;When we create a new server in aws, it allows us to generate a key pair and attach it to the server. Now imagine you want to share access to this multiple people in your team, but you don&amp;rsquo;t want to share your private key. This is what you need to do.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Generate new key for each member of your team or ask each member for there public keys&lt;/li&gt;
@@ -22,20 +22,20 @@
     
     <item>
       <title>HTOP for GPU in Linux</title>
-      <link>http://localhost:1313/post/htop-for-gpu-in-linux/</link>
+      <link>https://hsps.in/post/htop-for-gpu-in-linux/</link>
       <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/htop-for-gpu-in-linux/</guid>
+      <guid>https://hsps.in/post/htop-for-gpu-in-linux/</guid>
       <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
 Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     </item>
     
     <item>
       <title>Make Self Executing Ruby Scripts Linux</title>
-      <link>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</link>
+      <link>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</guid>
+      <guid>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</guid>
       <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
@@ -43,10 +43,10 @@ Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     
     <item>
       <title>Install Ruby via Source Ubuntu</title>
-      <link>http://localhost:1313/post/install-ruby-via-source-ubuntu/</link>
+      <link>https://hsps.in/post/install-ruby-via-source-ubuntu/</link>
       <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/install-ruby-via-source-ubuntu/</guid>
+      <guid>https://hsps.in/post/install-ruby-via-source-ubuntu/</guid>
       <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;
 &lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -55,10 +55,10 @@ Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     
     <item>
       <title>Create Your Own Ubuntu</title>
-      <link>http://localhost:1313/post/create-your-own-ubuntu/</link>
+      <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/create-your-own-ubuntu/</guid>
+      <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
       <description>Many a times I wanted to create my own customized ubuntu, why???
 Well 3 reasons
  I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>

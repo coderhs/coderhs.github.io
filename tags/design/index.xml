@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>design on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/tags/design/</link>
+    <link>https://hsps.in/tags/design/</link>
     <description>Recent content in design on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Jun 2022 10:49:39 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Jun 2022 10:49:39 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I Setup Dark Theme in My Blog</title>
-      <link>http://localhost:1313/post/how-i-setup-dark-theme-in-my-blog/</link>
+      <link>https://hsps.in/post/how-i-setup-dark-theme-in-my-blog/</link>
       <pubDate>Sun, 12 Jun 2022 10:49:39 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/how-i-setup-dark-theme-in-my-blog/</guid>
+      <guid>https://hsps.in/post/how-i-setup-dark-theme-in-my-blog/</guid>
       <description>&lt;p&gt;Dark mode or night mode is becoming more and more popular these days. As the amount of time we are spending in front of the computer increases, we started to look more into on how to improve our experience. Dark mode/Night mode is one such setting. What it does (mainly) is it makes all the white part of the application to black - major chunk of which would be the background. When the color of the background is made black, it emits less light. Now not all displays are the same, each display creates the dark color in different ways. Like:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;On an &lt;strong&gt;&lt;code&gt;LCD screen&lt;/code&gt;&lt;/strong&gt;. The liquid crystal elements block the white light from the backlight. And this results in a dark (almost black) pixel.&lt;/li&gt;

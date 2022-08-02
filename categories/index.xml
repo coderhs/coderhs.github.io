@@ -2,179 +2,179 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://hsps.in/categories/</link>
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Jul 2022 23:15:19 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 23:15:19 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apartment</title>
-      <link>http://localhost:1313/categories/apartment/</link>
+      <link>https://hsps.in/categories/apartment/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/apartment/</guid>
+      <guid>https://hsps.in/categories/apartment/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rails</title>
-      <link>http://localhost:1313/categories/rails/</link>
+      <link>https://hsps.in/categories/rails/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/rails/</guid>
+      <guid>https://hsps.in/categories/rails/</guid>
       <description></description>
     </item>
     
     <item>
       <title>til</title>
-      <link>http://localhost:1313/categories/til/</link>
+      <link>https://hsps.in/categories/til/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/til/</guid>
+      <guid>https://hsps.in/categories/til/</guid>
       <description></description>
     </item>
     
     <item>
       <title>irb</title>
-      <link>http://localhost:1313/categories/irb/</link>
+      <link>https://hsps.in/categories/irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/irb/</guid>
+      <guid>https://hsps.in/categories/irb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ruby</title>
-      <link>http://localhost:1313/categories/ruby/</link>
+      <link>https://hsps.in/categories/ruby/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/ruby/</guid>
+      <guid>https://hsps.in/categories/ruby/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dev</title>
-      <link>http://localhost:1313/categories/dev/</link>
+      <link>https://hsps.in/categories/dev/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/dev/</guid>
+      <guid>https://hsps.in/categories/dev/</guid>
       <description></description>
     </item>
     
     <item>
       <title>homelab</title>
-      <link>http://localhost:1313/categories/homelab/</link>
+      <link>https://hsps.in/categories/homelab/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/homelab/</guid>
+      <guid>https://hsps.in/categories/homelab/</guid>
       <description></description>
     </item>
     
     <item>
       <title>remote</title>
-      <link>http://localhost:1313/categories/remote/</link>
+      <link>https://hsps.in/categories/remote/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/remote/</guid>
+      <guid>https://hsps.in/categories/remote/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vscode</title>
-      <link>http://localhost:1313/categories/vscode/</link>
+      <link>https://hsps.in/categories/vscode/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/vscode/</guid>
+      <guid>https://hsps.in/categories/vscode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AWS</title>
-      <link>http://localhost:1313/categories/aws/</link>
+      <link>https://hsps.in/categories/aws/</link>
       <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/aws/</guid>
+      <guid>https://hsps.in/categories/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/categories/linux/</link>
+      <link>https://hsps.in/categories/linux/</link>
       <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/linux/</guid>
+      <guid>https://hsps.in/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bash</title>
-      <link>http://localhost:1313/categories/bash/</link>
+      <link>https://hsps.in/categories/bash/</link>
       <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/bash/</guid>
+      <guid>https://hsps.in/categories/bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ubuntu</title>
-      <link>http://localhost:1313/categories/ubuntu/</link>
+      <link>https://hsps.in/categories/ubuntu/</link>
       <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/ubuntu/</guid>
+      <guid>https://hsps.in/categories/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rails tips</title>
-      <link>http://localhost:1313/categories/rails-tips/</link>
+      <link>https://hsps.in/categories/rails-tips/</link>
       <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/rails-tips/</guid>
+      <guid>https://hsps.in/categories/rails-tips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Emotions</title>
-      <link>http://localhost:1313/categories/emotions/</link>
+      <link>https://hsps.in/categories/emotions/</link>
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/emotions/</guid>
+      <guid>https://hsps.in/categories/emotions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Notes</title>
-      <link>http://localhost:1313/categories/notes/</link>
+      <link>https://hsps.in/categories/notes/</link>
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/notes/</guid>
+      <guid>https://hsps.in/categories/notes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Thoughts</title>
-      <link>http://localhost:1313/categories/thoughts/</link>
+      <link>https://hsps.in/categories/thoughts/</link>
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/thoughts/</guid>
+      <guid>https://hsps.in/categories/thoughts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tech</title>
-      <link>http://localhost:1313/categories/tech/</link>
+      <link>https://hsps.in/categories/tech/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/categories/tech/</guid>
+      <guid>https://hsps.in/categories/tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>custom</title>
-      <link>http://localhost:1313/categories/custom/</link>
+      <link>https://hsps.in/categories/custom/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       
-      <guid>http://localhost:1313/categories/custom/</guid>
+      <guid>https://hsps.in/categories/custom/</guid>
       <description></description>
     </item>
     

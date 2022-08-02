@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/categories/ubuntu/</link>
+    <link>https://hsps.in/categories/ubuntu/</link>
     <description>Recent content in ubuntu on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Jun 2022 14:47:32 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jun 2022 14:47:32 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Append to File using Bash</title>
-      <link>http://localhost:1313/post/append-to-file-using-bash/</link>
+      <link>https://hsps.in/post/append-to-file-using-bash/</link>
       <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/append-to-file-using-bash/</guid>
+      <guid>https://hsps.in/post/append-to-file-using-bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Create Your Own Ubuntu</title>
-      <link>http://localhost:1313/post/create-your-own-ubuntu/</link>
+      <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/create-your-own-ubuntu/</guid>
+      <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
       <description>Many a times I wanted to create my own customized ubuntu, why???
 Well 3 reasons
  I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>

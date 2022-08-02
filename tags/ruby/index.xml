@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ruby on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/tags/ruby/</link>
+    <link>https://hsps.in/tags/ruby/</link>
     <description>Recent content in ruby on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Jul 2022 13:15:49 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 13:15:49 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Access History in IRB</title>
-      <link>http://localhost:1313/post/access-history-in-irb/</link>
+      <link>https://hsps.in/post/access-history-in-irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/access-history-in-irb/</guid>
+      <guid>https://hsps.in/post/access-history-in-irb/</guid>
       <description>Accessing the list of commands you have ran in your irb or rails console.
 Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
     </item>
     
     <item>
       <title>Using String in Active Record(Rails) Enum</title>
-      <link>http://localhost:1313/post/using-string-as-active-record-enum/</link>
+      <link>https://hsps.in/post/using-string-as-active-record-enum/</link>
       <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/using-string-as-active-record-enum/</guid>
+      <guid>https://hsps.in/post/using-string-as-active-record-enum/</guid>
       <description>&lt;p&gt;Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.&lt;/p&gt;
 &lt;p&gt;Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[TIL] Starting Ruby Method With Capital Letter</title>
-      <link>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</link>
+      <link>https://hsps.in/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</link>
       <pubDate>Sun, 01 May 2016 00:00:00 +0530</pubDate>
       
-      <guid>http://localhost:1313/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</guid>
+      <guid>https://hsps.in/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</guid>
       <description>Last day while I was browsing through some Java code online, I noticed that some method has names starting with capital letters. I Method names are written in small letters in ruby. This Java code made me wonder if there was anything preventing us from using method names starting with capital letter, in ruby. So I started my irb and wrote the following code.
 1 2 3  def Test puts &amp;#39;testing 123&amp;#39; end   And when I ran to call the method Test in the irb i got the following error.</description>
     </item>
     
     <item>
       <title>When My Alarm Was Found to Be Not Working</title>
-      <link>http://localhost:1313/post/when-my-alarm-was-found-to-be-not-working/</link>
+      <link>https://hsps.in/post/when-my-alarm-was-found-to-be-not-working/</link>
       <pubDate>Fri, 15 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/when-my-alarm-was-found-to-be-not-working/</guid>
+      <guid>https://hsps.in/post/when-my-alarm-was-found-to-be-not-working/</guid>
       <description>&lt;p&gt;Due to some unfortunate events&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Loosing my phone&lt;/li&gt;
@@ -55,10 +55,10 @@ Running the following command in your console Readline::HISTORY.to_a returns the
     
     <item>
       <title>Make Self Executing Ruby Scripts Linux</title>
-      <link>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</link>
+      <link>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</guid>
+      <guid>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</guid>
       <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>

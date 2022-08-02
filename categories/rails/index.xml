@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rails on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/categories/rails/</link>
+    <link>https://hsps.in/categories/rails/</link>
     <description>Recent content in rails on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Jul 2022 23:15:19 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 23:15:19 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/rails/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Migrations From Console</title>
-      <link>http://localhost:1313/post/running-migrations-from-console/</link>
+      <link>https://hsps.in/post/running-migrations-from-console/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/running-migrations-from-console/</guid>
+      <guid>https://hsps.in/post/running-migrations-from-console/</guid>
       <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;
 &lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name, it store&amp;rsquo;s the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schema&amp;rsquo;s has it rails thinks its already ran the migration. Rails look at the main / default schema to know if has ran the migrations then follow up on the rest.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Access History in IRB</title>
-      <link>http://localhost:1313/post/access-history-in-irb/</link>
+      <link>https://hsps.in/post/access-history-in-irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
       
-      <guid>http://localhost:1313/post/access-history-in-irb/</guid>
+      <guid>https://hsps.in/post/access-history-in-irb/</guid>
       <description>Accessing the list of commands you have ran in your irb or rails console.
 Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
     </item>
     
     <item>
       <title>Model Update_attribute Update_attributes</title>
-      <link>http://localhost:1313/post/model-update_attribute-update_attributes/</link>
+      <link>https://hsps.in/post/model-update_attribute-update_attributes/</link>
       <pubDate>Wed, 23 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/model-update_attribute-update_attributes/</guid>
+      <guid>https://hsps.in/post/model-update_attribute-update_attributes/</guid>
       <description>&lt;p&gt;Lot of people might have a confusing between the functionality of update_attribute and update_attributes. The purpose of these functions can be understood from their name itself. the first one update_attribute would update a single attribute of the model&lt;/p&gt;</description>
     </item>
     
