@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Getting Started With ESP 32 Development - Harisankar P S | HsPS.in</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Getting Started With ESP 32 Development in Linux using Arduino" /><meta name="keywords" content="esp32, micro controller, arduino, linux, programming, c&#43;&#43;, python, wifi, bluetooth" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="https://hsps.in/post/getting-started-with-esp-32-linux/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Getting Started With ESP 32 Development" />
+<meta property="og:description" content="Getting Started With ESP 32 Development in Linux using Arduino" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsps.in/post/getting-started-with-esp-32-linux/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-08-04T00:42:04-07:00" />
+<meta property="article:modified_time" content="2022-08-04T00:42:04-07:00" />
+
+<meta itemprop="name" content="Getting Started With ESP 32 Development">
+<meta itemprop="description" content="Getting Started With ESP 32 Development in Linux using Arduino"><meta itemprop="datePublished" content="2022-08-04T00:42:04-07:00" />
+<meta itemprop="dateModified" content="2022-08-04T00:42:04-07:00" />
+<meta itemprop="wordCount" content="1123">
+<meta itemprop="keywords" content="esp32,micro controller,arduino,linux,programming,c&#43;&#43;,python,wifi,bluetooth," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Started With ESP 32 Development"/>
+<meta name="twitter:description" content="Getting Started With ESP 32 Development in Linux using Arduino"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">HsPS.in</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Articles</li>
+      </a><a href="/videos/">
+        <li class="mobile-menu-item">Videos</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        
+<div class="logo-wrapper">
+  <a href="/" class="logo">HsPS.in</a>
+  <br>
+  <i>In my opinion</i>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Articles</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/videos/">Videos</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Getting Started With ESP 32 Development</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-08-04 </span>
+        <div class="post-category">
+            <a href="/categories/esp32/"> esp32 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>ESP 32 is a series of low-cost, low-power system on chip micro controllers with integrated Wi-FI and Bluetooth. SoC or system on chip is an integrated circuit that integrates all or most of the component of a computer. Example the CPU, RAM, IO interface, GPU, etc. This form is becoming more and more popular thanks to growing smartphone and computing industry. Apple M1 chip is a good example on the direction in which SoC&rsquo;s are going.</p>
+<p>The ESP 32 is really low cost it cost like 350 in India, and less than 10$ in the US. Now when you buy this you don&rsquo;t buy the chip alone, but a chip on a development board. There are several articles (<a href="https://makeradvisor.com/esp32-development-boards-review-comparison/">https://makeradvisor.com/esp32-development-boards-review-comparison/</a>) on that. The board that I bought from amazon was this <a href="https://www.amazon.com/dp/B0718T232Z?psc=1&amp;ref=ppx_yo2ov_dt_b_product_details">https://www.amazon.com/dp/B0718T232Z?psc=1&amp;ref=ppx_yo2ov_dt_b_product_details</a>, i also bought one with OLED display as well <a href="https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;ref=ppx_yo2ov_dt_b_product_details">https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;ref=ppx_yo2ov_dt_b_product_details</a>.</p>
+<p>In this article I will be talking about how to get started. We will basically will be setting up Aurdino IDE in linux, followed by flashing few sample programs like:</p>
+<p>Note: Arduino is another chip like esp32 (costlier but similar). ESP32 is can be made working on the same IDE. ESP32 can also be programmed using circuit python (which uses micro python), mruby, etc. But since there are a lot of popular code examples available for Arduino IDE esp32, I personally recommend getting started and working with Arduino. </p>
+<p>The language used in Arduino is C++, and the C++ program is written to esp32 board using python (esptool.py).  </p>
+<p>To setup Arduino:</p>
+<p>1. Download the linux installation files from <a href="https://www.arduino.cc/en/software">https://www.arduino.cc/en/software</a>
+2. Extract the contents of the file downloaded ( a .tar.xz) to the home folder
+3. Open terminal
+4. <code>cd ~/&amp;lt;folder_name&amp;gt;`` 5. </code>sh install.sh`</p>
+<p>This would install Arduino IDE in your computer, after which connect the esp32 device to your computer USB port.
+Now do <code>ls -l /dev/ttyUSB*</code>. You will see the USB port number to which you have connected the board.</p>
+<p>The output would look like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">crw-rw---- <span class="m">1</span> root dialout 188, <span class="m">0</span> <span class="m">5</span> apr 23.01 ttyUSB0
+</code></pre></td></tr></table>
+</div>
+</div><p>You need to add your logged in user to the group dialout for the IDE to be able to access the board. So run the following command.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo usermod -a -G dialout &lt;username&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>You will have to log out and log back in for the settings to take hold, you could also quickly restart your computer if you wish.</p>
+<p>Once this is done, you can open up your <code>Arduino IDE</code></p>
+<p><img src="/images/esp32_linux/Aurdino_ide.png" alt="Arduino IDE"></p>
+<p>Next step is to add the board details to the Arduino IDE.</p>
+<p>To do that, go to:</p>
+<ol>
+<li>File &gt; Preference</li>
+<li>In the section additional boards manager URL text box, paste the following urls:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
+</code></pre></td></tr></table>
+</div>
+</div>``</li>
+</ol>
+<p>Now this will load a log of ESP32 and ESP8266 board details and chances are this would have your board as well.</p>
+<p><img src="/images/esp32_linux/different_boards.png" alt="Different Board"></p>
+<p>I selected the ESP32 Dev Module in the list.</p>
+<p>Now, since we have our board selected, we can run some examples. When we added the preference URL, along with getting the board details it also got some examples. A good code to get started with is the wifi scan. To load the program go to <code>file &gt; examples &gt; Under Heading Examples for ESP32 Dev Modules &gt; WiFi &gt; Wifi Scan</code></p>
+<p>A window will open up with the code example.</p>
+<p>Click the right arrow and it will start writing the code to the board.</p>
+<p><img src="/images/esp32_linux/compile_and_write_to_board.png" alt="compile_and_write_to_board.png"></p>
+<p>Once you get started you might/will (depending on the board) see this following error.</p>
+<p><img src="/images/esp32_linux/chip_download_mode_error.png" alt="chip_download_mode_error.png"></p>
+<p>Failed to connected to ESP32: Wrong boot mode detected (0x13)! The chip needs to be in download mode.</p>
+<p>What this means is that you need to enable the download mode on the chip, and to do that you need to click and hold the boot button on the board while the program tries to upload the program. The below image is where the button is on my board, it would most probably be the same for you as well.</p>
+<p><img src="/images/esp32_linux/boot_button.png" alt="boot_button.png"></p>
+<p>Now when you click the right button, you will see that it is overwriting what ever existing program it might be having.</p>
+<p>To see the output of your work, click the magnifying glass on the top right corner of your Arduino board.
+<img src="/images/esp32_linux/serial_monitor.png" alt="serial_monitor.png"></p>
+<p>That Serial monitor, click the other button on your board and your program will now be running and it will slowly start to display all the wifi networks it can see.</p>
+<p>There are other examples available as well feel free to play around with your board, and build something amazing.</p>
+<p>PS: my board says ESP32-WROOM, its not that much different from ESP32 it just has more flash memory.</p>
+<p>Code to control the onboard LED Light:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#define ONBOARD_LED  2
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">ONBOARD_LED</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ONBOARD_LED</span><span class="p">,</span><span class="n">HIGH</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ONBOARD_LED</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Code to control the onboard LED light using a HTTP server</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++">
+<span class="cp">#include</span> <span class="cpf">&lt;WiFi.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;WiFiClient.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;WebServer.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;ESPmDNS.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ssid</span> <span class="o">=</span> <span class="s">&#34;DragonStone&#34;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">password</span> <span class="o">=</span> <span class="s">&#34;passwordillak3t0&#34;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">onboardLed</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="n">WebServer</span> <span class="nf">server</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
+
+
+<span class="kt">void</span> <span class="nf">handleRoot</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">String</span> <span class="n">index</span> <span class="o">=</span> <span class="s">&#34;&lt;html&gt;\
+</span><span class="s">  &lt;head&gt;\
+</span><span class="s">    &lt;meta http-equiv=&#39;refresh&#39; content=&#39;5&#39;/&gt;\
+</span><span class="s">    &lt;title&gt;ESP32 LED Controller&lt;/title&gt;\
+</span><span class="s">    &lt;style&gt;\
+</span><span class="s">      body { background-color: #cccccc; font-family: Arial, Helvetica, Sans-Serif; Color: #000088; }\
+</span><span class="s">    &lt;/style&gt;\
+</span><span class="s">  &lt;/head&gt;\
+</span><span class="s">  &lt;body&gt;\
+</span><span class="s">    &lt;h1&gt;Hello from ESP32!&lt;/h1&gt;\
+</span><span class="s">    &lt;p&gt;&lt;a href=&#39;/on&#39;&gt;ON&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;a href=&#39;/off&#39;&gt;off&lt;/a&gt;\
+</span><span class="s">  &lt;/body&gt;\
+</span><span class="s">&lt;/html&gt;&#34;</span><span class="p">;</span>
+  <span class="n">server</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s">&#34;text/html&#34;</span><span class="p">,</span> <span class="n">index</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">handleNotFound</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&#34;File Not Found</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="n">message</span> <span class="o">+=</span> <span class="s">&#34;URI: &#34;</span><span class="p">;</span>
+  <span class="n">message</span> <span class="o">+=</span> <span class="n">server</span><span class="p">.</span><span class="n">uri</span><span class="p">();</span>
+  <span class="n">message</span> <span class="o">+=</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">Method: &#34;</span><span class="p">;</span>
+  <span class="n">message</span> <span class="o">+=</span> <span class="p">(</span><span class="n">server</span><span class="p">.</span><span class="n">method</span><span class="p">()</span> <span class="o">==</span> <span class="n">HTTP_GET</span><span class="p">)</span> <span class="o">?</span> <span class="s">&#34;GET&#34;</span> <span class="o">:</span> <span class="s">&#34;POST&#34;</span><span class="p">;</span>
+  <span class="n">message</span> <span class="o">+=</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">Arguments: &#34;</span><span class="p">;</span>
+  <span class="n">message</span> <span class="o">+=</span> <span class="n">server</span><span class="p">.</span><span class="n">args</span><span class="p">();</span>
+  <span class="n">message</span> <span class="o">+=</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">server</span><span class="p">.</span><span class="n">args</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">message</span> <span class="o">+=</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">server</span><span class="p">.</span><span class="n">argName</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#34;: &#34;</span> <span class="o">+</span> <span class="n">server</span><span class="p">.</span><span class="n">arg</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">server</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s">&#34;text/plain&#34;</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">onboardLed</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">onboardLed</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+  <span class="n">WiFi</span><span class="p">.</span><span class="n">mode</span><span class="p">(</span><span class="n">WIFI_STA</span><span class="p">);</span>
+  <span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span> <span class="n">password</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">onboardLed</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+
+  <span class="c1">// Wait for connection
+</span><span class="c1"></span>  <span class="k">while</span> <span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;.&#34;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Connected to &#34;</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;IP address: &#34;</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">localIP</span><span class="p">());</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">MDNS</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="s">&#34;esp32&#34;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;MDNS responder started&#34;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">server</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="n">handleRoot</span><span class="p">);</span>
+  <span class="n">server</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="s">&#34;/on&#34;</span><span class="p">,</span> <span class="p">[]()</span> <span class="p">{</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">onboardLed</span><span class="p">,</span><span class="n">HIGH</span><span class="p">);</span>
+    <span class="n">server</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s">&#34;text/html&#34;</span><span class="p">,</span> <span class="s">&#34;led is ON. &lt;br&gt;&lt;a href=&#39;/&#39;&gt;Go Back&lt;/a&gt;&#34;</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="n">server</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="s">&#34;/off&#34;</span><span class="p">,</span> <span class="p">[]()</span> <span class="p">{</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">onboardLed</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span>
+    <span class="n">server</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s">&#34;text/html&#34;</span><span class="p">,</span> <span class="s">&#34;led is off. &lt;br&gt;&lt;a href=&#39;/&#39;&gt;Go Back&lt;/a&gt;&#34;</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="n">server</span><span class="p">.</span><span class="n">onNotFound</span><span class="p">(</span><span class="n">handleNotFound</span><span class="p">);</span>
+  <span class="n">server</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;HTTP server started&#34;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">server</span><span class="p">.</span><span class="n">handleClient</span><span class="p">();</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="c1">//allow the cpu to switch to other tasks
+</span><span class="c1"></span><span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Happy Codding</p>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/esp32/">esp32</a>
+          <a href="/tags/micro-controller/">micro controller</a>
+          <a href="/tags/arduino/">arduino</a>
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/programming/">programming</a>
+          <a href="/tags/c&#43;&#43;/">c&#43;&#43;</a>
+          <a href="/tags/python/">python</a>
+          <a href="/tags/wifi/">wifi</a>
+          <a href="/tags/bluetooth/">bluetooth</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/amazing-emoji-keyboard-in-linux/">
+            <span class="next-text nav-default">Amazing Emoji Keyboard in Linux</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'hsps-in';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
+  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2011 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-39547141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

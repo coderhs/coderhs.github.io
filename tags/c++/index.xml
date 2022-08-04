@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c&#43;&#43; on Harisankar P S | HsPS.in</title>
+    <link>https://hsps.in/tags/c&#43;&#43;/</link>
+    <description>Recent content in c&#43;&#43; on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 04 Aug 2022 00:42:04 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started With ESP 32 Development</title>
+      <link>https://hsps.in/post/getting-started-with-esp-32-linux/</link>
+      <pubDate>Thu, 04 Aug 2022 00:42:04 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/getting-started-with-esp-32-linux/</guid>
+      <description>&lt;p&gt;ESP 32 is a series of low-cost, low-power system on chip micro controllers with integrated Wi-FI and Bluetooth. SoC or system on chip is an integrated circuit that integrates all or most of the component of a computer. Example the CPU, RAM, IO interface, GPU, etc. This form is becoming more and more popular thanks to growing smartphone and computing industry. Apple M1 chip is a good example on the direction in which SoC&amp;rsquo;s are going.&lt;/p&gt;
+&lt;p&gt;The ESP 32 is really low cost it cost like 350 in India, and less than 10$ in the US. Now when you buy this you don&amp;rsquo;t buy the chip alone, but a chip on a development board. There are several articles (&lt;a href=&#34;https://makeradvisor.com/esp32-development-boards-review-comparison/&#34;&gt;https://makeradvisor.com/esp32-development-boards-review-comparison/&lt;/a&gt;) on that. The board that I bought from amazon was this &lt;a href=&#34;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;, i also bought one with OLED display as well &lt;a href=&#34;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this article I will be talking about how to get started. We will basically will be setting up Aurdino IDE in linux, followed by flashing few sample programs like:&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
