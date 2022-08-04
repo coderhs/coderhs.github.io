@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Amazing Emoji Keyboard in Linux">
 <meta itemprop="description" content="Setup an emoji keyboard linux macOS"><meta itemprop="datePublished" content="2022-08-01T18:59:18-07:00" />
 <meta itemprop="dateModified" content="2022-08-01T18:59:18-07:00" />
-<meta itemprop="wordCount" content="455">
+<meta itemprop="wordCount" content="458">
 <meta itemprop="keywords" content="emoji,keyboard,KDE,linux,kubuntu,splatmoji,xdotool,xsel,rofi,shortcut,emoji keyboard," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Amazing Emoji Keyboard in Linux"/>
 <meta name="twitter:description" content="Setup an emoji keyboard linux macOS"/>
@@ -138,12 +138,12 @@
 
     
     <div class="post-content">
-      <p>I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developers joruney 😆. So moving from
-windows to Linux was over 13-14 years ago. I didn&rsquo;t much from the windows world other tham games and single executable
+      <p>I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developer&rsquo;s journey 😆. So moving from
+windows to Linux was over 13-14 years ago. I didn&rsquo;t do much from the windows world other than games and single executable
 files. But moving from macOS to Linux, has been a bit tough. KDE has been able to provide me with everything I want and
 more. The one thing that I missed the most was the emoji keyboard, with easy to launch shortcut.</p>
 <p>My usage of emoji was at its peak during macOS days, I used emoji for my communications, commits, function name and
-even terminal aliases. 😈 Not everyone was fan of my emoji usages, but i loved it.</p>
+even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I loved it.</p>
 <p>After moving back to linux, I missed it quite a bit and always have been on the lookout for a good substitute.
 Today, I finally found it.</p>
 <p><a href="https://github.com/cspeterson/splatmoji">https://github.com/cspeterson/splatmoji</a></p>
@@ -151,9 +151,9 @@ Today, I finally found it.</p>
 <p>Now, KDE(Kubuntu) has an emoji selector/keyboard, but the flow is not the same as in macOS.</p>
 <p>The workflow macOS has was:</p>
 <ol>
-<li>you press ctrl+shift+space</li>
-<li>the emoji keyboard open</li>
-<li>you select the emoji you want</li>
+<li>You press ctrl+shift+space</li>
+<li>The emoji keyboard opens</li>
+<li>You select the emoji you want</li>
 <li>Its pasted on the cursor location - be it terminal/document/anywhere that accepts text</li>
 </ol>
 <h2 id="installation">Installation</h2>
@@ -179,7 +179,7 @@ sudo dpkg -l splatmoji_1.2.0_all.deb
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">splatmoji copy
 </code></pre></td></tr></table>
 </div>
-</div><p>Now once tested, we need to do some customization. Followed by setting up keyboard shortcut to launch it for easy access.</p>
+</div><p>Now, once tested, we need to do some customization followed by setting up keyboard shortcut to launch it for easy access.</p>
 <h2 id="customization">Customization</h2>
 <p>create the following file: .config/splatmoji/splatmoji.config</p>
 <div class="highlight"><div class="chroma">
@@ -208,8 +208,8 @@ sudo dpkg -l splatmoji_1.2.0_all.deb
 <p><img src="/images/splatmoji_kde_shortcut/new_location.png" alt="System Shortcuts > Custom Shortcuts"></p>
 <ol start="2">
 <li><code>Edit &gt; New &gt; Global Shortcut &gt; Command/URL</code></li>
-<li>Give it a name Emoji (or anything you like)</li>
-<li>Trigger (Trigger tab): set the short cut you want, I used <code>ctrl+alt+space</code>.</li>
+<li>Give it a name or Emoji (or anything you like)</li>
+<li>Trigger (Trigger tab): set the short cut you want. I used <code>ctrl+alt+space</code>.</li>
 </ol>
 <p><img src="/images/splatmoji_kde_shortcut/trigger_tab.png" alt="Trigger tab"></p>
 <ol start="5">
@@ -217,8 +217,8 @@ sudo dpkg -l splatmoji_1.2.0_all.deb
 </ol>
 <p><img src="/images/splatmoji_kde_shortcut/action_tab.png" alt="Action tab"></p>
 <h2 id="more-emoji">More Emoji</h2>
-<p>Even though there are a lot of emoji in the repo, my usage requires more 😁.
-To feed ones greed, they can create the following folder</p>
+<p>Even though there are a lot of emojis in the repo, my usage requires more 😁.
+To feed one&rsquo;s greed, they can create the following folder.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -227,7 +227,7 @@ To feed ones greed, they can create the following folder</p>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">/home/coderhs/.local/share/splatmoji/data
 </code></pre></td></tr></table>
 </div>
-</div><p>then place emoji&rsquo;s inside a tsv file as follows. <code>&lt;Emoji source name&gt;/&lt;any_name&gt;.tsv</code></p>
+</div><p>Then place emojis inside a tsv file as follows. <code>&lt;Emoji source name&gt;/&lt;any_name&gt;.tsv</code></p>
 <p>A simple collection to add:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

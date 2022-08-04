@@ -14,7 +14,7 @@
       
       <guid>https://hsps.in/post/running-migrations-from-console/</guid>
       <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;
-&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name, it store&amp;rsquo;s the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schema&amp;rsquo;s has it rails thinks its already ran the migration. Rails look at the main / default schema to know if has ran the migrations then follow up on the rest.&lt;/p&gt;</description>
+&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
     </item>
     
     <item>

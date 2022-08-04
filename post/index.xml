@@ -13,12 +13,12 @@
       <pubDate>Mon, 01 Aug 2022 18:59:18 -0700</pubDate>
       
       <guid>https://hsps.in/post/amazing-emoji-keyboard-in-linux/</guid>
-      <description>&lt;p&gt;I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developers joruney 😆. So moving from
-windows to Linux was over 13-14 years ago. I didn&amp;rsquo;t much from the windows world other tham games and single executable
+      <description>&lt;p&gt;I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developer&amp;rsquo;s journey 😆. So moving from
+windows to Linux was over 13-14 years ago. I didn&amp;rsquo;t do much from the windows world other than games and single executable
 files. But moving from macOS to Linux, has been a bit tough. KDE has been able to provide me with everything I want and
 more. The one thing that I missed the most was the emoji keyboard, with easy to launch shortcut.&lt;/p&gt;
 &lt;p&gt;My usage of emoji was at its peak during macOS days, I used emoji for my communications, commits, function name and
-even terminal aliases. 😈 Not everyone was fan of my emoji usages, but i loved it.&lt;/p&gt;</description>
+even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I loved it.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ even terminal aliases. 😈 Not everyone was fan of my emoji usages, but i loved
       
       <guid>https://hsps.in/post/running-migrations-from-console/</guid>
       <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;
-&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name, it store&amp;rsquo;s the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schema&amp;rsquo;s has it rails thinks its already ran the migration. Rails look at the main / default schema to know if has ran the migrations then follow up on the rest.&lt;/p&gt;</description>
+&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,8 +48,8 @@ Running the following command in your console Readline::HISTORY.to_a returns the
       
       <guid>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</guid>
       <description>This tutorial or concept uses two softwares to make remote coding on your home machine possible.
- Tailscale code-server  Tailscale is basically a VPN using open source wireguard protocol. It created an encrypted point to point connections so that only your devices can talk to each other.
-So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if there are on a same network.</description>
+ Tailscale code-server  Tailscale is basically a VPN using open source wireguard protocol. It creates an encrypted point to point connection so that only your devices can talk to each other.
+So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if they are on a same network.</description>
     </item>
     
     <item>

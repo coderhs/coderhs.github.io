@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Remote Coding Using Tailscale and Code Server">
 <meta itemprop="description" content="Coding in your dev machine from your tablet/phone remotely"><meta itemprop="datePublished" content="2022-07-03T13:52:46-07:00" />
 <meta itemprop="dateModified" content="2022-07-03T13:52:46-07:00" />
-<meta itemprop="wordCount" content="329">
+<meta itemprop="wordCount" content="328">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Remote Coding Using Tailscale and Code Server"/>
 <meta name="twitter:description" content="Coding in your dev machine from your tablet/phone remotely"/>
@@ -148,18 +148,18 @@
 <li>Tailscale</li>
 <li>code-server</li>
 </ol>
-<p><a href="https://tailscale.com">Tailscale</a> is basically a VPN using open source wireguard protocol. It created an encrypted point to point connections so that only your devices can talk to each other.</p>
-<p>So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if there are on a same network.</p>
+<p><a href="https://tailscale.com">Tailscale</a> is basically a VPN using open source wireguard protocol. It creates an encrypted point to point connection so that only your devices can talk to each other.</p>
+<p>So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if they are on a same network.</p>
 <p>Tailscale provides a web interface and the setup makes it really simple, that anyone and everyone can easily get started.</p>
-<p>Now since the two computers are on a network, you can run a web based on non web based service on a port and one machine can access it in the other machine.</p>
+<p>Now since the two computers are on a network, you can run a web based or non web based service on a port and one machine can access it in the other machine.</p>
 <p>The positives I like about tailscale:</p>
 <ol>
-<li>No need for extra or special security/authentication you just need to make sure there are members of this network.</li>
+<li>No need for extra or special security/authentication. You just need to make sure they are members of this network.</li>
 <li>You can easily disable and remove access to this network.</li>
-<li>You can define two exit notes and make the machines access internet using one of your machines. If you have a machine in India and one in US. You can easily make your whole network as if they are accessing web from India / USA. Really good with accessing the pesky geographic based access restricted website and mobile applications.</li>
+<li>You can define two exit notes and make the machines' access internet using one of your machines. If you have a machine in India and one in US. You can easily make your whole network as if they are accessing web from India / USA. Really good with accessing the pesky geographic based access restricted website and mobile applications.</li>
 <li>So easy to install and configure. (Learning curve is straight line)</li>
 </ol>
-<p><a href="https://github.com/coder/code-server">Code Server</a> is a basically a vscode as web service, that can be accessed over the web browser. VScode is an electron app written using typescript(javascript) so the experience is almost as same as the native/desktop application. The issue is that I haven&rsquo;t been able to make the settings sync work seamlessly yet. The plugins I could find used gist and github to share the json file, hence requires extra steps compared to just logging into github which is available in github and github code spaces.</p>
+<p><a href="https://github.com/coder/code-server">Code Server</a> is basically a vscode as web service, that can be accessed over the web browser. VScode is an electron app written using typescript(javascript) so the experience is almost as same as the native/desktop application. The issue is that I haven&rsquo;t been able to make the settings sync work seamlessly yet. The plugins I could find used gist and github to share the json file, hence requires extra steps compared to just logging into github which is available in github and github code spaces.</p>
 <p>Alternatives:</p>
 <ul>
 <li>VSCode-server: <a href="https://github.com/gitpod-io/openvscode-server">https://github.com/gitpod-io/openvscode-server</a></li>

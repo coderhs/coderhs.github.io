@@ -14,8 +14,8 @@
       
       <guid>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</guid>
       <description>This tutorial or concept uses two softwares to make remote coding on your home machine possible.
- Tailscale code-server  Tailscale is basically a VPN using open source wireguard protocol. It created an encrypted point to point connections so that only your devices can talk to each other.
-So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if there are on a same network.</description>
+ Tailscale code-server  Tailscale is basically a VPN using open source wireguard protocol. It creates an encrypted point to point connection so that only your devices can talk to each other.
+So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if they are on a same network.</description>
     </item>
     
   </channel>
