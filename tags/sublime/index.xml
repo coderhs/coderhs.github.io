@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sublime on Harisankar P S | HsPS.in</title>
+    <link>https://hsps.in/tags/sublime/</link>
+    <description>Recent content in sublime on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 May 2013 00:00:00 -0530</lastBuildDate><atom:link href="https://hsps.in/tags/sublime/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open and View the Source Code of a Gem</title>
+      <link>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</link>
+      <pubDate>Thu, 23 May 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</guid>
+      <description>&lt;p&gt;Now this is a small blog post, issued in  interest of  the beginners. On how to open and video the code of a ruby gem you are using.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

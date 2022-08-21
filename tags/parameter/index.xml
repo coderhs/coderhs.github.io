@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>parameter on Harisankar P S | HsPS.in</title>
+    <link>https://hsps.in/tags/parameter/</link>
+    <description>Recent content in parameter on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Sep 2013 00:00:00 -0530</lastBuildDate><atom:link href="https://hsps.in/tags/parameter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Splat Operator in Ruby</title>
+      <link>https://hsps.in/post/splat-operator-in-ruby/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/splat-operator-in-ruby/</guid>
+      <description>&lt;p&gt;Ruby splat operator (*variable) is used to convert an array of elements into an argument list.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

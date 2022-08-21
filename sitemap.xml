@@ -24,7 +24,7 @@
   
   <url>
     <loc>https://hsps.in/categories/</loc>
-    <lastmod>2022-08-04T00:42:04-07:00</lastmod>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -52,7 +52,7 @@
   
   <url>
     <loc>https://hsps.in/</loc>
-    <lastmod>2022-08-04T00:42:04-07:00</lastmod>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,7 +73,7 @@
   
   <url>
     <loc>https://hsps.in/post/</loc>
-    <lastmod>2022-08-04T00:42:04-07:00</lastmod>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -94,7 +94,7 @@
   
   <url>
     <loc>https://hsps.in/tags/</loc>
-    <lastmod>2022-08-04T00:42:04-07:00</lastmod>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -269,7 +269,7 @@
   
   <url>
     <loc>https://hsps.in/categories/ruby/</loc>
-    <lastmod>2022-07-17T13:15:49-07:00</lastmod>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -590,6 +590,188 @@
   </url>
   
   <url>
+    <loc>https://hsps.in/tags/active/</loc>
+    <lastmod>2014-08-20T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/adequate/</loc>
+    <lastmod>2014-08-20T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/global/</loc>
+    <lastmod>2014-08-20T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/id/</loc>
+    <lastmod>2014-08-20T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/job/</loc>
+    <lastmod>2014-08-20T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/review/</loc>
+    <lastmod>2014-08-20T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/review-on-rail-4.3.0-beta/</loc>
+    <lastmod>2014-08-20T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/argument/</loc>
+    <lastmod>2013-09-25T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/code/</loc>
+    <lastmod>2013-09-25T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/parameter/</loc>
+    <lastmod>2013-09-25T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/ruby-2.0/</loc>
+    <lastmod>2013-09-25T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/splat/</loc>
+    <lastmod>2013-09-25T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/splat-operator-in-ruby/</loc>
+    <lastmod>2013-09-25T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/convert-short-urls-to-long-urls/</loc>
+    <lastmod>2013-06-11T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/harisankar/</loc>
+    <lastmod>2013-06-11T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/network/</loc>
+    <lastmod>2013-06-11T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/p/</loc>
+    <lastmod>2013-06-11T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/s/</loc>
+    <lastmod>2013-06-11T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/scirpt/</loc>
+    <lastmod>2013-06-11T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/twitter/</loc>
+    <lastmod>2013-06-11T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/url/</loc>
+    <lastmod>2013-06-11T00:00:00-05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/development/</loc>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/gem/</loc>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</loc>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/sublime/</loc>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/vscode/</loc>
+    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/post/when-my-alarm-was-found-to-be-not-working/</loc>
     <lastmod>2020-09-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -725,6 +907,24 @@
   <url>
     <loc>https://hsps.in/post/puts-hello-world/</loc>
     <lastmod>2012-01-14T00:07:30-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/4.2.0./</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/record./</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/ruby-1.9./</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -245,6 +245,44 @@ I have been programming or aspiring to program (former/recovering imposter syndr
     </item>
     
     <item>
+      <title>Review on Rail 4.3.0 Beta</title>
+      <link>https://hsps.in/post/review-on-rail-4.3.0-beta/</link>
+      <pubDate>Wed, 20 Aug 2014 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/review-on-rail-4.3.0-beta/</guid>
+      <description>&lt;p&gt;Active Job, deliver later will give us a lot of abstraction. One will have to move the business logic present in workers to models or services, but that would make our system more maintainable. If the Active Job is a simple plug and play then in future projects one can use delayed_job when the load is light and when the load increases they can shift to redis based resque or sidekiq. Thinking of migrating from one system to another always give the developers a head ache. This can essentially solve it. Active Job was planned to be a feature in rails 4.0 but later they decided not. I am glad that they are releasing it in 4.2&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Splat Operator in Ruby</title>
+      <link>https://hsps.in/post/splat-operator-in-ruby/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/splat-operator-in-ruby/</guid>
+      <description>&lt;p&gt;Ruby splat operator (*variable) is used to convert an array of elements into an argument list.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Convert Short Urls to Long Urls</title>
+      <link>https://hsps.in/post/convert-short-urls-to-long-urls/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/convert-short-urls-to-long-urls/</guid>
+      <description>&lt;p&gt;How to get a long/actual url from a short url?&lt;/p&gt;
+&lt;p&gt;Sometimes when we try to fetch short urls, using curl, we get a blank page as reply or a 301 ERROR. The reason being that there is no html file stored at that location,only a header with details ,on where the person who has opened the url would be redirected to.&lt;/p&gt;
+&lt;p&gt;So to get the actual url or long url from the short url, we just have to read the location stored in the html header.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open and View the Source Code of a Gem</title>
+      <link>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</link>
+      <pubDate>Thu, 23 May 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</guid>
+      <description>&lt;p&gt;Now this is a small blog post, issued in  interest of  the beginners. On how to open and video the code of a ruby gem you are using.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>When My Alarm Was Found to Be Not Working</title>
       <link>https://hsps.in/post/when-my-alarm-was-found-to-be-not-working/</link>
       <pubDate>Fri, 15 Mar 2013 00:00:00 +0000</pubDate>

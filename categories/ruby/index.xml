@@ -18,6 +18,24 @@ Running the following command in your console Readline::HISTORY.to_a returns the
     </item>
     
     <item>
+      <title>Splat Operator in Ruby</title>
+      <link>https://hsps.in/post/splat-operator-in-ruby/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/splat-operator-in-ruby/</guid>
+      <description>&lt;p&gt;Ruby splat operator (*variable) is used to convert an array of elements into an argument list.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open and View the Source Code of a Gem</title>
+      <link>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</link>
+      <pubDate>Thu, 23 May 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</guid>
+      <description>&lt;p&gt;Now this is a small blog post, issued in  interest of  the beginners. On how to open and video the code of a ruby gem you are using.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Install Ruby via Source Ubuntu</title>
       <link>https://hsps.in/post/install-ruby-via-source-ubuntu/</link>
       <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>

@@ -28,6 +28,15 @@ Running the following command in your console Readline::HISTORY.to_a returns the
     </item>
     
     <item>
+      <title>Review on Rail 4.3.0 Beta</title>
+      <link>https://hsps.in/post/review-on-rail-4.3.0-beta/</link>
+      <pubDate>Wed, 20 Aug 2014 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/review-on-rail-4.3.0-beta/</guid>
+      <description>&lt;p&gt;Active Job, deliver later will give us a lot of abstraction. One will have to move the business logic present in workers to models or services, but that would make our system more maintainable. If the Active Job is a simple plug and play then in future projects one can use delayed_job when the load is light and when the load increases they can shift to redis based resque or sidekiq. Thinking of migrating from one system to another always give the developers a head ache. This can essentially solve it. Active Job was planned to be a feature in rails 4.0 but later they decided not. I am glad that they are releasing it in 4.2&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Model Update_attribute Update_attributes</title>
       <link>https://hsps.in/post/model-update_attribute-update_attributes/</link>
       <pubDate>Wed, 23 Jan 2013 00:00:00 +0000</pubDate>

@@ -19,6 +19,17 @@
     </item>
     
     <item>
+      <title>Convert Short Urls to Long Urls</title>
+      <link>https://hsps.in/post/convert-short-urls-to-long-urls/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/convert-short-urls-to-long-urls/</guid>
+      <description>&lt;p&gt;How to get a long/actual url from a short url?&lt;/p&gt;
+&lt;p&gt;Sometimes when we try to fetch short urls, using curl, we get a blank page as reply or a 301 ERROR. The reason being that there is no html file stored at that location,only a header with details ,on where the person who has opened the url would be redirected to.&lt;/p&gt;
+&lt;p&gt;So to get the actual url or long url from the short url, we just have to read the location stored in the html header.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Create Your Own Ubuntu</title>
       <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>

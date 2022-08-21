@@ -38,6 +38,26 @@ Running the following command in your console Readline::HISTORY.to_a returns the
     </item>
     
     <item>
+      <title>Splat Operator in Ruby</title>
+      <link>https://hsps.in/post/splat-operator-in-ruby/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/splat-operator-in-ruby/</guid>
+      <description>&lt;p&gt;Ruby splat operator (*variable) is used to convert an array of elements into an argument list.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Convert Short Urls to Long Urls</title>
+      <link>https://hsps.in/post/convert-short-urls-to-long-urls/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/convert-short-urls-to-long-urls/</guid>
+      <description>&lt;p&gt;How to get a long/actual url from a short url?&lt;/p&gt;
+&lt;p&gt;Sometimes when we try to fetch short urls, using curl, we get a blank page as reply or a 301 ERROR. The reason being that there is no html file stored at that location,only a header with details ,on where the person who has opened the url would be redirected to.&lt;/p&gt;
+&lt;p&gt;So to get the actual url or long url from the short url, we just have to read the location stored in the html header.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>When My Alarm Was Found to Be Not Working</title>
       <link>https://hsps.in/post/when-my-alarm-was-found-to-be-not-working/</link>
       <pubDate>Fri, 15 Mar 2013 00:00:00 +0000</pubDate>

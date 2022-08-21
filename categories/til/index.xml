@@ -46,5 +46,14 @@ Running the following command in your console Readline::HISTORY.to_a returns the
 1 2 3  def Test puts &amp;#39;testing 123&amp;#39; end   And when I ran to call the method Test in the irb i got the following error.</description>
     </item>
     
+    <item>
+      <title>Splat Operator in Ruby</title>
+      <link>https://hsps.in/post/splat-operator-in-ruby/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/splat-operator-in-ruby/</guid>
+      <description>&lt;p&gt;Ruby splat operator (*variable) is used to convert an array of elements into an argument list.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>
