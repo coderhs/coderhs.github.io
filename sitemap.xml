@@ -2,6 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/tags/advice/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/engineering/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/non-tech/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/startup/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/startup/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/thoughts/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/thoughts/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/which-language-should-build-this-software-in/</loc>
+    <lastmod>2022-08-22T17:43:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/tags/arduino/</loc>
     <lastmod>2022-08-04T00:42:04-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -18,13 +102,6 @@
   <url>
     <loc>https://hsps.in/tags/c&#43;&#43;/</loc>
     <lastmod>2022-08-04T00:42:04-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/</loc>
-    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -51,13 +128,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/linux./</loc>
     <lastmod>2022-08-04T00:42:04-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -72,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/programming/</loc>
     <lastmod>2022-08-04T00:42:04-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -88,13 +151,6 @@
   <url>
     <loc>https://hsps.in/tags/python/</loc>
     <lastmod>2022-08-04T00:42:04-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
-    <lastmod>2022-08-20T22:22:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -548,20 +604,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/categories/thoughts/</loc>
-    <lastmod>2020-09-13T18:42:35-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/thoughts/</loc>
-    <lastmod>2020-09-13T18:42:35-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/post/what-you-learn-from-binge-watching/</loc>
     <lastmod>2020-09-13T18:42:35-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -821,6 +863,125 @@
   </url>
   
   <url>
+    <loc>https://hsps.in/tags/cache/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/centos/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/downloadonly/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/install/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/local/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/mirror/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/packages/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/red-hat/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/redhat/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/repositories/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/rhce/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/rpm/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/rpm/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/store-rpm-packages-in-cache/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/tutorial/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/update/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/yum/</loc>
+    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/post/create-your-own-ubuntu/</loc>
     <lastmod>2012-01-25T00:07:30-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -843,13 +1004,6 @@
   
   <url>
     <loc>https://hsps.in/tags/download/</loc>
-    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/install/</loc>
     <lastmod>2012-01-25T00:07:30-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

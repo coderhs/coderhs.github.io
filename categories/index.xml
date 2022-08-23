@@ -6,7 +6,25 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Aug 2022 00:42:04 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 17:43:43 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>startup</title>
+      <link>https://hsps.in/categories/startup/</link>
+      <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/startup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thoughts</title>
+      <link>https://hsps.in/categories/thoughts/</link>
+      <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/thoughts/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>esp32</title>
       <link>https://hsps.in/categories/esp32/</link>
@@ -161,15 +179,6 @@
     </item>
     
     <item>
-      <title>Thoughts</title>
-      <link>https://hsps.in/categories/thoughts/</link>
-      <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
-      
-      <guid>https://hsps.in/categories/thoughts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>review</title>
       <link>https://hsps.in/categories/review/</link>
       <pubDate>Wed, 20 Aug 2014 00:00:00 -0530</pubDate>
@@ -202,6 +211,24 @@
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>https://hsps.in/categories/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>red-hat</title>
+      <link>https://hsps.in/categories/red-hat/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/categories/red-hat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rpm</title>
+      <link>https://hsps.in/categories/rpm/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/categories/rpm/</guid>
       <description></description>
     </item>
     

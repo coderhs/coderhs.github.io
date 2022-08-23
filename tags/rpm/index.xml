@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RPM on Harisankar P S | HsPS.in</title>
+    <link>https://hsps.in/tags/rpm/</link>
+    <description>Recent content in RPM on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 Jan 2012 00:00:00 -0530</lastBuildDate><atom:link href="https://hsps.in/tags/rpm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Store RPM Packages in Cache</title>
+      <link>https://hsps.in/post/store-rpm-packages-in-cache/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/store-rpm-packages-in-cache/</guid>
+      <description>&lt;p&gt;Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.&lt;/p&gt;
+&lt;p&gt;Want to keep those packages in your system, and maybe create a local repository?&lt;/p&gt;
+&lt;p&gt;Well there are several ways. Simplest of them would be to edit the yum configuration file.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

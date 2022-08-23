@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Aug 2022 00:42:04 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 17:43:43 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>advice</title>
+      <link>https://hsps.in/tags/advice/</link>
+      <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/advice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>engineering</title>
+      <link>https://hsps.in/tags/engineering/</link>
+      <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>non tech</title>
+      <link>https://hsps.in/tags/non-tech/</link>
+      <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/non-tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>startup</title>
+      <link>https://hsps.in/tags/startup/</link>
+      <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/startup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>thoughts</title>
+      <link>https://hsps.in/tags/thoughts/</link>
+      <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/thoughts/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>arduino</title>
       <link>https://hsps.in/tags/arduino/</link>
@@ -359,15 +404,6 @@
     </item>
     
     <item>
-      <title>thoughts</title>
-      <link>https://hsps.in/tags/thoughts/</link>
-      <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/thoughts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Tech</title>
       <link>https://hsps.in/tags/tech/</link>
       <pubDate>Sun, 01 May 2016 00:00:00 +0530</pubDate>
@@ -557,6 +593,132 @@
     </item>
     
     <item>
+      <title>cache</title>
+      <link>https://hsps.in/tags/cache/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/cache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos</title>
+      <link>https://hsps.in/tags/centos/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>downloadonly</title>
+      <link>https://hsps.in/tags/downloadonly/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/downloadonly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>install</title>
+      <link>https://hsps.in/tags/install/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>local</title>
+      <link>https://hsps.in/tags/local/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/local/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mirror</title>
+      <link>https://hsps.in/tags/mirror/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/mirror/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>packages</title>
+      <link>https://hsps.in/tags/packages/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/packages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redhat</title>
+      <link>https://hsps.in/tags/redhat/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/redhat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>repositories</title>
+      <link>https://hsps.in/tags/repositories/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/repositories/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RHCE</title>
+      <link>https://hsps.in/tags/rhce/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/rhce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RPM</title>
+      <link>https://hsps.in/tags/rpm/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/rpm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://hsps.in/tags/tutorial/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>update</title>
+      <link>https://hsps.in/tags/update/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/update/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yum</title>
+      <link>https://hsps.in/tags/yum/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/tags/yum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>default</title>
       <link>https://hsps.in/tags/default/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
@@ -571,15 +733,6 @@
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       
       <guid>https://hsps.in/tags/download/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>install</title>
-      <link>https://hsps.in/tags/install/</link>
-      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/install/</guid>
       <description></description>
     </item>
     

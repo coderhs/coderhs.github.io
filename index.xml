@@ -6,7 +6,19 @@
     <description>Recent content on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Aug 2022 00:42:04 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 17:43:43 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Which Language Should Build This Software In</title>
+      <link>https://hsps.in/post/which-language-should-build-this-software-in/</link>
+      <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/which-language-should-build-this-software-in/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Which Language Should Build This Software In?&lt;/strong&gt; or &lt;strong&gt;Which language should I have this software developed In?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is a question that software devs gets asked a lot by there friends/colleague who are not part of the software industry. This is my answer to them:&lt;/p&gt;
+&lt;p&gt;If you had an idea of a novel? or a poem? which language will you write it in. Italian, Tamil, Bengali? Would you try to learn a new language because there are a lot of similar novels (anime) in Chinese or Japanese.&lt;/p&gt;
+&lt;p&gt;The best language to write your novel is the language you know the most.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Getting Started With ESP 32 Development</title>
       <link>https://hsps.in/post/getting-started-with-esp-32-linux/</link>
@@ -339,6 +351,17 @@ I have been programming or aspiring to program (former/recovering imposter syndr
 &lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In ubuntu you can have these libraries installed via the command line ( or if you are so old fashion you may google and find the source code for these packages as well)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Store RPM Packages in Cache</title>
+      <link>https://hsps.in/post/store-rpm-packages-in-cache/</link>
+      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
+      
+      <guid>https://hsps.in/post/store-rpm-packages-in-cache/</guid>
+      <description>&lt;p&gt;Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.&lt;/p&gt;
+&lt;p&gt;Want to keep those packages in your system, and maybe create a local repository?&lt;/p&gt;
+&lt;p&gt;Well there are several ways. Simplest of them would be to edit the yum configuration file.&lt;/p&gt;</description>
     </item>
     
     <item>
