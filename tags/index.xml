@@ -6,7 +6,88 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Aug 2022 17:43:43 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 21:27:34 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>best practice</title>
+      <link>https://hsps.in/tags/best-practice/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/best-practice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dry-schema</title>
+      <link>https://hsps.in/tags/dry-schema/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/dry-schema/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dry-validation</title>
+      <link>https://hsps.in/tags/dry-validation/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/dry-validation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ruby</title>
+      <link>https://hsps.in/tags/ruby/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>schema</title>
+      <link>https://hsps.in/tags/schema/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/schema/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software engineering</title>
+      <link>https://hsps.in/tags/software-engineering/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>structure</title>
+      <link>https://hsps.in/tags/structure/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>toml</title>
+      <link>https://hsps.in/tags/toml/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/toml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yaml</title>
+      <link>https://hsps.in/tags/yaml/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/yaml/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>advice</title>
       <link>https://hsps.in/tags/advice/</link>
@@ -265,15 +346,6 @@
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
       
       <guid>https://hsps.in/tags/til/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ruby</title>
-      <link>https://hsps.in/tags/ruby/</link>
-      <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/ruby/</guid>
       <description></description>
     </item>
     

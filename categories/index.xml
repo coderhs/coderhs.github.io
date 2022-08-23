@@ -6,7 +6,34 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Aug 2022 17:43:43 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 21:27:34 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gems</title>
+      <link>https://hsps.in/categories/gems/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/gems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ruby</title>
+      <link>https://hsps.in/categories/ruby/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yaml</title>
+      <link>https://hsps.in/categories/yaml/</link>
+      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/yaml/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>startup</title>
       <link>https://hsps.in/categories/startup/</link>
@@ -67,15 +94,6 @@
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
       
       <guid>https://hsps.in/categories/irb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ruby</title>
-      <link>https://hsps.in/categories/ruby/</link>
-      <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
-      
-      <guid>https://hsps.in/categories/ruby/</guid>
       <description></description>
     </item>
     
