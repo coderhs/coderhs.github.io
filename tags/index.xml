@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Aug 2022 21:27:34 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Sep 2022 11:36:43 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dns</title>
+      <link>https://hsps.in/tags/dns/</link>
+      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dnsmasq</title>
+      <link>https://hsps.in/tags/dnsmasq/</link>
+      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/dnsmasq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>homelab</title>
+      <link>https://hsps.in/tags/homelab/</link>
+      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/homelab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux.</title>
+      <link>https://hsps.in/tags/linux./</link>
+      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/linux./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://hsps.in/tags/server/</link>
+      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/server/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>best practice</title>
       <link>https://hsps.in/tags/best-practice/</link>
@@ -166,15 +211,6 @@
       <pubDate>Thu, 04 Aug 2022 00:42:04 -0700</pubDate>
       
       <guid>https://hsps.in/tags/esp32/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux.</title>
-      <link>https://hsps.in/tags/linux./</link>
-      <pubDate>Thu, 04 Aug 2022 00:42:04 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/linux./</guid>
       <description></description>
     </item>
     

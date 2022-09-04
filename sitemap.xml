@@ -2,14 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hsps.in/tags/best-practice/</loc>
-    <lastmod>2022-08-22T21:27:34-07:00</lastmod>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://hsps.in/categories/</loc>
+    <loc>https://hsps.in/tags/dns/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/dnsmasq/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/homelab/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/homelab/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/linux./</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/server/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/wildcard-domain-in-pi-hole/</loc>
+    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/best-practice/</loc>
     <lastmod>2022-08-22T21:27:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -31,20 +101,6 @@
   
   <url>
     <loc>https://hsps.in/categories/gems/</loc>
-    <lastmod>2022-08-22T21:27:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2022-08-22T21:27:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
     <lastmod>2022-08-22T21:27:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -80,13 +136,6 @@
   
   <url>
     <loc>https://hsps.in/tags/structure/</loc>
-    <lastmod>2022-08-22T21:27:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2022-08-22T21:27:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -213,13 +262,6 @@
   
   <url>
     <loc>https://hsps.in/post/getting-started-with-esp-32-linux/</loc>
-    <lastmod>2022-08-04T00:42:04-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/linux./</loc>
     <lastmod>2022-08-04T00:42:04-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -409,13 +451,6 @@
   
   <url>
     <loc>https://hsps.in/categories/dev/</loc>
-    <lastmod>2022-07-03T13:52:46-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/homelab/</loc>
     <lastmod>2022-07-03T13:52:46-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

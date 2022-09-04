@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>homelab on Harisankar P S | HsPS.in</title>
-    <link>https://hsps.in/categories/homelab/</link>
+    <link>https://hsps.in/tags/homelab/</link>
     <description>Recent content in homelab on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Sep 2022 11:36:43 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Sep 2022 11:36:43 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wildcard Domain in Pi Hole</title>
       <link>https://hsps.in/post/wildcard-domain-in-pi-hole/</link>
@@ -15,17 +15,6 @@
       <guid>https://hsps.in/post/wildcard-domain-in-pi-hole/</guid>
       <description>&lt;p&gt;PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.&lt;/p&gt;
 &lt;p&gt;For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&amp;rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Remote Coding Using Tailscale and Code Server</title>
-      <link>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</link>
-      <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
-      
-      <guid>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</guid>
-      <description>This tutorial or concept uses two softwares to make remote coding on your home machine possible.
- Tailscale code-server  Tailscale is basically a VPN using open source wireguard protocol. It creates an encrypted point to point connection so that only your devices can talk to each other.
-So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if they are on a same network.</description>
     </item>
     
   </channel>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>server on Harisankar P S | HsPS.in</title>
+    <link>https://hsps.in/tags/server/</link>
+    <description>Recent content in server on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Sep 2022 11:36:43 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wildcard Domain in Pi Hole</title>
+      <link>https://hsps.in/post/wildcard-domain-in-pi-hole/</link>
+      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/wildcard-domain-in-pi-hole/</guid>
+      <description>&lt;p&gt;PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.&lt;/p&gt;
+&lt;p&gt;For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&amp;rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

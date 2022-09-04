@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Aug 2022 21:27:34 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Sep 2022 11:36:43 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>homelab</title>
+      <link>https://hsps.in/categories/homelab/</link>
+      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/homelab/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>gems</title>
       <link>https://hsps.in/categories/gems/</link>
@@ -103,15 +112,6 @@
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
       
       <guid>https://hsps.in/categories/dev/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>homelab</title>
-      <link>https://hsps.in/categories/homelab/</link>
-      <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
-      
-      <guid>https://hsps.in/categories/homelab/</guid>
       <description></description>
     </item>
     
