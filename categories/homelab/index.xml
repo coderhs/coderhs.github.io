@@ -6,7 +6,17 @@
     <description>Recent content in homelab on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Sep 2022 11:36:43 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Sep 2022 18:29:12 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup NFS Server on Ubuntu</title>
+      <link>https://hsps.in/post/setup-nfs-server-on-ubuntu/</link>
+      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/setup-nfs-server-on-ubuntu/</guid>
+      <description>&lt;p&gt;NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.&lt;/p&gt;
+&lt;p&gt;With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Wildcard Domain in Pi Hole</title>
       <link>https://hsps.in/post/wildcard-domain-in-pi-hole/</link>

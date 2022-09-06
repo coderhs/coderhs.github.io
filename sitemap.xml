@@ -3,7 +3,98 @@
   
   <url>
     <loc>https://hsps.in/categories/</loc>
-    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/docker/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/homelab/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/homelab/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/kubernetes/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/linux/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/linux./</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/nfs/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/persistance/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/setup-nfs-server-on-ubuntu/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/storage/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,49 +114,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/homelab/</loc>
-    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/homelab/</loc>
-    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/linux./</loc>
-    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/server/</loc>
-    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2022-09-04T11:36:43-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -500,13 +549,6 @@
   
   <url>
     <loc>https://hsps.in/tags/ec2/</loc>
-    <lastmod>2022-07-01T22:58:41-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/linux/</loc>
     <lastmod>2022-07-01T22:58:41-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

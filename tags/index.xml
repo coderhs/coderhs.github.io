@@ -6,7 +6,70 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Sep 2022 11:36:43 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Sep 2022 18:29:12 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>https://hsps.in/tags/docker/</link>
+      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>homelab</title>
+      <link>https://hsps.in/tags/homelab/</link>
+      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/homelab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://hsps.in/tags/kubernetes/</link>
+      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux.</title>
+      <link>https://hsps.in/tags/linux./</link>
+      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/linux./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nfs</title>
+      <link>https://hsps.in/tags/nfs/</link>
+      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/nfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>persistance</title>
+      <link>https://hsps.in/tags/persistance/</link>
+      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/persistance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>https://hsps.in/tags/storage/</link>
+      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/storage/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dns</title>
       <link>https://hsps.in/tags/dns/</link>
@@ -22,24 +85,6 @@
       <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
       
       <guid>https://hsps.in/tags/dnsmasq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>homelab</title>
-      <link>https://hsps.in/tags/homelab/</link>
-      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/homelab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux.</title>
-      <link>https://hsps.in/tags/linux./</link>
-      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/linux./</guid>
       <description></description>
     </item>
     
