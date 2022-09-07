@@ -2,22 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/tags/api/</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/categories/</loc>
-    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hsps.in/tags/docker/</loc>
-    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/docker/</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hsps.in/</loc>
-    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/http/</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/linux./</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/remote/</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/ubuntu/</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -51,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/tags/linux./</loc>
-    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/nfs/</loc>
     <lastmod>2022-09-05T18:29:12-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -72,13 +128,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/post/setup-nfs-server-on-ubuntu/</loc>
     <lastmod>2022-09-05T18:29:12-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -87,13 +136,6 @@
   
   <url>
     <loc>https://hsps.in/tags/storage/</loc>
-    <lastmod>2022-09-05T18:29:12-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2022-09-05T18:29:12-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -619,13 +661,6 @@
   
   <url>
     <loc>https://hsps.in/categories/bash/</loc>
-    <lastmod>2022-06-08T14:47:32-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/ubuntu/</loc>
     <lastmod>2022-06-08T14:47:32-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
