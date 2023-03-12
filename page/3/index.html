@@ -121,55 +121,6 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/running-migrations-from-console/">Running Migrations From Console</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-07-19 </span>
-      <div class="post-category">
-          <a href="/categories/rails/"> rails </a>
-          <a href="/categories/til/"> til </a>
-          <a href="/categories/apartment/"> Apartment </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.</p>
-<p>When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/running-migrations-from-console/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/access-history-in-irb/">Access History in IRB</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-07-17 </span>
-      <div class="post-category">
-          <a href="/categories/ruby/"> ruby </a>
-          <a href="/categories/rails/"> rails </a>
-          <a href="/categories/irb/"> irb </a>
-          <a href="/categories/til/"> til </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Accessing the list of commands you have ran in your irb or rails console.
-Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.
-    </div>
-    <div class="read-more">
-      <a href="/post/access-history-in-irb/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/remote-coding-using-tailscale-and-code-server/">Remote Coding Using Tailscale and Code Server</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2022-07-03 </span>
@@ -238,6 +189,54 @@ Note: I am talking about tools i tested in Ubuntu/Debian Linux
     </div>
     <div class="read-more">
       <a href="/post/htop-for-gpu-in-linux/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/how-i-setup-dark-theme-in-my-blog/">How I Setup Dark Theme in My Blog</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-06-12 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Dark mode or night mode is becoming more and more popular these days. As the amount of time we are spending in front of the computer increases, we started to look more into on how to improve our experience. Dark mode/Night mode is one such setting. What it does (mainly) is it makes all the white part of the application to black - major chunk of which would be the background. When the color of the background is made black, it emits less light. Now not all displays are the same, each display creates the dark color in different ways. Like:</p>
+<ul>
+<li>On an <strong><code>LCD screen</code></strong>. The liquid crystal elements block the white light from the backlight. And this results in a dark (almost black) pixel.</li>
+<li>On an <strong><code>OLED screen</code></strong>. The pixel is turned off, no light is emitted, this produces a deep black.</li>
+<li>On a <strong><code>CRT screen</code></strong>. The electron beam is turned off as it passes the pixel. Producing no phosphorescent glow.</li>
+<li>On an <strong><code>e-Ink screen</code></strong>. Little spherical beads which are half black/half white, are rotated so their black side is facing outwards.</li>
+</ul>
+<p>Regardless as you can see, darker colors results in less lights being emitted and leading to less strain to the eye. As a person who spend more time in front of a screen, I cannot fathom how useful this is. I have been a huge advocate of using night color/night mode in computer to improve developer health. Hence this article and why my blog has a dark mode now.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/how-i-setup-dark-theme-in-my-blog/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/append-to-file-using-bash/">Append to File using Bash</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-06-08 </span>
+      <div class="post-category">
+          <a href="/categories/bash/"> bash </a>
+          <a href="/categories/ubuntu/"> ubuntu </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      
+    </div>
+    <div class="read-more">
+      <a href="/post/append-to-file-using-bash/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

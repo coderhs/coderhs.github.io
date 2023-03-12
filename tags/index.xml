@@ -17,74 +17,20 @@
     </item>
     
     <item>
-      <title>context</title>
-      <link>https://hsps.in/tags/context/</link>
-      <pubDate>Wed, 07 Sep 2022 22:44:10 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/context/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>howto</title>
-      <link>https://hsps.in/tags/howto/</link>
-      <pubDate>Wed, 07 Sep 2022 22:44:10 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/howto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>remote</title>
-      <link>https://hsps.in/tags/remote/</link>
-      <pubDate>Wed, 07 Sep 2022 22:44:10 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/remote/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>api</title>
       <link>https://hsps.in/tags/api/</link>
-      <pubDate>Wed, 07 Sep 2022 20:44:23 -0700</pubDate>
+      <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
       
       <guid>https://hsps.in/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>docker engine</title>
-      <link>https://hsps.in/tags/docker-engine/</link>
-      <pubDate>Wed, 07 Sep 2022 20:44:23 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/docker-engine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker swarm</title>
-      <link>https://hsps.in/tags/docker-swarm/</link>
-      <pubDate>Wed, 07 Sep 2022 20:44:23 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/docker-swarm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>http</title>
       <link>https://hsps.in/tags/http/</link>
-      <pubDate>Wed, 07 Sep 2022 20:44:23 -0700</pubDate>
+      <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
       
       <guid>https://hsps.in/tags/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>services</title>
-      <link>https://hsps.in/tags/services/</link>
-      <pubDate>Wed, 07 Sep 2022 20:44:23 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/services/</guid>
       <description></description>
     </item>
     
@@ -94,6 +40,15 @@
       <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
       
       <guid>https://hsps.in/tags/linux./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>remote</title>
+      <link>https://hsps.in/tags/remote/</link>
+      <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/remote/</guid>
       <description></description>
     </item>
     

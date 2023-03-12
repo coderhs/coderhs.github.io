@@ -32,24 +32,6 @@ So for us to make sure that Docker uses the cache, we need to make sure that doc
     </item>
     
     <item>
-      <title>Docker Context to Manage Remote Docker</title>
-      <link>https://hsps.in/post/docker-context-to-manage-remote-docker/</link>
-      <pubDate>Wed, 07 Sep 2022 22:44:10 -0700</pubDate>
-      
-      <guid>https://hsps.in/post/docker-context-to-manage-remote-docker/</guid>
-      <description>&lt;p&gt;This guide shows how contexts make it easy for a single Docker CLI to manage multiple Swarm clusters, multiple Kubernetes clusters, and multiple individual Docker nodes.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Scale a Service in Docker by HTTP API</title>
-      <link>https://hsps.in/post/scale-a-service-in-docker-by-http-api/</link>
-      <pubDate>Wed, 07 Sep 2022 20:44:23 -0700</pubDate>
-      
-      <guid>https://hsps.in/post/scale-a-service-in-docker-by-http-api/</guid>
-      <description>&lt;p&gt;Docker can be controlved over http.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Enable Docker Remote Api on Docker Host</title>
       <link>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</link>
       <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>

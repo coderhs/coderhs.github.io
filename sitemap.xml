@@ -51,71 +51,8 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/tags/context/</loc>
-    <lastmod>2022-09-07T22:44:10-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/docker-context-to-manage-remote-docker/</loc>
-    <lastmod>2022-09-07T22:44:10-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/howto/</loc>
-    <lastmod>2022-09-07T22:44:10-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/remote/</loc>
-    <lastmod>2022-09-07T22:44:10-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/api/</loc>
-    <lastmod>2022-09-07T20:44:23-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/docker-engine/</loc>
-    <lastmod>2022-09-07T20:44:23-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/docker-swarm/</loc>
-    <lastmod>2022-09-07T20:44:23-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/http/</loc>
-    <lastmod>2022-09-07T20:44:23-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/scale-a-service-in-docker-by-http-api/</loc>
-    <lastmod>2022-09-07T20:44:23-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/services/</loc>
-    <lastmod>2022-09-07T20:44:23-07:00</lastmod>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -128,7 +65,21 @@
   </url>
   
   <url>
+    <loc>https://hsps.in/tags/http/</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/tags/linux./</loc>
+    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/remote/</loc>
     <lastmod>2022-09-06T20:21:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

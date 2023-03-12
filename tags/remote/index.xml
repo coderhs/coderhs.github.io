@@ -6,16 +6,7 @@
     <description>Recent content in remote on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Sep 2022 22:44:10 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/remote/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker Context to Manage Remote Docker</title>
-      <link>https://hsps.in/post/docker-context-to-manage-remote-docker/</link>
-      <pubDate>Wed, 07 Sep 2022 22:44:10 -0700</pubDate>
-      
-      <guid>https://hsps.in/post/docker-context-to-manage-remote-docker/</guid>
-      <description>&lt;p&gt;This guide shows how contexts make it easy for a single Docker CLI to manage multiple Swarm clusters, multiple Kubernetes clusters, and multiple individual Docker nodes.&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Tue, 06 Sep 2022 20:21:42 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/remote/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Enable Docker Remote Api on Docker Host</title>
       <link>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</link>
