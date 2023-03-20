@@ -43,12 +43,12 @@
 <meta property="og:description" content="List of things learned to reduce cost of AWS Bill" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hsps.in/post/reduce-cost-of-aws-bill-part-1/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-03-10T19:52:42-08:00" />
-<meta property="article:modified_time" content="2023-03-19T19:52:42-08:00" />
+<meta property="article:published_time" content="2023-03-19T19:52:42-07:00" />
+<meta property="article:modified_time" content="2023-03-19T20:40:42-07:00" />
 
 <meta itemprop="name" content="Reduce Cost of Aws Bill - Part 1">
-<meta itemprop="description" content="List of things learned to reduce cost of AWS Bill"><meta itemprop="datePublished" content="2023-03-10T19:52:42-08:00" />
-<meta itemprop="dateModified" content="2023-03-19T19:52:42-08:00" />
+<meta itemprop="description" content="List of things learned to reduce cost of AWS Bill"><meta itemprop="datePublished" content="2023-03-19T19:52:42-07:00" />
+<meta itemprop="dateModified" content="2023-03-19T20:40:42-07:00" />
 <meta itemprop="wordCount" content="706">
 <meta itemprop="keywords" content="AWS,Cloud,Amazon,Bill," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reduce Cost of Aws Bill - Part 1"/>
@@ -127,7 +127,7 @@
       <h1 class="post-title">Reduce Cost of Aws Bill - Part 1</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-03-10 </span>
+        <span class="post-time"> 2023-03-19 </span>
         <div class="post-category">
             <a href="/categories/aws/"> AWS </a>
             <a href="/categories/cloud/"> Cloud </a>
@@ -160,17 +160,13 @@
 <p>Upgrade the softwares we use. We upgraded Redis, PostgreSQL, web server, OS, etc. All this reduced our CPU and memory usage, for the same load. Resulting in US reducing our Server classes. The most save came from upgrading PostgreSQL from 11.x to 14.6. We are scheduled to upgrade it to 15.2 soon. Amazon only recently launched 15.2 in RDS.</p>
 </li>
 <li>
-<p>Move few of our self hosted softwares to Lightsail. AWS lightsail is a VPS services that amazon provides that allow to launch servers with more predictable cost.</p>
-<ol>
-<li>We are using Lightsail to host:
+<p>Move few of our self hosted softwares to Lightsail. AWS lightsail is a VPS services that amazon provides that allow to launch servers with more predictable cost. We are using Lightsail to host:</p>
 <ol>
 <li>ELK Cluster</li>
 <li>Redis</li>
 <li>Memcache (haven&rsquo;t we are considering)</li>
 <li>Billing System</li>
 <li>Scheduler</li>
-</ol>
-</li>
 </ol>
 </li>
 </ol>
@@ -188,13 +184,9 @@
           <a href="/tags/bill/">Bill</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/speed-up-docker-build/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Speed Up Docker Build</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/enable-docker-remote-api-on-docker-host/">
-            <span class="next-text nav-default">Enable Docker Remote Api on Docker Host</span>
+        
+        <a class="next" href="/post/speed-up-docker-build/">
+            <span class="next-text nav-default">Speed Up Docker Build</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
