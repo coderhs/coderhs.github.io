@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Harisankar P S | HsPS.in</title>
+    <link>https://hsps.in/categories/cloud/</link>
+    <description>Recent content in Cloud on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Mar 2023 19:52:42 -0800</lastBuildDate><atom:link href="https://hsps.in/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reduce Cost of Aws Bill - Part 1</title>
+      <link>https://hsps.in/post/reduce-cost-of-aws-bill-part-1/</link>
+      <pubDate>Fri, 10 Mar 2023 19:52:42 -0800</pubDate>
+      
+      <guid>https://hsps.in/post/reduce-cost-of-aws-bill-part-1/</guid>
+      <description>&lt;p&gt;Developing and deploying to the cloud has become a mandatory requirement than a nice to have skill. The promise of the cloud is that it abstracts all the complexity of managing a server and you only pay for what you use. If you accept that at face value, then the cloud is 100% legit. You only pay for what you use (just the cost is high), and they do abstract the regular complexity, and create some new complexity to worry about. There is a reason why AWS offers certificate programs. AWS Certified Cloud Practitioner/Architect/SysOps Admin/Developer/Solution Architect/Dev Ops Engineer all these shouldn&amp;rsquo;t be there if all the complexity were truly abstracted.&lt;/p&gt;
+&lt;p&gt;Now that I have finished writing my frustration about cloud, lets return to the main topic of this article. Recently I was tasked with reducing our AWS bill. Our general approach to reduction in system performance have been to increase the server spec or DB spec. Looking at which resource was maxing out. DB or Server.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
