@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hsps.in/post/speed-up-docker-build/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-03-10T20:04:50-08:00" />
-<meta property="article:modified_time" content="2023-03-10T20:04:50-08:00" />
+<meta property="article:modified_time" content="2023-03-19T20:04:50-08:00" />
 
 <meta itemprop="name" content="Speed Up Docker Build">
 <meta itemprop="description" content="Breaking up steps to speed up docker build"><meta itemprop="datePublished" content="2023-03-10T20:04:50-08:00" />
-<meta itemprop="dateModified" content="2023-03-10T20:04:50-08:00" />
-<meta itemprop="wordCount" content="166">
+<meta itemprop="dateModified" content="2023-03-19T20:04:50-08:00" />
+<meta itemprop="wordCount" content="218">
 <meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Speed Up Docker Build"/>
 <meta name="twitter:description" content="Breaking up steps to speed up docker build"/>
@@ -137,22 +137,24 @@
 
     
     <div class="post-content">
-      <p>When we are packaging a big project, like for example a rails app. There are several steps that takes times to complete.</p>
+      <p>Docker has become a popular tool in recent years for building and deploying applications in a portable and scalable way. However, the build process can sometimes be slow, especially for large applications with many dependencies. In this article, we&rsquo;ll explore how we can optimize our Dockerfile to speed it up.</p>
+<p>When building a rails app for production we would need to do the following steps in the docker file</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">bundle install
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">COPY . .
+bundle install
 yarn install
-assets:precompile
+bundle <span class="nb">exec</span> rails assets:precompile
 </code></pre></td></tr></table>
 </div>
-</div><p>etc..</p>
-<p>Docker build and cache each step, and if the instruction or context hasn&rsquo;t changed then docker will use the cached version instead of rebuilding it.
-So for us to make sure that Docker uses the cache, we need to make sure that docker can detect that there is no change in context/cache.</p>
+</div><p>Docker after building each step it will cache each step, and if the instruction or context hasn&rsquo;t changed then docker will use the cached version instead of rebuilding it.
+So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.</p>
 <p>To keep it simple:</p>
 <p>Don&rsquo;t do:</p>
 <div class="highlight"><div class="chroma">

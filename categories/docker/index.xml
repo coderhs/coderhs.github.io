@@ -13,22 +13,24 @@
       <pubDate>Fri, 10 Mar 2023 20:04:50 -0800</pubDate>
       
       <guid>https://hsps.in/post/speed-up-docker-build/</guid>
-      <description>&lt;p&gt;When we are packaging a big project, like for example a rails app. There are several steps that takes times to complete.&lt;/p&gt;
+      <description>&lt;p&gt;Docker has become a popular tool in recent years for building and deploying applications in a portable and scalable way. However, the build process can sometimes be slow, especially for large applications with many dependencies. In this article, we&amp;rsquo;ll explore how we can optimize our Dockerfile to speed it up.&lt;/p&gt;
+&lt;p&gt;When building a rails app for production we would need to do the following steps in the docker file&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;bundle install
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;COPY . .
+bundle install
 yarn install
-assets:precompile
+bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; rails assets:precompile
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;etc..&lt;/p&gt;
-&lt;p&gt;Docker build and cache each step, and if the instruction or context hasn&amp;rsquo;t changed then docker will use the cached version instead of rebuilding it.
-So for us to make sure that Docker uses the cache, we need to make sure that docker can detect that there is no change in context/cache.&lt;/p&gt;</description>
+&lt;/div&gt;&lt;p&gt;Docker after building each step it will cache each step, and if the instruction or context hasn&amp;rsquo;t changed then docker will use the cached version instead of rebuilding it.
+So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.&lt;/p&gt;</description>
     </item>
     
     <item>
