@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Speed Up Docker Build - Harisankar P S | HsPS.in</title>
+  <title>Share Docker Images as Files - Harisankar P S | HsPS.in</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Breaking up steps to speed up docker build" /><meta name="keywords" content="docker" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Share Docker Images as Files" /><meta name="keywords" content="docker, files" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.92.2 with theme even" />
 
 
-<link rel="canonical" href="https://hsps.in/post/speed-up-docker-build/" />
+<link rel="canonical" href="https://hsps.in/post/share-docker-images-as-files/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Speed Up Docker Build" />
-<meta property="og:description" content="Breaking up steps to speed up docker build" />
+<meta property="og:title" content="Share Docker Images as Files" />
+<meta property="og:description" content="Share Docker Images as Files" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/speed-up-docker-build/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-03-10T20:04:50-08:00" />
-<meta property="article:modified_time" content="2023-03-19T20:04:50-08:00" />
+<meta property="og:url" content="https://hsps.in/post/share-docker-images-as-files/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-26T21:27:35-07:00" />
+<meta property="article:modified_time" content="2023-03-26T21:27:35-07:00" />
 
-<meta itemprop="name" content="Speed Up Docker Build">
-<meta itemprop="description" content="Breaking up steps to speed up docker build"><meta itemprop="datePublished" content="2023-03-10T20:04:50-08:00" />
-<meta itemprop="dateModified" content="2023-03-19T20:04:50-08:00" />
-<meta itemprop="wordCount" content="216">
-<meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Speed Up Docker Build"/>
-<meta name="twitter:description" content="Breaking up steps to speed up docker build"/>
+<meta itemprop="name" content="Share Docker Images as Files">
+<meta itemprop="description" content="Share Docker Images as Files"><meta itemprop="datePublished" content="2023-03-26T21:27:35-07:00" />
+<meta itemprop="dateModified" content="2023-03-26T21:27:35-07:00" />
+<meta itemprop="wordCount" content="237">
+<meta itemprop="keywords" content="docker,linux,basic admin,administration," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Share Docker Images as Files"/>
+<meta name="twitter:description" content="Share Docker Images as Files"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -124,10 +124,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Speed Up Docker Build</h1>
+      <h1 class="post-title">Share Docker Images as Files</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-03-10 </span>
+        <span class="post-time"> 2023-03-26 </span>
         <div class="post-category">
             <a href="/categories/docker/"> docker </a>
             </div>
@@ -137,79 +137,81 @@
 
     
     <div class="post-content">
-      <p>Docker has become a popular tool in recent years for building and deploying applications in a portable and scalable way. However, the build process can sometimes be slow, especially for large applications with many dependencies. In this article, we&rsquo;ll explore how we can optimize our Dockerfile to speed it up.</p>
-<p>When building a rails app for production we would need to do the following steps in the docker file</p>
+      <p>Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.</p>
+<p>Dev Machine: Kubuntu, 22.04</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">COPY . .
-bundle install
-yarn install
-bundle <span class="nb">exec</span> rails assets:precompile
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker save pos_web:latest <span class="p">|</span> gzip &gt; pos_web.tar.gz
 </code></pre></td></tr></table>
 </div>
-</div><p>Docker after building each step it will cache that step. If the instructions/context of that steps or steps before haven&rsquo;t change then docker will use the cache.</p>
-<p>So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.</p>
-<p>To keep it simple:</p>
-<p>Don&rsquo;t do:</p>
+</div><p>You can export it to a regular tar file using the following command. Gzip just make the file smaller.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="k">COPY</span> . .<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> bundle install<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> yarn install<span class="err">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker save -o pos_web.tar save pos_web:latest
+</code></pre></td></tr></table>
 </div>
-</div><p>do</p>
+</div><p>You can then transfer the file to the client server. If you have ssh access to the server you can do so using a simple SCP command.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="k">COPY</span> ./Gemfile .<span class="err">
-</span><span class="err"></span><span class="k">COPY</span> ./Gemfile.lock .<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> bundle install<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">COPY</span> ./package.json .<span class="err">
-</span><span class="err"></span><span class="k">COPY</span> ./yarn.lock .<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> yarn install<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">COPY</span> . .<span class="err">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">scp ./path/to/pos_web.tar.gz user@server:~/
+</code></pre></td></tr></table>
 </div>
-</div><p>Now docker would now use cache seeing that there is no change in the Gemfile, Gemfile.lock, etc. Before docker would have ran bundle and yarn because of any change in any file, will change the hash resulting in rebuilding the remaining steps.</p>
+</div><p>The above command will transfer the file to the home folder.</p>
+<p>Once the file is in the server you can load the image using the <code>docker load</code> command.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker load ./pos_web.tar.gz
+</code></pre></td></tr></table>
+</div>
+</div><p>This command will load an image or repository from a tar archive (even if compressed with gzip, bzip2, or xz) from a file or STDIN. It restores both images and tags.
+Source: <a href="https://docs.docker.com/engine/reference/commandline/load/">https://docs.docker.com/engine/reference/commandline/load/</a></p>
+<p>So no need to decompress before loading.</p>
+<p>PS: Found this gem from the stackoverflow</p>
+<p>Run all the above in a single command.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker save &lt;image&gt; <span class="p">|</span> bzip2 <span class="p">|</span> ssh user@host docker load
+</code></pre></td></tr></table>
+</div>
+</div><p>or to see with progress bar</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker save &lt;image&gt; <span class="p">|</span> bzip2 <span class="p">|</span> pv <span class="p">|</span> ssh user@host docker load
+</code></pre></td></tr></table>
+</div>
+</div><p>Source: <a href="https://stackoverflow.com/a/26226261/1749638">https://stackoverflow.com/a/26226261/1749638</a></p>
     </div>
 
     
 <footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/docker/">docker</a>
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/basic-admin/">basic admin</a>
+          <a href="/tags/administration/">administration</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/reduce-cost-of-aws-bill-part-1/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Reduce Cost of Aws Bill - Part 1</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/enable-docker-remote-api-on-docker-host/">
-            <span class="next-text nav-default">Enable Docker Remote Api on Docker Host</span>
+        
+        <a class="next" href="/post/reduce-cost-of-aws-bill-part-1/">
+            <span class="next-text nav-default">Reduce Cost of Aws Bill - Part 1</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

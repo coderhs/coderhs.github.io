@@ -121,6 +121,28 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/wildcard-domain-in-pi-hole/">Wildcard Domain in Pi Hole</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-09-04 </span>
+      <div class="post-category">
+          <a href="/categories/homelab/"> homelab </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.</p>
+<p>For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/wildcard-domain-in-pi-hole/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/validating-yaml-files-in-ruby/">Validating YAML Files in Ruby</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2022-08-22 </span>
@@ -218,30 +240,6 @@ even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I lov
     </div>
     <div class="read-more">
       <a href="/post/amazing-emoji-keyboard-in-linux/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/running-migrations-from-console/">Running Migrations From Console</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-07-19 </span>
-      <div class="post-category">
-          <a href="/categories/rails/"> rails </a>
-          <a href="/categories/til/"> til </a>
-          <a href="/categories/apartment/"> Apartment </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.</p>
-<p>When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/running-migrations-from-console/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

@@ -2,6 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/tags/administration/</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/basic-admin/</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/docker/</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/docker/</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/linux./</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/share-docker-images-as-files/</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2023-03-26T21:27:35-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/tags/amazon/</loc>
     <lastmod>2023-03-19T20:40:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -44,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/categories/</loc>
-    <lastmod>2023-03-19T20:04:50-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/cloud/</loc>
     <lastmod>2023-03-19T20:40:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -65,43 +128,8 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2023-03-19T20:04:50-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2023-03-19T20:04:50-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/post/reduce-cost-of-aws-bill-part-1/</loc>
     <lastmod>2023-03-19T20:40:42-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
-    <lastmod>2023-03-19T20:04:50-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/docker/</loc>
-    <lastmod>2023-03-19T20:04:50-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/docker/</loc>
-    <lastmod>2023-03-19T20:04:50-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -129,13 +157,6 @@
   
   <url>
     <loc>https://hsps.in/tags/http/</loc>
-    <lastmod>2022-09-06T20:21:42-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/linux./</loc>
     <lastmod>2022-09-06T20:21:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

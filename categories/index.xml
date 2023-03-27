@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Mar 2023 19:52:42 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Mar 2023 21:27:35 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>https://hsps.in/categories/docker/</link>
+      <pubDate>Sun, 26 Mar 2023 21:27:35 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/docker/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Amazon</title>
       <link>https://hsps.in/categories/amazon/</link>
@@ -40,15 +49,6 @@
       <pubDate>Sun, 19 Mar 2023 19:52:42 -0700</pubDate>
       
       <guid>https://hsps.in/categories/cloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://hsps.in/categories/docker/</link>
-      <pubDate>Fri, 10 Mar 2023 20:04:50 -0800</pubDate>
-      
-      <guid>https://hsps.in/categories/docker/</guid>
       <description></description>
     </item>
     

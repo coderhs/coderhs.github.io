@@ -6,7 +6,17 @@
     <description>Recent content in docker on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Mar 2023 20:04:50 -0800</lastBuildDate><atom:link href="https://hsps.in/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Mar 2023 21:27:35 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Share Docker Images as Files</title>
+      <link>https://hsps.in/post/share-docker-images-as-files/</link>
+      <pubDate>Sun, 26 Mar 2023 21:27:35 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/share-docker-images-as-files/</guid>
+      <description>&lt;p&gt;Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.&lt;/p&gt;
+&lt;p&gt;Dev Machine: Kubuntu, 22.04&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Speed Up Docker Build</title>
       <link>https://hsps.in/post/speed-up-docker-build/</link>
@@ -29,8 +39,8 @@ yarn install
 bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; rails assets:precompile
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Docker after building each step it will cache each step, and if the instruction or context hasn&amp;rsquo;t changed then docker will use the cached version instead of rebuilding it.
-So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.&lt;/p&gt;</description>
+&lt;/div&gt;&lt;p&gt;Docker after building each step it will cache that step. If the instructions/context of that steps or steps before haven&amp;rsquo;t change then docker will use the cache.&lt;/p&gt;
+&lt;p&gt;So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.&lt;/p&gt;</description>
     </item>
     
     <item>
