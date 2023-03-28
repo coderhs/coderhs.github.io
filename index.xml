@@ -28,11 +28,11 @@
     </item>
     
     <item>
-      <title>Speed Up Docker Build</title>
-      <link>https://hsps.in/post/speed-up-docker-build/</link>
+      <title>Speed Up Docker Build using cache</title>
+      <link>https://hsps.in/post/speed-up-docker-build-using-cache/</link>
       <pubDate>Fri, 10 Mar 2023 20:04:50 -0800</pubDate>
       
-      <guid>https://hsps.in/post/speed-up-docker-build/</guid>
+      <guid>https://hsps.in/post/speed-up-docker-build-using-cache/</guid>
       <description>&lt;p&gt;Docker has become a popular tool in recent years for building and deploying applications in a portable and scalable way. However, the build process can sometimes be slow, especially for large applications with many dependencies. In this article, we&amp;rsquo;ll explore how we can optimize our Dockerfile to speed it up.&lt;/p&gt;
 &lt;p&gt;When building a rails app for production we would need to do the following steps in the docker file&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
