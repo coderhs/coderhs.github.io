@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Mar 2023 21:27:35 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Apr 2023 20:22:46 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Statically Compile Crystal Program and Distribute as docker Image</title>
+      <link>https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/</link>
+      <pubDate>Sun, 02 Apr 2023 20:22:46 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/</guid>
+      <description>&lt;p&gt;In this article we are sharing how to statically compile a crystal program and then
+share the executable inside a docker image. We will create the smallest docker image possible. Smaller images are easier to manage, distribute and boot.&lt;/p&gt;
+&lt;p&gt;Note: The way docker works, each command/line creates a layer (with context).&lt;/p&gt;
+&lt;p&gt;The good news about crystal lang is the they distribute the docker image with all the libraries so that we can build static compiled executable(s). Attaching the docker file I wrote to statically compile a crystal language program.&lt;/p&gt;
+&lt;p&gt;Note: The program uses the Kemal web framework, so this could also be considered an article on how to statically compile and distribute a kemal web app.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Share Docker Images as Files</title>
       <link>https://hsps.in/post/share-docker-images-as-files/</link>

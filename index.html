@@ -121,6 +121,31 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/">Statically Compile Crystal Program and Distribute as docker Image</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2023-04-02 </span>
+      <div class="post-category">
+          <a href="/categories/crystal-lang/"> crystal lang </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>In this article we are sharing how to statically compile a crystal program and then
+share the executable inside a docker image. We will create the smallest docker image possible. Smaller images are easier to manage, distribute and boot.</p>
+<p>Note: The way docker works, each command/line creates a layer (with context).</p>
+<p>The good news about crystal lang is the they distribute the docker image with all the libraries so that we can build static compiled executable(s). Attaching the docker file I wrote to statically compile a crystal language program.</p>
+<p>Note: The program uses the Kemal web framework, so this could also be considered an article on how to statically compile and distribute a kemal web app.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/share-docker-images-as-files/">Share Docker Images as Files</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2023-03-26 </span>
@@ -221,29 +246,6 @@ bundle <span class="nb">exec</span> rails assets:precompile
     </div>
     <div class="read-more">
       <a href="/post/enable-docker-remote-api-on-docker-host/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/setup-nfs-server-on-ubuntu/">Setup NFS Server on Ubuntu</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-09-05 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> linux </a>
-          <a href="/categories/homelab/"> homelab </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.</p>
-<p>With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/setup-nfs-server-on-ubuntu/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
