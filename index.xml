@@ -6,7 +6,16 @@
     <description>Recent content on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 02 Apr 2023 20:22:46 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 May 2023 21:12:50 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby WASM</title>
+      <link>https://hsps.in/post/ruby-wasm/</link>
+      <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/ruby-wasm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Statically Compile Crystal Program and Distribute as docker Image</title>
       <link>https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/</link>

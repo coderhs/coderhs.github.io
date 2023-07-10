@@ -3,7 +3,70 @@
   
   <url>
     <loc>https://hsps.in/categories/</loc>
-    <lastmod>2023-04-02T20:22:46-07:00</lastmod>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/ruby/</loc>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/ruby/</loc>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/ruby-wasm/</loc>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/wasm/</loc>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/web-assembly/</loc>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/web-assembly/</loc>
+    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,28 +93,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2023-04-02T20:22:46-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2023-04-02T20:22:46-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/</loc>
-    <lastmod>2023-04-02T20:22:46-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2023-04-02T20:22:46-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -304,20 +346,6 @@
   
   <url>
     <loc>https://hsps.in/categories/gems/</loc>
-    <lastmod>2022-08-22T21:27:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/ruby/</loc>
-    <lastmod>2022-08-22T21:27:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/ruby/</loc>
     <lastmod>2022-08-22T21:27:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

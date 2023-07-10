@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 02 Apr 2023 20:22:46 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 May 2023 21:12:50 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ruby</title>
+      <link>https://hsps.in/tags/ruby/</link>
+      <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wasm</title>
+      <link>https://hsps.in/tags/wasm/</link>
+      <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/wasm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web assembly</title>
+      <link>https://hsps.in/tags/web-assembly/</link>
+      <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/web-assembly/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>crystal lang</title>
       <link>https://hsps.in/tags/crystal-lang/</link>
@@ -220,15 +247,6 @@
       <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
       
       <guid>https://hsps.in/tags/dry-validation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ruby</title>
-      <link>https://hsps.in/tags/ruby/</link>
-      <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/ruby/</guid>
       <description></description>
     </item>
     
