@@ -122,6 +122,35 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/sidekiq-graceful-shutdown-in-fargate-ecs/">Sidekiq Graceful Shutdown in Fargate ECS</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2023-07-30 </span>
+      <div class="post-category">
+          <a href="/categories/ecs/"> ECS </a>
+          <a href="/categories/sidekiq/"> Sidekiq </a>
+          <a href="/categories/fargate/"> Fargate </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Sidekiq is the gold standard when it comes to background processing. I have been using since I started working with rails. Sidekiq took care of lot of the complexity of the background processing that allowed developers to concentrate on just there code/business logic.</p>
+<p>One of the beautiful features of sidekiq was how it handled exit (SIGTERM and SIGKILL).</p>
+<p><img src="https://turnoff.us/image/en/dont-sigkill-2.png" alt="Dont Sigkill">
+Source: <a href="https://turnoff.us/geek/dont-sigkill-2/">https://turnoff.us/geek/dont-sigkill-2/</a></p>
+<p>When sidekiq received the sigterm commands it stops accept new jobs, and just focus on finishing the job it is doing now and incase it can&rsquo;t finish, it will requeue the job to another available worker or keep it in the queue for another worker (or the same worker) to pick it up when available.
+This was working so well for years on rails app I was working on, that I didn&rsquo;t even care about it. The mina command would trigger a sidekiq restart allowing sidekiq to gracefully exit and then respawn with the new code.</p>
+<p>The above app was running on two linux servers everything manually configured, but recently to keep up with the growth of the app we moved to amazon ECS. The app was containerized to a docker image, and made to run on about 12 Fargate Instances with ability to auto scale to 36 based on CPU and RAM usage. We grouped instances for various purposes 2 for heavy jobs, 2 for faster (more memory jobs), 2 for file processing, 4 for web, 2 for API.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/sidekiq-graceful-shutdown-in-fargate-ecs/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/">Statically Compile Crystal Program and Distribute as docker Image</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2023-04-02 </span>
@@ -226,27 +255,6 @@ bundle <span class="nb">exec</span> rails assets:precompile
     </div>
     <div class="read-more">
       <a href="/post/speed-up-docker-build-using-cache/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/enable-docker-remote-api-on-docker-host/">Enable Docker Remote Api on Docker Host</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-09-06 </span>
-      <div class="post-category">
-          <a href="/categories/docker/"> docker </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Docker engine has inbuild API service that allows you to control &amp; modify your docker engine and docker instance using HTTP.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/enable-docker-remote-api-on-docker-host/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

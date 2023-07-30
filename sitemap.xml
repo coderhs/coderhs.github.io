@@ -2,8 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/tags/aws/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/categories/</loc>
-    <lastmod>2023-04-02T20:22:46-07:00</lastmod>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/ecs/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/ecs/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/fargate/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/fargate/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/ruby/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/sidekiq/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/sidekiq/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,28 +114,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2023-04-02T20:22:46-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2023-04-02T20:22:46-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/</loc>
-    <lastmod>2023-04-02T20:22:46-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2023-04-02T20:22:46-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -101,13 +164,6 @@
   
   <url>
     <loc>https://hsps.in/categories/amazon/</loc>
-    <lastmod>2023-03-19T20:40:42-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/aws/</loc>
     <lastmod>2023-03-19T20:40:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -304,13 +360,6 @@
   
   <url>
     <loc>https://hsps.in/categories/gems/</loc>
-    <lastmod>2022-08-22T21:27:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/ruby/</loc>
     <lastmod>2022-08-22T21:27:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
