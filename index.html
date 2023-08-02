@@ -122,6 +122,29 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/rails-copy-assets-bundler-cache-to-speed-up-build/">Rails Copy Assets bundler Cache to Speed Up Build</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2023-08-01 </span>
+      <div class="post-category">
+          <a href="/categories/docker/"> docker </a>
+          <a href="/categories/rails/"> rails </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      The slowest step (in my experience and opinion) is compiling assets (js/css). Compiling assets takes time and slower when you do it for the first time. So to speed it up its recommended to copy the last compiled assets from the latest image you have of the repo.
+1 2 3 4  COPY --from=docker-repo.link/image:latest /app/node_modules /app/node_modulesCOPY --from=docker-repo.link/image:latest /app/public /app/publicRUN bundle exec rails assets:precompile  Now since the prior assets are in the new image, it won&rsquo;t compile the assets from scratch and the build will be faster.
+    </div>
+    <div class="read-more">
+      <a href="/post/rails-copy-assets-bundler-cache-to-speed-up-build/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/sidekiq-graceful-shutdown-in-fargate-ecs/">Sidekiq Graceful Shutdown in Fargate ECS</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2023-07-30 </span>
@@ -222,31 +245,6 @@ share the executable inside a docker image. We will create the smallest docker i
     </div>
     <div class="read-more">
       <a href="/post/share-docker-images-as-files/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/reduce-cost-of-aws-bill-part-1/">Reduce Cost of Aws Bill - Part 1</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-03-19 </span>
-      <div class="post-category">
-          <a href="/categories/aws/"> AWS </a>
-          <a href="/categories/cloud/"> Cloud </a>
-          <a href="/categories/amazon/"> Amazon </a>
-          <a href="/categories/bill/"> Bill </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Developing and deploying to the cloud has become a mandatory requirement than a nice to have skill. The promise of the cloud is that it abstracts all the complexity of managing a server and you only pay for what you use. If you accept that at face value, then the cloud is 100% legit. You only pay for what you use (just the cost is high), and they do abstract the regular complexity, and create some new complexity to worry about. There is a reason why AWS offers certificate programs. AWS Certified Cloud Practitioner/Architect/SysOps Admin/Developer/Solution Architect/Dev Ops Engineer all these shouldn&rsquo;t be there if all the complexity were truly abstracted.</p>
-<p>Now that I have finished writing my frustration about cloud, lets return to the main topic of this article. Recently I was tasked with reducing our AWS bill. Our general approach to reduction in system performance have been to increase the server spec or DB spec. Looking at which resource was maxing out. DB or Server.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/reduce-cost-of-aws-bill-part-1/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

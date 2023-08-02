@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 30 Jul 2023 00:10:21 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Aug 2023 17:01:37 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rails Copy Assets bundler Cache to Speed Up Build</title>
+      <link>https://hsps.in/post/rails-copy-assets-bundler-cache-to-speed-up-build/</link>
+      <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/rails-copy-assets-bundler-cache-to-speed-up-build/</guid>
+      <description>The slowest step (in my experience and opinion) is compiling assets (js/css). Compiling assets takes time and slower when you do it for the first time. So to speed it up its recommended to copy the last compiled assets from the latest image you have of the repo.
+1 2 3 4  COPY --from=docker-repo.link/image:latest /app/node_modules /app/node_modulesCOPY --from=docker-repo.link/image:latest /app/public /app/publicRUN bundle exec rails assets:precompile  Now since the prior assets are in the new image, it won&amp;rsquo;t compile the assets from scratch and the build will be faster.</description>
+    </item>
+    
     <item>
       <title>Sidekiq Graceful Shutdown in Fargate ECS</title>
       <link>https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/</link>
