@@ -2,6 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/devops/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/docker/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/docker/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/docker-compose/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/nginx/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/proxy/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/setup/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/tags/build/</loc>
     <lastmod>2023-08-01T17:01:37-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,42 +93,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/categories/</loc>
-    <lastmod>2023-08-01T17:01:37-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/devops/</loc>
-    <lastmod>2023-08-01T17:01:37-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/docker/</loc>
-    <lastmod>2023-08-01T17:01:37-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/docker/</loc>
-    <lastmod>2023-08-01T17:01:37-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2023-08-01T17:01:37-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
     <lastmod>2023-08-01T17:01:37-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -73,13 +122,6 @@
   
   <url>
     <loc>https://hsps.in/tags/system/</loc>
-    <lastmod>2023-08-01T17:01:37-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2023-08-01T17:01:37-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1410,13 +1452,6 @@
   
   <url>
     <loc>https://hsps.in/tags/reinstall/</loc>
-    <lastmod>2012-01-25T00:07:30-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/setup/</loc>
     <lastmod>2012-01-25T00:07:30-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

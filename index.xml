@@ -6,7 +6,17 @@
     <description>Recent content on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Aug 2023 17:01:37 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Aug 2023 22:31:40 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup HTTP(s) and Reverse Proxy to Docker Web App</title>
+      <link>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</link>
+      <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</guid>
+      <description>&lt;p&gt;This article is about how to add https to a web app running in docker. For this we are using nginx to handle port 80 and port 443 and then reverse proxy the traffic to port 443 to the application port. In this article we are assuming you have credentials for the SSL certificate, another article will be written on how to do it with lets encrypt to create ssl certificates for free.&lt;/p&gt;
+&lt;p&gt;This article assume you know about ssl key files, docker and docker-compose. And for the sake of this article we are setting up &lt;code&gt;uptime-kuma&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Rails Copy Assets bundler Cache to Speed Up Build</title>
       <link>https://hsps.in/post/rails-copy-assets-bundler-cache-to-speed-up-build/</link>

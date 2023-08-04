@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Aug 2023 17:01:37 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Aug 2023 22:31:40 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>https://hsps.in/tags/docker/</link>
+      <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker-compose</title>
+      <link>https://hsps.in/tags/docker-compose/</link>
+      <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://hsps.in/tags/nginx/</link>
+      <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://hsps.in/tags/proxy/</link>
+      <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>setup</title>
+      <link>https://hsps.in/tags/setup/</link>
+      <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/setup/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>build</title>
       <link>https://hsps.in/tags/build/</link>
@@ -22,15 +67,6 @@
       <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
       
       <guid>https://hsps.in/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://hsps.in/tags/docker/</link>
-      <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -1057,15 +1093,6 @@
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       
       <guid>https://hsps.in/tags/reinstall/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>setup</title>
-      <link>https://hsps.in/tags/setup/</link>
-      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/setup/</guid>
       <description></description>
     </item>
     
