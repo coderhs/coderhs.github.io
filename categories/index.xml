@@ -6,7 +6,25 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Aug 2023 22:31:40 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Aug 2023 23:06:27 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rails</title>
+      <link>https://hsps.in/categories/rails/</link>
+      <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/rails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TDD</title>
+      <link>https://hsps.in/categories/tdd/</link>
+      <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/tdd/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>devops</title>
       <link>https://hsps.in/categories/devops/</link>
@@ -22,15 +40,6 @@
       <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
       
       <guid>https://hsps.in/categories/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rails</title>
-      <link>https://hsps.in/categories/rails/</link>
-      <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
-      
-      <guid>https://hsps.in/categories/rails/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Create JSON Payload for API Test Using Factory Bot - Harisankar P S | HsPS.in</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Create JSON Payload for API Test Using Factory Bot" /><meta name="keywords" content="rails, tdd, testing, factory-bot, mini-test, rspec" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Create JSON Payload for API Test Using Factory Bot" />
+<meta property="og:description" content="Create JSON Payload for API Test Using Factory Bot" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-08-05T23:06:27-07:00" />
+<meta property="article:modified_time" content="2023-08-05T23:06:27-07:00" />
+
+<meta itemprop="name" content="Create JSON Payload for API Test Using Factory Bot">
+<meta itemprop="description" content="Create JSON Payload for API Test Using Factory Bot"><meta itemprop="datePublished" content="2023-08-05T23:06:27-07:00" />
+<meta itemprop="dateModified" content="2023-08-05T23:06:27-07:00" />
+<meta itemprop="wordCount" content="575">
+<meta itemprop="keywords" content="rails,tdd,testing,factory-bot,mini-test,rspec," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Create JSON Payload for API Test Using Factory Bot"/>
+<meta name="twitter:description" content="Create JSON Payload for API Test Using Factory Bot"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">HsPS.in</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Articles</li>
+      </a><a href="/videos/">
+        <li class="mobile-menu-item">Videos</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        
+<div class="logo-wrapper">
+  <a href="/" class="logo">HsPS.in</a>
+  <br>
+  <i>My thoughts and opinions</i>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Articles</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/videos/">Videos</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">About</a>
+      </li>
+  </ul>
+</nav>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="coderhs" data-description="Support me on Buy me a coffee!" data-message="Thank you for buying me coffee. " data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Create JSON Payload for API Test Using Factory Bot</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-08-05 </span>
+        <div class="post-category">
+            <a href="/categories/rails/"> rails </a>
+            <a href="/categories/tdd/"> TDD </a>
+            </div>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>I am not going to reiterate the PSA (Public Safety Announcement) of how important it is to write test. You can find enough articles related that online, and most probably you already know and agree to it. This article is how to generate JSON payload using Factory Bot.</p>
+<p><a href="https://github.com/thoughtbot/factory_bot">Factory Bot</a> is a ruby library that is used to create records in the table for testing. It will help generate data to fill and prepare records, before the test execution.</p>
+<p>eg:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+  <span class="n">factory</span> <span class="ss">:invoices</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="no">Invoice</span> <span class="k">do</span>
+    <span class="n">sequence</span><span class="p">(</span><span class="ss">:order_number</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="s2">&#34;Invoice_</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">}</span>
+    <span class="n">description</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Lorem</span><span class="o">.</span><span class="n">sentence</span> <span class="p">}</span>
+    <span class="n">customer_id</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Alphanumeric</span><span class="o">.</span><span class="n">alpha</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span> <span class="p">}</span>
+    <span class="n">customer_name</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Company</span><span class="o">.</span><span class="n">name</span> <span class="p">}</span>
+    <span class="n">total_qty</span> <span class="p">{</span> <span class="mi">100</span> <span class="p">}</span>
+    <span class="n">total_cost</span> <span class="p">{</span> <span class="mi">100_000</span><span class="o">.</span><span class="mi">0</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># Now if you want to create this record in your table.</span>
+
+<span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:invoices</span><span class="p">)</span> <span class="c1"># this is create a record in your DB.</span>
+
+<span class="no">FactoryBot</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="ss">:invoices</span><span class="p">)</span> <span class="c1"># this would create an object of invoice, but not commit it to the DB.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The way factory bot works is that it generates the fields in the block and then assign them to the object of the class. The factory bot expects there are setters <code>x.field=</code> in the object. If there isn&rsquo;t one it will raise errors. So if our payload is similar or same as the rails model then you can write the code as below:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="ss">:invoices</span><span class="p">)</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">except</span><span class="p">(</span><span class="s1">&#39;created_at&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;updated_at&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">as_json</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now if the field names of the payload has nothing to do with fields of the database. What you need to do is generate a Factory Bot against an object where you can set dynamic fields. A good candidate for that is <code>OpenStruct</code>. But when we convert an <code>OpenStruct</code> to json <code>OpenStruct.new.as_json</code> the JSON is as follows: <code>{&quot;table&quot;=&gt;{}}</code>. To fix this, we create a new class inheriting the <code>OpenStruct</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">JSONStruct</span> <span class="o">&lt;</span> <span class="no">OpenStruct</span>
+  <span class="k">def</span> <span class="nf">as_json</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">super</span><span class="o">.</span><span class="n">as_json</span><span class="o">[</span><span class="s1">&#39;table&#39;</span><span class="o">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In the object of the new child class, when you do <code>as_json</code>, it just returns the contents of the <code>table</code> key.</p>
+<p>Now with the new class you can build a factory against it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+  <span class="n">factory</span> <span class="ss">:address_payload</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="no">JSONStruct</span> <span class="k">do</span>
+    <span class="nb">name</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Company</span><span class="o">.</span><span class="n">name</span> <span class="p">}</span>
+    <span class="n">address1</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">street_address</span> <span class="p">}</span>
+    <span class="n">address2</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">secondary_address</span> <span class="p">}</span>
+    <span class="n">city</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">city</span> <span class="p">}</span>
+    <span class="n">state</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">state</span> <span class="p">}</span>
+    <span class="n">zip</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">zip</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">FactoryBot</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+  <span class="n">factory</span> <span class="ss">:invoice_payload</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="no">JSONStruct</span> <span class="k">do</span>
+    <span class="n">sequence</span><span class="p">(</span><span class="ss">:order_number</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="s2">&#34;Invoice_</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">}</span>
+    <span class="n">description</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Lorem</span><span class="o">.</span><span class="n">sentence</span> <span class="p">}</span>
+    <span class="n">customer_id</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Alphanumeric</span><span class="o">.</span><span class="n">alpha</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span> <span class="p">}</span>
+    <span class="n">customer_name</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Company</span><span class="o">.</span><span class="n">name</span> <span class="p">}</span>
+    <span class="n">total_qty</span> <span class="p">{</span> <span class="mi">100</span> <span class="p">}</span>
+    <span class="n">total_cost</span> <span class="p">{</span> <span class="mi">100_000</span><span class="o">.</span><span class="mi">0</span> <span class="p">}</span>
+    <span class="n">after</span><span class="p">(</span><span class="ss">:build</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">invoice</span><span class="o">|</span>
+      <span class="n">invoice</span><span class="o">.</span><span class="n">billing_address</span> <span class="o">=</span> <span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:address_payload</span><span class="p">,</span> <span class="nb">name</span><span class="p">:</span> <span class="n">invoice</span><span class="o">.</span><span class="n">customer_name</span><span class="p">)</span>
+      <span class="n">invoice</span><span class="o">.</span><span class="n">shipping_address</span> <span class="o">=</span> <span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:address_payload</span><span class="p">,</span> <span class="nb">name</span><span class="p">:</span> <span class="n">invoice</span><span class="o">.</span><span class="n">customer_name</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># Now if your run</span>
+
+<span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:invoice_payload</span><span class="p">)</span><span class="o">.</span><span class="n">as_json</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Output:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;order_number&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Invoice_1&#34;</span><span class="p">,</span>
+ <span class="nt">&#34;description&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Eius quia consequatur omnis.&#34;</span><span class="p">,</span>
+ <span class="nt">&#34;customer_id&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;crvxboz&#34;</span><span class="p">,</span>
+ <span class="nt">&#34;customer_name&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Kirlin-Reynolds&#34;</span><span class="p">,</span>
+ <span class="nt">&#34;total_qty&#34;</span><span class="err">=&gt;</span><span class="mi">100</span><span class="p">,</span>
+ <span class="nt">&#34;total_cost&#34;</span><span class="err">=&gt;</span><span class="mf">100000.0</span><span class="p">,</span>
+ <span class="nt">&#34;billing_address&#34;</span><span class="err">=&gt;</span>
+  <span class="p">{</span><span class="nt">&#34;name&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Kirlin-Reynolds&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;address1&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;4459 Towne Land&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;address2&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Suite 326&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;city&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Lake Jeffreychester&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;state&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Utah&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;zip&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;54710&#34;</span><span class="p">},</span>
+ <span class="nt">&#34;shipping_address&#34;</span><span class="err">=&gt;</span>
+  <span class="p">{</span><span class="nt">&#34;name&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Kirlin-Reynolds&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;address1&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;973 Nia Alley&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;address2&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Suite 824&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;city&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Alexandriaview&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;state&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Wyoming&#34;</span><span class="p">,</span>
+   <span class="nt">&#34;zip&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;96348-5106&#34;</span><span class="p">}}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This method allows you to easily create API Payload using Factory Bot, and share/use it across your test suit.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="n">describe</span> <span class="s1">&#39;#create&#39;</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s1">&#39;should create an invoice&#39;</span> <span class="k">do</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:invoice_payload</span><span class="p">)</span>
+    <span class="n">post</span> <span class="n">invoices_api_path</span><span class="p">(</span><span class="ss">key</span><span class="p">:</span> <span class="s1">&#39;someramdomkey&#39;</span><span class="p">),</span> <span class="ss">params</span><span class="p">:</span> <span class="n">params</span><span class="o">.</span><span class="n">as_json</span>
+
+    <span class="n">assert_equal</span> <span class="mi">1</span><span class="p">,</span> <span class="no">Invoice</span><span class="o">.</span><span class="n">count</span>
+    <span class="n">assert_equal</span> <span class="n">params</span><span class="o">.</span><span class="n">order_number</span><span class="p">,</span> <span class="no">Invoice</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">order_number</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Happy Testing</p>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/rails/">rails</a>
+          <a href="/tags/tdd/">tdd</a>
+          <a href="/tags/testing/">testing</a>
+          <a href="/tags/factory-bot/">factory-bot</a>
+          <a href="/tags/mini-test/">mini-test</a>
+          <a href="/tags/rspec/">rspec</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/setup-https-and-reverseproxy-to-docker-web-app/">
+            <span class="next-text nav-default">Setup HTTP(s) and Reverse Proxy to Docker Web App</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'hsps-in';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
+  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2011 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-39547141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

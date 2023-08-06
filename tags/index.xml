@@ -6,7 +6,61 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Aug 2023 22:31:40 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Aug 2023 23:06:27 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>factory-bot</title>
+      <link>https://hsps.in/tags/factory-bot/</link>
+      <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/factory-bot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mini-test</title>
+      <link>https://hsps.in/tags/mini-test/</link>
+      <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/mini-test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rails</title>
+      <link>https://hsps.in/tags/rails/</link>
+      <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/rails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rspec</title>
+      <link>https://hsps.in/tags/rspec/</link>
+      <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/rspec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tdd</title>
+      <link>https://hsps.in/tags/tdd/</link>
+      <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/tdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://hsps.in/tags/testing/</link>
+      <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/testing/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>docker</title>
       <link>https://hsps.in/tags/docker/</link>
@@ -67,15 +121,6 @@
       <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
       
       <guid>https://hsps.in/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rails</title>
-      <link>https://hsps.in/tags/rails/</link>
-      <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/rails/</guid>
       <description></description>
     </item>
     
