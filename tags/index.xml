@@ -6,7 +6,61 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Aug 2023 23:06:27 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Aug 2023 21:59:35 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ansible</title>
+      <link>https://hsps.in/tags/ansible/</link>
+      <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://hsps.in/tags/docker/</link>
+      <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker-compose</title>
+      <link>https://hsps.in/tags/docker-compose/</link>
+      <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux-admin</title>
+      <link>https://hsps.in/tags/linux-admin/</link>
+      <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/linux-admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>playbook</title>
+      <link>https://hsps.in/tags/playbook/</link>
+      <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/playbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://hsps.in/tags/ubuntu/</link>
+      <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>factory-bot</title>
       <link>https://hsps.in/tags/factory-bot/</link>
@@ -58,24 +112,6 @@
       <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
       
       <guid>https://hsps.in/tags/testing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://hsps.in/tags/docker/</link>
-      <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker-compose</title>
-      <link>https://hsps.in/tags/docker-compose/</link>
-      <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/docker-compose/</guid>
       <description></description>
     </item>
     
@@ -283,15 +319,6 @@
       <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
       
       <guid>https://hsps.in/tags/remote/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>https://hsps.in/tags/ubuntu/</link>
-      <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/ubuntu/</guid>
       <description></description>
     </item>
     

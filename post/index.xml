@@ -6,7 +6,27 @@
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Aug 2023 23:06:27 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Aug 2023 21:59:35 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Ansible to Install Docker and Docker Compose on New Lightsail Instance</title>
+      <link>https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/</link>
+      <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/</guid>
+      <description>&lt;p&gt;Recently I have been working with deploying self hosted application in AWS lightsail for the company that I work for. My strategy for deploying application has been as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Launch a new ubuntu instance (since my team and I use it a dev machine we are familiar with it).&lt;/li&gt;
+&lt;li&gt;Install Docker&lt;/li&gt;
+&lt;li&gt;Install Docker Compose&lt;/li&gt;
+&lt;li&gt;Run the self hosted app and its requires services using docker.&lt;/li&gt;
+&lt;li&gt;Run nginx reverse proxy to serve the app over https&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I am pretty much managing the whole app through files. Its just the initial setup that I am doing manually. I thought of creating a base linux image for the new servers, which would have docker and docker-compose pre installed. But lightsail didn&amp;rsquo;t seem to have the option to use custom images, like EC2 servers.&lt;/p&gt;
+&lt;p&gt;Thus I decided to use ansible.&lt;/p&gt;
+&lt;p&gt;Ansible is an open source automation tool that is used for configuration management, deployment and task automation. It automates the steps that I do manually. It can run this command on multiple servers without having us do anything manually. We can also automate weekly maintenance check to login to all the servers, ensures all the security updates are installed, cache files are cleared, etc.&lt;/p&gt;
+&lt;p&gt;The thing I found most interesting about ansible compared to chef (another automation tool) is that it is agentless. That is it doesn&amp;rsquo;t expect anything to be running on the new server other open ssh. Chef on the other hand requires an agent to be running on the server. There are its own advantages of having an agent running on the server, it can do updates much faster and keep everything in sync. But since that is not a requirement for me at the moment, I decide to use ansible. I will write another article on how to do this using chef.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Create JSON Payload for API Test Using Factory Bot</title>
       <link>https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/</link>
