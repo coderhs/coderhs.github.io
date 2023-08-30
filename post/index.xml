@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 06 Aug 2023 21:59:35 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Aug 2023 15:48:25 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argument for Writing Test and TDD</title>
+      <link>https://hsps.in/post/argument-for-writing-test-and-tdd/</link>
+      <pubDate>Wed, 30 Aug 2023 15:48:25 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/argument-for-writing-test-and-tdd/</guid>
+      <description>Recently I been trying to convince my team to write more tests, or some test. One of the arguments I heard during this was - automated test doesn&amp;rsquo;t remove manual test. Thats true, you still have to manually test it as well. But it avoids the repeated testing, and forgetting to test old features when new modifications are being done. I was thinking more about what to reply to people that says this, when it dawn to me that.</description>
+    </item>
+    
     <item>
       <title>Using Ansible to Install Docker and Docker Compose on New Lightsail Instance</title>
       <link>https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/</link>

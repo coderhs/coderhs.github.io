@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>test on Harisankar P S | HsPS.in</title>
+    <link>https://hsps.in/tags/test/</link>
+    <description>Recent content in test on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Aug 2023 15:48:25 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argument for Writing Test and TDD</title>
+      <link>https://hsps.in/post/argument-for-writing-test-and-tdd/</link>
+      <pubDate>Wed, 30 Aug 2023 15:48:25 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/argument-for-writing-test-and-tdd/</guid>
+      <description>Recently I been trying to convince my team to write more tests, or some test. One of the arguments I heard during this was - automated test doesn&amp;rsquo;t remove manual test. Thats true, you still have to manually test it as well. But it avoids the repeated testing, and forgetting to test old features when new modifications are being done. I was thinking more about what to reply to people that says this, when it dawn to me that.</description>
+    </item>
+    
+  </channel>
+</rss>
