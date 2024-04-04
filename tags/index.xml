@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Aug 2023 15:48:25 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Apr 2024 03:13:24 +0530</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux.</title>
+      <link>https://hsps.in/tags/linux./</link>
+      <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
+      
+      <guid>https://hsps.in/tags/linux./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>remote</title>
+      <link>https://hsps.in/tags/remote/</link>
+      <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
+      
+      <guid>https://hsps.in/tags/remote/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://hsps.in/tags/shell/</link>
+      <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
+      
+      <guid>https://hsps.in/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSH</title>
+      <link>https://hsps.in/tags/ssh/</link>
+      <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
+      
+      <guid>https://hsps.in/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminal</title>
+      <link>https://hsps.in/tags/terminal/</link>
+      <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
+      
+      <guid>https://hsps.in/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>opinions</title>
       <link>https://hsps.in/tags/opinions/</link>
@@ -278,15 +323,6 @@
     </item>
     
     <item>
-      <title>linux.</title>
-      <link>https://hsps.in/tags/linux./</link>
-      <pubDate>Sun, 26 Mar 2023 21:27:35 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/linux./</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Amazon</title>
       <link>https://hsps.in/tags/amazon/</link>
       <pubDate>Sun, 19 Mar 2023 19:52:42 -0700</pubDate>
@@ -328,15 +364,6 @@
       <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
       
       <guid>https://hsps.in/tags/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>remote</title>
-      <link>https://hsps.in/tags/remote/</link>
-      <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/remote/</guid>
       <description></description>
     </item>
     
@@ -733,24 +760,6 @@
       <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
       
       <guid>https://hsps.in/tags/ec2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shell</title>
-      <link>https://hsps.in/tags/shell/</link>
-      <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SSH</title>
-      <link>https://hsps.in/tags/ssh/</link>
-      <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/ssh/</guid>
       <description></description>
     </item>
     

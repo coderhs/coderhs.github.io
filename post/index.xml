@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Aug 2023 15:48:25 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Apr 2024 03:13:24 +0530</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Handle SSH Idle Connections Freezing shell or Getting Disconnected</title>
+      <link>https://hsps.in/post/handle-ssh-idle-connections-handing-or-getting-disconnected/</link>
+      <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
+      
+      <guid>https://hsps.in/post/handle-ssh-idle-connections-handing-or-getting-disconnected/</guid>
+      <description>&lt;p&gt;As someone who has been working with servers for over a decade and a half, I feel embarrassed to admit that I only
+recently stumbled upon this setting. Throughout my years of connecting to remote servers over the internet, I&amp;rsquo;ve
+encountered instances where connections freeze or break after a period of inactivity. Sometimes it happens more
+frequently, while other times it never occurs at all. When I was in the US connecting to Amazon servers, there were
+occasions when the connection remained stable for days on end. This led me to believe that the issue might be related
+to the internet or the complexity of the network routing required to reach the server.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Argument for Writing Test and TDD</title>
       <link>https://hsps.in/post/argument-for-writing-test-and-tdd/</link>
