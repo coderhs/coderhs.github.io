@@ -16,27 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" />
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const options = {
-    bottom: '64px', 
-    time: '0.5s', 
-    mixColor: '#fff', 
-    backgroundColor: '#fff',  
-    buttonColorDark: '#100f2c',  
-    buttonColorLight: '#fff', 
-    saveInCookies: true, 
-    label: '🌓', 
-    autoMatchOsTheme: true 
-  }
-
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
 
 
 
@@ -57,7 +37,7 @@
 
 
 
-<link href="/sass/main.min.4ff4445ed212d8be59323ac030f4e94a67ccfbef3619cf9f10340ce27880f745.css" rel="stylesheet">
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -139,9 +119,55 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/htop-for-gpu-in-linux/">HTOP for GPU in Linux</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-06-12 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> linux </a>
+          </div>
+    </div>
+  </header>
   
-  <section id="posts" class="posts">
+  <div class="post-content">
+    <div class="post-summary">
+      htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
+Note: I am talking about tools i tested in Ubuntu/Debian Linux
+    </div>
+    <div class="read-more">
+      <a href="/post/htop-for-gpu-in-linux/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/how-i-setup-dark-theme-in-my-blog/">How I Setup Dark Theme in My Blog</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-06-12 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Dark mode or night mode is becoming more and more popular these days. As the amount of time we are spending in front of the computer increases, we started to look more into on how to improve our experience. Dark mode/Night mode is one such setting. What it does (mainly) is it makes all the white part of the application to black - major chunk of which would be the background. When the color of the background is made black, it emits less light. Now not all displays are the same, each display creates the dark color in different ways. Like:</p>
+<ul>
+<li>On an <strong><code>LCD screen</code></strong>. The liquid crystal elements block the white light from the backlight. And this results in a dark (almost black) pixel.</li>
+<li>On an <strong><code>OLED screen</code></strong>. The pixel is turned off, no light is emitted, this produces a deep black.</li>
+<li>On a <strong><code>CRT screen</code></strong>. The electron beam is turned off as it passes the pixel. Producing no phosphorescent glow.</li>
+<li>On an <strong><code>e-Ink screen</code></strong>. Little spherical beads which are half black/half white, are rotated so their black side is facing outwards.</li>
+</ul>
+<p>Regardless as you can see, darker colors results in less lights being emitted and leading to less strain to the eye. As a person who spend more time in front of a screen, I cannot fathom how useful this is. I have been a huge advocate of using night color/night mode in computer to improve developer health. Hence this article and why my blog has a dark mode now.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/how-i-setup-dark-theme-in-my-blog/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/append-to-file-using-bash/">Append to File using Bash</a></h1>
@@ -206,48 +232,6 @@ I have been programming or aspiring to program (former/recovering imposter syndr
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/generalized-inverted-index-gin-postgresql/">GIN: Generalized Inverted iNdex (on text)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-05-19 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Indexes are an integral part of any production database. It improves the speed of your query, and which in tern speeds up your application. The faster you get your data, faster you can provide the result to your user, faster you can move on to your next user. Knowing different type of indexes allows you to choose which is the best for your data. As there is no silver bullet.</p>
-<p><em><strong>PostgreSQL is the DB refereed to in this article</strong></em></p>
-<p>This article is my humble attempt to explain and simplify what is Gin.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/generalized-inverted-index-gin-postgresql/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/count-how-many-routes-you-have/">Count How Many Routes You Have</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-05-17 </span>
-      <div class="post-category">
-          <a href="/categories/til/"> TIL </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>It start with one, then two and it keeps on growing. The number of routes in your ruby on rails project can be a reflection of how complex your project is becoming. And if you are curious like me to know how many routes your project has, just run the following command in your rails console.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/count-how-many-routes-you-have/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -278,15 +262,15 @@ I have been programming or aspiring to program (former/recovering imposter syndr
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
+    &copy; 
+    2011 - 
     2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
   </span>
 </div>

@@ -16,27 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" />
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const options = {
-    bottom: '64px', 
-    time: '0.5s', 
-    mixColor: '#fff', 
-    backgroundColor: '#fff',  
-    buttonColorDark: '#100f2c',  
-    buttonColorLight: '#fff', 
-    saveInCookies: true, 
-    label: '🌓', 
-    autoMatchOsTheme: true 
-  }
-
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
 
 
 
@@ -57,7 +37,7 @@
 
 
 
-<link href="/sass/main.min.4ff4445ed212d8be59323ac030f4e94a67ccfbef3619cf9f10340ce27880f745.css" rel="stylesheet">
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -139,9 +119,30 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/aws-ecr-lifecycle-policy/">AWS ECR Lifecycle Policy</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2024-04-06 </span>
+      <div class="post-category">
+          <a href="/categories/aws/"> AWS </a>
+          <a href="/categories/ecr/"> ECR </a>
+          </div>
+    </div>
+  </header>
   
-  <section id="posts" class="posts">
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Amazon Elastic Container Registry (ECR) is a service provided by Amazon for hosting our Docker/container images. The cost of downloading these images to a server or ECS (Elastic Container Service) within the same zone is free. However, downloading or uploading from the public internet incurs costs, as does storage space usage.</p>
+<p>During the development and deployment of your project, you may find yourself building images as frequently as every 30 minutes. This frequency reflects my own experience. Whenever new code is merged with the master branch, it triggers a code build pipeline. This pipeline ultimately pushes the latest image to ECR, typically tagged as &ldquo;latest.&rdquo; Consequently, the previous image remains in the repository but becomes untagged. While retaining a few versions of older deployments facilitates easy rollbacks, after a day or two, they tend to become redundant. At this juncture, they serve no purpose other than incurring storage costs.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/aws-ecr-lifecycle-policy/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/handle-ssh-idle-connections-handing-or-getting-disconnected/">Handle SSH Idle Connections Freezing shell or Getting Disconnected</a></h1>
@@ -164,6 +165,27 @@ to the internet or the complexity of the network routing required to reach the s
     </div>
     <div class="read-more">
       <a href="/post/handle-ssh-idle-connections-handing-or-getting-disconnected/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/docker-compose-a-process-manager-i-always-wanted/">Docker Compose a Process Manager I Always Wanted</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2024-01-10 </span>
+      <div class="post-category">
+          <a href="/categories/docker/"> docker </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      
+    </div>
+    <div class="read-more">
+      <a href="/post/docker-compose-a-process-manager-i-always-wanted/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
@@ -221,52 +243,6 @@ to the internet or the complexity of the network routing required to reach the s
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/create-json-payload-for-api-test-using-factory-bot/">Create JSON Payload for API Test Using Factory Bot</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-08-05 </span>
-      <div class="post-category">
-          <a href="/categories/rails/"> rails </a>
-          <a href="/categories/tdd/"> TDD </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>I am not going to reiterate the PSA (Public Safety Announcement) of how important it is to write test. You can find enough articles related that online, and most probably you already know and agree to it. This article is how to generate JSON payload using Factory Bot.</p>
-<p><a href="https://github.com/thoughtbot/factory_bot">Factory Bot</a> is a ruby library that is used to create records in the table for testing. It will help generate data to fill and prepare records, before the test execution.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/create-json-payload-for-api-test-using-factory-bot/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/setup-https-and-reverseproxy-to-docker-web-app/">Setup HTTP(s) and Reverse Proxy to Docker Web App</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-08-03 </span>
-      <div class="post-category">
-          <a href="/categories/docker/"> Docker </a>
-          <a href="/categories/devops/"> devops </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>This article is about how to add https to a web app running in docker. For this we are using nginx to handle port 80 and port 443 and then reverse proxy the traffic to port 443 to the application port. In this article we are assuming you have credentials for the SSL certificate, another article will be written on how to do it with lets encrypt to create ssl certificates for free.</p>
-<p>This article assume you know about ssl key files, docker and docker-compose. And for the sake of this article we are setting up <code>uptime-kuma</code>.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/setup-https-and-reverseproxy-to-docker-web-app/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -294,15 +270,15 @@ to the internet or the complexity of the network routing required to reach the s
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
+    &copy; 
+    2011 - 
     2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
   </span>
 </div>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>server admin on Harisankar P S | HsPS.in</title>
+    <link>https://hsps.in/tags/server-admin/</link>
+    <description>Recent content in server admin on Harisankar P S | HsPS.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 06 Apr 2024 06:21:43 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/server-admin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS ECR Lifecycle Policy</title>
+      <link>https://hsps.in/post/aws-ecr-lifecycle-policy/</link>
+      <pubDate>Sat, 06 Apr 2024 06:21:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/aws-ecr-lifecycle-policy/</guid>
+      <description>&lt;p&gt;Amazon Elastic Container Registry (ECR) is a service provided by Amazon for hosting our Docker/container images. The cost of downloading these images to a server or ECS (Elastic Container Service) within the same zone is free. However, downloading or uploading from the public internet incurs costs, as does storage space usage.&lt;/p&gt;
+&lt;p&gt;During the development and deployment of your project, you may find yourself building images as frequently as every 30 minutes. This frequency reflects my own experience. Whenever new code is merged with the master branch, it triggers a code build pipeline. This pipeline ultimately pushes the latest image to ECR, typically tagged as &amp;ldquo;latest.&amp;rdquo; Consequently, the previous image remains in the repository but becomes untagged. While retaining a few versions of older deployments facilitates easy rollbacks, after a day or two, they tend to become redundant. At this juncture, they serve no purpose other than incurring storage costs.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

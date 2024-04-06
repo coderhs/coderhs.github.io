@@ -16,27 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" />
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const options = {
-    bottom: '64px', 
-    time: '0.5s', 
-    mixColor: '#fff', 
-    backgroundColor: '#fff',  
-    buttonColorDark: '#100f2c',  
-    buttonColorLight: '#fff', 
-    saveInCookies: true, 
-    label: '🌓', 
-    autoMatchOsTheme: true 
-  }
-
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
 
 
 
@@ -57,7 +37,7 @@
 
 
 
-<link href="/sass/main.min.4ff4445ed212d8be59323ac030f4e94a67ccfbef3619cf9f10340ce27880f745.css" rel="stylesheet">
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -139,9 +119,52 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/setup-nfs-server-on-ubuntu/">Setup NFS Server on Ubuntu</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-09-05 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> linux </a>
+          <a href="/categories/homelab/"> homelab </a>
+          </div>
+    </div>
+  </header>
   
-  <section id="posts" class="posts">
+  <div class="post-content">
+    <div class="post-summary">
+      <p>NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.</p>
+<p>With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/setup-nfs-server-on-ubuntu/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/wildcard-domain-in-pi-hole/">Wildcard Domain in Pi Hole</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-09-04 </span>
+      <div class="post-category">
+          <a href="/categories/homelab/"> homelab </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.</p>
+<p>For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/wildcard-domain-in-pi-hole/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/validating-yaml-files-in-ruby/">Validating YAML Files in Ruby</a></h1>
@@ -221,54 +244,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/amazing-emoji-keyboard-in-linux/">Amazing Emoji Keyboard in Linux</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-08-01 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developer&rsquo;s journey 😆. So moving from
-windows to Linux was over 13-14 years ago. I didn&rsquo;t do much from the windows world other than games and single executable
-files. But moving from macOS to Linux, has been a bit tough. KDE has been able to provide me with everything I want and
-more. The one thing that I missed the most was the emoji keyboard, with easy to launch shortcut.</p>
-<p>My usage of emoji was at its peak during macOS days, I used emoji for my communications, commits, function name and
-even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I loved it.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/amazing-emoji-keyboard-in-linux/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/running-migrations-from-console/">Running Migrations From Console</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-07-19 </span>
-      <div class="post-category">
-          <a href="/categories/rails/"> rails </a>
-          <a href="/categories/til/"> til </a>
-          <a href="/categories/apartment/"> Apartment </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.</p>
-<p>When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/running-migrations-from-console/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -299,15 +274,15 @@ even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I lov
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
+    &copy; 
+    2011 - 
     2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
   </span>
 </div>

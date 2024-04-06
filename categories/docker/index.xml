@@ -6,7 +6,16 @@
     <description>Recent content in docker on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Aug 2023 22:31:40 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jan 2024 20:51:53 -0800</lastBuildDate><atom:link href="https://hsps.in/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Compose a Process Manager I Always Wanted</title>
+      <link>https://hsps.in/post/docker-compose-a-process-manager-i-always-wanted/</link>
+      <pubDate>Wed, 10 Jan 2024 20:51:53 -0800</pubDate>
+      
+      <guid>https://hsps.in/post/docker-compose-a-process-manager-i-always-wanted/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Setup HTTP(s) and Reverse Proxy to Docker Web App</title>
       <link>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</link>

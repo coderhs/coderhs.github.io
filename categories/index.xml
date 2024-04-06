@@ -6,13 +6,40 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Apr 2024 03:13:24 +0530</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Apr 2024 06:21:43 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS</title>
+      <link>https://hsps.in/categories/aws/</link>
+      <pubDate>Sat, 06 Apr 2024 06:21:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ECR</title>
+      <link>https://hsps.in/categories/ecr/</link>
+      <pubDate>Sat, 06 Apr 2024 06:21:43 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/ecr/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>SSH</title>
       <link>https://hsps.in/categories/ssh/</link>
       <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
       
       <guid>https://hsps.in/categories/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://hsps.in/categories/docker/</link>
+      <pubDate>Wed, 10 Jan 2024 20:51:53 -0800</pubDate>
+      
+      <guid>https://hsps.in/categories/docker/</guid>
       <description></description>
     </item>
     
@@ -58,15 +85,6 @@
       <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
       
       <guid>https://hsps.in/categories/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://hsps.in/categories/docker/</link>
-      <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
-      
-      <guid>https://hsps.in/categories/docker/</guid>
       <description></description>
     </item>
     
@@ -130,15 +148,6 @@
       <pubDate>Sun, 19 Mar 2023 19:52:42 -0700</pubDate>
       
       <guid>https://hsps.in/categories/amazon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWS</title>
-      <link>https://hsps.in/categories/aws/</link>
-      <pubDate>Sun, 19 Mar 2023 19:52:42 -0700</pubDate>
-      
-      <guid>https://hsps.in/categories/aws/</guid>
       <description></description>
     </item>
     
