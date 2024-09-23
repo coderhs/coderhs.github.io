@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 06 Apr 2024 06:21:43 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Sep 2024 04:38:52 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Docker Postgres to Take Sql Dump From AWS RDS</title>
+      <link>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</link>
+      <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</guid>
+      <description>&lt;p&gt;Docker is an efficient way to use command-line tools without needing to install them or their required libraries. Recently, I had a use case where I needed to take an SQL dump of a schema from a PostgreSQL database. The problem was that the PostgreSQL DB was version 16.3, while my local DB was only version 15. Using my local &lt;code&gt;pg_dump&lt;/code&gt; to access the remote database resulted in a version incompatibility error. To fix this, I would either need to upgrade &lt;code&gt;pg_dump&lt;/code&gt; or have both versions installed simultaneously on my machine. I didn&amp;rsquo;t want to do either. This is where Docker came to the rescue.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>AWS ECR Lifecycle Policy</title>
       <link>https://hsps.in/post/aws-ecr-lifecycle-policy/</link>
@@ -29,15 +38,6 @@ encountered instances where connections freeze or break after a period of inacti
 frequently, while other times it never occurs at all. When I was in the US connecting to Amazon servers, there were
 occasions when the connection remained stable for days on end. This led me to believe that the issue might be related
 to the internet or the complexity of the network routing required to reach the server.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Docker Compose a Process Manager I Always Wanted</title>
-      <link>https://hsps.in/post/docker-compose-a-process-manager-i-always-wanted/</link>
-      <pubDate>Wed, 10 Jan 2024 20:51:53 -0800</pubDate>
-      
-      <guid>https://hsps.in/post/docker-compose-a-process-manager-i-always-wanted/</guid>
-      <description></description>
     </item>
     
     <item>

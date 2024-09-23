@@ -6,13 +6,40 @@
     <description>Recent content in Tags on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 06 Apr 2024 06:21:43 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Sep 2024 04:38:52 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS</title>
       <link>https://hsps.in/tags/aws/</link>
-      <pubDate>Sat, 06 Apr 2024 06:21:43 -0700</pubDate>
+      <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
       
       <guid>https://hsps.in/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://hsps.in/tags/docker/</link>
+      <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgres</title>
+      <link>https://hsps.in/tags/postgres/</link>
+      <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/postgres/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rds</title>
+      <link>https://hsps.in/tags/rds/</link>
+      <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
+      
+      <guid>https://hsps.in/tags/rds/</guid>
       <description></description>
     </item>
     
@@ -22,15 +49,6 @@
       <pubDate>Sat, 06 Apr 2024 06:21:43 -0700</pubDate>
       
       <guid>https://hsps.in/tags/cloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://hsps.in/tags/docker/</link>
-      <pubDate>Sat, 06 Apr 2024 06:21:43 -0700</pubDate>
-      
-      <guid>https://hsps.in/tags/docker/</guid>
       <description></description>
     </item>
     

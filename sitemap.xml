@@ -3,14 +3,84 @@
   
   <url>
     <loc>https://hsps.in/tags/aws/</loc>
-    <lastmod>2024-04-06T06:21:43-07:00</lastmod>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hsps.in/categories/aws/</loc>
-    <lastmod>2024-04-06T06:21:43-07:00</lastmod>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/docker/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/docker/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/postgres/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/postgres/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/rds/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</loc>
+    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,21 +93,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/categories/</loc>
-    <lastmod>2024-04-06T06:21:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/cloud/</loc>
-    <lastmod>2024-04-06T06:21:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/docker/</loc>
     <lastmod>2024-04-06T06:21:43-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -58,21 +114,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2024-04-06T06:21:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/images/</loc>
-    <lastmod>2024-04-06T06:21:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
     <lastmod>2024-04-06T06:21:43-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -94,13 +136,6 @@
   
   <url>
     <loc>https://hsps.in/tags/server-management/</loc>
-    <lastmod>2024-04-06T06:21:43-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2024-04-06T06:21:43-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -151,20 +186,6 @@
   <url>
     <loc>https://hsps.in/tags/terminal/</loc>
     <lastmod>2024-04-04T03:13:24+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/docker/</loc>
-    <lastmod>2024-01-10T20:51:53-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/docker-compose-a-process-manager-i-always-wanted/</loc>
-    <lastmod>2024-01-10T20:51:53-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

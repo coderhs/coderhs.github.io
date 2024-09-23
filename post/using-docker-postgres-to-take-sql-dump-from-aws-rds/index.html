@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Using Docker Postgres to Take Sql Dump From AWS RDS - Harisankar P S | HsPS.in</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Using Docker Postgres to Take Sql Dump From AWS RDS" /><meta name="keywords" content="aws, rds, postgres, docker" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Using Docker Postgres to Take Sql Dump From AWS RDS" />
+<meta property="og:description" content="Using Docker Postgres to Take Sql Dump From AWS RDS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-09-23T04:38:52-07:00" />
+<meta property="article:modified_time" content="2024-09-23T04:38:52-07:00" />
+
+<meta itemprop="name" content="Using Docker Postgres to Take Sql Dump From AWS RDS">
+<meta itemprop="description" content="Using Docker Postgres to Take Sql Dump From AWS RDS"><meta itemprop="datePublished" content="2024-09-23T04:38:52-07:00" />
+<meta itemprop="dateModified" content="2024-09-23T04:38:52-07:00" />
+<meta itemprop="wordCount" content="370">
+<meta itemprop="keywords" content="aws,rds,postgres,docker," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Docker Postgres to Take Sql Dump From AWS RDS"/>
+<meta name="twitter:description" content="Using Docker Postgres to Take Sql Dump From AWS RDS"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">HsPS.in</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Articles</li>
+      </a><a href="/videos/">
+        <li class="mobile-menu-item">Videos</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        
+<div class="logo-wrapper">
+  <a href="/" class="logo">HsPS.in</a>
+  <br>
+  <i>My thoughts and opinions</i>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Articles</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/videos/">Videos</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">About</a>
+      </li>
+  </ul>
+</nav>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="coderhs" data-description="Support me on Buy me a coffee!" data-message="Thank you for buying me coffee. " data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Using Docker Postgres to Take Sql Dump From AWS RDS</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-09-23 </span>
+        <div class="post-category">
+            <a href="/categories/docker/"> docker </a>
+            <a href="/categories/postgres/"> postgres </a>
+            <a href="/categories/aws/"> aws </a>
+            </div>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>Docker is an efficient way to use command-line tools without needing to install them or their required libraries. Recently, I had a use case where I needed to take an SQL dump of a schema from a PostgreSQL database. The problem was that the PostgreSQL DB was version 16.3, while my local DB was only version 15. Using my local <code>pg_dump</code> to access the remote database resulted in a version incompatibility error. To fix this, I would either need to upgrade <code>pg_dump</code> or have both versions installed simultaneously on my machine. I didn&rsquo;t want to do either. This is where Docker came to the rescue.</p>
+<p>The idea is to download the Docker image of the PostgreSQL version you need—in this case, <code>postgres:16.3</code>—and use the <code>pg_dump</code> tool from inside the container. Downloading the schema was just one part of the problem; the second part was uploading it to another database. In this article, I&rsquo;m documenting the steps I followed to download the schema to the container and then upload it to the second database. I&rsquo;ll also include instructions for making the schema file available on the host machine with the proper permissions.</p>
+<h3 id="step-1">Step 1:</h3>
+<p>Create a local folder to store the <code>pg_dumps</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">mkdir pg_dumps
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="step-2">Step 2:</h3>
+<p>Launch the PostgreSQL container, mounting the local folder. This folder will be where the dump/SQL file is saved.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run --rm <span class="se">\
+</span><span class="se"></span>           --network<span class="o">=</span><span class="s2">&#34;host&#34;</span> <span class="se">\
+</span><span class="se"></span>           --user <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="se">\
+</span><span class="se"></span>           -v ./pg_dumps:/dump <span class="se">\
+</span><span class="se"></span>           -e <span class="nv">PGPASSWORD</span><span class="o">=</span><span class="s1">&#39;&lt;PASSWORD&gt;&#39;</span> <span class="se">\
+</span><span class="se"></span>           postgres:16.3 <span class="se">\
+</span><span class="se"></span>           bash -c <span class="s2">&#34;pg_dump -h &lt;RDS_URL&gt; -U &lt;RDS_USER&gt; -d &lt;RDS_DB&gt; -n schema_name &gt; /dump/schema_name.sql&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>If you remove the <code>-n schema_name</code>, it will dump the entire database.</p>
+<p>Once the dump is complete, the container will exit.</p>
+<h3 id="step-3">Step 3:</h3>
+<p>Import the schema to the new database.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run --rm <span class="se">\
+</span><span class="se"></span>           --network<span class="o">=</span><span class="s2">&#34;host&#34;</span> <span class="se">\
+</span><span class="se"></span>           --user <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="se">\
+</span><span class="se"></span>           -v ~/pg_dumps:/dump <span class="se">\
+</span><span class="se"></span>           -e <span class="nv">PGPASSWORD</span><span class="o">=</span><span class="s1">&#39;&lt;your-password&gt;&#39;</span> <span class="se">\
+</span><span class="se"></span>           postgres:latest <span class="se">\
+</span><span class="se"></span>           bash -c <span class="s2">&#34;pg_restore -h &lt;2nd-db-rds-endpoint&gt; -U &lt;username&gt; -d &lt;target_database_name&gt; &lt; ./dump/schema_name.sql&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Once the import is complete, the container will exit.</p>
+<p>And that’s it! You have successfully exported and imported a schema from one PostgreSQL server to another without needing to update or install parallel versions of PostgreSQL tools (<code>pg_dump</code> / <code>pg_restore</code>).</p>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/aws/">aws</a>
+          <a href="/tags/rds/">rds</a>
+          <a href="/tags/postgres/">postgres</a>
+          <a href="/tags/docker/">docker</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/aws-ecr-lifecycle-policy/">
+            <span class="next-text nav-default">AWS ECR Lifecycle Policy</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'hsps-in';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
+  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2011 - 
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-39547141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
