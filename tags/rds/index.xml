@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Mon, 23 Sep 2024 04:38:52 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/rds/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Using Docker Postgres to Take Sql Dump From AWS RDS</title>
+      <title>Using Docker to export &amp; import data from Amazon RDS</title>
       <link>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</link>
       <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
       
