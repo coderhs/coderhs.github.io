@@ -142,6 +142,36 @@
   <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/ruby-wasm/">About Web Assembly. Example for Ruby Web Assembly</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2023-05-19 </span>
+      <div class="post-category">
+          <a href="/categories/web-assembly/"> web-assembly </a>
+          <a href="/categories/ruby/"> ruby </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Any program to execute on a machine needs to be in machine code (1s and 0s). In some languages you compile the code directly to machine code, and some they converts it to intermediary code that runs on an virtual machine (which indirectly execute machine code). One of the biggest virtual machines in the world is a web browser. People write HTML,CSS and JS, and execute it by rendering the graphics and executing code on your machine. The browser have become so advanced that it takes care of security and safety so well. Thus being able to covert your program code or binary file into JS allows you to run your code on the browser and any machine that has a browser.</p>
+<p>Now the idea of web assembly support in ruby (or any language) is not about writing website using ruby, though we can do that if we wanted to. The idea is to make a program or library that we have already existing in one language available for the web. If you can run ruby interpreter on your browser, then you can run any ruby code on your browser.</p>
+<p>The things people doing with web assembly have been getting crazier. People are building more and more proof of concept ideas and apps in web assembly. The most exciting thing that impressed me recently was <a href="https://webvm.io/">webvm.io</a>. A virtual machine is running on your browser with linux. You can run linux commands, execute a python program, etc. This is a full fledged virtual machine (the one you run using docker), running on your browser. There are more projects that does that now:</p>
+<ul>
+<li><a href="https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;mem=192">https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;mem=192</a></li>
+<li><a href="https://copy.sh/v86/">https://copy.sh/v86/</a></li>
+</ul>
+<p>You can host a web server or a rails app inside an image, which will then run on your browser serving the content. (Note: networking is still not native, so most use web sockets to emulate a network and make internet available inside the container).</p>
+<p>The potential for this is huge, you can technically turn any machine that can run a web browser (Chrome or firefox) into a server.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/ruby-wasm/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/">Statically Compile Crystal Program and Distribute as docker Image</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2023-04-02 </span>
@@ -246,27 +276,6 @@ bundle <span class="nb">exec</span> rails assets:precompile
     </div>
     <div class="read-more">
       <a href="/post/speed-up-docker-build-using-cache/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/enable-docker-remote-api-on-docker-host/">Enable Docker Remote Api on Docker Host</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-09-06 </span>
-      <div class="post-category">
-          <a href="/categories/docker/"> docker </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Docker engine has inbuild API service that allows you to control &amp; modify your docker engine and docker instance using HTTP.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/enable-docker-remote-api-on-docker-host/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

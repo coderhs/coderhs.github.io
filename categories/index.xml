@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Sep 2024 04:38:52 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 02:11:12 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://hsps.in/categories/linux/</link>
+      <pubDate>Fri, 04 Oct 2024 02:11:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/categories/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>AWS</title>
       <link>https://hsps.in/categories/aws/</link>
@@ -184,15 +193,6 @@
       <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
       
       <guid>https://hsps.in/categories/homelab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://hsps.in/categories/linux/</link>
-      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
-      
-      <guid>https://hsps.in/categories/linux/</guid>
       <description></description>
     </item>
     

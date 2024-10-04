@@ -6,7 +6,17 @@
     <description>Recent content on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Sep 2024 04:38:52 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 02:11:12 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Scanner (scanner emulator) in SANE - Linux</title>
+      <link>https://hsps.in/post/test-scanner-in-sane/</link>
+      <pubDate>Fri, 04 Oct 2024 02:11:12 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/test-scanner-in-sane/</guid>
+      <description>&lt;p&gt;2024 &lt;a href=&#34;https://hacktoberfest.com/&#34;&gt;Hacktoberfest&lt;/a&gt; has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the &lt;a href=&#34;https://github.com/CoolCat467/Scanner-Server&#34;&gt;Scanner Server&lt;/a&gt;. It offers a web interface for using scanners, which seemed pretty interesting.&lt;/p&gt;
+&lt;p&gt;I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Using Docker to export &amp; import data from Amazon RDS</title>
       <link>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</link>
