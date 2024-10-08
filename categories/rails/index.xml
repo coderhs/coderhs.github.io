@@ -6,7 +6,16 @@
     <description>Recent content in rails on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Aug 2023 23:06:27 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Oct 2024 21:09:36 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Change Action Mailer Settings From Rails Console</title>
+      <link>https://hsps.in/post/change-action-mailer-settings-from-rails-console/</link>
+      <pubDate>Mon, 07 Oct 2024 21:09:36 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/change-action-mailer-settings-from-rails-console/</guid>
+      <description>&lt;p&gt;In Rails applications, ActionMailer is a powerful module used to send emails. It’s essential to configure your ActionMailer settings correctly to ensure that your application can send emails reliably through your chosen SMTP server. Typically, these settings are configured in your environment files (e.g., config/environments/production.rb). However, there may be instances where you need to override these settings temporarily through the Rails console—for example, when testing a custom configuration or troubleshooting email delivery issues.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Create JSON Payload for API Test Using Factory Bot</title>
       <link>https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/</link>

@@ -16,27 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" />
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const options = {
-    bottom: '64px', 
-    time: '0.5s', 
-    mixColor: '#fff', 
-    backgroundColor: '#fff',  
-    buttonColorDark: '#100f2c',  
-    buttonColorLight: '#fff', 
-    saveInCookies: true, 
-    label: '🌓', 
-    autoMatchOsTheme: true 
-  }
-
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
 
 
 
@@ -57,7 +37,7 @@
 
 
 
-<link href="/sass/main.min.4ff4445ed212d8be59323ac030f4e94a67ccfbef3619cf9f10340ce27880f745.css" rel="stylesheet">
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -137,9 +117,45 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/speed-up-docker-build-using-cache/">Speed Up Docker Build using cache</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2023-03-10 </span>
+      <div class="post-category">
+          <a href="/categories/docker/"> docker </a>
+          </div>
+    </div>
+  </header>
   
-  <section id="posts" class="posts">
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Docker has become a popular tool in recent years for building and deploying applications in a portable and scalable way. However, the build process can sometimes be slow, especially for large applications with many dependencies. In this article, we&rsquo;ll explore how we can optimize our Dockerfile to speed it up.</p>
+<p>When building a rails app for production we would need to do the following steps in the docker file</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">COPY . .
+bundle install
+yarn install
+bundle <span class="nb">exec</span> rails assets:precompile
+</code></pre></td></tr></table>
+</div>
+</div><p>Docker after building each step it will cache that step. If the instructions/context of that steps or steps before haven&rsquo;t change then docker will use the cache.</p>
+<p>So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/speed-up-docker-build-using-cache/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/enable-docker-remote-api-on-docker-host/">Enable Docker Remote Api on Docker Host</a></h1>
@@ -237,31 +253,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/which-language-should-build-this-software-in/">Which Language Should I Build This Software In</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-08-22 </span>
-      <div class="post-category">
-          <a href="/categories/thoughts/"> thoughts </a>
-          <a href="/categories/startup/"> startup </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p><strong>Which Language Should I Build This Software In?</strong> or <strong>Which language should I have this software developed In?</strong></p>
-<p>This is a question that software devs gets asked a lot. By there friends/colleague , usually by who are not part of the software industry. This is my answer to them:</p>
-<p>If you had an idea for a novel? or a poem? which language will you write it in. Italian, Tamil, Bengali? Would you try to learn a new language because there are a lot of similar novels (anime) in Chinese or Japanese.</p>
-<p>The best language to write your novel is the language you know the most.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/which-language-should-build-this-software-in/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -292,15 +283,15 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
+    &copy; 
+    2011 - 
     2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
   </span>
 </div>

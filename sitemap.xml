@@ -2,15 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/tags/action-mailer/</loc>
+    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/categories/</loc>
-    <lastmod>2024-10-04T02:11:12-07:00</lastmod>
+    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/change-action-mailer-settings-from-rails-console/</loc>
+    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hsps.in/</loc>
-    <lastmod>2024-10-04T02:11:12-07:00</lastmod>
+    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/mailer/</loc>
+    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/rails/</loc>
+    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/rails/</loc>
+    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2024-10-04T02:11:12-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/saned/</loc>
     <lastmod>2024-10-04T02:11:12-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -45,13 +87,6 @@
   
   <url>
     <loc>https://hsps.in/tags/scanner/</loc>
-    <lastmod>2024-10-04T02:11:12-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2024-10-04T02:11:12-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -318,20 +353,6 @@
   
   <url>
     <loc>https://hsps.in/tags/mini-test/</loc>
-    <lastmod>2023-08-05T23:06:27-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/rails/</loc>
-    <lastmod>2023-08-05T23:06:27-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/rails/</loc>
     <lastmod>2023-08-05T23:06:27-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
