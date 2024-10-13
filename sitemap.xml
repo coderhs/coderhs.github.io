@@ -1248,6 +1248,13 @@
   </url>
   
   <url>
+    <loc>https://hsps.in/contact/</loc>
+    <lastmod>2020-06-05T15:22:34-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/videos/</loc>
     <lastmod>2020-06-05T15:22:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1819,11 +1826,6 @@
     <lastmod>2012-01-14T00:07:30-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/contact/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
