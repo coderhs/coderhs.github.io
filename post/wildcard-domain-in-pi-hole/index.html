@@ -16,7 +16,27 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.
+<meta name="author" content="Harisankar P S" />
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    const options = {
+    bottom: '64px', 
+    time: '0.5s', 
+    mixColor: '#fff', 
+    backgroundColor: '#fff',  
+    buttonColorDark: '#100f2c',  
+    buttonColorLight: '#fff', 
+    saveInCookies: true, 
+    label: '🌓', 
+    autoMatchOsTheme: true 
+  }
+
+  const darkmode = new Darkmode(options);
+  darkmode.showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script><meta name="description" content="PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.
 For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&amp;rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.
 " /><meta name="keywords" content="homelab, dns, server, linux, dnsmasq" />
 
@@ -37,7 +57,7 @@ For homelab I have a docker-swarm which is managed using portainer. I have a ngi
 
 
 
-<link href="/sass/main.min.67228dc45a1e6d38e9d4495f6e8ccdceb651d1d6a4bc382dd32bc0b7610250de.css" rel="stylesheet">
+<link href="/sass/main.min.46226c0a4085d6d861ca677ef7f62a08a256920217ed6f8693ba7616d0a5037a.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 

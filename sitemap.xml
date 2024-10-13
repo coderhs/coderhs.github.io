@@ -2,8 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/tags/aws/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/aws/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/categories/</loc>
-    <lastmod>2024-10-08T20:11:58-07:00</lastmod>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/db/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/ecs/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/migrate/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/rails/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/rails/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -16,21 +93,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2024-10-08T20:11:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/on-demand/</loc>
-    <lastmod>2024-10-08T20:11:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
     <lastmod>2024-10-08T20:11:58-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -45,13 +108,6 @@
   
   <url>
     <loc>https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/</loc>
-    <lastmod>2024-10-08T20:11:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2024-10-08T20:11:58-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -114,20 +170,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/tags/rails/</loc>
-    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/rails/</loc>
-    <lastmod>2024-10-07T21:09:36-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/categories/linux/</loc>
     <lastmod>2024-10-04T02:11:12-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -158,20 +200,6 @@
   <url>
     <loc>https://hsps.in/post/test-scanner-in-sane/</loc>
     <lastmod>2024-10-04T02:11:12-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/aws/</loc>
-    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/aws/</loc>
-    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -507,13 +535,6 @@
   
   <url>
     <loc>https://hsps.in/categories/ecs/</loc>
-    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/ecs/</loc>
     <lastmod>2023-07-30T00:10:21-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1798,16 +1819,6 @@
     <lastmod>2012-01-14T00:07:30-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/contact/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/projects/</loc>
-    <priority>0</priority>
   </url>
   
   <url>

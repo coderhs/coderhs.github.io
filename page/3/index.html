@@ -16,7 +16,27 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
+<meta name="author" content="Harisankar P S" />
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    const options = {
+    bottom: '64px', 
+    time: '0.5s', 
+    mixColor: '#fff', 
+    backgroundColor: '#fff',  
+    buttonColorDark: '#100f2c',  
+    buttonColorLight: '#fff', 
+    saveInCookies: true, 
+    label: '🌓', 
+    autoMatchOsTheme: true 
+  }
+
+  const darkmode = new Darkmode(options);
+  darkmode.showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
 
 
 
@@ -37,7 +57,7 @@
 
 
 
-<link href="/sass/main.min.67228dc45a1e6d38e9d4495f6e8ccdceb651d1d6a4bc382dd32bc0b7610250de.css" rel="stylesheet">
+<link href="/sass/main.min.46226c0a4085d6d861ca677ef7f62a08a256920217ed6f8693ba7616d0a5037a.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -113,7 +133,32 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="posts" class="posts">
+          
+  
+  <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/setup-https-and-reverseproxy-to-docker-web-app/">Setup HTTP(s) and Reverse Proxy to Docker Web App</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2023-08-03 </span>
+      <div class="post-category">
+          <a href="/categories/docker/"> Docker </a>
+          <a href="/categories/devops/"> devops </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>This article is about how to add https to a web app running in docker. For this we are using nginx to handle port 80 and port 443 and then reverse proxy the traffic to port 443 to the application port. In this article we are assuming you have credentials for the SSL certificate, another article will be written on how to do it with lets encrypt to create ssl certificates for free.</p>
+<p>This article assume you know about ssl key files, docker and docker-compose. And for the sake of this article we are setting up <code>uptime-kuma</code>.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/setup-https-and-reverseproxy-to-docker-web-app/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/rails-copy-assets-bundler-cache-to-speed-up-build/">Rails Copy Assets bundler Cache to Speed Up Build</a></h1>
@@ -217,28 +262,6 @@ share the executable inside a docker image. We will create the smallest docker i
     </div>
     <div class="read-more">
       <a href="/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/share-docker-images-as-files/">Share Docker Images as Files</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-03-26 </span>
-      <div class="post-category">
-          <a href="/categories/docker/"> docker </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.</p>
-<p>Dev Machine: Kubuntu, 22.04</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/share-docker-images-as-files/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

@@ -6,7 +6,17 @@
     <description>Recent content in ecs on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 30 Jul 2023 00:10:21 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/ecs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Oct 2024 00:05:58 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/ecs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Rails Migrations in AWS ECS Using AWS CLI</title>
+      <link>https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/</link>
+      <pubDate>Thu, 10 Oct 2024 00:05:58 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/</guid>
+      <description>&lt;p&gt;AWS ECS (Elastic Container Service) is a powerful Amazon Web Service that allows you to deploy Docker containers on various infrastructure options, including EC2 instances, Fargate (serverless containers), or even self-hosted servers. Being deeply integrated with AWS, ECS offers a cost-effective and seamless solution for managing containers in the Amazon ecosystem.&lt;/p&gt;
+&lt;p&gt;This guide assumes you are familiar with ECS and already have a task definition set up for your Rails application. Additionally, it assumes you know how to find your subnet ID and security group ID, as these will be required when running containers in your specific environment.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Sidekiq Graceful Shutdown in Fargate ECS</title>
       <link>https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/</link>

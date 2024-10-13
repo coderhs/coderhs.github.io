@@ -6,7 +6,17 @@
     <description>Recent content on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 08 Oct 2024 20:11:58 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Oct 2024 00:05:58 -0700</lastBuildDate><atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Rails Migrations in AWS ECS Using AWS CLI</title>
+      <link>https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/</link>
+      <pubDate>Thu, 10 Oct 2024 00:05:58 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/</guid>
+      <description>&lt;p&gt;AWS ECS (Elastic Container Service) is a powerful Amazon Web Service that allows you to deploy Docker containers on various infrastructure options, including EC2 instances, Fargate (serverless containers), or even self-hosted servers. Being deeply integrated with AWS, ECS offers a cost-effective and seamless solution for managing containers in the Amazon ecosystem.&lt;/p&gt;
+&lt;p&gt;This guide assumes you are familiar with ECS and already have a task definition set up for your Rails application. Additionally, it assumes you know how to find your subnet ID and security group ID, as these will be required when running containers in your specific environment.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean</title>
       <link>https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/</link>
@@ -653,24 +663,6 @@ Well 3 reasons
       <description>Don&amp;rsquo;t know if it is the best way to start, but here it goes&amp;hellip;
 I am starting a technical blog, something that I wanted to do for a while&amp;hellip;
 So wish me luck =)</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://hsps.in/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hsps.in/contact/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://hsps.in/projects/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hsps.in/projects/</guid>
-      <description></description>
     </item>
     
   </channel>
