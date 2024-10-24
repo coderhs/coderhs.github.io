@@ -2,6 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/database/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/performance/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/postgresql/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/postgresql/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/project-pg_spider/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/setup-master-slave-database-on-postgresql-17/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/tags/aws/</loc>
     <lastmod>2024-10-10T00:05:58-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -10,13 +80,6 @@
   
   <url>
     <loc>https://hsps.in/categories/aws/</loc>
-    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/</loc>
     <lastmod>2024-10-10T00:05:58-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -37,21 +100,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/migrate/</loc>
-    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
     <lastmod>2024-10-10T00:05:58-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -73,13 +122,6 @@
   
   <url>
     <loc>https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/</loc>
-    <lastmod>2024-10-10T00:05:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2024-10-10T00:05:58-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1094,13 +1136,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/tags/database/</loc>
-    <lastmod>2022-07-19T23:15:19-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/irb/</loc>
     <lastmod>2022-07-19T23:15:19-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1305,13 +1340,6 @@
   
   <url>
     <loc>https://hsps.in/post/generalized-inverted-index-gin-postgresql/</loc>
-    <lastmod>2022-05-19T21:01:23-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/postgresql/</loc>
     <lastmod>2022-05-19T21:01:23-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Oct 2024 00:05:58 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Oct 2024 10:19:48 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup Read Replica (master-slave) Database on Postgresql 17</title>
+      <link>https://hsps.in/post/setup-master-slave-database-on-postgresql-17/</link>
+      <pubDate>Thu, 24 Oct 2024 10:19:48 -0700</pubDate>
+      
+      <guid>https://hsps.in/post/setup-master-slave-database-on-postgresql-17/</guid>
+      <description>&lt;p&gt;PostgreSQL is a mature, open-source relational database that has been widely adopted by many companies over the years. It has been my go-to database for most of my software career, helping me solve various performance challenges in my projects. Features like JSON generation, materialized views, and others have enabled me to scale APIs to handle millions of requests per second.&lt;/p&gt;
+&lt;p&gt;One effective strategy to improve the performance of web applications is to create a read-only replica of the primary database. This allows you to direct read-only queries (e.g., &lt;code&gt;SELECT&lt;/code&gt; queries) to the replica, while write operations continue to target the primary database. Note that PostgreSQL doesn’t support multiple primary (or master) databases natively, but it does support multiple read replicas.&lt;/p&gt;
+&lt;p&gt;Although you can achieve distributed primary databases via schema or table sharding, that topic is beyond the scope of this article.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Running Rails Migrations in AWS ECS Using AWS CLI</title>
       <link>https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/</link>

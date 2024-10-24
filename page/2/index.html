@@ -120,6 +120,29 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/">Using Docker to export &amp; import data from Amazon RDS</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2024-09-23 </span>
+      <div class="post-category">
+          <a href="/categories/docker/"> docker </a>
+          <a href="/categories/postgres/"> postgres </a>
+          <a href="/categories/aws/"> aws </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Docker is an efficient way to use command-line tools without needing to install them or their required libraries. Recently, I had a use case where I needed to take an SQL dump of a schema from a PostgreSQL database. The problem was that the PostgreSQL DB was version 16.3, while my local DB was only version 15. Using my local <code>pg_dump</code> to access the remote database resulted in a version incompatibility error. To fix this, I would either need to upgrade <code>pg_dump</code> or have both versions installed simultaneously on my machine. I didn&rsquo;t want to do either. This is where Docker came to the rescue.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/aws-ecr-lifecycle-policy/">AWS ECR Lifecycle Policy</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2024-04-06 </span>
@@ -216,29 +239,6 @@ to the internet or the complexity of the network routing required to reach the s
     </div>
     <div class="read-more">
       <a href="/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/create-json-payload-for-api-test-using-factory-bot/">Create JSON Payload for API Test Using Factory Bot</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-08-05 </span>
-      <div class="post-category">
-          <a href="/categories/rails/"> rails </a>
-          <a href="/categories/tdd/"> TDD </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>I am not going to reiterate the PSA (Public Safety Announcement) of how important it is to write test. You can find enough articles related that online, and most probably you already know and agree to it. This article is how to generate JSON payload using Factory Bot.</p>
-<p><a href="https://github.com/thoughtbot/factory_bot">Factory Bot</a> is a ruby library that is used to create records in the table for testing. It will help generate data to fill and prepare records, before the test execution.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/create-json-payload-for-api-test-using-factory-bot/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
