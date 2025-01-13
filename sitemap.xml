@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/</loc>
+    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/linux/</loc>
     <lastmod>2025-01-08T18:55:49+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -16,15 +30,57 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/post/tailscale-for-single-user-single-host/</loc>
+    <loc>https://hsps.in/tags/productivity/</loc>
     <lastmod>2025-01-08T18:55:49+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://hsps.in/categories/</loc>
-    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
+    <loc>https://hsps.in/categories/productivity/</loc>
+    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/programming/</loc>
+    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/single-host/</loc>
+    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/tailscale/</loc>
+    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/tailscale/</loc>
+    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/tailscale-for-single-user-single-host/</loc>
+    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -66,13 +122,6 @@
   
   <url>
     <loc>https://hsps.in/post/setup-master-slave-database-on-postgresql-17/</loc>
-    <lastmod>2024-10-24T10:19:48-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2024-10-24T10:19:48-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -163,20 +212,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/tags/tailscale/</loc>
-    <lastmod>2024-10-08T20:11:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/tailscale/</loc>
-    <lastmod>2024-10-08T20:11:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/terraform/</loc>
     <lastmod>2024-10-08T20:11:58-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -214,13 +249,6 @@
   <url>
     <loc>https://hsps.in/tags/mailer/</loc>
     <lastmod>2024-10-07T21:09:36-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/linux/</loc>
-    <lastmod>2024-10-04T02:11:12-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1032,13 +1060,6 @@
   
   <url>
     <loc>https://hsps.in/tags/micro-controller/</loc>
-    <lastmod>2022-08-04T00:42:04-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/programming/</loc>
     <lastmod>2022-08-04T00:42:04-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

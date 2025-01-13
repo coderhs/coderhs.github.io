@@ -6,8 +6,15 @@
     <description>Recent content in Tailscale on Harisankar P S | HsPS.in</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 08 Oct 2024 20:11:58 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jan 2025 18:55:49 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/tags/tailscale/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tailscale for Single User Single Host</title>
+      <link>https://hsps.in/post/tailscale-for-single-user-single-host/</link>
+      <pubDate>Wed, 08 Jan 2025 18:55:49 +0530</pubDate>
+      <guid>https://hsps.in/post/tailscale-for-single-user-single-host/</guid>
+      <description>&lt;p&gt;I often see articles discussing Tailscale in multi-device setups, but I wanted to share my experience of using Tailscale primarily with a single machine. To clarify, it&amp;rsquo;s not technically a single device, but a combination of my work computer, phone, and a 10-inch Android tablet.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem-inefficient-remote-access&#34;&gt;The Problem: Inefficient Remote Access&lt;/h2&gt;&#xA;&lt;p&gt;I work from home, and my computer serves as both my personal and work machine. There have been many times when I’ve needed to assist colleagues or push changes while away from my desk. In emergencies, I used to rely on AnyDesk to remote into my computer via my phone or tablet. While AnyDesk and similar tools like TeamViewer provide visual control over the desktop, they often suffer from lag, disconnections, and poor responsiveness on weaker connections, making simple tasks like opening a terminal or editing a file feel like a chore. The lag becomes especially pronounced when navigating large projects or deploying code, turning a few-minute task into a frustrating, time-consuming ordeal.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean</title>
       <link>https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/</link>

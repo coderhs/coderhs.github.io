@@ -16,9 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="I often see articles discussing Tailscale in multi-device setups, but I wanted to share my experience of using Tailscale primarily with a single machine. To clarify, it&amp;rsquo;s not technically a single device, but a combination of my work computer, phone, and a 10-inch Android tablet.
-The Problem: Inefficient Remote Access I work from home, and my computer serves as both my personal and work machine. There have been many times when I’ve needed to assist colleagues or push changes while away from my desk. In emergencies, I used to rely on AnyDesk to remote into my computer via my phone or tablet. While AnyDesk and similar tools like TeamViewer provide visual control over the desktop, they often suffer from lag, disconnections, and poor responsiveness on weaker connections, making simple tasks like opening a terminal or editing a file feel like a chore. The lag becomes especially pronounced when navigating large projects or deploying code, turning a few-minute task into a frustrating, time-consuming ordeal.
-" /><meta name="keywords" content="Harisankar P S, software, developer" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="How tailscale can be useful for a person with a single computer" /><meta name="keywords" content="tailscale, linux, programming, productivity, single-host" />
 
 
 
@@ -44,24 +42,27 @@ The Problem: Inefficient Remote Access I work from home, and my computer serves 
 <meta property="og:url" content="https://hsps.in/post/tailscale-for-single-user-single-host/">
   <meta property="og:site_name" content="Harisankar P S | HsPS.in">
   <meta property="og:title" content="Tailscale for Single User Single Host">
-  <meta property="og:description" content="I often see articles discussing Tailscale in multi-device setups, but I wanted to share my experience of using Tailscale primarily with a single machine. To clarify, it’s not technically a single device, but a combination of my work computer, phone, and a 10-inch Android tablet.
-The Problem: Inefficient Remote Access I work from home, and my computer serves as both my personal and work machine. There have been many times when I’ve needed to assist colleagues or push changes while away from my desk. In emergencies, I used to rely on AnyDesk to remote into my computer via my phone or tablet. While AnyDesk and similar tools like TeamViewer provide visual control over the desktop, they often suffer from lag, disconnections, and poor responsiveness on weaker connections, making simple tasks like opening a terminal or editing a file feel like a chore. The lag becomes especially pronounced when navigating large projects or deploying code, turning a few-minute task into a frustrating, time-consuming ordeal.">
+  <meta property="og:description" content="How tailscale can be useful for a person with a single computer">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2025-01-08T18:55:49+05:30">
     <meta property="article:modified_time" content="2025-01-08T18:55:49+05:30">
+    <meta property="article:tag" content="Tailscale">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Productivity">
+    <meta property="article:tag" content="Single-Host">
 
   <meta itemprop="name" content="Tailscale for Single User Single Host">
-  <meta itemprop="description" content="I often see articles discussing Tailscale in multi-device setups, but I wanted to share my experience of using Tailscale primarily with a single machine. To clarify, it’s not technically a single device, but a combination of my work computer, phone, and a 10-inch Android tablet.
-The Problem: Inefficient Remote Access I work from home, and my computer serves as both my personal and work machine. There have been many times when I’ve needed to assist colleagues or push changes while away from my desk. In emergencies, I used to rely on AnyDesk to remote into my computer via my phone or tablet. While AnyDesk and similar tools like TeamViewer provide visual control over the desktop, they often suffer from lag, disconnections, and poor responsiveness on weaker connections, making simple tasks like opening a terminal or editing a file feel like a chore. The lag becomes especially pronounced when navigating large projects or deploying code, turning a few-minute task into a frustrating, time-consuming ordeal.">
+  <meta itemprop="description" content="How tailscale can be useful for a person with a single computer">
   <meta itemprop="datePublished" content="2025-01-08T18:55:49+05:30">
   <meta itemprop="dateModified" content="2025-01-08T18:55:49+05:30">
   <meta itemprop="wordCount" content="650">
+  <meta itemprop="keywords" content="tailscale,linux,programming,productivity,single-host">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Tailscale for Single User Single Host">
-  <meta name="twitter:description" content="I often see articles discussing Tailscale in multi-device setups, but I wanted to share my experience of using Tailscale primarily with a single machine. To clarify, it’s not technically a single device, but a combination of my work computer, phone, and a 10-inch Android tablet.
-The Problem: Inefficient Remote Access I work from home, and my computer serves as both my personal and work machine. There have been many times when I’ve needed to assist colleagues or push changes while away from my desk. In emergencies, I used to rely on AnyDesk to remote into my computer via my phone or tablet. While AnyDesk and similar tools like TeamViewer provide visual control over the desktop, they often suffer from lag, disconnections, and poor responsiveness on weaker connections, making simple tasks like opening a terminal or editing a file feel like a chore. The lag becomes especially pronounced when navigating large projects or deploying code, turning a few-minute task into a frustrating, time-consuming ordeal.">
+  <meta name="twitter:description" content="How tailscale can be useful for a person with a single computer">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +137,10 @@ The Problem: Inefficient Remote Access I work from home, and my computer serves 
 
       <div class="post-meta">
         <span class="post-time"> 2025-01-08 </span>
-        
+        <div class="post-category">
+            <a href="/categories/tailscale/"> tailscale </a>
+            <a href="/categories/productivity/"> productivity </a>
+            </div>
         
       </div>
     </header>
@@ -190,7 +194,13 @@ The Problem: Inefficient Remote Access I work from home, and my computer serves 
 
     
 <footer class="post-footer">
-      <div class="author-post-intro">
+      <div class="post-tags">
+          <a href="/tags/tailscale/">tailscale</a>
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/programming/">programming</a>
+          <a href="/tags/productivity/">productivity</a>
+          <a href="/tags/single-host/">single-host</a>
+          </div><div class="author-post-intro">
   <p>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hi, I’m Harisankar P S! I’m a Senior Software Architect, and this blog is where I share my thoughts on programming,
     devops, anything I find interesting or noteworthy, . My primary focus is Ruby on Rails, but I also explore
