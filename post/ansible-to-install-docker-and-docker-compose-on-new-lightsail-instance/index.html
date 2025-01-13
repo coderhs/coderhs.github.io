@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/" />
@@ -39,20 +39,31 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance" />
-<meta property="og:description" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-08-06T21:59:35-07:00" />
-<meta property="article:modified_time" content="2023-08-06T21:59:35-07:00" />
+<meta property="og:url" content="https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance">
+  <meta property="og:description" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-08-06T21:59:35-07:00">
+    <meta property="article:modified_time" content="2023-08-06T21:59:35-07:00">
+    <meta property="article:tag" content="Ansible">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Docker-Compose">
+    <meta property="article:tag" content="Playbook">
+    <meta property="article:tag" content="Linux-Admin">
+    <meta property="article:tag" content="Ubuntu">
 
-<meta itemprop="name" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance">
-<meta itemprop="description" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance"><meta itemprop="datePublished" content="2023-08-06T21:59:35-07:00" />
-<meta itemprop="dateModified" content="2023-08-06T21:59:35-07:00" />
-<meta itemprop="wordCount" content="953">
-<meta itemprop="keywords" content="ansible,docker,docker-compose,playbook,linux-admin,ubuntu," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance"/>
-<meta name="twitter:description" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance"/>
+  <meta itemprop="name" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance">
+  <meta itemprop="description" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance">
+  <meta itemprop="datePublished" content="2023-08-06T21:59:35-07:00">
+  <meta itemprop="dateModified" content="2023-08-06T21:59:35-07:00">
+  <meta itemprop="wordCount" content="1029">
+  <meta itemprop="keywords" content="ansible,docker,docker-compose,playbook,linux-admin,ubuntu">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance">
+  <meta name="twitter:description" content="Using Ansible to Install Docker and Docker Compose on New Lightsail Instance">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -157,11 +168,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt update
-sudo apt install software-properties-common
-sudo add-apt-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install software-properties-common
+</span></span><span class="line"><span class="cl">sudo add-apt-repository --yes --update ppa:ansible/ansible
+</span></span><span class="line"><span class="cl">sudo apt install ansible
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Once ansible is installed, create a new folder called <code>playbooks</code>. Inside of which create folder <code>setup-docker-and-docker-compose</code>. The steps of automation is called playbooks in ansible.</p>
 <p>To get started create a new file inside the folder called <code>playbook.yml</code>. The file name doesn&rsquo;t have to be playbook.yml you can call it anything you want, but the play is written you <code>.yml</code> format.</p>
@@ -221,58 +232,58 @@ sudo apt install ansible
 </span><span class="lnt">51
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install docker and docker compose</span><span class="w">
-</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
-</span><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">  </span><span class="nt">remote_user</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu</span><span class="w">
-</span><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">ansible_ssh_private_key_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;~/.ssh/key.pem&#34;</span><span class="w">
-</span><span class="w">
-</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Update APT cache</span><span class="w">
-</span><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">update_cache</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
-</span><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Docker dependencies</span><span class="w">
-</span><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w">
-</span><span class="w">          </span>- <span class="l">apt-transport-https</span><span class="w">
-</span><span class="w">          </span>- <span class="l">ca-certificates</span><span class="w">
-</span><span class="w">          </span>- <span class="l">curl</span><span class="w">
-</span><span class="w">          </span>- <span class="l">software-properties-common</span><span class="w">
-</span><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
-</span><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Add Docker GPG key</span><span class="w">
-</span><span class="w">      </span><span class="nt">apt_key</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">https://download.docker.com/linux/ubuntu/gpg</span><span class="w">
-</span><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
-</span><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Add Docker APT repository</span><span class="w">
-</span><span class="w">      </span><span class="nt">apt_repository</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l">deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable</span><span class="w">
-</span><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
-</span><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Docker</span><span class="w">
-</span><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">docker-ce</span><span class="w">
-</span><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
-</span><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Ensure current user is in docker group</span><span class="w">
-</span><span class="w">      </span><span class="nt">user</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu</span><span class="w">
-</span><span class="w">        </span><span class="nt">groups</span><span class="p">:</span><span class="w"> </span><span class="l">docker</span><span class="w">
-</span><span class="w">        </span><span class="nt">append</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
-</span><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Docker Compose</span><span class="w">
-</span><span class="w">      </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l">curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose &amp;&amp; chmod +x /usr/local/bin/docker-compose</span><span class="w">
-</span><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install docker and docker compose</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">remote_user</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ansible_ssh_private_key_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;~/.ssh/key.pem&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Update APT cache</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">update_cache</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Docker dependencies</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">apt-transport-https</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">ca-certificates</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">curl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">software-properties-common</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Add Docker GPG key</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">apt_key</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">https://download.docker.com/linux/ubuntu/gpg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Add Docker APT repository</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">apt_repository</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l">deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Docker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">docker-ce</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Ensure current user is in docker group</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">user</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">groups</span><span class="p">:</span><span class="w"> </span><span class="l">docker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">append</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Docker Compose</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l">curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose &amp;&amp; chmod +x /usr/local/bin/docker-compose</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>Let me explain the top level keys:</p>
 <ul>
@@ -293,9 +304,9 @@ sudo apt install ansible
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[new_server]</span>
-<span class="na">x.x.x.x</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[new_server]</span>
+</span></span><span class="line"><span class="cl"><span class="na">x.x.x.x</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>If I have more servers then i can add them to the list, and ansible will run the code on them all.</p>
 <p>Note: An important thing to note is that, ansible expects your machine to be able to ssh into the new server by default. You can fix that by placing config in the <code>~/.ssh/config</code> or you can set the path to the <code>*.pem</code> file under the vars key like below:</p>
@@ -305,9 +316,9 @@ sudo apt install ansible
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">vars</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">ansible_ssh_private_key_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;~/.ssh/key.pem&#34;</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ansible_ssh_private_key_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;~/.ssh/key.pem&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>Once you have all the configuration setup you can run the playbook as follows:</p>
 <div class="highlight"><div class="chroma">
@@ -315,8 +326,8 @@ sudo apt install ansible
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">ansible-playbook -i inventory.ini playbook.yml
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ansible-playbook -i inventory.ini playbook.yml
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>You can change the files that you want to run here. I plan to keep an <code>.ini</code> file with all the servers and a <code>.ini</code> file where i will just place the ip of the new server.</p>
 <p>Note: This can and should be possible with a single file, I will do that as I learn more about it.</p>
@@ -401,7 +412,7 @@ sudo apt install ansible
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -410,16 +421,16 @@ sudo apt install ansible
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -436,19 +447,15 @@ sudo apt install ansible
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

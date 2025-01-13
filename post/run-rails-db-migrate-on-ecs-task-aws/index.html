@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/" />
@@ -39,20 +39,30 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Running Rails Migrations in AWS ECS Using AWS CLI" />
-<meta property="og:description" content="Running Rails Migrations in AWS ECS Using AWS CLI " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-10-10T00:05:58-07:00" />
-<meta property="article:modified_time" content="2024-10-10T00:05:58-07:00" />
+<meta property="og:url" content="https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Running Rails Migrations in AWS ECS Using AWS CLI">
+  <meta property="og:description" content="Running Rails Migrations in AWS ECS Using AWS CLI ">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-10-10T00:05:58-07:00">
+    <meta property="article:modified_time" content="2024-10-10T00:05:58-07:00">
+    <meta property="article:tag" content="Aws">
+    <meta property="article:tag" content="Ecs">
+    <meta property="article:tag" content="Rails">
+    <meta property="article:tag" content="Db">
+    <meta property="article:tag" content="Migrate">
 
-<meta itemprop="name" content="Running Rails Migrations in AWS ECS Using AWS CLI">
-<meta itemprop="description" content="Running Rails Migrations in AWS ECS Using AWS CLI "><meta itemprop="datePublished" content="2024-10-10T00:05:58-07:00" />
-<meta itemprop="dateModified" content="2024-10-10T00:05:58-07:00" />
-<meta itemprop="wordCount" content="398">
-<meta itemprop="keywords" content="aws,ecs,rails,db,migrate," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Running Rails Migrations in AWS ECS Using AWS CLI"/>
-<meta name="twitter:description" content="Running Rails Migrations in AWS ECS Using AWS CLI "/>
+  <meta itemprop="name" content="Running Rails Migrations in AWS ECS Using AWS CLI">
+  <meta itemprop="description" content="Running Rails Migrations in AWS ECS Using AWS CLI ">
+  <meta itemprop="datePublished" content="2024-10-10T00:05:58-07:00">
+  <meta itemprop="dateModified" content="2024-10-10T00:05:58-07:00">
+  <meta itemprop="wordCount" content="398">
+  <meta itemprop="keywords" content="aws,ecs,rails,db,migrate">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Running Rails Migrations in AWS ECS Using AWS CLI">
+  <meta name="twitter:description" content="Running Rails Migrations in AWS ECS Using AWS CLI ">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -167,13 +177,13 @@ Use the following command to run your Rails migration task in ECS:</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">aws ecs run-task  --cluster ecs-cluster-name
-                  --task-definition ecs-task-definition
-                  --launch-type FARGATE
-                  --network-configuration <span class="s2">&#34;awsvpcConfiguration={subnets=[subnet-id],securityGroups=[sg-id],assignPublicIp=DISABLED}&#34;</span>
-                  --overrides <span class="s1">&#39;{&#34;containerOverrides&#34;:[{&#34;name&#34;:&#34;rails-container-name-in-task-definition&#34;,&#34;command&#34;:[&#34;bundle&#34;, &#34;exec&#34;, &#34;rails&#34;, &#34;db:migrate&#34;]}]}&#39;</span>
-                  --count <span class="m">1</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">aws ecs run-task  --cluster ecs-cluster-name
+</span></span><span class="line"><span class="cl">                  --task-definition ecs-task-definition
+</span></span><span class="line"><span class="cl">                  --launch-type FARGATE
+</span></span><span class="line"><span class="cl">                  --network-configuration <span class="s2">&#34;awsvpcConfiguration={subnets=[subnet-id],securityGroups=[sg-id],assignPublicIp=DISABLED}&#34;</span>
+</span></span><span class="line"><span class="cl">                  --overrides <span class="s1">&#39;{&#34;containerOverrides&#34;:[{&#34;name&#34;:&#34;rails-container-name-in-task-definition&#34;,&#34;command&#34;:[&#34;bundle&#34;, &#34;exec&#34;, &#34;rails&#34;, &#34;db:migrate&#34;]}]}&#39;</span>
+</span></span><span class="line"><span class="cl">                  --count <span class="m">1</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This command will trigger the creation of a new ECS task that runs your database migration. However, note that you won&rsquo;t see the output directly from the command.</p>
 </li>
@@ -186,8 +196,8 @@ To verify if the migration completed successfully, you can either log into the E
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">aws logs get-log-events        --log-group-name <span class="s2">&#34;/ecs/my-log-group&#34;</span>        --log-stream-name <span class="s2">&#34;ecs/my-task-id/my-container-name&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">aws logs get-log-events        --log-group-name <span class="s2">&#34;/ecs/my-log-group&#34;</span>        --log-stream-name <span class="s2">&#34;ecs/my-task-id/my-container-name&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -273,7 +283,7 @@ eg: <code>[&quot;bundle&quot;, &quot;exec&quot;, &quot;rails&quot;, &quot;db:cre
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -282,16 +292,16 @@ eg: <code>[&quot;bundle&quot;, &quot;exec&quot;, &quot;rails&quot;, &quot;db:cre
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -308,19 +318,15 @@ eg: <code>[&quot;bundle&quot;, &quot;exec&quot;, &quot;rails&quot;, &quot;db:cre
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

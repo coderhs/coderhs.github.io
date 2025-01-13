@@ -25,7 +25,7 @@ I was eager to contribute but quickly realized I didn’t have a scanner to test
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/test-scanner-in-sane/" />
@@ -41,23 +41,31 @@ I was eager to contribute but quickly realized I didn’t have a scanner to test
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Test Scanner (scanner emulator) in SANE - Linux" />
-<meta property="og:description" content="2024 Hacktoberfest has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the Scanner Server. It offers a web interface for using scanners, which seemed pretty interesting.
-I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/test-scanner-in-sane/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-10-04T02:11:12-07:00" />
-<meta property="article:modified_time" content="2024-10-04T02:11:12-07:00" />
+<meta property="og:url" content="https://hsps.in/post/test-scanner-in-sane/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Test Scanner (scanner emulator) in SANE - Linux">
+  <meta property="og:description" content="2024 Hacktoberfest has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the Scanner Server. It offers a web interface for using scanners, which seemed pretty interesting.
+I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-10-04T02:11:12-07:00">
+    <meta property="article:modified_time" content="2024-10-04T02:11:12-07:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Saned">
+    <meta property="article:tag" content="Scanner">
 
-<meta itemprop="name" content="Test Scanner (scanner emulator) in SANE - Linux">
-<meta itemprop="description" content="2024 Hacktoberfest has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the Scanner Server. It offers a web interface for using scanners, which seemed pretty interesting.
-I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes."><meta itemprop="datePublished" content="2024-10-04T02:11:12-07:00" />
-<meta itemprop="dateModified" content="2024-10-04T02:11:12-07:00" />
-<meta itemprop="wordCount" content="168">
-<meta itemprop="keywords" content="linux,saned,scanner," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Test Scanner (scanner emulator) in SANE - Linux"/>
-<meta name="twitter:description" content="2024 Hacktoberfest has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the Scanner Server. It offers a web interface for using scanners, which seemed pretty interesting.
-I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes."/>
+  <meta itemprop="name" content="Test Scanner (scanner emulator) in SANE - Linux">
+  <meta itemprop="description" content="2024 Hacktoberfest has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the Scanner Server. It offers a web interface for using scanners, which seemed pretty interesting.
+I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.">
+  <meta itemprop="datePublished" content="2024-10-04T02:11:12-07:00">
+  <meta itemprop="dateModified" content="2024-10-04T02:11:12-07:00">
+  <meta itemprop="wordCount" content="168">
+  <meta itemprop="keywords" content="linux,saned,scanner">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Test Scanner (scanner emulator) in SANE - Linux">
+  <meta name="twitter:description" content="2024 Hacktoberfest has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the Scanner Server. It offers a web interface for using scanners, which seemed pretty interesting.
+I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -152,8 +160,8 @@ I was eager to contribute but quickly realized I didn’t have a scanner to test
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo vim /etc/sane.d/dll.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo vim /etc/sane.d/dll.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Search for the word <code>test</code> in Vim:</li>
@@ -163,8 +171,8 @@ I was eager to contribute but quickly realized I didn’t have a scanner to test
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim">/<span class="nx">test</span><span class="err">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl">/<span class="nx">test</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This will take you to a line that looks like <code>#test</code>. Simply remove the <code>#</code> in front of <code>test</code> to enable it.</p>
 <p>And that’s it! No need to restart any services—your virtual scanner is ready to go.</p>
@@ -244,7 +252,7 @@ I was eager to contribute but quickly realized I didn’t have a scanner to test
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -253,16 +261,16 @@ I was eager to contribute but quickly realized I didn’t have a scanner to test
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -279,19 +287,15 @@ I was eager to contribute but quickly realized I didn’t have a scanner to test
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

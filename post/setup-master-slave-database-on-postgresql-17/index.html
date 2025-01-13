@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/setup-master-slave-database-on-postgresql-17/" />
@@ -39,20 +39,29 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Setup Read Replica (master-slave) Database on Postgresql 17" />
-<meta property="og:description" content="Setup read-replica for your postgresql 17 Database" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/setup-master-slave-database-on-postgresql-17/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-10-24T10:19:48-07:00" />
-<meta property="article:modified_time" content="2024-10-24T10:19:48-07:00" />
+<meta property="og:url" content="https://hsps.in/post/setup-master-slave-database-on-postgresql-17/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Setup Read Replica (master-slave) Database on Postgresql 17">
+  <meta property="og:description" content="Setup read-replica for your postgresql 17 Database">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-10-24T10:19:48-07:00">
+    <meta property="article:modified_time" content="2024-10-24T10:19:48-07:00">
+    <meta property="article:tag" content="Project-Pg_spider">
+    <meta property="article:tag" content="Performance">
+    <meta property="article:tag" content="Database">
+    <meta property="article:tag" content="Postgresql">
 
-<meta itemprop="name" content="Setup Read Replica (master-slave) Database on Postgresql 17">
-<meta itemprop="description" content="Setup read-replica for your postgresql 17 Database"><meta itemprop="datePublished" content="2024-10-24T10:19:48-07:00" />
-<meta itemprop="dateModified" content="2024-10-24T10:19:48-07:00" />
-<meta itemprop="wordCount" content="713">
-<meta itemprop="keywords" content="project-pg_spider,performance,database,postgresql," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Setup Read Replica (master-slave) Database on Postgresql 17"/>
-<meta name="twitter:description" content="Setup read-replica for your postgresql 17 Database"/>
+  <meta itemprop="name" content="Setup Read Replica (master-slave) Database on Postgresql 17">
+  <meta itemprop="description" content="Setup read-replica for your postgresql 17 Database">
+  <meta itemprop="datePublished" content="2024-10-24T10:19:48-07:00">
+  <meta itemprop="dateModified" content="2024-10-24T10:19:48-07:00">
+  <meta itemprop="wordCount" content="757">
+  <meta itemprop="keywords" content="postgresql,master-slave,database,read-only,replication,node">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Setup Read Replica (master-slave) Database on Postgresql 17">
+  <meta name="twitter:description" content="Setup read-replica for your postgresql 17 Database">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -153,12 +162,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt update
-sudo apt install -y wget gnupg lsb-release
-wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc <span class="p">|</span> sudo apt-key add -
-<span class="nb">echo</span> <span class="s2">&#34;deb http://apt.postgresql.org/pub/repos/apt/ \$(lsb_release -cs)-pgdg main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/pgdg.list
-sudo apt update
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install -y wget gnupg lsb-release
+</span></span><span class="line"><span class="cl">wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc <span class="p">|</span> sudo apt-key add -
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb http://apt.postgresql.org/pub/repos/apt/ \$(lsb_release -cs)-pgdg main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/pgdg.list
+</span></span><span class="line"><span class="cl">sudo apt update
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="installing-postgresql">Installing PostgreSQL</h3>
 <div class="highlight"><div class="chroma">
@@ -166,8 +175,8 @@ sudo apt update
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt install -y postgresql-17
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt install -y postgresql-17
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="enabling-and-starting-postgresql">Enabling and Starting PostgreSQL</h3>
 <div class="highlight"><div class="chroma">
@@ -176,9 +185,9 @@ sudo apt update
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo systemctl <span class="nb">enable</span> postgresql
-sudo systemctl start postgresql
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> postgresql
+</span></span><span class="line"><span class="cl">sudo systemctl start postgresql
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="confirming-the-installed-version">Confirming the Installed Version</h3>
 <div class="highlight"><div class="chroma">
@@ -186,8 +195,8 @@ sudo systemctl start postgresql
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">psql --version
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">psql --version
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>You should see: <code>psql (PostgreSQL) 17.0</code>.</p>
 <p>Make sure that the secondary (replica) server has the same version of PostgreSQL installed. The primary and replica servers need to have identical software configurations, though you can opt for lower CPU and RAM on the replica based on your workload.</p>
@@ -208,9 +217,9 @@ sudo systemctl start postgresql
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo su postgres
-psql
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo su postgres
+</span></span><span class="line"><span class="cl">psql
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Run:</p>
 <div class="highlight"><div class="chroma">
@@ -218,8 +227,8 @@ psql
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">replicator</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">REPLICATION</span><span class="w"> </span><span class="k">ENCRYPTED</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">&#39;replicaPassword&#39;</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">replicator</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">REPLICATION</span><span class="w"> </span><span class="k">ENCRYPTED</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">&#39;replicaPassword&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -230,8 +239,8 @@ psql
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">echo</span> <span class="s2">&#34;host replication replicator 192.168.1.100/32 md5&#34;</span> &gt;&gt; /etc/postgresql/17/main/pg_hba.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;host replication replicator 192.168.1.100/32 md5&#34;</span> &gt;&gt; /etc/postgresql/17/main/pg_hba.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Reload the configuration:</p>
 <div class="highlight"><div class="chroma">
@@ -239,8 +248,8 @@ psql
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">psql -c <span class="s2">&#34;select pg_reload_conf();&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">psql -c <span class="s2">&#34;select pg_reload_conf();&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -254,8 +263,8 @@ psql
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">telnet 192.168.1.101 <span class="m">5432</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">telnet 192.168.1.101 <span class="m">5432</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -265,8 +274,8 @@ psql
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo systemctl stop postgresql
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo systemctl stop postgresql
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -278,10 +287,10 @@ psql
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo su postgres
-cp -R /var/lib/postgresql/17/main/ /var/lib/postgresql/17/main_bak/
-rm -rf /var/lib/postgresql/17/main/
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo su postgres
+</span></span><span class="line"><span class="cl">cp -R /var/lib/postgresql/17/main/ /var/lib/postgresql/17/main_bak/
+</span></span><span class="line"><span class="cl">rm -rf /var/lib/postgresql/17/main/
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -291,8 +300,8 @@ rm -rf /var/lib/postgresql/17/main/
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">pg_basebackup -h 192.168.1.101 -D /var/lib/postgresql/17/main/ -U replicator -P -v -R -X stream -C -S replicaslot1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pg_basebackup -h 192.168.1.101 -D /var/lib/postgresql/17/main/ -U replicator -P -v -R -X stream -C -S replicaslot1
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -303,8 +312,8 @@ rm -rf /var/lib/postgresql/17/main/
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">ls -ltrh /var/lib/postgresql/17/main/
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ls -ltrh /var/lib/postgresql/17/main/
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -321,12 +330,12 @@ rm -rf /var/lib/postgresql/17/main/
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">testing_db</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="n">testing_db</span><span class="w">
-</span><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="nb">text</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Superman&#39;</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Spiderman&#39;</span><span class="p">);</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">testing_db</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="n">testing_db</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="nb">text</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Superman&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Spiderman&#39;</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="on-the-replica-database">On the Replica Database</h4>
 <p>Switch to the replicated database and check if the table and data are present:</p>
@@ -336,9 +345,9 @@ rm -rf /var/lib/postgresql/17/main/
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="n">testing_db</span><span class="w">
-</span><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="n">testing_db</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="configuring-synchronous-commit-optional">Configuring Synchronous Commit (Optional)</h2>
 <p>By default, replication is asynchronous, meaning the primary does not wait for the replica to confirm data writes. To ensure data is written to the replica before confirming, enable synchronous commit:</p>
@@ -348,9 +357,9 @@ rm -rf /var/lib/postgresql/17/main/
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">ALTER</span><span class="w"> </span><span class="k">SYSTEM</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">synchronous_standby_names</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">pg_reload_conf</span><span class="p">();</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">ALTER</span><span class="w"> </span><span class="k">SYSTEM</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">synchronous_standby_names</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">pg_reload_conf</span><span class="p">();</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="conclusion">Conclusion</h2>
 <p>By following these steps, you have successfully set up a read-only replica of your primary PostgreSQL database. This setup improves availability, data redundancy, and overall application performance by offloading read queries from the primary database. Implementing this architecture ensures that write operations are faster and read-heavy operations are handled efficiently.</p>
@@ -368,16 +377,16 @@ rm -rf /var/lib/postgresql/17/main/
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connected_to</span><span class="p">(</span><span class="ss">role</span><span class="p">:</span> <span class="ss">:reading</span><span class="p">)</span> <span class="k">do</span>
-  <span class="c1"># Read-only queries</span>
-  <span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">active</span><span class="p">:</span> <span class="kp">true</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
-<span class="k">end</span>
-
-<span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connected_to</span><span class="p">(</span><span class="ss">role</span><span class="p">:</span> <span class="ss">:writing</span><span class="p">)</span> <span class="k">do</span>
-  <span class="c1"># Write queries</span>
-  <span class="no">User</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="nb">name</span><span class="p">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connected_to</span><span class="p">(</span><span class="ss">role</span><span class="p">:</span> <span class="ss">:reading</span><span class="p">)</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Read-only queries</span>
+</span></span><span class="line"><span class="cl">  <span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">active</span><span class="p">:</span> <span class="kp">true</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connected_to</span><span class="p">(</span><span class="ss">role</span><span class="p">:</span> <span class="ss">:writing</span><span class="p">)</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Write queries</span>
+</span></span><span class="line"><span class="cl">  <span class="no">User</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="nb">name</span><span class="p">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>A well-architected read replica setup can be transformative, enhancing your app&rsquo;s scalability and reliability. By distributing the workload efficiently, you can provide users with a more responsive experience and better overall performance.</p>
     </div>
@@ -419,7 +428,11 @@ rm -rf /var/lib/postgresql/17/main/
 </style>
 
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/tailscale-for-single-user-single-host/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Tailscale for Single User Single Host</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/run-rails-db-migrate-on-ecs-task-aws/">
             <span class="next-text nav-default">Running Rails Migrations in AWS ECS Using AWS CLI</span>
             <span class="next-text nav-mobile">Next</span>
@@ -453,7 +466,7 @@ rm -rf /var/lib/postgresql/17/main/
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -462,16 +475,16 @@ rm -rf /var/lib/postgresql/17/main/
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -488,19 +501,15 @@ rm -rf /var/lib/postgresql/17/main/
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

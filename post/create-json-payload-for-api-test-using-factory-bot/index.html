@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/" />
@@ -39,20 +39,31 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Create JSON Payload for API Test Using Factory Bot" />
-<meta property="og:description" content="Create JSON Payload for API Test Using Factory Bot" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-08-05T23:06:27-07:00" />
-<meta property="article:modified_time" content="2023-08-05T23:06:27-07:00" />
+<meta property="og:url" content="https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Create JSON Payload for API Test Using Factory Bot">
+  <meta property="og:description" content="Create JSON Payload for API Test Using Factory Bot">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-08-05T23:06:27-07:00">
+    <meta property="article:modified_time" content="2023-08-05T23:06:27-07:00">
+    <meta property="article:tag" content="Rails">
+    <meta property="article:tag" content="Tdd">
+    <meta property="article:tag" content="Testing">
+    <meta property="article:tag" content="Factory-Bot">
+    <meta property="article:tag" content="Mini-Test">
+    <meta property="article:tag" content="Rspec">
 
-<meta itemprop="name" content="Create JSON Payload for API Test Using Factory Bot">
-<meta itemprop="description" content="Create JSON Payload for API Test Using Factory Bot"><meta itemprop="datePublished" content="2023-08-05T23:06:27-07:00" />
-<meta itemprop="dateModified" content="2023-08-05T23:06:27-07:00" />
-<meta itemprop="wordCount" content="575">
-<meta itemprop="keywords" content="rails,tdd,testing,factory-bot,mini-test,rspec," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Create JSON Payload for API Test Using Factory Bot"/>
-<meta name="twitter:description" content="Create JSON Payload for API Test Using Factory Bot"/>
+  <meta itemprop="name" content="Create JSON Payload for API Test Using Factory Bot">
+  <meta itemprop="description" content="Create JSON Payload for API Test Using Factory Bot">
+  <meta itemprop="datePublished" content="2023-08-05T23:06:27-07:00">
+  <meta itemprop="dateModified" content="2023-08-05T23:06:27-07:00">
+  <meta itemprop="wordCount" content="575">
+  <meta itemprop="keywords" content="rails,tdd,testing,factory-bot,mini-test,rspec">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Create JSON Payload for API Test Using Factory Bot">
+  <meta name="twitter:description" content="Create JSON Payload for API Test Using Factory Bot">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -160,23 +171,23 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
-  <span class="n">factory</span> <span class="ss">:invoices</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="no">Invoice</span> <span class="k">do</span>
-    <span class="n">sequence</span><span class="p">(</span><span class="ss">:order_number</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="s2">&#34;Invoice_</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">}</span>
-    <span class="n">description</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Lorem</span><span class="o">.</span><span class="n">sentence</span> <span class="p">}</span>
-    <span class="n">customer_id</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Alphanumeric</span><span class="o">.</span><span class="n">alpha</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span> <span class="p">}</span>
-    <span class="n">customer_name</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Company</span><span class="o">.</span><span class="n">name</span> <span class="p">}</span>
-    <span class="n">total_qty</span> <span class="p">{</span> <span class="mi">100</span> <span class="p">}</span>
-    <span class="n">total_cost</span> <span class="p">{</span> <span class="mi">100_000</span><span class="o">.</span><span class="mi">0</span> <span class="p">}</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="c1"># Now if you want to create this record in your table.</span>
-
-<span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:invoices</span><span class="p">)</span> <span class="c1"># this is create a record in your DB.</span>
-
-<span class="no">FactoryBot</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="ss">:invoices</span><span class="p">)</span> <span class="c1"># this would create an object of invoice, but not commit it to the DB.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">factory</span> <span class="ss">:invoices</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="no">Invoice</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sequence</span><span class="p">(</span><span class="ss">:order_number</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="s2">&#34;Invoice_</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Lorem</span><span class="o">.</span><span class="n">sentence</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">customer_id</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Alphanumeric</span><span class="o">.</span><span class="n">alpha</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">customer_name</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Company</span><span class="o">.</span><span class="n">name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">total_qty</span> <span class="p">{</span> <span class="mi">100</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">total_cost</span> <span class="p">{</span> <span class="mi">100_000</span><span class="o">.</span><span class="mi">0</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Now if you want to create this record in your table.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:invoices</span><span class="p">)</span> <span class="c1"># this is create a record in your DB.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="ss">:invoices</span><span class="p">)</span> <span class="c1"># this would create an object of invoice, but not commit it to the DB.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The way factory bot works is that it generates the fields in the block and then assign them to the object of the class. The factory bot expects there are setters <code>x.field=</code> in the object. If there isn&rsquo;t one it will raise errors. So if our payload is similar or same as the rails model then you can write the code as below:</p>
 <div class="highlight"><div class="chroma">
@@ -184,8 +195,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="ss">:invoices</span><span class="p">)</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">except</span><span class="p">(</span><span class="s1">&#39;created_at&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;updated_at&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">as_json</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="ss">:invoices</span><span class="p">)</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">except</span><span class="p">(</span><span class="s1">&#39;created_at&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;updated_at&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">as_json</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now if the field names of the payload has nothing to do with fields of the database. What you need to do is generate a Factory Bot against an object where you can set dynamic fields. A good candidate for that is <code>OpenStruct</code>. But when we convert an <code>OpenStruct</code> to json <code>OpenStruct.new.as_json</code> the JSON is as follows: <code>{&quot;table&quot;=&gt;{}}</code>. To fix this, we create a new class inheriting the <code>OpenStruct</code></p>
 <div class="highlight"><div class="chroma">
@@ -197,12 +208,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">JSONStruct</span> <span class="o">&lt;</span> <span class="no">OpenStruct</span>
-  <span class="k">def</span> <span class="nf">as_json</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-    <span class="k">super</span><span class="o">.</span><span class="n">as_json</span><span class="o">[</span><span class="s1">&#39;table&#39;</span><span class="o">]</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">JSONStruct</span> <span class="o">&lt;</span> <span class="no">OpenStruct</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">as_json</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">super</span><span class="o">.</span><span class="n">as_json</span><span class="o">[</span><span class="s1">&#39;table&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In the object of the new child class, when you do <code>as_json</code>, it just returns the contents of the <code>table</code> key.</p>
 <p>Now with the new class you can build a factory against it.</p>
@@ -239,36 +250,36 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
-  <span class="n">factory</span> <span class="ss">:address_payload</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="no">JSONStruct</span> <span class="k">do</span>
-    <span class="nb">name</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Company</span><span class="o">.</span><span class="n">name</span> <span class="p">}</span>
-    <span class="n">address1</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">street_address</span> <span class="p">}</span>
-    <span class="n">address2</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">secondary_address</span> <span class="p">}</span>
-    <span class="n">city</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">city</span> <span class="p">}</span>
-    <span class="n">state</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">state</span> <span class="p">}</span>
-    <span class="n">zip</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">zip</span> <span class="p">}</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="no">FactoryBot</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
-  <span class="n">factory</span> <span class="ss">:invoice_payload</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="no">JSONStruct</span> <span class="k">do</span>
-    <span class="n">sequence</span><span class="p">(</span><span class="ss">:order_number</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="s2">&#34;Invoice_</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">}</span>
-    <span class="n">description</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Lorem</span><span class="o">.</span><span class="n">sentence</span> <span class="p">}</span>
-    <span class="n">customer_id</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Alphanumeric</span><span class="o">.</span><span class="n">alpha</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span> <span class="p">}</span>
-    <span class="n">customer_name</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Company</span><span class="o">.</span><span class="n">name</span> <span class="p">}</span>
-    <span class="n">total_qty</span> <span class="p">{</span> <span class="mi">100</span> <span class="p">}</span>
-    <span class="n">total_cost</span> <span class="p">{</span> <span class="mi">100_000</span><span class="o">.</span><span class="mi">0</span> <span class="p">}</span>
-    <span class="n">after</span><span class="p">(</span><span class="ss">:build</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">invoice</span><span class="o">|</span>
-      <span class="n">invoice</span><span class="o">.</span><span class="n">billing_address</span> <span class="o">=</span> <span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:address_payload</span><span class="p">,</span> <span class="nb">name</span><span class="p">:</span> <span class="n">invoice</span><span class="o">.</span><span class="n">customer_name</span><span class="p">)</span>
-      <span class="n">invoice</span><span class="o">.</span><span class="n">shipping_address</span> <span class="o">=</span> <span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:address_payload</span><span class="p">,</span> <span class="nb">name</span><span class="p">:</span> <span class="n">invoice</span><span class="o">.</span><span class="n">customer_name</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="c1"># Now if your run</span>
-
-<span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:invoice_payload</span><span class="p">)</span><span class="o">.</span><span class="n">as_json</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">factory</span> <span class="ss">:address_payload</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="no">JSONStruct</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">name</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Company</span><span class="o">.</span><span class="n">name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">address1</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">street_address</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">address2</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">secondary_address</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">city</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">city</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">state</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">state</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">zip</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Address</span><span class="o">.</span><span class="n">zip</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">factory</span> <span class="ss">:invoice_payload</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="no">JSONStruct</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sequence</span><span class="p">(</span><span class="ss">:order_number</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="s2">&#34;Invoice_</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Lorem</span><span class="o">.</span><span class="n">sentence</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">customer_id</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Alphanumeric</span><span class="o">.</span><span class="n">alpha</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">customer_name</span> <span class="p">{</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Company</span><span class="o">.</span><span class="n">name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">total_qty</span> <span class="p">{</span> <span class="mi">100</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">total_cost</span> <span class="p">{</span> <span class="mi">100_000</span><span class="o">.</span><span class="mi">0</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">after</span><span class="p">(</span><span class="ss">:build</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">invoice</span><span class="o">|</span>
+</span></span><span class="line"><span class="cl">      <span class="n">invoice</span><span class="o">.</span><span class="n">billing_address</span> <span class="o">=</span> <span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:address_payload</span><span class="p">,</span> <span class="nb">name</span><span class="p">:</span> <span class="n">invoice</span><span class="o">.</span><span class="n">customer_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">invoice</span><span class="o">.</span><span class="n">shipping_address</span> <span class="o">=</span> <span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:address_payload</span><span class="p">,</span> <span class="nb">name</span><span class="p">:</span> <span class="n">invoice</span><span class="o">.</span><span class="n">customer_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Now if your run</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:invoice_payload</span><span class="p">)</span><span class="o">.</span><span class="n">as_json</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Output:</p>
 <div class="highlight"><div class="chroma">
@@ -295,27 +306,27 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;order_number&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Invoice_1&#34;</span><span class="p">,</span>
- <span class="nt">&#34;description&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Eius quia consequatur omnis.&#34;</span><span class="p">,</span>
- <span class="nt">&#34;customer_id&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;crvxboz&#34;</span><span class="p">,</span>
- <span class="nt">&#34;customer_name&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Kirlin-Reynolds&#34;</span><span class="p">,</span>
- <span class="nt">&#34;total_qty&#34;</span><span class="err">=&gt;</span><span class="mi">100</span><span class="p">,</span>
- <span class="nt">&#34;total_cost&#34;</span><span class="err">=&gt;</span><span class="mf">100000.0</span><span class="p">,</span>
- <span class="nt">&#34;billing_address&#34;</span><span class="err">=&gt;</span>
-  <span class="p">{</span><span class="nt">&#34;name&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Kirlin-Reynolds&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;address1&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;4459 Towne Land&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;address2&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Suite 326&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;city&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Lake Jeffreychester&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;state&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Utah&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;zip&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;54710&#34;</span><span class="p">},</span>
- <span class="nt">&#34;shipping_address&#34;</span><span class="err">=&gt;</span>
-  <span class="p">{</span><span class="nt">&#34;name&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Kirlin-Reynolds&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;address1&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;973 Nia Alley&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;address2&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Suite 824&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;city&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Alexandriaview&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;state&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Wyoming&#34;</span><span class="p">,</span>
-   <span class="nt">&#34;zip&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;96348-5106&#34;</span><span class="p">}}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;order_number&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Invoice_1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&#34;description&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Eius quia consequatur omnis.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&#34;customer_id&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;crvxboz&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&#34;customer_name&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Kirlin-Reynolds&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&#34;total_qty&#34;</span><span class="err">=&gt;</span><span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&#34;total_cost&#34;</span><span class="err">=&gt;</span><span class="mf">100000.0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&#34;billing_address&#34;</span><span class="err">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="nt">&#34;name&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Kirlin-Reynolds&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;address1&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;4459 Towne Land&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;address2&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Suite 326&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;city&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Lake Jeffreychester&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;state&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Utah&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;zip&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;54710&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&#34;shipping_address&#34;</span><span class="err">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="nt">&#34;name&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Kirlin-Reynolds&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;address1&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;973 Nia Alley&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;address2&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Suite 824&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;city&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Alexandriaview&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;state&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;Wyoming&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&#34;zip&#34;</span><span class="err">=&gt;</span><span class="s2">&#34;96348-5106&#34;</span><span class="p">}}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This method allows you to easily create API Payload using Factory Bot, and share/use it across your test suit.</p>
 <div class="highlight"><div class="chroma">
@@ -331,16 +342,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="n">describe</span> <span class="s1">&#39;#create&#39;</span> <span class="k">do</span>
-  <span class="n">it</span> <span class="s1">&#39;should create an invoice&#39;</span> <span class="k">do</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:invoice_payload</span><span class="p">)</span>
-    <span class="n">post</span> <span class="n">invoices_api_path</span><span class="p">(</span><span class="ss">key</span><span class="p">:</span> <span class="s1">&#39;someramdomkey&#39;</span><span class="p">),</span> <span class="ss">params</span><span class="p">:</span> <span class="n">params</span><span class="o">.</span><span class="n">as_json</span>
-
-    <span class="n">assert_equal</span> <span class="mi">1</span><span class="p">,</span> <span class="no">Invoice</span><span class="o">.</span><span class="n">count</span>
-    <span class="n">assert_equal</span> <span class="n">params</span><span class="o">.</span><span class="n">order_number</span><span class="p">,</span> <span class="no">Invoice</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">order_number</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="n">describe</span> <span class="s1">&#39;#create&#39;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">it</span> <span class="s1">&#39;should create an invoice&#39;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">params</span> <span class="o">=</span> <span class="no">FactoryBot</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:invoice_payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">post</span> <span class="n">invoices_api_path</span><span class="p">(</span><span class="ss">key</span><span class="p">:</span> <span class="s1">&#39;someramdomkey&#39;</span><span class="p">),</span> <span class="ss">params</span><span class="p">:</span> <span class="n">params</span><span class="o">.</span><span class="n">as_json</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">assert_equal</span> <span class="mi">1</span><span class="p">,</span> <span class="no">Invoice</span><span class="o">.</span><span class="n">count</span>
+</span></span><span class="line"><span class="cl">    <span class="n">assert_equal</span> <span class="n">params</span><span class="o">.</span><span class="n">order_number</span><span class="p">,</span> <span class="no">Invoice</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">order_number</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Happy Testing</p>
     </div>
@@ -422,7 +433,7 @@
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -431,16 +442,16 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -457,19 +468,15 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

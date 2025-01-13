@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
+<meta name="author" content="" /><meta name="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." /><meta name="keywords" content="Harisankar P S, software, developer" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/" />
@@ -41,15 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Harisankar P S | HsPS.in" />
-<meta property="og:description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hsps.in/" />
+<meta property="og:url" content="https://hsps.in/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Harisankar P S | HsPS.in">
+  <meta property="og:description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer...">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
 
-<meta itemprop="name" content="Harisankar P S | HsPS.in">
-<meta itemprop="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Harisankar P S | HsPS.in"/>
-<meta name="twitter:description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer..."/>
+  <meta itemprop="name" content="Harisankar P S | HsPS.in">
+  <meta itemprop="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer...">
+  <meta itemprop="datePublished" content="2025-01-08T18:55:49+05:30">
+  <meta itemprop="dateModified" content="2025-01-08T18:55:49+05:30">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Harisankar P S | HsPS.in">
+  <meta name="twitter:description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer...">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -120,6 +125,38 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/">Using Ansible to Install Docker and Docker Compose on New Lightsail Instance</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2023-08-06 </span>
+      <div class="post-category">
+          <a href="/categories/ansible/"> ansible </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Recently I have been working with deploying self hosted application in AWS lightsail for the company that I work for. My strategy for deploying application has been as follows:</p>
+<ul>
+<li>Launch a new ubuntu instance (since my team and I use it a dev machine we are familiar with it).</li>
+<li>Install Docker</li>
+<li>Install Docker Compose</li>
+<li>Run the self hosted app and its requires services using docker.</li>
+<li>Run nginx reverse proxy to serve the app over https</li>
+</ul>
+<p>I am pretty much managing the whole app through files. Its just the initial setup that I am doing manually. I thought of creating a base linux image for the new servers, which would have docker and docker-compose pre installed. But lightsail didn&rsquo;t seem to have the option to use custom images, like EC2 servers.</p>
+<p>Thus I decided to use ansible.</p>
+<p>Ansible is an open source automation tool that is used for configuration management, deployment and task automation. It automates the steps that I do manually. It can run this command on multiple servers without having us do anything manually. We can also automate weekly maintenance check to login to all the servers, ensures all the security updates are installed, cache files are cleared, etc.</p>
+<p>The thing I found most interesting about ansible compared to chef (another automation tool) is that it is agentless. That is it doesn&rsquo;t expect anything to be running on the new server other open ssh. Chef on the other hand requires an agent to be running on the server. There are its own advantages of having an agent running on the server, it can do updates much faster and keep everything in sync. But since that is not a requirement for me at the moment, I decide to use ansible. I will write another article on how to do this using chef.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/create-json-payload-for-api-test-using-factory-bot/">Create JSON Payload for API Test Using Factory Bot</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2023-08-05 </span>
@@ -179,7 +216,7 @@
   <div class="post-content">
     <div class="post-summary">
       The slowest step (in my experience and opinion) is compiling assets (js/css). Compiling assets takes time and slower when you do it for the first time. So to speed it up its recommended to copy the last compiled assets from the latest image you have of the repo.
-1 2 3 4  COPY --from=docker-repo.link/image:latest /app/node_modules /app/node_modulesCOPY --from=docker-repo.link/image:latest /app/public /app/publicRUN bundle exec rails assets:precompile  Now since the prior assets are in the new image, it won&rsquo;t compile the assets from scratch and the build will be faster.
+1 2 3 4 COPY --from=docker-repo.link/image:latest /app/node_modules /app/node_modules COPY --from=docker-repo.link/image:latest /app/public /app/public RUN bundle exec rails assets:precompile Now since the prior assets are in the new image, it won&rsquo;t compile the assets from scratch and the build will be faster.
     </div>
     <div class="read-more">
       <a href="/post/rails-copy-assets-bundler-cache-to-speed-up-build/" class="read-more-link">Read more...</a>
@@ -216,36 +253,6 @@ This was working so well for years on rails app I was working on, that I didn&rs
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/ruby-wasm/">About Web Assembly. Example for Ruby Web Assembly</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-05-19 </span>
-      <div class="post-category">
-          <a href="/categories/web-assembly/"> web-assembly </a>
-          <a href="/categories/ruby/"> ruby </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Any program to execute on a machine needs to be in machine code (1s and 0s). In some languages you compile the code directly to machine code, and some they converts it to intermediary code that runs on an virtual machine (which indirectly execute machine code). One of the biggest virtual machines in the world is a web browser. People write HTML,CSS and JS, and execute it by rendering the graphics and executing code on your machine. The browser have become so advanced that it takes care of security and safety so well. Thus being able to covert your program code or binary file into JS allows you to run your code on the browser and any machine that has a browser.</p>
-<p>Now the idea of web assembly support in ruby (or any language) is not about writing website using ruby, though we can do that if we wanted to. The idea is to make a program or library that we have already existing in one language available for the web. If you can run ruby interpreter on your browser, then you can run any ruby code on your browser.</p>
-<p>The things people doing with web assembly have been getting crazier. People are building more and more proof of concept ideas and apps in web assembly. The most exciting thing that impressed me recently was <a href="https://webvm.io/">webvm.io</a>. A virtual machine is running on your browser with linux. You can run linux commands, execute a python program, etc. This is a full fledged virtual machine (the one you run using docker), running on your browser. There are more projects that does that now:</p>
-<ul>
-<li><a href="https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;mem=192">https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;mem=192</a></li>
-<li><a href="https://copy.sh/v86/">https://copy.sh/v86/</a></li>
-</ul>
-<p>You can host a web server or a rails app inside an image, which will then run on your browser serving the content. (Note: networking is still not native, so most use web sockets to emulate a network and make internet available inside the container).</p>
-<p>The potential for this is huge, you can technically turn any machine that can run a web browser (Chrome or firefox) into a server.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/ruby-wasm/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -267,7 +274,9 @@ This was working so well for years on rails app I was working on, that I didn&rs
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
+    <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -276,16 +285,16 @@ This was working so well for years on rails app I was working on, that I didn&rs
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -302,19 +311,15 @@ This was working so well for years on rails app I was working on, that I didn&rs
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

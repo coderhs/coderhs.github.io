@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kubuntu on Harisankar P S | HsPS.in</title>
+    <title>Kubuntu on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/kubuntu/</link>
-    <description>Recent content in kubuntu on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Kubuntu on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Aug 2022 18:59:18 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/kubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 18:59:18 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/kubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Amazing Emoji Keyboard in Linux</title>
       <link>https://hsps.in/post/amazing-emoji-keyboard-in-linux/</link>
       <pubDate>Mon, 01 Aug 2022 18:59:18 -0700</pubDate>
-      
       <guid>https://hsps.in/post/amazing-emoji-keyboard-in-linux/</guid>
-      <description>&lt;p&gt;I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developer&amp;rsquo;s journey 😆. So moving from
-windows to Linux was over 13-14 years ago. I didn&amp;rsquo;t do much from the windows world other than games and single executable
-files. But moving from macOS to Linux, has been a bit tough. KDE has been able to provide me with everything I want and
-more. The one thing that I missed the most was the emoji keyboard, with easy to launch shortcut.&lt;/p&gt;
-&lt;p&gt;My usage of emoji was at its peak during macOS days, I used emoji for my communications, commits, function name and
-even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I loved it.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developer&amp;rsquo;s journey 😆. So moving from&#xA;windows to Linux was over 13-14 years ago. I didn&amp;rsquo;t do much from the windows world other than games and single executable&#xA;files. But moving from macOS to Linux, has been a bit tough. KDE has been able to provide me with everything I want and&#xA;more. The one thing that I missed the most was the emoji keyboard, with easy to launch shortcut.&lt;/p&gt;&#xA;&lt;p&gt;My usage of emoji was at its peak during macOS days, I used emoji for my communications, commits, function name and&#xA;even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I loved it.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

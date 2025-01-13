@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/open-and-view-the-source-code-of-a-gem/" />
@@ -40,20 +40,28 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Open and View the Source Code of a Gem" />
-<meta property="og:description" content="Now this is a small blog post, issued in  interest of  the beginners. On how to open and video the code of a ruby gem you are using." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/open-and-view-the-source-code-of-a-gem/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2013-05-23T00:00:00-05:30" />
-<meta property="article:modified_time" content="2022-08-20T22:22:45-07:00" />
+<meta property="og:url" content="https://hsps.in/post/open-and-view-the-source-code-of-a-gem/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Open and View the Source Code of a Gem">
+  <meta property="og:description" content="Now this is a small blog post, issued in interest of the beginners. On how to open and video the code of a ruby gem you are using.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2013-05-23T00:00:00-05:30">
+    <meta property="article:modified_time" content="2022-08-20T22:22:45-07:00">
+    <meta property="article:tag" content="Gem">
+    <meta property="article:tag" content="Sublime">
+    <meta property="article:tag" content="Vscode">
 
-<meta itemprop="name" content="Open and View the Source Code of a Gem">
-<meta itemprop="description" content="Now this is a small blog post, issued in  interest of  the beginners. On how to open and video the code of a ruby gem you are using."><meta itemprop="datePublished" content="2013-05-23T00:00:00-05:30" />
-<meta itemprop="dateModified" content="2022-08-20T22:22:45-07:00" />
-<meta itemprop="wordCount" content="119">
-<meta itemprop="keywords" content="gem,sublime,vscode," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Open and View the Source Code of a Gem"/>
-<meta name="twitter:description" content="Now this is a small blog post, issued in  interest of  the beginners. On how to open and video the code of a ruby gem you are using."/>
+  <meta itemprop="name" content="Open and View the Source Code of a Gem">
+  <meta itemprop="description" content="Now this is a small blog post, issued in interest of the beginners. On how to open and video the code of a ruby gem you are using.">
+  <meta itemprop="datePublished" content="2013-05-23T00:00:00-05:30">
+  <meta itemprop="dateModified" content="2022-08-20T22:22:45-07:00">
+  <meta itemprop="wordCount" content="119">
+  <meta itemprop="keywords" content="gem,sublime,vscode">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Open and View the Source Code of a Gem">
+  <meta name="twitter:description" content="Now this is a small blog post, issued in interest of the beginners. On how to open and video the code of a ruby gem you are using.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -145,8 +153,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">bundle open &lt;gem_name&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">bundle open &lt;gem_name&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>eg.</p>
 <div class="highlight"><div class="chroma">
@@ -154,8 +162,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">bundle open rails
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">bundle open rails
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now this will open the rails gem directory in the editor you have specified for bundle. If you haven&rsquo;t specified any editor for it, then it would print the following error</p>
 <p>To open a bundled gem, set <code>$EDITOR</code> or <code>$BUNDLE_EDITOR</code>
@@ -165,8 +173,8 @@ to assign an editor just use the export command</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>&lt;editor_name&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>&lt;editor_name&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>eg:</p>
 <div class="highlight"><div class="chroma">
@@ -177,11 +185,11 @@ to assign an editor just use the export command</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>submlime-text-2
-<span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>vim
-<span class="c1"># 2022 Update</span>
-<span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>code
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>submlime-text-2
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>vim
+</span></span><span class="line"><span class="cl"><span class="c1"># 2022 Update</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>code
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -260,7 +268,7 @@ to assign an editor just use the export command</p>
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -269,16 +277,16 @@ to assign an editor just use the export command</p>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -295,19 +303,15 @@ to assign an editor just use the export command</p>
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

@@ -25,7 +25,7 @@ Enum is quite useful when you want to make sure that only a specified list of va
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/using-string-as-active-record-enum/" />
@@ -41,23 +41,30 @@ Enum is quite useful when you want to make sure that only a specified list of va
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Using String in Active Record(Rails) Enum" />
-<meta property="og:description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
-Enum is quite useful when you want to make sure that only a specified list of values are saved for a field." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/using-string-as-active-record-enum/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-05-31T20:10:36-07:00" />
-<meta property="article:modified_time" content="2022-05-31T20:10:36-07:00" />
+<meta property="og:url" content="https://hsps.in/post/using-string-as-active-record-enum/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Using String in Active Record(Rails) Enum">
+  <meta property="og:description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
+Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-05-31T20:10:36-07:00">
+    <meta property="article:modified_time" content="2022-05-31T20:10:36-07:00">
+    <meta property="article:tag" content="Ruby">
+    <meta property="article:tag" content="Rails">
 
-<meta itemprop="name" content="Using String in Active Record(Rails) Enum">
-<meta itemprop="description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
-Enum is quite useful when you want to make sure that only a specified list of values are saved for a field."><meta itemprop="datePublished" content="2022-05-31T20:10:36-07:00" />
-<meta itemprop="dateModified" content="2022-05-31T20:10:36-07:00" />
-<meta itemprop="wordCount" content="685">
-<meta itemprop="keywords" content="ruby,rails," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Using String in Active Record(Rails) Enum"/>
-<meta name="twitter:description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
-Enum is quite useful when you want to make sure that only a specified list of values are saved for a field."/>
+  <meta itemprop="name" content="Using String in Active Record(Rails) Enum">
+  <meta itemprop="description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
+Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.">
+  <meta itemprop="datePublished" content="2022-05-31T20:10:36-07:00">
+  <meta itemprop="dateModified" content="2022-05-31T20:10:36-07:00">
+  <meta itemprop="wordCount" content="685">
+  <meta itemprop="keywords" content="Rails,ruby">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Using String in Active Record(Rails) Enum">
+  <meta name="twitter:description" content="Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.
+Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -152,10 +159,10 @@ Enum is quite useful when you want to make sure that only a specified list of va
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
-  <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:published</span><span class="o">]</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+</span></span><span class="line"><span class="cl">  <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:published</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>rails 7 format</p>
 <div class="highlight"><div class="chroma">
@@ -165,10 +172,10 @@ Enum is quite useful when you want to make sure that only a specified list of va
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
-  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:published</span><span class="o">]</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+</span></span><span class="line"><span class="cl">  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:published</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The status field is usually an integer field as shown the in rails documentation[https://api.rubyonrails.org/v5.2.4.4/classes/ActiveRecord/Enum.html]. The advantage of this approach is that it automatically creates a lot of magic functions (rails magic) like <code>article.draft?</code>, <code>article.published?</code>, and even make the indexes of these accessible through the method <code>Article.statuses[:draft]</code>.</p>
 <p>Now I haven&rsquo;t personally been a fan of this, a preferred to define my statuses as constants and a string.
@@ -184,10 +191,10 @@ eg:</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
-  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:published</span><span class="o">]</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+</span></span><span class="line"><span class="cl">  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:published</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>and this</p>
 <div class="highlight"><div class="chroma">
@@ -197,10 +204,10 @@ eg:</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
-  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="p">{</span> <span class="ss">draft</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="ss">published</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+</span></span><span class="line"><span class="cl">  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="p">{</span> <span class="ss">draft</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="ss">published</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>are valid.</p>
 <p>So to use string in the database we just need to supply a has with string values, or convert an array to hash with itself.</p>
@@ -214,13 +221,13 @@ eg:</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
-  <span class="no">DRAFT</span>     <span class="o">=</span> <span class="s1">&#39;draft&#39;</span><span class="o">.</span><span class="n">freeze</span>
-  <span class="no">PUBLISHED</span> <span class="o">=</span> <span class="s1">&#39;published&#39;</span><span class="o">.</span><span class="n">freeze</span>
-  <span class="no">STATUSES</span>  <span class="o">=</span> <span class="o">[</span><span class="no">DRAFT</span><span class="o">.</span> <span class="no">PUBLISHED</span><span class="o">]</span>
-  <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="no">STATUSES</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="no">STATUSES</span><span class="p">)</span><span class="o">.</span><span class="n">to_h</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+</span></span><span class="line"><span class="cl">  <span class="no">DRAFT</span>     <span class="o">=</span> <span class="s1">&#39;draft&#39;</span><span class="o">.</span><span class="n">freeze</span>
+</span></span><span class="line"><span class="cl">  <span class="no">PUBLISHED</span> <span class="o">=</span> <span class="s1">&#39;published&#39;</span><span class="o">.</span><span class="n">freeze</span>
+</span></span><span class="line"><span class="cl">  <span class="no">STATUSES</span>  <span class="o">=</span> <span class="o">[</span><span class="no">DRAFT</span><span class="o">.</span> <span class="no">PUBLISHED</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="no">STATUSES</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="no">STATUSES</span><span class="p">)</span><span class="o">.</span><span class="n">to_h</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The above code is equivalent to writing like below.</p>
 <div class="highlight"><div class="chroma">
@@ -236,16 +243,16 @@ eg:</p>
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
-  <span class="no">DRAFT</span>     <span class="o">=</span> <span class="s1">&#39;draft&#39;</span><span class="o">.</span><span class="n">freeze</span>
-  <span class="no">PUBLISHED</span> <span class="o">=</span> <span class="s1">&#39;published&#39;</span><span class="o">.</span><span class="n">freeze</span>
-  <span class="no">STATUSES</span>  <span class="o">=</span> <span class="o">[</span><span class="no">DRAFT</span><span class="o">.</span> <span class="no">PUBLISHED</span><span class="o">]</span>
-  <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="p">{</span>
-    <span class="ss">draft</span><span class="p">:</span> <span class="no">DRAFT</span><span class="p">,</span>
-    <span class="ss">published</span><span class="p">:</span> <span class="no">PUBLISHED</span>
-  <span class="p">}</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+</span></span><span class="line"><span class="cl">  <span class="no">DRAFT</span>     <span class="o">=</span> <span class="s1">&#39;draft&#39;</span><span class="o">.</span><span class="n">freeze</span>
+</span></span><span class="line"><span class="cl">  <span class="no">PUBLISHED</span> <span class="o">=</span> <span class="s1">&#39;published&#39;</span><span class="o">.</span><span class="n">freeze</span>
+</span></span><span class="line"><span class="cl">  <span class="no">STATUSES</span>  <span class="o">=</span> <span class="o">[</span><span class="no">DRAFT</span><span class="o">.</span> <span class="no">PUBLISHED</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">enum</span> <span class="ss">status</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="ss">draft</span><span class="p">:</span> <span class="no">DRAFT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="ss">published</span><span class="p">:</span> <span class="no">PUBLISHED</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In rails 7.0 its much more cleaner to use string.</p>
 <div class="highlight"><div class="chroma">
@@ -255,10 +262,10 @@ eg:</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
-  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="ss">draft</span><span class="p">:</span> <span class="s1">&#39;draft&#39;</span><span class="p">,</span> <span class="ss">published</span><span class="p">:</span> <span class="s1">&#39;published&#39;</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span>
+</span></span><span class="line"><span class="cl">  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="ss">draft</span><span class="p">:</span> <span class="s1">&#39;draft&#39;</span><span class="p">,</span> <span class="ss">published</span><span class="p">:</span> <span class="s1">&#39;published&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>They do say that it will lead to slower query, but just make sure that the field is indexed and we are good.</p>
 <p>Using string will make your code more readable.</p>
@@ -269,9 +276,9 @@ eg:</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="no">Article</span><span class="o">.</span><span class="n">statuses</span><span class="p">(</span><span class="ss">:draft</span><span class="p">))</span>
-<span class="c1"># agree you do get the magic scop Article.drafts</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="no">Article</span><span class="o">.</span><span class="n">statuses</span><span class="p">(</span><span class="ss">:draft</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># agree you do get the magic scop Article.drafts</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>but now you can do a more natural approach of</p>
 <div class="highlight"><div class="chroma">
@@ -283,12 +290,12 @@ eg:</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="ss">:draft</span><span class="p">)</span>
-<span class="c1"># or</span>
-<span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="s1">&#39;draft&#39;</span><span class="p">)</span>
-<span class="c1"># or like how i would like to do it</span>
-<span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="no">Article</span><span class="o">::</span><span class="no">DRAFT</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="ss">:draft</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># or</span>
+</span></span><span class="line"><span class="cl"><span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="s1">&#39;draft&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># or like how i would like to do it</span>
+</span></span><span class="line"><span class="cl"><span class="no">Article</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">status</span><span class="p">:</span> <span class="no">Article</span><span class="o">::</span><span class="no">DRAFT</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Happy Coding! :)</p>
     </div>
@@ -366,7 +373,7 @@ eg:</p>
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -375,16 +382,16 @@ eg:</p>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -401,19 +408,15 @@ eg:</p>
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>personal on Harisankar P S | HsPS.in</title>
+    <title>Personal on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/personal/</link>
-    <description>Recent content in personal on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Personal on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 21 May 2022 20:52:57 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 May 2022 20:52:57 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/personal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP &#43; MySql a Deadly Combination: My introduction to the real world</title>
       <link>https://hsps.in/post/php-plus-mysql-deadly-combination-there-was/</link>
       <pubDate>Sat, 21 May 2022 20:52:57 -0700</pubDate>
-      
       <guid>https://hsps.in/post/php-plus-mysql-deadly-combination-there-was/</guid>
-      <description>I am currently a senior Ruby on Rails programmer. This article is my tribute to PHP the language that introduced me to the real world.
-I have been programming or aspiring to program (former/recovering imposter syndrome addict) since I was a child. You can say I was programming as well if you consider lego programming and hello world in turbo c as programming. During upper primary and high school I spend my time learning Java, C and C++.</description>
+      <description>I am currently a senior Ruby on Rails programmer. This article is my tribute to PHP the language that introduced me to the real world.&#xA;I have been programming or aspiring to program (former/recovering imposter syndrome addict) since I was a child. You can say I was programming as well if you consider lego programming and hello world in turbo c as programming. During upper primary and high school I spend my time learning Java, C and C++.</description>
     </item>
-    
   </channel>
 </rss>

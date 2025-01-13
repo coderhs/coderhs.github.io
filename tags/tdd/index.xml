@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tdd on Harisankar P S | HsPS.in</title>
+    <title>Tdd on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/tdd/</link>
-    <description>Recent content in tdd on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Tdd on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Aug 2023 15:48:25 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Aug 2023 15:48:25 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Argument for Writing Test and TDD</title>
       <link>https://hsps.in/post/argument-for-writing-test-and-tdd/</link>
       <pubDate>Wed, 30 Aug 2023 15:48:25 -0700</pubDate>
-      
       <guid>https://hsps.in/post/argument-for-writing-test-and-tdd/</guid>
       <description>Recently I been trying to convince my team to write more tests, or some test. One of the arguments I heard during this was - automated test doesn&amp;rsquo;t remove manual test. Thats true, you still have to manually test it as well. But it avoids the repeated testing, and forgetting to test old features when new modifications are being done. I was thinking more about what to reply to people that says this, when it dawn to me that.</description>
     </item>
-    
     <item>
       <title>Create JSON Payload for API Test Using Factory Bot</title>
       <link>https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/</link>
       <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
-      
       <guid>https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/</guid>
-      <description>&lt;p&gt;I am not going to reiterate the PSA (Public Safety Announcement) of how important it is to write test. You can find enough articles related that online, and most probably you already know and agree to it. This article is how to generate JSON payload using Factory Bot.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/thoughtbot/factory_bot&#34;&gt;Factory Bot&lt;/a&gt; is a ruby library that is used to create records in the table for testing. It will help generate data to fill and prepare records, before the test execution.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I am not going to reiterate the PSA (Public Safety Announcement) of how important it is to write test. You can find enough articles related that online, and most probably you already know and agree to it. This article is how to generate JSON payload using Factory Bot.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/thoughtbot/factory_bot&#34;&gt;Factory Bot&lt;/a&gt; is a ruby library that is used to create records in the table for testing. It will help generate data to fill and prepare records, before the test execution.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

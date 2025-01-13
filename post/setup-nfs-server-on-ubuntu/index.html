@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/setup-nfs-server-on-ubuntu/" />
@@ -39,20 +39,31 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Setup NFS Server on Ubuntu" />
-<meta property="og:description" content="Setup NFS Server on Ubuntu to have persistant storage for your docker swarm/kubernetes cluster" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/setup-nfs-server-on-ubuntu/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-09-05T18:29:12-07:00" />
-<meta property="article:modified_time" content="2022-09-05T18:29:12-07:00" />
+<meta property="og:url" content="https://hsps.in/post/setup-nfs-server-on-ubuntu/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Setup NFS Server on Ubuntu">
+  <meta property="og:description" content="Setup NFS Server on Ubuntu to have persistant storage for your docker swarm/kubernetes cluster">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-09-05T18:29:12-07:00">
+    <meta property="article:modified_time" content="2022-09-05T18:29:12-07:00">
+    <meta property="article:tag" content="Nfs">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Homelab">
+    <meta property="article:tag" content="Storage">
+    <meta property="article:tag" content="Persistance">
+    <meta property="article:tag" content="Docker">
 
-<meta itemprop="name" content="Setup NFS Server on Ubuntu">
-<meta itemprop="description" content="Setup NFS Server on Ubuntu to have persistant storage for your docker swarm/kubernetes cluster"><meta itemprop="datePublished" content="2022-09-05T18:29:12-07:00" />
-<meta itemprop="dateModified" content="2022-09-05T18:29:12-07:00" />
-<meta itemprop="wordCount" content="431">
-<meta itemprop="keywords" content="nfs,linux,homelab,storage,persistance,docker,kubernetes," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Setup NFS Server on Ubuntu"/>
-<meta name="twitter:description" content="Setup NFS Server on Ubuntu to have persistant storage for your docker swarm/kubernetes cluster"/>
+  <meta itemprop="name" content="Setup NFS Server on Ubuntu">
+  <meta itemprop="description" content="Setup NFS Server on Ubuntu to have persistant storage for your docker swarm/kubernetes cluster">
+  <meta itemprop="datePublished" content="2022-09-05T18:29:12-07:00">
+  <meta itemprop="dateModified" content="2022-09-05T18:29:12-07:00">
+  <meta itemprop="wordCount" content="466">
+  <meta itemprop="keywords" content="nfs,linux,homelab,storage,persistance,docker,kubernetes">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Setup NFS Server on Ubuntu">
+  <meta name="twitter:description" content="Setup NFS Server on Ubuntu to have persistant storage for your docker swarm/kubernetes cluster">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -147,9 +158,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get update
-sudo apt-get install nfs-kernel-server
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install nfs-kernel-server
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="step-2-make-directory-with-right-permissions">Step 2: Make directory with right permissions</h2>
 <p>Once you have the server install, create folders that needs to be shared.</p>
@@ -160,10 +171,10 @@ sudo apt-get install nfs-kernel-server
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo mkdir -p /mnt/postgresql_data
-sudo chown -R nobody:nogroup /mnt/postgresql_data
-sudo chmod <span class="m">777</span> /mnt/postgresql_data
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo mkdir -p /mnt/postgresql_data
+</span></span><span class="line"><span class="cl">sudo chown -R nobody:nogroup /mnt/postgresql_data
+</span></span><span class="line"><span class="cl">sudo chmod <span class="m">777</span> /mnt/postgresql_data
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="step-3-grant-access-to-client-machines">Step 3: Grant access to client machines</h2>
 <div class="highlight"><div class="chroma">
@@ -171,8 +182,8 @@ sudo chmod <span class="m">777</span> /mnt/postgresql_data
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo vim /etc/exports
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo vim /etc/exports
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add the following line to the file following the below structure:</p>
 <div class="highlight"><div class="chroma">
@@ -180,8 +191,8 @@ sudo chmod <span class="m">777</span> /mnt/postgresql_data
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">&lt;folder&gt; &lt;client_ip/network&gt;<span class="o">(</span>&lt;permissions&gt;<span class="o">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">&lt;folder&gt; &lt;client_ip/network&gt;<span class="o">(</span>&lt;permissions&gt;<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>eg:</p>
 <div class="highlight"><div class="chroma">
@@ -189,8 +200,8 @@ sudo chmod <span class="m">777</span> /mnt/postgresql_data
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">/mnt/postgresql_data 192.168.99.0/24<span class="o">(</span>rw,sync,no_subtree_check,no_root_squash<span class="o">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/mnt/postgresql_data 192.168.99.0/24<span class="o">(</span>rw,sync,no_subtree_check,no_root_squash<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The above line exposes the folder to all the clients in the network.</p>
 <p>To explain the permissions part:</p>
@@ -208,8 +219,8 @@ sudo chmod <span class="m">777</span> /mnt/postgresql_data
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo exportfs -a
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo exportfs -a
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>You might have to restart the nfs service <code>sudo systemctl restart nfs-kernel-server</code></p>
 <h2 id="step-4-allow-nfs-access-throught-firewall">Step 4: Allow NFS access throught Firewall</h2>
@@ -220,8 +231,8 @@ sudo chmod <span class="m">777</span> /mnt/postgresql_data
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo ufw allow from 192.168.99.0/24 to any port nfs
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo ufw allow from 192.168.99.0/24 to any port nfs
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Note: Default port for NFS is 2049</p>
 <h2 id="step-5-add-the-volume-to-your-docker-composeyml">Step 5: Add the volume to your docker-compose.yml</h2>
@@ -255,32 +266,32 @@ sudo chmod <span class="m">777</span> /mnt/postgresql_data
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
-</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">app</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;jc21/nginx-proxy-manager:latest&#39;</span><span class="w">
-</span><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
-</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="s1">&#39;80:80&#39;</span><span class="w">
-</span><span class="w">      </span>- <span class="s1">&#39;81:81&#39;</span><span class="w">
-</span><span class="w">      </span>- <span class="s1">&#39;443:443&#39;</span><span class="w">
-</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="l">nginxproxy:/data</span><span class="w">
-</span><span class="w">      </span>- <span class="l">nginxproxy-letsencrypt:/etc/letsencrypt</span><span class="w">
-</span><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">nginxproxy</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">local</span><span class="w">
-</span><span class="w">    </span><span class="nt">driver_opts</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;nfs4&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">o</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;addr=192.168.99.114,rw&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">device</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;:/media/nginx_proxy/data&#34;</span><span class="w">
-</span><span class="w">  </span><span class="nt">nginxproxy-letsencrypt</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">local</span><span class="w">
-</span><span class="w">    </span><span class="nt">driver_opts</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;nfs4&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">o</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;addr=192.168.99.114,rw&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">device</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;:/media/nginx_proxy/letsencrypt&#34;</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">app</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;jc21/nginx-proxy-manager:latest&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;80:80&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;81:81&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;443:443&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">nginxproxy:/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">nginxproxy-letsencrypt:/etc/letsencrypt</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nginxproxy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">local</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver_opts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;nfs4&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">o</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;addr=192.168.99.114,rw&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">device</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;:/media/nginx_proxy/data&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nginxproxy-letsencrypt</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">local</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver_opts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;nfs4&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">o</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;addr=192.168.99.114,rw&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">device</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;:/media/nginx_proxy/letsencrypt&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -363,7 +374,7 @@ sudo chmod <span class="m">777</span> /mnt/postgresql_data
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -372,16 +383,16 @@ sudo chmod <span class="m">777</span> /mnt/postgresql_data
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -398,19 +409,15 @@ sudo chmod <span class="m">777</span> /mnt/postgresql_data
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

@@ -1,85 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ruby on Harisankar P S | HsPS.in</title>
+    <title>Ruby on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/categories/ruby/</link>
-    <description>Recent content in ruby on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Ruby on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 May 2023 21:12:50 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 May 2023 21:12:50 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Web Assembly. Example for Ruby Web Assembly</title>
       <link>https://hsps.in/post/ruby-wasm/</link>
       <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
-      
       <guid>https://hsps.in/post/ruby-wasm/</guid>
-      <description>&lt;p&gt;Any program to execute on a machine needs to be in machine code (1s and 0s). In some languages you compile the code directly to machine code, and some they converts it to intermediary code that runs on an virtual machine (which indirectly execute machine code). One of the biggest virtual machines in the world is a web browser. People write HTML,CSS and JS, and execute it by rendering the graphics and executing code on your machine. The browser have become so advanced that it takes care of security and safety so well. Thus being able to covert your program code or binary file into JS allows you to run your code on the browser and any machine that has a browser.&lt;/p&gt;
-&lt;p&gt;Now the idea of web assembly support in ruby (or any language) is not about writing website using ruby, though we can do that if we wanted to. The idea is to make a program or library that we have already existing in one language available for the web. If you can run ruby interpreter on your browser, then you can run any ruby code on your browser.&lt;/p&gt;
-&lt;p&gt;The things people doing with web assembly have been getting crazier. People are building more and more proof of concept ideas and apps in web assembly. The most exciting thing that impressed me recently was &lt;a href=&#34;https://webvm.io/&#34;&gt;webvm.io&lt;/a&gt;. A virtual machine is running on your browser with linux. You can run linux commands, execute a python program, etc. This is a full fledged virtual machine (the one you run using docker), running on your browser. There are more projects that does that now:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&#34;&gt;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://copy.sh/v86/&#34;&gt;https://copy.sh/v86/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;You can host a web server or a rails app inside an image, which will then run on your browser serving the content. (Note: networking is still not native, so most use web sockets to emulate a network and make internet available inside the container).&lt;/p&gt;
-&lt;p&gt;The potential for this is huge, you can technically turn any machine that can run a web browser (Chrome or firefox) into a server.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Any program to execute on a machine needs to be in machine code (1s and 0s). In some languages you compile the code directly to machine code, and some they converts it to intermediary code that runs on an virtual machine (which indirectly execute machine code). One of the biggest virtual machines in the world is a web browser. People write HTML,CSS and JS, and execute it by rendering the graphics and executing code on your machine. The browser have become so advanced that it takes care of security and safety so well. Thus being able to covert your program code or binary file into JS allows you to run your code on the browser and any machine that has a browser.&lt;/p&gt;&#xA;&lt;p&gt;Now the idea of web assembly support in ruby (or any language) is not about writing website using ruby, though we can do that if we wanted to. The idea is to make a program or library that we have already existing in one language available for the web. If you can run ruby interpreter on your browser, then you can run any ruby code on your browser.&lt;/p&gt;&#xA;&lt;p&gt;The things people doing with web assembly have been getting crazier. People are building more and more proof of concept ideas and apps in web assembly. The most exciting thing that impressed me recently was &lt;a href=&#34;https://webvm.io/&#34;&gt;webvm.io&lt;/a&gt;. A virtual machine is running on your browser with linux. You can run linux commands, execute a python program, etc. This is a full fledged virtual machine (the one you run using docker), running on your browser. There are more projects that does that now:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&#34;&gt;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://copy.sh/v86/&#34;&gt;https://copy.sh/v86/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You can host a web server or a rails app inside an image, which will then run on your browser serving the content. (Note: networking is still not native, so most use web sockets to emulate a network and make internet available inside the container).&lt;/p&gt;&#xA;&lt;p&gt;The potential for this is huge, you can technically turn any machine that can run a web browser (Chrome or firefox) into a server.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Validating YAML Files in Ruby</title>
       <link>https://hsps.in/post/validating-yaml-files-in-ruby/</link>
       <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
-      
       <guid>https://hsps.in/post/validating-yaml-files-in-ruby/</guid>
-      <description>&lt;p&gt;YAML stands for &amp;ldquo;YAML Ain&amp;rsquo;t Markup Language&amp;rdquo;. YAML is a data serialization language that is often used for writing configuration files.&lt;/p&gt;
-&lt;p&gt;In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom&amp;rsquo;s Obvious Minimal Language).&lt;/p&gt;
-&lt;p&gt;In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&amp;rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.&lt;/p&gt;
-&lt;p&gt;For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&amp;rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.&lt;/p&gt;
-&lt;p&gt;But defining the schema has its benefits -&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;For the User: It reminds then to have the configuration filled before running their program&lt;/li&gt;
-&lt;li&gt;For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running.&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>&lt;p&gt;YAML stands for &amp;ldquo;YAML Ain&amp;rsquo;t Markup Language&amp;rdquo;. YAML is a data serialization language that is often used for writing configuration files.&lt;/p&gt;&#xA;&lt;p&gt;In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom&amp;rsquo;s Obvious Minimal Language).&lt;/p&gt;&#xA;&lt;p&gt;In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&amp;rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.&lt;/p&gt;&#xA;&lt;p&gt;For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&amp;rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.&lt;/p&gt;&#xA;&lt;p&gt;But defining the schema has its benefits -&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;For the User: It reminds then to have the configuration filled before running their program&lt;/li&gt;&#xA;&lt;li&gt;For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running.&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>Access History in IRB</title>
       <link>https://hsps.in/post/access-history-in-irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
-      
       <guid>https://hsps.in/post/access-history-in-irb/</guid>
-      <description>Accessing the list of commands you have ran in your irb or rails console.
-Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
+      <description>Accessing the list of commands you have ran in your irb or rails console.&#xA;Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
     </item>
-    
     <item>
       <title>Splat Operator in Ruby</title>
       <link>https://hsps.in/post/splat-operator-in-ruby/</link>
       <pubDate>Wed, 25 Sep 2013 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/splat-operator-in-ruby/</guid>
       <description>&lt;p&gt;Ruby splat operator (*variable) is used to convert an array of elements into an argument list.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Open and View the Source Code of a Gem</title>
       <link>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</link>
       <pubDate>Thu, 23 May 2013 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</guid>
       <description>&lt;p&gt;Now this is a small blog post, issued in  interest of  the beginners. On how to open and video the code of a ruby gem you are using.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Install Ruby via Source Ubuntu</title>
       <link>https://hsps.in/post/install-ruby-via-source-ubuntu/</link>
       <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://hsps.in/post/install-ruby-via-source-ubuntu/</guid>
-      <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;
-&lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;In ubuntu you can have these libraries installed via the command line ( or if you are so old fashion you may google and find the source code for these packages as well)&lt;/p&gt;</description>
+      <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;&#xA;&lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;In ubuntu you can have these libraries installed via the command line ( or if you are so old fashion you may google and find the source code for these packages as well)&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

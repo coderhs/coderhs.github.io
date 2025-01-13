@@ -21,14 +21,14 @@ In simple terms YAML is like XML or JSON, but for human beings rather than compu
 In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&amp;rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.
 For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&amp;rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.
 But defining the schema has its benefits -
- For the User: It reminds then to have the configuration filled before running their program For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running. " /><meta name="keywords" content="yaml, dry-schema, dry-validation, yaml, toml, schema, structure, ruby, software engineering, best practice" />
+For the User: It reminds then to have the configuration filled before running their program For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running. " /><meta name="keywords" content="yaml, dry-schema, dry-validation, yaml, toml, schema, structure, ruby, software engineering, best practice" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/validating-yaml-files-in-ruby/" />
@@ -44,44 +44,46 @@ But defining the schema has its benefits -
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Validating YAML Files in Ruby" />
-<meta property="og:description" content="YAML stands for &ldquo;YAML Ain&rsquo;t Markup Language&rdquo;. YAML is a data serialization language that is often used for writing configuration files.
-In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom&rsquo;s Obvious Minimal Language).
-In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.
-For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.
+<meta property="og:url" content="https://hsps.in/post/validating-yaml-files-in-ruby/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Validating YAML Files in Ruby">
+  <meta property="og:description" content="YAML stands for “YAML Ain’t Markup Language”. YAML is a data serialization language that is often used for writing configuration files.
+In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom’s Obvious Minimal Language).
+In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure’s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.
+For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don’t need to define the schema, and remember to update the schema when you add a new variable to your file.
 But defining the schema has its benefits -
+For the User: It reminds then to have the configuration filled before running their program For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running. ">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-08-22T21:27:34-07:00">
+    <meta property="article:modified_time" content="2022-08-22T21:27:34-07:00">
+    <meta property="article:tag" content="Dry-Schema">
+    <meta property="article:tag" content="Dry-Validation">
+    <meta property="article:tag" content="Yaml">
+    <meta property="article:tag" content="Toml">
+    <meta property="article:tag" content="Schema">
+    <meta property="article:tag" content="Structure">
 
-For the User: It reminds then to have the configuration filled before running their program
-For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running.
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/validating-yaml-files-in-ruby/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-08-22T21:27:34-07:00" />
-<meta property="article:modified_time" content="2022-08-22T21:27:34-07:00" />
-
-<meta itemprop="name" content="Validating YAML Files in Ruby">
-<meta itemprop="description" content="YAML stands for &ldquo;YAML Ain&rsquo;t Markup Language&rdquo;. YAML is a data serialization language that is often used for writing configuration files.
-In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom&rsquo;s Obvious Minimal Language).
-In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.
-For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.
+  <meta itemprop="name" content="Validating YAML Files in Ruby">
+  <meta itemprop="description" content="YAML stands for “YAML Ain’t Markup Language”. YAML is a data serialization language that is often used for writing configuration files.
+In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom’s Obvious Minimal Language).
+In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure’s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.
+For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don’t need to define the schema, and remember to update the schema when you add a new variable to your file.
 But defining the schema has its benefits -
-
-For the User: It reminds then to have the configuration filled before running their program
-For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running.
-"><meta itemprop="datePublished" content="2022-08-22T21:27:34-07:00" />
-<meta itemprop="dateModified" content="2022-08-22T21:27:34-07:00" />
-<meta itemprop="wordCount" content="765">
-<meta itemprop="keywords" content="yaml,dry-schema,dry-validation,yaml,toml,schema,structure,ruby,software engineering,best practice," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Validating YAML Files in Ruby"/>
-<meta name="twitter:description" content="YAML stands for &ldquo;YAML Ain&rsquo;t Markup Language&rdquo;. YAML is a data serialization language that is often used for writing configuration files.
-In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom&rsquo;s Obvious Minimal Language).
-In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.
-For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.
+For the User: It reminds then to have the configuration filled before running their program For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running. ">
+  <meta itemprop="datePublished" content="2022-08-22T21:27:34-07:00">
+  <meta itemprop="dateModified" content="2022-08-22T21:27:34-07:00">
+  <meta itemprop="wordCount" content="771">
+  <meta itemprop="keywords" content="yaml,dry-schema,dry-validation,yaml,toml,schema,structure,ruby,software engineering,best practice">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Validating YAML Files in Ruby">
+  <meta name="twitter:description" content="YAML stands for “YAML Ain’t Markup Language”. YAML is a data serialization language that is often used for writing configuration files.
+In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom’s Obvious Minimal Language).
+In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure’s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.
+For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don’t need to define the schema, and remember to update the schema when you add a new variable to your file.
 But defining the schema has its benefits -
-
-For the User: It reminds then to have the configuration filled before running their program
-For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running.
-"/>
+For the User: It reminds then to have the configuration filled before running their program For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running. ">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -190,12 +192,12 @@ For the Developer: It helps us to eliminate the configuration file as a possible
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">domains</span><span class="p">:</span><span class="w">
-</span><span class="w">	</span>- <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l">https://domain1.com/blog/author/coderhs</span><span class="w">
-</span><span class="w">	  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l">DomainOne</span><span class="w">
-</span><span class="w">	</span>- <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l">https://Domain2.in</span><span class="w">
-</span><span class="w">	  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l">DomainTwo</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">domains</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span>- <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l">https://domain1.com/blog/author/coderhs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l">DomainOne</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span>- <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l">https://Domain2.in</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l">DomainTwo</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>Its an array of hash with <code>domain</code> key for the root url and <code>rule</code> key defining the class name with the code for scrapping. You can add more domains in future and add custom classes and place them inside the rules folder.</p>
 <p>Now to confirm yaml file, we start by adding <code>gem 'dry-schema'</code> to the <code>Gemfile</code> (followed by <code>bundle install</code>). Then add the following to <code>main.rb</code> file (this is file that starts my program):</p>
@@ -219,29 +221,27 @@ For the Developer: It helps us to eliminate the configuration file as a possible
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="nb">require</span> <span class="s1">&#39;yaml&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;dry/schema&#39;</span>
-
-<span class="n">config</span> <span class="o">=</span> <span class="no">YAML</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&#34;config.yml&#34;</span><span class="p">))</span>
-<span class="c1"># =&gt; {domains: [{domain: &#34;https://domain1.com/blog/author/coderhs&#34;, rule: &#34;DomainOne&#34;},..]}</span>
-
-<span class="n">config_schema</span> <span class="o">=</span> <span class="no">Dry</span><span class="o">::</span><span class="no">Schema</span><span class="o">.</span><span class="n">Params</span> <span class="k">do</span>
-  <span class="n">required</span><span class="p">(</span><span class="ss">:domains</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="ss">:array</span><span class="p">,</span> <span class="n">min_size?</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span>
-    <span class="nb">hash</span> <span class="k">do</span>
-      <span class="n">required</span><span class="p">(</span><span class="ss">:domain</span><span class="p">)</span><span class="o">.</span><span class="n">filled</span><span class="p">(</span><span class="ss">:string</span><span class="p">)</span>
-      <span class="n">required</span><span class="p">(</span><span class="ss">:rule</span><span class="p">)</span><span class="o">.</span><span class="n">filled</span><span class="p">(</span><span class="ss">:string</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="n">schema_validation</span> <span class="o">=</span> <span class="n">config_schema</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-
-<span class="k">raise</span> <span class="n">schema_validate</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">to_h</span><span class="o">.</span><span class="n">to_s</span> <span class="k">unless</span> <span class="n">schema_validation</span><span class="o">.</span><span class="n">success?</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="nb">require</span> <span class="s1">&#39;yaml&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">require</span> <span class="s1">&#39;dry/schema&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">config</span> <span class="o">=</span> <span class="no">YAML</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&#34;config.yml&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; {domains: [{domain: &#34;https://domain1.com/blog/author/coderhs&#34;, rule: &#34;DomainOne&#34;},..]}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">config_schema</span> <span class="o">=</span> <span class="no">Dry</span><span class="o">::</span><span class="no">Schema</span><span class="o">.</span><span class="n">Params</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">required</span><span class="p">(</span><span class="ss">:domains</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="ss">:array</span><span class="p">,</span> <span class="n">min_size?</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">hash</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">      <span class="n">required</span><span class="p">(</span><span class="ss">:domain</span><span class="p">)</span><span class="o">.</span><span class="n">filled</span><span class="p">(</span><span class="ss">:string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">required</span><span class="p">(</span><span class="ss">:rule</span><span class="p">)</span><span class="o">.</span><span class="n">filled</span><span class="p">(</span><span class="ss">:string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">schema_validation</span> <span class="o">=</span> <span class="n">config_schema</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">raise</span> <span class="n">schema_validate</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">to_h</span><span class="o">.</span><span class="n">to_s</span> <span class="k">unless</span> <span class="n">schema_validation</span><span class="o">.</span><span class="n">success?</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now if the required format (the keys) is not present in our yaml file, this will raise an error.</p>
 <div class="highlight"><div class="chroma">
@@ -249,8 +249,8 @@ For the Developer: It helps us to eliminate the configuration file as a possible
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">main.rb:17:in <span class="sb">`</span>&lt;main&gt;<span class="err">&#39;</span>: <span class="o">{</span>:domains<span class="o">=</span>&gt;<span class="o">{</span><span class="nv">0</span><span class="o">=</span>&gt;<span class="o">{</span>:rule<span class="o">=</span>&gt;<span class="o">[</span><span class="s2">&#34;is missing&#34;</span><span class="o">]}}}</span> <span class="o">(</span>RuntimeError<span class="o">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">main.rb:17:in <span class="sb">`</span>&lt;main&gt;<span class="err">&#39;</span>: <span class="o">{</span>:domains<span class="o">=</span>&gt;<span class="o">{</span><span class="nv">0</span><span class="o">=</span>&gt;<span class="o">{</span>:rule<span class="o">=</span>&gt;<span class="o">[</span><span class="s2">&#34;is missing&#34;</span><span class="o">]}}}</span> <span class="o">(</span>RuntimeError<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now we can take another step further and validate that the domain is filled with a url. For that we will use another gem called <code>dry-validation</code>. <code>dry-validation</code>, also does schema validations using <code>dry-schema</code> gem.</p>
 <p>We start by creating a new ruby file <code>config_validation.rb</code> and inside which we write the following code</p>
@@ -274,23 +274,23 @@ For the Developer: It helps us to eliminate the configuration file as a possible
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="k">class</span> <span class="nc">ConfigValidation</span> <span class="o">&lt;</span> <span class="no">Dry</span><span class="o">::</span><span class="no">Validation</span><span class="o">::</span><span class="no">Contract</span>
-  <span class="n">params</span> <span class="k">do</span>
-		<span class="n">required</span><span class="p">(</span><span class="ss">:domains</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="ss">:array</span><span class="p">,</span> <span class="n">min_size?</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span>
-      <span class="nb">hash</span> <span class="k">do</span>
-        <span class="n">required</span><span class="p">(</span><span class="ss">:domain</span><span class="p">)</span><span class="o">.</span><span class="n">filled</span><span class="p">(</span><span class="ss">:string</span><span class="p">)</span>
-        <span class="n">required</span><span class="p">(</span><span class="ss">:rule</span><span class="p">)</span><span class="o">.</span><span class="n">filled</span><span class="p">(</span><span class="ss">:string</span><span class="p">)</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="n">rule</span><span class="p">(</span><span class="ss">:domains</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="ss">index</span><span class="p">:</span><span class="o">|</span>
-    <span class="k">unless</span> <span class="sr">/^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$/</span><span class="o">.</span><span class="n">match?</span><span class="p">(</span><span class="n">value</span><span class="o">[</span><span class="ss">:domain</span><span class="o">]</span><span class="p">)</span>
-      <span class="n">key</span><span class="p">(</span><span class="o">[</span><span class="ss">:domains</span><span class="p">,</span> <span class="ss">:domain</span><span class="p">,</span> <span class="n">index</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">failure</span><span class="p">(</span><span class="s1">&#39;has invalid format&#39;</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ConfigValidation</span> <span class="o">&lt;</span> <span class="no">Dry</span><span class="o">::</span><span class="no">Validation</span><span class="o">::</span><span class="no">Contract</span>
+</span></span><span class="line"><span class="cl">  <span class="n">params</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">		<span class="n">required</span><span class="p">(</span><span class="ss">:domains</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="ss">:array</span><span class="p">,</span> <span class="n">min_size?</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">hash</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">        <span class="n">required</span><span class="p">(</span><span class="ss">:domain</span><span class="p">)</span><span class="o">.</span><span class="n">filled</span><span class="p">(</span><span class="ss">:string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">required</span><span class="p">(</span><span class="ss">:rule</span><span class="p">)</span><span class="o">.</span><span class="n">filled</span><span class="p">(</span><span class="ss">:string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">rule</span><span class="p">(</span><span class="ss">:domains</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="ss">index</span><span class="p">:</span><span class="o">|</span>
+</span></span><span class="line"><span class="cl">    <span class="k">unless</span> <span class="sr">/^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$/</span><span class="o">.</span><span class="n">match?</span><span class="p">(</span><span class="n">value</span><span class="o">[</span><span class="ss">:domain</span><span class="o">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">key</span><span class="p">(</span><span class="o">[</span><span class="ss">:domains</span><span class="p">,</span> <span class="ss">:domain</span><span class="p">,</span> <span class="n">index</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">failure</span><span class="p">(</span><span class="s1">&#39;has invalid format&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>and in the <code>main.rb</code></p>
 <div class="highlight"><div class="chroma">
@@ -307,23 +307,21 @@ For the Developer: It helps us to eliminate the configuration file as a possible
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="nb">require</span> <span class="s1">&#39;yaml&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;dry/schema&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;dry/validation&#39;</span>
-<span class="n">require_relative</span> <span class="s2">&#34;./config_validation&#34;</span>
-
-<span class="n">config</span> <span class="o">=</span> <span class="no">YAML</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&#34;config.yml&#34;</span><span class="p">))</span>
-<span class="c1"># =&gt; {domains: [{domain: &#34;https://domain1.com/blog/author/coderhs&#34;, rule: &#34;DomainOne&#34;},..]}</span>
-
-<span class="n">validation</span> <span class="o">=</span> <span class="no">ConfigValidation</span><span class="o">.</span><span class="n">new</span>
-<span class="n">validation_result</span> <span class="o">=</span> <span class="n">validation</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-
-<span class="k">raise</span> <span class="n">validation_result</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">to_h</span><span class="o">.</span><span class="n">to_s</span> <span class="k">unless</span> <span class="n">validation_result</span><span class="o">.</span><span class="n">success?</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="nb">require</span> <span class="s1">&#39;yaml&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">require</span> <span class="s1">&#39;dry/schema&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">require</span> <span class="s1">&#39;dry/validation&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">require_relative</span> <span class="s2">&#34;./config_validation&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">config</span> <span class="o">=</span> <span class="no">YAML</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&#34;config.yml&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; {domains: [{domain: &#34;https://domain1.com/blog/author/coderhs&#34;, rule: &#34;DomainOne&#34;},..]}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">validation</span> <span class="o">=</span> <span class="no">ConfigValidation</span><span class="o">.</span><span class="n">new</span>
+</span></span><span class="line"><span class="cl"><span class="n">validation_result</span> <span class="o">=</span> <span class="n">validation</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">raise</span> <span class="n">validation_result</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">to_h</span><span class="o">.</span><span class="n">to_s</span> <span class="k">unless</span> <span class="n">validation_result</span><span class="o">.</span><span class="n">success?</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>How the error will look like if you pass in invalid URL:</p>
 <div class="highlight"><div class="chroma">
@@ -331,8 +329,8 @@ For the Developer: It helps us to eliminate the configuration file as a possible
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">main.rb:17:in <span class="sb">`</span>&lt;main&gt;<span class="err">&#39;</span>: <span class="o">{</span>:domains<span class="o">=</span>&gt;<span class="o">{</span>:domain<span class="o">=</span>&gt;<span class="o">{</span><span class="nv">0</span><span class="o">=</span>&gt;<span class="o">[</span><span class="s2">&#34;has invalid format&#34;</span><span class="o">]</span>, <span class="nv">1</span><span class="o">=</span>&gt;<span class="o">[</span><span class="s2">&#34;has invalid format&#34;</span><span class="o">]}}}</span> <span class="o">(</span>RuntimeError<span class="o">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">main.rb:17:in <span class="sb">`</span>&lt;main&gt;<span class="err">&#39;</span>: <span class="o">{</span>:domains<span class="o">=</span>&gt;<span class="o">{</span>:domain<span class="o">=</span>&gt;<span class="o">{</span><span class="nv">0</span><span class="o">=</span>&gt;<span class="o">[</span><span class="s2">&#34;has invalid format&#34;</span><span class="o">]</span>, <span class="nv">1</span><span class="o">=</span>&gt;<span class="o">[</span><span class="s2">&#34;has invalid format&#34;</span><span class="o">]}}}</span> <span class="o">(</span>RuntimeError<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This article is meant to be an intro, you can find more details from the gem&rsquo;s documentation.</p>
 <p>Note:</p>
@@ -430,7 +428,7 @@ For the Developer: It helps us to eliminate the configuration file as a possible
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -439,16 +437,16 @@ For the Developer: It helps us to eliminate the configuration file as a possible
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -465,19 +463,15 @@ For the Developer: It helps us to eliminate the configuration file as a possible
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

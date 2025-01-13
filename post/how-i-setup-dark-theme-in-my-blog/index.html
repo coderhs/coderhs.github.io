@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/how-i-setup-dark-theme-in-my-blog/" />
@@ -39,20 +39,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="How I Setup Dark Theme in My Blog" />
-<meta property="og:description" content="Setting up dark theme in a hugo blog" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/how-i-setup-dark-theme-in-my-blog/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-06-12T10:49:39-07:00" />
-<meta property="article:modified_time" content="2022-06-12T10:49:39-07:00" />
+<meta property="og:url" content="https://hsps.in/post/how-i-setup-dark-theme-in-my-blog/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="How I Setup Dark Theme in My Blog">
+  <meta property="og:description" content="Setting up dark theme in a hugo blog">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-06-12T10:49:39-07:00">
+    <meta property="article:modified_time" content="2022-06-12T10:49:39-07:00">
+    <meta property="article:tag" content="Css">
+    <meta property="article:tag" content="Design">
 
-<meta itemprop="name" content="How I Setup Dark Theme in My Blog">
-<meta itemprop="description" content="Setting up dark theme in a hugo blog"><meta itemprop="datePublished" content="2022-06-12T10:49:39-07:00" />
-<meta itemprop="dateModified" content="2022-06-12T10:49:39-07:00" />
-<meta itemprop="wordCount" content="571">
-<meta itemprop="keywords" content="css,design," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How I Setup Dark Theme in My Blog"/>
-<meta name="twitter:description" content="Setting up dark theme in a hugo blog"/>
+  <meta itemprop="name" content="How I Setup Dark Theme in My Blog">
+  <meta itemprop="description" content="Setting up dark theme in a hugo blog">
+  <meta itemprop="datePublished" content="2022-06-12T10:49:39-07:00">
+  <meta itemprop="dateModified" content="2022-06-12T10:49:39-07:00">
+  <meta itemprop="wordCount" content="571">
+  <meta itemprop="keywords" content="Website,CSS,Design">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How I Setup Dark Theme in My Blog">
+  <meta name="twitter:description" content="Setting up dark theme in a hugo blog">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -199,58 +206,58 @@
 </span><span class="lnt">51
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">darkmode--activated</span> <span class="p">{</span>
-  <span class="err">.main</span> <span class="err">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">light-gray</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">.</span><span class="nc">header</span> <span class="p">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">light-gray</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">.</span><span class="nc">menu-item-link</span> <span class="p">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">light-gray</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="p">.</span><span class="nc">post</span> <span class="p">.</span><span class="nc">post-content</span> <span class="nt">code</span><span class="o">,</span> <span class="p">.</span><span class="nc">post</span> <span class="p">.</span><span class="nc">post-content</span> <span class="nt">pre</span> <span class="p">{</span>
-    <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="kc">black</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">.</span><span class="nc">post-link</span> <span class="p">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">theme-color</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">.</span><span class="nc">post</span> <span class="p">.</span><span class="nc">post-content</span> <span class="p">.</span><span class="nc">highlight</span><span class="o">&gt;</span><span class="p">.</span><span class="nc">chroma</span> <span class="nt">table</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="kc">white</span><span class="p">;</span>
-    <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="n">dark-gray</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">.</span><span class="nc">logo-wrapper</span> <span class="p">{</span>
-    <span class="err">a</span> <span class="err">{</span>
-      <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">theme-color</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="err">}</span>
-
-  <span class="p">.</span><span class="nc">footer</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="err">$</span><span class="kc">black</span><span class="p">;</span>
-    <span class="k">padding-top</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
-    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">0</span><span class="kt">em</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">.</span><span class="nc">footer</span> <span class="p">.</span><span class="nc">social-links</span> <span class="p">.</span><span class="nc">iconfont</span> <span class="p">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="kc">white</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="err">$</span><span class="kc">black</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">.</span><span class="nc">pagination</span> <span class="p">{</span>
-    <span class="err">a</span> <span class="err">{</span>
-      <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">theme-color</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">darkmode--activated</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="err">.main</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">light-gray</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">header</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">light-gray</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">menu-item-link</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">light-gray</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">post</span> <span class="p">.</span><span class="nc">post-content</span> <span class="nt">code</span><span class="o">,</span> <span class="p">.</span><span class="nc">post</span> <span class="p">.</span><span class="nc">post-content</span> <span class="nt">pre</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="kc">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">post-link</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">theme-color</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">post</span> <span class="p">.</span><span class="nc">post-content</span> <span class="p">.</span><span class="nc">highlight</span><span class="o">&gt;</span><span class="p">.</span><span class="nc">chroma</span> <span class="nt">table</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="kc">white</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="n">dark-gray</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">logo-wrapper</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="err">a</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">theme-color</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="err">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">footer</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="err">$</span><span class="kc">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding-top</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">0</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">footer</span> <span class="p">.</span><span class="nc">social-links</span> <span class="p">.</span><span class="nc">iconfont</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="kc">white</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="err">$</span><span class="kc">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">pagination</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="err">a</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="n">theme-color</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="err">}</span>
+</span></span><span class="line"><span class="cl"><span class="err">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>I like to write scss so that I can have variables in my css file. Using variables instead of hard coding the color code to black in each location, allows me to easily change the color in future, instead of having to search and replace black at all location.</p>
 <p>Let me know if you are aware of any library that automatically/easily covert a template to dark mode. Also if I have missed something that you feel could be useful or important.</p>
@@ -329,7 +336,7 @@
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -338,16 +345,16 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -364,19 +371,15 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

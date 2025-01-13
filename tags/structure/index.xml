@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>structure on Harisankar P S | HsPS.in</title>
+    <title>Structure on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/structure/</link>
-    <description>Recent content in structure on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Structure on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Aug 2022 21:27:34 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 21:27:34 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/structure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Validating YAML Files in Ruby</title>
       <link>https://hsps.in/post/validating-yaml-files-in-ruby/</link>
       <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
-      
       <guid>https://hsps.in/post/validating-yaml-files-in-ruby/</guid>
-      <description>&lt;p&gt;YAML stands for &amp;ldquo;YAML Ain&amp;rsquo;t Markup Language&amp;rdquo;. YAML is a data serialization language that is often used for writing configuration files.&lt;/p&gt;
-&lt;p&gt;In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom&amp;rsquo;s Obvious Minimal Language).&lt;/p&gt;
-&lt;p&gt;In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&amp;rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.&lt;/p&gt;
-&lt;p&gt;For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&amp;rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.&lt;/p&gt;
-&lt;p&gt;But defining the schema has its benefits -&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;For the User: It reminds then to have the configuration filled before running their program&lt;/li&gt;
-&lt;li&gt;For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running.&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>&lt;p&gt;YAML stands for &amp;ldquo;YAML Ain&amp;rsquo;t Markup Language&amp;rdquo;. YAML is a data serialization language that is often used for writing configuration files.&lt;/p&gt;&#xA;&lt;p&gt;In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom&amp;rsquo;s Obvious Minimal Language).&lt;/p&gt;&#xA;&lt;p&gt;In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&amp;rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.&lt;/p&gt;&#xA;&lt;p&gt;For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&amp;rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.&lt;/p&gt;&#xA;&lt;p&gt;But defining the schema has its benefits -&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;For the User: It reminds then to have the configuration filled before running their program&lt;/li&gt;&#xA;&lt;li&gt;For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running.&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
-    
   </channel>
 </rss>

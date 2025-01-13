@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Make Self Executing Ruby Scripts Linux" /><meta name="keywords" content="Ruby, Linux, bash, shell, unix" />
+<meta name="author" content="" /><meta name="description" content="Make Self Executing Ruby Scripts Linux" /><meta name="keywords" content="Ruby, Linux, bash, shell, unix" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/make-self-executing-ruby-scripts-linux/" />
@@ -39,20 +39,30 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Make Self Executing Ruby Scripts Linux" />
-<meta property="og:description" content="Make Self Executing Ruby Scripts Linux" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/make-self-executing-ruby-scripts-linux/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2012-12-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2012-12-05T00:00:00+00:00" />
+<meta property="og:url" content="https://hsps.in/post/make-self-executing-ruby-scripts-linux/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Make Self Executing Ruby Scripts Linux">
+  <meta property="og:description" content="Make Self Executing Ruby Scripts Linux">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2012-12-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2012-12-05T00:00:00+00:00">
+    <meta property="article:tag" content="Ruby">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Bash">
+    <meta property="article:tag" content="Shell">
+    <meta property="article:tag" content="Unix">
 
-<meta itemprop="name" content="Make Self Executing Ruby Scripts Linux">
-<meta itemprop="description" content="Make Self Executing Ruby Scripts Linux"><meta itemprop="datePublished" content="2012-12-05T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2012-12-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="498">
-<meta itemprop="keywords" content="Ruby,Linux,bash,shell,unix," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Make Self Executing Ruby Scripts Linux"/>
-<meta name="twitter:description" content="Make Self Executing Ruby Scripts Linux"/>
+  <meta itemprop="name" content="Make Self Executing Ruby Scripts Linux">
+  <meta itemprop="description" content="Make Self Executing Ruby Scripts Linux">
+  <meta itemprop="datePublished" content="2012-12-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2012-12-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="498">
+  <meta itemprop="keywords" content="Ruby,Linux,bash,shell,unix">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Make Self Executing Ruby Scripts Linux">
+  <meta name="twitter:description" content="Make Self Executing Ruby Scripts Linux">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -148,8 +158,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/usr/bin/ruby
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/ruby
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>puts &quot;The ruby code, starts from line 2&quot;</code> How does this work?</p>
 <p>A program is executed using a tool known as program loader. In linux when a program loader loads the file for execution and sees that there is #! notation in the first line, it would understand that this program needs to be passed to an interpreter program for execution. In case our ruby script when it gets executed ( $./program_name.rb) the program loader would pass it on to the ruby interpreter program that is defined in the hash-bang line as /usr/bin/ruby.</p>
@@ -162,8 +172,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">$chmod</span> <span class="m">755</span> program_name.rb
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">$chmod</span> <span class="m">755</span> program_name.rb
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Following these steps you can make a ruby scrip executable.</p>
 <p>Note :- The above mentioned method is not for ruby alone, any script can be made self executable using the above mentioned steps. We just have to change the program that is suppose to execute the program .</p>
@@ -182,18 +192,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
-</span><span class="cp"></span>
-<span class="c1">#!/bin/csh</span>
-
-<span class="c1">#!/usr/bin/perl -T</span>
-
-<span class="c1">#!/usr/bin/php</span>
-
-<span class="c1">#!/usr/bin/python -O</span>
-
-<span class="c1">#!/usr/bin/ruby</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">#!/bin/csh</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#!/usr/bin/perl -T</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#!/usr/bin/php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#!/usr/bin/python -O</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#!/usr/bin/ruby</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Also the above mentioned is the location of the interpreter program if its in a different location then you will have to use that location or could use env – environment variable in linux thus the hash-bang statement changes to</p>
 <div class="highlight"><div class="chroma">
@@ -201,8 +211,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/usr/bin/env ruby
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env ruby
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>That is the interpreter is searched among the environment variable, thus during run time the appropriate interpreter would be searched and used. For more details see the env wikipedia page</p>
 <p>Happy Coding.</p>
@@ -284,7 +294,7 @@
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -293,16 +303,16 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -319,19 +329,15 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

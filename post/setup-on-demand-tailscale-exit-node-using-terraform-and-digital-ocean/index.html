@@ -23,7 +23,7 @@ I even took it a step further by installing code-server on my dev machine. This 
 What is Tailscale? For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.
 By connecting my devices and home lab to this VPN, I gained the ability to access my computers remotely from anywhere.
 Using an Exit Node for Secure Browsing Tailscale allows you to set up one of your devices as an exit node. This means that when you&amp;rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&amp;rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.
- Note: Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.
+Note: Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.
 " /><meta name="keywords" content="tailscale, on-demand, VPN, Digital Ocean, terraform, server" />
 
 
@@ -31,7 +31,7 @@ Using an Exit Node for Secure Browsing Tailscale allows you to set up one of you
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/" />
@@ -47,56 +47,52 @@ Using an Exit Node for Secure Browsing Tailscale allows you to set up one of you
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean" />
-<meta property="og:description" content="Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.
+<meta property="og:url" content="https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean">
+  <meta property="og:description" content="Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.
 By connecting my phone to Tailscale and using JuiceSSH, an Android app for SSH access, I could SSH into my home machine, deploy applications, and run maintenance scripts—all from my phone. Peaceful trips away from my desk.
-Remote Development Made Simple
-Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code&rsquo;s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.
+Remote Development Made Simple Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code’s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.
 I even took it a step further by installing code-server on my dev machine. This allowed me to access a full-fledged development environment from my samsung tablet via Tailscale.
-What is Tailscale?
-For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.
+What is Tailscale? For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.
 By connecting my devices and home lab to this VPN, I gained the ability to access my computers remotely from anywhere.
-Using an Exit Node for Secure Browsing
-Tailscale allows you to set up one of your devices as an exit node. This means that when you&rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.
+Using an Exit Node for Secure Browsing Tailscale allows you to set up one of your devices as an exit node. This means that when you’re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I’m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.
+Note: Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-10-08T20:11:58-07:00">
+    <meta property="article:modified_time" content="2024-10-08T20:11:58-07:00">
+    <meta property="article:tag" content="Tailscale">
+    <meta property="article:tag" content="On-Demand">
+    <meta property="article:tag" content="VPN">
+    <meta property="article:tag" content="Digital Ocean">
+    <meta property="article:tag" content="Terraform">
+    <meta property="article:tag" content="Server">
 
-Note: Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-10-08T20:11:58-07:00" />
-<meta property="article:modified_time" content="2024-10-08T20:11:58-07:00" />
-
-<meta itemprop="name" content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean">
-<meta itemprop="description" content="Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.
+  <meta itemprop="name" content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean">
+  <meta itemprop="description" content="Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.
 By connecting my phone to Tailscale and using JuiceSSH, an Android app for SSH access, I could SSH into my home machine, deploy applications, and run maintenance scripts—all from my phone. Peaceful trips away from my desk.
-Remote Development Made Simple
-Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code&rsquo;s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.
+Remote Development Made Simple Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code’s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.
 I even took it a step further by installing code-server on my dev machine. This allowed me to access a full-fledged development environment from my samsung tablet via Tailscale.
-What is Tailscale?
-For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.
+What is Tailscale? For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.
 By connecting my devices and home lab to this VPN, I gained the ability to access my computers remotely from anywhere.
-Using an Exit Node for Secure Browsing
-Tailscale allows you to set up one of your devices as an exit node. This means that when you&rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.
-
-Note: Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.
-"><meta itemprop="datePublished" content="2024-10-08T20:11:58-07:00" />
-<meta itemprop="dateModified" content="2024-10-08T20:11:58-07:00" />
-<meta itemprop="wordCount" content="826">
-<meta itemprop="keywords" content="tailscale,on-demand,VPN,Digital Ocean,terraform,server," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean"/>
-<meta name="twitter:description" content="Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.
+Using an Exit Node for Secure Browsing Tailscale allows you to set up one of your devices as an exit node. This means that when you’re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I’m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.
+Note: Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.">
+  <meta itemprop="datePublished" content="2024-10-08T20:11:58-07:00">
+  <meta itemprop="dateModified" content="2024-10-08T20:11:58-07:00">
+  <meta itemprop="wordCount" content="826">
+  <meta itemprop="keywords" content="tailscale,on-demand,VPN,Digital Ocean,terraform,server">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean">
+  <meta name="twitter:description" content="Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.
 By connecting my phone to Tailscale and using JuiceSSH, an Android app for SSH access, I could SSH into my home machine, deploy applications, and run maintenance scripts—all from my phone. Peaceful trips away from my desk.
-Remote Development Made Simple
-Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code&rsquo;s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.
+Remote Development Made Simple Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code’s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.
 I even took it a step further by installing code-server on my dev machine. This allowed me to access a full-fledged development environment from my samsung tablet via Tailscale.
-What is Tailscale?
-For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.
+What is Tailscale? For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.
 By connecting my devices and home lab to this VPN, I gained the ability to access my computers remotely from anywhere.
-Using an Exit Node for Secure Browsing
-Tailscale allows you to set up one of your devices as an exit node. This means that when you&rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.
-
-Note: Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.
-"/>
+Using an Exit Node for Secure Browsing Tailscale allows you to set up one of your devices as an exit node. This means that when you’re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I’m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.
+Note: Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -210,8 +206,8 @@ Note: Tailscale attempts to establish direct connections between devices. When t
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git clone git@github.com:coderhs/on_demand_tailscale_exit_node.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone git@github.com:coderhs/on_demand_tailscale_exit_node.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -222,9 +218,9 @@ Note: Tailscale attempts to establish direct connections between devices. When t
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> on_demand_tailscale_exit_node
-cp terraform.tfvars.example terraform.tfvars
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> on_demand_tailscale_exit_node
+</span></span><span class="line"><span class="cl">cp terraform.tfvars.example terraform.tfvars
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Fill in the <code>terraform.tfvars</code> file with your values:</p>
 <div class="highlight"><div class="chroma">
@@ -235,11 +231,11 @@ cp terraform.tfvars.example terraform.tfvars
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="n">digitalocean_token</span> <span class="o">=</span> <span class="s2">&#34;your_digitalocean_token&#34;</span>
-<span class="n">tailscale_auth_key</span> <span class="o">=</span> <span class="s2">&#34;your_tailscale_auth_key&#34;</span>
-<span class="n">ssh_fingerprint</span> <span class="o">=</span> <span class="s2">&#34;your_ssh_fingerprint&#34;</span>
-<span class="n">digitalocean_location</span> <span class="o">=</span> <span class="s2">&#34;desired_location&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="n">digitalocean_token</span> <span class="o">=</span> <span class="s2">&#34;your_digitalocean_token&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">tailscale_auth_key</span> <span class="o">=</span> <span class="s2">&#34;your_tailscale_auth_key&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ssh_fingerprint</span> <span class="o">=</span> <span class="s2">&#34;your_ssh_fingerprint&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">digitalocean_location</span> <span class="o">=</span> <span class="s2">&#34;desired_location&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>For first-time DigitalOcean users, <a href="https://m.do.co/c/07c7e5c8be6f">sign up here</a>.</p>
 </li>
@@ -251,8 +247,8 @@ cp terraform.tfvars.example terraform.tfvars
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">cp ~/path/to/private/key ./key/do
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cp ~/path/to/private/key ./key/do
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -280,20 +276,20 @@ cp terraform.tfvars.example terraform.tfvars
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;tagOwners&#34;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&#34;tag:Connector&#34;</span><span class="p">:</span> <span class="p">[],</span>
-<span class="p">}</span><span class="err">,</span>
-<span class="s2">&#34;autoApprovers&#34;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&#34;exitNode&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;tag:Connector&#34;</span><span class="p">],</span>
-<span class="p">}</span><span class="err">,</span>
-<span class="c1">// if You want the exit node to have a static IP in your network then uncomment the below line
-</span><span class="c1">// &#34;nodeAttrs&#34;: [
-</span><span class="c1"></span> <span class="c1">//	{
-</span><span class="c1"></span> <span class="c1">//		&#34;target&#34;: [&#34;tag:Connector&#34;],
-</span><span class="c1"></span> <span class="c1">//		&#34;ipPool&#34;: [&#34;100.81.0.1/32&#34;],
-</span><span class="c1"></span> <span class="c1">//	},
-</span><span class="c1"></span> <span class="c1">// ],
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;tagOwners&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;tag:Connector&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;autoApprovers&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;exitNode&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;tag:Connector&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// if You want the exit node to have a static IP in your network then uncomment the below line
+</span></span></span><span class="line"><span class="cl"><span class="c1">// &#34;nodeAttrs&#34;: [
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//	{
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//		&#34;target&#34;: [&#34;tag:Connector&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//		&#34;ipPool&#34;: [&#34;100.81.0.1/32&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//	},
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">// ],
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -309,8 +305,8 @@ cp terraform.tfvars.example terraform.tfvars
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">terraform apply
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">terraform apply
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The server should be available in your Tailscale network as &ldquo;tailscale-exit-node&rdquo; within 4-5 minutes.</p>
 </li>
@@ -324,8 +320,8 @@ cp terraform.tfvars.example terraform.tfvars
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo tailscale up --exit-node<span class="o">=</span>tailscale-exit-node --snat-subnet-routes<span class="o">=</span><span class="nb">false</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo tailscale up --exit-node<span class="o">=</span>tailscale-exit-node --snat-subnet-routes<span class="o">=</span><span class="nb">false</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -335,8 +331,8 @@ cp terraform.tfvars.example terraform.tfvars
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo tailscale up --exit-node<span class="o">=</span> --snat-subnet-routes<span class="o">=</span><span class="nb">false</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo tailscale up --exit-node<span class="o">=</span> --snat-subnet-routes<span class="o">=</span><span class="nb">false</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -350,8 +346,8 @@ cp terraform.tfvars.example terraform.tfvars
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">terraform destroy
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">terraform destroy
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>With this setup, you have a flexible, on-demand Tailscale exit node running on DigitalOcean.</p>
     </div>
@@ -433,7 +429,7 @@ cp terraform.tfvars.example terraform.tfvars
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -442,16 +438,16 @@ cp terraform.tfvars.example terraform.tfvars
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -468,19 +464,15 @@ cp terraform.tfvars.example terraform.tfvars
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

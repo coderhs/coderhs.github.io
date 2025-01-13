@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>database on Harisankar P S | HsPS.in</title>
+    <title>Database on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/database/</link>
-    <description>Recent content in database on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Database on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Oct 2024 10:19:48 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Oct 2024 10:19:48 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup Read Replica (master-slave) Database on Postgresql 17</title>
       <link>https://hsps.in/post/setup-master-slave-database-on-postgresql-17/</link>
       <pubDate>Thu, 24 Oct 2024 10:19:48 -0700</pubDate>
-      
       <guid>https://hsps.in/post/setup-master-slave-database-on-postgresql-17/</guid>
-      <description>&lt;p&gt;PostgreSQL is a mature, open-source relational database that has been widely adopted by many companies over the years. It has been my go-to database for most of my software career, helping me solve various performance challenges in my projects. Features like JSON generation, materialized views, and others have enabled me to scale APIs to handle millions of requests per second.&lt;/p&gt;
-&lt;p&gt;One effective strategy to improve the performance of web applications is to create a read-only replica of the primary database. This allows you to direct read-only queries (e.g., &lt;code&gt;SELECT&lt;/code&gt; queries) to the replica, while write operations continue to target the primary database. Note that PostgreSQL doesn’t support multiple primary (or master) databases natively, but it does support multiple read replicas.&lt;/p&gt;
-&lt;p&gt;Although you can achieve distributed primary databases via schema or table sharding, that topic is beyond the scope of this article.&lt;/p&gt;</description>
+      <description>&lt;p&gt;PostgreSQL is a mature, open-source relational database that has been widely adopted by many companies over the years. It has been my go-to database for most of my software career, helping me solve various performance challenges in my projects. Features like JSON generation, materialized views, and others have enabled me to scale APIs to handle millions of requests per second.&lt;/p&gt;&#xA;&lt;p&gt;One effective strategy to improve the performance of web applications is to create a read-only replica of the primary database. This allows you to direct read-only queries (e.g., &lt;code&gt;SELECT&lt;/code&gt; queries) to the replica, while write operations continue to target the primary database. Note that PostgreSQL doesn’t support multiple primary (or master) databases natively, but it does support multiple read replicas.&lt;/p&gt;&#xA;&lt;p&gt;Although you can achieve distributed primary databases via schema or table sharding, that topic is beyond the scope of this article.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Running Migrations From Console</title>
       <link>https://hsps.in/post/running-migrations-from-console/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
-      
       <guid>https://hsps.in/post/running-migrations-from-console/</guid>
-      <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;
-&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;&#xA;&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GIN: Generalized Inverted iNdex (on text)</title>
       <link>https://hsps.in/post/generalized-inverted-index-gin-postgresql/</link>
       <pubDate>Thu, 19 May 2022 21:01:23 -0700</pubDate>
-      
       <guid>https://hsps.in/post/generalized-inverted-index-gin-postgresql/</guid>
-      <description>&lt;p&gt;Indexes are an integral part of any production database. It improves the speed of your query, and which in tern speeds up your application. The faster you get your data, faster you can provide the result to your user, faster you can move on to your next user. Knowing different type of indexes allows you to choose which is the best for your data. As there is no silver bullet.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;PostgreSQL is the DB refereed to in this article&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;This article is my humble attempt to explain and simplify what is Gin.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Indexes are an integral part of any production database. It improves the speed of your query, and which in tern speeds up your application. The faster you get your data, faster you can provide the result to your user, faster you can move on to your next user. Knowing different type of indexes allows you to choose which is the best for your data. As there is no silver bullet.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;PostgreSQL is the DB refereed to in this article&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;This article is my humble attempt to explain and simplify what is Gin.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

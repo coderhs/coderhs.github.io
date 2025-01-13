@@ -4,22 +4,16 @@
     <title>SSH on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/categories/ssh/</link>
     <description>Recent content in SSH on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Apr 2024 03:13:24 +0530</lastBuildDate><atom:link href="https://hsps.in/categories/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Apr 2024 03:13:24 +0530</lastBuildDate>
+    <atom:link href="https://hsps.in/categories/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Handle SSH Idle Connections Freezing shell or Getting Disconnected</title>
       <link>https://hsps.in/post/handle-ssh-idle-connections-handing-or-getting-disconnected/</link>
       <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
-      
       <guid>https://hsps.in/post/handle-ssh-idle-connections-handing-or-getting-disconnected/</guid>
-      <description>&lt;p&gt;As someone who has been working with servers for over a decade and a half, I feel embarrassed to admit that I only
-recently stumbled upon this setting. Throughout my years of connecting to remote servers over the internet, I&amp;rsquo;ve
-encountered instances where connections freeze or break after a period of inactivity. Sometimes it happens more
-frequently, while other times it never occurs at all. When I was in the US connecting to Amazon servers, there were
-occasions when the connection remained stable for days on end. This led me to believe that the issue might be related
-to the internet or the complexity of the network routing required to reach the server.&lt;/p&gt;</description>
+      <description>&lt;p&gt;As someone who has been working with servers for over a decade and a half, I feel embarrassed to admit that I only&#xA;recently stumbled upon this setting. Throughout my years of connecting to remote servers over the internet, I&amp;rsquo;ve&#xA;encountered instances where connections freeze or break after a period of inactivity. Sometimes it happens more&#xA;frequently, while other times it never occurs at all. When I was in the US connecting to Amazon servers, there were&#xA;occasions when the connection remained stable for days on end. This led me to believe that the issue might be related&#xA;to the internet or the complexity of the network routing required to reach the server.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,138 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on Harisankar P S | HsPS.in</title>
+    <title>Docker on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/docker/</link>
-    <description>Recent content in docker on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Docker on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Sep 2024 04:38:52 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Sep 2024 04:38:52 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Docker to export &amp; import data from Amazon RDS</title>
       <link>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</link>
       <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
-      
       <guid>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</guid>
       <description>&lt;p&gt;Docker is an efficient way to use command-line tools without needing to install them or their required libraries. Recently, I had a use case where I needed to take an SQL dump of a schema from a PostgreSQL database. The problem was that the PostgreSQL DB was version 16.3, while my local DB was only version 15. Using my local &lt;code&gt;pg_dump&lt;/code&gt; to access the remote database resulted in a version incompatibility error. To fix this, I would either need to upgrade &lt;code&gt;pg_dump&lt;/code&gt; or have both versions installed simultaneously on my machine. I didn&amp;rsquo;t want to do either. This is where Docker came to the rescue.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>AWS ECR Lifecycle Policy</title>
       <link>https://hsps.in/post/aws-ecr-lifecycle-policy/</link>
       <pubDate>Sat, 06 Apr 2024 06:21:43 -0700</pubDate>
-      
       <guid>https://hsps.in/post/aws-ecr-lifecycle-policy/</guid>
-      <description>&lt;p&gt;Amazon Elastic Container Registry (ECR) is a service provided by Amazon for hosting our Docker/container images. The cost of downloading these images to a server or ECS (Elastic Container Service) within the same zone is free. However, downloading or uploading from the public internet incurs costs, as does storage space usage.&lt;/p&gt;
-&lt;p&gt;During the development and deployment of your project, you may find yourself building images as frequently as every 30 minutes. This frequency reflects my own experience. Whenever new code is merged with the master branch, it triggers a code build pipeline. This pipeline ultimately pushes the latest image to ECR, typically tagged as &amp;ldquo;latest.&amp;rdquo; Consequently, the previous image remains in the repository but becomes untagged. While retaining a few versions of older deployments facilitates easy rollbacks, after a day or two, they tend to become redundant. At this juncture, they serve no purpose other than incurring storage costs.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Amazon Elastic Container Registry (ECR) is a service provided by Amazon for hosting our Docker/container images. The cost of downloading these images to a server or ECS (Elastic Container Service) within the same zone is free. However, downloading or uploading from the public internet incurs costs, as does storage space usage.&lt;/p&gt;&#xA;&lt;p&gt;During the development and deployment of your project, you may find yourself building images as frequently as every 30 minutes. This frequency reflects my own experience. Whenever new code is merged with the master branch, it triggers a code build pipeline. This pipeline ultimately pushes the latest image to ECR, typically tagged as &amp;ldquo;latest.&amp;rdquo; Consequently, the previous image remains in the repository but becomes untagged. While retaining a few versions of older deployments facilitates easy rollbacks, after a day or two, they tend to become redundant. At this juncture, they serve no purpose other than incurring storage costs.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Using Ansible to Install Docker and Docker Compose on New Lightsail Instance</title>
       <link>https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/</link>
       <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
-      
       <guid>https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/</guid>
-      <description>&lt;p&gt;Recently I have been working with deploying self hosted application in AWS lightsail for the company that I work for. My strategy for deploying application has been as follows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Launch a new ubuntu instance (since my team and I use it a dev machine we are familiar with it).&lt;/li&gt;
-&lt;li&gt;Install Docker&lt;/li&gt;
-&lt;li&gt;Install Docker Compose&lt;/li&gt;
-&lt;li&gt;Run the self hosted app and its requires services using docker.&lt;/li&gt;
-&lt;li&gt;Run nginx reverse proxy to serve the app over https&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I am pretty much managing the whole app through files. Its just the initial setup that I am doing manually. I thought of creating a base linux image for the new servers, which would have docker and docker-compose pre installed. But lightsail didn&amp;rsquo;t seem to have the option to use custom images, like EC2 servers.&lt;/p&gt;
-&lt;p&gt;Thus I decided to use ansible.&lt;/p&gt;
-&lt;p&gt;Ansible is an open source automation tool that is used for configuration management, deployment and task automation. It automates the steps that I do manually. It can run this command on multiple servers without having us do anything manually. We can also automate weekly maintenance check to login to all the servers, ensures all the security updates are installed, cache files are cleared, etc.&lt;/p&gt;
-&lt;p&gt;The thing I found most interesting about ansible compared to chef (another automation tool) is that it is agentless. That is it doesn&amp;rsquo;t expect anything to be running on the new server other open ssh. Chef on the other hand requires an agent to be running on the server. There are its own advantages of having an agent running on the server, it can do updates much faster and keep everything in sync. But since that is not a requirement for me at the moment, I decide to use ansible. I will write another article on how to do this using chef.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently I have been working with deploying self hosted application in AWS lightsail for the company that I work for. My strategy for deploying application has been as follows:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Launch a new ubuntu instance (since my team and I use it a dev machine we are familiar with it).&lt;/li&gt;&#xA;&lt;li&gt;Install Docker&lt;/li&gt;&#xA;&lt;li&gt;Install Docker Compose&lt;/li&gt;&#xA;&lt;li&gt;Run the self hosted app and its requires services using docker.&lt;/li&gt;&#xA;&lt;li&gt;Run nginx reverse proxy to serve the app over https&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I am pretty much managing the whole app through files. Its just the initial setup that I am doing manually. I thought of creating a base linux image for the new servers, which would have docker and docker-compose pre installed. But lightsail didn&amp;rsquo;t seem to have the option to use custom images, like EC2 servers.&lt;/p&gt;&#xA;&lt;p&gt;Thus I decided to use ansible.&lt;/p&gt;&#xA;&lt;p&gt;Ansible is an open source automation tool that is used for configuration management, deployment and task automation. It automates the steps that I do manually. It can run this command on multiple servers without having us do anything manually. We can also automate weekly maintenance check to login to all the servers, ensures all the security updates are installed, cache files are cleared, etc.&lt;/p&gt;&#xA;&lt;p&gt;The thing I found most interesting about ansible compared to chef (another automation tool) is that it is agentless. That is it doesn&amp;rsquo;t expect anything to be running on the new server other open ssh. Chef on the other hand requires an agent to be running on the server. There are its own advantages of having an agent running on the server, it can do updates much faster and keep everything in sync. But since that is not a requirement for me at the moment, I decide to use ansible. I will write another article on how to do this using chef.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setup HTTP(s) and Reverse Proxy to Docker Web App</title>
       <link>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</link>
       <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
-      
       <guid>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</guid>
-      <description>&lt;p&gt;This article is about how to add https to a web app running in docker. For this we are using nginx to handle port 80 and port 443 and then reverse proxy the traffic to port 443 to the application port. In this article we are assuming you have credentials for the SSL certificate, another article will be written on how to do it with lets encrypt to create ssl certificates for free.&lt;/p&gt;
-&lt;p&gt;This article assume you know about ssl key files, docker and docker-compose. And for the sake of this article we are setting up &lt;code&gt;uptime-kuma&lt;/code&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This article is about how to add https to a web app running in docker. For this we are using nginx to handle port 80 and port 443 and then reverse proxy the traffic to port 443 to the application port. In this article we are assuming you have credentials for the SSL certificate, another article will be written on how to do it with lets encrypt to create ssl certificates for free.&lt;/p&gt;&#xA;&lt;p&gt;This article assume you know about ssl key files, docker and docker-compose. And for the sake of this article we are setting up &lt;code&gt;uptime-kuma&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rails Copy Assets bundler Cache to Speed Up Build</title>
       <link>https://hsps.in/post/rails-copy-assets-bundler-cache-to-speed-up-build/</link>
       <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
-      
       <guid>https://hsps.in/post/rails-copy-assets-bundler-cache-to-speed-up-build/</guid>
-      <description>The slowest step (in my experience and opinion) is compiling assets (js/css). Compiling assets takes time and slower when you do it for the first time. So to speed it up its recommended to copy the last compiled assets from the latest image you have of the repo.
-1 2 3 4  COPY --from=docker-repo.link/image:latest /app/node_modules /app/node_modulesCOPY --from=docker-repo.link/image:latest /app/public /app/publicRUN bundle exec rails assets:precompile  Now since the prior assets are in the new image, it won&amp;rsquo;t compile the assets from scratch and the build will be faster.</description>
+      <description>The slowest step (in my experience and opinion) is compiling assets (js/css). Compiling assets takes time and slower when you do it for the first time. So to speed it up its recommended to copy the last compiled assets from the latest image you have of the repo.&#xA;1 2 3 4 COPY --from=docker-repo.link/image:latest /app/node_modules /app/node_modules COPY --from=docker-repo.link/image:latest /app/public /app/public RUN bundle exec rails assets:precompile Now since the prior assets are in the new image, it won&amp;rsquo;t compile the assets from scratch and the build will be faster.</description>
     </item>
-    
     <item>
       <title>Statically Compile Crystal Program and Distribute as docker Image</title>
       <link>https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/</link>
       <pubDate>Sun, 02 Apr 2023 20:22:46 -0700</pubDate>
-      
       <guid>https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/</guid>
-      <description>&lt;p&gt;In this article we are sharing how to statically compile a crystal program and then
-share the executable inside a docker image. We will create the smallest docker image possible. Smaller images are easier to manage, distribute and boot.&lt;/p&gt;
-&lt;p&gt;Note: The way docker works, each command/line creates a layer (with context).&lt;/p&gt;
-&lt;p&gt;The good news about crystal lang is the they distribute the docker image with all the libraries so that we can build static compiled executable(s). Attaching the docker file I wrote to statically compile a crystal language program.&lt;/p&gt;
-&lt;p&gt;Note: The program uses the Kemal web framework, so this could also be considered an article on how to statically compile and distribute a kemal web app.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this article we are sharing how to statically compile a crystal program and then&#xA;share the executable inside a docker image. We will create the smallest docker image possible. Smaller images are easier to manage, distribute and boot.&lt;/p&gt;&#xA;&lt;p&gt;Note: The way docker works, each command/line creates a layer (with context).&lt;/p&gt;&#xA;&lt;p&gt;The good news about crystal lang is the they distribute the docker image with all the libraries so that we can build static compiled executable(s). Attaching the docker file I wrote to statically compile a crystal language program.&lt;/p&gt;&#xA;&lt;p&gt;Note: The program uses the Kemal web framework, so this could also be considered an article on how to statically compile and distribute a kemal web app.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Share Docker Images as Files</title>
       <link>https://hsps.in/post/share-docker-images-as-files/</link>
       <pubDate>Sun, 26 Mar 2023 21:27:35 -0700</pubDate>
-      
       <guid>https://hsps.in/post/share-docker-images-as-files/</guid>
-      <description>&lt;p&gt;Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.&lt;/p&gt;
-&lt;p&gt;Dev Machine: Kubuntu, 22.04&lt;/p&gt;</description>
+      <description>&lt;p&gt;Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.&lt;/p&gt;&#xA;&lt;p&gt;Dev Machine: Kubuntu, 22.04&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Speed Up Docker Build using cache</title>
       <link>https://hsps.in/post/speed-up-docker-build-using-cache/</link>
       <pubDate>Fri, 10 Mar 2023 20:04:50 -0800</pubDate>
-      
       <guid>https://hsps.in/post/speed-up-docker-build-using-cache/</guid>
-      <description>&lt;p&gt;Docker has become a popular tool in recent years for building and deploying applications in a portable and scalable way. However, the build process can sometimes be slow, especially for large applications with many dependencies. In this article, we&amp;rsquo;ll explore how we can optimize our Dockerfile to speed it up.&lt;/p&gt;
-&lt;p&gt;When building a rails app for production we would need to do the following steps in the docker file&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;COPY . .
-bundle install
-yarn install
-bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; rails assets:precompile
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Docker after building each step it will cache that step. If the instructions/context of that steps or steps before haven&amp;rsquo;t change then docker will use the cache.&lt;/p&gt;
-&lt;p&gt;So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Docker has become a popular tool in recent years for building and deploying applications in a portable and scalable way. However, the build process can sometimes be slow, especially for large applications with many dependencies. In this article, we&amp;rsquo;ll explore how we can optimize our Dockerfile to speed it up.&lt;/p&gt;&#xA;&lt;p&gt;When building a rails app for production we would need to do the following steps in the docker file&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;COPY . .&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bundle install&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yarn install&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; rails assets:precompile&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Docker after building each step it will cache that step. If the instructions/context of that steps or steps before haven&amp;rsquo;t change then docker will use the cache.&lt;/p&gt;&#xA;&lt;p&gt;So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Enable Docker Remote Api on Docker Host</title>
       <link>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</link>
       <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
-      
       <guid>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</guid>
       <description>&lt;p&gt;Docker engine has inbuild API service that allows you to control &amp;amp; modify your docker engine and docker instance using HTTP.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setup NFS Server on Ubuntu</title>
       <link>https://hsps.in/post/setup-nfs-server-on-ubuntu/</link>
       <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
-      
       <guid>https://hsps.in/post/setup-nfs-server-on-ubuntu/</guid>
-      <description>&lt;p&gt;NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.&lt;/p&gt;
-&lt;p&gt;With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.&lt;/p&gt;</description>
+      <description>&lt;p&gt;NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.&lt;/p&gt;&#xA;&lt;p&gt;With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

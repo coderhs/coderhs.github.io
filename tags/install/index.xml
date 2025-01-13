@@ -1,33 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>install on Harisankar P S | HsPS.in</title>
+    <title>Install on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/install/</link>
-    <description>Recent content in install on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Install on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 Jan 2012 00:00:00 -0530</lastBuildDate><atom:link href="https://hsps.in/tags/install/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Aug 2022 22:29:09 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/install/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Store RPM Packages in Cache</title>
       <link>https://hsps.in/post/store-rpm-packages-in-cache/</link>
       <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/store-rpm-packages-in-cache/</guid>
-      <description>&lt;p&gt;Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.&lt;/p&gt;
-&lt;p&gt;Want to keep those packages in your system, and maybe create a local repository?&lt;/p&gt;
-&lt;p&gt;Well there are several ways. Simplest of them would be to edit the yum configuration file.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.&lt;/p&gt;&#xA;&lt;p&gt;Want to keep those packages in your system, and maybe create a local repository?&lt;/p&gt;&#xA;&lt;p&gt;Well there are several ways. Simplest of them would be to edit the yum configuration file.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Create Your Own Ubuntu</title>
       <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
-      
       <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
-      <description>Many a times I wanted to create my own customized ubuntu, why???
-Well 3 reasons
- I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
+      <description>Many a times I wanted to create my own customized ubuntu, why???&#xA;Well 3 reasons&#xA;I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
     </item>
-    
   </channel>
 </rss>

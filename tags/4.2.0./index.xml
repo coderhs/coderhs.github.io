@@ -4,16 +4,16 @@
     <title>4.2.0. on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/4.2.0./</link>
     <description>Recent content in 4.2.0. on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://hsps.in/tags/4.2.0./index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 20 Aug 2014 00:00:00 -0530</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/4.2.0./index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Review on Rail 4.3.0 Beta</title>
       <link>https://hsps.in/post/review-on-rail-4.3.0-beta/</link>
       <pubDate>Wed, 20 Aug 2014 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/review-on-rail-4.3.0-beta/</guid>
       <description>&lt;p&gt;Active Job, deliver later will give us a lot of abstraction. One will have to move the business logic present in workers to models or services, but that would make our system more maintainable. If the Active Job is a simple plug and play then in future projects one can use delayed_job when the load is light and when the load increases they can shift to redis based resque or sidekiq. Thinking of migrating from one system to another always give the developers a head ache. This can essentially solve it. Active Job was planned to be a feature in rails 4.0 but later they decided not. I am glad that they are releasing it in 4.2&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

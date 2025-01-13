@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>http on Harisankar P S | HsPS.in</title>
+    <title>Http on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/http/</link>
-    <description>Recent content in http on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Http on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Sep 2022 20:21:42 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Sep 2022 20:21:42 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Enable Docker Remote Api on Docker Host</title>
       <link>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</link>
       <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
-      
       <guid>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</guid>
       <description>&lt;p&gt;Docker engine has inbuild API service that allows you to control &amp;amp; modify your docker engine and docker instance using HTTP.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

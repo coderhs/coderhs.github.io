@@ -26,7 +26,7 @@ Well there are several ways. Simplest of them would be to edit the yum configura
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/store-rpm-packages-in-cache/" />
@@ -42,26 +42,37 @@ Well there are several ways. Simplest of them would be to edit the yum configura
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Store RPM Packages in Cache" />
-<meta property="og:description" content="Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.
+<meta property="og:url" content="https://hsps.in/post/store-rpm-packages-in-cache/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Store RPM Packages in Cache">
+  <meta property="og:description" content="Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.
 Want to keep those packages in your system, and maybe create a local repository?
-Well there are several ways. Simplest of them would be to edit the yum configuration file." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/store-rpm-packages-in-cache/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2012-01-29T00:00:00-05:30" />
-<meta property="article:modified_time" content="2022-08-20T22:29:09-07:00" />
+Well there are several ways. Simplest of them would be to edit the yum configuration file.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2012-01-29T00:00:00-05:30">
+    <meta property="article:modified_time" content="2022-08-20T22:29:09-07:00">
+    <meta property="article:tag" content="Cache">
+    <meta property="article:tag" content="Centos">
+    <meta property="article:tag" content="Downloadonly">
+    <meta property="article:tag" content="Local">
+    <meta property="article:tag" content="Mirror">
+    <meta property="article:tag" content="Packages">
 
-<meta itemprop="name" content="Store RPM Packages in Cache">
-<meta itemprop="description" content="Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.
+  <meta itemprop="name" content="Store RPM Packages in Cache">
+  <meta itemprop="description" content="Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.
 Want to keep those packages in your system, and maybe create a local repository?
-Well there are several ways. Simplest of them would be to edit the yum configuration file."><meta itemprop="datePublished" content="2012-01-29T00:00:00-05:30" />
-<meta itemprop="dateModified" content="2022-08-20T22:29:09-07:00" />
-<meta itemprop="wordCount" content="246">
-<meta itemprop="keywords" content="cache,centos,downloadonly,local,mirror,packages,redhat,repositories,RHCE,RPM,tutorial,yum,yum,install,yum,update," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Store RPM Packages in Cache"/>
-<meta name="twitter:description" content="Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.
+Well there are several ways. Simplest of them would be to edit the yum configuration file.">
+  <meta itemprop="datePublished" content="2012-01-29T00:00:00-05:30">
+  <meta itemprop="dateModified" content="2022-08-20T22:29:09-07:00">
+  <meta itemprop="wordCount" content="246">
+  <meta itemprop="keywords" content="cache,centos,downloadonly,local,mirror,packages,redhat,repositories,RHCE,RPM,tutorial,yum,yum,install,yum,update">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Store RPM Packages in Cache">
+  <meta name="twitter:description" content="Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.
 Want to keep those packages in your system, and maybe create a local repository?
-Well there are several ways. Simplest of them would be to edit the yum configuration file."/>
+Well there are several ways. Simplest of them would be to edit the yum configuration file.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -154,8 +165,8 @@ Well there are several ways. Simplest of them would be to edit the yum configura
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">vim /etc/yum.conf.file
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">vim /etc/yum.conf.file
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>On the 2nd line,of the file, there you will find the cachedir variable ( eg :- <code>cachedir=/root/packages/</code> ), one can set the location to which they want to store all these RPM packages.</p>
 <p>but still you haven&rsquo;t enabled the option to keep cache. To do so you should edit the 3rd line which has the variable keepcache, by default keepcache should be set to 0 ( <code>keepcache= 0</code>, which means disabled) <code>change it to 1</code> to enable cache. This would enable storing of the RPM packages to the previously defined location.</p>
@@ -165,8 +176,8 @@ Well there are several ways. Simplest of them would be to edit the yum configura
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">yum install yum-downloadonly
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">yum install yum-downloadonly
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>After installing now you can download rpm packages to a sepcific directory without installing or updating the system.</p>
 <div class="highlight"><div class="chroma">
@@ -174,8 +185,8 @@ Well there are several ways. Simplest of them would be to edit the yum configura
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">yum update mplayer -y --downloadonly --downloaddir<span class="o">=</span>/root/packages
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">yum update mplayer -y --downloadonly --downloaddir<span class="o">=</span>/root/packages
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now about how to create a local repository I will write in my next post? Stay tuned. and Have fun.</p>
     </div>
@@ -267,7 +278,7 @@ Well there are several ways. Simplest of them would be to edit the yum configura
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -276,16 +287,16 @@ Well there are several ways. Simplest of them would be to edit the yum configura
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -302,19 +313,15 @@ Well there are several ways. Simplest of them would be to edit the yum configura
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

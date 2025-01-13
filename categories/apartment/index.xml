@@ -4,18 +4,16 @@
     <title>Apartment on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/categories/apartment/</link>
     <description>Recent content in Apartment on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Jul 2022 23:15:19 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/apartment/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 23:15:19 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/categories/apartment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Migrations From Console</title>
       <link>https://hsps.in/post/running-migrations-from-console/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
-      
       <guid>https://hsps.in/post/running-migrations-from-console/</guid>
-      <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;
-&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;&#xA;&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

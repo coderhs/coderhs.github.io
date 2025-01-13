@@ -4,658 +4,401 @@
     <title>Posts on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/post/</link>
     <description>Recent content in Posts on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Oct 2024 10:19:48 -0700</lastBuildDate><atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jan 2025 18:55:49 +0530</lastBuildDate>
+    <atom:link href="https://hsps.in/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tailscale for Single User Single Host</title>
+      <link>https://hsps.in/post/tailscale-for-single-user-single-host/</link>
+      <pubDate>Wed, 08 Jan 2025 18:55:49 +0530</pubDate>
+      <guid>https://hsps.in/post/tailscale-for-single-user-single-host/</guid>
+      <description>&lt;p&gt;I often see articles discussing Tailscale in multi-device setups, but I wanted to share my experience of using Tailscale primarily with a single machine. To clarify, it&amp;rsquo;s not technically a single device, but a combination of my work computer, phone, and a 10-inch Android tablet.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem-inefficient-remote-access&#34;&gt;The Problem: Inefficient Remote Access&lt;/h2&gt;&#xA;&lt;p&gt;I work from home, and my computer serves as both my personal and work machine. There have been many times when I’ve needed to assist colleagues or push changes while away from my desk. In emergencies, I used to rely on AnyDesk to remote into my computer via my phone or tablet. While AnyDesk and similar tools like TeamViewer provide visual control over the desktop, they often suffer from lag, disconnections, and poor responsiveness on weaker connections, making simple tasks like opening a terminal or editing a file feel like a chore. The lag becomes especially pronounced when navigating large projects or deploying code, turning a few-minute task into a frustrating, time-consuming ordeal.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Setup Read Replica (master-slave) Database on Postgresql 17</title>
       <link>https://hsps.in/post/setup-master-slave-database-on-postgresql-17/</link>
       <pubDate>Thu, 24 Oct 2024 10:19:48 -0700</pubDate>
-      
       <guid>https://hsps.in/post/setup-master-slave-database-on-postgresql-17/</guid>
-      <description>&lt;p&gt;PostgreSQL is a mature, open-source relational database that has been widely adopted by many companies over the years. It has been my go-to database for most of my software career, helping me solve various performance challenges in my projects. Features like JSON generation, materialized views, and others have enabled me to scale APIs to handle millions of requests per second.&lt;/p&gt;
-&lt;p&gt;One effective strategy to improve the performance of web applications is to create a read-only replica of the primary database. This allows you to direct read-only queries (e.g., &lt;code&gt;SELECT&lt;/code&gt; queries) to the replica, while write operations continue to target the primary database. Note that PostgreSQL doesn’t support multiple primary (or master) databases natively, but it does support multiple read replicas.&lt;/p&gt;
-&lt;p&gt;Although you can achieve distributed primary databases via schema or table sharding, that topic is beyond the scope of this article.&lt;/p&gt;</description>
+      <description>&lt;p&gt;PostgreSQL is a mature, open-source relational database that has been widely adopted by many companies over the years. It has been my go-to database for most of my software career, helping me solve various performance challenges in my projects. Features like JSON generation, materialized views, and others have enabled me to scale APIs to handle millions of requests per second.&lt;/p&gt;&#xA;&lt;p&gt;One effective strategy to improve the performance of web applications is to create a read-only replica of the primary database. This allows you to direct read-only queries (e.g., &lt;code&gt;SELECT&lt;/code&gt; queries) to the replica, while write operations continue to target the primary database. Note that PostgreSQL doesn’t support multiple primary (or master) databases natively, but it does support multiple read replicas.&lt;/p&gt;&#xA;&lt;p&gt;Although you can achieve distributed primary databases via schema or table sharding, that topic is beyond the scope of this article.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Running Rails Migrations in AWS ECS Using AWS CLI</title>
       <link>https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/</link>
       <pubDate>Thu, 10 Oct 2024 00:05:58 -0700</pubDate>
-      
       <guid>https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/</guid>
-      <description>&lt;p&gt;AWS ECS (Elastic Container Service) is a powerful Amazon Web Service that allows you to deploy Docker containers on various infrastructure options, including EC2 instances, Fargate (serverless containers), or even self-hosted servers. Being deeply integrated with AWS, ECS offers a cost-effective and seamless solution for managing containers in the Amazon ecosystem.&lt;/p&gt;
-&lt;p&gt;This guide assumes you are familiar with ECS and already have a task definition set up for your Rails application. Additionally, it assumes you know how to find your subnet ID and security group ID, as these will be required when running containers in your specific environment.&lt;/p&gt;</description>
+      <description>&lt;p&gt;AWS ECS (Elastic Container Service) is a powerful Amazon Web Service that allows you to deploy Docker containers on various infrastructure options, including EC2 instances, Fargate (serverless containers), or even self-hosted servers. Being deeply integrated with AWS, ECS offers a cost-effective and seamless solution for managing containers in the Amazon ecosystem.&lt;/p&gt;&#xA;&lt;p&gt;This guide assumes you are familiar with ECS and already have a task definition set up for your Rails application. Additionally, it assumes you know how to find your subnet ID and security group ID, as these will be required when running containers in your specific environment.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean</title>
       <link>https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/</link>
       <pubDate>Tue, 08 Oct 2024 20:11:58 -0700</pubDate>
-      
       <guid>https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/</guid>
-      <description>&lt;p&gt;Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.&lt;/p&gt;
-&lt;p&gt;By connecting my phone to Tailscale and using JuiceSSH, an Android app for SSH access, I could SSH into my home machine, deploy applications, and run maintenance scripts—all from my phone. Peaceful trips away from my desk.&lt;/p&gt;
-&lt;h2 id=&#34;remote-development-made-simple&#34;&gt;Remote Development Made Simple&lt;/h2&gt;
-&lt;p&gt;Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code&amp;rsquo;s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.&lt;/p&gt;
-&lt;p&gt;I even took it a step further by installing &lt;a href=&#34;https://github.com/coder/code-server&#34;&gt;code-server&lt;/a&gt; on my dev machine. This allowed me to access a full-fledged development environment from my samsung tablet via Tailscale.&lt;/p&gt;
-&lt;h2 id=&#34;what-is-tailscale&#34;&gt;What is Tailscale?&lt;/h2&gt;
-&lt;p&gt;For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.&lt;/p&gt;
-&lt;p&gt;By connecting my devices and home lab to this VPN, I gained the ability to access my computers remotely from anywhere.&lt;/p&gt;
-&lt;h2 id=&#34;using-an-exit-node-for-secure-browsing&#34;&gt;Using an Exit Node for Secure Browsing&lt;/h2&gt;
-&lt;p&gt;Tailscale allows you to set up one of your devices as an exit node. This means that when you&amp;rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&amp;rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.&lt;/p&gt;&#xA;&lt;p&gt;By connecting my phone to Tailscale and using JuiceSSH, an Android app for SSH access, I could SSH into my home machine, deploy applications, and run maintenance scripts—all from my phone. Peaceful trips away from my desk.&lt;/p&gt;&#xA;&lt;h2 id=&#34;remote-development-made-simple&#34;&gt;Remote Development Made Simple&lt;/h2&gt;&#xA;&lt;p&gt;Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code&amp;rsquo;s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.&lt;/p&gt;&#xA;&lt;p&gt;I even took it a step further by installing &lt;a href=&#34;https://github.com/coder/code-server&#34;&gt;code-server&lt;/a&gt; on my dev machine. This allowed me to access a full-fledged development environment from my samsung tablet via Tailscale.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-tailscale&#34;&gt;What is Tailscale?&lt;/h2&gt;&#xA;&lt;p&gt;For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.&lt;/p&gt;&#xA;&lt;p&gt;By connecting my devices and home lab to this VPN, I gained the ability to access my computers remotely from anywhere.&lt;/p&gt;&#xA;&lt;h2 id=&#34;using-an-exit-node-for-secure-browsing&#34;&gt;Using an Exit Node for Secure Browsing&lt;/h2&gt;&#xA;&lt;p&gt;Tailscale allows you to set up one of your devices as an exit node. This means that when you&amp;rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&amp;rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>Change Action Mailer Settings From Rails Console</title>
       <link>https://hsps.in/post/change-action-mailer-settings-from-rails-console/</link>
       <pubDate>Mon, 07 Oct 2024 21:09:36 -0700</pubDate>
-      
       <guid>https://hsps.in/post/change-action-mailer-settings-from-rails-console/</guid>
       <description>&lt;p&gt;In Rails applications, ActionMailer is a powerful module used to send emails. It’s essential to configure your ActionMailer settings correctly to ensure that your application can send emails reliably through your chosen SMTP server. Typically, these settings are configured in your environment files (e.g., config/environments/production.rb). However, there may be instances where you need to override these settings temporarily through the Rails console—for example, when testing a custom configuration or troubleshooting email delivery issues.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Test Scanner (scanner emulator) in SANE - Linux</title>
       <link>https://hsps.in/post/test-scanner-in-sane/</link>
       <pubDate>Fri, 04 Oct 2024 02:11:12 -0700</pubDate>
-      
       <guid>https://hsps.in/post/test-scanner-in-sane/</guid>
-      <description>&lt;p&gt;2024 &lt;a href=&#34;https://hacktoberfest.com/&#34;&gt;Hacktoberfest&lt;/a&gt; has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the &lt;a href=&#34;https://github.com/CoolCat467/Scanner-Server&#34;&gt;Scanner Server&lt;/a&gt;. It offers a web interface for using scanners, which seemed pretty interesting.&lt;/p&gt;
-&lt;p&gt;I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.&lt;/p&gt;</description>
+      <description>&lt;p&gt;2024 &lt;a href=&#34;https://hacktoberfest.com/&#34;&gt;Hacktoberfest&lt;/a&gt; has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the &lt;a href=&#34;https://github.com/CoolCat467/Scanner-Server&#34;&gt;Scanner Server&lt;/a&gt;. It offers a web interface for using scanners, which seemed pretty interesting.&lt;/p&gt;&#xA;&lt;p&gt;I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Using Docker to export &amp; import data from Amazon RDS</title>
       <link>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</link>
       <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
-      
       <guid>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</guid>
       <description>&lt;p&gt;Docker is an efficient way to use command-line tools without needing to install them or their required libraries. Recently, I had a use case where I needed to take an SQL dump of a schema from a PostgreSQL database. The problem was that the PostgreSQL DB was version 16.3, while my local DB was only version 15. Using my local &lt;code&gt;pg_dump&lt;/code&gt; to access the remote database resulted in a version incompatibility error. To fix this, I would either need to upgrade &lt;code&gt;pg_dump&lt;/code&gt; or have both versions installed simultaneously on my machine. I didn&amp;rsquo;t want to do either. This is where Docker came to the rescue.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>AWS ECR Lifecycle Policy</title>
       <link>https://hsps.in/post/aws-ecr-lifecycle-policy/</link>
       <pubDate>Sat, 06 Apr 2024 06:21:43 -0700</pubDate>
-      
       <guid>https://hsps.in/post/aws-ecr-lifecycle-policy/</guid>
-      <description>&lt;p&gt;Amazon Elastic Container Registry (ECR) is a service provided by Amazon for hosting our Docker/container images. The cost of downloading these images to a server or ECS (Elastic Container Service) within the same zone is free. However, downloading or uploading from the public internet incurs costs, as does storage space usage.&lt;/p&gt;
-&lt;p&gt;During the development and deployment of your project, you may find yourself building images as frequently as every 30 minutes. This frequency reflects my own experience. Whenever new code is merged with the master branch, it triggers a code build pipeline. This pipeline ultimately pushes the latest image to ECR, typically tagged as &amp;ldquo;latest.&amp;rdquo; Consequently, the previous image remains in the repository but becomes untagged. While retaining a few versions of older deployments facilitates easy rollbacks, after a day or two, they tend to become redundant. At this juncture, they serve no purpose other than incurring storage costs.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Amazon Elastic Container Registry (ECR) is a service provided by Amazon for hosting our Docker/container images. The cost of downloading these images to a server or ECS (Elastic Container Service) within the same zone is free. However, downloading or uploading from the public internet incurs costs, as does storage space usage.&lt;/p&gt;&#xA;&lt;p&gt;During the development and deployment of your project, you may find yourself building images as frequently as every 30 minutes. This frequency reflects my own experience. Whenever new code is merged with the master branch, it triggers a code build pipeline. This pipeline ultimately pushes the latest image to ECR, typically tagged as &amp;ldquo;latest.&amp;rdquo; Consequently, the previous image remains in the repository but becomes untagged. While retaining a few versions of older deployments facilitates easy rollbacks, after a day or two, they tend to become redundant. At this juncture, they serve no purpose other than incurring storage costs.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Handle SSH Idle Connections Freezing shell or Getting Disconnected</title>
       <link>https://hsps.in/post/handle-ssh-idle-connections-handing-or-getting-disconnected/</link>
       <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
-      
       <guid>https://hsps.in/post/handle-ssh-idle-connections-handing-or-getting-disconnected/</guid>
-      <description>&lt;p&gt;As someone who has been working with servers for over a decade and a half, I feel embarrassed to admit that I only
-recently stumbled upon this setting. Throughout my years of connecting to remote servers over the internet, I&amp;rsquo;ve
-encountered instances where connections freeze or break after a period of inactivity. Sometimes it happens more
-frequently, while other times it never occurs at all. When I was in the US connecting to Amazon servers, there were
-occasions when the connection remained stable for days on end. This led me to believe that the issue might be related
-to the internet or the complexity of the network routing required to reach the server.&lt;/p&gt;</description>
+      <description>&lt;p&gt;As someone who has been working with servers for over a decade and a half, I feel embarrassed to admit that I only&#xA;recently stumbled upon this setting. Throughout my years of connecting to remote servers over the internet, I&amp;rsquo;ve&#xA;encountered instances where connections freeze or break after a period of inactivity. Sometimes it happens more&#xA;frequently, while other times it never occurs at all. When I was in the US connecting to Amazon servers, there were&#xA;occasions when the connection remained stable for days on end. This led me to believe that the issue might be related&#xA;to the internet or the complexity of the network routing required to reach the server.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Argument for Writing Test and TDD</title>
       <link>https://hsps.in/post/argument-for-writing-test-and-tdd/</link>
       <pubDate>Wed, 30 Aug 2023 15:48:25 -0700</pubDate>
-      
       <guid>https://hsps.in/post/argument-for-writing-test-and-tdd/</guid>
       <description>Recently I been trying to convince my team to write more tests, or some test. One of the arguments I heard during this was - automated test doesn&amp;rsquo;t remove manual test. Thats true, you still have to manually test it as well. But it avoids the repeated testing, and forgetting to test old features when new modifications are being done. I was thinking more about what to reply to people that says this, when it dawn to me that.</description>
     </item>
-    
     <item>
       <title>Using Ansible to Install Docker and Docker Compose on New Lightsail Instance</title>
       <link>https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/</link>
       <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
-      
       <guid>https://hsps.in/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/</guid>
-      <description>&lt;p&gt;Recently I have been working with deploying self hosted application in AWS lightsail for the company that I work for. My strategy for deploying application has been as follows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Launch a new ubuntu instance (since my team and I use it a dev machine we are familiar with it).&lt;/li&gt;
-&lt;li&gt;Install Docker&lt;/li&gt;
-&lt;li&gt;Install Docker Compose&lt;/li&gt;
-&lt;li&gt;Run the self hosted app and its requires services using docker.&lt;/li&gt;
-&lt;li&gt;Run nginx reverse proxy to serve the app over https&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I am pretty much managing the whole app through files. Its just the initial setup that I am doing manually. I thought of creating a base linux image for the new servers, which would have docker and docker-compose pre installed. But lightsail didn&amp;rsquo;t seem to have the option to use custom images, like EC2 servers.&lt;/p&gt;
-&lt;p&gt;Thus I decided to use ansible.&lt;/p&gt;
-&lt;p&gt;Ansible is an open source automation tool that is used for configuration management, deployment and task automation. It automates the steps that I do manually. It can run this command on multiple servers without having us do anything manually. We can also automate weekly maintenance check to login to all the servers, ensures all the security updates are installed, cache files are cleared, etc.&lt;/p&gt;
-&lt;p&gt;The thing I found most interesting about ansible compared to chef (another automation tool) is that it is agentless. That is it doesn&amp;rsquo;t expect anything to be running on the new server other open ssh. Chef on the other hand requires an agent to be running on the server. There are its own advantages of having an agent running on the server, it can do updates much faster and keep everything in sync. But since that is not a requirement for me at the moment, I decide to use ansible. I will write another article on how to do this using chef.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently I have been working with deploying self hosted application in AWS lightsail for the company that I work for. My strategy for deploying application has been as follows:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Launch a new ubuntu instance (since my team and I use it a dev machine we are familiar with it).&lt;/li&gt;&#xA;&lt;li&gt;Install Docker&lt;/li&gt;&#xA;&lt;li&gt;Install Docker Compose&lt;/li&gt;&#xA;&lt;li&gt;Run the self hosted app and its requires services using docker.&lt;/li&gt;&#xA;&lt;li&gt;Run nginx reverse proxy to serve the app over https&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I am pretty much managing the whole app through files. Its just the initial setup that I am doing manually. I thought of creating a base linux image for the new servers, which would have docker and docker-compose pre installed. But lightsail didn&amp;rsquo;t seem to have the option to use custom images, like EC2 servers.&lt;/p&gt;&#xA;&lt;p&gt;Thus I decided to use ansible.&lt;/p&gt;&#xA;&lt;p&gt;Ansible is an open source automation tool that is used for configuration management, deployment and task automation. It automates the steps that I do manually. It can run this command on multiple servers without having us do anything manually. We can also automate weekly maintenance check to login to all the servers, ensures all the security updates are installed, cache files are cleared, etc.&lt;/p&gt;&#xA;&lt;p&gt;The thing I found most interesting about ansible compared to chef (another automation tool) is that it is agentless. That is it doesn&amp;rsquo;t expect anything to be running on the new server other open ssh. Chef on the other hand requires an agent to be running on the server. There are its own advantages of having an agent running on the server, it can do updates much faster and keep everything in sync. But since that is not a requirement for me at the moment, I decide to use ansible. I will write another article on how to do this using chef.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Create JSON Payload for API Test Using Factory Bot</title>
       <link>https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/</link>
       <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
-      
       <guid>https://hsps.in/post/create-json-payload-for-api-test-using-factory-bot/</guid>
-      <description>&lt;p&gt;I am not going to reiterate the PSA (Public Safety Announcement) of how important it is to write test. You can find enough articles related that online, and most probably you already know and agree to it. This article is how to generate JSON payload using Factory Bot.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/thoughtbot/factory_bot&#34;&gt;Factory Bot&lt;/a&gt; is a ruby library that is used to create records in the table for testing. It will help generate data to fill and prepare records, before the test execution.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I am not going to reiterate the PSA (Public Safety Announcement) of how important it is to write test. You can find enough articles related that online, and most probably you already know and agree to it. This article is how to generate JSON payload using Factory Bot.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/thoughtbot/factory_bot&#34;&gt;Factory Bot&lt;/a&gt; is a ruby library that is used to create records in the table for testing. It will help generate data to fill and prepare records, before the test execution.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setup HTTP(s) and Reverse Proxy to Docker Web App</title>
       <link>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</link>
       <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
-      
       <guid>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</guid>
-      <description>&lt;p&gt;This article is about how to add https to a web app running in docker. For this we are using nginx to handle port 80 and port 443 and then reverse proxy the traffic to port 443 to the application port. In this article we are assuming you have credentials for the SSL certificate, another article will be written on how to do it with lets encrypt to create ssl certificates for free.&lt;/p&gt;
-&lt;p&gt;This article assume you know about ssl key files, docker and docker-compose. And for the sake of this article we are setting up &lt;code&gt;uptime-kuma&lt;/code&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This article is about how to add https to a web app running in docker. For this we are using nginx to handle port 80 and port 443 and then reverse proxy the traffic to port 443 to the application port. In this article we are assuming you have credentials for the SSL certificate, another article will be written on how to do it with lets encrypt to create ssl certificates for free.&lt;/p&gt;&#xA;&lt;p&gt;This article assume you know about ssl key files, docker and docker-compose. And for the sake of this article we are setting up &lt;code&gt;uptime-kuma&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rails Copy Assets bundler Cache to Speed Up Build</title>
       <link>https://hsps.in/post/rails-copy-assets-bundler-cache-to-speed-up-build/</link>
       <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
-      
       <guid>https://hsps.in/post/rails-copy-assets-bundler-cache-to-speed-up-build/</guid>
-      <description>The slowest step (in my experience and opinion) is compiling assets (js/css). Compiling assets takes time and slower when you do it for the first time. So to speed it up its recommended to copy the last compiled assets from the latest image you have of the repo.
-1 2 3 4  COPY --from=docker-repo.link/image:latest /app/node_modules /app/node_modulesCOPY --from=docker-repo.link/image:latest /app/public /app/publicRUN bundle exec rails assets:precompile  Now since the prior assets are in the new image, it won&amp;rsquo;t compile the assets from scratch and the build will be faster.</description>
+      <description>The slowest step (in my experience and opinion) is compiling assets (js/css). Compiling assets takes time and slower when you do it for the first time. So to speed it up its recommended to copy the last compiled assets from the latest image you have of the repo.&#xA;1 2 3 4 COPY --from=docker-repo.link/image:latest /app/node_modules /app/node_modules COPY --from=docker-repo.link/image:latest /app/public /app/public RUN bundle exec rails assets:precompile Now since the prior assets are in the new image, it won&amp;rsquo;t compile the assets from scratch and the build will be faster.</description>
     </item>
-    
     <item>
       <title>Sidekiq Graceful Shutdown in Fargate ECS</title>
       <link>https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/</link>
       <pubDate>Sun, 30 Jul 2023 00:10:21 -0700</pubDate>
-      
       <guid>https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/</guid>
-      <description>&lt;p&gt;Sidekiq is the gold standard when it comes to background processing. I have been using since I started working with rails. Sidekiq took care of lot of the complexity of the background processing that allowed developers to concentrate on just there code/business logic.&lt;/p&gt;
-&lt;p&gt;One of the beautiful features of sidekiq was how it handled exit (SIGTERM and SIGKILL).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://turnoff.us/image/en/dont-sigkill-2.png&#34; alt=&#34;Dont Sigkill&#34;&gt;
-Source: &lt;a href=&#34;https://turnoff.us/geek/dont-sigkill-2/&#34;&gt;https://turnoff.us/geek/dont-sigkill-2/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;When sidekiq received the sigterm commands it stops accept new jobs, and just focus on finishing the job it is doing now and incase it can&amp;rsquo;t finish, it will requeue the job to another available worker or keep it in the queue for another worker (or the same worker) to pick it up when available.
-This was working so well for years on rails app I was working on, that I didn&amp;rsquo;t even care about it. The mina command would trigger a sidekiq restart allowing sidekiq to gracefully exit and then respawn with the new code.&lt;/p&gt;
-&lt;p&gt;The above app was running on two linux servers everything manually configured, but recently to keep up with the growth of the app we moved to amazon ECS. The app was containerized to a docker image, and made to run on about 12 Fargate Instances with ability to auto scale to 36 based on CPU and RAM usage. We grouped instances for various purposes 2 for heavy jobs, 2 for faster (more memory jobs), 2 for file processing, 4 for web, 2 for API.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Sidekiq is the gold standard when it comes to background processing. I have been using since I started working with rails. Sidekiq took care of lot of the complexity of the background processing that allowed developers to concentrate on just there code/business logic.&lt;/p&gt;&#xA;&lt;p&gt;One of the beautiful features of sidekiq was how it handled exit (SIGTERM and SIGKILL).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://turnoff.us/image/en/dont-sigkill-2.png&#34; alt=&#34;Dont Sigkill&#34;&gt;&#xA;Source: &lt;a href=&#34;https://turnoff.us/geek/dont-sigkill-2/&#34;&gt;https://turnoff.us/geek/dont-sigkill-2/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;When sidekiq received the sigterm commands it stops accept new jobs, and just focus on finishing the job it is doing now and incase it can&amp;rsquo;t finish, it will requeue the job to another available worker or keep it in the queue for another worker (or the same worker) to pick it up when available.&#xA;This was working so well for years on rails app I was working on, that I didn&amp;rsquo;t even care about it. The mina command would trigger a sidekiq restart allowing sidekiq to gracefully exit and then respawn with the new code.&lt;/p&gt;&#xA;&lt;p&gt;The above app was running on two linux servers everything manually configured, but recently to keep up with the growth of the app we moved to amazon ECS. The app was containerized to a docker image, and made to run on about 12 Fargate Instances with ability to auto scale to 36 based on CPU and RAM usage. We grouped instances for various purposes 2 for heavy jobs, 2 for faster (more memory jobs), 2 for file processing, 4 for web, 2 for API.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>About Web Assembly. Example for Ruby Web Assembly</title>
       <link>https://hsps.in/post/ruby-wasm/</link>
       <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
-      
       <guid>https://hsps.in/post/ruby-wasm/</guid>
-      <description>&lt;p&gt;Any program to execute on a machine needs to be in machine code (1s and 0s). In some languages you compile the code directly to machine code, and some they converts it to intermediary code that runs on an virtual machine (which indirectly execute machine code). One of the biggest virtual machines in the world is a web browser. People write HTML,CSS and JS, and execute it by rendering the graphics and executing code on your machine. The browser have become so advanced that it takes care of security and safety so well. Thus being able to covert your program code or binary file into JS allows you to run your code on the browser and any machine that has a browser.&lt;/p&gt;
-&lt;p&gt;Now the idea of web assembly support in ruby (or any language) is not about writing website using ruby, though we can do that if we wanted to. The idea is to make a program or library that we have already existing in one language available for the web. If you can run ruby interpreter on your browser, then you can run any ruby code on your browser.&lt;/p&gt;
-&lt;p&gt;The things people doing with web assembly have been getting crazier. People are building more and more proof of concept ideas and apps in web assembly. The most exciting thing that impressed me recently was &lt;a href=&#34;https://webvm.io/&#34;&gt;webvm.io&lt;/a&gt;. A virtual machine is running on your browser with linux. You can run linux commands, execute a python program, etc. This is a full fledged virtual machine (the one you run using docker), running on your browser. There are more projects that does that now:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&#34;&gt;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://copy.sh/v86/&#34;&gt;https://copy.sh/v86/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;You can host a web server or a rails app inside an image, which will then run on your browser serving the content. (Note: networking is still not native, so most use web sockets to emulate a network and make internet available inside the container).&lt;/p&gt;
-&lt;p&gt;The potential for this is huge, you can technically turn any machine that can run a web browser (Chrome or firefox) into a server.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Any program to execute on a machine needs to be in machine code (1s and 0s). In some languages you compile the code directly to machine code, and some they converts it to intermediary code that runs on an virtual machine (which indirectly execute machine code). One of the biggest virtual machines in the world is a web browser. People write HTML,CSS and JS, and execute it by rendering the graphics and executing code on your machine. The browser have become so advanced that it takes care of security and safety so well. Thus being able to covert your program code or binary file into JS allows you to run your code on the browser and any machine that has a browser.&lt;/p&gt;&#xA;&lt;p&gt;Now the idea of web assembly support in ruby (or any language) is not about writing website using ruby, though we can do that if we wanted to. The idea is to make a program or library that we have already existing in one language available for the web. If you can run ruby interpreter on your browser, then you can run any ruby code on your browser.&lt;/p&gt;&#xA;&lt;p&gt;The things people doing with web assembly have been getting crazier. People are building more and more proof of concept ideas and apps in web assembly. The most exciting thing that impressed me recently was &lt;a href=&#34;https://webvm.io/&#34;&gt;webvm.io&lt;/a&gt;. A virtual machine is running on your browser with linux. You can run linux commands, execute a python program, etc. This is a full fledged virtual machine (the one you run using docker), running on your browser. There are more projects that does that now:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&#34;&gt;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://copy.sh/v86/&#34;&gt;https://copy.sh/v86/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You can host a web server or a rails app inside an image, which will then run on your browser serving the content. (Note: networking is still not native, so most use web sockets to emulate a network and make internet available inside the container).&lt;/p&gt;&#xA;&lt;p&gt;The potential for this is huge, you can technically turn any machine that can run a web browser (Chrome or firefox) into a server.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Statically Compile Crystal Program and Distribute as docker Image</title>
       <link>https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/</link>
       <pubDate>Sun, 02 Apr 2023 20:22:46 -0700</pubDate>
-      
       <guid>https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/</guid>
-      <description>&lt;p&gt;In this article we are sharing how to statically compile a crystal program and then
-share the executable inside a docker image. We will create the smallest docker image possible. Smaller images are easier to manage, distribute and boot.&lt;/p&gt;
-&lt;p&gt;Note: The way docker works, each command/line creates a layer (with context).&lt;/p&gt;
-&lt;p&gt;The good news about crystal lang is the they distribute the docker image with all the libraries so that we can build static compiled executable(s). Attaching the docker file I wrote to statically compile a crystal language program.&lt;/p&gt;
-&lt;p&gt;Note: The program uses the Kemal web framework, so this could also be considered an article on how to statically compile and distribute a kemal web app.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this article we are sharing how to statically compile a crystal program and then&#xA;share the executable inside a docker image. We will create the smallest docker image possible. Smaller images are easier to manage, distribute and boot.&lt;/p&gt;&#xA;&lt;p&gt;Note: The way docker works, each command/line creates a layer (with context).&lt;/p&gt;&#xA;&lt;p&gt;The good news about crystal lang is the they distribute the docker image with all the libraries so that we can build static compiled executable(s). Attaching the docker file I wrote to statically compile a crystal language program.&lt;/p&gt;&#xA;&lt;p&gt;Note: The program uses the Kemal web framework, so this could also be considered an article on how to statically compile and distribute a kemal web app.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Share Docker Images as Files</title>
       <link>https://hsps.in/post/share-docker-images-as-files/</link>
       <pubDate>Sun, 26 Mar 2023 21:27:35 -0700</pubDate>
-      
       <guid>https://hsps.in/post/share-docker-images-as-files/</guid>
-      <description>&lt;p&gt;Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.&lt;/p&gt;
-&lt;p&gt;Dev Machine: Kubuntu, 22.04&lt;/p&gt;</description>
+      <description>&lt;p&gt;Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.&lt;/p&gt;&#xA;&lt;p&gt;Dev Machine: Kubuntu, 22.04&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Reduce Cost of Aws Bill - Part 1</title>
       <link>https://hsps.in/post/reduce-cost-of-aws-bill-part-1/</link>
       <pubDate>Sun, 19 Mar 2023 19:52:42 -0700</pubDate>
-      
       <guid>https://hsps.in/post/reduce-cost-of-aws-bill-part-1/</guid>
-      <description>&lt;p&gt;Developing and deploying to the cloud has become a mandatory requirement than a nice to have skill. The promise of the cloud is that it abstracts all the complexity of managing a server and you only pay for what you use. If you accept that at face value, then the cloud is 100% legit. You only pay for what you use (just the cost is high), and they do abstract the regular complexity, and create some new complexity to worry about. There is a reason why AWS offers certificate programs. AWS Certified Cloud Practitioner/Architect/SysOps Admin/Developer/Solution Architect/Dev Ops Engineer all these shouldn&amp;rsquo;t be there if all the complexity were truly abstracted.&lt;/p&gt;
-&lt;p&gt;Now that I have finished writing my frustration about cloud, lets return to the main topic of this article. Recently I was tasked with reducing our AWS bill. Our general approach to reduction in system performance have been to increase the server spec or DB spec. Looking at which resource was maxing out. DB or Server.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Developing and deploying to the cloud has become a mandatory requirement than a nice to have skill. The promise of the cloud is that it abstracts all the complexity of managing a server and you only pay for what you use. If you accept that at face value, then the cloud is 100% legit. You only pay for what you use (just the cost is high), and they do abstract the regular complexity, and create some new complexity to worry about. There is a reason why AWS offers certificate programs. AWS Certified Cloud Practitioner/Architect/SysOps Admin/Developer/Solution Architect/Dev Ops Engineer all these shouldn&amp;rsquo;t be there if all the complexity were truly abstracted.&lt;/p&gt;&#xA;&lt;p&gt;Now that I have finished writing my frustration about cloud, lets return to the main topic of this article. Recently I was tasked with reducing our AWS bill. Our general approach to reduction in system performance have been to increase the server spec or DB spec. Looking at which resource was maxing out. DB or Server.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Speed Up Docker Build using cache</title>
       <link>https://hsps.in/post/speed-up-docker-build-using-cache/</link>
       <pubDate>Fri, 10 Mar 2023 20:04:50 -0800</pubDate>
-      
       <guid>https://hsps.in/post/speed-up-docker-build-using-cache/</guid>
-      <description>&lt;p&gt;Docker has become a popular tool in recent years for building and deploying applications in a portable and scalable way. However, the build process can sometimes be slow, especially for large applications with many dependencies. In this article, we&amp;rsquo;ll explore how we can optimize our Dockerfile to speed it up.&lt;/p&gt;
-&lt;p&gt;When building a rails app for production we would need to do the following steps in the docker file&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;COPY . .
-bundle install
-yarn install
-bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; rails assets:precompile
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Docker after building each step it will cache that step. If the instructions/context of that steps or steps before haven&amp;rsquo;t change then docker will use the cache.&lt;/p&gt;
-&lt;p&gt;So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Docker has become a popular tool in recent years for building and deploying applications in a portable and scalable way. However, the build process can sometimes be slow, especially for large applications with many dependencies. In this article, we&amp;rsquo;ll explore how we can optimize our Dockerfile to speed it up.&lt;/p&gt;&#xA;&lt;p&gt;When building a rails app for production we would need to do the following steps in the docker file&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;COPY . .&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bundle install&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yarn install&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; rails assets:precompile&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Docker after building each step it will cache that step. If the instructions/context of that steps or steps before haven&amp;rsquo;t change then docker will use the cache.&lt;/p&gt;&#xA;&lt;p&gt;So we need to make docker understand that there is no change, hence we can use the cache instead of rebuilding it.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Enable Docker Remote Api on Docker Host</title>
       <link>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</link>
       <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
-      
       <guid>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</guid>
       <description>&lt;p&gt;Docker engine has inbuild API service that allows you to control &amp;amp; modify your docker engine and docker instance using HTTP.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setup NFS Server on Ubuntu</title>
       <link>https://hsps.in/post/setup-nfs-server-on-ubuntu/</link>
       <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
-      
       <guid>https://hsps.in/post/setup-nfs-server-on-ubuntu/</guid>
-      <description>&lt;p&gt;NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.&lt;/p&gt;
-&lt;p&gt;With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.&lt;/p&gt;</description>
+      <description>&lt;p&gt;NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.&lt;/p&gt;&#xA;&lt;p&gt;With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Wildcard Domain in Pi Hole</title>
       <link>https://hsps.in/post/wildcard-domain-in-pi-hole/</link>
       <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
-      
       <guid>https://hsps.in/post/wildcard-domain-in-pi-hole/</guid>
-      <description>&lt;p&gt;PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.&lt;/p&gt;
-&lt;p&gt;For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&amp;rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.&lt;/p&gt;</description>
+      <description>&lt;p&gt;PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.&lt;/p&gt;&#xA;&lt;p&gt;For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&amp;rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Validating YAML Files in Ruby</title>
       <link>https://hsps.in/post/validating-yaml-files-in-ruby/</link>
       <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
-      
       <guid>https://hsps.in/post/validating-yaml-files-in-ruby/</guid>
-      <description>&lt;p&gt;YAML stands for &amp;ldquo;YAML Ain&amp;rsquo;t Markup Language&amp;rdquo;. YAML is a data serialization language that is often used for writing configuration files.&lt;/p&gt;
-&lt;p&gt;In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom&amp;rsquo;s Obvious Minimal Language).&lt;/p&gt;
-&lt;p&gt;In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&amp;rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.&lt;/p&gt;
-&lt;p&gt;For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&amp;rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.&lt;/p&gt;
-&lt;p&gt;But defining the schema has its benefits -&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;For the User: It reminds then to have the configuration filled before running their program&lt;/li&gt;
-&lt;li&gt;For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running.&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>&lt;p&gt;YAML stands for &amp;ldquo;YAML Ain&amp;rsquo;t Markup Language&amp;rdquo;. YAML is a data serialization language that is often used for writing configuration files.&lt;/p&gt;&#xA;&lt;p&gt;In simple terms YAML is like XML or JSON, but for human beings rather than computers. I feel this is getting overlooked a lot, programmers need to understand that. Another human like configuration language I like is TOML (Tom&amp;rsquo;s Obvious Minimal Language).&lt;/p&gt;&#xA;&lt;p&gt;In a static language (like crystal) you need to define the structure of a YAML or JSON file. Defining the structure also act as validation of its schema. Validating the schema is a good idea because it ensure&amp;rsquo;s that all the required data is present. Its better to know data is missing when your program starts rather than while it is running.&lt;/p&gt;&#xA;&lt;p&gt;For dynamic language like ruby you can load a yaml file, and ruby will dynamically initialize it. It does make your life easier as a programmer. You don&amp;rsquo;t need to define the schema, and remember to update the schema when you add a new variable to your file.&lt;/p&gt;&#xA;&lt;p&gt;But defining the schema has its benefits -&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;For the User: It reminds then to have the configuration filled before running their program&lt;/li&gt;&#xA;&lt;li&gt;For the Developer: It helps us to eliminate the configuration file as a possible reason for the program not running.&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>Which Language Should I Build This Software In</title>
       <link>https://hsps.in/post/which-language-should-build-this-software-in/</link>
       <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
-      
       <guid>https://hsps.in/post/which-language-should-build-this-software-in/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Which Language Should I Build This Software In?&lt;/strong&gt; or &lt;strong&gt;Which language should I have this software developed In?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This is a question that software devs gets asked a lot. By there friends/colleague , usually by who are not part of the software industry. This is my answer to them:&lt;/p&gt;
-&lt;p&gt;If you had an idea for a novel? or a poem? which language will you write it in. Italian, Tamil, Bengali? Would you try to learn a new language because there are a lot of similar novels (anime) in Chinese or Japanese.&lt;/p&gt;
-&lt;p&gt;The best language to write your novel is the language you know the most.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Which Language Should I Build This Software In?&lt;/strong&gt; or &lt;strong&gt;Which language should I have this software developed In?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;This is a question that software devs gets asked a lot. By there friends/colleague , usually by who are not part of the software industry. This is my answer to them:&lt;/p&gt;&#xA;&lt;p&gt;If you had an idea for a novel? or a poem? which language will you write it in. Italian, Tamil, Bengali? Would you try to learn a new language because there are a lot of similar novels (anime) in Chinese or Japanese.&lt;/p&gt;&#xA;&lt;p&gt;The best language to write your novel is the language you know the most.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Getting Started With ESP 32 Development</title>
       <link>https://hsps.in/post/getting-started-with-esp-32-linux/</link>
       <pubDate>Thu, 04 Aug 2022 00:42:04 -0700</pubDate>
-      
       <guid>https://hsps.in/post/getting-started-with-esp-32-linux/</guid>
-      <description>&lt;p&gt;ESP 32 is a series of low-cost, low-power system on chip micro controllers with integrated Wi-FI and Bluetooth. SoC or system on chip is an integrated circuit that integrates all or most of the component of a computer. Example the CPU, RAM, IO interface, GPU, etc. This form is becoming more and more popular thanks to growing smartphone and computing industry. Apple M1 chip is a good example on the direction in which SoC&amp;rsquo;s are going.&lt;/p&gt;
-&lt;p&gt;The ESP 32 is really low cost it cost like 350 in India, and less than 10$ in the US. Now when you buy this you don&amp;rsquo;t buy the chip alone, but a chip on a development board. There are several articles (&lt;a href=&#34;https://makeradvisor.com/esp32-development-boards-review-comparison/&#34;&gt;https://makeradvisor.com/esp32-development-boards-review-comparison/&lt;/a&gt;) on that. The board that I bought from amazon was this &lt;a href=&#34;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;, i also bought one with OLED display as well &lt;a href=&#34;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In this article I will be talking about how to get started. We will basically will be setting up Aurdino IDE in linux, followed by flashing few sample programs like:&lt;/p&gt;</description>
+      <description>&lt;p&gt;ESP 32 is a series of low-cost, low-power system on chip micro controllers with integrated Wi-FI and Bluetooth. SoC or system on chip is an integrated circuit that integrates all or most of the component of a computer. Example the CPU, RAM, IO interface, GPU, etc. This form is becoming more and more popular thanks to growing smartphone and computing industry. Apple M1 chip is a good example on the direction in which SoC&amp;rsquo;s are going.&lt;/p&gt;&#xA;&lt;p&gt;The ESP 32 is really low cost it cost like 350 in India, and less than 10$ in the US. Now when you buy this you don&amp;rsquo;t buy the chip alone, but a chip on a development board. There are several articles (&lt;a href=&#34;https://makeradvisor.com/esp32-development-boards-review-comparison/&#34;&gt;https://makeradvisor.com/esp32-development-boards-review-comparison/&lt;/a&gt;) on that. The board that I bought from amazon was this &lt;a href=&#34;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;, i also bought one with OLED display as well &lt;a href=&#34;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this article I will be talking about how to get started. We will basically will be setting up Aurdino IDE in linux, followed by flashing few sample programs like:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Amazing Emoji Keyboard in Linux</title>
       <link>https://hsps.in/post/amazing-emoji-keyboard-in-linux/</link>
       <pubDate>Mon, 01 Aug 2022 18:59:18 -0700</pubDate>
-      
       <guid>https://hsps.in/post/amazing-emoji-keyboard-in-linux/</guid>
-      <description>&lt;p&gt;I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developer&amp;rsquo;s journey 😆. So moving from
-windows to Linux was over 13-14 years ago. I didn&amp;rsquo;t do much from the windows world other than games and single executable
-files. But moving from macOS to Linux, has been a bit tough. KDE has been able to provide me with everything I want and
-more. The one thing that I missed the most was the emoji keyboard, with easy to launch shortcut.&lt;/p&gt;
-&lt;p&gt;My usage of emoji was at its peak during macOS days, I used emoji for my communications, commits, function name and
-even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I loved it.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developer&amp;rsquo;s journey 😆. So moving from&#xA;windows to Linux was over 13-14 years ago. I didn&amp;rsquo;t do much from the windows world other than games and single executable&#xA;files. But moving from macOS to Linux, has been a bit tough. KDE has been able to provide me with everything I want and&#xA;more. The one thing that I missed the most was the emoji keyboard, with easy to launch shortcut.&lt;/p&gt;&#xA;&lt;p&gt;My usage of emoji was at its peak during macOS days, I used emoji for my communications, commits, function name and&#xA;even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I loved it.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Running Migrations From Console</title>
       <link>https://hsps.in/post/running-migrations-from-console/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
-      
       <guid>https://hsps.in/post/running-migrations-from-console/</guid>
-      <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;
-&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;&#xA;&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Access History in IRB</title>
       <link>https://hsps.in/post/access-history-in-irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
-      
       <guid>https://hsps.in/post/access-history-in-irb/</guid>
-      <description>Accessing the list of commands you have ran in your irb or rails console.
-Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
+      <description>Accessing the list of commands you have ran in your irb or rails console.&#xA;Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
     </item>
-    
     <item>
       <title>Remote Coding Using Tailscale and Code Server</title>
       <link>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
-      
       <guid>https://hsps.in/post/remote-coding-using-tailscale-and-code-server/</guid>
-      <description>This tutorial or concept uses two softwares to make remote coding on your home machine possible.
- Tailscale code-server  Tailscale is basically a VPN using open source wireguard protocol. It creates an encrypted point to point connection so that only your devices can talk to each other.
-So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if they are on a same network.</description>
+      <description>This tutorial or concept uses two softwares to make remote coding on your home machine possible.&#xA;Tailscale code-server Tailscale is basically a VPN using open source wireguard protocol. It creates an encrypted point to point connection so that only your devices can talk to each other.&#xA;So you can build a secure connection between your two computers over the internet. These two computers can be across the world, and they will be as if they are on a same network.</description>
     </item>
-    
     <item>
       <title>Adding New Key per User to AWS EC2 Instance</title>
       <link>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</link>
       <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
-      
       <guid>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</guid>
-      <description>&lt;p&gt;When we create a new server in aws, it allows us to generate a key pair and attach it to the server. Now imagine you want to share access to this multiple people in your team, but you don&amp;rsquo;t want to share your private key. This is what you need to do.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Generate new key for each member of your team or ask each member for there public keys&lt;/li&gt;
-&lt;li&gt;Add it to the authorized_keys list in your servers &lt;code&gt;.ssh&lt;/code&gt; folder&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;When we create a new server in aws, it allows us to generate a key pair and attach it to the server. Now imagine you want to share access to this multiple people in your team, but you don&amp;rsquo;t want to share your private key. This is what you need to do.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Generate new key for each member of your team or ask each member for there public keys&lt;/li&gt;&#xA;&lt;li&gt;Add it to the authorized_keys list in your servers &lt;code&gt;.ssh&lt;/code&gt; folder&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>HTOP for GPU in Linux</title>
       <link>https://hsps.in/post/htop-for-gpu-in-linux/</link>
       <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
-      
       <guid>https://hsps.in/post/htop-for-gpu-in-linux/</guid>
-      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
-Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
+      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.&#xA;Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     </item>
-    
     <item>
       <title>How I Setup Dark Theme in My Blog</title>
       <link>https://hsps.in/post/how-i-setup-dark-theme-in-my-blog/</link>
       <pubDate>Sun, 12 Jun 2022 10:49:39 -0700</pubDate>
-      
       <guid>https://hsps.in/post/how-i-setup-dark-theme-in-my-blog/</guid>
-      <description>&lt;p&gt;Dark mode or night mode is becoming more and more popular these days. As the amount of time we are spending in front of the computer increases, we started to look more into on how to improve our experience. Dark mode/Night mode is one such setting. What it does (mainly) is it makes all the white part of the application to black - major chunk of which would be the background. When the color of the background is made black, it emits less light. Now not all displays are the same, each display creates the dark color in different ways. Like:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;On an &lt;strong&gt;&lt;code&gt;LCD screen&lt;/code&gt;&lt;/strong&gt;. The liquid crystal elements block the white light from the backlight. And this results in a dark (almost black) pixel.&lt;/li&gt;
-&lt;li&gt;On an &lt;strong&gt;&lt;code&gt;OLED screen&lt;/code&gt;&lt;/strong&gt;. The pixel is turned off, no light is emitted, this produces a deep black.&lt;/li&gt;
-&lt;li&gt;On a &lt;strong&gt;&lt;code&gt;CRT screen&lt;/code&gt;&lt;/strong&gt;. The electron beam is turned off as it passes the pixel. Producing no phosphorescent glow.&lt;/li&gt;
-&lt;li&gt;On an &lt;strong&gt;&lt;code&gt;e-Ink screen&lt;/code&gt;&lt;/strong&gt;. Little spherical beads which are half black/half white, are rotated so their black side is facing outwards.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Regardless as you can see, darker colors results in less lights being emitted and leading to less strain to the eye. As a person who spend more time in front of a screen, I cannot fathom how useful this is. I have been a huge advocate of using night color/night mode in computer to improve developer health. Hence this article and why my blog has a dark mode now.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dark mode or night mode is becoming more and more popular these days. As the amount of time we are spending in front of the computer increases, we started to look more into on how to improve our experience. Dark mode/Night mode is one such setting. What it does (mainly) is it makes all the white part of the application to black - major chunk of which would be the background. When the color of the background is made black, it emits less light. Now not all displays are the same, each display creates the dark color in different ways. Like:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;On an &lt;strong&gt;&lt;code&gt;LCD screen&lt;/code&gt;&lt;/strong&gt;. The liquid crystal elements block the white light from the backlight. And this results in a dark (almost black) pixel.&lt;/li&gt;&#xA;&lt;li&gt;On an &lt;strong&gt;&lt;code&gt;OLED screen&lt;/code&gt;&lt;/strong&gt;. The pixel is turned off, no light is emitted, this produces a deep black.&lt;/li&gt;&#xA;&lt;li&gt;On a &lt;strong&gt;&lt;code&gt;CRT screen&lt;/code&gt;&lt;/strong&gt;. The electron beam is turned off as it passes the pixel. Producing no phosphorescent glow.&lt;/li&gt;&#xA;&lt;li&gt;On an &lt;strong&gt;&lt;code&gt;e-Ink screen&lt;/code&gt;&lt;/strong&gt;. Little spherical beads which are half black/half white, are rotated so their black side is facing outwards.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Regardless as you can see, darker colors results in less lights being emitted and leading to less strain to the eye. As a person who spend more time in front of a screen, I cannot fathom how useful this is. I have been a huge advocate of using night color/night mode in computer to improve developer health. Hence this article and why my blog has a dark mode now.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Append to File using Bash</title>
       <link>https://hsps.in/post/append-to-file-using-bash/</link>
       <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
-      
       <guid>https://hsps.in/post/append-to-file-using-bash/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Using String in Active Record(Rails) Enum</title>
       <link>https://hsps.in/post/using-string-as-active-record-enum/</link>
       <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
-      
       <guid>https://hsps.in/post/using-string-as-active-record-enum/</guid>
-      <description>&lt;p&gt;Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.&lt;/p&gt;
-&lt;p&gt;Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Rails model helps you define enum on a database integer field quite easily. The enum method which rails provide in its model is not an interface to the enum datatype available in some databases, but converting or using a integer field as an enum. Enum type or Enumerated type is user defined data type where you define the set of value the data type will have. If you consider regular or basic or primitive data types, they are pretty much like enum where the values it can hold is defined already by the language. Ruby dynamic type system does hide all this complexity for us while we develop.&lt;/p&gt;&#xA;&lt;p&gt;Enum is quite useful when you want to make sure that only a specified list of values are saved for a field.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PHP &#43; MySql a Deadly Combination: My introduction to the real world</title>
       <link>https://hsps.in/post/php-plus-mysql-deadly-combination-there-was/</link>
       <pubDate>Sat, 21 May 2022 20:52:57 -0700</pubDate>
-      
       <guid>https://hsps.in/post/php-plus-mysql-deadly-combination-there-was/</guid>
-      <description>I am currently a senior Ruby on Rails programmer. This article is my tribute to PHP the language that introduced me to the real world.
-I have been programming or aspiring to program (former/recovering imposter syndrome addict) since I was a child. You can say I was programming as well if you consider lego programming and hello world in turbo c as programming. During upper primary and high school I spend my time learning Java, C and C++.</description>
+      <description>I am currently a senior Ruby on Rails programmer. This article is my tribute to PHP the language that introduced me to the real world.&#xA;I have been programming or aspiring to program (former/recovering imposter syndrome addict) since I was a child. You can say I was programming as well if you consider lego programming and hello world in turbo c as programming. During upper primary and high school I spend my time learning Java, C and C++.</description>
     </item>
-    
     <item>
       <title>GIN: Generalized Inverted iNdex (on text)</title>
       <link>https://hsps.in/post/generalized-inverted-index-gin-postgresql/</link>
       <pubDate>Thu, 19 May 2022 21:01:23 -0700</pubDate>
-      
       <guid>https://hsps.in/post/generalized-inverted-index-gin-postgresql/</guid>
-      <description>&lt;p&gt;Indexes are an integral part of any production database. It improves the speed of your query, and which in tern speeds up your application. The faster you get your data, faster you can provide the result to your user, faster you can move on to your next user. Knowing different type of indexes allows you to choose which is the best for your data. As there is no silver bullet.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;PostgreSQL is the DB refereed to in this article&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;This article is my humble attempt to explain and simplify what is Gin.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Indexes are an integral part of any production database. It improves the speed of your query, and which in tern speeds up your application. The faster you get your data, faster you can provide the result to your user, faster you can move on to your next user. Knowing different type of indexes allows you to choose which is the best for your data. As there is no silver bullet.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;PostgreSQL is the DB refereed to in this article&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;This article is my humble attempt to explain and simplify what is Gin.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Count How Many Routes You Have</title>
       <link>https://hsps.in/post/count-how-many-routes-you-have/</link>
       <pubDate>Tue, 17 May 2022 17:21:51 -0700</pubDate>
-      
       <guid>https://hsps.in/post/count-how-many-routes-you-have/</guid>
       <description>&lt;p&gt;It start with one, then two and it keeps on growing. The number of routes in your ruby on rails project can be a reflection of how complex your project is becoming. And if you are curious like me to know how many routes your project has, just run the following command in your rails console.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Books I Read 2021</title>
       <link>https://hsps.in/post/books-i-read-2021/</link>
       <pubDate>Thu, 17 Feb 2022 10:03:49 -0800</pubDate>
-      
       <guid>https://hsps.in/post/books-i-read-2021/</guid>
       <description>&lt;p&gt;As a followup on my 2020 article on the list of books I have read in 2020. Here is 2021 version. I aimed to read at least one book a month in 2021. During some months I was able to achieve more than one book a month, but sadly I couldn&amp;rsquo;t keep it up for the whole year. 2022 is another year, hope to be able to do one book a month minimum this year.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Consequences of saying NO</title>
       <link>https://hsps.in/post/no/</link>
       <pubDate>Sat, 24 Apr 2021 08:31:46 -0700</pubDate>
-      
       <guid>https://hsps.in/post/no/</guid>
-      <description>&lt;p&gt;Disclaimer: This article is not against saying No. One should exercise no to protect ones individual wishes, freedom and mental health.&lt;/p&gt;
-&lt;p&gt;This article is about consequence of saying no or frequent no to your colleague(s), child or partner for something they want to do.&lt;/p&gt;
-&lt;p&gt;When you tell no, three things can happen.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;You say No they don&amp;rsquo;t do it&lt;/strong&gt;, but it lingers in there mind.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;You say No, they do it. And the bad thing you why they shouldn&amp;rsquo;t do it happens&lt;/strong&gt;. Following this the person can learn to appreciate you, or just hate you still. (Well humans are like that)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;This is the thing one should fear the most. &lt;strong&gt;You say No, they do it and everything went fine&lt;/strong&gt;. With that they stop asking you for permission and even loosing respect to your advice.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The above situation can be a good example of game theory, where the result of your advice or decision of saying No. Depends on how the other person react to it and its result.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Disclaimer: This article is not against saying No. One should exercise no to protect ones individual wishes, freedom and mental health.&lt;/p&gt;&#xA;&lt;p&gt;This article is about consequence of saying no or frequent no to your colleague(s), child or partner for something they want to do.&lt;/p&gt;&#xA;&lt;p&gt;When you tell no, three things can happen.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;You say No they don&amp;rsquo;t do it&lt;/strong&gt;, but it lingers in there mind.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;You say No, they do it. And the bad thing you why they shouldn&amp;rsquo;t do it happens&lt;/strong&gt;. Following this the person can learn to appreciate you, or just hate you still. (Well humans are like that)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;This is the thing one should fear the most. &lt;strong&gt;You say No, they do it and everything went fine&lt;/strong&gt;. With that they stop asking you for permission and even loosing respect to your advice.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;The above situation can be a good example of game theory, where the result of your advice or decision of saying No. Depends on how the other person react to it and its result.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Right vs Wrong (Part 1)</title>
       <link>https://hsps.in/post/right-vs-wrong-part-1/</link>
       <pubDate>Sun, 28 Mar 2021 01:24:05 -0700</pubDate>
-      
       <guid>https://hsps.in/post/right-vs-wrong-part-1/</guid>
-      <description>&lt;p&gt;There is no better examples of evolving definition (during the lifetime of person) than the definition of right or wrong.&lt;/p&gt;
-&lt;p&gt;When we are little the definition of Right and Wrong is absolute. The adults define them (especially our parents). What the show as Right is Right and what they treat as Wrong is Wrong. That is the time when everyone see right and wrong as binary, the simpler times which our mind will ache for in future. Telling lies are wrong, stealing is wrong.&lt;/p&gt;
-&lt;p&gt;As we grow right around the time we start school, we learn that right and wrong are relative. There are little lies and big lies, little truths and honest truth. We learn to navigate this world with our friends and young foolish loves. This relative truths are based on the absolute truth from which we grew. Where in the absolute world a lie is wrong. In the relative world, simple and small lie here and there is fine. As long as it doesn’t hurt anyone, and it makes your life simpler.&lt;/p&gt;</description>
+      <description>&lt;p&gt;There is no better examples of evolving definition (during the lifetime of person) than the definition of right or wrong.&lt;/p&gt;&#xA;&lt;p&gt;When we are little the definition of Right and Wrong is absolute. The adults define them (especially our parents). What the show as Right is Right and what they treat as Wrong is Wrong. That is the time when everyone see right and wrong as binary, the simpler times which our mind will ache for in future. Telling lies are wrong, stealing is wrong.&lt;/p&gt;&#xA;&lt;p&gt;As we grow right around the time we start school, we learn that right and wrong are relative. There are little lies and big lies, little truths and honest truth. We learn to navigate this world with our friends and young foolish loves. This relative truths are based on the absolute truth from which we grew. Where in the absolute world a lie is wrong. In the relative world, simple and small lie here and there is fine. As long as it doesn’t hurt anyone, and it makes your life simpler.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Books I Read 2020</title>
       <link>https://hsps.in/post/books-i-read-2020/</link>
       <pubDate>Sat, 13 Feb 2021 15:04:42 -0800</pubDate>
-      
       <guid>https://hsps.in/post/books-i-read-2020/</guid>
-      <description>&lt;p&gt;I have seen many people write about the favorite books that they read in (2020, 2019, etc). I have a friend who has been posting regularly for almost a decade. Feeling inspired from this, here is my list of books that I read in 2020. I do like reading books, but I haven&amp;rsquo;t been able to keep up with as much as I would have loved to read. 2020 allowed me to catch up a bit, and hope to continue that.&lt;/p&gt;
-&lt;p&gt;PS: Unlike most others who write their favorites, mine is pretty much just a list of books I read.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I have seen many people write about the favorite books that they read in (2020, 2019, etc). I have a friend who has been posting regularly for almost a decade. Feeling inspired from this, here is my list of books that I read in 2020. I do like reading books, but I haven&amp;rsquo;t been able to keep up with as much as I would have loved to read. 2020 allowed me to catch up a bit, and hope to continue that.&lt;/p&gt;&#xA;&lt;p&gt;PS: Unlike most others who write their favorites, mine is pretty much just a list of books I read.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>What You Learn From Binge Watching</title>
       <link>https://hsps.in/post/what-you-learn-from-binge-watching/</link>
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
-      
       <guid>https://hsps.in/post/what-you-learn-from-binge-watching/</guid>
-      <description>&lt;p&gt;Binge Watching or Marathon watching is the practice of watching multiple episodes of a television program in rapid succession, typically by means of DVDs or digital streaming (Source: Oxford Dictionary). It has become a more common pass time or activity for the common people. It has become something that is planned and prepared to do alone or as a group. The availability of shows on demand through streaming service is the reason behinds huge growth of this activity, from a casual reference here and there to a more common social activity.&lt;/p&gt;
-&lt;p&gt;There is the joy of waiting for each episode, per week. Discussing theories for the next episode and reviews of the previous one with friends or other fans. This is still there even when you binge watch. Just that instead of the next episode you are discussing about the next season.&lt;/p&gt;
-&lt;p&gt;But what I wanted to write is not about what binge watching is or how it is (or it is not) good. What I wanted to talk about is, what I learned or noticed binge watching old TV shows or a long 10/11 season TV shows. The good points that I feel like is good to know or keep in mind in ones life. The one here is me of course 😁.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Binge Watching or Marathon watching is the practice of watching multiple episodes of a television program in rapid succession, typically by means of DVDs or digital streaming (Source: Oxford Dictionary). It has become a more common pass time or activity for the common people. It has become something that is planned and prepared to do alone or as a group. The availability of shows on demand through streaming service is the reason behinds huge growth of this activity, from a casual reference here and there to a more common social activity.&lt;/p&gt;&#xA;&lt;p&gt;There is the joy of waiting for each episode, per week. Discussing theories for the next episode and reviews of the previous one with friends or other fans. This is still there even when you binge watch. Just that instead of the next episode you are discussing about the next season.&lt;/p&gt;&#xA;&lt;p&gt;But what I wanted to write is not about what binge watching is or how it is (or it is not) good. What I wanted to talk about is, what I learned or noticed binge watching old TV shows or a long 10/11 season TV shows. The good points that I feel like is good to know or keep in mind in ones life. The one here is me of course 😁.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[TIL] Starting Ruby Method With Capital Letter</title>
       <link>https://hsps.in/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</link>
       <pubDate>Sun, 01 May 2016 00:00:00 +0530</pubDate>
-      
       <guid>https://hsps.in/post/til-what-happens-when-you-start-ruby-method-with-capital-letters/</guid>
-      <description>Last day while I was browsing through some Java code online, I noticed that some method has names starting with capital letters. I Method names are written in small letters in ruby. This Java code made me wonder if there was anything preventing us from using method names starting with capital letter, in ruby. So I started my irb and wrote the following code.
-1 2 3  def Test puts &amp;#39;testing 123&amp;#39; end   And when I ran to call the method Test in the irb i got the following error.</description>
+      <description>Last day while I was browsing through some Java code online, I noticed that some method has names starting with capital letters. I Method names are written in small letters in ruby. This Java code made me wonder if there was anything preventing us from using method names starting with capital letter, in ruby. So I started my irb and wrote the following code.&#xA;1 2 3 def Test puts &amp;#39;testing 123&amp;#39; end And when I ran to call the method Test in the irb i got the following error.</description>
     </item>
-    
     <item>
       <title>Review on Rail 4.3.0 Beta</title>
       <link>https://hsps.in/post/review-on-rail-4.3.0-beta/</link>
       <pubDate>Wed, 20 Aug 2014 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/review-on-rail-4.3.0-beta/</guid>
       <description>&lt;p&gt;Active Job, deliver later will give us a lot of abstraction. One will have to move the business logic present in workers to models or services, but that would make our system more maintainable. If the Active Job is a simple plug and play then in future projects one can use delayed_job when the load is light and when the load increases they can shift to redis based resque or sidekiq. Thinking of migrating from one system to another always give the developers a head ache. This can essentially solve it. Active Job was planned to be a feature in rails 4.0 but later they decided not. I am glad that they are releasing it in 4.2&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Splat Operator in Ruby</title>
       <link>https://hsps.in/post/splat-operator-in-ruby/</link>
       <pubDate>Wed, 25 Sep 2013 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/splat-operator-in-ruby/</guid>
       <description>&lt;p&gt;Ruby splat operator (*variable) is used to convert an array of elements into an argument list.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Convert Short Urls to Long Urls</title>
       <link>https://hsps.in/post/convert-short-urls-to-long-urls/</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/convert-short-urls-to-long-urls/</guid>
-      <description>&lt;p&gt;How to get a long/actual url from a short url?&lt;/p&gt;
-&lt;p&gt;Sometimes when we try to fetch short urls, using curl, we get a blank page as reply or a 301 ERROR. The reason being that there is no html file stored at that location,only a header with details ,on where the person who has opened the url would be redirected to.&lt;/p&gt;
-&lt;p&gt;So to get the actual url or long url from the short url, we just have to read the location stored in the html header.&lt;/p&gt;</description>
+      <description>&lt;p&gt;How to get a long/actual url from a short url?&lt;/p&gt;&#xA;&lt;p&gt;Sometimes when we try to fetch short urls, using curl, we get a blank page as reply or a 301 ERROR. The reason being that there is no html file stored at that location,only a header with details ,on where the person who has opened the url would be redirected to.&lt;/p&gt;&#xA;&lt;p&gt;So to get the actual url or long url from the short url, we just have to read the location stored in the html header.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Open and View the Source Code of a Gem</title>
       <link>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</link>
       <pubDate>Thu, 23 May 2013 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/open-and-view-the-source-code-of-a-gem/</guid>
       <description>&lt;p&gt;Now this is a small blog post, issued in  interest of  the beginners. On how to open and video the code of a ruby gem you are using.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>When My Alarm Was Found to Be Not Working</title>
       <link>https://hsps.in/post/when-my-alarm-was-found-to-be-not-working/</link>
       <pubDate>Fri, 15 Mar 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://hsps.in/post/when-my-alarm-was-found-to-be-not-working/</guid>
-      <description>&lt;p&gt;Due to some unfortunate events&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Loosing my phone&lt;/li&gt;
-&lt;li&gt;K-alarm crashing&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I faced a common problem for many people &amp;ldquo;No alarm to wake me up in the morning&amp;rdquo;. Like every single man, I love sleeping. So unless an alarm or person wakes me up, I will continue to enjoy sleeping - until the urge from my second passion (hunger) wakes me up.&lt;/p&gt;
-&lt;p&gt;Despite the fact that I love sleeping, my team mates at Ruby Kitchen, won&amp;rsquo;t be happy with me coming late to work. Challenged with such a problem, I did what every computer hacker would do.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Wrote a program to wake me up, at 6:00 AM 😁&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Due to some unfortunate events&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Loosing my phone&lt;/li&gt;&#xA;&lt;li&gt;K-alarm crashing&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;I faced a common problem for many people &amp;ldquo;No alarm to wake me up in the morning&amp;rdquo;. Like every single man, I love sleeping. So unless an alarm or person wakes me up, I will continue to enjoy sleeping - until the urge from my second passion (hunger) wakes me up.&lt;/p&gt;&#xA;&lt;p&gt;Despite the fact that I love sleeping, my team mates at Ruby Kitchen, won&amp;rsquo;t be happy with me coming late to work. Challenged with such a problem, I did what every computer hacker would do.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Wrote a program to wake me up, at 6:00 AM 😁&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Model Update_attribute Update_attributes</title>
       <link>https://hsps.in/post/model-update_attribute-update_attributes/</link>
       <pubDate>Wed, 23 Jan 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://hsps.in/post/model-update_attribute-update_attributes/</guid>
       <description>&lt;p&gt;Lot of people might have a confusing between the functionality of update_attribute and update_attributes. The purpose of these functions can be understood from their name itself. the first one update_attribute would update a single attribute of the model&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Make Self Executing Ruby Scripts Linux</title>
       <link>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</guid>
-      <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
+      <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setup Postgresql and Its Libraries to Work With Rails</title>
       <link>https://hsps.in/post/setup-postgresql-and-its-libraries-to-work-with-rails/</link>
       <pubDate>Tue, 27 Nov 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://hsps.in/post/setup-postgresql-and-its-libraries-to-work-with-rails/</guid>
-      <description>&lt;p&gt;Recently lot of people have been asking me why they are not able to install the pg (PostgreSQL) gem even after installing PostgreSQL server in their system?&lt;/p&gt;
-&lt;p&gt;Well the answer is simple, the pg gem, requires the PostgreSQL development libraries to build native extensions to communicate with the PostgreSQL server. Native extensions refer to building ruby extensions or wrappers for existing C or C++ library.&lt;/p&gt;
-&lt;p&gt;One can install the development libraries of PostgreSQL by installing the libpg-dev package.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently lot of people have been asking me why they are not able to install the pg (PostgreSQL) gem even after installing PostgreSQL server in their system?&lt;/p&gt;&#xA;&lt;p&gt;Well the answer is simple, the pg gem, requires the PostgreSQL development libraries to build native extensions to communicate with the PostgreSQL server. Native extensions refer to building ruby extensions or wrappers for existing C or C++ library.&lt;/p&gt;&#xA;&lt;p&gt;One can install the development libraries of PostgreSQL by installing the libpg-dev package.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Install Ruby via Source Ubuntu</title>
       <link>https://hsps.in/post/install-ruby-via-source-ubuntu/</link>
       <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://hsps.in/post/install-ruby-via-source-ubuntu/</guid>
-      <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;
-&lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;In ubuntu you can have these libraries installed via the command line ( or if you are so old fashion you may google and find the source code for these packages as well)&lt;/p&gt;</description>
+      <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;&#xA;&lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;In ubuntu you can have these libraries installed via the command line ( or if you are so old fashion you may google and find the source code for these packages as well)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Store RPM Packages in Cache</title>
       <link>https://hsps.in/post/store-rpm-packages-in-cache/</link>
       <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/store-rpm-packages-in-cache/</guid>
-      <description>&lt;p&gt;Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.&lt;/p&gt;
-&lt;p&gt;Want to keep those packages in your system, and maybe create a local repository?&lt;/p&gt;
-&lt;p&gt;Well there are several ways. Simplest of them would be to edit the yum configuration file.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.&lt;/p&gt;&#xA;&lt;p&gt;Want to keep those packages in your system, and maybe create a local repository?&lt;/p&gt;&#xA;&lt;p&gt;Well there are several ways. Simplest of them would be to edit the yum configuration file.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Create Your Own Ubuntu</title>
       <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
-      
       <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
-      <description>Many a times I wanted to create my own customized ubuntu, why???
-Well 3 reasons
- I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
+      <description>Many a times I wanted to create my own customized ubuntu, why???&#xA;Well 3 reasons&#xA;I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
     </item>
-    
     <item>
       <title>puts &#34;Hello World&#34;</title>
       <link>https://hsps.in/post/puts-hello-world/</link>
       <pubDate>Sat, 14 Jan 2012 00:07:30 -0700</pubDate>
-      
       <guid>https://hsps.in/post/puts-hello-world/</guid>
-      <description>Don&amp;rsquo;t know if it is the best way to start, but here it goes&amp;hellip;
-I am starting a technical blog, something that I wanted to do for a while&amp;hellip;
-So wish me luck =)</description>
+      <description>Don&amp;rsquo;t know if it is the best way to start, but here it goes&amp;hellip;&#xA;I am starting a technical blog, something that I wanted to do for a while&amp;hellip;&#xA;So wish me luck =)</description>
     </item>
-    
   </channel>
 </rss>

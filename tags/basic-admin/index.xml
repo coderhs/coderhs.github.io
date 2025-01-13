@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>basic admin on Harisankar P S | HsPS.in</title>
+    <title>Basic Admin on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/basic-admin/</link>
-    <description>Recent content in basic admin on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Basic Admin on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Mar 2023 21:27:35 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/basic-admin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Mar 2023 21:27:35 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/basic-admin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Share Docker Images as Files</title>
       <link>https://hsps.in/post/share-docker-images-as-files/</link>
       <pubDate>Sun, 26 Mar 2023 21:27:35 -0700</pubDate>
-      
       <guid>https://hsps.in/post/share-docker-images-as-files/</guid>
-      <description>&lt;p&gt;Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.&lt;/p&gt;
-&lt;p&gt;Dev Machine: Kubuntu, 22.04&lt;/p&gt;</description>
+      <description>&lt;p&gt;Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.&lt;/p&gt;&#xA;&lt;p&gt;Dev Machine: Kubuntu, 22.04&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

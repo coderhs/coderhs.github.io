@@ -4,431 +4,338 @@
     <title>Categories on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/categories/</link>
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Oct 2024 10:19:48 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Oct 2024 10:19:48 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>postgresql</title>
+      <title>Postgresql</title>
       <link>https://hsps.in/categories/postgresql/</link>
       <pubDate>Thu, 24 Oct 2024 10:19:48 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/postgresql/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>AWS</title>
+      <title>Aws</title>
       <link>https://hsps.in/categories/aws/</link>
       <pubDate>Thu, 10 Oct 2024 00:05:58 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/aws/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rails</title>
+      <title>Rails</title>
       <link>https://hsps.in/categories/rails/</link>
       <pubDate>Thu, 10 Oct 2024 00:05:58 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/rails/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tailscale</title>
+      <title>Tailscale</title>
       <link>https://hsps.in/categories/tailscale/</link>
       <pubDate>Tue, 08 Oct 2024 20:11:58 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/tailscale/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>terraform</title>
+      <title>Terraform</title>
       <link>https://hsps.in/categories/terraform/</link>
       <pubDate>Tue, 08 Oct 2024 20:11:58 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/terraform/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux</title>
       <link>https://hsps.in/categories/linux/</link>
       <pubDate>Fri, 04 Oct 2024 02:11:12 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>docker</title>
+      <title>Docker</title>
       <link>https://hsps.in/categories/docker/</link>
       <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/docker/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>postgres</title>
+      <title>Postgres</title>
       <link>https://hsps.in/categories/postgres/</link>
       <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/postgres/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ECR</title>
       <link>https://hsps.in/categories/ecr/</link>
       <pubDate>Sat, 06 Apr 2024 06:21:43 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/ecr/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SSH</title>
       <link>https://hsps.in/categories/ssh/</link>
       <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
-      
       <guid>https://hsps.in/categories/ssh/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>opinions</title>
+      <title>Opinions</title>
       <link>https://hsps.in/categories/opinions/</link>
       <pubDate>Wed, 30 Aug 2023 15:48:25 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/opinions/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ansible</title>
+      <title>Ansible</title>
       <link>https://hsps.in/categories/ansible/</link>
       <pubDate>Sun, 06 Aug 2023 21:59:35 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/ansible/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>TDD</title>
       <link>https://hsps.in/categories/tdd/</link>
       <pubDate>Sat, 05 Aug 2023 23:06:27 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/tdd/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>devops</title>
+      <title>Devops</title>
       <link>https://hsps.in/categories/devops/</link>
       <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/devops/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ECS</title>
       <link>https://hsps.in/categories/ecs/</link>
       <pubDate>Sun, 30 Jul 2023 00:10:21 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/ecs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Fargate</title>
       <link>https://hsps.in/categories/fargate/</link>
       <pubDate>Sun, 30 Jul 2023 00:10:21 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/fargate/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Sidekiq</title>
       <link>https://hsps.in/categories/sidekiq/</link>
       <pubDate>Sun, 30 Jul 2023 00:10:21 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/sidekiq/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ruby</title>
+      <title>Ruby</title>
       <link>https://hsps.in/categories/ruby/</link>
       <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/ruby/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>web-assembly</title>
+      <title>Web-Assembly</title>
       <link>https://hsps.in/categories/web-assembly/</link>
       <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/web-assembly/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>crystal lang</title>
+      <title>Crystal Lang</title>
       <link>https://hsps.in/categories/crystal-lang/</link>
       <pubDate>Sun, 02 Apr 2023 20:22:46 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/crystal-lang/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Amazon</title>
       <link>https://hsps.in/categories/amazon/</link>
       <pubDate>Sun, 19 Mar 2023 19:52:42 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/amazon/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Bill</title>
       <link>https://hsps.in/categories/bill/</link>
       <pubDate>Sun, 19 Mar 2023 19:52:42 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/bill/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Cloud</title>
       <link>https://hsps.in/categories/cloud/</link>
       <pubDate>Sun, 19 Mar 2023 19:52:42 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/cloud/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>homelab</title>
+      <title>Homelab</title>
       <link>https://hsps.in/categories/homelab/</link>
       <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/homelab/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gems</title>
+      <title>Gems</title>
       <link>https://hsps.in/categories/gems/</link>
       <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/gems/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>yaml</title>
+      <title>Yaml</title>
       <link>https://hsps.in/categories/yaml/</link>
       <pubDate>Mon, 22 Aug 2022 21:27:34 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/yaml/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>startup</title>
+      <title>Startup</title>
       <link>https://hsps.in/categories/startup/</link>
       <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/startup/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Thoughts</title>
       <link>https://hsps.in/categories/thoughts/</link>
       <pubDate>Mon, 22 Aug 2022 17:43:43 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/thoughts/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>esp32</title>
+      <title>Esp32</title>
       <link>https://hsps.in/categories/esp32/</link>
       <pubDate>Thu, 04 Aug 2022 00:42:04 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/esp32/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apartment</title>
       <link>https://hsps.in/categories/apartment/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/apartment/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>til</title>
+      <title>TIL</title>
       <link>https://hsps.in/categories/til/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/til/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>irb</title>
+      <title>Irb</title>
       <link>https://hsps.in/categories/irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/irb/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dev</title>
+      <title>Dev</title>
       <link>https://hsps.in/categories/dev/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/dev/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>remote</title>
+      <title>Remote</title>
       <link>https://hsps.in/categories/remote/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/remote/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vscode</title>
+      <title>Vscode</title>
       <link>https://hsps.in/categories/vscode/</link>
       <pubDate>Sun, 03 Jul 2022 13:52:46 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/vscode/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bash</title>
+      <title>Bash</title>
       <link>https://hsps.in/categories/bash/</link>
       <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/bash/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ubuntu</title>
+      <title>Ubuntu</title>
       <link>https://hsps.in/categories/ubuntu/</link>
       <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/ubuntu/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rails tips</title>
+      <title>Rails Tips</title>
       <link>https://hsps.in/categories/rails-tips/</link>
       <pubDate>Tue, 31 May 2022 20:10:36 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/rails-tips/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Emotions</title>
       <link>https://hsps.in/categories/emotions/</link>
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/emotions/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Notes</title>
       <link>https://hsps.in/categories/notes/</link>
       <pubDate>Sun, 13 Sep 2020 18:42:35 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/notes/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>review</title>
+      <title>Review</title>
       <link>https://hsps.in/categories/review/</link>
       <pubDate>Wed, 20 Aug 2014 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/categories/review/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Scirpt</title>
       <link>https://hsps.in/categories/scirpt/</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/categories/scirpt/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>development</title>
+      <title>Development</title>
       <link>https://hsps.in/categories/development/</link>
       <pubDate>Thu, 23 May 2013 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/categories/development/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tech</title>
       <link>https://hsps.in/categories/tech/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://hsps.in/categories/tech/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>red-hat</title>
+      <title>Red-Hat</title>
       <link>https://hsps.in/categories/red-hat/</link>
       <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/categories/red-hat/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rpm</title>
+      <title>Rpm</title>
       <link>https://hsps.in/categories/rpm/</link>
       <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/categories/rpm/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>custom</title>
+      <title>Custom</title>
       <link>https://hsps.in/categories/custom/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
-      
       <guid>https://hsps.in/categories/custom/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

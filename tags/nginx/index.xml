@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nginx on Harisankar P S | HsPS.in</title>
+    <title>Nginx on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/nginx/</link>
-    <description>Recent content in nginx on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Nginx on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Aug 2023 22:31:40 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Aug 2023 22:31:40 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup HTTP(s) and Reverse Proxy to Docker Web App</title>
       <link>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</link>
       <pubDate>Thu, 03 Aug 2023 22:31:40 -0700</pubDate>
-      
       <guid>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</guid>
-      <description>&lt;p&gt;This article is about how to add https to a web app running in docker. For this we are using nginx to handle port 80 and port 443 and then reverse proxy the traffic to port 443 to the application port. In this article we are assuming you have credentials for the SSL certificate, another article will be written on how to do it with lets encrypt to create ssl certificates for free.&lt;/p&gt;
-&lt;p&gt;This article assume you know about ssl key files, docker and docker-compose. And for the sake of this article we are setting up &lt;code&gt;uptime-kuma&lt;/code&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This article is about how to add https to a web app running in docker. For this we are using nginx to handle port 80 and port 443 and then reverse proxy the traffic to port 443 to the application port. In this article we are assuming you have credentials for the SSL certificate, another article will be written on how to do it with lets encrypt to create ssl certificates for free.&lt;/p&gt;&#xA;&lt;p&gt;This article assume you know about ssl key files, docker and docker-compose. And for the sake of this article we are setting up &lt;code&gt;uptime-kuma&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

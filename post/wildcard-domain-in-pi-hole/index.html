@@ -25,7 +25,7 @@ For homelab I have a docker-swarm which is managed using portainer. I have a ngi
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/wildcard-domain-in-pi-hole/" />
@@ -41,23 +41,33 @@ For homelab I have a docker-swarm which is managed using portainer. I have a ngi
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Wildcard Domain in Pi Hole" />
-<meta property="og:description" content="PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.
-For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/wildcard-domain-in-pi-hole/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-09-04T11:36:43-07:00" />
-<meta property="article:modified_time" content="2022-09-04T11:36:43-07:00" />
+<meta property="og:url" content="https://hsps.in/post/wildcard-domain-in-pi-hole/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Wildcard Domain in Pi Hole">
+  <meta property="og:description" content="PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.
+For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn’t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-09-04T11:36:43-07:00">
+    <meta property="article:modified_time" content="2022-09-04T11:36:43-07:00">
+    <meta property="article:tag" content="Homelab">
+    <meta property="article:tag" content="Dns">
+    <meta property="article:tag" content="Server">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Dnsmasq">
 
-<meta itemprop="name" content="Wildcard Domain in Pi Hole">
-<meta itemprop="description" content="PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.
-For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole."><meta itemprop="datePublished" content="2022-09-04T11:36:43-07:00" />
-<meta itemprop="dateModified" content="2022-09-04T11:36:43-07:00" />
-<meta itemprop="wordCount" content="201">
-<meta itemprop="keywords" content="homelab,dns,server,linux,dnsmasq," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Wildcard Domain in Pi Hole"/>
-<meta name="twitter:description" content="PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.
-For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole."/>
+  <meta itemprop="name" content="Wildcard Domain in Pi Hole">
+  <meta itemprop="description" content="PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.
+For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn’t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.">
+  <meta itemprop="datePublished" content="2022-09-04T11:36:43-07:00">
+  <meta itemprop="dateModified" content="2022-09-04T11:36:43-07:00">
+  <meta itemprop="wordCount" content="201">
+  <meta itemprop="keywords" content="homelab,dns,server,linux,dnsmasq">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Wildcard Domain in Pi Hole">
+  <meta name="twitter:description" content="PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.
+For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn’t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -153,8 +163,8 @@ For homelab I have a docker-swarm which is managed using portainer. I have a ngi
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">address</span><span class="o">=</span>/.hspshome/192.168.99.120
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">address</span><span class="o">=</span>/.hspshome/192.168.99.120
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>if you wanted to add a subdomain you could do it like so</p>
 <div class="highlight"><div class="chroma">
@@ -162,8 +172,8 @@ For homelab I have a docker-swarm which is managed using portainer. I have a ngi
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">address</span><span class="o">=</span>/.machines.hspshome/192.168.99.120
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">address</span><span class="o">=</span>/.machines.hspshome/192.168.99.120
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Save it and restart the service or server, and you will be able to use the wildcard domain.</p>
     </div>
@@ -244,7 +254,7 @@ For homelab I have a docker-swarm which is managed using portainer. I have a ngi
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -253,16 +263,16 @@ For homelab I have a docker-swarm which is managed using portainer. I have a ngi
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -279,19 +289,15 @@ For homelab I have a docker-swarm which is managed using portainer. I have a ngi
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

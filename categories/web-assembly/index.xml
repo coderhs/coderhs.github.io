@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>web-assembly on Harisankar P S | HsPS.in</title>
+    <title>Web-Assembly on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/categories/web-assembly/</link>
-    <description>Recent content in web-assembly on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Web-Assembly on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 May 2023 21:12:50 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/web-assembly/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 May 2023 21:12:50 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/categories/web-assembly/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Web Assembly. Example for Ruby Web Assembly</title>
       <link>https://hsps.in/post/ruby-wasm/</link>
       <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
-      
       <guid>https://hsps.in/post/ruby-wasm/</guid>
-      <description>&lt;p&gt;Any program to execute on a machine needs to be in machine code (1s and 0s). In some languages you compile the code directly to machine code, and some they converts it to intermediary code that runs on an virtual machine (which indirectly execute machine code). One of the biggest virtual machines in the world is a web browser. People write HTML,CSS and JS, and execute it by rendering the graphics and executing code on your machine. The browser have become so advanced that it takes care of security and safety so well. Thus being able to covert your program code or binary file into JS allows you to run your code on the browser and any machine that has a browser.&lt;/p&gt;
-&lt;p&gt;Now the idea of web assembly support in ruby (or any language) is not about writing website using ruby, though we can do that if we wanted to. The idea is to make a program or library that we have already existing in one language available for the web. If you can run ruby interpreter on your browser, then you can run any ruby code on your browser.&lt;/p&gt;
-&lt;p&gt;The things people doing with web assembly have been getting crazier. People are building more and more proof of concept ideas and apps in web assembly. The most exciting thing that impressed me recently was &lt;a href=&#34;https://webvm.io/&#34;&gt;webvm.io&lt;/a&gt;. A virtual machine is running on your browser with linux. You can run linux commands, execute a python program, etc. This is a full fledged virtual machine (the one you run using docker), running on your browser. There are more projects that does that now:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&#34;&gt;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://copy.sh/v86/&#34;&gt;https://copy.sh/v86/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;You can host a web server or a rails app inside an image, which will then run on your browser serving the content. (Note: networking is still not native, so most use web sockets to emulate a network and make internet available inside the container).&lt;/p&gt;
-&lt;p&gt;The potential for this is huge, you can technically turn any machine that can run a web browser (Chrome or firefox) into a server.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Any program to execute on a machine needs to be in machine code (1s and 0s). In some languages you compile the code directly to machine code, and some they converts it to intermediary code that runs on an virtual machine (which indirectly execute machine code). One of the biggest virtual machines in the world is a web browser. People write HTML,CSS and JS, and execute it by rendering the graphics and executing code on your machine. The browser have become so advanced that it takes care of security and safety so well. Thus being able to covert your program code or binary file into JS allows you to run your code on the browser and any machine that has a browser.&lt;/p&gt;&#xA;&lt;p&gt;Now the idea of web assembly support in ruby (or any language) is not about writing website using ruby, though we can do that if we wanted to. The idea is to make a program or library that we have already existing in one language available for the web. If you can run ruby interpreter on your browser, then you can run any ruby code on your browser.&lt;/p&gt;&#xA;&lt;p&gt;The things people doing with web assembly have been getting crazier. People are building more and more proof of concept ideas and apps in web assembly. The most exciting thing that impressed me recently was &lt;a href=&#34;https://webvm.io/&#34;&gt;webvm.io&lt;/a&gt;. A virtual machine is running on your browser with linux. You can run linux commands, execute a python program, etc. This is a full fledged virtual machine (the one you run using docker), running on your browser. There are more projects that does that now:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&#34;&gt;https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&amp;amp;mem=192&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://copy.sh/v86/&#34;&gt;https://copy.sh/v86/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You can host a web server or a rails app inside an image, which will then run on your browser serving the content. (Note: networking is still not native, so most use web sockets to emulate a network and make internet available inside the container).&lt;/p&gt;&#xA;&lt;p&gt;The potential for this is huge, you can technically turn any machine that can run a web browser (Chrome or firefox) into a server.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,44 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>programming on Harisankar P S | HsPS.in</title>
+    <title>Programming on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/programming/</link>
-    <description>Recent content in programming on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Programming on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Aug 2022 00:42:04 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Aug 2022 00:42:04 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started With ESP 32 Development</title>
       <link>https://hsps.in/post/getting-started-with-esp-32-linux/</link>
       <pubDate>Thu, 04 Aug 2022 00:42:04 -0700</pubDate>
-      
       <guid>https://hsps.in/post/getting-started-with-esp-32-linux/</guid>
-      <description>&lt;p&gt;ESP 32 is a series of low-cost, low-power system on chip micro controllers with integrated Wi-FI and Bluetooth. SoC or system on chip is an integrated circuit that integrates all or most of the component of a computer. Example the CPU, RAM, IO interface, GPU, etc. This form is becoming more and more popular thanks to growing smartphone and computing industry. Apple M1 chip is a good example on the direction in which SoC&amp;rsquo;s are going.&lt;/p&gt;
-&lt;p&gt;The ESP 32 is really low cost it cost like 350 in India, and less than 10$ in the US. Now when you buy this you don&amp;rsquo;t buy the chip alone, but a chip on a development board. There are several articles (&lt;a href=&#34;https://makeradvisor.com/esp32-development-boards-review-comparison/&#34;&gt;https://makeradvisor.com/esp32-development-boards-review-comparison/&lt;/a&gt;) on that. The board that I bought from amazon was this &lt;a href=&#34;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;, i also bought one with OLED display as well &lt;a href=&#34;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In this article I will be talking about how to get started. We will basically will be setting up Aurdino IDE in linux, followed by flashing few sample programs like:&lt;/p&gt;</description>
+      <description>&lt;p&gt;ESP 32 is a series of low-cost, low-power system on chip micro controllers with integrated Wi-FI and Bluetooth. SoC or system on chip is an integrated circuit that integrates all or most of the component of a computer. Example the CPU, RAM, IO interface, GPU, etc. This form is becoming more and more popular thanks to growing smartphone and computing industry. Apple M1 chip is a good example on the direction in which SoC&amp;rsquo;s are going.&lt;/p&gt;&#xA;&lt;p&gt;The ESP 32 is really low cost it cost like 350 in India, and less than 10$ in the US. Now when you buy this you don&amp;rsquo;t buy the chip alone, but a chip on a development board. There are several articles (&lt;a href=&#34;https://makeradvisor.com/esp32-development-boards-review-comparison/&#34;&gt;https://makeradvisor.com/esp32-development-boards-review-comparison/&lt;/a&gt;) on that. The board that I bought from amazon was this &lt;a href=&#34;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;, i also bought one with OLED display as well &lt;a href=&#34;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this article I will be talking about how to get started. We will basically will be setting up Aurdino IDE in linux, followed by flashing few sample programs like:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Convert Short Urls to Long Urls</title>
       <link>https://hsps.in/post/convert-short-urls-to-long-urls/</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 -0530</pubDate>
-      
       <guid>https://hsps.in/post/convert-short-urls-to-long-urls/</guid>
-      <description>&lt;p&gt;How to get a long/actual url from a short url?&lt;/p&gt;
-&lt;p&gt;Sometimes when we try to fetch short urls, using curl, we get a blank page as reply or a 301 ERROR. The reason being that there is no html file stored at that location,only a header with details ,on where the person who has opened the url would be redirected to.&lt;/p&gt;
-&lt;p&gt;So to get the actual url or long url from the short url, we just have to read the location stored in the html header.&lt;/p&gt;</description>
+      <description>&lt;p&gt;How to get a long/actual url from a short url?&lt;/p&gt;&#xA;&lt;p&gt;Sometimes when we try to fetch short urls, using curl, we get a blank page as reply or a 301 ERROR. The reason being that there is no html file stored at that location,only a header with details ,on where the person who has opened the url would be redirected to.&lt;/p&gt;&#xA;&lt;p&gt;So to get the actual url or long url from the short url, we just have to read the location stored in the html header.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Create Your Own Ubuntu</title>
       <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
-      
       <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
-      <description>Many a times I wanted to create my own customized ubuntu, why???
-Well 3 reasons
- I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
+      <description>Many a times I wanted to create my own customized ubuntu, why???&#xA;Well 3 reasons&#xA;I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,50 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>til on Harisankar P S | HsPS.in</title>
+    <title>Til on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/tags/til/</link>
-    <description>Recent content in til on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Til on Harisankar P S | HsPS.in</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Jul 2022 23:15:19 -0700</lastBuildDate><atom:link href="https://hsps.in/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 23:15:19 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/til/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Migrations From Console</title>
       <link>https://hsps.in/post/running-migrations-from-console/</link>
       <pubDate>Tue, 19 Jul 2022 23:15:19 -0700</pubDate>
-      
       <guid>https://hsps.in/post/running-migrations-from-console/</guid>
-      <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;
-&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.&lt;/p&gt;&#xA;&lt;p&gt;When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&amp;rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Access History in IRB</title>
       <link>https://hsps.in/post/access-history-in-irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
-      
       <guid>https://hsps.in/post/access-history-in-irb/</guid>
-      <description>Accessing the list of commands you have ran in your irb or rails console.
-Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
+      <description>Accessing the list of commands you have ran in your irb or rails console.&#xA;Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
     </item>
-    
     <item>
       <title>HTOP for GPU in Linux</title>
       <link>https://hsps.in/post/htop-for-gpu-in-linux/</link>
       <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
-      
       <guid>https://hsps.in/post/htop-for-gpu-in-linux/</guid>
-      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
-Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
+      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.&#xA;Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     </item>
-    
     <item>
       <title>Append to File using Bash</title>
       <link>https://hsps.in/post/append-to-file-using-bash/</link>
       <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
-      
       <guid>https://hsps.in/post/append-to-file-using-bash/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

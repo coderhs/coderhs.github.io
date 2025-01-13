@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/amazing-emoji-keyboard-in-linux/" />
@@ -39,20 +39,31 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Amazing Emoji Keyboard in Linux" />
-<meta property="og:description" content="Setup an emoji keyboard linux macOS" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/amazing-emoji-keyboard-in-linux/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-08-01T18:59:18-07:00" />
-<meta property="article:modified_time" content="2022-08-01T18:59:18-07:00" />
+<meta property="og:url" content="https://hsps.in/post/amazing-emoji-keyboard-in-linux/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Amazing Emoji Keyboard in Linux">
+  <meta property="og:description" content="Setup an emoji keyboard linux macOS">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-08-01T18:59:18-07:00">
+    <meta property="article:modified_time" content="2022-08-01T18:59:18-07:00">
+    <meta property="article:tag" content="Emoji">
+    <meta property="article:tag" content="Keyboard">
+    <meta property="article:tag" content="KDE">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Kubuntu">
+    <meta property="article:tag" content="Splatmoji">
 
-<meta itemprop="name" content="Amazing Emoji Keyboard in Linux">
-<meta itemprop="description" content="Setup an emoji keyboard linux macOS"><meta itemprop="datePublished" content="2022-08-01T18:59:18-07:00" />
-<meta itemprop="dateModified" content="2022-08-01T18:59:18-07:00" />
-<meta itemprop="wordCount" content="458">
-<meta itemprop="keywords" content="emoji,keyboard,KDE,linux,kubuntu,splatmoji,xdotool,xsel,rofi,shortcut,emoji keyboard," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Amazing Emoji Keyboard in Linux"/>
-<meta name="twitter:description" content="Setup an emoji keyboard linux macOS"/>
+  <meta itemprop="name" content="Amazing Emoji Keyboard in Linux">
+  <meta itemprop="description" content="Setup an emoji keyboard linux macOS">
+  <meta itemprop="datePublished" content="2022-08-01T18:59:18-07:00">
+  <meta itemprop="dateModified" content="2022-08-01T18:59:18-07:00">
+  <meta itemprop="wordCount" content="456">
+  <meta itemprop="keywords" content="emoji,keyboard,KDE,linux,kubuntu,splatmoji,xdotool,xsel,rofi,shortcut,emoji keyboard">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Amazing Emoji Keyboard in Linux">
+  <meta name="twitter:description" content="Setup an emoji keyboard linux macOS">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -161,10 +172,10 @@ Today, I finally found it.</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get install xdotool rofi xsel
-wget https://github.com/cspeterson/splatmoji/releases/download/v1.2.0/splatmoji_1.2.0_all.deb
-sudo dpkg -i splatmoji_1.2.0_all.deb
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-get install xdotool rofi xsel
+</span></span><span class="line"><span class="cl">wget https://github.com/cspeterson/splatmoji/releases/download/v1.2.0/splatmoji_1.2.0_all.deb
+</span></span><span class="line"><span class="cl">sudo dpkg -i splatmoji_1.2.0_all.deb
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Test it:</p>
 <div class="highlight"><div class="chroma">
@@ -172,8 +183,8 @@ sudo dpkg -i splatmoji_1.2.0_all.deb
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">splatmoji copy
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">splatmoji copy
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now, once tested, we need to do some customization followed by setting up keyboard shortcut to launch it for easy access.</p>
 <h2 id="customization">Customization</h2>
@@ -188,20 +199,20 @@ sudo dpkg -i splatmoji_1.2.0_all.deb
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># history_file=~/.local/state/splatmoji/history</span>
-<span class="nv">history_length</span><span class="o">=</span><span class="m">5</span>
-<span class="nv">paste_command</span><span class="o">=</span>xdotool key ctrl+shift+v
-<span class="nv">rofi_command</span><span class="o">=</span>rofi -dmenu -p <span class="s1">&#39;&#39;</span> -i -monitor -2
-<span class="nv">xdotool_command</span><span class="o">=</span>xdotool sleep 0.2 <span class="nb">type</span> --delay <span class="m">100</span>
-<span class="nv">xsel_command</span><span class="o">=</span>xsel -b -i
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># history_file=~/.local/state/splatmoji/history</span>
+</span></span><span class="line"><span class="cl"><span class="nv">history_length</span><span class="o">=</span><span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="nv">paste_command</span><span class="o">=</span>xdotool key ctrl+shift+v
+</span></span><span class="line"><span class="cl"><span class="nv">rofi_command</span><span class="o">=</span>rofi -dmenu -p <span class="s1">&#39;&#39;</span> -i -monitor -2
+</span></span><span class="line"><span class="cl"><span class="nv">xdotool_command</span><span class="o">=</span>xdotool sleep 0.2 <span class="nb">type</span> --delay <span class="m">100</span>
+</span></span><span class="line"><span class="cl"><span class="nv">xsel_command</span><span class="o">=</span>xsel -b -i
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>I need this because ctrl+shift+v is paste for me and not the default ctrl+v</p>
 <h2 id="setting-up-kde-shortcut">Setting up KDE Shortcut</h2>
 <ol>
 <li><code>System Shortcuts &gt; Custom Shortcuts</code></li>
 </ol>
-<p><img src="/images/splatmoji_kde_shortcut/new_location.png" alt="System Shortcuts > Custom Shortcuts"></p>
+<p><img src="/images/splatmoji_kde_shortcut/new_location.png" alt="System Shortcuts &gt; Custom Shortcuts"></p>
 <ol start="2">
 <li><code>Edit &gt; New &gt; Global Shortcut &gt; Command/URL</code></li>
 <li>Give it a name or Emoji (or anything you like)</li>
@@ -220,8 +231,8 @@ To feed one&rsquo;s greed, they can create the following folder.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">/home/coderhs/.local/share/splatmoji/data
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/home/coderhs/.local/share/splatmoji/data
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Then place emojis inside a tsv file as follows. <code>&lt;Emoji source name&gt;/&lt;any_name&gt;.tsv</code></p>
 <p>A simple collection to add:</p>
@@ -232,10 +243,10 @@ To feed one&rsquo;s greed, they can create the following folder.</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">mkdir rofi-emoji
-<span class="nb">cd</span> rofi-emoki
-curl -fsSL https://raw.githubusercontent.com/Mange/rofi-emoji/master/all_emojis.txt &gt; emoji.tsv
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir rofi-emoji
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> rofi-emoki
+</span></span><span class="line"><span class="cl">curl -fsSL https://raw.githubusercontent.com/Mange/rofi-emoji/master/all_emojis.txt &gt; emoji.tsv
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="final-words">Final words</h2>
 <p>The only concern right now is I have too much steps, to make it the way I want. So I need to write a script to
@@ -325,7 +336,7 @@ publish the script.</p>
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -334,16 +345,16 @@ publish the script.</p>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -360,19 +371,15 @@ publish the script.</p>
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

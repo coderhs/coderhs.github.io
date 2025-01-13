@@ -25,7 +25,7 @@ When you have multiple schema in your rails application, it is important for the
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/running-migrations-from-console/" />
@@ -41,23 +41,33 @@ When you have multiple schema in your rails application, it is important for the
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Running Migrations From Console" />
-<meta property="og:description" content="Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.
-When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/running-migrations-from-console/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-07-19T23:15:19-07:00" />
-<meta property="article:modified_time" content="2022-07-19T23:15:19-07:00" />
+<meta property="og:url" content="https://hsps.in/post/running-migrations-from-console/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Running Migrations From Console">
+  <meta property="og:description" content="Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.
+When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn’t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations and then follow up on the rest.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-07-19T23:15:19-07:00">
+    <meta property="article:modified_time" content="2022-07-19T23:15:19-07:00">
+    <meta property="article:tag" content="Rails">
+    <meta property="article:tag" content="Til">
+    <meta property="article:tag" content="Database">
+    <meta property="article:tag" content="Console">
+    <meta property="article:tag" content="Irb">
 
-<meta itemprop="name" content="Running Migrations From Console">
-<meta itemprop="description" content="Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.
-When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest."><meta itemprop="datePublished" content="2022-07-19T23:15:19-07:00" />
-<meta itemprop="dateModified" content="2022-07-19T23:15:19-07:00" />
-<meta itemprop="wordCount" content="148">
-<meta itemprop="keywords" content="rails,til,database,console,irb," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Running Migrations From Console"/>
-<meta name="twitter:description" content="Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.
-When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn&rsquo;t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations  and then follow up on the rest."/>
+  <meta itemprop="name" content="Running Migrations From Console">
+  <meta itemprop="description" content="Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.
+When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn’t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations and then follow up on the rest.">
+  <meta itemprop="datePublished" content="2022-07-19T23:15:19-07:00">
+  <meta itemprop="dateModified" content="2022-07-19T23:15:19-07:00">
+  <meta itemprop="wordCount" content="148">
+  <meta itemprop="keywords" content="rails,til,database,console,irb">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Running Migrations From Console">
+  <meta name="twitter:description" content="Note: I am using Apartment gem to manage my multi schema database, and this article is written with expectation you know and use that gem.
+When you have multiple schema in your rails application, it is important for them to remain consistent. Rails migration is run by keeping track of the timestamp prefixed in front of its file name. It stores the database. So when you restore a schema that hasn’t ran the migration, but rest of the schemas has it, rails thinks it has already ran the migration. Rails look at the main / default schema to know if it has ran the migrations and then follow up on the rest.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -151,8 +161,8 @@ When you have multiple schema in your rails application, it is important for the
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">MigrationContext</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&#34;db/migrate&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">migrate</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">MigrationContext</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&#34;db/migrate&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">migrate</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>to rollback:</p>
 <div class="highlight"><div class="chroma">
@@ -160,8 +170,8 @@ When you have multiple schema in your rails application, it is important for the
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">MigrationContext</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&#34;db/migrate&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">rollback</span> <span class="mi">1</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">MigrationContext</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&#34;db/migrate&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">rollback</span> <span class="mi">1</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -242,7 +252,7 @@ When you have multiple schema in your rails application, it is important for the
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -251,16 +261,16 @@ When you have multiple schema in your rails application, it is important for the
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -277,19 +287,15 @@ When you have multiple schema in your rails application, it is important for the
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

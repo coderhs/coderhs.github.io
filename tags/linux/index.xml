@@ -2,53 +2,95 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Harisankar P S | HsPS.in</title>
-    <link>http://localhost:1313/tags/linux/</link>
+    <link>https://hsps.in/tags/linux/</link>
     <description>Recent content in Linux on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Jul 2022 22:58:41 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 02:11:12 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Scanner (scanner emulator) in SANE - Linux</title>
+      <link>https://hsps.in/post/test-scanner-in-sane/</link>
+      <pubDate>Fri, 04 Oct 2024 02:11:12 -0700</pubDate>
+      <guid>https://hsps.in/post/test-scanner-in-sane/</guid>
+      <description>&lt;p&gt;2024 &lt;a href=&#34;https://hacktoberfest.com/&#34;&gt;Hacktoberfest&lt;/a&gt; has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the &lt;a href=&#34;https://github.com/CoolCat467/Scanner-Server&#34;&gt;Scanner Server&lt;/a&gt;. It offers a web interface for using scanners, which seemed pretty interesting.&lt;/p&gt;&#xA;&lt;p&gt;I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Handle SSH Idle Connections Freezing shell or Getting Disconnected</title>
+      <link>https://hsps.in/post/handle-ssh-idle-connections-handing-or-getting-disconnected/</link>
+      <pubDate>Thu, 04 Apr 2024 03:13:24 +0530</pubDate>
+      <guid>https://hsps.in/post/handle-ssh-idle-connections-handing-or-getting-disconnected/</guid>
+      <description>&lt;p&gt;As someone who has been working with servers for over a decade and a half, I feel embarrassed to admit that I only&#xA;recently stumbled upon this setting. Throughout my years of connecting to remote servers over the internet, I&amp;rsquo;ve&#xA;encountered instances where connections freeze or break after a period of inactivity. Sometimes it happens more&#xA;frequently, while other times it never occurs at all. When I was in the US connecting to Amazon servers, there were&#xA;occasions when the connection remained stable for days on end. This led me to believe that the issue might be related&#xA;to the internet or the complexity of the network routing required to reach the server.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Share Docker Images as Files</title>
+      <link>https://hsps.in/post/share-docker-images-as-files/</link>
+      <pubDate>Sun, 26 Mar 2023 21:27:35 -0700</pubDate>
+      <guid>https://hsps.in/post/share-docker-images-as-files/</guid>
+      <description>&lt;p&gt;Docker is a popular tool to containerize and share images. Recently we ported a POS system into a docker image and had to share it with a client before we setup a private registry. This is how we share the image from my dev machine to clients local server.&lt;/p&gt;&#xA;&lt;p&gt;Dev Machine: Kubuntu, 22.04&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Enable Docker Remote Api on Docker Host</title>
+      <link>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</link>
+      <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
+      <guid>https://hsps.in/post/enable-docker-remote-api-on-docker-host/</guid>
+      <description>&lt;p&gt;Docker engine has inbuild API service that allows you to control &amp;amp; modify your docker engine and docker instance using HTTP.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setup NFS Server on Ubuntu</title>
+      <link>https://hsps.in/post/setup-nfs-server-on-ubuntu/</link>
+      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
+      <guid>https://hsps.in/post/setup-nfs-server-on-ubuntu/</guid>
+      <description>&lt;p&gt;NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.&lt;/p&gt;&#xA;&lt;p&gt;With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wildcard Domain in Pi Hole</title>
+      <link>https://hsps.in/post/wildcard-domain-in-pi-hole/</link>
+      <pubDate>Sun, 04 Sep 2022 11:36:43 -0700</pubDate>
+      <guid>https://hsps.in/post/wildcard-domain-in-pi-hole/</guid>
+      <description>&lt;p&gt;PiHole is a DNS server that will block ads and website on a DNS level. This is an integral part of my homelab as it blocks a lot of ads on my phones and system, and also easily allows us to manage domains for local application.&lt;/p&gt;&#xA;&lt;p&gt;For homelab I have a docker-swarm which is managed using portainer. I have a nginx proxy manager to map the ports to a proper domain, even provide https using lets encrypt.But PiHole doesn&amp;rsquo;t have a wildcard domain setting, hence after i set or before i set a domain my nginx proxy I need to add it to PiHole.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started With ESP 32 Development</title>
+      <link>https://hsps.in/post/getting-started-with-esp-32-linux/</link>
+      <pubDate>Thu, 04 Aug 2022 00:42:04 -0700</pubDate>
+      <guid>https://hsps.in/post/getting-started-with-esp-32-linux/</guid>
+      <description>&lt;p&gt;ESP 32 is a series of low-cost, low-power system on chip micro controllers with integrated Wi-FI and Bluetooth. SoC or system on chip is an integrated circuit that integrates all or most of the component of a computer. Example the CPU, RAM, IO interface, GPU, etc. This form is becoming more and more popular thanks to growing smartphone and computing industry. Apple M1 chip is a good example on the direction in which SoC&amp;rsquo;s are going.&lt;/p&gt;&#xA;&lt;p&gt;The ESP 32 is really low cost it cost like 350 in India, and less than 10$ in the US. Now when you buy this you don&amp;rsquo;t buy the chip alone, but a chip on a development board. There are several articles (&lt;a href=&#34;https://makeradvisor.com/esp32-development-boards-review-comparison/&#34;&gt;https://makeradvisor.com/esp32-development-boards-review-comparison/&lt;/a&gt;) on that. The board that I bought from amazon was this &lt;a href=&#34;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B0718T232Z?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;, i also bought one with OLED display as well &lt;a href=&#34;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&#34;&gt;https://www.amazon.com/dp/B07DKD79Y9?psc=1&amp;amp;ref=ppx_yo2ov_dt_b_product_details&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this article I will be talking about how to get started. We will basically will be setting up Aurdino IDE in linux, followed by flashing few sample programs like:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Amazing Emoji Keyboard in Linux</title>
+      <link>https://hsps.in/post/amazing-emoji-keyboard-in-linux/</link>
+      <pubDate>Mon, 01 Aug 2022 18:59:18 -0700</pubDate>
+      <guid>https://hsps.in/post/amazing-emoji-keyboard-in-linux/</guid>
+      <description>&lt;p&gt;I am a developer who moved from Windows, to Linux, to macOS, to Linux. A typical developer&amp;rsquo;s journey 😆. So moving from&#xA;windows to Linux was over 13-14 years ago. I didn&amp;rsquo;t do much from the windows world other than games and single executable&#xA;files. But moving from macOS to Linux, has been a bit tough. KDE has been able to provide me with everything I want and&#xA;more. The one thing that I missed the most was the emoji keyboard, with easy to launch shortcut.&lt;/p&gt;&#xA;&lt;p&gt;My usage of emoji was at its peak during macOS days, I used emoji for my communications, commits, function name and&#xA;even terminal aliases. 😈 Not everyone was a fan of my emoji usages, but I loved it.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Adding New Key per User to AWS EC2 Instance</title>
-      <link>http://localhost:1313/post/adding-new-key-per-user-to-aws-ssh/</link>
+      <link>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</link>
       <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
-      
-      <guid>http://localhost:1313/post/adding-new-key-per-user-to-aws-ssh/</guid>
-      <description>&lt;p&gt;When we create a new server in aws, it allows us to generate a key pair and attach it to the server. Now imagine you want to share access to this multiple people in your team, but you don&amp;rsquo;t want to share your private key. This is what you need to do.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Generate new key for each member of your team or ask each member for there public keys&lt;/li&gt;
-&lt;li&gt;Add it to the authorized_keys list in your servers &lt;code&gt;.ssh&lt;/code&gt; folder&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <guid>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</guid>
+      <description>&lt;p&gt;When we create a new server in aws, it allows us to generate a key pair and attach it to the server. Now imagine you want to share access to this multiple people in your team, but you don&amp;rsquo;t want to share your private key. This is what you need to do.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Generate new key for each member of your team or ask each member for there public keys&lt;/li&gt;&#xA;&lt;li&gt;Add it to the authorized_keys list in your servers &lt;code&gt;.ssh&lt;/code&gt; folder&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>HTOP for GPU in Linux</title>
-      <link>http://localhost:1313/post/htop-for-gpu-in-linux/</link>
+      <link>https://hsps.in/post/htop-for-gpu-in-linux/</link>
       <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
-      
-      <guid>http://localhost:1313/post/htop-for-gpu-in-linux/</guid>
-      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
-Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
+      <guid>https://hsps.in/post/htop-for-gpu-in-linux/</guid>
+      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.&#xA;Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     </item>
-    
     <item>
       <title>Append to File using Bash</title>
-      <link>http://localhost:1313/post/append-to-file-using-bash/</link>
+      <link>https://hsps.in/post/append-to-file-using-bash/</link>
       <pubDate>Wed, 08 Jun 2022 14:47:32 -0700</pubDate>
-      
-      <guid>http://localhost:1313/post/append-to-file-using-bash/</guid>
+      <guid>https://hsps.in/post/append-to-file-using-bash/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Make Self Executing Ruby Scripts Linux</title>
-      <link>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</link>
+      <link>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/make-self-executing-ruby-scripts-linux/</guid>
-      <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
+      <guid>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</guid>
+      <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

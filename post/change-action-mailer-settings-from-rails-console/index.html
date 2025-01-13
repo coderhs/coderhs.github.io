@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.129.0 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/change-action-mailer-settings-from-rails-console/" />
@@ -39,20 +39,28 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Change Action Mailer Settings From Rails Console" />
-<meta property="og:description" content="Change action mailer settings from rails console" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hsps.in/post/change-action-mailer-settings-from-rails-console/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-10-07T21:09:36-07:00" />
-<meta property="article:modified_time" content="2024-10-07T21:09:36-07:00" />
+<meta property="og:url" content="https://hsps.in/post/change-action-mailer-settings-from-rails-console/">
+  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:title" content="Change Action Mailer Settings From Rails Console">
+  <meta property="og:description" content="Change action mailer settings from rails console">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-10-07T21:09:36-07:00">
+    <meta property="article:modified_time" content="2024-10-07T21:09:36-07:00">
+    <meta property="article:tag" content="Rails">
+    <meta property="article:tag" content="Mailer">
+    <meta property="article:tag" content="Action-Mailer">
 
-<meta itemprop="name" content="Change Action Mailer Settings From Rails Console">
-<meta itemprop="description" content="Change action mailer settings from rails console"><meta itemprop="datePublished" content="2024-10-07T21:09:36-07:00" />
-<meta itemprop="dateModified" content="2024-10-07T21:09:36-07:00" />
-<meta itemprop="wordCount" content="249">
-<meta itemprop="keywords" content="rails,mailer,action-mailer," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Change Action Mailer Settings From Rails Console"/>
-<meta name="twitter:description" content="Change action mailer settings from rails console"/>
+  <meta itemprop="name" content="Change Action Mailer Settings From Rails Console">
+  <meta itemprop="description" content="Change action mailer settings from rails console">
+  <meta itemprop="datePublished" content="2024-10-07T21:09:36-07:00">
+  <meta itemprop="dateModified" content="2024-10-07T21:09:36-07:00">
+  <meta itemprop="wordCount" content="249">
+  <meta itemprop="keywords" content="rails,mailer,action-mailer">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Change Action Mailer Settings From Rails Console">
+  <meta name="twitter:description" content="Change action mailer settings from rails console">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -143,8 +151,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">rails console
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rails console
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Once in the console, you can override the settings by directly setting the ActionMailer::Base.smtp_settings. Here’s an example configuration:</p>
 <div class="highlight"><div class="chroma">
@@ -160,16 +168,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">ActionMailer</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">smtp_settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="ss">address</span><span class="p">:</span>              <span class="s1">&#39;smtp.office365.com&#39;</span><span class="p">,</span>
-  <span class="ss">port</span><span class="p">:</span>                 <span class="mi">587</span><span class="p">,</span>
-  <span class="ss">user_name</span><span class="p">:</span>            <span class="s1">&#39;email@example.com&#39;</span>
-  <span class="ss">password</span><span class="p">:</span>             <span class="s1">&#39;passwords&#39;</span><span class="p">,</span>
-  <span class="ss">authentication</span><span class="p">:</span>       <span class="ss">:login</span><span class="p">,</span>
-  <span class="ss">enable_starttls_auto</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
-  <span class="ss">read_timeout</span><span class="p">:</span> <span class="mi">60</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="no">ActionMailer</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">smtp_settings</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="ss">address</span><span class="p">:</span>              <span class="s1">&#39;smtp.office365.com&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="ss">port</span><span class="p">:</span>                 <span class="mi">587</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="ss">user_name</span><span class="p">:</span>            <span class="s1">&#39;email@example.com&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="ss">password</span><span class="p">:</span>             <span class="s1">&#39;passwords&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="ss">authentication</span><span class="p">:</span>       <span class="ss">:login</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="ss">enable_starttls_auto</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="ss">read_timeout</span><span class="p">:</span> <span class="mi">60</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>You can override all the options available <a href="https://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration:~:text=and%20Log4r%20loggers.-,smtp_settings,-Allows%20detailed%20configuration">here</a> through this.</p>
 <p>Once you’ve set the smtp_settings, you can test if everything is configured correctly by sending a test email directly from the console. Here&rsquo;s how you can do it:</p>
@@ -178,8 +186,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="no">DeveloperMailer</span><span class="o">.</span><span class="n">any_mailer</span><span class="p">(</span><span class="s1">&#39;you@youremail.com&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">deliver_now</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="no">DeveloperMailer</span><span class="o">.</span><span class="n">any_mailer</span><span class="p">(</span><span class="s1">&#39;you@youremail.com&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">deliver_now</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This example assumes you have a mailer (DeveloperMailer) and an email method (any_mailer) set up in your application. If the email sends successfully, it indicates that the settings are correct.</p>
 <p>It’s important to remember that changes made in the Rails console are temporary and will be lost once you exit the console or restart your server. If you need to persist these settings, you should update your environment files.</p>
@@ -259,7 +267,7 @@
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  <a href="https://hsps.in/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -268,16 +276,16 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme -
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
   
 
   <span class="copyright-year">
-    &copy;
-    2011 -
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    &copy; 
+    2011 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -294,19 +302,15 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-39547141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+    
+      
+    
+  
+
 
 
 

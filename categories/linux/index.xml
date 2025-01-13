@@ -4,85 +4,58 @@
     <title>Linux on Harisankar P S | HsPS.in</title>
     <link>https://hsps.in/categories/linux/</link>
     <description>Recent content in Linux on Harisankar P S | HsPS.in</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Oct 2024 02:11:12 -0700</lastBuildDate><atom:link href="https://hsps.in/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 02:11:12 -0700</lastBuildDate>
+    <atom:link href="https://hsps.in/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test Scanner (scanner emulator) in SANE - Linux</title>
       <link>https://hsps.in/post/test-scanner-in-sane/</link>
       <pubDate>Fri, 04 Oct 2024 02:11:12 -0700</pubDate>
-      
       <guid>https://hsps.in/post/test-scanner-in-sane/</guid>
-      <description>&lt;p&gt;2024 &lt;a href=&#34;https://hacktoberfest.com/&#34;&gt;Hacktoberfest&lt;/a&gt; has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the &lt;a href=&#34;https://github.com/CoolCat467/Scanner-Server&#34;&gt;Scanner Server&lt;/a&gt;. It offers a web interface for using scanners, which seemed pretty interesting.&lt;/p&gt;
-&lt;p&gt;I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.&lt;/p&gt;</description>
+      <description>&lt;p&gt;2024 &lt;a href=&#34;https://hacktoberfest.com/&#34;&gt;Hacktoberfest&lt;/a&gt; has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the &lt;a href=&#34;https://github.com/CoolCat467/Scanner-Server&#34;&gt;Scanner Server&lt;/a&gt;. It offers a web interface for using scanners, which seemed pretty interesting.&lt;/p&gt;&#xA;&lt;p&gt;I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setup NFS Server on Ubuntu</title>
       <link>https://hsps.in/post/setup-nfs-server-on-ubuntu/</link>
       <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
-      
       <guid>https://hsps.in/post/setup-nfs-server-on-ubuntu/</guid>
-      <description>&lt;p&gt;NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.&lt;/p&gt;
-&lt;p&gt;With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.&lt;/p&gt;</description>
+      <description>&lt;p&gt;NFS - Network File System is a distributed file system protocol developed by Sun Systems. It facilitates a client computer to have access to file/folder over network like a local folder. This is a easy/simple way to provide persistant storage for your docker-swarm or kubernetes cluster. In both these cases, the container (or pod) run on one of the available nodes (servers), and when we have replicas it will be running on more than one node. So local storage on the server is out of the question.&lt;/p&gt;&#xA;&lt;p&gt;With NFS we can directly mount the folder in the container. We can control everything from the configuration file. And thanks to the NFS storage we can increase and reduce node without worries as well.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Adding New Key per User to AWS EC2 Instance</title>
       <link>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</link>
       <pubDate>Fri, 01 Jul 2022 22:58:41 -0700</pubDate>
-      
       <guid>https://hsps.in/post/adding-new-key-per-user-to-aws-ssh/</guid>
-      <description>&lt;p&gt;When we create a new server in aws, it allows us to generate a key pair and attach it to the server. Now imagine you want to share access to this multiple people in your team, but you don&amp;rsquo;t want to share your private key. This is what you need to do.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Generate new key for each member of your team or ask each member for there public keys&lt;/li&gt;
-&lt;li&gt;Add it to the authorized_keys list in your servers &lt;code&gt;.ssh&lt;/code&gt; folder&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;When we create a new server in aws, it allows us to generate a key pair and attach it to the server. Now imagine you want to share access to this multiple people in your team, but you don&amp;rsquo;t want to share your private key. This is what you need to do.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Generate new key for each member of your team or ask each member for there public keys&lt;/li&gt;&#xA;&lt;li&gt;Add it to the authorized_keys list in your servers &lt;code&gt;.ssh&lt;/code&gt; folder&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>HTOP for GPU in Linux</title>
       <link>https://hsps.in/post/htop-for-gpu-in-linux/</link>
       <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
-      
       <guid>https://hsps.in/post/htop-for-gpu-in-linux/</guid>
-      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.
-Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
+      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.&#xA;Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
     </item>
-    
     <item>
       <title>Make Self Executing Ruby Scripts Linux</title>
       <link>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://hsps.in/post/make-self-executing-ruby-scripts-linux/</guid>
-      <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
+      <description>&lt;p&gt;To run a ruby program we use the command &lt;code&gt;ruby&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;ruby program_name.rb&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Ruby being an interpreter style language, each line is interpreted(read) one after the other and executable object code file is created for reuse like in case of compiler languages C, C++, etc.. To run a ruby code you need a ruby interpreter installed in your system.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Install Ruby via Source Ubuntu</title>
       <link>https://hsps.in/post/install-ruby-via-source-ubuntu/</link>
       <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://hsps.in/post/install-ruby-via-source-ubuntu/</guid>
-      <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;
-&lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;In ubuntu you can have these libraries installed via the command line ( or if you are so old fashion you may google and find the source code for these packages as well)&lt;/p&gt;</description>
+      <description>&lt;p&gt;This blog post is for old style programmer who wish to install ruby via compiling the source code, like how I do it. This blog post is written in a just to know basis.&lt;/p&gt;&#xA;&lt;p&gt;The source code of ruby can be downloaded from ruby’s official website &lt;a href=&#34;http://www.ruby-lang.org/en/downloads/&#34;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Dependency for Ruby and Ruby on Rails : &lt;em&gt;&lt;strong&gt;libreadline, libyaml, libxml, libssl, zlib1g.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;In ubuntu you can have these libraries installed via the command line ( or if you are so old fashion you may google and find the source code for these packages as well)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Create Your Own Ubuntu</title>
       <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
-      
       <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
-      <description>Many a times I wanted to create my own customized ubuntu, why???
-Well 3 reasons
- I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
+      <description>Many a times I wanted to create my own customized ubuntu, why???&#xA;Well 3 reasons&#xA;I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
     </item>
-    
   </channel>
 </rss>
