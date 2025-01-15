@@ -6,8 +6,15 @@
     <description>Recent content in Categories on Harisankar P S | HsPS.in</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Jan 2025 18:55:49 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2025 18:20:19 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postgresql</title>
+      <link>https://hsps.in/categories/postgresql/</link>
+      <pubDate>Wed, 15 Jan 2025 18:20:19 +0530</pubDate>
+      <guid>https://hsps.in/categories/postgresql/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Productivity</title>
       <link>https://hsps.in/categories/productivity/</link>
@@ -20,13 +27,6 @@
       <link>https://hsps.in/categories/tailscale/</link>
       <pubDate>Wed, 08 Jan 2025 18:55:49 +0530</pubDate>
       <guid>https://hsps.in/categories/tailscale/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Postgresql</title>
-      <link>https://hsps.in/categories/postgresql/</link>
-      <pubDate>Thu, 24 Oct 2024 10:19:48 -0700</pubDate>
-      <guid>https://hsps.in/categories/postgresql/</guid>
       <description></description>
     </item>
     <item>

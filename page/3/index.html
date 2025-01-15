@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | HsPS.in">
   <meta itemprop="description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer...">
-  <meta itemprop="datePublished" content="2025-01-08T18:55:49+05:30">
-  <meta itemprop="dateModified" content="2025-01-08T18:55:49+05:30">
+  <meta itemprop="datePublished" content="2025-01-15T18:20:19+05:30">
+  <meta itemprop="dateModified" content="2025-01-15T18:20:19+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | HsPS.in">
   <meta name="twitter:description" content="Personsal website of Harisankar P S - a software developer, entrepeneuer, dreamer...">
@@ -123,6 +123,27 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/argument-for-writing-test-and-tdd/">Argument for Writing Test and TDD</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2023-08-30 </span>
+      <div class="post-category">
+          <a href="/categories/opinions/"> opinions </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Recently I been trying to convince my team to write more tests, or some test. One of the arguments I heard during this was - automated test doesn&rsquo;t remove manual test. Thats true, you still have to manually test it as well. But it avoids the repeated testing, and forgetting to test old features when new modifications are being done. I was thinking more about what to reply to people that says this, when it dawn to me that.
+    </div>
+    <div class="read-more">
+      <a href="/post/argument-for-writing-test-and-tdd/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/">Using Ansible to Install Docker and Docker Compose on New Lightsail Instance</a></h1>
@@ -220,35 +241,6 @@
     </div>
     <div class="read-more">
       <a href="/post/rails-copy-assets-bundler-cache-to-speed-up-build/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/sidekiq-graceful-shutdown-in-fargate-ecs/">Sidekiq Graceful Shutdown in Fargate ECS</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-07-30 </span>
-      <div class="post-category">
-          <a href="/categories/ecs/"> ECS </a>
-          <a href="/categories/sidekiq/"> Sidekiq </a>
-          <a href="/categories/fargate/"> Fargate </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Sidekiq is the gold standard when it comes to background processing. I have been using since I started working with rails. Sidekiq took care of lot of the complexity of the background processing that allowed developers to concentrate on just there code/business logic.</p>
-<p>One of the beautiful features of sidekiq was how it handled exit (SIGTERM and SIGKILL).</p>
-<p><img src="https://turnoff.us/image/en/dont-sigkill-2.png" alt="Dont Sigkill">
-Source: <a href="https://turnoff.us/geek/dont-sigkill-2/">https://turnoff.us/geek/dont-sigkill-2/</a></p>
-<p>When sidekiq received the sigterm commands it stops accept new jobs, and just focus on finishing the job it is doing now and incase it can&rsquo;t finish, it will requeue the job to another available worker or keep it in the queue for another worker (or the same worker) to pick it up when available.
-This was working so well for years on rails app I was working on, that I didn&rsquo;t even care about it. The mina command would trigger a sidekiq restart allowing sidekiq to gracefully exit and then respawn with the new code.</p>
-<p>The above app was running on two linux servers everything manually configured, but recently to keep up with the growth of the app we moved to amazon ECS. The app was containerized to a docker image, and made to run on about 12 Fargate Instances with ability to auto scale to 36 based on CPU and RAM usage. We grouped instances for various purposes 2 for heavy jobs, 2 for faster (more memory jobs), 2 for file processing, 4 for web, 2 for API.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/sidekiq-graceful-shutdown-in-fargate-ecs/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

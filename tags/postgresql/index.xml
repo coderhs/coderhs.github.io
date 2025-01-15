@@ -6,8 +6,15 @@
     <description>Recent content in Postgresql on Harisankar P S | HsPS.in</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Oct 2024 10:19:48 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2025 18:20:19 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Storing PostgreSQL Data in a Different Partition for Performance</title>
+      <link>https://hsps.in/post/storing-postgresql-data-in-a-different-partition-for-performance/</link>
+      <pubDate>Wed, 15 Jan 2025 18:20:19 +0530</pubDate>
+      <guid>https://hsps.in/post/storing-postgresql-data-in-a-different-partition-for-performance/</guid>
+      <description>&lt;p&gt;What I am suggesting is a method of optimization not just for PostgreSQL but for other similar databases as well. This is a more primitive, hardware-level performance optimization where an exclusive partition or hard disk is dedicated just for the actual data. By doing so, all the read and write operations related to your data happen on that disk, while OS-level and software-level read/write operations happen on another disk. This approach also makes it easier to handle failure, monitor disk health, and isolate workloads effectively.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-store-postgresql-data-in-a-separate-partition&#34;&gt;Why Store PostgreSQL Data in a Separate Partition?&lt;/h2&gt;&#xA;&lt;p&gt;Separating the data directory from the root filesystem has several advantages:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Improved Disk I/O Performance:&lt;/strong&gt; Storing data on a dedicated partition ensures that database read/write operations are isolated from the OS and application processes, avoiding competition for disk I/O.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Efficient Disk Usage Management:&lt;/strong&gt; By placing the data in a separate partition, you can allocate specific disk space for the database and prevent it from filling up the root partition.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Better Backup and Restore Control:&lt;/strong&gt; Storing data in a dedicated location simplifies backup processes and makes restoring data more efficient.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Optimized Disk Types:&lt;/strong&gt; Different types of storage media (e.g., SSD for faster reads/writes or HDD for archival data) can be used based on database needs.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Isolation for Security and Resilience:&lt;/strong&gt; A dedicated partition reduces the risk of system failure in case of database corruption or storage issues.&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
     <item>
       <title>Setup Read Replica (master-slave) Database on Postgresql 17</title>
       <link>https://hsps.in/post/setup-master-slave-database-on-postgresql-17/</link>
