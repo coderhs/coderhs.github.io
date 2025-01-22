@@ -3,20 +3,55 @@
   
   <url>
     <loc>https://hsps.in/categories/</loc>
-    <lastmod>2025-01-15T18:20:19+05:30</lastmod>
+    <lastmod>2025-01-21T12:28:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://hsps.in/tags/database/</loc>
-    <lastmod>2025-01-15T18:20:19+05:30</lastmod>
+    <loc>https://hsps.in/tags/docker/</loc>
+    <lastmod>2025-01-21T12:28:12+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/docker/</loc>
+    <lastmod>2025-01-21T12:28:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hsps.in/</loc>
+    <lastmod>2025-01-21T12:28:12+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2025-01-21T12:28:12+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/store-docker-data-to-a-different-partition/</loc>
+    <lastmod>2025-01-21T12:28:12+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2025-01-21T12:28:12+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/database/</loc>
     <lastmod>2025-01-15T18:20:19+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -58,21 +93,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2025-01-15T18:20:19+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/post/storing-postgresql-data-in-a-different-partition-for-performance/</loc>
-    <lastmod>2025-01-15T18:20:19+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2025-01-15T18:20:19+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -291,20 +312,6 @@
   <url>
     <loc>https://hsps.in/post/test-scanner-in-sane/</loc>
     <lastmod>2024-10-04T02:11:12-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/docker/</loc>
-    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/docker/</loc>
-    <lastmod>2024-09-23T04:38:52-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
