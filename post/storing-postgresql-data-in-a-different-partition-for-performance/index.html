@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Storing PostgreSQL Data in a Different Partition for Performance - Harisankar P S | HsPS.in</title>
+  <title>Storing PostgreSQL Data in a Different Partition for Performance - Harisankar P S | Ruby on Rails Developer</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -42,7 +42,7 @@ Improved Disk I/O Performance: Storing data on a dedicated partition ensures tha
 
 
 <meta property="og:url" content="https://hsps.in/post/storing-postgresql-data-in-a-different-partition-for-performance/">
-  <meta property="og:site_name" content="Harisankar P S | HsPS.in">
+  <meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer">
   <meta property="og:title" content="Storing PostgreSQL Data in a Different Partition for Performance">
   <meta property="og:description" content="What I am suggesting is a method of optimization not just for PostgreSQL but for other similar databases as well. This is a more primitive, hardware-level performance optimization where an exclusive partition or hard disk is dedicated just for the actual data. By doing so, all the read and write operations related to your data happen on that disk, while OS-level and software-level read/write operations happen on another disk. This approach also makes it easier to handle failure, monitor disk health, and isolate workloads effectively.
 Why Store PostgreSQL Data in a Separate Partition? Separating the data directory from the root filesystem has several advantages:
