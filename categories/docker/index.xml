@@ -7,15 +7,8 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Tue, 21 Jan 2025 12:28:12 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2024 04:38:52 -0700</lastBuildDate>
     <atom:link href="https://hsps.in/categories/docker/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Store Docker Data to a Different Partition</title>
-      <link>https://hsps.in/post/store-docker-data-to-a-different-partition/</link>
-      <pubDate>Tue, 21 Jan 2025 12:28:12 +0530</pubDate>
-      <guid>https://hsps.in/post/store-docker-data-to-a-different-partition/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Using Docker to export &amp; import data from Amazon RDS</title>
       <link>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</link>
