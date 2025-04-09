@@ -35,7 +35,7 @@
       <link>https://hsps.in/post/htop-for-gpu-in-linux/</link>
       <pubDate>Sun, 12 Jun 2022 17:02:57 -0700</pubDate>
       <guid>https://hsps.in/post/htop-for-gpu-in-linux/</guid>
-      <description>htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.&#xA;Note: I am talking about tools i tested in Ubuntu/Debian Linux</description>
+      <description>&lt;p&gt;htop/top is a useful command that helps users understand how much of there CPU (Different core)/RAM are being used. We would like to see the same for GPU there are tools that provide that, but sadly unlike cpu top/htop the ones for GPU are sadly fragmented. Based on your GPU vendor we have different tools to provide us this graphical info.&lt;/p&gt;&#xA;&lt;p&gt;Note: I am talking about tools i tested in Ubuntu/Debian Linux&lt;/p&gt;</description>
     </item>
     <item>
       <title>Make Self Executing Ruby Scripts Linux</title>
@@ -56,7 +56,7 @@
       <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
-      <description>Many a times I wanted to create my own customized ubuntu, why???&#xA;Well 3 reasons&#xA;I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
+      <description>&lt;p&gt;Many a times I wanted to create my own customized ubuntu, why???&lt;/p&gt;&#xA;&lt;p&gt;Well 3 reasons&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;I hate having to download the same set of softwares over and over gain, while I reinstall OS.&lt;/li&gt;&#xA;&lt;li&gt;Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection.&#xA;I think its cool.&lt;/li&gt;&#xA;&lt;li&gt;So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default. Its the same Ubuntu itself, no change in the internal structure. (Just that we can have more software at the first installation itself)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To build such a version is actually easy, there is a software/tool called Ubuntu Customization Kit. So hackers out there why don&amp;rsquo;t you give it a shot.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

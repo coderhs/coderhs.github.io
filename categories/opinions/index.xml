@@ -14,7 +14,7 @@
       <link>https://hsps.in/post/argument-for-writing-test-and-tdd/</link>
       <pubDate>Wed, 30 Aug 2023 15:48:25 -0700</pubDate>
       <guid>https://hsps.in/post/argument-for-writing-test-and-tdd/</guid>
-      <description>Recently I been trying to convince my team to write more tests, or some test. One of the arguments I heard during this was - automated test doesn&amp;rsquo;t remove manual test. Thats true, you still have to manually test it as well. But it avoids the repeated testing, and forgetting to test old features when new modifications are being done. I was thinking more about what to reply to people that says this, when it dawn to me that.</description>
+      <description>&lt;p&gt;Recently I been trying to convince my team to write more tests, or some test. One of the arguments I heard during this was - automated test doesn&amp;rsquo;t remove manual test. Thats true, you still have to manually test it as well. But it avoids the repeated testing, and forgetting to test old features when new modifications are being done. I was thinking more about what to reply to people that says this, when it dawn to me that. People who say &amp;ldquo;automated testing won&amp;rsquo;t replace manual testing&amp;rdquo; are the similar to people who say &amp;ldquo;Software cannot replace manual work&amp;rdquo;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

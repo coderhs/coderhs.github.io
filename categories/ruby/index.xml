@@ -28,7 +28,7 @@
       <link>https://hsps.in/post/access-history-in-irb/</link>
       <pubDate>Sun, 17 Jul 2022 13:15:49 -0700</pubDate>
       <guid>https://hsps.in/post/access-history-in-irb/</guid>
-      <description>Accessing the list of commands you have ran in your irb or rails console.&#xA;Running the following command in your console Readline::HISTORY.to_a returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.</description>
+      <description>&lt;p&gt;Accessing the list of commands you have ran in your &lt;code&gt;irb&lt;/code&gt; or &lt;code&gt;rails console&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Running the following command in your console &lt;code&gt;Readline::HISTORY.to_a&lt;/code&gt; returns the array of commands you have typed in console. After which you can treat it like any other array in ruby - search, sort, etc.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Splat Operator in Ruby</title>

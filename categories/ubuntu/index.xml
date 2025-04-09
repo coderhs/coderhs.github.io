@@ -21,7 +21,7 @@
       <link>https://hsps.in/post/create-your-own-ubuntu/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
-      <description>Many a times I wanted to create my own customized ubuntu, why???&#xA;Well 3 reasons&#xA;I hate having to download the same set of softwares over and over gain, while I reinstall OS. Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection. I think its cool. So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default.</description>
+      <description>&lt;p&gt;Many a times I wanted to create my own customized ubuntu, why???&lt;/p&gt;&#xA;&lt;p&gt;Well 3 reasons&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;I hate having to download the same set of softwares over and over gain, while I reinstall OS.&lt;/li&gt;&#xA;&lt;li&gt;Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection.&#xA;I think its cool.&lt;/li&gt;&#xA;&lt;li&gt;So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default. Its the same Ubuntu itself, no change in the internal structure. (Just that we can have more software at the first installation itself)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To build such a version is actually easy, there is a software/tool called Ubuntu Customization Kit. So hackers out there why don&amp;rsquo;t you give it a shot.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
