@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-01-15T18:20:19+05:30">
-  <meta itemprop="dateModified" content="2025-01-15T18:20:19+05:30">
+  <meta itemprop="datePublished" content="2025-04-19T20:13:34+05:30">
+  <meta itemprop="dateModified" content="2025-04-19T20:13:34+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -85,8 +85,6 @@
         <li class="mobile-menu-item">Speaking</li>
       </a><a href="/about">
         <li class="mobile-menu-item">About</li>
-      </a><a href="/subscribe">
-        <li class="mobile-menu-item">Subscribe</li>
       </a>
   </ul>
 
@@ -111,8 +109,6 @@
         <a class="menu-item-link" href="/videos/">Speaking</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about">About</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/subscribe">Subscribe</a>
       </li>
   </ul>
 </nav>
@@ -133,6 +129,66 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/ruby-tap-method/">Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2025-04-19 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Ruby’s <code>Object#tap</code> is a small but powerful method that often goes unnoticed. It allows you to &ldquo;tap into&rdquo; a method chain, perform some operation, and return the original object—regardless of what the block inside returns. This makes it particularly useful for debugging, configuration, or inserting side effects without breaking the flow of your code.</p>
+<h2 id="a-simple-use-case-debugging">A Simple Use Case: Debugging</h2>
+<p>Take the following example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">}</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This returns <code>[10, 0, 10]</code>. But what if that’s not what you expected? You might want to inspect the result of the first <code>map</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">n</span><span class="o">.</span><span class="n">inspect</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">n</span><span class="o">.</span><span class="n">inspect</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Using <code>tap</code>, we can make this more elegant:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">tap</span> <span class="p">{</span> <span class="nb">puts</span> <span class="n">_1</span><span class="o">.</span><span class="n">inspect</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">tap</span> <span class="p">{</span> <span class="nb">puts</span> <span class="n">_1</span><span class="o">.</span><span class="n">inspect</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+    <div class="read-more">
+      <a href="/post/ruby-tap-method/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/storing-postgresql-data-in-a-different-partition-for-performance/">Storing PostgreSQL Data in a Different Partition for Performance</a></h1>
@@ -229,39 +285,6 @@
     </div>
     <div class="read-more">
       <a href="/post/run-rails-db-migrate-on-ecs-task-aws/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/">Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2024-10-08 </span>
-      <div class="post-category">
-          <a href="/categories/tailscale/"> tailscale </a>
-          <a href="/categories/terraform/"> terraform </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.</p>
-<p>By connecting my phone to Tailscale and using JuiceSSH, an Android app for SSH access, I could SSH into my home machine, deploy applications, and run maintenance scripts—all from my phone. Peaceful trips away from my desk.</p>
-<h2 id="remote-development-made-simple">Remote Development Made Simple</h2>
-<p>Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code&rsquo;s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.</p>
-<p>I even took it a step further by installing <a href="https://github.com/coder/code-server">code-server</a> on my dev machine. This allowed me to access a full-fledged development environment from my samsung tablet via Tailscale.</p>
-<h2 id="what-is-tailscale">What is Tailscale?</h2>
-<p>For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.</p>
-<p>By connecting my devices and home lab to this VPN, I gained the ability to access my computers remotely from anywhere.</p>
-<h2 id="using-an-exit-node-for-secure-browsing">Using an Exit Node for Secure Browsing</h2>
-<p>Tailscale allows you to set up one of your devices as an exit node. This means that when you&rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.</p>
-<blockquote>
-<p><strong>Note:</strong> Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.</p></blockquote>
-    </div>
-    <div class="read-more">
-      <a href="/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
