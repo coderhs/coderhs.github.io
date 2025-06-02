@@ -2,15 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/comparable/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/core/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/data/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/</loc>
-    <lastmod>2025-04-19T20:13:34+05:30</lastmod>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/immutable/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hsps.in/post/</loc>
-    <lastmod>2025-04-19T20:13:34+05:30</lastmod>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/ruby/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/ruby/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/intro-to-ruby-data-and-comparable/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/value-objects/</loc>
+    <lastmod>2025-06-02T11:50:45+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -18,13 +88,6 @@
   <url>
     <loc>https://hsps.in/post/ruby-tap-method/</loc>
     <lastmod>2025-04-19T20:13:34+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/</loc>
-    <lastmod>2025-01-15T18:20:19+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,13 +136,6 @@
   
   <url>
     <loc>https://hsps.in/post/storing-postgresql-data-in-a-different-partition-for-performance/</loc>
-    <lastmod>2025-01-15T18:20:19+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2025-01-15T18:20:19+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -653,13 +709,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/tags/ruby/</loc>
-    <lastmod>2023-07-30T00:10:21-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/categories/sidekiq/</loc>
     <lastmod>2023-07-30T00:10:21-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -682,13 +731,6 @@
   
   <url>
     <loc>https://hsps.in/post/ruby-wasm/</loc>
-    <lastmod>2023-05-19T21:12:50-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/ruby/</loc>
     <lastmod>2023-05-19T21:12:50-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

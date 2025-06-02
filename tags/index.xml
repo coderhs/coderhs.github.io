@@ -7,8 +7,50 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Wed, 15 Jan 2025 18:20:19 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 02 Jun 2025 11:50:45 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comparable</title>
+      <link>https://hsps.in/tags/comparable/</link>
+      <pubDate>Mon, 02 Jun 2025 11:50:45 +0530</pubDate>
+      <guid>https://hsps.in/tags/comparable/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Core</title>
+      <link>https://hsps.in/tags/core/</link>
+      <pubDate>Mon, 02 Jun 2025 11:50:45 +0530</pubDate>
+      <guid>https://hsps.in/tags/core/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data</title>
+      <link>https://hsps.in/tags/data/</link>
+      <pubDate>Mon, 02 Jun 2025 11:50:45 +0530</pubDate>
+      <guid>https://hsps.in/tags/data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Immutable</title>
+      <link>https://hsps.in/tags/immutable/</link>
+      <pubDate>Mon, 02 Jun 2025 11:50:45 +0530</pubDate>
+      <guid>https://hsps.in/tags/immutable/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ruby</title>
+      <link>https://hsps.in/tags/ruby/</link>
+      <pubDate>Mon, 02 Jun 2025 11:50:45 +0530</pubDate>
+      <guid>https://hsps.in/tags/ruby/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Value Objects</title>
+      <link>https://hsps.in/tags/value-objects/</link>
+      <pubDate>Mon, 02 Jun 2025 11:50:45 +0530</pubDate>
+      <guid>https://hsps.in/tags/value-objects/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Database</title>
       <link>https://hsps.in/tags/database/</link>
@@ -399,13 +441,6 @@
       <link>https://hsps.in/tags/fargate/</link>
       <pubDate>Sun, 30 Jul 2023 00:10:21 -0700</pubDate>
       <guid>https://hsps.in/tags/fargate/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ruby</title>
-      <link>https://hsps.in/tags/ruby/</link>
-      <pubDate>Sun, 30 Jul 2023 00:10:21 -0700</pubDate>
-      <guid>https://hsps.in/tags/ruby/</guid>
       <description></description>
     </item>
     <item>

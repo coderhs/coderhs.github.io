@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool - Harisankar P S | Ruby on Rails Developer</title>
+  <title>Ruby `Data` Class – A Convenient Way to Create Value Objects - Harisankar P S | Ruby on Rails Developer</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,11 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Ruby’s Object#tap is a small but powerful method that often goes unnoticed. It allows you to &ldquo;tap into&rdquo; a method chain, perform some operation, and return the original object—regardless of what the block inside returns. This makes it particularly useful for debugging, configuration, or inserting side effects without breaking the flow of your code.
-A Simple Use Case: Debugging Take the following example:
-1 n = [1,2,3].map { _1 % 2 }.map { _1 * 10 } This returns [10, 0, 10]. But what if that’s not what you expected? You might want to inspect the result of the first map:
-1 2 3 4 n = [1,2,3].map { _1 % 2 } puts n.inspect n = n.map { _1 * 10 } puts n.inspect Using tap, we can make this more elegant:
-1 2 3 4 n = [1, 2, 3].map { _1 % 2 } .tap { puts _1.inspect } .map { _1 * 10 } .tap { puts _1.inspect } " /><meta name="keywords" content="Harisankar P S, software, developer, Ruby, Ruby on Rails, docker, linux, sre, AWS" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Ruby `Data` Class – A Convenient Way to Create Value Objects. An Introduction to Ruby Data class and comparable module of Ruby. " /><meta name="keywords" content="ruby, core, data, comparable, value objects, immutable" />
 
 
 
@@ -30,7 +26,7 @@ A Simple Use Case: Debugging Take the following example:
 <meta name="generator" content="Hugo 0.145.0 with theme even" />
 
 
-<link rel="canonical" href="https://hsps.in/post/ruby-tap-method/" />
+<link rel="canonical" href="https://hsps.in/post/intro-to-ruby-data-and-comparable/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -43,36 +39,31 @@ A Simple Use Case: Debugging Take the following example:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:url" content="https://hsps.in/post/ruby-tap-method/">
+<meta property="og:url" content="https://hsps.in/post/intro-to-ruby-data-and-comparable/">
   <meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer">
-  <meta property="og:title" content="Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool">
-  <meta property="og:description" content="Ruby’s Object#tap is a small but powerful method that often goes unnoticed. It allows you to “tap into” a method chain, perform some operation, and return the original object—regardless of what the block inside returns. This makes it particularly useful for debugging, configuration, or inserting side effects without breaking the flow of your code.
-A Simple Use Case: Debugging Take the following example:
-1 n = [1,2,3].map { _1 % 2 }.map { _1 * 10 } This returns [10, 0, 10]. But what if that’s not what you expected? You might want to inspect the result of the first map:
-1 2 3 4 n = [1,2,3].map { _1 % 2 } puts n.inspect n = n.map { _1 * 10 } puts n.inspect Using tap, we can make this more elegant:
-1 2 3 4 n = [1, 2, 3].map { _1 % 2 } .tap { puts _1.inspect } .map { _1 * 10 } .tap { puts _1.inspect }">
+  <meta property="og:title" content="Ruby `Data` Class – A Convenient Way to Create Value Objects">
+  <meta property="og:description" content="Ruby `Data` Class – A Convenient Way to Create Value Objects. An Introduction to Ruby Data class and comparable module of Ruby.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2025-04-19T20:13:34+05:30">
-    <meta property="article:modified_time" content="2025-04-19T20:13:34+05:30">
+    <meta property="article:published_time" content="2025-06-02T11:50:45+05:30">
+    <meta property="article:modified_time" content="2025-06-02T11:50:45+05:30">
+    <meta property="article:tag" content="Ruby">
+    <meta property="article:tag" content="Core">
+    <meta property="article:tag" content="Data">
+    <meta property="article:tag" content="Comparable">
+    <meta property="article:tag" content="Value Objects">
+    <meta property="article:tag" content="Immutable">
 
-  <meta itemprop="name" content="Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool">
-  <meta itemprop="description" content="Ruby’s Object#tap is a small but powerful method that often goes unnoticed. It allows you to “tap into” a method chain, perform some operation, and return the original object—regardless of what the block inside returns. This makes it particularly useful for debugging, configuration, or inserting side effects without breaking the flow of your code.
-A Simple Use Case: Debugging Take the following example:
-1 n = [1,2,3].map { _1 % 2 }.map { _1 * 10 } This returns [10, 0, 10]. But what if that’s not what you expected? You might want to inspect the result of the first map:
-1 2 3 4 n = [1,2,3].map { _1 % 2 } puts n.inspect n = n.map { _1 * 10 } puts n.inspect Using tap, we can make this more elegant:
-1 2 3 4 n = [1, 2, 3].map { _1 % 2 } .tap { puts _1.inspect } .map { _1 * 10 } .tap { puts _1.inspect }">
-  <meta itemprop="datePublished" content="2025-04-19T20:13:34+05:30">
-  <meta itemprop="dateModified" content="2025-04-19T20:13:34+05:30">
-  <meta itemprop="wordCount" content="505">
+  <meta itemprop="name" content="Ruby `Data` Class – A Convenient Way to Create Value Objects">
+  <meta itemprop="description" content="Ruby `Data` Class – A Convenient Way to Create Value Objects. An Introduction to Ruby Data class and comparable module of Ruby.">
+  <meta itemprop="datePublished" content="2025-06-02T11:50:45+05:30">
+  <meta itemprop="dateModified" content="2025-06-02T11:50:45+05:30">
+  <meta itemprop="wordCount" content="863">
+  <meta itemprop="keywords" content="ruby,core,data,comparable,value objects,immutable">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool">
-  <meta name="twitter:description" content="Ruby’s Object#tap is a small but powerful method that often goes unnoticed. It allows you to “tap into” a method chain, perform some operation, and return the original object—regardless of what the block inside returns. This makes it particularly useful for debugging, configuration, or inserting side effects without breaking the flow of your code.
-A Simple Use Case: Debugging Take the following example:
-1 n = [1,2,3].map { _1 % 2 }.map { _1 * 10 } This returns [10, 0, 10]. But what if that’s not what you expected? You might want to inspect the result of the first map:
-1 2 3 4 n = [1,2,3].map { _1 % 2 } puts n.inspect n = n.map { _1 * 10 } puts n.inspect Using tap, we can make this more elegant:
-1 2 3 4 n = [1, 2, 3].map { _1 % 2 } .tap { puts _1.inspect } .map { _1 * 10 } .tap { puts _1.inspect }">
+  <meta name="twitter:title" content="Ruby `Data` Class – A Convenient Way to Create Value Objects">
+  <meta name="twitter:description" content="Ruby `Data` Class – A Convenient Way to Create Value Objects. An Introduction to Ruby Data class and comparable module of Ruby.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -149,93 +140,80 @@ A Simple Use Case: Debugging Take the following example:
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool</h1>
+      <h1 class="post-title">Ruby `Data` Class – A Convenient Way to Create Value Objects</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2025-04-19 </span>
-        
+        <span class="post-time"> 2025-06-02 </span>
+        <div class="post-category">
+            <a href="/categories/ruby/"> ruby </a>
+            </div>
         
       </div>
     </header>
 
     
     <div class="post-content">
-      <p>Ruby’s <code>Object#tap</code> is a small but powerful method that often goes unnoticed. It allows you to &ldquo;tap into&rdquo; a method chain, perform some operation, and return the original object—regardless of what the block inside returns. This makes it particularly useful for debugging, configuration, or inserting side effects without breaking the flow of your code.</p>
-<h2 id="a-simple-use-case-debugging">A Simple Use Case: Debugging</h2>
-<p>Take the following example:</p>
+      <p>Ruby&rsquo;s <code>Data</code> class was introduced in Ruby 3.2, offering a convenient way to define value objects. The concept of value objects was popularized by Martin Fowler and Eric Evans through their books and articles. In the real world, we often represent properties like coordinates on a map <code>(x, y)</code> or the speed of a car—using primitives such as integers or strings. While these work, they lack the semantic clarity and behavior of custom types. This is where value objects shine. They encapsulate meaning and behavior around a set of values.</p>
+<p>Ruby&rsquo;s <code>Data</code> class was created to provide a native way to represent such concepts. Struct does fullfil this requirement, except the part of immutability. Ruby Structs are mutable. Some example of use case for value objects are to represent money, email address, co-ordinates, etc.</p>
+<p>Lets now explore ruby Data, keeping in my the characteristics of a value object as shared by Marin Fowler. A value object
+should have:</p>
+<ul>
+<li>No Identity</li>
+<li>Immutable</li>
+<li>Equality by Value</li>
+<li>Small and Simple</li>
+<li>Reusable</li>
+</ul>
+<p>Let&rsquo;s explore how Ruby&rsquo;s <code>Data</code> class supports these characteristics.</p>
+<h3 id="class-data">class Data</h3>
+<p><code>Data</code> is a core Ruby class, so no external gems are needed.</p>
+<p>Here&rsquo;s a simple example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">}</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">MarsRover</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>This returns <code>[10, 0, 10]</code>. But what if that’s not what you expected? You might want to inspect the result of the first <code>map</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">n</span><span class="o">.</span><span class="n">inspect</span>
-</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">n</span><span class="o">.</span><span class="n">inspect</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Using <code>tap</code>, we can make this more elegant:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">tap</span> <span class="p">{</span> <span class="nb">puts</span> <span class="n">_1</span><span class="o">.</span><span class="n">inspect</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">tap</span> <span class="p">{</span> <span class="nb">puts</span> <span class="n">_1</span><span class="o">.</span><span class="n">inspect</span> <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>Output:</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[1, 0, 1]
-</span></span><span class="line"><span class="cl">[10, 0, 10]
-</span></span><span class="line"><span class="cl">=&gt; nil
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>You achieve the same result, but the code remains tidy and fluent—without breaking the method chain.</p>
-<h2 id="how-tap-works-internally">How <code>tap</code> Works Internally</h2>
-<p>The method is implemented in C in Ruby’s source code:</p>
+</div><p>You can now initialize/use <code>MarsRover</code> like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="n">VALUE</span>
-</span></span><span class="line"><span class="cl"><span class="nf">rb_obj_tap</span><span class="p">(</span><span class="n">VALUE</span> <span class="n">obj</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">rb_yield</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">obj</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">curiosity</span> <span class="o">=</span> <span class="no">MarsRover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Curiosity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># or</span>
+</span></span><span class="line"><span class="cl"><span class="n">curiosity</span> <span class="o">=</span> <span class="no">MarsRover</span><span class="o">[</span><span class="s1">&#39;Curiosity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; #&lt;data MarsRover name=&#34;Curiosity&#34;, x=0, y=0&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Translated to Ruby, it looks like this:</p>
+</div><p>Create another instance:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">rover</span> <span class="o">=</span> <span class="no">MarsRover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Rover 2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; #&lt;data MarsRover name=&#34;Rover 2&#34;, x=0, y=0&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>These objects are immutable</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">curiosity</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;New name&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; NoMethodError: undefined method `name=&#39; for an instance of MarsRover</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>and you can compare them</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -246,51 +224,204 @@ A Simple Use Case: Debugging Take the following example:
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Object</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">tap</span>
-</span></span><span class="line"><span class="cl">    <span class="k">yield</span> <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">curiosity</span> <span class="o">==</span> <span class="n">rover</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rover</span> <span class="o">=</span> <span class="no">MarsRover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Curiosity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">curiosity</span> <span class="o">==</span> <span class="n">rover</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; true</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="a-more-practical-example">A More Practical Example</h3>
+<p>The Mars Rover example is abstract; here&rsquo;s a more practical one using location data:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rover</span>
+</span></span><span class="line"><span class="cl">  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:location</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+</span></span><span class="line"><span class="cl">    <span class="vi">@location</span> <span class="o">=</span> <span class="n">location</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="no">Location</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rover1</span> <span class="o">=</span> <span class="no">Rover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Curiosity&#39;</span><span class="o">.</span><span class="n">freeze</span><span class="p">,</span> <span class="no">Location</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rover2</span> <span class="o">=</span> <span class="no">Rover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Perseverance&#39;</span><span class="o">.</span><span class="n">freeze</span><span class="p">,</span> <span class="no">Location</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rover1</span><span class="o">.</span><span class="n">location</span> <span class="o">==</span> <span class="n">rover2</span><span class="o">.</span><span class="n">location</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; true</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>You don’t need to compare <code>x</code> and <code>y</code> individually—value comparison is built-in.</p>
+<h3 id="updating-location-with-immutability">Updating Location with Immutability</h3>
+<p>You update the rover&rsquo;s position by replacing the <code>Location</code> object. This is exactly like how we would replace the integer
+value x and y. But conceptually we are entering a new location which has x and y co-ordinates.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Location</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rover</span>
+</span></span><span class="line"><span class="cl">  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:location</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+</span></span><span class="line"><span class="cl">    <span class="vi">@location</span> <span class="o">=</span> <span class="n">location</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">move_up</span> <span class="o">=</span> <span class="n">new_location</span><span class="p">(</span><span class="vi">@location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@location</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">move_down</span> <span class="o">=</span> <span class="n">new_location</span><span class="p">(</span><span class="vi">@location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@location</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">move_right</span> <span class="o">=</span> <span class="n">new_location</span><span class="p">(</span><span class="vi">@location</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="vi">@location</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">move_left</span> <span class="o">=</span> <span class="n">new_location</span><span class="p">(</span><span class="vi">@location</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="vi">@location</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kp">private</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">new_location</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="vi">@location</span> <span class="o">=</span> <span class="no">Location</span><span class="o">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rover1</span> <span class="o">=</span> <span class="no">Rover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Curiosity&#39;</span><span class="o">.</span><span class="n">freeze</span><span class="p">,</span> <span class="no">Location</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rover1</span><span class="o">.</span><span class="n">move_up</span>
+</span></span><span class="line"><span class="cl"><span class="n">rover1</span><span class="o">.</span><span class="n">move_right</span>
+</span></span><span class="line"><span class="cl"><span class="n">rover1</span><span class="o">.</span><span class="n">move_up</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">rover1</span><span class="o">.</span><span class="n">location</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; #&lt;data Location x=1, y=2&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="making-data-comparable">Making <code>Data</code> Comparable</h3>
+<p>Ruby <code>Data</code> instances support <code>==</code> and <code>eql?</code> out of the box but not <code>&lt;</code>, <code>&gt;</code>, or <code>between?</code>. To enable this, include the <code>Comparable</code> module and define <code>&lt;=&gt;</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Location</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="kp">include</span> <span class="no">Comparable</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">&lt;=&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">]</span> <span class="o">&lt;=&gt;</span> <span class="o">[</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="o">]</span>
 </span></span><span class="line"><span class="cl">  <span class="k">end</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>This shows how <code>tap</code> yields the object to the block but always returns the object itself. It doesn’t modify the object unless you explicitly do so inside the block.</p>
-<hr>
-<h2 id="practical-use-cases">Practical Use Cases</h2>
-<h3 id="1-debugging-as-shown-above">1. Debugging (as shown above)</h3>
-<h3 id="2-inline-configuration-of-activerecord-models">2. Inline Configuration of ActiveRecord Models</h3>
-<p><strong>Without <code>tap</code>:</strong></p>
+</div><p>Now you can do:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">email</span><span class="p">:</span> <span class="s2">&#34;hs@example.com&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Harisankar&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="n">user</span><span class="o">.</span><span class="n">admin</span> <span class="o">=</span> <span class="kp">true</span> <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">ends_with?</span><span class="p">(</span><span class="s2">&#34;@example.com&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">user</span><span class="o">.</span><span class="n">save</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">=</span> <span class="no">Location</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">=</span> <span class="no">Location</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p1</span><span class="o">.</span><span class="n">between?</span><span class="p">(</span><span class="no">Location</span><span class="o">[-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span> <span class="no">Location</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; true</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>With <code>tap</code>:</strong></p>
+</div><p>This works with regular classes too:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">email</span><span class="p">:</span> <span class="s2">&#34;hs@example.com&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">u</span><span class="o">|</span>
-</span></span><span class="line"><span class="cl">  <span class="n">u</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;Harisankar&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="n">u</span><span class="o">.</span><span class="n">admin</span> <span class="o">=</span> <span class="kp">true</span> <span class="k">if</span> <span class="n">u</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">ends_with?</span><span class="p">(</span><span class="s2">&#34;@example.com&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span><span class="o">.</span><span class="n">save</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Point</span>
+</span></span><span class="line"><span class="cl">  <span class="kp">include</span> <span class="no">Comparable</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kp">attr_accessor</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="vi">@x</span> <span class="o">=</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">    <span class="vi">@y</span> <span class="o">=</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">&lt;=&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">]</span> <span class="o">&lt;=&gt;</span> <span class="o">[</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="3-building-complex-hashes-or-payloads">3. Building Complex Hashes or Payloads</h3>
-<p><strong>Before:</strong></p>
+</div><h3 id="adding-validations">Adding Validations</h3>
+<p>Ruby’s <code>Data</code> does not support validation out of the box. However, you can override <code>initialize</code> with keyword arguments to add it:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -304,79 +435,70 @@ A Simple Use Case: Debugging Take the following example:
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">build_payload</span>
-</span></span><span class="line"><span class="cl">  <span class="vi">@build_payload</span> <span class="o">||=</span> <span class="k">begin</span>
-</span></span><span class="line"><span class="cl">    <span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">    <span class="n">payload</span><span class="o">[</span><span class="ss">:user_id</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">id</span>
-</span></span><span class="line"><span class="cl">    <span class="n">payload</span><span class="o">[</span><span class="ss">:timestamp</span><span class="o">]</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span>
-</span></span><span class="line"><span class="cl">    <span class="n">payload</span><span class="o">[</span><span class="ss">:signature</span><span class="o">]</span> <span class="o">=</span> <span class="n">generate_signature</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">payload</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Location</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">x</span><span class="p">:,</span> <span class="ss">y</span><span class="p">:)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">&#34;x and y must be numeric&#34;</span> <span class="k">unless</span> <span class="n">x</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">Numeric</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">y</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">Numeric</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">super</span>
 </span></span><span class="line"><span class="cl">  <span class="k">end</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="no">Location</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; Raises ArgumentError</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>With <code>tap</code>:</strong></p>
+</div><h3 id="bonus-using-dry-struct">Bonus: Using <code>dry-struct</code></h3>
+<p>For more complete value object features, consider using <a href="https://dry-rb.org/gems/dry-struct/main/"><code>dry-struct</code></a>. It adds type coercion and validation.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">build_payload</span>
-</span></span><span class="line"><span class="cl">  <span class="vi">@build_payload</span> <span class="o">||=</span> <span class="p">{}</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">payload</span><span class="o">|</span>
-</span></span><span class="line"><span class="cl">    <span class="n">payload</span><span class="o">[</span><span class="ss">:user_id</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">id</span>
-</span></span><span class="line"><span class="cl">    <span class="n">payload</span><span class="o">[</span><span class="ss">:timestamp</span><span class="o">]</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span>
-</span></span><span class="line"><span class="cl">    <span class="n">payload</span><span class="o">[</span><span class="ss">:signature</span><span class="o">]</span> <span class="o">=</span> <span class="n">generate_signature</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="nb">require</span> <span class="s1">&#39;dry-struct&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="nn">Types</span>
+</span></span><span class="line"><span class="cl">  <span class="kp">include</span> <span class="no">Dry</span><span class="o">.</span><span class="n">Types</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="4-cleaner-dsls-and-initialization-chains">4. Cleaner DSLs and Initialization Chains</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">MyApp</span><span class="o">::</span><span class="no">Setup</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-</span></span><span class="line"><span class="cl">  <span class="n">config</span><span class="o">.</span><span class="n">enable_caching</span> <span class="o">=</span> <span class="kp">true</span>
-</span></span><span class="line"><span class="cl">  <span class="n">config</span><span class="o">.</span><span class="n">retry_limit</span> <span class="o">=</span> <span class="mi">3</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span><span class="o">.</span><span class="n">run!</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="5-side-effects-like-tracking-access">5. Side Effects like Tracking Access</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fetch_user</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="no">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
-</span></span><span class="line"><span class="cl">    <span class="n">user</span><span class="o">.</span><span class="n">touch</span><span class="p">(</span><span class="ss">:last_accessed_at</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Location</span> <span class="o">&lt;</span> <span class="no">Dry</span><span class="o">::</span><span class="no">Struct</span>
+</span></span><span class="line"><span class="cl">  <span class="n">attribute</span> <span class="ss">:x</span><span class="p">,</span> <span class="no">Types</span><span class="o">::</span><span class="no">Coercible</span><span class="o">::</span><span class="nb">Integer</span>
+</span></span><span class="line"><span class="cl">  <span class="n">attribute</span> <span class="ss">:y</span><span class="p">,</span> <span class="no">Types</span><span class="o">::</span><span class="no">Coercible</span><span class="o">::</span><span class="nb">Integer</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">point</span> <span class="o">=</span> <span class="no">Location</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">y</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><hr>
-<h2 id="conclusion">Conclusion</h2>
-<p>Ruby’s <code>tap</code> may seem like a tiny utility, but it’s a subtle powerhouse. Whether you&rsquo;re debugging, configuring objects inline, or composing fluent DSLs, <code>tap</code> keeps your code clean and expressive. It doesn&rsquo;t change the object unless you explicitly do so, and yet it gives you the flexibility to inspect, mutate, or hook into your logic mid-flow—without breaking your method chains.</p>
-<p>Use it wisely, and it can make your Ruby code more readable, elegant, and fun to write.</p>
+</div><h3 id="conclusion">Conclusion</h3>
+<p>Ruby’s <code>Data</code> class makes it easy to define small, immutable, and comparable value objects with minimal effort. While it doesn’t support validations out of the box, it serves as a powerful and expressive tool for modeling semantics in your domain. When more control or strict typing is required, tools like <code>dry-struct</code> fill in the gaps. Whether you’re modeling locations, money, or any other composite data, value objects bring clarity and correctness to your code.</p>
+<h3 id="further-reading">Further Reading</h3>
+<ul>
+<li><a href="https://docs.ruby-lang.org/en/3.4/Data.html">Ruby 3.4 <code>Data</code> Documentation</a></li>
+<li><a href="https://docs.ruby-lang.org/en/3.4/Comparable.html">Ruby <code>Comparable</code> Documentation</a></li>
+<li><a href="https://martinfowler.com/bliki/ValueObject.html">Martin Fowler – Value Object</a></li>
+<li><a href="https://dry-rb.org/gems/dry-struct/main/">dry-struct Documentation</a></li>
+</ul>
     </div>
 
     
 <footer class="post-footer">
-      <div class="author-post-intro">
+      <div class="post-tags">
+          <a href="/tags/ruby/">ruby</a>
+          <a href="/tags/core/">core</a>
+          <a href="/tags/data/">data</a>
+          <a href="/tags/comparable/">comparable</a>
+          <a href="/tags/value-objects/">value objects</a>
+          <a href="/tags/immutable/">immutable</a>
+          </div><div class="author-post-intro">
   <p>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hi, I’m Harisankar P S! I’m a Senior Software Architect, and this blog is where I share my thoughts on programming,
     devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
@@ -1041,13 +1163,9 @@ A Simple Use Case: Debugging Take the following example:
 </style>
 
       <nav class="post-nav">
-        <a class="prev" href="/post/intro-to-ruby-data-and-comparable/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Ruby `Data` Class – A Convenient Way to Create Value Objects</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/storing-postgresql-data-in-a-different-partition-for-performance/">
-            <span class="next-text nav-default">Storing PostgreSQL Data in a Different Partition for Performance</span>
+        
+        <a class="next" href="/post/ruby-tap-method/">
+            <span class="next-text nav-default">Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

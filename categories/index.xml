@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Wed, 15 Jan 2025 18:20:19 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 02 Jun 2025 11:50:45 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby</title>
+      <link>https://hsps.in/categories/ruby/</link>
+      <pubDate>Mon, 02 Jun 2025 11:50:45 +0530</pubDate>
+      <guid>https://hsps.in/categories/ruby/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Postgresql</title>
       <link>https://hsps.in/categories/postgresql/</link>
@@ -133,13 +140,6 @@
       <link>https://hsps.in/categories/sidekiq/</link>
       <pubDate>Sun, 30 Jul 2023 00:10:21 -0700</pubDate>
       <guid>https://hsps.in/categories/sidekiq/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ruby</title>
-      <link>https://hsps.in/categories/ruby/</link>
-      <pubDate>Fri, 19 May 2023 21:12:50 -0700</pubDate>
-      <guid>https://hsps.in/categories/ruby/</guid>
       <description></description>
     </item>
     <item>
