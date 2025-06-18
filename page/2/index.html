@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-06-02T11:50:45+05:30">
-  <meta itemprop="dateModified" content="2025-06-02T11:50:45+05:30">
+  <meta itemprop="datePublished" content="2025-06-18T23:09:32+05:30">
+  <meta itemprop="dateModified" content="2025-06-18T23:09:32+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -129,6 +129,29 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/setup-master-slave-database-on-postgresql-17/">Setup Read Replica (master-slave) Database on Postgresql 17</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2024-10-24 </span>
+      <div class="post-category">
+          <a href="/categories/postgresql/"> postgresql </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>PostgreSQL is a mature, open-source relational database that has been widely adopted by many companies over the years. It has been my go-to database for most of my software career, helping me solve various performance challenges in my projects. Features like JSON generation, materialized views, and others have enabled me to scale APIs to handle millions of requests per second.</p>
+<p>One effective strategy to improve the performance of web applications is to create a read-only replica of the primary database. This allows you to direct read-only queries (e.g., <code>SELECT</code> queries) to the replica, while write operations continue to target the primary database. Note that PostgreSQL doesn’t support multiple primary (or master) databases natively, but it does support multiple read replicas.</p>
+<p>Although you can achieve distributed primary databases via schema or table sharding, that topic is beyond the scope of this article.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/setup-master-slave-database-on-postgresql-17/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/run-rails-db-migrate-on-ecs-task-aws/">Running Rails Migrations in AWS ECS Using AWS CLI</a></h1>
@@ -224,29 +247,6 @@
     </div>
     <div class="read-more">
       <a href="/post/test-scanner-in-sane/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/">Using Docker to export &amp; import data from Amazon RDS</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2024-09-23 </span>
-      <div class="post-category">
-          <a href="/categories/docker/"> docker </a>
-          <a href="/categories/postgres/"> postgres </a>
-          <a href="/categories/aws/"> aws </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Docker is an efficient way to use command-line tools without needing to install them or their required libraries. Recently, I had a use case where I needed to take an SQL dump of a schema from a PostgreSQL database. The problem was that the PostgreSQL DB was version 16.3, while my local DB was only version 15. Using my local <code>pg_dump</code> to access the remote database resulted in a version incompatibility error. To fix this, I would either need to upgrade <code>pg_dump</code> or have both versions installed simultaneously on my machine. I didn&rsquo;t want to do either. This is where Docker came to the rescue.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

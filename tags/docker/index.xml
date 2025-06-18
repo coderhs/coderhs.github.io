@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Mon, 23 Sep 2024 04:38:52 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jun 2025 23:09:32 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Use Tailscale to Host a Public App From My Laptop</title>
+      <link>https://hsps.in/post/how-i-host-public-apps-using-tailscale/</link>
+      <pubDate>Wed, 18 Jun 2025 23:09:32 +0530</pubDate>
+      <guid>https://hsps.in/post/how-i-host-public-apps-using-tailscale/</guid>
+      <description>&lt;p&gt;I live in India, and getting a static IP at home isn’t straightforward. You usually have to go through customer care, sometimes upgrade to a more expensive plan, and even then it’s not always guaranteed. I wanted a simple setup to make one of my apps publicly accessible without paying a lot or dealing with all that.&lt;/p&gt;&#xA;&lt;p&gt;So here’s what I did. I used &lt;strong&gt;Tailscale&lt;/strong&gt;, &lt;strong&gt;AWS Lightsail&lt;/strong&gt;, &lt;strong&gt;Docker&lt;/strong&gt;, and &lt;strong&gt;Nginx Proxy Manager&lt;/strong&gt; to expose my laptop to the internet, safely and securely. And right now, I&amp;rsquo;m running &lt;a href=&#34;https://easyclientlog.com&#34;&gt;https://easyclientlog.com&lt;/a&gt; - next.js application and &lt;a href=&#34;https://api.easyclientlog.com&#34;&gt;https://api.easyclientlog.com&lt;/a&gt; - ruby on rails application, using this exact setup.&lt;/p&gt;&#xA;&lt;h2 id=&#34;getting-a-static-ip&#34;&gt;Getting a Static IP&lt;/h2&gt;&#xA;&lt;p&gt;I signed up on AWS and went to Lightsail. Picked Mumbai as the region and selected the cheapest Ubuntu server. AWS gives you a static IP for free (in lightsail) as long as it’s attached to a running instance, and the server itself is free for the first three months.&lt;/p&gt;&#xA;&lt;p&gt;This server acts like a relay. It’s the public-facing machine. I don’t run the actual app on it, it just receives the request and forwards it to my laptop at home.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Using Docker to export &amp; import data from Amazon RDS</title>
       <link>https://hsps.in/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/</link>

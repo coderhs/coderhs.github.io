@@ -7,8 +7,43 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Mon, 02 Jun 2025 11:50:45 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jun 2025 23:09:32 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Devops</title>
+      <link>https://hsps.in/tags/devops/</link>
+      <pubDate>Wed, 18 Jun 2025 23:09:32 +0530</pubDate>
+      <guid>https://hsps.in/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://hsps.in/tags/docker/</link>
+      <pubDate>Wed, 18 Jun 2025 23:09:32 +0530</pubDate>
+      <guid>https://hsps.in/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Homelab</title>
+      <link>https://hsps.in/tags/homelab/</link>
+      <pubDate>Wed, 18 Jun 2025 23:09:32 +0530</pubDate>
+      <guid>https://hsps.in/tags/homelab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hosting</title>
+      <link>https://hsps.in/tags/hosting/</link>
+      <pubDate>Wed, 18 Jun 2025 23:09:32 +0530</pubDate>
+      <guid>https://hsps.in/tags/hosting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tailscale</title>
+      <link>https://hsps.in/tags/tailscale/</link>
+      <pubDate>Wed, 18 Jun 2025 23:09:32 +0530</pubDate>
+      <guid>https://hsps.in/tags/tailscale/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Comparable</title>
       <link>https://hsps.in/tags/comparable/</link>
@@ -105,13 +140,6 @@
       <link>https://hsps.in/tags/single-host/</link>
       <pubDate>Wed, 08 Jan 2025 18:55:49 +0530</pubDate>
       <guid>https://hsps.in/tags/single-host/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tailscale</title>
-      <link>https://hsps.in/tags/tailscale/</link>
-      <pubDate>Wed, 08 Jan 2025 18:55:49 +0530</pubDate>
-      <guid>https://hsps.in/tags/tailscale/</guid>
       <description></description>
     </item>
     <item>
@@ -217,13 +245,6 @@
       <link>https://hsps.in/tags/scanner/</link>
       <pubDate>Fri, 04 Oct 2024 02:11:12 -0700</pubDate>
       <guid>https://hsps.in/tags/scanner/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>https://hsps.in/tags/docker/</link>
-      <pubDate>Mon, 23 Sep 2024 04:38:52 -0700</pubDate>
-      <guid>https://hsps.in/tags/docker/</guid>
       <description></description>
     </item>
     <item>
@@ -423,13 +444,6 @@
       <description></description>
     </item>
     <item>
-      <title>Devops</title>
-      <link>https://hsps.in/tags/devops/</link>
-      <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
-      <guid>https://hsps.in/tags/devops/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>System</title>
       <link>https://hsps.in/tags/system/</link>
       <pubDate>Tue, 01 Aug 2023 17:01:37 -0700</pubDate>
@@ -511,13 +525,6 @@
       <link>https://hsps.in/tags/http/</link>
       <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
       <guid>https://hsps.in/tags/http/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Homelab</title>
-      <link>https://hsps.in/tags/homelab/</link>
-      <pubDate>Mon, 05 Sep 2022 18:29:12 -0700</pubDate>
-      <guid>https://hsps.in/tags/homelab/</guid>
       <description></description>
     </item>
     <item>
