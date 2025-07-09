@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thread on Harisankar P S | Ruby on Rails Developer</title>
+    <link>https://hsps.in/tags/thread/</link>
+    <description>Recent content in Thread on Harisankar P S | Ruby on Rails Developer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Harisankar P S</copyright>
+    <lastBuildDate>Tue, 08 Jul 2025 18:31:49 +0530</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/thread/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)</title>
+      <link>https://hsps.in/post/rails-current-attributes/</link>
+      <pubDate>Tue, 08 Jul 2025 18:31:49 +0530</pubDate>
+      <guid>https://hsps.in/post/rails-current-attributes/</guid>
+      <description>&lt;p&gt;Managing context like the current user, store, client, or request ID across controllers, models, jobs, and services in a Rails app has always been a little messy. Before Rails 5.2, you might’ve reached for &lt;code&gt;Thread.current&lt;/code&gt;, &lt;code&gt;class_attribute&lt;/code&gt;, or even &lt;code&gt;@@class_variables&lt;/code&gt; to store this kind of state. But these are not thread-safe and can cause hard-to-debug issues in concurrent environments.&lt;/p&gt;&#xA;&lt;p&gt;Rails 5.2 introduced a clean solution: &lt;code&gt;ActiveSupport::CurrentAttributes&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This article covers what it is, why it exists, how it works internally, how to use it safely across web and background jobs, and how to test it properly.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-a-quick-history&#34;&gt;📜 A Quick History&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;ActiveSupport::CurrentAttributes&lt;/code&gt; was introduced by DHH in Rails 5.2 to simplify access to per-request or per-job context in a thread-safe way. It replaced older, hackier methods like:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;no&#34;&gt;Thread&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;current&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:current_user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;no&#34;&gt;ApplicationRecord&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;class_attribute&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:current_client&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;These approaches were shared across threads — fine in development, dangerous in production.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;CurrentAttributes&lt;/code&gt; changed that by giving you a dedicated, Rails-friendly API for storing context that’s isolated per request/job.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

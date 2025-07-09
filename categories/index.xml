@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Wed, 18 Jun 2025 23:09:32 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 08 Jul 2025 18:31:49 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rails</title>
+      <link>https://hsps.in/categories/rails/</link>
+      <pubDate>Tue, 08 Jul 2025 18:31:49 +0530</pubDate>
+      <guid>https://hsps.in/categories/rails/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Homelab</title>
       <link>https://hsps.in/categories/homelab/</link>
@@ -49,13 +56,6 @@
       <link>https://hsps.in/categories/aws/</link>
       <pubDate>Thu, 10 Oct 2024 00:05:58 -0700</pubDate>
       <guid>https://hsps.in/categories/aws/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Rails</title>
-      <link>https://hsps.in/categories/rails/</link>
-      <pubDate>Thu, 10 Oct 2024 00:05:58 -0700</pubDate>
-      <guid>https://hsps.in/categories/rails/</guid>
       <description></description>
     </item>
     <item>

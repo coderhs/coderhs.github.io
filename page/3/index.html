@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-06-18T23:09:32+05:30">
-  <meta itemprop="dateModified" content="2025-06-18T23:09:32+05:30">
+  <meta itemprop="datePublished" content="2025-07-08T18:31:49+05:30">
+  <meta itemprop="dateModified" content="2025-07-08T18:31:49+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -133,6 +133,28 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/test-scanner-in-sane/">Test Scanner (scanner emulator) in SANE - Linux</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2024-10-04 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>2024 <a href="https://hacktoberfest.com/">Hacktoberfest</a> has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the <a href="https://github.com/CoolCat467/Scanner-Server">Scanner Server</a>. It offers a web interface for using scanners, which seemed pretty interesting.</p>
+<p>I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/test-scanner-in-sane/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/">Using Docker to export &amp; import data from Amazon RDS</a></h1>
@@ -222,38 +244,6 @@ to the internet or the complexity of the network routing required to reach the s
     </div>
     <div class="read-more">
       <a href="/post/argument-for-writing-test-and-tdd/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/">Using Ansible to Install Docker and Docker Compose on New Lightsail Instance</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-08-06 </span>
-      <div class="post-category">
-          <a href="/categories/ansible/"> ansible </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Recently I have been working with deploying self hosted application in AWS lightsail for the company that I work for. My strategy for deploying application has been as follows:</p>
-<ul>
-<li>Launch a new ubuntu instance (since my team and I use it a dev machine we are familiar with it).</li>
-<li>Install Docker</li>
-<li>Install Docker Compose</li>
-<li>Run the self hosted app and its requires services using docker.</li>
-<li>Run nginx reverse proxy to serve the app over https</li>
-</ul>
-<p>I am pretty much managing the whole app through files. Its just the initial setup that I am doing manually. I thought of creating a base linux image for the new servers, which would have docker and docker-compose pre installed. But lightsail didn&rsquo;t seem to have the option to use custom images, like EC2 servers.</p>
-<p>Thus I decided to use ansible.</p>
-<p>Ansible is an open source automation tool that is used for configuration management, deployment and task automation. It automates the steps that I do manually. It can run this command on multiple servers without having us do anything manually. We can also automate weekly maintenance check to login to all the servers, ensures all the security updates are installed, cache files are cleared, etc.</p>
-<p>The thing I found most interesting about ansible compared to chef (another automation tool) is that it is agentless. That is it doesn&rsquo;t expect anything to be running on the new server other open ssh. Chef on the other hand requires an agent to be running on the server. There are its own advantages of having an agent running on the server, it can do updates much faster and keep everything in sync. But since that is not a requirement for me at the moment, I decide to use ansible. I will write another article on how to do this using chef.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/ansible-to-install-docker-and-docker-compose-on-new-lightsail-instance/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

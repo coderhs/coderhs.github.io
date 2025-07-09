@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-06-18T23:09:32+05:30">
-  <meta itemprop="dateModified" content="2025-06-18T23:09:32+05:30">
+  <meta itemprop="datePublished" content="2025-07-08T18:31:49+05:30">
+  <meta itemprop="dateModified" content="2025-07-08T18:31:49+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -133,6 +133,44 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/rails-current-attributes/">A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2025-07-08 </span>
+      <div class="post-category">
+          <a href="/categories/rails/"> rails </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Managing context like the current user, store, client, or request ID across controllers, models, jobs, and services in a Rails app has always been a little messy. Before Rails 5.2, you might’ve reached for <code>Thread.current</code>, <code>class_attribute</code>, or even <code>@@class_variables</code> to store this kind of state. But these are not thread-safe and can cause hard-to-debug issues in concurrent environments.</p>
+<p>Rails 5.2 introduced a clean solution: <code>ActiveSupport::CurrentAttributes</code>.</p>
+<p>This article covers what it is, why it exists, how it works internally, how to use it safely across web and background jobs, and how to test it properly.</p>
+<hr>
+<h2 id="-a-quick-history">📜 A Quick History</h2>
+<p><code>ActiveSupport::CurrentAttributes</code> was introduced by DHH in Rails 5.2 to simplify access to per-request or per-job context in a thread-safe way. It replaced older, hackier methods like:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Thread</span><span class="o">.</span><span class="n">current</span><span class="o">[</span><span class="ss">:current_user</span><span class="o">]</span> <span class="o">=</span> <span class="n">user</span>
+</span></span><span class="line"><span class="cl"><span class="no">ApplicationRecord</span><span class="o">.</span><span class="n">class_attribute</span> <span class="ss">:current_client</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>These approaches were shared across threads — fine in development, dangerous in production.</p>
+<p><code>CurrentAttributes</code> changed that by giving you a dedicated, Rails-friendly API for storing context that’s isolated per request/job.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/rails-current-attributes/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/how-i-host-public-apps-using-tailscale/">How I Use Tailscale to Host a Public App From My Laptop</a></h1>
@@ -289,30 +327,6 @@ should have:</p>
     </div>
     <div class="read-more">
       <a href="/post/storing-postgresql-data-in-a-different-partition-for-performance/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/tailscale-for-single-user-single-host/">Tailscale for Single User Single Host</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2025-01-08 </span>
-      <div class="post-category">
-          <a href="/categories/tailscale/"> tailscale </a>
-          <a href="/categories/productivity/"> productivity </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>I often see articles discussing Tailscale in multi-device setups, but I wanted to share my experience of using Tailscale primarily with a single machine. To clarify, it&rsquo;s not technically a single device, but a combination of my work computer, phone, and a 10-inch Android tablet.</p>
-<h2 id="the-problem-inefficient-remote-access">The Problem: Inefficient Remote Access</h2>
-<p>I work from home, and my computer serves as both my personal and work machine. There have been many times when I’ve needed to assist colleagues or push changes while away from my desk. In emergencies, I used to rely on AnyDesk to remote into my computer via my phone or tablet. While AnyDesk and similar tools like TeamViewer provide visual control over the desktop, they often suffer from lag, disconnections, and poor responsiveness on weaker connections, making simple tasks like opening a terminal or editing a file feel like a chore. The lag becomes especially pronounced when navigating large projects or deploying code, turning a few-minute task into a frustrating, time-consuming ordeal.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/tailscale-for-single-user-single-host/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
