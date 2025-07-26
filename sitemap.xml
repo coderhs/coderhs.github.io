@@ -2,6 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/tags/active-storage/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/cache/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/pdf/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/performance/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/rails/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/wicked_pdf/</loc>
+    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/post/rails-current-attributes/</loc>
     <lastmod>2025-07-08T18:31:49+05:30</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,42 +86,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/categories/</loc>
-    <lastmod>2025-07-08T18:31:49+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2025-07-08T18:31:49+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2025-07-08T18:31:49+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/rails/</loc>
-    <lastmod>2025-07-08T18:31:49+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/rails/</loc>
-    <lastmod>2025-07-08T18:31:49+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2025-07-08T18:31:49+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -192,13 +234,6 @@
   
   <url>
     <loc>https://hsps.in/tags/os-level/</loc>
-    <lastmod>2025-01-15T18:20:19+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/performance/</loc>
     <lastmod>2025-01-15T18:20:19+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1803,13 +1838,6 @@
   <url>
     <loc>https://hsps.in/post/install-ruby-via-source-ubuntu/</loc>
     <lastmod>2012-11-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/cache/</loc>
-    <lastmod>2022-08-20T22:29:09-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

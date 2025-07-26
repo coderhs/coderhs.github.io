@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cache on Harisankar P S | Ruby on Rails Developer</title>
-    <link>https://hsps.in/tags/cache/</link>
-    <description>Recent content in Cache on Harisankar P S | Ruby on Rails Developer</description>
+    <title>Active Storage on Harisankar P S | Ruby on Rails Developer</title>
+    <link>https://hsps.in/tags/active-storage/</link>
+    <description>Recent content in Active Storage on Harisankar P S | Ruby on Rails Developer</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
     <lastBuildDate>Sat, 26 Jul 2025 21:47:37 +0530</lastBuildDate>
-    <atom:link href="https://hsps.in/tags/cache/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hsps.in/tags/active-storage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Caching Rendered PDFs in Rails with Active Storage</title>
       <link>https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/</link>
       <pubDate>Sat, 26 Jul 2025 21:47:37 +0530</pubDate>
       <guid>https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/</guid>
       <description>&lt;p&gt;As I was working on &lt;a href=&#34;https://easyclientlog.com&#34;&gt;easyclientlog.com&lt;/a&gt;, building its invoice system that allows freelancers/consultants to generates PDFs. Working with PDF generating is that, its takes time and CPU cycles. But most of the time&#xA;the pdf only needs to be generated once, and the content seldom changes. So rendering the same thing over and over just didn’t feel right. So I used a simple trick that I’ve followed in many of my prior Rails apps: upload the PDF on first render, store it using Active Storage, and reuse that file on the next access.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-idea-cache-on-first-render&#34;&gt;The Idea: Cache on First Render&lt;/h2&gt;&#xA;&lt;p&gt;When the PDF is generated the first time, we attach it to the record using Active Storage. This could be an invoice, report, or any other object. The next time we need to show or download the PDF, we skip the rendering step and simply serve the uploaded file.&lt;/p&gt;&#xA;&lt;p&gt;This avoids unnecessary rendering and speeds up response times, especially for large documents or when generating in bulk.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Store RPM Packages in Cache</title>
-      <link>https://hsps.in/post/store-rpm-packages-in-cache/</link>
-      <pubDate>Sun, 29 Jan 2012 00:00:00 -0530</pubDate>
-      <guid>https://hsps.in/post/store-rpm-packages-in-cache/</guid>
-      <description>&lt;p&gt;Every time you download a RPM package for installation / updation via yum in Centos / Redhat system it gets deleted automatically after the procedure. Its a rather handy process by which your systems does not waste space storing the installation files.&lt;/p&gt;&#xA;&lt;p&gt;Want to keep those packages in your system, and maybe create a local repository?&lt;/p&gt;&#xA;&lt;p&gt;Well there are several ways. Simplest of them would be to edit the yum configuration file.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

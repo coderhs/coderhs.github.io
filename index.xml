@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Tue, 08 Jul 2025 18:31:49 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jul 2025 21:47:37 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Caching Rendered PDFs in Rails with Active Storage</title>
+      <link>https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/</link>
+      <pubDate>Sat, 26 Jul 2025 21:47:37 +0530</pubDate>
+      <guid>https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/</guid>
+      <description>&lt;p&gt;As I was working on &lt;a href=&#34;https://easyclientlog.com&#34;&gt;easyclientlog.com&lt;/a&gt;, building its invoice system that allows freelancers/consultants to generates PDFs. Working with PDF generating is that, its takes time and CPU cycles. But most of the time&#xA;the pdf only needs to be generated once, and the content seldom changes. So rendering the same thing over and over just didn’t feel right. So I used a simple trick that I’ve followed in many of my prior Rails apps: upload the PDF on first render, store it using Active Storage, and reuse that file on the next access.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-idea-cache-on-first-render&#34;&gt;The Idea: Cache on First Render&lt;/h2&gt;&#xA;&lt;p&gt;When the PDF is generated the first time, we attach it to the record using Active Storage. This could be an invoice, report, or any other object. The next time we need to show or download the PDF, we skip the rendering step and simply serve the uploaded file.&lt;/p&gt;&#xA;&lt;p&gt;This avoids unnecessary rendering and speeds up response times, especially for large documents or when generating in bulk.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)</title>
       <link>https://hsps.in/post/rails-current-attributes/</link>

@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-07-08T18:31:49+05:30">
-  <meta itemprop="dateModified" content="2025-07-08T18:31:49+05:30">
+  <meta itemprop="datePublished" content="2025-07-26T21:47:37+05:30">
+  <meta itemprop="dateModified" content="2025-07-26T21:47:37+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -133,6 +133,36 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storing-postgresql-data-in-a-different-partition-for-performance/">Storing PostgreSQL Data in a Different Partition for Performance</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2025-01-15 </span>
+      <div class="post-category">
+          <a href="/categories/postgresql/"> postgresql </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>What I am suggesting is a method of optimization not just for PostgreSQL but for other similar databases as well. This is a more primitive, hardware-level performance optimization where an exclusive partition or hard disk is dedicated just for the actual data. By doing so, all the read and write operations related to your data happen on that disk, while OS-level and software-level read/write operations happen on another disk. This approach also makes it easier to handle failure, monitor disk health, and isolate workloads effectively.</p>
+<h2 id="why-store-postgresql-data-in-a-separate-partition">Why Store PostgreSQL Data in a Separate Partition?</h2>
+<p>Separating the data directory from the root filesystem has several advantages:</p>
+<ol>
+<li><strong>Improved Disk I/O Performance:</strong> Storing data on a dedicated partition ensures that database read/write operations are isolated from the OS and application processes, avoiding competition for disk I/O.</li>
+<li><strong>Efficient Disk Usage Management:</strong> By placing the data in a separate partition, you can allocate specific disk space for the database and prevent it from filling up the root partition.</li>
+<li><strong>Better Backup and Restore Control:</strong> Storing data in a dedicated location simplifies backup processes and makes restoring data more efficient.</li>
+<li><strong>Optimized Disk Types:</strong> Different types of storage media (e.g., SSD for faster reads/writes or HDD for archival data) can be used based on database needs.</li>
+<li><strong>Isolation for Security and Resilience:</strong> A dedicated partition reduces the risk of system failure in case of database corruption or storage issues.</li>
+</ol>
+    </div>
+    <div class="read-more">
+      <a href="/post/storing-postgresql-data-in-a-different-partition-for-performance/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/tailscale-for-single-user-single-host/">Tailscale for Single User Single Host</a></h1>
@@ -232,27 +262,6 @@
     </div>
     <div class="read-more">
       <a href="/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/change-action-mailer-settings-from-rails-console/">Change Action Mailer Settings From Rails Console</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2024-10-07 </span>
-      <div class="post-category">
-          <a href="/categories/rails/"> rails </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>In Rails applications, ActionMailer is a powerful module used to send emails. It’s essential to configure your ActionMailer settings correctly to ensure that your application can send emails reliably through your chosen SMTP server. Typically, these settings are configured in your environment files (e.g., config/environments/production.rb). However, there may be instances where you need to override these settings temporarily through the Rails console—for example, when testing a custom configuration or troubleshooting email delivery issues.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/change-action-mailer-settings-from-rails-console/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes) - Harisankar P S | Ruby on Rails Developer</title>
+  <title>Caching Rendered PDFs in Rails with Active Storage - Harisankar P S | Ruby on Rails Developer</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Deep dive into Rails.current_attributes (ActiveSupport::CurrentAttributes)" /><meta name="keywords" content="rail, current attributes, thread safe, scope" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails" /><meta name="keywords" content="pdf, wicked_pdf, cache, active storage, performance" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.145.0 with theme even" />
 
 
-<link rel="canonical" href="https://hsps.in/post/rails-current-attributes/" />
+<link rel="canonical" href="https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,27 +39,30 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:url" content="https://hsps.in/post/rails-current-attributes/">
+<meta property="og:url" content="https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/">
   <meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer">
-  <meta property="og:title" content="A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)">
-  <meta property="og:description" content="Deep dive into Rails.current_attributes (ActiveSupport::CurrentAttributes)">
+  <meta property="og:title" content="Caching Rendered PDFs in Rails with Active Storage">
+  <meta property="og:description" content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2025-07-08T18:31:49+05:30">
-    <meta property="article:modified_time" content="2025-07-08T18:31:49+05:30">
-    <meta property="article:tag" content="Rails">
-    <meta property="article:tag" content="Thread">
+    <meta property="article:published_time" content="2025-07-26T21:47:37+05:30">
+    <meta property="article:modified_time" content="2025-07-26T21:47:37+05:30">
+    <meta property="article:tag" content="Pdf">
+    <meta property="article:tag" content="Wicked_pdf">
+    <meta property="article:tag" content="Cache">
+    <meta property="article:tag" content="Active Storage">
+    <meta property="article:tag" content="Performance">
 
-  <meta itemprop="name" content="A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)">
-  <meta itemprop="description" content="Deep dive into Rails.current_attributes (ActiveSupport::CurrentAttributes)">
-  <meta itemprop="datePublished" content="2025-07-08T18:31:49+05:30">
-  <meta itemprop="dateModified" content="2025-07-08T18:31:49+05:30">
-  <meta itemprop="wordCount" content="655">
-  <meta itemprop="keywords" content="rail,current attributes,thread safe,scope">
+  <meta itemprop="name" content="Caching Rendered PDFs in Rails with Active Storage">
+  <meta itemprop="description" content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails">
+  <meta itemprop="datePublished" content="2025-07-26T21:47:37+05:30">
+  <meta itemprop="dateModified" content="2025-07-26T21:47:37+05:30">
+  <meta itemprop="wordCount" content="630">
+  <meta itemprop="keywords" content="pdf,wicked_pdf,cache,active storage,performance">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)">
-  <meta name="twitter:description" content="Deep dive into Rails.current_attributes (ActiveSupport::CurrentAttributes)">
+  <meta name="twitter:title" content="Caching Rendered PDFs in Rails with Active Storage">
+  <meta name="twitter:description" content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -140,10 +143,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)</h1>
+      <h1 class="post-title">Caching Rendered PDFs in Rails with Active Storage</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2025-07-08 </span>
+        <span class="post-time"> 2025-07-26 </span>
         <div class="post-category">
             <a href="/categories/rails/"> rails </a>
             </div>
@@ -153,158 +156,26 @@
 
     
     <div class="post-content">
-      <p>Managing context like the current user, store, client, or request ID across controllers, models, jobs, and services in a Rails app has always been a little messy. Before Rails 5.2, you might’ve reached for <code>Thread.current</code>, <code>class_attribute</code>, or even <code>@@class_variables</code> to store this kind of state. But these are not thread-safe and can cause hard-to-debug issues in concurrent environments.</p>
-<p>Rails 5.2 introduced a clean solution: <code>ActiveSupport::CurrentAttributes</code>.</p>
-<p>This article covers what it is, why it exists, how it works internally, how to use it safely across web and background jobs, and how to test it properly.</p>
-<hr>
-<h2 id="-a-quick-history">📜 A Quick History</h2>
-<p><code>ActiveSupport::CurrentAttributes</code> was introduced by DHH in Rails 5.2 to simplify access to per-request or per-job context in a thread-safe way. It replaced older, hackier methods like:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Thread</span><span class="o">.</span><span class="n">current</span><span class="o">[</span><span class="ss">:current_user</span><span class="o">]</span> <span class="o">=</span> <span class="n">user</span>
-</span></span><span class="line"><span class="cl"><span class="no">ApplicationRecord</span><span class="o">.</span><span class="n">class_attribute</span> <span class="ss">:current_client</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>These approaches were shared across threads — fine in development, dangerous in production.</p>
-<p><code>CurrentAttributes</code> changed that by giving you a dedicated, Rails-friendly API for storing context that’s isolated per request/job.</p>
-<hr>
-<h2 id="-what-is-currentattributes">🧩 What Is <code>CurrentAttributes</code>?</h2>
-<p><code>CurrentAttributes</code> is a base class that lets you define request- or job-scoped attributes (like <code>user</code>, <code>client</code>, or <code>store</code>) and access them globally during execution.</p>
+      <p>As I was working on <a href="https://easyclientlog.com">easyclientlog.com</a>, building its invoice system that allows freelancers/consultants to generates PDFs. Working with PDF generating is that, its takes time and CPU cycles. But most of the time
+the pdf only needs to be generated once, and the content seldom changes. So rendering the same thing over and over just didn’t feel right. So I used a simple trick that I’ve followed in many of my prior Rails apps: upload the PDF on first render, store it using Active Storage, and reuse that file on the next access.</p>
+<h2 id="the-idea-cache-on-first-render">The Idea: Cache on First Render</h2>
+<p>When the PDF is generated the first time, we attach it to the record using Active Storage. This could be an invoice, report, or any other object. The next time we need to show or download the PDF, we skip the rendering step and simply serve the uploaded file.</p>
+<p>This avoids unnecessary rendering and speeds up response times, especially for large documents or when generating in bulk.</p>
+<h2 id="how-it-works">How It Works</h2>
+<p>Let’s say we have an <code>Invoice</code> model. We attach the PDF like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="c1"># app/models/current.rb</span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Current</span> <span class="o">&lt;</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">CurrentAttributes</span>
-</span></span><span class="line"><span class="cl">  <span class="n">attribute</span> <span class="ss">:user</span><span class="p">,</span> <span class="ss">:client</span><span class="p">,</span> <span class="ss">:store</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">user</span><span class="o">=</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">super</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Time</span><span class="o">.</span><span class="n">zone</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">time_zone</span> <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:time_zone</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Invoice</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+</span></span><span class="line"><span class="cl">  <span class="n">has_one_attached</span> <span class="ss">:pdf</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Set it early in the request or job:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
-</span></span><span class="line"><span class="cl">  <span class="n">before_action</span> <span class="ss">:set_current_context</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">set_current_context</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">current_user</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="no">Store</span><span class="o">.</span><span class="n">find_by!</span><span class="p">(</span><span class="ss">subdomain</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">subdomain</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s2">&#34;X-Client-ID&#34;</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Now in any service, model, or job:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">AuditLog</span><span class="o">.</span><span class="n">create!</span><span class="p">(</span><span class="ss">user</span><span class="p">:</span> <span class="no">Current</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="ss">store</span><span class="p">:</span> <span class="no">Current</span><span class="o">.</span><span class="n">store</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
-<h2 id="-why-not-use-class_attribute-or-threadcurrent">🚫 Why Not Use <code>class_attribute</code> or <code>Thread.current</code>?</h2>
-<p>Because:</p>
-<ul>
-<li>❌ <code>class_attribute</code> and <code>@@variables</code> are <strong>global across all threads</strong>.</li>
-<li>❌ <code>Thread.current</code> is unstructured and doesn’t reset automatically.</li>
-<li>❌ These approaches are hard to test and can lead to subtle concurrency bugs.</li>
-</ul>
-<hr>
-<h2 id="-how-does-it-work-internally">🛠 How Does It Work Internally?</h2>
-<h3 id="storage">Storage</h3>
-<p>Each attribute is stored using <code>Thread.current</code> or <code>Fiber.current</code> (depending on your Ruby version), isolated per thread or fiber.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">current_attributes</span>
-</span></span><span class="line"><span class="cl">  <span class="n">storage</span><span class="o">[</span><span class="nb">self</span><span class="o">.</span><span class="n">name</span><span class="o">]</span> <span class="o">||=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">storage</span>
-</span></span><span class="line"><span class="cl">  <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">IsolatedExecutionState</span><span class="o">[</span><span class="ss">:current_attributes</span><span class="o">]</span> <span class="o">||=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="resetting">Resetting</h3>
-<p>Rails automatically resets context after each request using <code>ActionDispatch::Executor</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Current</span><span class="o">.</span><span class="n">reset_all</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>You can (and should) call this manually at the end of background jobs.</p>
-<hr>
-<h2 id="-using-it-in-sidekiq">✅ Using It in Sidekiq</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyJob</span>
-</span></span><span class="line"><span class="cl">  <span class="kp">include</span> <span class="no">Sidekiq</span><span class="o">::</span><span class="no">Job</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">perform</span><span class="p">(</span><span class="n">client_id</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="ss">client</span><span class="p">:</span> <span class="no">Client</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">client_id</span><span class="p">))</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">      <span class="no">ImportantService</span><span class="o">.</span><span class="n">call</span>
-</span></span><span class="line"><span class="cl">    <span class="k">end</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This is thread-safe: each Sidekiq job runs in its own thread, and <code>CurrentAttributes</code> isolates state per job.</p>
-<hr>
-<h2 id="-using-it-in-tests">✅ Using It in Tests</h2>
-<h3 id="manual-setup">Manual setup:</h3>
+</div><p>Now in the PDF rendering service, we check if the file already exists. If yes, we use it. If not, we generate the PDF and attach it.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -325,115 +196,175 @@
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">OrdersControllerTest</span> <span class="o">&lt;</span> <span class="no">ActionDispatch</span><span class="o">::</span><span class="no">IntegrationTest</span>
-</span></span><span class="line"><span class="cl">  <span class="n">setup</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@user</span> <span class="o">=</span> <span class="n">users</span><span class="p">(</span><span class="ss">:alice</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@store</span> <span class="o">=</span> <span class="n">stores</span><span class="p">(</span><span class="ss">:default</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">InvoicePdfService</span>
+</span></span><span class="line"><span class="cl">  <span class="kp">include</span> <span class="no">ActionView</span><span class="o">::</span><span class="no">Helpers</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="vi">@user</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="vi">@store</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">invoice</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="vi">@invoice</span> <span class="o">=</span> <span class="n">invoice</span>
 </span></span><span class="line"><span class="cl">  <span class="k">end</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="n">teardown</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">reset_all</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">generate</span>
+</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="s2">&#34;Generating PDF for invoice </span><span class="si">#{</span><span class="vi">@invoice</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="s2">&#34;Invoice line_items: </span><span class="si">#{</span><span class="vi">@invoice</span><span class="o">.</span><span class="n">line_items</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># If PDF already attached, return it</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">attached?</span>
+</span></span><span class="line"><span class="cl">      <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="s2">&#34;Returning cached PDF for invoice </span><span class="si">#{</span><span class="vi">@invoice</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">download</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">html_content</span> <span class="o">=</span> <span class="n">render_invoice_html</span>
+</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="s2">&#34;Generated HTML length: </span><span class="si">#{</span><span class="n">html_content</span><span class="o">.</span><span class="n">length</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">pdf_data</span> <span class="o">=</span> <span class="no">WickedPdf</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">pdf_from_string</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="n">html_content</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="n">pdf_options</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Attach the PDF to the invoice for future use</span>
+</span></span><span class="line"><span class="cl">    <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">io</span><span class="p">:</span> <span class="no">StringIO</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">pdf_data</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">filename</span><span class="p">:</span> <span class="s2">&#34;invoice-</span><span class="si">#{</span><span class="vi">@invoice</span><span class="o">.</span><span class="n">invoice_number</span><span class="si">}</span><span class="s2">.pdf&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">content_type</span><span class="p">:</span> <span class="s1">&#39;application/pdf&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pdf_data</span>
+</span></span><span class="line"><span class="cl">  <span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">e</span>
+</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span> <span class="s2">&#34;PDF generation failed: </span><span class="si">#{</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span> <span class="n">e</span><span class="o">.</span><span class="n">backtrace</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">raise</span> <span class="n">e</span>
 </span></span><span class="line"><span class="cl">  <span class="k">end</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nb">test</span> <span class="s2">&#34;should create order&#34;</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">    <span class="n">post</span> <span class="n">orders_url</span><span class="p">,</span> <span class="ss">params</span><span class="p">:</span> <span class="p">{</span> <span class="ss">order</span><span class="p">:</span> <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">&#34;Test Order&#34;</span> <span class="p">}</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="n">assert_equal</span> <span class="vi">@user</span><span class="p">,</span> <span class="no">Order</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">user</span>
+</span></span><span class="line"><span class="cl">  <span class="kp">private</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">render_invoice_html</span>
+</span></span><span class="line"><span class="cl">    <span class="no">ApplicationController</span><span class="o">.</span><span class="n">render</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">template</span><span class="p">:</span> <span class="s1">&#39;invoices/pdf&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">layout</span><span class="p">:</span> <span class="s1">&#39;layouts/pdf&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">assigns</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="ss">invoice</span><span class="p">:</span> <span class="vi">@invoice</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="ss">currency</span><span class="p">:</span> <span class="vi">@invoice</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">invoice_setting</span><span class="o">&amp;.</span><span class="n">currency</span> <span class="o">||</span> <span class="s1">&#39;$&#39;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">e</span>
+</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span> <span class="s2">&#34;Template rendering failed: </span><span class="si">#{</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">raise</span> <span class="n">e</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">pdf_options</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">page_size</span><span class="p">:</span> <span class="s1">&#39;A4&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">margin_top</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">margin_right</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">margin_bottom</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">margin_left</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">encoding</span><span class="p">:</span> <span class="s1">&#39;UTF-8&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">orientation</span><span class="p">:</span> <span class="s1">&#39;Portrait&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">print_media_type</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">disable_smart_shrinking</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">lowquality</span><span class="p">:</span> <span class="kp">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">zoom</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">dpi</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">enable_local_file_access</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">javascript_delay</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">no_stop_slow_scripts</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">enable_plugins</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="ss">load_error_handling</span><span class="p">:</span> <span class="s1">&#39;ignore&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="k">end</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="shared-helper">Shared helper:</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="c1"># test/test_helper.rb</span>
-</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="nn">CurrentHelper</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">with_current</span><span class="p">(</span><span class="ss">user</span><span class="p">:</span> <span class="kp">nil</span><span class="p">,</span> <span class="ss">store</span><span class="p">:</span> <span class="kp">nil</span><span class="p">,</span> <span class="ss">client</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">user</span> <span class="k">if</span> <span class="n">user</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="n">store</span> <span class="k">if</span> <span class="n">store</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span> <span class="k">if</span> <span class="n">client</span>
-</span></span><span class="line"><span class="cl">    <span class="k">yield</span>
-</span></span><span class="line"><span class="cl">  <span class="k">ensure</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Current</span><span class="o">.</span><span class="n">reset_all</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Now in tests:</p>
+</div><h2 id="when-to-invalidate-the-cache">When to Invalidate the Cache</h2>
+<p>In our case, the cache/storage is cleared by deleting the attached PDF when the invoice is updated:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="nb">test</span> <span class="s2">&#34;with context&#34;</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">  <span class="n">with_current</span><span class="p">(</span><span class="ss">user</span><span class="p">:</span> <span class="vi">@user</span><span class="p">,</span> <span class="ss">store</span><span class="p">:</span> <span class="vi">@store</span><span class="p">)</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">    <span class="n">post</span> <span class="n">orders_url</span><span class="p">,</span> <span class="ss">params</span><span class="p">:</span> <span class="p">{</span> <span class="ss">order</span><span class="p">:</span> <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">&#34;Test&#34;</span> <span class="p">}</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">update</span>
+</span></span><span class="line"><span class="cl">  <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">purge</span> <span class="k">if</span> <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">attached?</span>
+</span></span><span class="line"><span class="cl">  <span class="vi">@invoice</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">invoice_params</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><hr>
-<h2 id="-best-practices">✅ Best Practices</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Do ✅</th>
-          <th>Don’t ❌</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Set <code>Current.*</code> early</td>
-          <td>Load values lazily from inside <code>Current</code></td>
-      </tr>
-      <tr>
-          <td>Use <code>Current.set {}</code> blocks</td>
-          <td>Store heavy or unrelated state</td>
-      </tr>
-      <tr>
-          <td>Reset <code>Current</code> after each job/test</td>
-          <td>Use <code>class_attribute</code> for request context</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-summary">🧠 Summary</h2>
-<ul>
-<li><code>CurrentAttributes</code> is a clean, thread-safe, per-request container.</li>
-<li>Use it to store context like <code>user</code>, <code>store</code>, and <code>client</code>.</li>
-<li>Set it early in controllers or jobs.</li>
-<li>Avoid putting logic inside it.</li>
-<li>Use <code>reset_all</code> manually in jobs and tests.</li>
-</ul>
-<p>It’s not just a substitute for <code>class_attribute</code> or <code>Thread.current</code> — it’s the right tool for request-scoped state in modern Rails apps.</p>
+</div><p>This deletes the old file. Active Storage will take care of removing it from the cloud (S3, GCS, etc.) in the background.</p>
+<p>Alternatively, you could skip deletion and just change the filename by including <code>updated_at</code>. This way, older versions are not used, and Active Storage can expire old files on its own using lifecycle rules.</p>
+<h2 id="summary">Summary</h2>
+<p>Instead of rendering the same PDF again and again, use Active Storage to cache it. Attach the file on first render and reuse it. Delete it when updating the record, or use the <code>updated_at</code> time in the filename and compare on file download if
+the pdf has changed.</p>
+<p>This trick has helped me improve performance and simplify my code in apps where PDFs are generated regularly. Hope it helps you too.</p>
+<p>Note: If you are adding some dynamic data to your PDF like download time, then this method can&rsquo;t be used.</p>
     </div>
 
     
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/rails/">rails</a>
-          <a href="/tags/thread/">thread</a>
+          <a href="/tags/pdf/">pdf</a>
+          <a href="/tags/wicked_pdf/">wicked_pdf</a>
+          <a href="/tags/cache/">cache</a>
+          <a href="/tags/active-storage/">active storage</a>
+          <a href="/tags/performance/">performance</a>
           </div><div class="author-post-intro">
   <p>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hi, I’m Harisankar P S! I’m a Senior Software Architect, and this blog is where I share my thoughts on programming,
@@ -1099,13 +1030,9 @@
 </style>
 
       <nav class="post-nav">
-        <a class="prev" href="/post/using-file-upload-to-cache-serving-pdf-files/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Caching Rendered PDFs in Rails with Active Storage</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/how-i-host-public-apps-using-tailscale/">
-            <span class="next-text nav-default">How I Use Tailscale to Host a Public App From My Laptop</span>
+        
+        <a class="next" href="/post/rails-current-attributes/">
+            <span class="next-text nav-default">A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
