@@ -1444,6 +1444,27 @@
   </url>
   
   <url>
+    <loc>https://hsps.in/categories/projects/</loc>
+    <lastmod>2020-06-05T15:22:34-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/projects/</loc>
+    <lastmod>2020-06-05T15:22:34-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/projects/</loc>
+    <lastmod>2020-06-05T15:22:34-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/subscribe/</loc>
     <lastmod>2020-06-05T15:22:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
