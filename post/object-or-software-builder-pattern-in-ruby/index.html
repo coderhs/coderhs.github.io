@@ -59,7 +59,7 @@
   <meta itemprop="description" content="Implementation and example of Builder pattern in ruby">
   <meta itemprop="datePublished" content="2025-08-05T10:57:22+05:30">
   <meta itemprop="dateModified" content="2025-08-05T10:57:22+05:30">
-  <meta itemprop="wordCount" content="1230">
+  <meta itemprop="wordCount" content="1236">
   <meta itemprop="keywords" content="builder,software,development,pattern,ruby,api,html,json">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="🏗️ Understanding the Builder Pattern with Ruby Examples">
@@ -161,10 +161,10 @@
 
     
     <div class="post-content">
-      <p>Design patterns are only useful when they help solve real-world problems in ways that feel natural in your language. In Ruby, one such pattern that fits like a glove is the <strong>Builder Pattern</strong>.</p>
-<p>You’ll find it everywhere — from constructing HTML forms in Rails to building command-line interfaces or even assembling HTTP requests.</p>
+      <p>Design patterns are only useful when they help solve real world problems in ways that feel natural in your language. In Ruby, one such pattern that fits like a glove is the <strong>Builder Pattern</strong>.</p>
+<p>You&rsquo;ll find it everywhere, from constructing HTML forms in Rails to building command-line interfaces or even assembling HTTP requests.</p>
 <h2 id="-what-is-the-builder-pattern">📦 What Is the Builder Pattern?</h2>
-<p>In real-world projects, we often model things as objects. The idea is that objects are instances of a common blueprint, sharing the same structure but differing in a few properties—like name, age, etc. However, when there are many properties to configure and you need more control over how the final object is built, that’s where the Builder pattern becomes useful. It helps construct complex objects step-by-step without cluttering your code with long initializers or deeply nested logic.</p>
+<p>In real world projects, we often model things as objects. The idea is that objects are instances of a common blueprint, sharing the same structure but differing in a few properties like name, age, etc. However, when there are many properties to configure and you need more control over how the final object is built, that&rsquo;s where the Builder pattern becomes useful. It helps construct complex objects step by step without cluttering your code with long initializers or deeply nested logic.</p>
 <p>The <strong>Builder Pattern</strong> is used to construct complex objects step-by-step. Rather than stuffing all parameters into a huge constructor, you build an object one piece at a time, usually using a <strong>fluent interface</strong> (method chaining).</p>
 <h2 id="-classic-example-build-a-car">🚗 Classic Example: Build a Car</h2>
 <div class="highlight"><div class="chroma">
@@ -693,7 +693,7 @@
 <li>Compose a final structure (<code>to_s</code>, <code>build</code>, or <code>to_json</code>).</li>
 <li>Avoid too much meta programming. Clean and simple Ruby is enough.</li>
 </ul>
-<p>You don’t need Rails or fancy tooling to write clean DSLs — just plain Ruby and a clear idea of what you want to express.</p>
+<p>You don&rsquo;t need Rails or fancy tooling to write clean DSLs. Just plain Ruby and a clear idea of what you want to express.</p>
 <h2 id="important-notes--dont-over-engineer">Important notes / Don&rsquo;t over Engineer</h2>
 <p>The Builder Pattern is useful, but it’s also easy to misuse or over-engineer. Here are some common mistakes people make, and what to avoid</p>
 <ol>
@@ -711,8 +711,8 @@
 <p>Use the builder to only build out the object/command/request. The execution should be done by afterwords allowing for
 more maintainable and testable solution.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>The builder pattern is one of those quiet heroes in software design. Whether you&rsquo;re building cars, HTML forms in Rails, JSON payloads, API requests, or CLI commands—anywhere you need to construct something complex step by step—it gives you a clean, readable way to do it. You&rsquo;ve probably used it without realizing it (like form_with in Rails), and once you spot the pattern, you’ll start seeing it everywhere.</p>
-<p>It’s not just about cleaner code—it’s about giving your future self (and teammates) a better way to read, maintain, and extend that code without headaches.</p>
+<p>The builder pattern is one of those quiet heroes in software design. Whether you&rsquo;re building cars, HTML forms in Rails, JSON payloads, API requests, or CLI commands, anywhere you need to construct something complex step by step, it gives you a clean, readable way to do it. You&rsquo;ve probably used it without realizing it (like form_with in Rails), and once you spot the pattern, you&rsquo;ll start seeing it everywhere.</p>
+<p>It&rsquo;s not just about cleaner code. It&rsquo;s about giving your future self (and teammates) a better way to read, maintain, and extend that code without headaches.</p>
 <p>So next time you find yourself passing 12 arguments into a constructor or setting a bunch of properties in random order, take a step back and ask: would a builder make this easier? Odds are, it will.</p>
     </div>
 
