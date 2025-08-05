@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html on Harisankar P S | Ruby on Rails Developer</title>
+    <link>https://hsps.in/tags/html/</link>
+    <description>Recent content in Html on Harisankar P S | Ruby on Rails Developer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Harisankar P S</copyright>
+    <lastBuildDate>Tue, 05 Aug 2025 10:57:22 +0530</lastBuildDate>
+    <atom:link href="https://hsps.in/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🏗️ Understanding the Builder Pattern with Ruby Examples</title>
+      <link>https://hsps.in/post/object-or-software-builder-pattern-in-ruby/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/post/object-or-software-builder-pattern-in-ruby/</guid>
+      <description>&lt;p&gt;Design patterns are only useful when they help solve real-world problems in ways that feel natural in your language. In Ruby, one such pattern that fits like a glove is the &lt;strong&gt;Builder Pattern&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You’ll find it everywhere — from constructing HTML forms in Rails to building command-line interfaces or even assembling HTTP requests.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-what-is-the-builder-pattern&#34;&gt;📦 What Is the Builder Pattern?&lt;/h2&gt;&#xA;&lt;p&gt;In real-world projects, we often model things as objects. The idea is that objects are instances of a common blueprint, sharing the same structure but differing in a few properties—like name, age, etc. However, when there are many properties to configure and you need more control over how the final object is built, that’s where the Builder pattern becomes useful. It helps construct complex objects step-by-step without cluttering your code with long initializers or deeply nested logic.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;strong&gt;Builder Pattern&lt;/strong&gt; is used to construct complex objects step-by-step. Rather than stuffing all parameters into a huge constructor, you build an object one piece at a time, usually using a &lt;strong&gt;fluent interface&lt;/strong&gt; (method chaining).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

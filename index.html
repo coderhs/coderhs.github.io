@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-07-26T21:47:37+05:30">
-  <meta itemprop="dateModified" content="2025-07-26T21:47:37+05:30">
+  <meta itemprop="datePublished" content="2025-08-05T10:57:22+05:30">
+  <meta itemprop="dateModified" content="2025-08-05T10:57:22+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -137,6 +137,31 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/object-or-software-builder-pattern-in-ruby/">🏗️ Understanding the Builder Pattern with Ruby Examples</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2025-08-05 </span>
+      <div class="post-category">
+          <a href="/categories/software-design-pattern/"> Software Design Pattern </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Design patterns are only useful when they help solve real-world problems in ways that feel natural in your language. In Ruby, one such pattern that fits like a glove is the <strong>Builder Pattern</strong>.</p>
+<p>You’ll find it everywhere — from constructing HTML forms in Rails to building command-line interfaces or even assembling HTTP requests.</p>
+<h2 id="-what-is-the-builder-pattern">📦 What Is the Builder Pattern?</h2>
+<p>In real-world projects, we often model things as objects. The idea is that objects are instances of a common blueprint, sharing the same structure but differing in a few properties—like name, age, etc. However, when there are many properties to configure and you need more control over how the final object is built, that’s where the Builder pattern becomes useful. It helps construct complex objects step-by-step without cluttering your code with long initializers or deeply nested logic.</p>
+<p>The <strong>Builder Pattern</strong> is used to construct complex objects step-by-step. Rather than stuffing all parameters into a huge constructor, you build an object one piece at a time, usually using a <strong>fluent interface</strong> (method chaining).</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/object-or-software-builder-pattern-in-ruby/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/using-file-upload-to-cache-serving-pdf-files/">Caching Rendered PDFs in Rails with Active Storage</a></h1>
@@ -266,66 +291,6 @@ should have:</p>
     </div>
     <div class="read-more">
       <a href="/post/intro-to-ruby-data-and-comparable/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/ruby-tap-method/">Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2025-04-19 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Ruby’s <code>Object#tap</code> is a small but powerful method that often goes unnoticed. It allows you to &ldquo;tap into&rdquo; a method chain, perform some operation, and return the original object—regardless of what the block inside returns. This makes it particularly useful for debugging, configuration, or inserting side effects without breaking the flow of your code.</p>
-<h2 id="a-simple-use-case-debugging">A Simple Use Case: Debugging</h2>
-<p>Take the following example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">}</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This returns <code>[10, 0, 10]</code>. But what if that’s not what you expected? You might want to inspect the result of the first <code>map</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">n</span><span class="o">.</span><span class="n">inspect</span>
-</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">n</span><span class="o">.</span><span class="n">inspect</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Using <code>tap</code>, we can make this more elegant:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">tap</span> <span class="p">{</span> <span class="nb">puts</span> <span class="n">_1</span><span class="o">.</span><span class="n">inspect</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_1</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">tap</span> <span class="p">{</span> <span class="nb">puts</span> <span class="n">_1</span><span class="o">.</span><span class="n">inspect</span> <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
-    </div>
-    <div class="read-more">
-      <a href="/post/ruby-tap-method/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

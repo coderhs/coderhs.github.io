@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Sat, 26 Jul 2025 21:47:37 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 05 Aug 2025 10:57:22 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Design Pattern</title>
+      <link>https://hsps.in/categories/software-design-pattern/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/categories/software-design-pattern/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Rails</title>
       <link>https://hsps.in/categories/rails/</link>

@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-07-26T21:47:37+05:30">
-  <meta itemprop="dateModified" content="2025-07-26T21:47:37+05:30">
+  <meta itemprop="datePublished" content="2025-08-05T10:57:22+05:30">
+  <meta itemprop="dateModified" content="2025-08-05T10:57:22+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -137,6 +137,32 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/handle-ssh-idle-connections-handing-or-getting-disconnected/">Handle SSH Idle Connections Freezing shell or Getting Disconnected</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2024-04-04 </span>
+      <div class="post-category">
+          <a href="/categories/ssh/"> SSH </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>As someone who has been working with servers for over a decade and a half, I feel embarrassed to admit that I only
+recently stumbled upon this setting. Throughout my years of connecting to remote servers over the internet, I&rsquo;ve
+encountered instances where connections freeze or break after a period of inactivity. Sometimes it happens more
+frequently, while other times it never occurs at all. When I was in the US connecting to Amazon servers, there were
+occasions when the connection remained stable for days on end. This led me to believe that the issue might be related
+to the internet or the complexity of the network routing required to reach the server.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/handle-ssh-idle-connections-handing-or-getting-disconnected/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/argument-for-writing-test-and-tdd/">Argument for Writing Test and TDD</a></h1>
@@ -232,43 +258,6 @@
     </div>
     <div class="read-more">
       <a href="/post/setup-https-and-reverseproxy-to-docker-web-app/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/rails-copy-assets-bundler-cache-to-speed-up-build/">Rails Copy Assets bundler Cache to Speed Up Build</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-08-01 </span>
-      <div class="post-category">
-          <a href="/categories/docker/"> docker </a>
-          <a href="/categories/rails/"> rails </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>The slowest step (in my experience and opinion) is compiling assets (js/css). Compiling assets takes time and slower when you do it for the first time. So to speed it up its recommended to copy the last compiled assets from the latest image you have of the repo.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">COPY</span> --from<span class="o">=</span>docker-repo.link/image:latest /app/node_modules /app/node_modules<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>docker-repo.link/image:latest /app/public /app/public<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> bundle <span class="nb">exec</span> rails assets:precompile<span class="err">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>Now since the prior assets are in the new image, it won&rsquo;t compile the assets from scratch and the build will be faster.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/rails-copy-assets-bundler-cache-to-speed-up-build/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

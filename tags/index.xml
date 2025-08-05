@@ -7,8 +7,64 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Sat, 26 Jul 2025 21:47:37 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 05 Aug 2025 10:57:22 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Api</title>
+      <link>https://hsps.in/tags/api/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Builder</title>
+      <link>https://hsps.in/tags/builder/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/tags/builder/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>https://hsps.in/tags/development/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Html</title>
+      <link>https://hsps.in/tags/html/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/tags/html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Json</title>
+      <link>https://hsps.in/tags/json/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/tags/json/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pattern</title>
+      <link>https://hsps.in/tags/pattern/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/tags/pattern/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ruby</title>
+      <link>https://hsps.in/tags/ruby/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/tags/ruby/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software</title>
+      <link>https://hsps.in/tags/software/</link>
+      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
+      <guid>https://hsps.in/tags/software/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Active Storage</title>
       <link>https://hsps.in/tags/active-storage/</link>
@@ -119,13 +175,6 @@
       <link>https://hsps.in/tags/immutable/</link>
       <pubDate>Mon, 02 Jun 2025 11:50:45 +0530</pubDate>
       <guid>https://hsps.in/tags/immutable/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ruby</title>
-      <link>https://hsps.in/tags/ruby/</link>
-      <pubDate>Mon, 02 Jun 2025 11:50:45 +0530</pubDate>
-      <guid>https://hsps.in/tags/ruby/</guid>
       <description></description>
     </item>
     <item>
@@ -546,13 +595,6 @@
       <link>https://hsps.in/tags/bill/</link>
       <pubDate>Sun, 19 Mar 2023 19:52:42 -0700</pubDate>
       <guid>https://hsps.in/tags/bill/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Api</title>
-      <link>https://hsps.in/tags/api/</link>
-      <pubDate>Tue, 06 Sep 2022 20:21:42 -0700</pubDate>
-      <guid>https://hsps.in/tags/api/</guid>
       <description></description>
     </item>
     <item>
@@ -1197,13 +1239,6 @@
       <link>https://hsps.in/tags/reinstall/</link>
       <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
       <guid>https://hsps.in/tags/reinstall/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Software</title>
-      <link>https://hsps.in/tags/software/</link>
-      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
-      <guid>https://hsps.in/tags/software/</guid>
       <description></description>
     </item>
     <item>
