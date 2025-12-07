@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.145.0 with theme even" />
+<meta name="generator" content="Hugo 0.152.2 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/static-compile-crystal-lang-code-in-docker-and-create-a-small-image/" />
@@ -35,7 +35,7 @@
 
 
 
-<link href="/sass/main.min.58704fff1f861edb5c44f490dc81af327009b2358b341e82d7786362f310c0be.css" rel="stylesheet">
+<link href="/sass/main.min.97bfc7bc4b9b5e33f07afb1dd7c9f72739fe1a13371ee7155cde65ce085d8bc6.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -187,12 +187,12 @@ share the executable inside a docker image. We will create the smallest docker i
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> crystallang/crystal:1.0.0-alpine-build as base</span><span class="err">
+<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">crystallang/crystal:1.0.0-alpine-build</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">base</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apk add sqlite-static yaml-static<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="s"> base as builder</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="w"> </span><span class="s">base</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">builder</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> mkdir /pos<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /pos</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/pos</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> shard.yml /pos/shard.yml<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> shard.lock /pos/shard.lock<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> shards install<span class="err">
@@ -203,10 +203,10 @@ share the executable inside a docker image. We will create the smallest docker i
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> crystal build --release --static -o app src/app.cr<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> mv ./app ./build/app<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="s"> alpine:latest as release</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">release</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /pos/build /pos<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /pos</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 9098</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/pos</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">9098</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;/pos/app&#34;</span><span class="p">]</span><span class="err">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -220,7 +220,7 @@ share the executable inside a docker image. We will create the smallest docker i
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> crystallang/crystal:1.0.0-alpine-build as base</span><span class="err">
+<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">crystallang/crystal:1.0.0-alpine-build</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">base</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apk add sqlite-static yaml-static<span class="err">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -237,9 +237,9 @@ image or we won&rsquo;t be able to compile.</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> base as builder</span><span class="err">
+<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">base</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">builder</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> mkdir /pos<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /pos</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/pos</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> shard.yml /pos/shard.yml<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> shard.lock /pos/shard.lock<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> shards install<span class="err">
@@ -267,10 +267,10 @@ the assets (html/css/js) required by the final build.</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> alpine:latest as release</span><span class="err">
+<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">release</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /pos/build /pos<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /pos</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 9098</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/pos</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">9098</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;/pos/app&#34;</span><span class="p">]</span><span class="err">
 </span></span></span></code></pre></td></tr></table>
 </div>

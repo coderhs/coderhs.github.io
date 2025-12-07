@@ -31,7 +31,7 @@ Note: Tailscale attempts to establish direct connections between devices. When t
 
 
 
-<meta name="generator" content="Hugo 0.145.0 with theme even" />
+<meta name="generator" content="Hugo 0.152.2 with theme even" />
 
 
 <link rel="canonical" href="https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/" />
@@ -43,7 +43,7 @@ Note: Tailscale attempts to establish direct connections between devices. When t
 
 
 
-<link href="/sass/main.min.58704fff1f861edb5c44f490dc81af327009b2358b341e82d7786362f310c0be.css" rel="stylesheet">
+<link href="/sass/main.min.97bfc7bc4b9b5e33f07afb1dd7c9f72739fe1a13371ee7155cde65ce085d8bc6.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -202,7 +202,8 @@ Note: Tailscale attempts to establish direct connections between devices. When t
 <h2 id="using-an-exit-node-for-secure-browsing">Using an Exit Node for Secure Browsing</h2>
 <p>Tailscale allows you to set up one of your devices as an exit node. This means that when you&rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.</p>
 <blockquote>
-<p><strong>Note:</strong> Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.</p></blockquote>
+<p><strong>Note:</strong> Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.</p>
+</blockquote>
 <h2 id="on-demand-exit-node-setup">On-Demand Exit Node Setup</h2>
 <p>While I don&rsquo;t use the exit node frequently, it’s invaluable when I travel. Recently, I needed a US IP to access a client application, which I easily set up by deploying Tailscale on a VPS. This is a more cost-effective solution than commercial VPNs for such specific needs. A DigitalOcean server costs about $4/month, but since I only need it on-demand, I can destroy it when not in use, avoiding unnecessary costs.</p>
 <p>This led me to write a Terraform configuration for creating a DigitalOcean server with Tailscale installed as an exit node. The setup takes around 4 minutes to be ready, and I can destroy the server when I’m done to save costs. I can also switch locations easily using Terraform or change cloud providers if needed.</p>
