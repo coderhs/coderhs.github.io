@@ -7,8 +7,22 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Sun, 07 Dec 2025 08:19:13 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 07 Dec 2025 19:15:00 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://hsps.in/categories/git/</link>
+      <pubDate>Sun, 07 Dec 2025 19:15:00 +0530</pubDate>
+      <guid>https://hsps.in/categories/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productivity</title>
+      <link>https://hsps.in/categories/productivity/</link>
+      <pubDate>Sun, 07 Dec 2025 19:15:00 +0530</pubDate>
+      <guid>https://hsps.in/categories/productivity/</guid>
+      <description></description>
+    </item>
     <item>
       <title>HTML</title>
       <link>https://hsps.in/categories/html/</link>
@@ -63,13 +77,6 @@
       <link>https://hsps.in/categories/postgresql/</link>
       <pubDate>Wed, 15 Jan 2025 18:20:19 +0530</pubDate>
       <guid>https://hsps.in/categories/postgresql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Productivity</title>
-      <link>https://hsps.in/categories/productivity/</link>
-      <pubDate>Wed, 08 Jan 2025 18:55:49 +0530</pubDate>
-      <guid>https://hsps.in/categories/productivity/</guid>
       <description></description>
     </item>
     <item>

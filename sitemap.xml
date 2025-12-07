@@ -2,21 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hsps.in/tags/avif/</loc>
-    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <loc>https://hsps.in/tags/ai/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hsps.in/categories/</loc>
-    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/git/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/git/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/git-worktree-ai-workflow/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hsps.in/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/productivity/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/productivity/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/workflow/</loc>
+    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/avif/</loc>
     <lastmod>2025-12-07T08:19:13+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -65,13 +128,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/categories/rails/</loc>
     <lastmod>2025-12-07T08:19:13+05:30</lastmod>
     <changefreq>weekly</changefreq>
@@ -94,13 +150,6 @@
   
   <url>
     <loc>https://hsps.in/tags/ruby/</loc>
-    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2025-12-07T08:19:13+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -368,20 +417,6 @@
   <url>
     <loc>https://hsps.in/post/storing-postgresql-data-in-a-different-partition-for-performance/</loc>
     <lastmod>2025-01-15T18:20:19+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/productivity/</loc>
-    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/productivity/</loc>
-    <lastmod>2025-01-08T18:55:49+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

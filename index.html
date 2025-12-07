@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-12-07T08:19:13+05:30">
-  <meta itemprop="dateModified" content="2025-12-07T08:19:13+05:30">
+  <meta itemprop="datePublished" content="2025-12-07T19:15:00+05:30">
+  <meta itemprop="dateModified" content="2025-12-07T19:15:00+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -137,6 +137,33 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/git-worktree-ai-workflow/">Git Worktree: Scaling Your AI Workflow</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2025-12-07 </span>
+      <div class="post-category">
+          <a href="/categories/git/"> Git </a>
+          <a href="/categories/productivity/"> Productivity </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>I&rsquo;ve been using <code>git</code> for years, but to be honest, I wasn&rsquo;t even aware of <code>git worktree</code> until I started using AI for development.</p>
+<p>Before this, my workflow for context switching was pretty standard. If I was in the middle of something and needed to check another branch or fix a bug, I&rsquo;d rely on <code>git stash</code> or <code>git stash -u</code> (to catch those untracked files). Sometimes I&rsquo;d just commit what I had, knowing I would eventually &ldquo;Squash and Merge&rdquo; my Pull Requests anyway, so a few messy &ldquo;WIP&rdquo; commits didn&rsquo;t really matter.</p>
+<p>But recently, I found a new bottleneck: <strong>I have more ideas than I have open AI contexts.</strong></p>
+<p>We often treat AI as a faster pair programmer, but we still tend to work sequentially. We ask Cursor or Claude Code to do X, watch it generate code, review it, and then move to Y.</p>
+<p>But what if you could implement Idea A, Idea B, and Fix C all at the same time?</p>
+<p>Enter <code>git worktree</code>.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/git-worktree-ai-workflow/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/html-picture-tag/">Mastering the HTML Picture Tag: Responsive Images, WebP, and AVIF</a></h1>
@@ -264,32 +291,6 @@ the pdf only needs to be generated once, and the content seldom changes. So rend
     </div>
     <div class="read-more">
       <a href="/post/rails-current-attributes/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/how-i-host-public-apps-using-tailscale/">How I Use Tailscale to Host a Public App From My Laptop</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2025-06-18 </span>
-      <div class="post-category">
-          <a href="/categories/homelab/"> homelab </a>
-          <a href="/categories/tailscale/"> tailscale </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>I live in India, and getting a static IP at home isn’t straightforward. You usually have to go through customer care, sometimes upgrade to a more expensive plan, and even then it’s not always guaranteed. I wanted a simple setup to make one of my apps publicly accessible without paying a lot or dealing with all that.</p>
-<p>So here’s what I did. I used <strong>Tailscale</strong>, <strong>AWS Lightsail</strong>, <strong>Docker</strong>, and <strong>Nginx Proxy Manager</strong> to expose my laptop to the internet, safely and securely. And right now, I&rsquo;m running <a href="https://easyclientlog.com">https://easyclientlog.com</a> - next.js application and <a href="https://api.easyclientlog.com">https://api.easyclientlog.com</a> - ruby on rails application, using this exact setup.</p>
-<h2 id="getting-a-static-ip">Getting a Static IP</h2>
-<p>I signed up on AWS and went to Lightsail. Picked Mumbai as the region and selected the cheapest Ubuntu server. AWS gives you a static IP for free (in lightsail) as long as it’s attached to a running instance, and the server itself is free for the first three months.</p>
-<p>This server acts like a relay. It’s the public-facing machine. I don’t run the actual app on it, it just receives the request and forwards it to my laptop at home.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/how-i-host-public-apps-using-tailscale/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

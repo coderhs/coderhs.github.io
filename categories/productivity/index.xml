@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Wed, 08 Jan 2025 18:55:49 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 07 Dec 2025 19:15:00 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/categories/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Worktree: Scaling Your AI Workflow</title>
+      <link>https://hsps.in/post/git-worktree-ai-workflow/</link>
+      <pubDate>Sun, 07 Dec 2025 19:15:00 +0530</pubDate>
+      <guid>https://hsps.in/post/git-worktree-ai-workflow/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been using &lt;code&gt;git&lt;/code&gt; for years, but to be honest, I wasn&amp;rsquo;t even aware of &lt;code&gt;git worktree&lt;/code&gt; until I started using AI for development.&lt;/p&gt;&#xA;&lt;p&gt;Before this, my workflow for context switching was pretty standard. If I was in the middle of something and needed to check another branch or fix a bug, I&amp;rsquo;d rely on &lt;code&gt;git stash&lt;/code&gt; or &lt;code&gt;git stash -u&lt;/code&gt; (to catch those untracked files). Sometimes I&amp;rsquo;d just commit what I had, knowing I would eventually &amp;ldquo;Squash and Merge&amp;rdquo; my Pull Requests anyway, so a few messy &amp;ldquo;WIP&amp;rdquo; commits didn&amp;rsquo;t really matter.&lt;/p&gt;&#xA;&lt;p&gt;But recently, I found a new bottleneck: &lt;strong&gt;I have more ideas than I have open AI contexts.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;We often treat AI as a faster pair programmer, but we still tend to work sequentially. We ask Cursor or Claude Code to do X, watch it generate code, review it, and then move to Y.&lt;/p&gt;&#xA;&lt;p&gt;But what if you could implement Idea A, Idea B, and Fix C all at the same time?&lt;/p&gt;&#xA;&lt;p&gt;Enter &lt;code&gt;git worktree&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Tailscale for Single User Single Host</title>
       <link>https://hsps.in/post/tailscale-for-single-user-single-host/</link>

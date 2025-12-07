@@ -7,8 +7,36 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Sun, 07 Dec 2025 08:19:13 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 07 Dec 2025 19:15:00 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://hsps.in/tags/ai/</link>
+      <pubDate>Sun, 07 Dec 2025 19:15:00 +0530</pubDate>
+      <guid>https://hsps.in/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://hsps.in/tags/git/</link>
+      <pubDate>Sun, 07 Dec 2025 19:15:00 +0530</pubDate>
+      <guid>https://hsps.in/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productivity</title>
+      <link>https://hsps.in/tags/productivity/</link>
+      <pubDate>Sun, 07 Dec 2025 19:15:00 +0530</pubDate>
+      <guid>https://hsps.in/tags/productivity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workflow</title>
+      <link>https://hsps.in/tags/workflow/</link>
+      <pubDate>Sun, 07 Dec 2025 19:15:00 +0530</pubDate>
+      <guid>https://hsps.in/tags/workflow/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Avif</title>
       <link>https://hsps.in/tags/avif/</link>
@@ -238,13 +266,6 @@
       <link>https://hsps.in/tags/postgresql/</link>
       <pubDate>Wed, 15 Jan 2025 18:20:19 +0530</pubDate>
       <guid>https://hsps.in/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Productivity</title>
-      <link>https://hsps.in/tags/productivity/</link>
-      <pubDate>Wed, 08 Jan 2025 18:55:49 +0530</pubDate>
-      <guid>https://hsps.in/tags/productivity/</guid>
       <description></description>
     </item>
     <item>
