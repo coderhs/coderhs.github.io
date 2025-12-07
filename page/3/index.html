@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-08-05T10:57:22+05:30">
-  <meta itemprop="dateModified" content="2025-08-05T10:57:22+05:30">
+  <meta itemprop="datePublished" content="2025-12-07T08:19:13+05:30">
+  <meta itemprop="dateModified" content="2025-12-07T08:19:13+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -137,6 +137,29 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/run-rails-db-migrate-on-ecs-task-aws/">Running Rails Migrations in AWS ECS Using AWS CLI</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2024-10-10 </span>
+      <div class="post-category">
+          <a href="/categories/aws/"> aws </a>
+          <a href="/categories/rails/"> rails </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>AWS ECS (Elastic Container Service) is a powerful Amazon Web Service that allows you to deploy Docker containers on various infrastructure options, including EC2 instances, Fargate (serverless containers), or even self-hosted servers. Being deeply integrated with AWS, ECS offers a cost-effective and seamless solution for managing containers in the Amazon ecosystem.</p>
+<p>This guide assumes you are familiar with ECS and already have a task definition set up for your Rails application. Additionally, it assumes you know how to find your subnet ID and security group ID, as these will be required when running containers in your specific environment.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/run-rails-db-migrate-on-ecs-task-aws/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/">Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean</a></h1>
@@ -233,29 +256,6 @@
     </div>
     <div class="read-more">
       <a href="/post/using-docker-postgres-to-take-sql-dump-from-aws-rds/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/aws-ecr-lifecycle-policy/">AWS ECR Lifecycle Policy</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2024-04-06 </span>
-      <div class="post-category">
-          <a href="/categories/aws/"> AWS </a>
-          <a href="/categories/ecr/"> ECR </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Amazon Elastic Container Registry (ECR) is a service provided by Amazon for hosting our Docker/container images. The cost of downloading these images to a server or ECS (Elastic Container Service) within the same zone is free. However, downloading or uploading from the public internet incurs costs, as does storage space usage.</p>
-<p>During the development and deployment of your project, you may find yourself building images as frequently as every 30 minutes. This frequency reflects my own experience. Whenever new code is merged with the master branch, it triggers a code build pipeline. This pipeline ultimately pushes the latest image to ECR, typically tagged as &ldquo;latest.&rdquo; Consequently, the previous image remains in the repository but becomes untagged. While retaining a few versions of older deployments facilitates easy rollbacks, after a day or two, they tend to become redundant. At this juncture, they serve no purpose other than incurring storage costs.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/aws-ecr-lifecycle-policy/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

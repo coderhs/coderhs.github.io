@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-08-05T10:57:22+05:30">
-  <meta itemprop="dateModified" content="2025-08-05T10:57:22+05:30">
+  <meta itemprop="datePublished" content="2025-12-07T08:19:13+05:30">
+  <meta itemprop="dateModified" content="2025-12-07T08:19:13+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -137,6 +137,50 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/intro-to-ruby-data-and-comparable/">Ruby `Data` Class – A Convenient Way to Create Value Objects</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2025-06-02 </span>
+      <div class="post-category">
+          <a href="/categories/ruby/"> ruby </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Ruby&rsquo;s <code>Data</code> class was introduced in Ruby 3.2, offering a convenient way to define value objects. The concept of value objects was popularized by Martin Fowler and Eric Evans through their books and articles. In the real world, we often represent properties like coordinates on a map <code>(x, y)</code> or the speed of a car—using primitives such as integers or strings. While these work, they lack the semantic clarity and behavior of custom types. This is where value objects shine. They encapsulate meaning and behavior around a set of values.</p>
+<p>Ruby&rsquo;s <code>Data</code> class was created to provide a native way to represent such concepts. Struct does fullfil this requirement, except the part of immutability. Ruby Structs are mutable. Some example of use case for value objects are to represent money, email address, co-ordinates, etc.</p>
+<p>Lets now explore ruby Data, keeping in my the characteristics of a value object as shared by Marin Fowler. A value object
+should have:</p>
+<ul>
+<li>No Identity</li>
+<li>Immutable</li>
+<li>Equality by Value</li>
+<li>Small and Simple</li>
+<li>Reusable</li>
+</ul>
+<p>Let&rsquo;s explore how Ruby&rsquo;s <code>Data</code> class supports these characteristics.</p>
+<h3 id="class-data">class Data</h3>
+<p><code>Data</code> is a core Ruby class, so no external gems are needed.</p>
+<p>Here&rsquo;s a simple example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">MarsRover</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+    <div class="read-more">
+      <a href="/post/intro-to-ruby-data-and-comparable/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/ruby-tap-method/">Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool</a></h1>
@@ -270,29 +314,6 @@
     </div>
     <div class="read-more">
       <a href="/post/setup-master-slave-database-on-postgresql-17/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/run-rails-db-migrate-on-ecs-task-aws/">Running Rails Migrations in AWS ECS Using AWS CLI</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2024-10-10 </span>
-      <div class="post-category">
-          <a href="/categories/aws/"> aws </a>
-          <a href="/categories/rails/"> rails </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>AWS ECS (Elastic Container Service) is a powerful Amazon Web Service that allows you to deploy Docker containers on various infrastructure options, including EC2 instances, Fargate (serverless containers), or even self-hosted servers. Being deeply integrated with AWS, ECS offers a cost-effective and seamless solution for managing containers in the Amazon ecosystem.</p>
-<p>This guide assumes you are familiar with ECS and already have a task definition set up for your Rails application. Additionally, it assumes you know how to find your subnet ID and security group ID, as these will be required when running containers in your specific environment.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/run-rails-db-migrate-on-ecs-task-aws/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

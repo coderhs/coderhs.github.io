@@ -2,6 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/tags/avif/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/html/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/html/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/html-picture-tag/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/performance/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/performance/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/picture-tag/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/rails/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/rails/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/responsive-images/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/ruby/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/webp/</loc>
+    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/tags/api/</loc>
     <lastmod>2025-08-05T10:57:22+05:30</lastmod>
     <changefreq>weekly</changefreq>
@@ -16,28 +128,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/categories/</loc>
-    <lastmod>2025-08-05T10:57:22+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/development/</loc>
-    <lastmod>2025-08-05T10:57:22+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2025-08-05T10:57:22+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/html/</loc>
     <lastmod>2025-08-05T10:57:22+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -58,20 +149,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/post/</loc>
-    <lastmod>2025-08-05T10:57:22+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/ruby/</loc>
-    <lastmod>2025-08-05T10:57:22+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/software/</loc>
     <lastmod>2025-08-05T10:57:22+05:30</lastmod>
     <changefreq>weekly</changefreq>
@@ -80,13 +157,6 @@
   
   <url>
     <loc>https://hsps.in/categories/software-design-pattern/</loc>
-    <lastmod>2025-08-05T10:57:22+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2025-08-05T10:57:22+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -128,20 +198,6 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/tags/performance/</loc>
-    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/rails/</loc>
-    <lastmod>2025-07-26T21:47:37+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/tags/wicked_pdf/</loc>
     <lastmod>2025-07-26T21:47:37+05:30</lastmod>
     <changefreq>weekly</changefreq>
@@ -150,13 +206,6 @@
   
   <url>
     <loc>https://hsps.in/post/rails-current-attributes/</loc>
-    <lastmod>2025-07-08T18:31:49+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/rails/</loc>
     <lastmod>2025-07-08T18:31:49+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

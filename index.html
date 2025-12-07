@@ -50,8 +50,8 @@
 
   <meta itemprop="name" content="Harisankar P S | Ruby on Rails Developer">
   <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2025-08-05T10:57:22+05:30">
-  <meta itemprop="dateModified" content="2025-08-05T10:57:22+05:30">
+  <meta itemprop="datePublished" content="2025-12-07T08:19:13+05:30">
+  <meta itemprop="dateModified" content="2025-12-07T08:19:13+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer">
   <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
@@ -137,6 +137,49 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/html-picture-tag/">Mastering the HTML Picture Tag: Responsive Images, WebP, and AVIF</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2025-12-07 </span>
+      <div class="post-category">
+          <a href="/categories/html/"> HTML </a>
+          <a href="/categories/rails/"> Rails </a>
+          <a href="/categories/performance/"> Performance </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>I haven&rsquo;t thought about HTML in a long time, but recently came across the usage of picture tag(s). I was so impressed that I wanted to blog about it. This is nothing new, and used a lot by the web already.</p>
+<p>The <code>picture</code> tag gives us a lot of control over how images are loaded, solving two main problems: efficient formats and responsive sizing.</p>
+<h2 id="webp-support">WebP Support</h2>
+<p>We all know WebP images are smaller and faster to load, but not every browser supported them initially (though support is great now). The <code>picture</code> tag allows us to serve WebP to browsers that support it, while falling back to PNG or JPEG for others.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&#34;image.webp&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;image/webp&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&#34;image.jpg&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;image/jpeg&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;image.jpg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;My Image&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The browser parses the <code>&lt;source&gt;</code> tags from top to bottom. The first one with a supported <code>type</code> is chosen. If none match, it falls back to the standard <code>&lt;img&gt;</code> tag.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/html-picture-tag/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/object-or-software-builder-pattern-in-ruby/">🏗️ Understanding the Builder Pattern with Ruby Examples</a></h1>
@@ -247,50 +290,6 @@ the pdf only needs to be generated once, and the content seldom changes. So rend
     </div>
     <div class="read-more">
       <a href="/post/how-i-host-public-apps-using-tailscale/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/intro-to-ruby-data-and-comparable/">Ruby `Data` Class – A Convenient Way to Create Value Objects</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2025-06-02 </span>
-      <div class="post-category">
-          <a href="/categories/ruby/"> ruby </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Ruby&rsquo;s <code>Data</code> class was introduced in Ruby 3.2, offering a convenient way to define value objects. The concept of value objects was popularized by Martin Fowler and Eric Evans through their books and articles. In the real world, we often represent properties like coordinates on a map <code>(x, y)</code> or the speed of a car—using primitives such as integers or strings. While these work, they lack the semantic clarity and behavior of custom types. This is where value objects shine. They encapsulate meaning and behavior around a set of values.</p>
-<p>Ruby&rsquo;s <code>Data</code> class was created to provide a native way to represent such concepts. Struct does fullfil this requirement, except the part of immutability. Ruby Structs are mutable. Some example of use case for value objects are to represent money, email address, co-ordinates, etc.</p>
-<p>Lets now explore ruby Data, keeping in my the characteristics of a value object as shared by Marin Fowler. A value object
-should have:</p>
-<ul>
-<li>No Identity</li>
-<li>Immutable</li>
-<li>Equality by Value</li>
-<li>Small and Simple</li>
-<li>Reusable</li>
-</ul>
-<p>Let&rsquo;s explore how Ruby&rsquo;s <code>Data</code> class supports these characteristics.</p>
-<h3 id="class-data">class Data</h3>
-<p><code>Data</code> is a core Ruby class, so no external gems are needed.</p>
-<p>Here&rsquo;s a simple example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">MarsRover</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
-    </div>
-    <div class="read-more">
-      <a href="/post/intro-to-ruby-data-and-comparable/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
