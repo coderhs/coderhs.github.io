@@ -37,24 +37,38 @@
 
 
 
-<link href="/sass/main.min.97bfc7bc4b9b5e33f07afb1dd7c9f72739fe1a13371ee7155cde65ce085d8bc6.css" rel="stylesheet">
+<link href="/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:url" content="https://hsps.in/tags/default/">
-  <meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer">
-  <meta property="og:title" content="Default">
-  <meta property="og:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Default">
-  <meta itemprop="description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
-  <meta itemprop="datePublished" content="2012-01-25T00:07:30-07:00">
-  <meta itemprop="dateModified" content="2012-01-25T00:07:30-07:00">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Default">
-  <meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails">
+<meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Harisankar P S | Ruby on Rails Developer" />
+<meta property="og:url" content="https://hsps.in/tags/default/" />
+<meta property="og:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Harisankar P S | Ruby on Rails Developer" />
+<meta name="twitter:description" content="Harisankar P S - Software Engineer specializing in Ruby on Rails" />
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "\"Harisankar P S | Ruby on Rails Developer\"",
+  "url": "\"https://hsps.in/\"",
+  "description": "\"Harisankar P S - Software Engineer specializing in Ruby on Rails\"",
+  "author": {
+    "@type": "Person",
+    "name": "null"
+  }
+}
+</script>
+
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -99,7 +113,12 @@
 
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
-        <div class="logo-wrapper">
+        
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<div class="logo-wrapper">
   <a href="/" class="logo">HsPS.in</a>
   <br>
   <i>My thoughts and opinions</i>
@@ -186,7 +205,7 @@
   <span class="copyright-year">
     &copy; 
     2011 - 
-    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
   </span>
 </div>
 
@@ -212,5 +231,31 @@
 
 
 
+
+  
+  <script>
+    (function() {
+      var codeBlocks = document.querySelectorAll('.highlight > .chroma, figure.highlight');
+      codeBlocks.forEach(function(block) {
+        var btn = document.createElement('button');
+        btn.className = 'copy-code-btn';
+        btn.textContent = 'Copy';
+        btn.addEventListener('click', function() {
+          var code = block.querySelector('code');
+          if (!code) {
+            code = block.querySelector('.code pre');
+          }
+          if (code) {
+            navigator.clipboard.writeText(code.textContent).then(function() {
+              btn.textContent = 'Copied!';
+              setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+            });
+          }
+        });
+        block.style.position = 'relative';
+        block.appendChild(btn);
+      });
+    })();
+  </script>
 </body>
 </html>
