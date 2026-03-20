@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Running Rails Migrations in AWS ECS Using AWS CLI - Harisankar P S | Ruby on Rails Developer</title>
-  <meta name="renderer" content="webkit" />
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -16,7 +21,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Running Rails Migrations in AWS ECS Using AWS CLI " /><meta name="keywords" content="aws, ecs, rails, db, migrate" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Run rails db:migrate on AWS ECS Fargate using the AWS CLI with container overrides, and automate it as part of your CodeBuild deployment pipeline." /><meta name="keywords" content="aws, ecs, rails, db, migrate" />
 
 
 
@@ -45,7 +50,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Running Rails Migrations in AWS ECS Using AWS CLI" />
 <meta property="og:url" content="https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/" />
-<meta property="og:description" content="Running Rails Migrations in AWS ECS Using AWS CLI " />
+<meta property="og:description" content="Run rails db:migrate on AWS ECS Fargate using the AWS CLI with container overrides, and automate it as part of your CodeBuild deployment pipeline." />
 <meta property="article:published_time" content="2024-10-10T00:05:58-07:00" />
 <meta property="article:modified_time" content="2024-10-10T00:05:58-07:00" />
 <meta property="article:author" content="" />
@@ -61,14 +66,14 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Running Rails Migrations in AWS ECS Using AWS CLI" />
-<meta name="twitter:description" content="Running Rails Migrations in AWS ECS Using AWS CLI " />
+<meta name="twitter:description" content="Run rails db:migrate on AWS ECS Fargate using the AWS CLI with container overrides, and automate it as part of your CodeBuild deployment pipeline." />
 <meta name="twitter:image" content="https://hsps.in/images/og-base_hu_f32a48e31c06355b.png" />
 
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "\"Running Rails Migrations in AWS ECS Using AWS CLI\"",
   "url": "\"https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/\"",
   "datePublished": "2024-10-10T00:05:58-07:00",
@@ -82,7 +87,7 @@
     "@type": "Person",
     "name": "null"
   },
-  "description": "\"Running Rails Migrations in AWS ECS Using AWS CLI \"",
+  "description": "\"Run rails db:migrate on AWS ECS Fargate using the AWS CLI with container overrides, and automate it as part of your CodeBuild deployment pipeline.\"",
   "wordCount":  398 ,
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -93,15 +98,33 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "\"https://hsps.in/\""
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Articles",
+      "item": "\"https://hsps.in/post/\""
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "\"Running Rails Migrations in AWS ECS Using AWS CLI\"",
+      "item": "\"https://hsps.in/post/run-rails-db-migrate-on-ecs-task-aws/\""
+    }
+  ]
+}
+</script>
 
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
 
 </head>
 <body>
@@ -138,12 +161,7 @@
 
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
-        
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<div class="logo-wrapper">
+        <div class="logo-wrapper">
   <a href="/" class="logo">HsPS.in</a>
   <br>
   <i>My thoughts and opinions</i>

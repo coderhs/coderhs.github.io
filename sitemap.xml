@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/</loc>
+    <lastmod>2026-03-20T14:22:29+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/</loc>
+    <lastmod>2026-03-20T14:22:29+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/tags/ai/</loc>
     <lastmod>2025-12-07T19:15:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,20 +45,6 @@
   
   <url>
     <loc>https://hsps.in/post/git-worktree-ai-workflow/</loc>
-    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/</loc>
-    <lastmod>2026-02-14T00:00:00+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/post/</loc>
     <lastmod>2025-12-07T19:15:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

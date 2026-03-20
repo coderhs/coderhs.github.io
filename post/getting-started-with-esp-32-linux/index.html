@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Getting Started With ESP 32 Development - Harisankar P S | Ruby on Rails Developer</title>
-  <meta name="renderer" content="webkit" />
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -16,7 +21,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Getting Started With ESP 32 Development in Linux using Arduino" /><meta name="keywords" content="esp32, micro controller, arduino, linux, programming, c&#43;&#43;, python, wifi, bluetooth" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Set up Arduino IDE on Linux for ESP32 development, flash your first program, run a WiFi scan, and control the onboard LED via HTTP server." /><meta name="keywords" content="esp32, micro controller, arduino, linux, programming, c&#43;&#43;, python, wifi, bluetooth" />
 
 
 
@@ -45,7 +50,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Getting Started With ESP 32 Development" />
 <meta property="og:url" content="https://hsps.in/post/getting-started-with-esp-32-linux/" />
-<meta property="og:description" content="Getting Started With ESP 32 Development in Linux using Arduino" />
+<meta property="og:description" content="Set up Arduino IDE on Linux for ESP32 development, flash your first program, run a WiFi scan, and control the onboard LED via HTTP server." />
 <meta property="article:published_time" content="2022-08-04T00:42:04-07:00" />
 <meta property="article:modified_time" content="2022-08-04T00:42:04-07:00" />
 <meta property="article:author" content="" />
@@ -65,14 +70,14 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Getting Started With ESP 32 Development" />
-<meta name="twitter:description" content="Getting Started With ESP 32 Development in Linux using Arduino" />
+<meta name="twitter:description" content="Set up Arduino IDE on Linux for ESP32 development, flash your first program, run a WiFi scan, and control the onboard LED via HTTP server." />
 <meta name="twitter:image" content="https://hsps.in/images/og-base_hu_df589f481565c4ea.png" />
 
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "\"Getting Started With ESP 32 Development\"",
   "url": "\"https://hsps.in/post/getting-started-with-esp-32-linux/\"",
   "datePublished": "2022-08-04T00:42:04-07:00",
@@ -86,7 +91,7 @@
     "@type": "Person",
     "name": "null"
   },
-  "description": "\"Getting Started With ESP 32 Development in Linux using Arduino\"",
+  "description": "\"Set up Arduino IDE on Linux for ESP32 development, flash your first program, run a WiFi scan, and control the onboard LED via HTTP server.\"",
   "wordCount":  1124 ,
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -97,15 +102,33 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "\"https://hsps.in/\""
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Articles",
+      "item": "\"https://hsps.in/post/\""
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "\"Getting Started With ESP 32 Development\"",
+      "item": "\"https://hsps.in/post/getting-started-with-esp-32-linux/\""
+    }
+  ]
+}
+</script>
 
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
 
 </head>
 <body>
@@ -142,12 +165,7 @@
 
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
-        
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<div class="logo-wrapper">
+        <div class="logo-wrapper">
   <a href="/" class="logo">HsPS.in</a>
   <br>
   <i>My thoughts and opinions</i>

@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Setup HTTP(s) and Reverse Proxy to Docker Web App - Harisankar P S | Ruby on Rails Developer</title>
-  <meta name="renderer" content="webkit" />
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -16,7 +21,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Setup HTTP(s) and Reverse Proxy to Docker Web App" /><meta name="keywords" content="nginx, docker, docker-compose, setup, proxy" />
+<meta name="author" content="Harisankar P S" /><meta name="description" content="Configure Nginx as an HTTPS reverse proxy for a Docker web app using docker-compose, with SSL termination and automatic HTTP-to-HTTPS redirect." /><meta name="keywords" content="nginx, docker, docker-compose, setup, proxy" />
 
 
 
@@ -45,7 +50,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Setup HTTP(s) and Reverse Proxy to Docker Web App" />
 <meta property="og:url" content="https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/" />
-<meta property="og:description" content="Setup HTTP(s) and Reverse Proxy to Docker Web App" />
+<meta property="og:description" content="Configure Nginx as an HTTPS reverse proxy for a Docker web app using docker-compose, with SSL termination and automatic HTTP-to-HTTPS redirect." />
 <meta property="article:published_time" content="2023-08-03T22:31:40-07:00" />
 <meta property="article:modified_time" content="2023-08-03T22:31:40-07:00" />
 <meta property="article:author" content="" />
@@ -61,14 +66,14 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Setup HTTP(s) and Reverse Proxy to Docker Web App" />
-<meta name="twitter:description" content="Setup HTTP(s) and Reverse Proxy to Docker Web App" />
+<meta name="twitter:description" content="Configure Nginx as an HTTPS reverse proxy for a Docker web app using docker-compose, with SSL termination and automatic HTTP-to-HTTPS redirect." />
 <meta name="twitter:image" content="https://hsps.in/images/og-base_hu_8b8f4f2fe1ecf1c.png" />
 
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "\"Setup HTTP(s) and Reverse Proxy to Docker Web App\"",
   "url": "\"https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/\"",
   "datePublished": "2023-08-03T22:31:40-07:00",
@@ -82,7 +87,7 @@
     "@type": "Person",
     "name": "null"
   },
-  "description": "\"Setup HTTP(s) and Reverse Proxy to Docker Web App\"",
+  "description": "\"Configure Nginx as an HTTPS reverse proxy for a Docker web app using docker-compose, with SSL termination and automatic HTTP-to-HTTPS redirect.\"",
   "wordCount":  388 ,
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -93,15 +98,33 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "\"https://hsps.in/\""
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Articles",
+      "item": "\"https://hsps.in/post/\""
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "\"Setup HTTP(s) and Reverse Proxy to Docker Web App\"",
+      "item": "\"https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/\""
+    }
+  ]
+}
+</script>
 
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
 
 </head>
 <body>
@@ -138,12 +161,7 @@
 
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
-        
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<div class="logo-wrapper">
+        <div class="logo-wrapper">
   <a href="/" class="logo">HsPS.in</a>
   <br>
   <i>My thoughts and opinions</i>
