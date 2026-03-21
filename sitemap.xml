@@ -2,15 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hsps.in/categories/</loc>
+    <lastmod>2026-03-21T11:56:26+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/devops/</loc>
+    <lastmod>2026-03-21T11:56:26+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/categories/devops/</loc>
+    <lastmod>2026-03-21T11:56:26+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/git/</loc>
+    <lastmod>2026-03-21T11:56:26+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/</loc>
-    <lastmod>2026-03-20T14:22:29+05:30</lastmod>
+    <lastmod>2026-03-21T11:56:26+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/performance/</loc>
+    <lastmod>2026-03-21T11:56:26+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hsps.in/post/</loc>
-    <lastmod>2026-03-20T14:22:29+05:30</lastmod>
+    <lastmod>2026-03-21T11:56:26+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/</loc>
+    <lastmod>2026-03-21T11:56:26+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/taming-a-486mb-git-repo/</loc>
+    <lastmod>2026-03-21T11:56:26+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,21 +72,7 @@
   </url>
   
   <url>
-    <loc>https://hsps.in/categories/</loc>
-    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://hsps.in/categories/git/</loc>
-    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/git/</loc>
     <lastmod>2025-12-07T19:15:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -59,13 +94,6 @@
   
   <url>
     <loc>https://hsps.in/tags/productivity/</loc>
-    <lastmod>2025-12-07T19:15:00+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/</loc>
     <lastmod>2025-12-07T19:15:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -108,13 +136,6 @@
   
   <url>
     <loc>https://hsps.in/categories/performance/</loc>
-    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/performance/</loc>
     <lastmod>2025-12-07T08:19:13+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -263,13 +284,6 @@
   <url>
     <loc>https://hsps.in/tags/thread/</loc>
     <lastmod>2025-07-08T18:31:49+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/devops/</loc>
-    <lastmod>2025-06-18T23:09:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -851,13 +865,6 @@
   <url>
     <loc>https://hsps.in/tags/testing/</loc>
     <lastmod>2023-08-05T23:06:27-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/categories/devops/</loc>
-    <lastmod>2023-08-03T22:31:40-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Wed, 18 Jun 2025 23:09:32 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 11:56:26 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taming a 486MB Git Repo</title>
+      <link>https://hsps.in/post/taming-a-486mb-git-repo/</link>
+      <pubDate>Sat, 21 Mar 2026 11:56:26 +0530</pubDate>
+      <guid>https://hsps.in/post/taming-a-486mb-git-repo/</guid>
+      <description>&lt;p&gt;I recently cloned a repository and noticed it was &lt;strong&gt;486MB&lt;/strong&gt;. The actual source code? About &lt;strong&gt;6MB&lt;/strong&gt;. That&amp;rsquo;s a 98.7% overhead. Here&amp;rsquo;s how I found the bloat and fixed it.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How I Use Tailscale to Host a Public App From My Laptop</title>
       <link>https://hsps.in/post/how-i-host-public-apps-using-tailscale/</link>

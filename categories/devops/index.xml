@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Devops on Harisankar P S | Ruby on Rails Developer</title>
+    <title>DevOps on Harisankar P S | Ruby on Rails Developer</title>
     <link>https://hsps.in/categories/devops/</link>
-    <description>Recent content in Devops on Harisankar P S | Ruby on Rails Developer</description>
+    <description>Recent content in DevOps on Harisankar P S | Ruby on Rails Developer</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Thu, 03 Aug 2023 22:31:40 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 11:56:26 +0530</lastBuildDate>
     <atom:link href="https://hsps.in/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taming a 486MB Git Repo</title>
+      <link>https://hsps.in/post/taming-a-486mb-git-repo/</link>
+      <pubDate>Sat, 21 Mar 2026 11:56:26 +0530</pubDate>
+      <guid>https://hsps.in/post/taming-a-486mb-git-repo/</guid>
+      <description>&lt;p&gt;I recently cloned a repository and noticed it was &lt;strong&gt;486MB&lt;/strong&gt;. The actual source code? About &lt;strong&gt;6MB&lt;/strong&gt;. That&amp;rsquo;s a 98.7% overhead. Here&amp;rsquo;s how I found the bloat and fixed it.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Setup HTTP(s) and Reverse Proxy to Docker Web App</title>
       <link>https://hsps.in/post/setup-https-and-reverseproxy-to-docker-web-app/</link>

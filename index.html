@@ -64,12 +64,12 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "\"Harisankar P S | Ruby on Rails Developer\"",
-  "url": "\"https://hsps.in/\"",
-  "description": "\"Harisankar P S - Software Engineer specializing in Ruby on Rails\"",
+  "name": "Harisankar P S | Ruby on Rails Developer",
+  "url": "https://hsps.in/",
+  "description": "Harisankar P S - Software Engineer specializing in Ruby on Rails",
   "author": {
     "@type": "Person",
-    "name": "null"
+    "name": "Harisankar P S"
   }
 }
 </script>
@@ -147,6 +147,29 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/taming-a-486mb-git-repo/">Taming a 486MB Git Repo</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2026-03-21 </span>
+      <div class="post-category">
+          <a href="/categories/devops/"> DevOps </a>
+          </div>
+        <span class="more-meta"> 1281 words </span>
+        <span class="more-meta"> 7 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>I recently cloned a repository and noticed it was <strong>486MB</strong>. The actual source code? About <strong>6MB</strong>. That&rsquo;s a 98.7% overhead. Here&rsquo;s how I found the bloat and fixed it.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/taming-a-486mb-git-repo/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/git-worktree-ai-workflow/">Git Worktree: Scaling Your AI Workflow</a></h1>
@@ -271,46 +294,6 @@ the pdf only needs to be generated once, and the content seldom changes. So rend
     </div>
     <div class="read-more">
       <a href="/post/using-file-upload-to-cache-serving-pdf-files/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/rails-current-attributes/">A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2025-07-08 </span>
-      <div class="post-category">
-          <a href="/categories/rails/"> rails </a>
-          </div>
-        <span class="more-meta"> 655 words </span>
-        <span class="more-meta"> 4 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Managing context like the current user, store, client, or request ID across controllers, models, jobs, and services in a Rails app has always been a little messy. Before Rails 5.2, you might’ve reached for <code>Thread.current</code>, <code>class_attribute</code>, or even <code>@@class_variables</code> to store this kind of state. But these are not thread-safe and can cause hard-to-debug issues in concurrent environments.</p>
-<p>Rails 5.2 introduced a clean solution: <code>ActiveSupport::CurrentAttributes</code>.</p>
-<p>This article covers what it is, why it exists, how it works internally, how to use it safely across web and background jobs, and how to test it properly.</p>
-<hr>
-<h2 id="-a-quick-history">📜 A Quick History</h2>
-<p><code>ActiveSupport::CurrentAttributes</code> was introduced by DHH in Rails 5.2 to simplify access to per-request or per-job context in a thread-safe way. It replaced older, hackier methods like:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Thread</span><span class="o">.</span><span class="n">current</span><span class="o">[</span><span class="ss">:current_user</span><span class="o">]</span> <span class="o">=</span> <span class="n">user</span>
-</span></span><span class="line"><span class="cl"><span class="no">ApplicationRecord</span><span class="o">.</span><span class="n">class_attribute</span> <span class="ss">:current_client</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>These approaches were shared across threads — fine in development, dangerous in production.</p>
-<p><code>CurrentAttributes</code> changed that by giving you a dedicated, Rails-friendly API for storing context that’s isolated per request/job.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/rails-current-attributes/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

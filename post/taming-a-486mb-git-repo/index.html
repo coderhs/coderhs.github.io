@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Taming a 486MB Git Repo - Harisankar P S | Ruby on Rails Developer</title>
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Harisankar P S" /><meta name="description" content="How I diagnosed and fixed a 486MB git repo where the actual code was only 6MB. Finding bloat, rewriting history, and choosing between Git LFS and compression." /><meta name="keywords" content="git, git lfs, git filter-repo, repository size, image optimization, webp, devops" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.152.2 with theme even" />
+
+
+<link rel="canonical" href="https://hsps.in/post/taming-a-486mb-git-repo/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+
+<meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Taming a 486MB Git Repo" />
+<meta property="og:url" content="https://hsps.in/post/taming-a-486mb-git-repo/" />
+<meta property="og:description" content="How I diagnosed and fixed a 486MB git repo where the actual code was only 6MB. Finding bloat, rewriting history, and choosing between Git LFS and compression." />
+<meta property="article:published_time" content="2026-03-21T11:56:26&#43;05:30" />
+<meta property="article:modified_time" content="2026-03-21T11:56:26&#43;05:30" />
+<meta property="article:author" content="Harisankar P S" />
+<meta property="article:tag" content="git" />
+<meta property="article:tag" content="devops" />
+<meta property="article:tag" content="performance" />
+<meta property="og:image" content="https://hsps.in/images/og-base_hu_6e3542d8491b69f5.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Taming a 486MB Git Repo" />
+<meta name="twitter:description" content="How I diagnosed and fixed a 486MB git repo where the actual code was only 6MB. Finding bloat, rewriting history, and choosing between Git LFS and compression." />
+<meta name="twitter:image" content="https://hsps.in/images/og-base_hu_6e3542d8491b69f5.png" />
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Taming a 486MB Git Repo",
+  "url": "https://hsps.in/post/taming-a-486mb-git-repo/",
+  "datePublished": "2026-03-21T11:56:26\u002b05:30",
+  "dateModified": "2026-03-21T11:56:26\u002b05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Harisankar P S",
+    "url": "https://hsps.in/about"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Harisankar P S"
+  },
+  "description": "How I diagnosed and fixed a 486MB git repo where the actual code was only 6MB. Finding bloat, rewriting history, and choosing between Git LFS and compression.",
+  "wordCount":  1281 ,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hsps.in/post/taming-a-486mb-git-repo/"
+  },
+  "image": "https://hsps.in/images/og-base_hu_6e3542d8491b69f5.png",
+  "keywords": ["git","devops","performance"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://hsps.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Articles",
+      "item": "https://hsps.in/post/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Taming a 486MB Git Repo",
+      "item": "https://hsps.in/post/taming-a-486mb-git-repo/"
+    }
+  ]
+}
+</script>
+
+
+</head>
+<body>
+  <div class="reading-progress" id="reading-progress"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">HsPS.in</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Articles</li>
+      </a><a href="/videos/">
+        <li class="mobile-menu-item">Speaking</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/subscribe">
+        <li class="mobile-menu-item">Subscribe</li>
+      </a><a href="/projects">
+        <li class="mobile-menu-item">Projects</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">HsPS.in</a>
+  <br>
+  <i>My thoughts and opinions</i>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item" style="margin-right: 1rem;">
+        <a class="menu-item-link" href="/post/">Articles</a>
+      </li><li class="menu-item" style="margin-right: 1rem;">
+        <a class="menu-item-link" href="/videos/">Speaking</a>
+      </li><li class="menu-item" style="margin-right: 1rem;">
+        <a class="menu-item-link" href="/about">About</a>
+      </li><li class="menu-item" style="margin-right: 1rem;">
+        <a class="menu-item-link" href="/subscribe">Subscribe</a>
+      </li><li class="menu-item" style="margin-right: 1rem;">
+        <a class="menu-item-link" href="/projects">Projects</a>
+      </li>
+  </ul>
+</nav>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ME9J4YD4H0');
+</script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Taming a 486MB Git Repo</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2026-03-21 </span>
+        <div class="post-category">
+            <a href="/categories/devops/"> DevOps </a>
+            </div>
+          <span class="more-meta"> 1281 words </span>
+          <span class="more-meta"> 7 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#where-did-the-space-go">Where Did the Space Go?</a></li>
+        <li><a href="#finding-the-largest-files">Finding the Largest Files</a></li>
+        <li><a href="#the-ghost-files-problem">The Ghost Files Problem</a></li>
+        <li><a href="#finding-orphaned-images">Finding Orphaned Images</a></li>
+        <li><a href="#the-fix-compression-first-then-history">The Fix: Compression First, Then History</a>
+          <ul>
+            <li><a href="#step-1-compress-the-images">Step 1: Compress the images</a></li>
+            <li><a href="#step-2-remove-deleted-files-from-history">Step 2: Remove deleted files from history</a></li>
+            <li><a href="#step-3-remove-orphaned-images-and-commit">Step 3: Remove orphaned images and commit</a></li>
+          </ul>
+        </li>
+        <li><a href="#do-you-actually-need-git-lfs">Do You Actually Need Git LFS?</a>
+          <ul>
+            <li><a href="#when-lfs-makes-sense">When LFS makes sense</a></li>
+            <li><a href="#when-compression-is-the-better-answer">When compression is the better answer</a></li>
+            <li><a href="#the-hybrid-approach">The hybrid approach</a></li>
+          </ul>
+        </li>
+        <li><a href="#the-caveats">The Caveats</a></li>
+        <li><a href="#the-result">The Result</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>I recently cloned a repository and noticed it was <strong>486MB</strong>. The actual source code? About <strong>6MB</strong>. That&rsquo;s a 98.7% overhead. Here&rsquo;s how I found the bloat and fixed it.</p>
+<h2 id="where-did-the-space-go">Where Did the Space Go?</h2>
+<p>The first step is understanding where the bytes are. Two commands tell you most of the story:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Size of git&#39;s internal database (history, objects, packs)</span>
+</span></span><span class="line"><span class="cl">du -sh .git
+</span></span><span class="line"><span class="cl"><span class="c1"># 285M    .git</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Size of the working directory (what&#39;s actually checked out)</span>
+</span></span><span class="line"><span class="cl">du -sh --exclude<span class="o">=</span>.git .
+</span></span><span class="line"><span class="cl"><span class="c1"># 194M    .</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>So 285MB was git history and 194MB was the working tree — mostly images. The code, templates, and config files were about 6MB total.</p>
+<h2 id="finding-the-largest-files">Finding the Largest Files</h2>
+<p>Git stores every version of every file as a blob. To find the biggest ones:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git rev-list --objects --all <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="p">|</span> git cat-file --batch-check<span class="o">=</span><span class="s1">&#39;%(objecttype) %(objectname) %(objectsize) %(rest)&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="p">|</span> awk <span class="s1">&#39;/^blob/ {print $3, $4}&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="p">|</span> sort -rn <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="p">|</span> head -20
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Output (trimmed):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">10485760  public/images/treatments/shirodhara5.JPG
+</span></span><span class="line"><span class="cl"> 9437184  public/images/temp/0L5A7347.JPG
+</span></span><span class="line"><span class="cl"> 9306112  public/images/temp/0L5A7309.JPG
+</span></span><span class="line"><span class="cl"> 8912896  public/images/treatments/abhyangam3.JPG
+</span></span><span class="line"><span class="cl"> 7340032  public/images/temp/0L5A7218.JPG
+</span></span><span class="line"><span class="cl"> 7168000  public/images/temp/0L5A7317.JPG
+</span></span><span class="line"><span class="cl"> ...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The pattern was clear: <strong>raw camera photos at 7-10MB each</strong>. Some were treatment photos used on the site. Others were in a <code>temp/</code> folder that had already been deleted.</p>
+<h2 id="the-ghost-files-problem">The Ghost Files Problem</h2>
+<p>Here&rsquo;s the thing that surprises people: <strong>deleting a file from git doesn&rsquo;t reclaim the space</strong>.</p>
+<p>Six photos (~50MB total) had been removed from <code>public/images/temp/</code> months ago. They didn&rsquo;t exist in the working directory anymore. But git faithfully preserved every byte in its object database — because that&rsquo;s what git does. It keeps the full history so you can go back to any commit.</p>
+<p>Running <code>git rm</code> and committing only adds a new commit that says &ldquo;this file no longer exists.&rdquo; The old blob stays in <code>.git/objects/</code> forever.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># These files are gone from disk...</span>
+</span></span><span class="line"><span class="cl">ls public/images/temp/
+</span></span><span class="line"><span class="cl"><span class="c1"># ls: cannot access &#39;public/images/temp/&#39;: No such file or directory</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ...but still in git&#39;s object database</span>
+</span></span><span class="line"><span class="cl">git log --all --full-history -- <span class="s2">&#34;public/images/temp/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># commit fbcc4cf ... Clean up unused template files</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="finding-orphaned-images">Finding Orphaned Images</h2>
+<p>Beyond deleted files in git history, there were images on disk that no code referenced anymore. A quick check:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># List all images</span>
+</span></span><span class="line"><span class="cl">find public/images -type f <span class="se">\(</span> -name <span class="s2">&#34;*.jpg&#34;</span> -o -name <span class="s2">&#34;*.png&#34;</span> -o -name <span class="s2">&#34;*.webp&#34;</span> <span class="se">\)</span> &gt; /tmp/all-images.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># For each image, check if it&#39;s referenced in source code</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="nb">read</span> img<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">basename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&#34;</span><span class="nv">$img</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> ! grep -rq <span class="s2">&#34;</span><span class="nv">$basename</span><span class="s2">&#34;</span> --include<span class="o">=</span><span class="s2">&#34;*.js&#34;</span> --include<span class="o">=</span><span class="s2">&#34;*.jsx&#34;</span> --include<span class="o">=</span><span class="s2">&#34;*.ts&#34;</span> --include<span class="o">=</span><span class="s2">&#34;*.tsx&#34;</span> --include<span class="o">=</span><span class="s2">&#34;*.astro&#34;</span> --include<span class="o">=</span><span class="s2">&#34;*.html&#34;</span> .<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;ORPHANED: </span><span class="nv">$img</span><span class="s2"> (</span><span class="k">$(</span>du -h <span class="s2">&#34;</span><span class="nv">$img</span><span class="s2">&#34;</span> <span class="p">|</span> cut -f1<span class="k">)</span><span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span> &lt; /tmp/all-images.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This found five treatment images (~35MB) that were commented out in the data file but still sitting on disk.</p>
+<h2 id="the-fix-compression-first-then-history">The Fix: Compression First, Then History</h2>
+<p>My initial instinct was to reach for Git LFS. But I stopped and thought about it:</p>
+<p><strong>The images were 7-10MB each because they were unprocessed camera photos.</strong> No web page needs a 10MB JPEG. The site was already slow because browsers had to download these massive files.</p>
+<h3 id="step-1-compress-the-images">Step 1: Compress the images</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install ImageMagick if you don&#39;t have it</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sudo apt install imagemagick webp</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Resize to max 1200px wide and convert to WebP</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> img in public/images/treatments/*.JPG public/images/treatments/*.jpg<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">output</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">img</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.webp&#34;</span>
+</span></span><span class="line"><span class="cl">  convert <span class="s2">&#34;</span><span class="nv">$img</span><span class="s2">&#34;</span> -resize <span class="s1">&#39;1200x&gt;&#39;</span> -quality <span class="m">80</span> <span class="s2">&#34;</span><span class="nv">$output</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>du -h <span class="s2">&#34;</span><span class="nv">$img</span><span class="s2">&#34;</span> <span class="p">|</span> cut -f1<span class="k">)</span><span class="s2"> -&gt; </span><span class="k">$(</span>du -h <span class="s2">&#34;</span><span class="nv">$output</span><span class="s2">&#34;</span> <span class="p">|</span> cut -f1<span class="k">)</span><span class="s2">  </span><span class="nv">$img</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Results:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">9.4M -&gt; 84K   public/images/treatments/shirodhara5.JPG
+</span></span><span class="line"><span class="cl">8.5M -&gt; 76K   public/images/treatments/abhyangam3.JPG
+</span></span><span class="line"><span class="cl">7.8M -&gt; 71K   public/images/treatments/kizhi2.JPG
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>192MB of images became ~5MB.</strong> A 97% reduction, and the site got faster too.</p>
+<h3 id="step-2-remove-deleted-files-from-history">Step 2: Remove deleted files from history</h3>
+<p>Now for the 285MB git database. <code>git filter-repo</code> is the modern replacement for the older <code>git filter-branch</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install git-filter-repo</span>
+</span></span><span class="line"><span class="cl">pip install git-filter-repo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Remove the deleted temp folder from all history</span>
+</span></span><span class="line"><span class="cl">git filter-repo --path public/images/temp/ --invert-paths
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Also remove the original large JPGs (now replaced with WebP)</span>
+</span></span><span class="line"><span class="cl">git filter-repo --path-glob <span class="s1">&#39;*.JPG&#39;</span> --invert-paths
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>After a <code>git gc --aggressive</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Before
+</span></span><span class="line"><span class="cl">du -sh .git
+</span></span><span class="line"><span class="cl"># 285M
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># After
+</span></span><span class="line"><span class="cl">du -sh .git
+</span></span><span class="line"><span class="cl"># 12M
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="step-3-remove-orphaned-images-and-commit">Step 3: Remove orphaned images and commit</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Delete the orphans found earlier</span>
+</span></span><span class="line"><span class="cl">rm public/images/treatments/upanaham.jpg
+</span></span><span class="line"><span class="cl">rm public/images/treatments/kati-vasti.jpg
+</span></span><span class="line"><span class="cl"><span class="c1"># ... etc</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Remove the old JPGs (replaced with WebP)</span>
+</span></span><span class="line"><span class="cl">rm public/images/treatments/*.JPG
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git add -A
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;Replace raw camera JPGs with optimized WebP, remove orphaned images&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="do-you-actually-need-git-lfs">Do You Actually Need Git LFS?</h2>
+<p>Git LFS (Large File Storage) replaces large files in your repo with small pointer files. The actual content is stored on a separate LFS server. It&rsquo;s the go-to recommendation for large binary files.</p>
+<p>But consider the trade-offs:</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Git LFS</th>
+          <th>Compression</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Setup complexity</strong></td>
+          <td>Everyone needs <code>git-lfs</code> installed</td>
+          <td>One-time conversion</td>
+      </tr>
+      <tr>
+          <td><strong>Cost</strong></td>
+          <td>GitHub: 1GB free, then $5/50GB/month</td>
+          <td>Free</td>
+      </tr>
+      <tr>
+          <td><strong>Clone speed</strong></td>
+          <td>Fast clone, then LFS fetches on checkout</td>
+          <td>Fast clone, small files</td>
+      </tr>
+      <tr>
+          <td><strong>CI/CD</strong></td>
+          <td>Needs LFS configured in CI</td>
+          <td>Just works</td>
+      </tr>
+      <tr>
+          <td><strong>Offline access</strong></td>
+          <td>Needs LFS server for file content</td>
+          <td>Everything is local</td>
+      </tr>
+      <tr>
+          <td><strong>History rewrite</strong></td>
+          <td><code>git lfs migrate</code> rewrites history</td>
+          <td><code>git filter-repo</code> rewrites history</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="when-lfs-makes-sense">When LFS makes sense</h3>
+<ul>
+<li><strong>Binary assets that can&rsquo;t be compressed</strong> (compiled binaries, fonts, videos)</li>
+<li><strong>Files that change frequently</strong> (design files, large datasets)</li>
+<li><strong>Large teams</strong> where you want to control who downloads what</li>
+</ul>
+<h3 id="when-compression-is-the-better-answer">When compression is the better answer</h3>
+<ul>
+<li><strong>Images for a website</strong> — they should be optimized anyway for page speed</li>
+<li><strong>One-time cleanup</strong> — if the files won&rsquo;t be re-added at their original size</li>
+<li><strong>Small teams / personal projects</strong> — LFS adds complexity you don&rsquo;t need</li>
+</ul>
+<p>In our case, compression was clearly the right call. The images <em>needed</em> to be smaller for the website to perform well. LFS would have just hidden the problem — visitors would still be downloading 10MB JPEGs.</p>
+<h3 id="the-hybrid-approach">The hybrid approach</h3>
+<p>If you do expect large binaries in the future, set up LFS <em>after</em> cleaning up:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Track future large images with LFS</span>
+</span></span><span class="line"><span class="cl">git lfs install
+</span></span><span class="line"><span class="cl">git lfs track <span class="s2">&#34;*.psd&#34;</span>
+</span></span><span class="line"><span class="cl">git lfs track <span class="s2">&#34;*.raw&#34;</span>
+</span></span><span class="line"><span class="cl">git lfs track <span class="s2">&#34;*.mp4&#34;</span>
+</span></span><span class="line"><span class="cl">git add .gitattributes
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;Configure Git LFS for design and video files&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And add a pre-commit hook to catch oversized files before they enter history:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># .git/hooks/pre-commit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">MAX_SIZE</span><span class="o">=</span><span class="m">500000</span>  <span class="c1"># 500KB in bytes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> file in <span class="k">$(</span>git diff --cached --name-only --diff-filter<span class="o">=</span>ACM<span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">size</span><span class="o">=</span><span class="k">$(</span>wc -c &lt; <span class="s2">&#34;</span><span class="nv">$file</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="nb">echo</span> 0<span class="k">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$size</span><span class="s2">&#34;</span> -gt <span class="s2">&#34;</span><span class="nv">$MAX_SIZE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;ERROR: </span><span class="nv">$file</span><span class="s2"> is </span><span class="k">$((</span> size <span class="o">/</span> <span class="m">1024</span> <span class="k">))</span><span class="s2">KB (max </span><span class="si">${</span><span class="nv">MAX_SIZE</span><span class="si">}</span><span class="s2">KB)&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Compress the file or add it to Git LFS&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="the-caveats">The Caveats</h2>
+<p>Rewriting history with <code>git filter-repo</code> (or <code>git lfs migrate</code>) is a <strong>destructive operation</strong>:</p>
+<ul>
+<li>You&rsquo;ll need to <strong>force-push</strong> to the remote</li>
+<li>All collaborators must <strong>re-clone</strong> (their local history won&rsquo;t match)</li>
+<li><strong>Open PRs</strong> will have conflicts</li>
+<li><strong>Commit hashes change</strong> — any references to specific commits break</li>
+</ul>
+<p>For a small team or personal project, this is fine. For a large team, coordinate first. Do it on a weekend. Announce it. Have everyone push their branches before you rewrite.</p>
+<h2 id="the-result">The Result</h2>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Before</th>
+          <th>After</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>.git</code> directory</td>
+          <td>285 MB</td>
+          <td>12 MB</td>
+      </tr>
+      <tr>
+          <td>Working directory</td>
+          <td>194 MB</td>
+          <td>5 MB</td>
+      </tr>
+      <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>486 MB</strong></td>
+          <td><strong>17 MB</strong></td>
+      </tr>
+      <tr>
+          <td>Clone time</td>
+          <td>~45s</td>
+          <td>~2s</td>
+      </tr>
+      <tr>
+          <td>Largest image</td>
+          <td>10 MB</td>
+          <td>84 KB</td>
+      </tr>
+      <tr>
+          <td>Page load (images)</td>
+          <td>Painful</td>
+          <td>Fast</td>
+      </tr>
+  </tbody>
+</table>
+<p>A 96% reduction in repo size, and the website got significantly faster as a side effect.</p>
+<p>The lesson: before reaching for Git LFS, ask yourself — <strong>should these files be this large in the first place?</strong></p>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/git/">git</a>
+          <a href="/tags/devops/">devops</a>
+          <a href="/tags/performance/">performance</a>
+          </div>
+      
+      
+        <div class="related-posts">
+          <h3>Related Articles</h3>
+          <ul>
+            
+              <li>
+                <a href="/post/html-picture-tag/">Mastering the HTML Picture Tag: Responsive Images, WebP, and AVIF</a>
+                <span class="related-post-date">2025-12-07</span>
+              </li>
+            
+              <li>
+                <a href="/post/git-worktree-ai-workflow/">Git Worktree: Scaling Your AI Workflow</a>
+                <span class="related-post-date">2025-12-07</span>
+              </li>
+            
+              <li>
+                <a href="/post/how-i-host-public-apps-using-tailscale/">How I Use Tailscale to Host a Public App From My Laptop</a>
+                <span class="related-post-date">2025-06-18</span>
+              </li>
+            
+              <li>
+                <a href="/post/rails-copy-assets-bundler-cache-to-speed-up-build/">Rails Copy Assets bundler Cache to Speed Up Build</a>
+                <span class="related-post-date">2023-08-01</span>
+              </li>
+            
+              <li>
+                <a href="/post/using-file-upload-to-cache-serving-pdf-files/">Caching Rendered PDFs in Rails with Active Storage</a>
+                <span class="related-post-date">2025-07-26</span>
+              </li>
+            
+          </ul>
+        </div>
+      <div class="author-post-intro">
+  <p>
+    Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
+    devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
+    full-stack development, linux, go, rust and DevOps projects.
+  </p>
+  <p>
+    If you're interested in collaborating or have a project in mind, feel free to <a href="mailto:projects@hsps.in">email me</a>.
+  </p>
+  <div class="author-subscribe">
+    <p class="subscribe-label">Get new posts delivered to your inbox:</p>
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <form
+      action="https://app.kit.com/forms/7897017/subscriptions"
+      class="seva-form formkit-form"
+      method="post"
+      data-sv-form="7897017"
+      data-uid="52c1473349"
+      data-format="inline"
+      data-version="5"
+      data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+    >
+      <div class="subscribe-form-row">
+        <input
+          class="formkit-input"
+          name="email_address"
+          aria-label="Email Address"
+          placeholder="your@email.com"
+          required=""
+          type="email"
+        />
+        <button data-element="submit" class="formkit-submit formkit-submit">
+          <div class="formkit-spinner"><div></div><div></div><div></div></div>
+          <span>Subscribe</span>
+        </button>
+      </div>
+      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+    </form>
+  </div>
+</div>
+
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/git-worktree-ai-workflow/">
+            <span class="next-text nav-default">Git Worktree: Scaling Your AI Workflow</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div class="giscus"></div>
+  <script src="https://giscus.app/client.js"
+          data-repo="coderhs/coderhs.github.io"
+          data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk="
+          data-category="General"
+          data-category-id="DIC_kwDOEWBlkc4CjKPc"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="1"
+          data-input-position="top"
+          data-theme="light"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2011 - 
+    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+  
+  <script>
+    (function() {
+      var progressBar = document.getElementById('reading-progress');
+      if (!progressBar) return;
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var scrollPercent = (scrollTop / docHeight) * 100;
+          progressBar.style.width = scrollPercent + '%';
+        }
+      });
+    })();
+  </script>
+
+  
+  <script>
+    (function() {
+      var codeBlocks = document.querySelectorAll('.highlight > .chroma, figure.highlight');
+      codeBlocks.forEach(function(block) {
+        var btn = document.createElement('button');
+        btn.className = 'copy-code-btn';
+        btn.textContent = 'Copy';
+        btn.addEventListener('click', function() {
+          var code = block.querySelector('code');
+          if (!code) {
+            code = block.querySelector('.code pre');
+          }
+          if (code) {
+            navigator.clipboard.writeText(code.textContent).then(function() {
+              btn.textContent = 'Copied!';
+              setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+            });
+          }
+        });
+        block.style.position = 'relative';
+        block.appendChild(btn);
+      });
+    })();
+  </script>
+</body>
+</html>
