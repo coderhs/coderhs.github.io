@@ -17,6 +17,13 @@
       <description>&lt;p&gt;I recently cloned a repository and noticed it was &lt;strong&gt;486MB&lt;/strong&gt;. The actual source code? About &lt;strong&gt;6MB&lt;/strong&gt;. That&amp;rsquo;s a 98.7% overhead. Here&amp;rsquo;s how I found the bloat and fixed it.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>How a European DNS Server Added 1 Second to Every Page Load in Australia</title>
+      <link>https://hsps.in/post/european-dns-server-added-1-second-to-every-page-load-in-australia/</link>
+      <pubDate>Thu, 05 Mar 2026 13:18:25 +0530</pubDate>
+      <guid>https://hsps.in/post/european-dns-server-added-1-second-to-every-page-load-in-australia/</guid>
+      <description>&lt;p&gt;At the company where I currently work, we run a multi-brand e-commerce platform with stores in around 60 countries per brand. This year we started moving off AWS to self-hosted bare metal servers that we manage ourselves, spread across multiple providers (Hetzner, OVH, and others) for resilience. We have three regions: EU (primary), AU (Sydney), and SG (Singapore). Reads and writes happen locally on the server closest to each user.&lt;/p&gt;&#xA;&lt;p&gt;I was tasked to investigate our AU server randomly being slower compared to EU. Not always, just sometimes. The same pages that rendered in under 100ms on EU would take over a second on AU.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>How I Use Tailscale to Host a Public App From My Laptop</title>
       <link>https://hsps.in/post/how-i-host-public-apps-using-tailscale/</link>
       <pubDate>Wed, 18 Jun 2025 23:09:32 +0530</pubDate>

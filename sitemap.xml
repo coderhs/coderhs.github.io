@@ -65,6 +65,34 @@
   </url>
   
   <url>
+    <loc>https://hsps.in/tags/cdn/</loc>
+    <lastmod>2026-03-05T13:18:25+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/dns/</loc>
+    <lastmod>2026-03-05T13:18:25+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/post/european-dns-server-added-1-second-to-every-page-load-in-australia/</loc>
+    <lastmod>2026-03-05T13:18:25+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hsps.in/tags/rails/</loc>
+    <lastmod>2026-03-05T13:18:25+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://hsps.in/tags/ai/</loc>
     <lastmod>2025-12-07T19:15:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
@@ -150,13 +178,6 @@
   
   <url>
     <loc>https://hsps.in/categories/rails/</loc>
-    <lastmod>2025-12-07T08:19:13+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/rails/</loc>
     <lastmod>2025-12-07T08:19:13+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1124,13 +1145,6 @@
   <url>
     <loc>https://hsps.in/tags/storage/</loc>
     <lastmod>2022-09-05T18:29:12-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hsps.in/tags/dns/</loc>
-    <lastmod>2022-09-04T11:36:43-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
