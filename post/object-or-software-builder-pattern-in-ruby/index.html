@@ -1,1019 +1,444 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>🏗️ Understanding the Builder Pattern with Ruby Examples - Harisankar P S | Ruby on Rails Developer</title>
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Learn the Builder pattern in Ruby with practical examples including HTML form builders, CLI commands, JSON construction, and API requests." /><meta name="keywords" content="builder, software, development, pattern, ruby, api, html, json" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.152.2 with theme even" />
-
-
-<link rel="canonical" href="https://hsps.in/post/object-or-software-builder-pattern-in-ruby/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<link href="/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-
-<meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="🏗️ Understanding the Builder Pattern with Ruby Examples" />
-<meta property="og:url" content="https://hsps.in/post/object-or-software-builder-pattern-in-ruby/" />
-<meta property="og:description" content="Learn the Builder pattern in Ruby with practical examples including HTML form builders, CLI commands, JSON construction, and API requests." />
-<meta property="article:published_time" content="2025-08-05T10:57:22&#43;05:30" />
-<meta property="article:modified_time" content="2025-08-05T10:57:22&#43;05:30" />
-<meta property="article:author" content="Harisankar P S" />
-<meta property="article:tag" content="builder" />
-<meta property="article:tag" content="software" />
-<meta property="article:tag" content="development" />
-<meta property="article:tag" content="pattern" />
-<meta property="article:tag" content="ruby" />
-<meta property="article:tag" content="api" />
-<meta property="article:tag" content="html" />
-<meta property="article:tag" content="json" />
-<meta property="og:image" content="https://hsps.in/images/og-base_hu_1dc90ab42bf94c86.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="🏗️ Understanding the Builder Pattern with Ruby Examples" />
-<meta name="twitter:description" content="Learn the Builder pattern in Ruby with practical examples including HTML form builders, CLI commands, JSON construction, and API requests." />
-<meta name="twitter:image" content="https://hsps.in/images/og-base_hu_1dc90ab42bf94c86.png" />
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "🏗️ Understanding the Builder Pattern with Ruby Examples",
-  "url": "https://hsps.in/post/object-or-software-builder-pattern-in-ruby/",
-  "datePublished": "2025-08-05T10:57:22\u002b05:30",
-  "dateModified": "2025-08-05T10:57:22\u002b05:30",
-  "author": {
-    "@type": "Person",
-    "name": "Harisankar P S",
-    "url": "https://hsps.in/about"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Harisankar P S"
-  },
-  "description": "Learn the Builder pattern in Ruby with practical examples including HTML form builders, CLI commands, JSON construction, and API requests.",
-  "wordCount":  1236 ,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://hsps.in/post/object-or-software-builder-pattern-in-ruby/"
-  },
-  "image": "https://hsps.in/images/og-base_hu_1dc90ab42bf94c86.png",
-  "keywords": ["builder","software","development","pattern","ruby","api","html","json"]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://hsps.in/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Articles",
-      "item": "https://hsps.in/post/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "🏗️ Understanding the Builder Pattern with Ruby Examples",
-      "item": "https://hsps.in/post/object-or-software-builder-pattern-in-ruby/"
-    }
-  ]
-}
-</script>
-
-
-</head>
-<body>
-  <div class="reading-progress" id="reading-progress"></div>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">HsPS.in</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/post/">
-        <li class="mobile-menu-item">Articles</li>
-      </a><a href="/videos/">
-        <li class="mobile-menu-item">Speaking</li>
-      </a><a href="/about">
-        <li class="mobile-menu-item">About</li>
-      </a><a href="/subscribe">
-        <li class="mobile-menu-item">Subscribe</li>
-      </a><a href="/projects">
-        <li class="mobile-menu-item">Projects</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">HsPS.in</a>
-  <br>
-  <i>My thoughts and opinions</i>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/post/">Articles</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/videos/">Speaking</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/about">About</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/subscribe">Subscribe</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/projects">Projects</a>
-      </li>
-  </ul>
-</nav>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ME9J4YD4H0');
-</script>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">🏗️ Understanding the Builder Pattern with Ruby Examples</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2025-08-05 </span>
-        <div class="post-category">
-            <a href="/categories/software-design-pattern/"> Software Design Pattern </a>
-            </div>
-          <span class="more-meta"> 1236 words </span>
-          <span class="more-meta"> 6 mins read </span>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#-what-is-the-builder-pattern">📦 What Is the Builder Pattern?</a></li>
-        <li><a href="#-classic-example-build-a-car">🚗 Classic Example: Build a Car</a></li>
-        <li><a href="#-real-world-dsl-rails-form_with">🧾 Real-World DSL: Rails <code>form_with</code></a>
-          <ul>
-            <li><a href="#building-a-minimal-form_with-dsl-in-ruby">Building a Minimal form_with DSL in Ruby</a></li>
-          </ul>
-        </li>
-        <li><a href="#-cli-builder">🔧 CLI Builder</a></li>
-        <li><a href="#-json-builder">🧱 JSON Builder</a>
-          <ul>
-            <li><a href="#output">Output:</a></li>
-          </ul>
-        </li>
-        <li><a href="#-api-request-builder">🌐 API Request Builder</a></li>
-        <li><a href="#-takeaways">🧠 Takeaways</a></li>
-        <li><a href="#-want-to-build-your-own">💬 Want to Build Your Own?</a></li>
-        <li><a href="#important-notes--dont-over-engineer">Important notes / Don&rsquo;t over Engineer</a></li>
-        <li><a href="#conclusion">Conclusion</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>Design patterns are only useful when they help solve real world problems in ways that feel natural in your language. In Ruby, one such pattern that fits like a glove is the <strong>Builder Pattern</strong>.</p>
-<p>You&rsquo;ll find it everywhere, from constructing HTML forms in Rails to building command-line interfaces or even assembling HTTP requests.</p>
-<h2 id="-what-is-the-builder-pattern">📦 What Is the Builder Pattern?</h2>
-<p>In real world projects, we often model things as objects. The idea is that objects are instances of a common blueprint, sharing the same structure but differing in a few properties like name, age, etc. However, when there are many properties to configure and you need more control over how the final object is built, that&rsquo;s where the Builder pattern becomes useful. It helps construct complex objects step by step without cluttering your code with long initializers or deeply nested logic.</p>
-<p>The <strong>Builder Pattern</strong> is used to construct complex objects step-by-step. Rather than stuffing all parameters into a huge constructor, you build an object one piece at a time, usually using a <strong>fluent interface</strong> (method chaining).</p>
-<h2 id="-classic-example-build-a-car">🚗 Classic Example: Build a Car</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Car</span>
-</span></span><span class="line"><span class="cl">  <span class="kp">attr_accessor</span> <span class="ss">:engine</span><span class="p">,</span> <span class="ss">:wheels</span><span class="p">,</span> <span class="ss">:color</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">to_s</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Car with </span><span class="si">#{</span><span class="n">engine</span><span class="si">}</span><span class="s2">, </span><span class="si">#{</span><span class="n">wheels</span><span class="si">}</span><span class="s2"> wheels, and color </span><span class="si">#{</span><span class="n">color</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">CarBuilder</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@car</span> <span class="o">=</span> <span class="no">Car</span><span class="o">.</span><span class="n">new</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">set_engine</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@car</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="n">engine</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">set_wheels</span><span class="p">(</span><span class="n">wheels</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@car</span><span class="o">.</span><span class="n">wheels</span> <span class="o">=</span> <span class="n">wheels</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">set_color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@car</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">build</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@car</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">car</span> <span class="o">=</span> <span class="no">CarBuilder</span><span class="o">.</span><span class="n">new</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">set_engine</span><span class="p">(</span><span class="s2">&#34;V8&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">set_wheels</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">&#34;Red&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">             <span class="o">.</span><span class="n">build</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">car</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#=&gt; Car with V8, 4 wheels, and color Red</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
-<h2 id="-real-world-dsl-rails-form_with">🧾 Real-World DSL: Rails <code>form_with</code></h2>
-<p>Now let’s look at a familiar example if you’ve worked with Rails:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">form_with</span><span class="p">(</span><span class="ss">model</span><span class="p">:</span> <span class="vi">@post</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">form</span><span class="o">|</span>
-</span></span><span class="line"><span class="cl">  <span class="n">form</span><span class="o">.</span><span class="n">text_field</span> <span class="ss">:title</span>
-</span></span><span class="line"><span class="cl">  <span class="n">form</span><span class="o">.</span><span class="n">submit</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Looks simple, right? But it’s doing exactly what the Builder pattern is all about:</p>
-<ul>
-<li>You&rsquo;re passing a model (@post)</li>
-<li>You yield a builder object (form)</li>
-<li>You call form.text_field, form.submit, etc.</li>
-<li>And under the hood, it builds up the full HTML form</li>
-</ul>
-<p>Let’s try recreating a simplified version of form_with ourselves.</p>
-<h3 id="building-a-minimal-form_with-dsl-in-ruby">Building a Minimal form_with DSL in Ruby</h3>
-<h4 id="step-1-a-basic-model">Step 1: A basic model</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Post</span>
-</span></span><span class="line"><span class="cl">  <span class="kp">attr_accessor</span> <span class="ss">:title</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">title</span><span class="p">:)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="step-2-the-formbuilder">Step 2: The FormBuilder</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">FormBuilder</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@model</span> <span class="o">=</span> <span class="n">model</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@output</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">text_field</span><span class="p">(</span><span class="n">field_name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">model_name</span> <span class="o">=</span> <span class="vi">@model</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">downcase</span>
-</span></span><span class="line"><span class="cl">    <span class="n">value</span> <span class="o">=</span> <span class="vi">@model</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">field_name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@output</span> <span class="o">&lt;&lt;</span> <span class="sx">%(&lt;input type=&#34;text&#34; name=&#34;</span><span class="si">#{</span><span class="n">model_name</span><span class="si">}</span><span class="sx">[</span><span class="si">#{</span><span class="n">field_name</span><span class="si">}</span><span class="sx">]&#34; value=&#34;</span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="sx">&#34;&gt;</span><span class="se">\n</span><span class="sx">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">submit</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&#34;Submit&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@output</span> <span class="o">&lt;&lt;</span> <span class="sx">%(&lt;input type=&#34;submit&#34; value=&#34;</span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="sx">&#34;&gt;</span><span class="se">\n</span><span class="sx">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">to_s</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@output</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="step-3-the-form_with-method">Step 3: The form_with method</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">form_with</span><span class="p">(</span><span class="ss">model</span><span class="p">:)</span>
-</span></span><span class="line"><span class="cl">  <span class="n">model_name</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">downcase</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">puts</span> <span class="sx">%(&lt;form action=&#34;/</span><span class="si">#{</span><span class="n">model_name</span><span class="si">}</span><span class="sx">s&#34; method=&#34;post&#34;&gt;)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="n">builder</span> <span class="o">=</span> <span class="no">FormBuilder</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">yield</span><span class="p">(</span><span class="n">builder</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nb">puts</span> <span class="n">builder</span><span class="o">.</span><span class="n">to_s</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">puts</span> <span class="sx">%(&lt;/form&gt;)</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="step-4-putting-it-all-together">Step 4: Putting it all together</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rb" data-lang="rb"><span class="line"><span class="cl"><span class="n">post</span> <span class="o">=</span> <span class="no">Post</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">title</span><span class="p">:</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">form_with</span><span class="p">(</span><span class="ss">model</span><span class="p">:</span> <span class="n">post</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">form</span><span class="o">|</span>
-</span></span><span class="line"><span class="cl">  <span class="n">form</span><span class="o">.</span><span class="n">text_field</span> <span class="ss">:title</span>
-</span></span><span class="line"><span class="cl">  <span class="n">form</span><span class="o">.</span><span class="n">submit</span> <span class="s2">&#34;Save&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">&#34;/posts&#34;</span> <span class="nb">method</span><span class="o">=</span><span class="s2">&#34;post&#34;</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">&#34;text&#34;</span> <span class="nb">name</span><span class="o">=</span><span class="s2">&#34;post[title]&#34;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&#34;Hello World&#34;</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">&#34;submit&#34;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&#34;Save&#34;</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="sr">/form&gt;
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>Here, <code>form_with</code> yields a builder object (<code>form</code>), which provides methods like <code>text_field</code>, <code>text_area</code>, and <code>submit</code>. You’re configuring it, and it produces HTML for you. This is a perfect example of the builder pattern in action.</p>
-<p>Now let’s take the same principle and apply it elsewhere.</p>
-<hr>
-<h2 id="-cli-builder">🔧 CLI Builder</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">FFmpegCommand</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@parts</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&#34;ffmpeg&#34;</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">input</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@parts</span> <span class="o">&lt;&lt;</span> <span class="s2">&#34;-i </span><span class="si">#{</span><span class="no">Shellwords</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">resolution</span><span class="p">(</span><span class="ss">width</span><span class="p">:,</span> <span class="ss">height</span><span class="p">:)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@parts</span> <span class="o">&lt;&lt;</span> <span class="s2">&#34;-vf scale=</span><span class="si">#{</span><span class="n">width</span><span class="si">}</span><span class="s2">:</span><span class="si">#{</span><span class="n">height</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@parts</span> <span class="o">&lt;&lt;</span> <span class="no">Shellwords</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">to_s</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@parts</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">cmd</span> <span class="o">=</span> <span class="no">FFmpegCommand</span><span class="o">.</span><span class="n">new</span>
-</span></span><span class="line"><span class="cl">          <span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&#34;video.mp4&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">          <span class="o">.</span><span class="n">resolution</span><span class="p">(</span><span class="ss">width</span><span class="p">:</span> <span class="mi">1280</span><span class="p">,</span> <span class="ss">height</span><span class="p">:</span> <span class="mi">720</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">          <span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="s2">&#34;out.mp4&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">cmd</span><span class="o">.</span><span class="n">to_s</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#=&gt; ffmpeg -i video.mp4 -vf scale=1280:720 out.mp4</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
-<h2 id="-json-builder">🧱 JSON Builder</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="nb">require</span> <span class="s2">&#34;json&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">JSONBuilder</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@data</span> <span class="o">=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@data</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">nest</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">nested</span> <span class="o">=</span> <span class="no">JSONBuilder</span><span class="o">.</span><span class="n">new</span>
-</span></span><span class="line"><span class="cl">    <span class="k">yield</span><span class="p">(</span><span class="n">nested</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@data</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">=</span> <span class="n">nested</span><span class="o">.</span><span class="n">data</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">build</span>
-</span></span><span class="line"><span class="cl">    <span class="no">JSON</span><span class="o">.</span><span class="n">pretty_generate</span><span class="p">(</span><span class="vi">@data</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kp">protected</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">data</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@data</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">builder</span> <span class="o">=</span> <span class="no">JSONBuilder</span><span class="o">.</span><span class="n">new</span>
-</span></span><span class="line"><span class="cl"><span class="n">builder</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">,</span> <span class="s2">&#34;Harris&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">       <span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;age&#34;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">       <span class="o">.</span><span class="n">nest</span><span class="p">(</span><span class="s2">&#34;address&#34;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span>
-</span></span><span class="line"><span class="cl">         <span class="n">a</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;city&#34;</span><span class="p">,</span> <span class="s2">&#34;Bangalore&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;zip&#34;</span><span class="p">,</span> <span class="s2">&#34;560001&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">       <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">builder</span><span class="o">.</span><span class="n">build</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="output">Output:</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Harris&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;age&#34;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Bangalore&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;zip&#34;</span><span class="p">:</span> <span class="s2">&#34;560001&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
-<h2 id="-api-request-builder">🌐 API Request Builder</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">APIRequestBuilder</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@headers</span> <span class="o">=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@query</span> <span class="o">=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@body</span> <span class="o">=</span> <span class="kp">nil</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">set_header</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@headers</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">set_query</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@query</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">set_body</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@body</span> <span class="o">=</span> <span class="n">data</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">self</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">build</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">headers</span><span class="p">:</span> <span class="vi">@headers</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">query</span><span class="p">:</span> <span class="vi">@query</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">body</span><span class="p">:</span> <span class="vi">@body</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">request</span> <span class="o">=</span> <span class="no">APIRequestBuilder</span><span class="o">.</span><span class="n">new</span>
-</span></span><span class="line"><span class="cl">           <span class="o">.</span><span class="n">set_header</span><span class="p">(</span><span class="s2">&#34;Authorization&#34;</span><span class="p">,</span> <span class="s2">&#34;Bearer token&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">           <span class="o">.</span><span class="n">set_query</span><span class="p">(</span><span class="s2">&#34;page&#34;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">           <span class="o">.</span><span class="n">set_body</span><span class="p">({</span> <span class="ss">title</span><span class="p">:</span> <span class="s2">&#34;Builder Pattern&#34;</span> <span class="p">})</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">request</span><span class="o">.</span><span class="n">build</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
-<h2 id="-takeaways">🧠 Takeaways</h2>
-<p>Builder-style DSLs are everywhere in Ruby:</p>
-<ul>
-<li><code>ActiveRecord.where(...).order(...).limit(...)</code></li>
-<li><code>Mail.new(...)</code></li>
-<li><code>Nokogiri::XML::Builder</code></li>
-<li><code>Prawn::Document.generate(...)</code></li>
-<li>Custom DSLs like the ones above</li>
-</ul>
-<p>The core principle is:</p>
-<blockquote>
-<p>Let the user configure things step-by-step without forcing them to know or pass everything upfront.</p>
-</blockquote>
-<hr>
-<h2 id="-want-to-build-your-own">💬 Want to Build Your Own?</h2>
-<ul>
-<li>Think about the final code you want to <em>write</em> first.</li>
-<li>Yield objects with fluent methods (<code>self</code> at the end of each).</li>
-<li>Compose a final structure (<code>to_s</code>, <code>build</code>, or <code>to_json</code>).</li>
-<li>Avoid too much meta programming. Clean and simple Ruby is enough.</li>
-</ul>
-<p>You don&rsquo;t need Rails or fancy tooling to write clean DSLs. Just plain Ruby and a clear idea of what you want to express.</p>
-<h2 id="important-notes--dont-over-engineer">Important notes / Don&rsquo;t over Engineer</h2>
-<p>The Builder Pattern is useful, but it’s also easy to misuse or over-engineer. Here are some common mistakes people make, and what to avoid</p>
-<ol>
-<li>Using Builder When It&rsquo;s Not Needed</li>
-</ol>
-<p>Don&rsquo;t use builder pattern for simple cases, use it only when.</p>
-<ul>
-<li>The object has many optional fields</li>
-<li>The creation process involved multiple steps</li>
-<li>You want to make the code more readable</li>
-</ul>
-<ol start="2">
-<li>Mixing building logic and execution logic.</li>
-</ol>
-<p>Use the builder to only build out the object/command/request. The execution should be done by afterwords allowing for
-more maintainable and testable solution.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>The builder pattern is one of those quiet heroes in software design. Whether you&rsquo;re building cars, HTML forms in Rails, JSON payloads, API requests, or CLI commands, anywhere you need to construct something complex step by step, it gives you a clean, readable way to do it. You&rsquo;ve probably used it without realizing it (like form_with in Rails), and once you spot the pattern, you&rsquo;ll start seeing it everywhere.</p>
-<p>It&rsquo;s not just about cleaner code. It&rsquo;s about giving your future self (and teammates) a better way to read, maintain, and extend that code without headaches.</p>
-<p>So next time you find yourself passing 12 arguments into a constructor or setting a bunch of properties in random order, take a step back and ask: would a builder make this easier? Odds are, it will.</p>
-    </div>
-
-    
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/builder/">builder</a>
-          <a href="/tags/software/">software</a>
-          <a href="/tags/development/">development</a>
-          <a href="/tags/pattern/">pattern</a>
-          <a href="/tags/ruby/">ruby</a>
-          <a href="/tags/api/">api</a>
-          <a href="/tags/html/">html</a>
-          <a href="/tags/json/">json</a>
-          </div>
-      
-      
-        <div class="related-posts">
-          <h3>Related Articles</h3>
-          <ul>
-            
-              <li>
-                <a href="/post/intro-to-ruby-data-and-comparable/">Ruby `Data` Class – A Convenient Way to Create Value Objects</a>
-                <span class="related-post-date">2025-06-02</span>
-              </li>
-            
-              <li>
-                <a href="/post/sidekiq-graceful-shutdown-in-fargate-ecs/">Sidekiq Graceful Shutdown in Fargate ECS</a>
-                <span class="related-post-date">2023-07-30</span>
-              </li>
-            
-              <li>
-                <a href="/post/ruby-wasm/">About Web Assembly. Example for Ruby Web Assembly</a>
-                <span class="related-post-date">2023-05-19</span>
-              </li>
-            
-              <li>
-                <a href="/post/enable-docker-remote-api-on-docker-host/">Enable Docker Remote Api on Docker Host</a>
-                <span class="related-post-date">2022-09-06</span>
-              </li>
-            
-              <li>
-                <a href="/post/validating-yaml-files-in-ruby/">Validating YAML Files in Ruby</a>
-                <span class="related-post-date">2022-08-22</span>
-              </li>
-            
-          </ul>
-        </div>
-      <div class="author-post-intro">
-  <p>
-    Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
-    devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
-    full-stack development, linux, go, rust and DevOps projects.
-  </p>
-  <p>
-    If you're interested in collaborating or have a project in mind, feel free to <a href="mailto:projects@hsps.in">email me</a>.
-  </p>
-  <div class="author-subscribe">
-    <p class="subscribe-label">Get new posts delivered to your inbox:</p>
-    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <form
-      action="https://app.kit.com/forms/7897017/subscriptions"
-      class="seva-form formkit-form"
-      method="post"
-      data-sv-form="7897017"
-      data-uid="52c1473349"
-      data-format="inline"
-      data-version="5"
-      data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
-    >
-      <div class="subscribe-form-row">
-        <input
-          class="formkit-input"
-          name="email_address"
-          aria-label="Email Address"
-          placeholder="your@email.com"
-          required=""
-          type="email"
-        />
-        <button data-element="submit" class="formkit-submit formkit-submit">
-          <div class="formkit-spinner"><div></div><div></div><div></div></div>
-          <span>Subscribe</span>
-        </button>
-      </div>
-      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-    </form>
-  </div>
-</div>
-
-      <nav class="post-nav">
-        <a class="prev" href="/post/html-picture-tag/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Mastering the HTML Picture Tag: Responsive Images, WebP, and AVIF</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/using-file-upload-to-cache-serving-pdf-files/">
-            <span class="next-text nav-default">Caching Rendered PDFs in Rails with Active Storage</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        <div class="giscus"></div>
-  <script src="https://giscus.app/client.js"
-          data-repo="coderhs/coderhs.github.io"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk="
-          data-category="General"
-          data-category-id="DIC_kwDOEWBlkc4CjKPc"
-          data-mapping="pathname"
-          data-strict="1"
-          data-reactions-enabled="1"
-          data-emit-metadata="1"
-          data-input-position="top"
-          data-theme="light"
-          data-lang="en"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-  </script>
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2011 - 
-    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-
-
-
-
-
-
-
-
-  
-  <script>
-    (function() {
-      var progressBar = document.getElementById('reading-progress');
-      if (!progressBar) return;
-      window.addEventListener('scroll', function() {
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        if (docHeight > 0) {
-          var scrollPercent = (scrollTop / docHeight) * 100;
-          progressBar.style.width = scrollPercent + '%';
-        }
-      });
-    })();
-  </script>
-
-  
-  <script>
-    (function() {
-      var codeBlocks = document.querySelectorAll('.highlight > .chroma, figure.highlight');
-      codeBlocks.forEach(function(block) {
-        var btn = document.createElement('button');
-        btn.className = 'copy-code-btn';
-        btn.textContent = 'Copy';
-        btn.addEventListener('click', function() {
-          var code = block.querySelector('code');
-          if (!code) {
-            code = block.querySelector('.code pre');
-          }
-          if (code) {
-            navigator.clipboard.writeText(code.textContent).then(function() {
-              btn.textContent = 'Copied!';
-              setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
-            });
-          }
-        });
-        block.style.position = 'relative';
-        block.appendChild(btn);
-      });
-    })();
-  </script>
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>🏗️ Understanding the Builder Pattern with Ruby Examples | hsps.in</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel=stylesheet><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Harisankar P S"><meta name=description content="Learn the Builder pattern in Ruby with practical examples including HTML form builders, CLI commands, JSON construction, and API requests."><meta name=keywords content="builder,software,development,pattern,ruby,api,html,json"><meta name=generator content="Hugo 0.152.2 with theme even"><link rel=canonical href=https://hsps.in/post/object-or-software-builder-pattern-in-ruby/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="🏗️ Understanding the Builder Pattern with Ruby Examples"><meta property="og:url" content="https://hsps.in/post/object-or-software-builder-pattern-in-ruby/"><meta property="og:description" content="Learn the Builder pattern in Ruby with practical examples including HTML form builders, CLI commands, JSON construction, and API requests."><meta property="article:published_time" content="2025-08-05T10:57:22+05:30"><meta property="article:modified_time" content="2026-03-20T14:38:40+05:30"><meta property="article:author" content="Harisankar P S"><meta property="article:tag" content="builder"><meta property="article:tag" content="software"><meta property="article:tag" content="development"><meta property="article:tag" content="pattern"><meta property="article:tag" content="ruby"><meta property="article:tag" content="api"><meta property="article:tag" content="html"><meta property="article:tag" content="json"><meta property="og:image" content="https://hsps.in/images/og-base_hu_1dc90ab42bf94c86.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="🏗️ Understanding the Builder Pattern with Ruby Examples"><meta name=twitter:description content="Learn the Builder pattern in Ruby with practical examples including HTML form builders, CLI commands, JSON construction, and API requests."><meta name=twitter:image content="https://hsps.in/images/og-base_hu_1dc90ab42bf94c86.png"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"🏗️ Understanding the Builder Pattern with Ruby Examples","url":"https://hsps.in/post/object-or-software-builder-pattern-in-ruby/","datePublished":"2025-08-05T10:57:22\u002b05:30","dateModified":"2026-03-20T14:38:40\u002b05:30","author":{"@type":"Person","name":"Harisankar P S","url":"https://hsps.in/about"},"publisher":{"@type":"Person","name":"Harisankar P S"},"description":"Learn the Builder pattern in Ruby with practical examples including HTML form builders, CLI commands, JSON construction, and API requests.","wordCount":1236,"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsps.in/post/object-or-software-builder-pattern-in-ruby/"},"image":"https://hsps.in/images/og-base_hu_1dc90ab42bf94c86.png","keywords":["builder","software","development","pattern","ruby","api","html","json"]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hsps.in/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://hsps.in/post/"},{"@type":"ListItem","position":3,"name":"🏗️ Understanding the Builder Pattern with Ruby Examples"}]}</script></head><body><div class=reading-progress id=reading-progress></div><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>HsPS.in</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Articles</li></a><a href=/videos/><li class=mobile-menu-item>Speaking</li></a><a href=/about><li class=mobile-menu-item>About</li></a><a href=/subscribe><li class=mobile-menu-item>Subscribe</li></a><a href=/projects><li class=mobile-menu-item>Projects</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>HsPS.in</a><br><i>My thoughts and opinions</i></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/post/>Articles</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/videos/>Speaking</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/about>About</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/subscribe>Subscribe</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/projects>Projects</a></li></ul></nav><script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-ME9J4YD4H0")</script></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>🏗️ Understanding the Builder Pattern with Ruby Examples</h1><div class=post-meta><span class=post-time>2025-08-05</span><div class=post-category><a href=/categories/software-design-pattern/>Software Design Pattern</a></div><span class=more-meta>1236 words </span><span class=more-meta>6 mins read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#-what-is-the-builder-pattern>📦 What Is the Builder Pattern?</a></li><li><a href=#-classic-example-build-a-car>🚗 Classic Example: Build a Car</a></li><li><a href=#-real-world-dsl-rails-form_with>🧾 Real-World DSL: Rails <code>form_with</code></a><ul><li><a href=#building-a-minimal-form_with-dsl-in-ruby>Building a Minimal form_with DSL in Ruby</a></li></ul></li><li><a href=#-cli-builder>🔧 CLI Builder</a></li><li><a href=#-json-builder>🧱 JSON Builder</a><ul><li><a href=#output>Output:</a></li></ul></li><li><a href=#-api-request-builder>🌐 API Request Builder</a></li><li><a href=#-takeaways>🧠 Takeaways</a></li><li><a href=#-want-to-build-your-own>💬 Want to Build Your Own?</a></li><li><a href=#important-notes--dont-over-engineer>Important notes / Don&rsquo;t over Engineer</a></li><li><a href=#conclusion>Conclusion</a></li></ul></li></ul></nav></div></div><div class=post-content><p>Design patterns are only useful when they help solve real world problems in ways that feel natural in your language. In Ruby, one such pattern that fits like a glove is the <strong>Builder Pattern</strong>.</p><p>You&rsquo;ll find it everywhere, from constructing HTML forms in Rails to building command-line interfaces or even assembling HTTP requests.</p><h2 id=-what-is-the-builder-pattern>📦 What Is the Builder Pattern?</h2><p>In real world projects, we often model things as objects. The idea is that objects are instances of a common blueprint, sharing the same structure but differing in a few properties like name, age, etc. However, when there are many properties to configure and you need more control over how the final object is built, that&rsquo;s where the Builder pattern becomes useful. It helps construct complex objects step by step without cluttering your code with long initializers or deeply nested logic.</p><p>The <strong>Builder Pattern</strong> is used to construct complex objects step-by-step. Rather than stuffing all parameters into a huge constructor, you build an object one piece at a time, usually using a <strong>fluent interface</strong> (method chaining).</p><h2 id=-classic-example-build-a-car>🚗 Classic Example: Build a Car</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=k>class</span> <span class=nc>Car</span>
+</span></span><span class=line><span class=cl>  <span class=kp>attr_accessor</span> <span class=ss>:engine</span><span class=p>,</span> <span class=ss>:wheels</span><span class=p>,</span> <span class=ss>:color</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>to_s</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;Car with </span><span class=si>#{</span><span class=n>engine</span><span class=si>}</span><span class=s2>, </span><span class=si>#{</span><span class=n>wheels</span><span class=si>}</span><span class=s2> wheels, and color </span><span class=si>#{</span><span class=n>color</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>CarBuilder</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@car</span> <span class=o>=</span> <span class=no>Car</span><span class=o>.</span><span class=n>new</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>set_engine</span><span class=p>(</span><span class=n>engine</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@car</span><span class=o>.</span><span class=n>engine</span> <span class=o>=</span> <span class=n>engine</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>set_wheels</span><span class=p>(</span><span class=n>wheels</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@car</span><span class=o>.</span><span class=n>wheels</span> <span class=o>=</span> <span class=n>wheels</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>set_color</span><span class=p>(</span><span class=n>color</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@car</span><span class=o>.</span><span class=n>color</span> <span class=o>=</span> <span class=n>color</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>build</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@car</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>car</span> <span class=o>=</span> <span class=no>CarBuilder</span><span class=o>.</span><span class=n>new</span>
+</span></span><span class=line><span class=cl>             <span class=o>.</span><span class=n>set_engine</span><span class=p>(</span><span class=s2>&#34;V8&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>             <span class=o>.</span><span class=n>set_wheels</span><span class=p>(</span><span class=mi>4</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>             <span class=o>.</span><span class=n>set_color</span><span class=p>(</span><span class=s2>&#34;Red&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>             <span class=o>.</span><span class=n>build</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>puts</span> <span class=n>car</span>
+</span></span><span class=line><span class=cl><span class=c1>#=&gt; Car with V8, 4 wheels, and color Red</span>
+</span></span></code></pre></td></tr></table></div></div><hr><h2 id=-real-world-dsl-rails-form_with>🧾 Real-World DSL: Rails <code>form_with</code></h2><p>Now let’s look at a familiar example if you’ve worked with Rails:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=n>form_with</span><span class=p>(</span><span class=ss>model</span><span class=p>:</span> <span class=vi>@post</span><span class=p>)</span> <span class=k>do</span> <span class=o>|</span><span class=n>form</span><span class=o>|</span>
+</span></span><span class=line><span class=cl>  <span class=n>form</span><span class=o>.</span><span class=n>text_field</span> <span class=ss>:title</span>
+</span></span><span class=line><span class=cl>  <span class=n>form</span><span class=o>.</span><span class=n>submit</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><p>Looks simple, right? But it’s doing exactly what the Builder pattern is all about:</p><ul><li>You&rsquo;re passing a model (@post)</li><li>You yield a builder object (form)</li><li>You call form.text_field, form.submit, etc.</li><li>And under the hood, it builds up the full HTML form</li></ul><p>Let’s try recreating a simplified version of form_with ourselves.</p><h3 id=building-a-minimal-form_with-dsl-in-ruby>Building a Minimal form_with DSL in Ruby</h3><h4 id=step-1-a-basic-model>Step 1: A basic model</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rb data-lang=rb><span class=line><span class=cl><span class=k>class</span> <span class=nc>Post</span>
+</span></span><span class=line><span class=cl>  <span class=kp>attr_accessor</span> <span class=ss>:title</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span><span class=p>(</span><span class=ss>title</span><span class=p>:)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@title</span> <span class=o>=</span> <span class=n>title</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=step-2-the-formbuilder>Step 2: The FormBuilder</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rb data-lang=rb><span class=line><span class=cl><span class=k>class</span> <span class=nc>FormBuilder</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span><span class=p>(</span><span class=n>model</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@model</span> <span class=o>=</span> <span class=n>model</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@output</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>text_field</span><span class=p>(</span><span class=n>field_name</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>model_name</span> <span class=o>=</span> <span class=vi>@model</span><span class=o>.</span><span class=n>class</span><span class=o>.</span><span class=n>name</span><span class=o>.</span><span class=n>downcase</span>
+</span></span><span class=line><span class=cl>    <span class=n>value</span> <span class=o>=</span> <span class=vi>@model</span><span class=o>.</span><span class=n>send</span><span class=p>(</span><span class=n>field_name</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@output</span> <span class=o>&lt;&lt;</span> <span class=sx>%(&lt;input type=&#34;text&#34; name=&#34;</span><span class=si>#{</span><span class=n>model_name</span><span class=si>}</span><span class=sx>[</span><span class=si>#{</span><span class=n>field_name</span><span class=si>}</span><span class=sx>]&#34; value=&#34;</span><span class=si>#{</span><span class=n>value</span><span class=si>}</span><span class=sx>&#34;&gt;</span><span class=se>\n</span><span class=sx>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>submit</span><span class=p>(</span><span class=n>value</span> <span class=o>=</span> <span class=s2>&#34;Submit&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@output</span> <span class=o>&lt;&lt;</span> <span class=sx>%(&lt;input type=&#34;submit&#34; value=&#34;</span><span class=si>#{</span><span class=n>value</span><span class=si>}</span><span class=sx>&#34;&gt;</span><span class=se>\n</span><span class=sx>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>to_s</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@output</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=step-3-the-form_with-method>Step 3: The form_with method</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rb data-lang=rb><span class=line><span class=cl><span class=k>def</span> <span class=nf>form_with</span><span class=p>(</span><span class=ss>model</span><span class=p>:)</span>
+</span></span><span class=line><span class=cl>  <span class=n>model_name</span> <span class=o>=</span> <span class=n>model</span><span class=o>.</span><span class=n>class</span><span class=o>.</span><span class=n>name</span><span class=o>.</span><span class=n>downcase</span>
+</span></span><span class=line><span class=cl>  <span class=nb>puts</span> <span class=sx>%(&lt;form action=&#34;/</span><span class=si>#{</span><span class=n>model_name</span><span class=si>}</span><span class=sx>s&#34; method=&#34;post&#34;&gt;)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>builder</span> <span class=o>=</span> <span class=no>FormBuilder</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>model</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>yield</span><span class=p>(</span><span class=n>builder</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=nb>puts</span> <span class=n>builder</span><span class=o>.</span><span class=n>to_s</span>
+</span></span><span class=line><span class=cl>  <span class=nb>puts</span> <span class=sx>%(&lt;/form&gt;)</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=step-4-putting-it-all-together>Step 4: Putting it all together</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rb data-lang=rb><span class=line><span class=cl><span class=n>post</span> <span class=o>=</span> <span class=no>Post</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=ss>title</span><span class=p>:</span> <span class=s2>&#34;Hello World&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>form_with</span><span class=p>(</span><span class=ss>model</span><span class=p>:</span> <span class=n>post</span><span class=p>)</span> <span class=k>do</span> <span class=o>|</span><span class=n>form</span><span class=o>|</span>
+</span></span><span class=line><span class=cl>  <span class=n>form</span><span class=o>.</span><span class=n>text_field</span> <span class=ss>:title</span>
+</span></span><span class=line><span class=cl>  <span class=n>form</span><span class=o>.</span><span class=n>submit</span> <span class=s2>&#34;Save&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=o>&lt;</span><span class=n>form</span> <span class=n>action</span><span class=o>=</span><span class=s2>&#34;/posts&#34;</span> <span class=nb>method</span><span class=o>=</span><span class=s2>&#34;post&#34;</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&lt;</span><span class=n>input</span> <span class=n>type</span><span class=o>=</span><span class=s2>&#34;text&#34;</span> <span class=nb>name</span><span class=o>=</span><span class=s2>&#34;post[title]&#34;</span> <span class=n>value</span><span class=o>=</span><span class=s2>&#34;Hello World&#34;</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&lt;</span><span class=n>input</span> <span class=n>type</span><span class=o>=</span><span class=s2>&#34;submit&#34;</span> <span class=n>value</span><span class=o>=</span><span class=s2>&#34;Save&#34;</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&lt;</span><span class=sr>/form&gt;
+</span></span></span></code></pre></td></tr></table></div></div><p>Here, <code>form_with</code> yields a builder object (<code>form</code>), which provides methods like <code>text_field</code>, <code>text_area</code>, and <code>submit</code>. You’re configuring it, and it produces HTML for you. This is a perfect example of the builder pattern in action.</p><p>Now let’s take the same principle and apply it elsewhere.</p><hr><h2 id=-cli-builder>🔧 CLI Builder</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=k>class</span> <span class=nc>FFmpegCommand</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@parts</span> <span class=o>=</span> <span class=o>[</span><span class=s2>&#34;ffmpeg&#34;</span><span class=o>]</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>input</span><span class=p>(</span><span class=n>file</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@parts</span> <span class=o>&lt;&lt;</span> <span class=s2>&#34;-i </span><span class=si>#{</span><span class=no>Shellwords</span><span class=o>.</span><span class=n>escape</span><span class=p>(</span><span class=n>file</span><span class=p>)</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>resolution</span><span class=p>(</span><span class=ss>width</span><span class=p>:,</span> <span class=ss>height</span><span class=p>:)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@parts</span> <span class=o>&lt;&lt;</span> <span class=s2>&#34;-vf scale=</span><span class=si>#{</span><span class=n>width</span><span class=si>}</span><span class=s2>:</span><span class=si>#{</span><span class=n>height</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>output</span><span class=p>(</span><span class=n>file</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@parts</span> <span class=o>&lt;&lt;</span> <span class=no>Shellwords</span><span class=o>.</span><span class=n>escape</span><span class=p>(</span><span class=n>file</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>to_s</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@parts</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=s2>&#34; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>cmd</span> <span class=o>=</span> <span class=no>FFmpegCommand</span><span class=o>.</span><span class=n>new</span>
+</span></span><span class=line><span class=cl>          <span class=o>.</span><span class=n>input</span><span class=p>(</span><span class=s2>&#34;video.mp4&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>          <span class=o>.</span><span class=n>resolution</span><span class=p>(</span><span class=ss>width</span><span class=p>:</span> <span class=mi>1280</span><span class=p>,</span> <span class=ss>height</span><span class=p>:</span> <span class=mi>720</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>          <span class=o>.</span><span class=n>output</span><span class=p>(</span><span class=s2>&#34;out.mp4&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>puts</span> <span class=n>cmd</span><span class=o>.</span><span class=n>to_s</span>
+</span></span><span class=line><span class=cl><span class=c1>#=&gt; ffmpeg -i video.mp4 -vf scale=1280:720 out.mp4</span>
+</span></span></code></pre></td></tr></table></div></div><hr><h2 id=-json-builder>🧱 JSON Builder</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=nb>require</span> <span class=s2>&#34;json&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>JSONBuilder</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@data</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>set</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@data</span><span class=o>[</span><span class=n>key</span><span class=o>]</span> <span class=o>=</span> <span class=n>value</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>nest</span><span class=p>(</span><span class=n>key</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>nested</span> <span class=o>=</span> <span class=no>JSONBuilder</span><span class=o>.</span><span class=n>new</span>
+</span></span><span class=line><span class=cl>    <span class=k>yield</span><span class=p>(</span><span class=n>nested</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@data</span><span class=o>[</span><span class=n>key</span><span class=o>]</span> <span class=o>=</span> <span class=n>nested</span><span class=o>.</span><span class=n>data</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>build</span>
+</span></span><span class=line><span class=cl>    <span class=no>JSON</span><span class=o>.</span><span class=n>pretty_generate</span><span class=p>(</span><span class=vi>@data</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kp>protected</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>data</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@data</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>builder</span> <span class=o>=</span> <span class=no>JSONBuilder</span><span class=o>.</span><span class=n>new</span>
+</span></span><span class=line><span class=cl><span class=n>builder</span><span class=o>.</span><span class=n>set</span><span class=p>(</span><span class=s2>&#34;name&#34;</span><span class=p>,</span> <span class=s2>&#34;Harris&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>       <span class=o>.</span><span class=n>set</span><span class=p>(</span><span class=s2>&#34;age&#34;</span><span class=p>,</span> <span class=mi>30</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>       <span class=o>.</span><span class=n>nest</span><span class=p>(</span><span class=s2>&#34;address&#34;</span><span class=p>)</span> <span class=k>do</span> <span class=o>|</span><span class=n>a</span><span class=o>|</span>
+</span></span><span class=line><span class=cl>         <span class=n>a</span><span class=o>.</span><span class=n>set</span><span class=p>(</span><span class=s2>&#34;city&#34;</span><span class=p>,</span> <span class=s2>&#34;Bangalore&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>set</span><span class=p>(</span><span class=s2>&#34;zip&#34;</span><span class=p>,</span> <span class=s2>&#34;560001&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>       <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>puts</span> <span class=n>builder</span><span class=o>.</span><span class=n>build</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=output>Output:</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Harris&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;age&#34;</span><span class=p>:</span> <span class=mi>30</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;address&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;city&#34;</span><span class=p>:</span> <span class=s2>&#34;Bangalore&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;zip&#34;</span><span class=p>:</span> <span class=s2>&#34;560001&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><hr><h2 id=-api-request-builder>🌐 API Request Builder</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=k>class</span> <span class=nc>APIRequestBuilder</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@headers</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@query</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@body</span> <span class=o>=</span> <span class=kp>nil</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>set_header</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@headers</span><span class=o>[</span><span class=n>key</span><span class=o>]</span> <span class=o>=</span> <span class=n>value</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>set_query</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@query</span><span class=o>[</span><span class=n>key</span><span class=o>]</span> <span class=o>=</span> <span class=n>value</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>set_body</span><span class=p>(</span><span class=n>data</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@body</span> <span class=o>=</span> <span class=n>data</span>
+</span></span><span class=line><span class=cl>    <span class=nb>self</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>build</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=ss>headers</span><span class=p>:</span> <span class=vi>@headers</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>query</span><span class=p>:</span> <span class=vi>@query</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>body</span><span class=p>:</span> <span class=vi>@body</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>request</span> <span class=o>=</span> <span class=no>APIRequestBuilder</span><span class=o>.</span><span class=n>new</span>
+</span></span><span class=line><span class=cl>           <span class=o>.</span><span class=n>set_header</span><span class=p>(</span><span class=s2>&#34;Authorization&#34;</span><span class=p>,</span> <span class=s2>&#34;Bearer token&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>           <span class=o>.</span><span class=n>set_query</span><span class=p>(</span><span class=s2>&#34;page&#34;</span><span class=p>,</span> <span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>           <span class=o>.</span><span class=n>set_body</span><span class=p>({</span> <span class=ss>title</span><span class=p>:</span> <span class=s2>&#34;Builder Pattern&#34;</span> <span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>puts</span> <span class=n>request</span><span class=o>.</span><span class=n>build</span>
+</span></span></code></pre></td></tr></table></div></div><hr><h2 id=-takeaways>🧠 Takeaways</h2><p>Builder-style DSLs are everywhere in Ruby:</p><ul><li><code>ActiveRecord.where(...).order(...).limit(...)</code></li><li><code>Mail.new(...)</code></li><li><code>Nokogiri::XML::Builder</code></li><li><code>Prawn::Document.generate(...)</code></li><li>Custom DSLs like the ones above</li></ul><p>The core principle is:</p><blockquote><p>Let the user configure things step-by-step without forcing them to know or pass everything upfront.</p></blockquote><hr><h2 id=-want-to-build-your-own>💬 Want to Build Your Own?</h2><ul><li>Think about the final code you want to <em>write</em> first.</li><li>Yield objects with fluent methods (<code>self</code> at the end of each).</li><li>Compose a final structure (<code>to_s</code>, <code>build</code>, or <code>to_json</code>).</li><li>Avoid too much meta programming. Clean and simple Ruby is enough.</li></ul><p>You don&rsquo;t need Rails or fancy tooling to write clean DSLs. Just plain Ruby and a clear idea of what you want to express.</p><h2 id=important-notes--dont-over-engineer>Important notes / Don&rsquo;t over Engineer</h2><p>The Builder Pattern is useful, but it’s also easy to misuse or over-engineer. Here are some common mistakes people make, and what to avoid</p><ol><li>Using Builder When It&rsquo;s Not Needed</li></ol><p>Don&rsquo;t use builder pattern for simple cases, use it only when.</p><ul><li>The object has many optional fields</li><li>The creation process involved multiple steps</li><li>You want to make the code more readable</li></ul><ol start=2><li>Mixing building logic and execution logic.</li></ol><p>Use the builder to only build out the object/command/request. The execution should be done by afterwords allowing for
+more maintainable and testable solution.</p><h2 id=conclusion>Conclusion</h2><p>The builder pattern is one of those quiet heroes in software design. Whether you&rsquo;re building cars, HTML forms in Rails, JSON payloads, API requests, or CLI commands, anywhere you need to construct something complex step by step, it gives you a clean, readable way to do it. You&rsquo;ve probably used it without realizing it (like form_with in Rails), and once you spot the pattern, you&rsquo;ll start seeing it everywhere.</p><p>It&rsquo;s not just about cleaner code. It&rsquo;s about giving your future self (and teammates) a better way to read, maintain, and extend that code without headaches.</p><p>So next time you find yourself passing 12 arguments into a constructor or setting a bunch of properties in random order, take a step back and ask: would a builder make this easier? Odds are, it will.</p></div><footer class=post-footer><div class=post-tags><a href=/tags/builder/>builder</a>
+<a href=/tags/software/>software</a>
+<a href=/tags/development/>development</a>
+<a href=/tags/pattern/>pattern</a>
+<a href=/tags/ruby/>ruby</a>
+<a href=/tags/api/>api</a>
+<a href=/tags/html/>html</a>
+<a href=/tags/json/>json</a></div><div class=related-posts><h3>Related Articles</h3><ul><li><a href=/post/intro-to-ruby-data-and-comparable/>Ruby Data.define: Immutable Value Objects with Data and Comparable</a>
+<span class=related-post-date>2025-06-02</span></li><li><a href=/post/sidekiq-graceful-shutdown-in-fargate-ecs/>Sidekiq Graceful Shutdown on ECS Fargate: Fix Lost Jobs with tini</a>
+<span class=related-post-date>2023-07-30</span></li><li><a href=/post/ruby-wasm/>About Web Assembly. Example for Ruby Web Assembly</a>
+<span class=related-post-date>2023-05-19</span></li><li><a href=/post/enable-docker-remote-api-on-docker-host/>Enable Docker Remote Api on Docker Host</a>
+<span class=related-post-date>2022-09-06</span></li><li><a href=/post/validating-yaml-files-in-ruby/>Validating YAML Files in Ruby</a>
+<span class=related-post-date>2022-08-22</span></li></ul></div><div class=author-post-intro><p>Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
+devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
+full-stack development, linux, go, rust and DevOps projects.</p><p>If you're interested in collaborating or have a project in mind, feel free to <a href=mailto:projects@hsps.in>email me</a>.</p><div class=author-subscribe><p class=subscribe-label>Get new posts delivered to your inbox:</p><script src=https://f.convertkit.com/ckjs/ck.5.js></script><form action=https://app.kit.com/forms/7897017/subscriptions class="seva-form formkit-form" method=post data-sv-form=7897017 data-uid=52c1473349 data-format=inline data-version=5 data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'><div class=subscribe-form-row><input class=formkit-input name=email_address aria-label="Email Address" placeholder=your@email.com required type=email>
+<button data-element=submit class="formkit-submit formkit-submit"><div class=formkit-spinner><div></div><div></div><div></div></div><span>Subscribe</span></button></div><ul class="formkit-alert formkit-alert-error" data-element=errors data-group=alert></ul></form></div></div><nav class=post-nav><a class=prev href=/post/html-picture-tag/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">HTML Picture Tag Explained: Responsive Images, WebP and AVIF</span>
+<span class="prev-text nav-mobile">Prev</span>
+</a><a class=next href=/post/using-file-upload-to-cache-serving-pdf-files/><span class="next-text nav-default">Caching Rendered PDFs in Rails with Active Storage</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div class=giscus></div><script src=https://giscus.app/client.js data-repo=coderhs/coderhs.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk=" data-category=General data-category-id=DIC_kwDOEWBlkc4CjKPc data-mapping=pathname data-strict=1 data-reactions-enabled=1 data-emit-metadata=1 data-input-position=top data-theme=light data-lang=en data-loading=lazy crossorigin=anonymous async></script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/coderhs class="iconfont icon-github" title=github></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span><span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span><span class=copyright-year>&copy;
+2011 -
+2026<span class=heart><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script><script>(function(){var e=document.getElementById("reading-progress");if(!e)return;window.addEventListener("scroll",function(){var n,s=window.scrollY||document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight;t>0&&(n=s/t*100,e.style.width=n+"%")})})()</script><script>(function(){var e=document.querySelectorAll(".highlight > .chroma, figure.highlight");e.forEach(function(e){var t=document.createElement("button");t.className="copy-code-btn",t.textContent="Copy",t.addEventListener("click",function(){var n=e.querySelector("code");n||(n=e.querySelector(".code pre")),n&&navigator.clipboard.writeText(n.textContent).then(function(){t.textContent="Copied!",setTimeout(function(){t.textContent="Copy"},2e3)})}),e.style.position="relative",e.appendChild(t)})})()</script></body></html>

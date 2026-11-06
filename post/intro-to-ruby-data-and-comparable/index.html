@@ -1,789 +1,249 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Ruby `Data` Class – A Convenient Way to Create Value Objects - Harisankar P S | Ruby on Rails Developer</title>
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Ruby `Data` Class – A Convenient Way to Create Value Objects. An Introduction to Ruby Data class and comparable module of Ruby. " /><meta name="keywords" content="ruby, core, data, comparable, value objects, immutable" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.152.2 with theme even" />
-
-
-<link rel="canonical" href="https://hsps.in/post/intro-to-ruby-data-and-comparable/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<link href="/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-
-<meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Ruby `Data` Class – A Convenient Way to Create Value Objects" />
-<meta property="og:url" content="https://hsps.in/post/intro-to-ruby-data-and-comparable/" />
-<meta property="og:description" content="Ruby `Data` Class – A Convenient Way to Create Value Objects. An Introduction to Ruby Data class and comparable module of Ruby. " />
-<meta property="article:published_time" content="2025-06-02T11:50:45&#43;05:30" />
-<meta property="article:modified_time" content="2025-06-02T11:50:45&#43;05:30" />
-<meta property="article:author" content="Harisankar P S" />
-<meta property="article:tag" content="ruby" />
-<meta property="article:tag" content="core" />
-<meta property="article:tag" content="data" />
-<meta property="article:tag" content="comparable" />
-<meta property="article:tag" content="value objects" />
-<meta property="article:tag" content="immutable" />
-<meta property="og:image" content="https://hsps.in/images/og-base_hu_56b35d51bc4c129.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Ruby `Data` Class – A Convenient Way to Create Value Objects" />
-<meta name="twitter:description" content="Ruby `Data` Class – A Convenient Way to Create Value Objects. An Introduction to Ruby Data class and comparable module of Ruby. " />
-<meta name="twitter:image" content="https://hsps.in/images/og-base_hu_56b35d51bc4c129.png" />
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Ruby `Data` Class – A Convenient Way to Create Value Objects",
-  "url": "https://hsps.in/post/intro-to-ruby-data-and-comparable/",
-  "datePublished": "2025-06-02T11:50:45\u002b05:30",
-  "dateModified": "2025-06-02T11:50:45\u002b05:30",
-  "author": {
-    "@type": "Person",
-    "name": "Harisankar P S",
-    "url": "https://hsps.in/about"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Harisankar P S"
-  },
-  "description": "Ruby `Data` Class – A Convenient Way to Create Value Objects. An Introduction to Ruby Data class and comparable module of Ruby. ",
-  "wordCount":  863 ,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://hsps.in/post/intro-to-ruby-data-and-comparable/"
-  },
-  "image": "https://hsps.in/images/og-base_hu_56b35d51bc4c129.png",
-  "keywords": ["ruby","core","data","comparable","value objects","immutable"]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://hsps.in/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Articles",
-      "item": "https://hsps.in/post/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Ruby `Data` Class – A Convenient Way to Create Value Objects",
-      "item": "https://hsps.in/post/intro-to-ruby-data-and-comparable/"
-    }
-  ]
-}
-</script>
-
-
-</head>
-<body>
-  <div class="reading-progress" id="reading-progress"></div>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">HsPS.in</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/post/">
-        <li class="mobile-menu-item">Articles</li>
-      </a><a href="/videos/">
-        <li class="mobile-menu-item">Speaking</li>
-      </a><a href="/about">
-        <li class="mobile-menu-item">About</li>
-      </a><a href="/subscribe">
-        <li class="mobile-menu-item">Subscribe</li>
-      </a><a href="/projects">
-        <li class="mobile-menu-item">Projects</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">HsPS.in</a>
-  <br>
-  <i>My thoughts and opinions</i>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/post/">Articles</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/videos/">Speaking</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/about">About</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/subscribe">Subscribe</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/projects">Projects</a>
-      </li>
-  </ul>
-</nav>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ME9J4YD4H0');
-</script>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Ruby `Data` Class – A Convenient Way to Create Value Objects</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2025-06-02 </span>
-        <div class="post-category">
-            <a href="/categories/ruby/"> ruby </a>
-            </div>
-          <span class="more-meta"> 863 words </span>
-          <span class="more-meta"> 5 mins read </span>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#class-data">class Data</a></li>
-            <li><a href="#a-more-practical-example">A More Practical Example</a></li>
-            <li><a href="#updating-location-with-immutability">Updating Location with Immutability</a></li>
-            <li><a href="#making-data-comparable">Making <code>Data</code> Comparable</a></li>
-            <li><a href="#adding-validations">Adding Validations</a></li>
-            <li><a href="#bonus-using-dry-struct">Bonus: Using <code>dry-struct</code></a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
-            <li><a href="#further-reading">Further Reading</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>Ruby&rsquo;s <code>Data</code> class was introduced in Ruby 3.2, offering a convenient way to define value objects. The concept of value objects was popularized by Martin Fowler and Eric Evans through their books and articles. In the real world, we often represent properties like coordinates on a map <code>(x, y)</code> or the speed of a car—using primitives such as integers or strings. While these work, they lack the semantic clarity and behavior of custom types. This is where value objects shine. They encapsulate meaning and behavior around a set of values.</p>
-<p>Ruby&rsquo;s <code>Data</code> class was created to provide a native way to represent such concepts. Struct does fullfil this requirement, except the part of immutability. Ruby Structs are mutable. Some example of use case for value objects are to represent money, email address, co-ordinates, etc.</p>
-<p>Lets now explore ruby Data, keeping in my the characteristics of a value object as shared by Marin Fowler. A value object
-should have:</p>
-<ul>
-<li>No Identity</li>
-<li>Immutable</li>
-<li>Equality by Value</li>
-<li>Small and Simple</li>
-<li>Reusable</li>
-</ul>
-<p>Let&rsquo;s explore how Ruby&rsquo;s <code>Data</code> class supports these characteristics.</p>
-<h3 id="class-data">class Data</h3>
-<p><code>Data</code> is a core Ruby class, so no external gems are needed.</p>
-<p>Here&rsquo;s a simple example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">MarsRover</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>You can now initialize/use <code>MarsRover</code> like this:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">curiosity</span> <span class="o">=</span> <span class="no">MarsRover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Curiosity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># or</span>
-</span></span><span class="line"><span class="cl"><span class="n">curiosity</span> <span class="o">=</span> <span class="no">MarsRover</span><span class="o">[</span><span class="s1">&#39;Curiosity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; #&lt;data MarsRover name=&#34;Curiosity&#34;, x=0, y=0&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Create another instance:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">rover</span> <span class="o">=</span> <span class="no">MarsRover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Rover 2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; #&lt;data MarsRover name=&#34;Rover 2&#34;, x=0, y=0&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>These objects are immutable</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">curiosity</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;New name&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; NoMethodError: undefined method `name=&#39; for an instance of MarsRover</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>and you can compare them</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">curiosity</span> <span class="o">==</span> <span class="n">rover</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; false</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">rover</span> <span class="o">=</span> <span class="no">MarsRover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Curiosity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">curiosity</span> <span class="o">==</span> <span class="n">rover</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; true</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="a-more-practical-example">A More Practical Example</h3>
-<p>The Mars Rover example is abstract; here&rsquo;s a more practical one using location data:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rover</span>
-</span></span><span class="line"><span class="cl">  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:location</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@location</span> <span class="o">=</span> <span class="n">location</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="no">Location</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">rover1</span> <span class="o">=</span> <span class="no">Rover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Curiosity&#39;</span><span class="o">.</span><span class="n">freeze</span><span class="p">,</span> <span class="no">Location</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">rover2</span> <span class="o">=</span> <span class="no">Rover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Perseverance&#39;</span><span class="o">.</span><span class="n">freeze</span><span class="p">,</span> <span class="no">Location</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">rover1</span><span class="o">.</span><span class="n">location</span> <span class="o">==</span> <span class="n">rover2</span><span class="o">.</span><span class="n">location</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; true</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>You don’t need to compare <code>x</code> and <code>y</code> individually—value comparison is built-in.</p>
-<h3 id="updating-location-with-immutability">Updating Location with Immutability</h3>
-<p>You update the rover&rsquo;s position by replacing the <code>Location</code> object. This is exactly like how we would replace the integer
-value x and y. But conceptually we are entering a new location which has x and y co-ordinates.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Location</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rover</span>
-</span></span><span class="line"><span class="cl">  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:location</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@location</span> <span class="o">=</span> <span class="n">location</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">move_up</span> <span class="o">=</span> <span class="n">new_location</span><span class="p">(</span><span class="vi">@location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@location</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">move_down</span> <span class="o">=</span> <span class="n">new_location</span><span class="p">(</span><span class="vi">@location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@location</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">move_right</span> <span class="o">=</span> <span class="n">new_location</span><span class="p">(</span><span class="vi">@location</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="vi">@location</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">move_left</span> <span class="o">=</span> <span class="n">new_location</span><span class="p">(</span><span class="vi">@location</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="vi">@location</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kp">private</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">new_location</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@location</span> <span class="o">=</span> <span class="no">Location</span><span class="o">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">rover1</span> <span class="o">=</span> <span class="no">Rover</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Curiosity&#39;</span><span class="o">.</span><span class="n">freeze</span><span class="p">,</span> <span class="no">Location</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">rover1</span><span class="o">.</span><span class="n">move_up</span>
-</span></span><span class="line"><span class="cl"><span class="n">rover1</span><span class="o">.</span><span class="n">move_right</span>
-</span></span><span class="line"><span class="cl"><span class="n">rover1</span><span class="o">.</span><span class="n">move_up</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">puts</span> <span class="n">rover1</span><span class="o">.</span><span class="n">location</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; #&lt;data Location x=1, y=2&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="making-data-comparable">Making <code>Data</code> Comparable</h3>
-<p>Ruby <code>Data</code> instances support <code>==</code> and <code>eql?</code> out of the box but not <code>&lt;</code>, <code>&gt;</code>, or <code>between?</code>. To enable this, include the <code>Comparable</code> module and define <code>&lt;=&gt;</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Location</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">  <span class="kp">include</span> <span class="no">Comparable</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">&lt;=&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="o">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">]</span> <span class="o">&lt;=&gt;</span> <span class="o">[</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Now you can do:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">=</span> <span class="no">Location</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">=</span> <span class="no">Location</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; true</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">p1</span><span class="o">.</span><span class="n">between?</span><span class="p">(</span><span class="no">Location</span><span class="o">[-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span> <span class="no">Location</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; true</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This works with regular classes too:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Point</span>
-</span></span><span class="line"><span class="cl">  <span class="kp">include</span> <span class="no">Comparable</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kp">attr_accessor</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@x</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@y</span> <span class="o">=</span> <span class="n">y</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">&lt;=&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="o">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">]</span> <span class="o">&lt;=&gt;</span> <span class="o">[</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="adding-validations">Adding Validations</h3>
-<p>Ruby’s <code>Data</code> does not support validation out of the box. However, you can override <code>initialize</code> with keyword arguments to add it:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Location</span> <span class="o">=</span> <span class="no">Data</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">)</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">x</span><span class="p">:,</span> <span class="ss">y</span><span class="p">:)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">&#34;x and y must be numeric&#34;</span> <span class="k">unless</span> <span class="n">x</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">Numeric</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">y</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">Numeric</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">super</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="no">Location</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; Raises ArgumentError</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="bonus-using-dry-struct">Bonus: Using <code>dry-struct</code></h3>
-<p>For more complete value object features, consider using <a href="https://dry-rb.org/gems/dry-struct/main/"><code>dry-struct</code></a>. It adds type coercion and validation.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="nb">require</span> <span class="s1">&#39;dry-struct&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="nn">Types</span>
-</span></span><span class="line"><span class="cl">  <span class="kp">include</span> <span class="no">Dry</span><span class="o">.</span><span class="n">Types</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Location</span> <span class="o">&lt;</span> <span class="no">Dry</span><span class="o">::</span><span class="no">Struct</span>
-</span></span><span class="line"><span class="cl">  <span class="n">attribute</span> <span class="ss">:x</span><span class="p">,</span> <span class="no">Types</span><span class="o">::</span><span class="no">Coercible</span><span class="o">::</span><span class="nb">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="n">attribute</span> <span class="ss">:y</span><span class="p">,</span> <span class="no">Types</span><span class="o">::</span><span class="no">Coercible</span><span class="o">::</span><span class="nb">Integer</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">point</span> <span class="o">=</span> <span class="no">Location</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">y</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="conclusion">Conclusion</h3>
-<p>Ruby’s <code>Data</code> class makes it easy to define small, immutable, and comparable value objects with minimal effort. While it doesn’t support validations out of the box, it serves as a powerful and expressive tool for modeling semantics in your domain. When more control or strict typing is required, tools like <code>dry-struct</code> fill in the gaps. Whether you’re modeling locations, money, or any other composite data, value objects bring clarity and correctness to your code.</p>
-<h3 id="further-reading">Further Reading</h3>
-<ul>
-<li><a href="https://docs.ruby-lang.org/en/3.4/Data.html">Ruby 3.4 <code>Data</code> Documentation</a></li>
-<li><a href="https://docs.ruby-lang.org/en/3.4/Comparable.html">Ruby <code>Comparable</code> Documentation</a></li>
-<li><a href="https://martinfowler.com/bliki/ValueObject.html">Martin Fowler – Value Object</a></li>
-<li><a href="https://dry-rb.org/gems/dry-struct/main/">dry-struct Documentation</a></li>
-</ul>
-    </div>
-
-    
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/ruby/">ruby</a>
-          <a href="/tags/core/">core</a>
-          <a href="/tags/data/">data</a>
-          <a href="/tags/comparable/">comparable</a>
-          <a href="/tags/value-objects/">value objects</a>
-          <a href="/tags/immutable/">immutable</a>
-          </div>
-      
-      
-        <div class="related-posts">
-          <h3>Related Articles</h3>
-          <ul>
-            
-              <li>
-                <a href="/post/sidekiq-graceful-shutdown-in-fargate-ecs/">Sidekiq Graceful Shutdown in Fargate ECS</a>
-                <span class="related-post-date">2023-07-30</span>
-              </li>
-            
-              <li>
-                <a href="/post/ruby-wasm/">About Web Assembly. Example for Ruby Web Assembly</a>
-                <span class="related-post-date">2023-05-19</span>
-              </li>
-            
-              <li>
-                <a href="/post/validating-yaml-files-in-ruby/">Validating YAML Files in Ruby</a>
-                <span class="related-post-date">2022-08-22</span>
-              </li>
-            
-              <li>
-                <a href="/post/access-history-in-irb/">Access History in IRB</a>
-                <span class="related-post-date">2022-07-17</span>
-              </li>
-            
-              <li>
-                <a href="/post/using-string-as-active-record-enum/">Using String in Active Record(Rails) Enum</a>
-                <span class="related-post-date">2022-05-31</span>
-              </li>
-            
-          </ul>
-        </div>
-      <div class="author-post-intro">
-  <p>
-    Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
-    devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
-    full-stack development, linux, go, rust and DevOps projects.
-  </p>
-  <p>
-    If you're interested in collaborating or have a project in mind, feel free to <a href="mailto:projects@hsps.in">email me</a>.
-  </p>
-  <div class="author-subscribe">
-    <p class="subscribe-label">Get new posts delivered to your inbox:</p>
-    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <form
-      action="https://app.kit.com/forms/7897017/subscriptions"
-      class="seva-form formkit-form"
-      method="post"
-      data-sv-form="7897017"
-      data-uid="52c1473349"
-      data-format="inline"
-      data-version="5"
-      data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
-    >
-      <div class="subscribe-form-row">
-        <input
-          class="formkit-input"
-          name="email_address"
-          aria-label="Email Address"
-          placeholder="your@email.com"
-          required=""
-          type="email"
-        />
-        <button data-element="submit" class="formkit-submit formkit-submit">
-          <div class="formkit-spinner"><div></div><div></div><div></div></div>
-          <span>Subscribe</span>
-        </button>
-      </div>
-      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-    </form>
-  </div>
-</div>
-
-      <nav class="post-nav">
-        <a class="prev" href="/post/how-i-host-public-apps-using-tailscale/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">How I Use Tailscale to Host a Public App From My Laptop</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/ruby-tap-method/">
-            <span class="next-text nav-default">Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        <div class="giscus"></div>
-  <script src="https://giscus.app/client.js"
-          data-repo="coderhs/coderhs.github.io"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk="
-          data-category="General"
-          data-category-id="DIC_kwDOEWBlkc4CjKPc"
-          data-mapping="pathname"
-          data-strict="1"
-          data-reactions-enabled="1"
-          data-emit-metadata="1"
-          data-input-position="top"
-          data-theme="light"
-          data-lang="en"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-  </script>
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2011 - 
-    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-
-
-
-
-
-
-
-
-  
-  <script>
-    (function() {
-      var progressBar = document.getElementById('reading-progress');
-      if (!progressBar) return;
-      window.addEventListener('scroll', function() {
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        if (docHeight > 0) {
-          var scrollPercent = (scrollTop / docHeight) * 100;
-          progressBar.style.width = scrollPercent + '%';
-        }
-      });
-    })();
-  </script>
-
-  
-  <script>
-    (function() {
-      var codeBlocks = document.querySelectorAll('.highlight > .chroma, figure.highlight');
-      codeBlocks.forEach(function(block) {
-        var btn = document.createElement('button');
-        btn.className = 'copy-code-btn';
-        btn.textContent = 'Copy';
-        btn.addEventListener('click', function() {
-          var code = block.querySelector('code');
-          if (!code) {
-            code = block.querySelector('.code pre');
-          }
-          if (code) {
-            navigator.clipboard.writeText(code.textContent).then(function() {
-              btn.textContent = 'Copied!';
-              setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
-            });
-          }
-        });
-        block.style.position = 'relative';
-        block.appendChild(btn);
-      });
-    })();
-  </script>
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Ruby Data.define: Immutable Value Objects with Data and Comparable | hsps.in</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel=stylesheet><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Harisankar P S"><meta name=description content="How Ruby's Data class (Data.define, Ruby 3.2+) creates immutable value objects, how it differs from Struct, and how to sort them with Comparable."><meta name=keywords content="ruby,core,data,comparable,value objects,immutable"><meta name=generator content="Hugo 0.152.2 with theme even"><link rel=canonical href=https://hsps.in/post/intro-to-ruby-data-and-comparable/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="Ruby Data.define: Immutable Value Objects with Data and Comparable"><meta property="og:url" content="https://hsps.in/post/intro-to-ruby-data-and-comparable/"><meta property="og:description" content="How Ruby's Data class (Data.define, Ruby 3.2+) creates immutable value objects, how it differs from Struct, and how to sort them with Comparable."><meta property="article:published_time" content="2025-06-02T11:50:45+05:30"><meta property="article:modified_time" content="2026-11-06T23:23:15Z"><meta property="article:author" content="Harisankar P S"><meta property="article:tag" content="ruby"><meta property="article:tag" content="core"><meta property="article:tag" content="data"><meta property="article:tag" content="comparable"><meta property="article:tag" content="value objects"><meta property="article:tag" content="immutable"><meta property="og:image" content="https://hsps.in/images/og-base_hu_2898e6720e10c71b.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Ruby Data.define: Immutable Value Objects with Data and Comparable"><meta name=twitter:description content="How Ruby's Data class (Data.define, Ruby 3.2+) creates immutable value objects, how it differs from Struct, and how to sort them with Comparable."><meta name=twitter:image content="https://hsps.in/images/og-base_hu_2898e6720e10c71b.png"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Ruby Data.define: Immutable Value Objects with Data and Comparable","url":"https://hsps.in/post/intro-to-ruby-data-and-comparable/","datePublished":"2025-06-02T11:50:45\u002b05:30","dateModified":"2026-11-06T23:23:15Z","author":{"@type":"Person","name":"Harisankar P S","url":"https://hsps.in/about"},"publisher":{"@type":"Person","name":"Harisankar P S"},"description":"How Ruby's Data class (Data.define, Ruby 3.2+) creates immutable value objects, how it differs from Struct, and how to sort them with Comparable.","wordCount":863,"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsps.in/post/intro-to-ruby-data-and-comparable/"},"image":"https://hsps.in/images/og-base_hu_2898e6720e10c71b.png","keywords":["ruby","core","data","comparable","value objects","immutable"]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hsps.in/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://hsps.in/post/"},{"@type":"ListItem","position":3,"name":"Ruby Data.define: Immutable Value Objects with Data and Comparable"}]}</script></head><body><div class=reading-progress id=reading-progress></div><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>HsPS.in</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Articles</li></a><a href=/videos/><li class=mobile-menu-item>Speaking</li></a><a href=/about><li class=mobile-menu-item>About</li></a><a href=/subscribe><li class=mobile-menu-item>Subscribe</li></a><a href=/projects><li class=mobile-menu-item>Projects</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>HsPS.in</a><br><i>My thoughts and opinions</i></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/post/>Articles</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/videos/>Speaking</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/about>About</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/subscribe>Subscribe</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/projects>Projects</a></li></ul></nav><script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-ME9J4YD4H0")</script></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Ruby Data.define: Immutable Value Objects with Data and Comparable</h1><div class=post-meta><span class=post-time>2025-06-02</span><div class=post-category><a href=/categories/ruby/>ruby</a></div><span class=more-meta>863 words </span><span class=more-meta>5 mins read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#class-data>class Data</a></li><li><a href=#a-more-practical-example>A More Practical Example</a></li><li><a href=#updating-location-with-immutability>Updating Location with Immutability</a></li><li><a href=#making-data-comparable>Making <code>Data</code> Comparable</a></li><li><a href=#adding-validations>Adding Validations</a></li><li><a href=#bonus-using-dry-struct>Bonus: Using <code>dry-struct</code></a></li><li><a href=#conclusion>Conclusion</a></li><li><a href=#further-reading>Further Reading</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><p>Ruby&rsquo;s <code>Data</code> class was introduced in Ruby 3.2, offering a convenient way to define value objects. The concept of value objects was popularized by Martin Fowler and Eric Evans through their books and articles. In the real world, we often represent properties like coordinates on a map <code>(x, y)</code> or the speed of a car—using primitives such as integers or strings. While these work, they lack the semantic clarity and behavior of custom types. This is where value objects shine. They encapsulate meaning and behavior around a set of values.</p><p>Ruby&rsquo;s <code>Data</code> class was created to provide a native way to represent such concepts. Struct does fullfil this requirement, except the part of immutability. Ruby Structs are mutable. Some example of use case for value objects are to represent money, email address, co-ordinates, etc.</p><p>Lets now explore ruby Data, keeping in my the characteristics of a value object as shared by Marin Fowler. A value object
+should have:</p><ul><li>No Identity</li><li>Immutable</li><li>Equality by Value</li><li>Small and Simple</li><li>Reusable</li></ul><p>Let&rsquo;s explore how Ruby&rsquo;s <code>Data</code> class supports these characteristics.</p><h3 id=class-data>class Data</h3><p><code>Data</code> is a core Ruby class, so no external gems are needed.</p><p>Here&rsquo;s a simple example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=no>MarsRover</span> <span class=o>=</span> <span class=no>Data</span><span class=o>.</span><span class=n>define</span><span class=p>(</span><span class=ss>:name</span><span class=p>,</span> <span class=ss>:x</span><span class=p>,</span> <span class=ss>:y</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>You can now initialize/use <code>MarsRover</code> like this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=n>curiosity</span> <span class=o>=</span> <span class=no>MarsRover</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=s1>&#39;Curiosity&#39;</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># or</span>
+</span></span><span class=line><span class=cl><span class=n>curiosity</span> <span class=o>=</span> <span class=no>MarsRover</span><span class=o>[</span><span class=s1>&#39;Curiosity&#39;</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; #&lt;data MarsRover name=&#34;Curiosity&#34;, x=0, y=0&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Create another instance:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=n>rover</span> <span class=o>=</span> <span class=no>MarsRover</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=s1>&#39;Rover 2&#39;</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; #&lt;data MarsRover name=&#34;Rover 2&#34;, x=0, y=0&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>These objects are immutable</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=n>curiosity</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=s1>&#39;New name&#39;</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; NoMethodError: undefined method `name=&#39; for an instance of MarsRover</span>
+</span></span></code></pre></td></tr></table></div></div><p>and you can compare them</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=n>curiosity</span> <span class=o>==</span> <span class=n>rover</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; false</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>rover</span> <span class=o>=</span> <span class=no>MarsRover</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=s1>&#39;Curiosity&#39;</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>curiosity</span> <span class=o>==</span> <span class=n>rover</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; true</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=a-more-practical-example>A More Practical Example</h3><p>The Mars Rover example is abstract; here&rsquo;s a more practical one using location data:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=k>class</span> <span class=nc>Rover</span>
+</span></span><span class=line><span class=cl>  <span class=kp>attr_accessor</span> <span class=ss>:name</span><span class=p>,</span> <span class=ss>:location</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span><span class=p>(</span><span class=nb>name</span><span class=p>,</span> <span class=n>location</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@name</span> <span class=o>=</span> <span class=nb>name</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@location</span> <span class=o>=</span> <span class=n>location</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=no>Location</span> <span class=o>=</span> <span class=no>Data</span><span class=o>.</span><span class=n>define</span><span class=p>(</span><span class=ss>:x</span><span class=p>,</span> <span class=ss>:y</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>rover1</span> <span class=o>=</span> <span class=no>Rover</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=s1>&#39;Curiosity&#39;</span><span class=o>.</span><span class=n>freeze</span><span class=p>,</span> <span class=no>Location</span><span class=o>[</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=o>]</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>rover2</span> <span class=o>=</span> <span class=no>Rover</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=s1>&#39;Perseverance&#39;</span><span class=o>.</span><span class=n>freeze</span><span class=p>,</span> <span class=no>Location</span><span class=o>[</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=o>]</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>rover1</span><span class=o>.</span><span class=n>location</span> <span class=o>==</span> <span class=n>rover2</span><span class=o>.</span><span class=n>location</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; true</span>
+</span></span></code></pre></td></tr></table></div></div><p>You don’t need to compare <code>x</code> and <code>y</code> individually—value comparison is built-in.</p><h3 id=updating-location-with-immutability>Updating Location with Immutability</h3><p>You update the rover&rsquo;s position by replacing the <code>Location</code> object. This is exactly like how we would replace the integer
+value x and y. But conceptually we are entering a new location which has x and y co-ordinates.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=no>Location</span> <span class=o>=</span> <span class=no>Data</span><span class=o>.</span><span class=n>define</span><span class=p>(</span><span class=ss>:x</span><span class=p>,</span> <span class=ss>:y</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Rover</span>
+</span></span><span class=line><span class=cl>  <span class=kp>attr_accessor</span> <span class=ss>:name</span><span class=p>,</span> <span class=ss>:location</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span><span class=p>(</span><span class=nb>name</span><span class=p>,</span> <span class=n>location</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@name</span> <span class=o>=</span> <span class=nb>name</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@location</span> <span class=o>=</span> <span class=n>location</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>move_up</span> <span class=o>=</span> <span class=n>new_location</span><span class=p>(</span><span class=vi>@location</span><span class=o>.</span><span class=n>x</span><span class=p>,</span> <span class=vi>@location</span><span class=o>.</span><span class=n>y</span> <span class=o>+</span> <span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>move_down</span> <span class=o>=</span> <span class=n>new_location</span><span class=p>(</span><span class=vi>@location</span><span class=o>.</span><span class=n>x</span><span class=p>,</span> <span class=vi>@location</span><span class=o>.</span><span class=n>y</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>move_right</span> <span class=o>=</span> <span class=n>new_location</span><span class=p>(</span><span class=vi>@location</span><span class=o>.</span><span class=n>x</span> <span class=o>+</span> <span class=mi>1</span><span class=p>,</span> <span class=vi>@location</span><span class=o>.</span><span class=n>y</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>move_left</span> <span class=o>=</span> <span class=n>new_location</span><span class=p>(</span><span class=vi>@location</span><span class=o>.</span><span class=n>x</span> <span class=o>-</span> <span class=mi>1</span><span class=p>,</span> <span class=vi>@location</span><span class=o>.</span><span class=n>y</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kp>private</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>new_location</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@location</span> <span class=o>=</span> <span class=no>Location</span><span class=o>[</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=o>]</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>rover1</span> <span class=o>=</span> <span class=no>Rover</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=s1>&#39;Curiosity&#39;</span><span class=o>.</span><span class=n>freeze</span><span class=p>,</span> <span class=no>Location</span><span class=o>[</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=o>]</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>rover1</span><span class=o>.</span><span class=n>move_up</span>
+</span></span><span class=line><span class=cl><span class=n>rover1</span><span class=o>.</span><span class=n>move_right</span>
+</span></span><span class=line><span class=cl><span class=n>rover1</span><span class=o>.</span><span class=n>move_up</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>puts</span> <span class=n>rover1</span><span class=o>.</span><span class=n>location</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; #&lt;data Location x=1, y=2&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=making-data-comparable>Making <code>Data</code> Comparable</h3><p>Ruby <code>Data</code> instances support <code>==</code> and <code>eql?</code> out of the box but not <code>&lt;</code>, <code>></code>, or <code>between?</code>. To enable this, include the <code>Comparable</code> module and define <code>&lt;=></code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=no>Location</span> <span class=o>=</span> <span class=no>Data</span><span class=o>.</span><span class=n>define</span><span class=p>(</span><span class=ss>:x</span><span class=p>,</span> <span class=ss>:y</span><span class=p>)</span> <span class=k>do</span>
+</span></span><span class=line><span class=cl>  <span class=kp>include</span> <span class=no>Comparable</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>&lt;=&gt;</span><span class=p>(</span><span class=n>other</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=o>[</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=o>]</span> <span class=o>&lt;=&gt;</span> <span class=o>[</span><span class=n>other</span><span class=o>.</span><span class=n>x</span><span class=p>,</span> <span class=n>other</span><span class=o>.</span><span class=n>y</span><span class=o>]</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><p>Now you can do:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=n>p1</span> <span class=o>=</span> <span class=no>Location</span><span class=o>[</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=n>p2</span> <span class=o>=</span> <span class=no>Location</span><span class=o>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>p1</span> <span class=o>&lt;</span> <span class=n>p2</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; true</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>p1</span><span class=o>.</span><span class=n>between?</span><span class=p>(</span><span class=no>Location</span><span class=o>[-</span><span class=mi>1</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=o>]</span><span class=p>,</span> <span class=no>Location</span><span class=o>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=o>]</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; true</span>
+</span></span></code></pre></td></tr></table></div></div><p>This works with regular classes too:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=k>class</span> <span class=nc>Point</span>
+</span></span><span class=line><span class=cl>  <span class=kp>include</span> <span class=no>Comparable</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kp>attr_accessor</span> <span class=ss>:x</span><span class=p>,</span> <span class=ss>:y</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@x</span> <span class=o>=</span> <span class=n>x</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@y</span> <span class=o>=</span> <span class=n>y</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>&lt;=&gt;</span><span class=p>(</span><span class=n>other</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=o>[</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=o>]</span> <span class=o>&lt;=&gt;</span> <span class=o>[</span><span class=n>other</span><span class=o>.</span><span class=n>x</span><span class=p>,</span> <span class=n>other</span><span class=o>.</span><span class=n>y</span><span class=o>]</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=adding-validations>Adding Validations</h3><p>Ruby’s <code>Data</code> does not support validation out of the box. However, you can override <code>initialize</code> with keyword arguments to add it:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=no>Location</span> <span class=o>=</span> <span class=no>Data</span><span class=o>.</span><span class=n>define</span><span class=p>(</span><span class=ss>:x</span><span class=p>,</span> <span class=ss>:y</span><span class=p>)</span> <span class=k>do</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span><span class=p>(</span><span class=ss>x</span><span class=p>:,</span> <span class=ss>y</span><span class=p>:)</span>
+</span></span><span class=line><span class=cl>    <span class=k>raise</span> <span class=no>ArgumentError</span><span class=p>,</span> <span class=s2>&#34;x and y must be numeric&#34;</span> <span class=k>unless</span> <span class=n>x</span><span class=o>.</span><span class=n>is_a?</span><span class=p>(</span><span class=no>Numeric</span><span class=p>)</span> <span class=o>&amp;&amp;</span> <span class=n>y</span><span class=o>.</span><span class=n>is_a?</span><span class=p>(</span><span class=no>Numeric</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>super</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=no>Location</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=s1>&#39;1&#39;</span><span class=p>,</span> <span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># =&gt; Raises ArgumentError</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=bonus-using-dry-struct>Bonus: Using <code>dry-struct</code></h3><p>For more complete value object features, consider using <a href=https://dry-rb.org/gems/dry-struct/main/><code>dry-struct</code></a>. It adds type coercion and validation.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=nb>require</span> <span class=s1>&#39;dry-struct&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>module</span> <span class=nn>Types</span>
+</span></span><span class=line><span class=cl>  <span class=kp>include</span> <span class=no>Dry</span><span class=o>.</span><span class=n>Types</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Location</span> <span class=o>&lt;</span> <span class=no>Dry</span><span class=o>::</span><span class=no>Struct</span>
+</span></span><span class=line><span class=cl>  <span class=n>attribute</span> <span class=ss>:x</span><span class=p>,</span> <span class=no>Types</span><span class=o>::</span><span class=no>Coercible</span><span class=o>::</span><span class=nb>Integer</span>
+</span></span><span class=line><span class=cl>  <span class=n>attribute</span> <span class=ss>:y</span><span class=p>,</span> <span class=no>Types</span><span class=o>::</span><span class=no>Coercible</span><span class=o>::</span><span class=nb>Integer</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>point</span> <span class=o>=</span> <span class=no>Location</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=ss>x</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span> <span class=ss>y</span><span class=p>:</span> <span class=mi>1</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=conclusion>Conclusion</h3><p>Ruby’s <code>Data</code> class makes it easy to define small, immutable, and comparable value objects with minimal effort. While it doesn’t support validations out of the box, it serves as a powerful and expressive tool for modeling semantics in your domain. When more control or strict typing is required, tools like <code>dry-struct</code> fill in the gaps. Whether you’re modeling locations, money, or any other composite data, value objects bring clarity and correctness to your code.</p><h3 id=further-reading>Further Reading</h3><ul><li><a href=https://docs.ruby-lang.org/en/3.4/Data.html>Ruby 3.4 <code>Data</code> Documentation</a></li><li><a href=https://docs.ruby-lang.org/en/3.4/Comparable.html>Ruby <code>Comparable</code> Documentation</a></li><li><a href=https://martinfowler.com/bliki/ValueObject.html>Martin Fowler – Value Object</a></li><li><a href=https://dry-rb.org/gems/dry-struct/main/>dry-struct Documentation</a></li></ul></div><footer class=post-footer><div class=post-tags><a href=/tags/ruby/>ruby</a>
+<a href=/tags/core/>core</a>
+<a href=/tags/data/>data</a>
+<a href=/tags/comparable/>comparable</a>
+<a href=/tags/value-objects/>value objects</a>
+<a href=/tags/immutable/>immutable</a></div><div class=related-posts><h3>Related Articles</h3><ul><li><a href=/post/sidekiq-graceful-shutdown-in-fargate-ecs/>Sidekiq Graceful Shutdown on ECS Fargate: Fix Lost Jobs with tini</a>
+<span class=related-post-date>2023-07-30</span></li><li><a href=/post/ruby-wasm/>About Web Assembly. Example for Ruby Web Assembly</a>
+<span class=related-post-date>2023-05-19</span></li><li><a href=/post/validating-yaml-files-in-ruby/>Validating YAML Files in Ruby</a>
+<span class=related-post-date>2022-08-22</span></li><li><a href=/post/access-history-in-irb/>Access History in IRB</a>
+<span class=related-post-date>2022-07-17</span></li><li><a href=/post/using-string-as-active-record-enum/>Rails Enum with String Values: Store Strings Instead of Integers</a>
+<span class=related-post-date>2022-05-31</span></li></ul></div><div class=author-post-intro><p>Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
+devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
+full-stack development, linux, go, rust and DevOps projects.</p><p>If you're interested in collaborating or have a project in mind, feel free to <a href=mailto:projects@hsps.in>email me</a>.</p><div class=author-subscribe><p class=subscribe-label>Get new posts delivered to your inbox:</p><script src=https://f.convertkit.com/ckjs/ck.5.js></script><form action=https://app.kit.com/forms/7897017/subscriptions class="seva-form formkit-form" method=post data-sv-form=7897017 data-uid=52c1473349 data-format=inline data-version=5 data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'><div class=subscribe-form-row><input class=formkit-input name=email_address aria-label="Email Address" placeholder=your@email.com required type=email>
+<button data-element=submit class="formkit-submit formkit-submit"><div class=formkit-spinner><div></div><div></div><div></div></div><span>Subscribe</span></button></div><ul class="formkit-alert formkit-alert-error" data-element=errors data-group=alert></ul></form></div></div><nav class=post-nav><a class=prev href=/post/how-i-host-public-apps-using-tailscale/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">How I Use Tailscale to Host a Public App From My Laptop</span>
+<span class="prev-text nav-mobile">Prev</span>
+</a><a class=next href=/post/ruby-tap-method/><span class="next-text nav-default">Understanding Ruby’s `tap` — A Powerful Debugging and Configuration Tool</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div class=giscus></div><script src=https://giscus.app/client.js data-repo=coderhs/coderhs.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk=" data-category=General data-category-id=DIC_kwDOEWBlkc4CjKPc data-mapping=pathname data-strict=1 data-reactions-enabled=1 data-emit-metadata=1 data-input-position=top data-theme=light data-lang=en data-loading=lazy crossorigin=anonymous async></script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/coderhs class="iconfont icon-github" title=github></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span><span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span><span class=copyright-year>&copy;
+2011 -
+2026<span class=heart><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script><script>(function(){var e=document.getElementById("reading-progress");if(!e)return;window.addEventListener("scroll",function(){var n,s=window.scrollY||document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight;t>0&&(n=s/t*100,e.style.width=n+"%")})})()</script><script>(function(){var e=document.querySelectorAll(".highlight > .chroma, figure.highlight");e.forEach(function(e){var t=document.createElement("button");t.className="copy-code-btn",t.textContent="Copy",t.addEventListener("click",function(){var n=e.querySelector("code");n||(n=e.querySelector(".code pre")),n&&navigator.clipboard.writeText(n.textContent).then(function(){t.textContent="Copied!",setTimeout(function(){t.textContent="Copy"},2e3)})}),e.style.position="relative",e.appendChild(t)})})()</script></body></html>

@@ -1,20 +1,272 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Projects on Harisankar P S | Ruby on Rails Developer</title>
-    <link>https://hsps.in/tags/projects/</link>
-    <description>Recent content in Projects on Harisankar P S | Ruby on Rails Developer</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Fri, 05 Jun 2020 15:22:34 -0700</lastBuildDate>
-    <atom:link href="https://hsps.in/tags/projects/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Projects | Open Source and Others</title>
-      <link>https://hsps.in/projects/</link>
-      <pubDate>Sun, 05 Jun 2022 15:22:34 -0700</pubDate>
-      <guid>https://hsps.in/projects/</guid>
-      <description>&lt;h1 id=&#34;projects&#34;&gt;Projects&lt;/h1&gt;&#xA;&lt;p class=&#34;projects-intro&#34;&gt;Link to projects I worked on over the years. There are more in &lt;a href=&#34;https://github.com/coderhs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;projects-grid&#34;&gt;&#xA;  &lt;!-- Wifi QR --&gt;&#xA;  &lt;div class=&#34;project-card&#34;&gt;&#xA;    &lt;div class=&#34;project-header&#34;&gt;&#xA;      &lt;h3&gt;&lt;a href=&#34;https://wifi-qr.hsps.in&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wifi-QR&lt;/a&gt;&lt;/h3&gt;&#xA;      &lt;div class=&#34;project-tech&#34;&gt;Next.js&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;Vercel&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-description&#34;&gt;&#xA;      A simple next.js application hosted on vercel, that will generate a sharable QR code of your wifi connection. Using the mobile camera app one can autojoin to this network without needing to type.&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-links&#34;&gt;&#xA;      &lt;a href=&#34;https://wifi-qr.hsps.in&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link demo&#34;&gt;Live Demo&lt;/a&gt;&#xA;      &lt;a href=&#34;https://github.com/coderhs/wifi-qr&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link code&#34;&gt;GitHub&lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;!-- Column to Array --&gt;&#xA;  &lt;div class=&#34;project-card&#34;&gt;&#xA;    &lt;div class=&#34;project-header&#34;&gt;&#xA;      &lt;h3&gt;&lt;a href=&#34;https://hsps.in/column_to_array/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Column to Array&lt;/a&gt;&lt;/h3&gt;&#xA;      &lt;div class=&#34;project-tech&#34;&gt;Ruby&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;WebAssembly&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-description&#34;&gt;&#xA;      Convert column copied from a spreadsheet to array. The site runs on web assembly executing ruby in your browser.&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-links&#34;&gt;&#xA;      &lt;a href=&#34;https://hsps.in/column_to_array/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link demo&#34;&gt;Live Demo&lt;/a&gt;&#xA;      &lt;a href=&#34;https://github.com/coderhs/column_to_array&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link code&#34;&gt;GitHub&lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;!-- CSVSqlWeb --&gt;&#xA;  &lt;div class=&#34;project-card&#34;&gt;&#xA;    &lt;div class=&#34;project-header&#34;&gt;&#xA;      &lt;h3&gt;&lt;a href=&#34;https://hsps.in/csvsqlweb/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CSVSqlWeb&lt;/a&gt;&lt;/h3&gt;&#xA;      &lt;div class=&#34;project-tech&#34;&gt;Web Assembly&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;Javascript&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-description&#34;&gt;&#xA;      Run SQL queries on your CSV file from the web.&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-links&#34;&gt;&#xA;      &lt;a href=&#34;https://hsps.in/csvsqlweb/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link demo&#34;&gt;Live Demo&lt;/a&gt;&#xA;      &lt;a href=&#34;https://github.com/coderhs/csvsqlweb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link code&#34;&gt;GitHub&lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;!-- Step Counter --&gt;&#xA;  &lt;div class=&#34;project-card&#34;&gt;&#xA;    &lt;div class=&#34;project-header&#34;&gt;&#xA;      &lt;h3&gt;&lt;a href=&#34;https://step-counter.hsps.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Step Counter&lt;/a&gt;&lt;/h3&gt;&#xA;      &lt;div class=&#34;project-tech&#34;&gt;Next.js&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;Vercel&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-description&#34;&gt;&#xA;      Count the number of steps you need to walk to lose weight.&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-links&#34;&gt;&#xA;      &lt;a href=&#34;https://step-counter.hsps.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link demo&#34;&gt;Live Demo&lt;/a&gt;&#xA;      &lt;a href=&#34;https://github.com/coderhs/step_counter&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link code&#34;&gt;GitHub&lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;!-- Easy Client Log --&gt;&#xA;  &lt;div class=&#34;project-card&#34;&gt;&#xA;    &lt;div class=&#34;project-header&#34;&gt;&#xA;      &lt;h3&gt;&lt;a href=&#34;https://easyclientlog.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Easy Client Log&lt;/a&gt;&lt;/h3&gt;&#xA;      &lt;div class=&#34;project-tech&#34;&gt;Next.js&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;Ruby on Rails - 8&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;PostgreSQL&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-description&#34;&gt;&#xA;      A simple CRM, Task, Scheduling and Invoice tool for entrepreneurs.&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-links&#34;&gt;&#xA;      &lt;a href=&#34;https://easyclientlog.com&#34;&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link demo&#34;&gt;Live&lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;!-- PgDeploy --&gt;&#xA;  &lt;div class=&#34;project-card&#34;&gt;&#xA;    &lt;div class=&#34;project-header&#34;&gt;&#xA;      &lt;h3&gt;&lt;a href=&#34;https://pgdeploy.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PgDeploy&lt;/a&gt;&lt;/h3&gt;&#xA;      &lt;div class=&#34;project-tech&#34;&gt;Next.js&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;Go/Gin&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;PostgreSQL&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-description&#34;&gt;&#xA;      Manage self hosted PostgreSQL in different cloud provider.&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-links&#34;&gt;&#xA;      &lt;a href=&#34;https://pgdeploy.com&#34;&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link demo&#34;&gt;Live&lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;div class=&#34;project-card&#34;&gt;&#xA;    &lt;div class=&#34;project-header&#34;&gt;&#xA;      &lt;h3&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/new-tab-reminder/mcgmfombdolcfpnbcefghclidgbdabih?hl=en-GB&amp;authuser=0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Tab Reminder&lt;/a&gt;&lt;/h3&gt;&#xA;      &lt;div class=&#34;project-tech&#34;&gt;Vue.js&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;Google Chrome&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-description&#34;&gt;&#xA;      Todo in your browser&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-links&#34;&gt;&#xA;      &lt;a href=&#34;https://chromewebstore.google.com/detail/new-tab-reminder/mcgmfombdolcfpnbcefghclidgbdabih?hl=en-GB&amp;authuser=0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link demo&#34;&gt;Chrome Store&lt;/a&gt;&#xA;      &lt;a href=&#34;https://github.com/coderhs/new-tab-reminders&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link code&#34;&gt;GitHub&lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;div class=&#34;project-card&#34;&gt;&#xA;    &lt;div class=&#34;project-header&#34;&gt;&#xA;      &lt;h3&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/new-tab-motivational-quot/ajojhjckmhdpjggiodlhhjkahfnbapfh?hl=en-GB&amp;authuser=0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Tab Motivational Quote&lt;/a&gt;&lt;/h3&gt;&#xA;      &lt;div class=&#34;project-tech&#34;&gt;Javascript&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt;Google Chrome&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-description&#34;&gt;&#xA;      Motivational quote on new tab&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-links&#34;&gt;&#xA;      &lt;a href=&#34;https://chromewebstore.google.com/detail/new-tab-motivational-quot/ajojhjckmhdpjggiodlhhjkahfnbapfh?hl=en-GB&amp;authuser=0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link demo&#34;&gt;Chrome Store&lt;/a&gt;&#xA;      &lt;a href=&#34;https://github.com/coderhs/WeeklyMotivationalQuotes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link code&#34;&gt;GitHub&lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;!-- UPI QR Generator --&gt;&#xA;  &lt;div class=&#34;project-card&#34;&gt;&#xA;    &lt;div class=&#34;project-header&#34;&gt;&#xA;      &lt;h3&gt;&lt;a href=&#34;https://upi-qr.hsps.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UPI QR Generator&lt;/a&gt;&lt;/h3&gt;&#xA;      &lt;div class=&#34;project-tech&#34;&gt;Next.js&lt;/div&gt; &lt;div class=&#34;project-tech&#34;&gt; Vercel &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-description&#34;&gt;&#xA;      Instantly generate UPI QR codes for payments.&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;project-links&#34;&gt;&#xA;      &lt;a href=&#34;https://upi-qr.hsps.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link demo&#34;&gt;Live Demo&lt;/a&gt;&#xA;      &lt;a href=&#34;https://github.com/coderhs/upi-qr&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;project-link code&#34;&gt;GitHub&lt;/a&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;style&gt;&#xA;.projects-intro {&#xA;  font-size: 1.1em;&#xA;  color: #666;&#xA;  margin-bottom: 2rem;&#xA;  font-style: italic;&#xA;}&#xA;&#xA;.projects-grid {&#xA;  display: flex;&#xA;  flex-direction: column;&#xA;  gap: 1.25rem;&#xA;  margin-top: 1.5rem;&#xA;}&#xA;&#xA;.project-card {&#xA;  border: 1px solid #e1e5e9;&#xA;  border-radius: 6px;&#xA;  padding: 1rem;&#xA;  background: #ffffff;&#xA;  box-shadow: 0 1px 3px rgba(0,0,0,0.1);&#xA;  transition: all 0.3s ease;&#xA;  position: relative;&#xA;}&#xA;&#xA;.project-card:hover {&#xA;  box-shadow: 0 4px 12px rgba(0,0,0,0.15);&#xA;  transform: translateY(-2px);&#xA;}&#xA;&#xA;.project-header {&#xA;  margin-bottom: 0.75rem;&#xA;}&#xA;&#xA;.project-header h3 {&#xA;  margin: 0 0 0.3rem 0;&#xA;  font-size: 1.1em;&#xA;}&#xA;&#xA;.project-header h3 a {&#xA;  color: #333;&#xA;  text-decoration: none;&#xA;}&#xA;&#xA;.project-header h3 a:hover {&#xA;  color: #007acc;&#xA;}&#xA;&#xA;.project-tech {&#xA;  font-size: 0.75em;&#xA;  color: #007acc;&#xA;  font-weight: 500;&#xA;  background: #f0f8ff;&#xA;  display: inline-block;&#xA;  padding: 0.15rem 0.4rem;&#xA;  border-radius: 3px;&#xA;  margin-right: 0.3rem;&#xA;}&#xA;&#xA;.project-description {&#xA;  line-height: 1.5;&#xA;  margin-bottom: 1rem;&#xA;  font-size: 0.9em;&#xA;}&#xA;&#xA;.project-links {&#xA;  display: flex;&#xA;  gap: 0.5rem;&#xA;  flex-wrap: wrap;&#xA;}&#xA;&#xA;.project-link {&#xA;  text-decoration: none;&#xA;  padding: 0.4rem 0.8rem;&#xA;  border-radius: 4px;&#xA;  font-size: 0.8em;&#xA;  font-weight: 500;&#xA;  transition: all 0.2s ease;&#xA;  border: 1px solid;&#xA;}&#xA;&#xA;.project-link.demo {&#xA;  color: white;&#xA;  border-color: #007acc;&#xA;}&#xA;&#xA;.project-link.demo:hover {&#xA;  background: #005fa3;&#xA;  border-color: #005fa3;&#xA;}&#xA;&#xA;.project-link.code {&#xA;  background: transparent;&#xA;  color: #333;&#xA;  border-color: #ddd;&#xA;}&#xA;&#xA;.project-link.code:hover {&#xA;  background: #f5f5f5;&#xA;  border-color: #bbb;&#xA;}&#xA;&#xA;/* Dark mode support */&#xA;@media (prefers-color-scheme: dark) {&#xA;  .project-card {&#xA;    border-color: #4a5568;&#xA;  }&#xA;&#xA;  .project-header h3 a {&#xA;    color: #e2e8f0;&#xA;  }&#xA;&#xA;  .project-description {&#xA;  }&#xA;&#xA;  .project-tech {&#xA;    background: #2a4a6b;&#xA;    color: #90cdf4;&#xA;  }&#xA;&#xA;  .project-link.code {&#xA;    color: #e2e8f0;&#xA;    border-color: #4a5568;&#xA;  }&#xA;&#xA;  .project-link.code:hover {&#xA;    background: #4a5568;&#xA;    border-color: #718096;&#xA;  }&#xA;}&#xA;&#xA;/* Mobile responsiveness */&#xA;@media (max-width: 768px) {&#xA;  .projects-grid {&#xA;    gap: 1rem;&#xA;  }&#xA;&#xA;  .project-card {&#xA;    padding: 0.75rem;&#xA;  }&#xA;&#xA;  .project-links {&#xA;    justify-content: center;&#xA;  }&#xA;}&#xA;&lt;/style&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Harisankar P S | Ruby on Rails Developer</title><link>https://hsps.in/tags/projects/</link><description>Recent content in Projects on Harisankar P S | Ruby on Rails Developer</description><generator>Hugo</generator><language>en</language><copyright>Harisankar P S</copyright><lastBuildDate>Fri, 20 Mar 2026 14:38:40 +0530</lastBuildDate><atom:link href="https://hsps.in/tags/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>Projects | Open Source and Others</title><link>https://hsps.in/projects/</link><pubDate>Sun, 05 Jun 2022 15:22:34 -0700</pubDate><guid>https://hsps.in/projects/</guid><description>&lt;h1 id="projects"&gt;Projects&lt;/h1&gt;
+&lt;p class="projects-intro"&gt;Link to projects I worked on over the years. There are more in &lt;a href="https://github.com/coderhs" target="_blank" rel="noopener"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="projects-grid"&gt;
+ &lt;!-- Wifi QR --&gt;
+ &lt;div class="project-card"&gt;
+ &lt;div class="project-header"&gt;
+ &lt;h3&gt;&lt;a href="https://wifi-qr.hsps.in" target="_blank" rel="noopener"&gt;Wifi-QR&lt;/a&gt;&lt;/h3&gt;
+ &lt;div class="project-tech"&gt;Next.js&lt;/div&gt; &lt;div class="project-tech"&gt;Vercel&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-description"&gt;
+ A simple next.js application hosted on vercel, that will generate a sharable QR code of your wifi connection. Using the mobile camera app one can autojoin to this network without needing to type.
+ &lt;/div&gt;
+ &lt;div class="project-links"&gt;
+ &lt;a href="https://wifi-qr.hsps.in" target="_blank" rel="noopener" class="project-link demo"&gt;Live Demo&lt;/a&gt;
+ &lt;a href="https://github.com/coderhs/wifi-qr" target="_blank" rel="noopener" class="project-link code"&gt;GitHub&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;!-- Column to Array --&gt;
+ &lt;div class="project-card"&gt;
+ &lt;div class="project-header"&gt;
+ &lt;h3&gt;&lt;a href="https://hsps.in/column_to_array/" target="_blank" rel="noopener"&gt;Column to Array&lt;/a&gt;&lt;/h3&gt;
+ &lt;div class="project-tech"&gt;Ruby&lt;/div&gt; &lt;div class="project-tech"&gt;WebAssembly&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-description"&gt;
+ Convert column copied from a spreadsheet to array. The site runs on web assembly executing ruby in your browser.
+ &lt;/div&gt;
+ &lt;div class="project-links"&gt;
+ &lt;a href="https://hsps.in/column_to_array/" target="_blank" rel="noopener" class="project-link demo"&gt;Live Demo&lt;/a&gt;
+ &lt;a href="https://github.com/coderhs/column_to_array" target="_blank" rel="noopener" class="project-link code"&gt;GitHub&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;!-- CSVSqlWeb --&gt;
+ &lt;div class="project-card"&gt;
+ &lt;div class="project-header"&gt;
+ &lt;h3&gt;&lt;a href="https://hsps.in/csvsqlweb/" target="_blank" rel="noopener"&gt;CSVSqlWeb&lt;/a&gt;&lt;/h3&gt;
+ &lt;div class="project-tech"&gt;Web Assembly&lt;/div&gt; &lt;div class="project-tech"&gt;Javascript&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-description"&gt;
+ Run SQL queries on your CSV file from the web.
+ &lt;/div&gt;
+ &lt;div class="project-links"&gt;
+ &lt;a href="https://hsps.in/csvsqlweb/" target="_blank" rel="noopener" class="project-link demo"&gt;Live Demo&lt;/a&gt;
+ &lt;a href="https://github.com/coderhs/csvsqlweb" target="_blank" rel="noopener" class="project-link code"&gt;GitHub&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;!-- Step Counter --&gt;
+ &lt;div class="project-card"&gt;
+ &lt;div class="project-header"&gt;
+ &lt;h3&gt;&lt;a href="https://step-counter.hsps.in/" target="_blank" rel="noopener"&gt;Step Counter&lt;/a&gt;&lt;/h3&gt;
+ &lt;div class="project-tech"&gt;Next.js&lt;/div&gt; &lt;div class="project-tech"&gt;Vercel&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-description"&gt;
+ Count the number of steps you need to walk to lose weight.
+ &lt;/div&gt;
+ &lt;div class="project-links"&gt;
+ &lt;a href="https://step-counter.hsps.in/" target="_blank" rel="noopener" class="project-link demo"&gt;Live Demo&lt;/a&gt;
+ &lt;a href="https://github.com/coderhs/step_counter" target="_blank" rel="noopener" class="project-link code"&gt;GitHub&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;!-- Easy Client Log --&gt;
+ &lt;div class="project-card"&gt;
+ &lt;div class="project-header"&gt;
+ &lt;h3&gt;&lt;a href="https://easyclientlog.com" target="_blank" rel="noopener"&gt;Easy Client Log&lt;/a&gt;&lt;/h3&gt;
+ &lt;div class="project-tech"&gt;Next.js&lt;/div&gt; &lt;div class="project-tech"&gt;Ruby on Rails - 8&lt;/div&gt; &lt;div class="project-tech"&gt;PostgreSQL&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-description"&gt;
+ A simple CRM, Task, Scheduling and Invoice tool for entrepreneurs.
+ &lt;/div&gt;
+ &lt;div class="project-links"&gt;
+ &lt;a href="https://easyclientlog.com"" target="_blank" rel="noopener" class="project-link demo"&gt;Live&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;!-- PgDeploy --&gt;
+ &lt;div class="project-card"&gt;
+ &lt;div class="project-header"&gt;
+ &lt;h3&gt;&lt;a href="https://pgdeploy.com" target="_blank" rel="noopener"&gt;PgDeploy&lt;/a&gt;&lt;/h3&gt;
+ &lt;div class="project-tech"&gt;Next.js&lt;/div&gt; &lt;div class="project-tech"&gt;Go/Gin&lt;/div&gt; &lt;div class="project-tech"&gt;PostgreSQL&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-description"&gt;
+ Manage self hosted PostgreSQL in different cloud provider.
+ &lt;/div&gt;
+ &lt;div class="project-links"&gt;
+ &lt;a href="https://pgdeploy.com"" target="_blank" rel="noopener" class="project-link demo"&gt;Live&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-card"&gt;
+ &lt;div class="project-header"&gt;
+ &lt;h3&gt;&lt;a href="https://chromewebstore.google.com/detail/new-tab-reminder/mcgmfombdolcfpnbcefghclidgbdabih?hl=en-GB&amp;authuser=0" target="_blank" rel="noopener"&gt;New Tab Reminder&lt;/a&gt;&lt;/h3&gt;
+ &lt;div class="project-tech"&gt;Vue.js&lt;/div&gt; &lt;div class="project-tech"&gt;Google Chrome&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-description"&gt;
+ Todo in your browser
+ &lt;/div&gt;
+ &lt;div class="project-links"&gt;
+ &lt;a href="https://chromewebstore.google.com/detail/new-tab-reminder/mcgmfombdolcfpnbcefghclidgbdabih?hl=en-GB&amp;authuser=0" target="_blank" rel="noopener" class="project-link demo"&gt;Chrome Store&lt;/a&gt;
+ &lt;a href="https://github.com/coderhs/new-tab-reminders" target="_blank" rel="noopener" class="project-link code"&gt;GitHub&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-card"&gt;
+ &lt;div class="project-header"&gt;
+ &lt;h3&gt;&lt;a href="https://chromewebstore.google.com/detail/new-tab-motivational-quot/ajojhjckmhdpjggiodlhhjkahfnbapfh?hl=en-GB&amp;authuser=0" target="_blank" rel="noopener"&gt;New Tab Motivational Quote&lt;/a&gt;&lt;/h3&gt;
+ &lt;div class="project-tech"&gt;Javascript&lt;/div&gt; &lt;div class="project-tech"&gt;Google Chrome&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-description"&gt;
+ Motivational quote on new tab
+ &lt;/div&gt;
+ &lt;div class="project-links"&gt;
+ &lt;a href="https://chromewebstore.google.com/detail/new-tab-motivational-quot/ajojhjckmhdpjggiodlhhjkahfnbapfh?hl=en-GB&amp;authuser=0" target="_blank" rel="noopener" class="project-link demo"&gt;Chrome Store&lt;/a&gt;
+ &lt;a href="https://github.com/coderhs/WeeklyMotivationalQuotes" target="_blank" rel="noopener" class="project-link code"&gt;GitHub&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;!-- UPI QR Generator --&gt;
+ &lt;div class="project-card"&gt;
+ &lt;div class="project-header"&gt;
+ &lt;h3&gt;&lt;a href="https://upi-qr.hsps.in/" target="_blank" rel="noopener"&gt;UPI QR Generator&lt;/a&gt;&lt;/h3&gt;
+ &lt;div class="project-tech"&gt;Next.js&lt;/div&gt; &lt;div class="project-tech"&gt; Vercel &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-description"&gt;
+ Instantly generate UPI QR codes for payments.
+ &lt;/div&gt;
+ &lt;div class="project-links"&gt;
+ &lt;a href="https://upi-qr.hsps.in/" target="_blank" rel="noopener" class="project-link demo"&gt;Live Demo&lt;/a&gt;
+ &lt;a href="https://github.com/coderhs/upi-qr" target="_blank" rel="noopener" class="project-link code"&gt;GitHub&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+.projects-intro {
+ font-size: 1.1em;
+ color: #666;
+ margin-bottom: 2rem;
+ font-style: italic;
+}
+
+.projects-grid {
+ display: flex;
+ flex-direction: column;
+ gap: 1.25rem;
+ margin-top: 1.5rem;
+}
+
+.project-card {
+ border: 1px solid #e1e5e9;
+ border-radius: 6px;
+ padding: 1rem;
+ background: #ffffff;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+ transition: all 0.3s ease;
+ position: relative;
+}
+
+.project-card:hover {
+ box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+ transform: translateY(-2px);
+}
+
+.project-header {
+ margin-bottom: 0.75rem;
+}
+
+.project-header h3 {
+ margin: 0 0 0.3rem 0;
+ font-size: 1.1em;
+}
+
+.project-header h3 a {
+ color: #333;
+ text-decoration: none;
+}
+
+.project-header h3 a:hover {
+ color: #007acc;
+}
+
+.project-tech {
+ font-size: 0.75em;
+ color: #007acc;
+ font-weight: 500;
+ background: #f0f8ff;
+ display: inline-block;
+ padding: 0.15rem 0.4rem;
+ border-radius: 3px;
+ margin-right: 0.3rem;
+}
+
+.project-description {
+ line-height: 1.5;
+ margin-bottom: 1rem;
+ font-size: 0.9em;
+}
+
+.project-links {
+ display: flex;
+ gap: 0.5rem;
+ flex-wrap: wrap;
+}
+
+.project-link {
+ text-decoration: none;
+ padding: 0.4rem 0.8rem;
+ border-radius: 4px;
+ font-size: 0.8em;
+ font-weight: 500;
+ transition: all 0.2s ease;
+ border: 1px solid;
+}
+
+.project-link.demo {
+ color: white;
+ border-color: #007acc;
+}
+
+.project-link.demo:hover {
+ background: #005fa3;
+ border-color: #005fa3;
+}
+
+.project-link.code {
+ background: transparent;
+ color: #333;
+ border-color: #ddd;
+}
+
+.project-link.code:hover {
+ background: #f5f5f5;
+ border-color: #bbb;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+ .project-card {
+ border-color: #4a5568;
+ }
+
+ .project-header h3 a {
+ color: #e2e8f0;
+ }
+
+ .project-description {
+ }
+
+ .project-tech {
+ background: #2a4a6b;
+ color: #90cdf4;
+ }
+
+ .project-link.code {
+ color: #e2e8f0;
+ border-color: #4a5568;
+ }
+
+ .project-link.code:hover {
+ background: #4a5568;
+ border-color: #718096;
+ }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+ .projects-grid {
+ gap: 1rem;
+ }
+
+ .project-card {
+ padding: 0.75rem;
+ }
+
+ .project-links {
+ justify-content: center;
+ }
+}
+&lt;/style&gt;</description></item></channel></rss>

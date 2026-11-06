@@ -1,513 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Sidekiq Graceful Shutdown in Fargate ECS - Harisankar P S | Ruby on Rails Developer</title>
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Why Sidekiq loses jobs during ECS Fargate deployments and how to fix it using tini so SIGTERM reaches the worker process correctly." /><meta name="keywords" content="ecs, fargate, aws, ruby, sidekiq" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.152.2 with theme even" />
-
-
-<link rel="canonical" href="https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<link href="/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-
-<meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Sidekiq Graceful Shutdown in Fargate ECS" />
-<meta property="og:url" content="https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/" />
-<meta property="og:description" content="Why Sidekiq loses jobs during ECS Fargate deployments and how to fix it using tini so SIGTERM reaches the worker process correctly." />
-<meta property="article:published_time" content="2023-07-30T00:10:21-07:00" />
-<meta property="article:modified_time" content="2023-07-30T00:10:21-07:00" />
-<meta property="article:author" content="Harisankar P S" />
-<meta property="article:tag" content="ecs" />
-<meta property="article:tag" content="fargate" />
-<meta property="article:tag" content="aws" />
-<meta property="article:tag" content="ruby" />
-<meta property="article:tag" content="sidekiq" />
-<meta property="og:image" content="https://hsps.in/images/og-base_hu_85d9eecb130872a4.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sidekiq Graceful Shutdown in Fargate ECS" />
-<meta name="twitter:description" content="Why Sidekiq loses jobs during ECS Fargate deployments and how to fix it using tini so SIGTERM reaches the worker process correctly." />
-<meta name="twitter:image" content="https://hsps.in/images/og-base_hu_85d9eecb130872a4.png" />
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Sidekiq Graceful Shutdown in Fargate ECS",
-  "url": "https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/",
-  "datePublished": "2023-07-30T00:10:21-07:00",
-  "dateModified": "2023-07-30T00:10:21-07:00",
-  "author": {
-    "@type": "Person",
-    "name": "Harisankar P S",
-    "url": "https://hsps.in/about"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Harisankar P S"
-  },
-  "description": "Why Sidekiq loses jobs during ECS Fargate deployments and how to fix it using tini so SIGTERM reaches the worker process correctly.",
-  "wordCount":  773 ,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/"
-  },
-  "image": "https://hsps.in/images/og-base_hu_85d9eecb130872a4.png",
-  "keywords": ["ecs","fargate","aws","ruby","sidekiq"]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://hsps.in/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Articles",
-      "item": "https://hsps.in/post/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Sidekiq Graceful Shutdown in Fargate ECS",
-      "item": "https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/"
-    }
-  ]
-}
-</script>
-
-
-</head>
-<body>
-  <div class="reading-progress" id="reading-progress"></div>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">HsPS.in</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/post/">
-        <li class="mobile-menu-item">Articles</li>
-      </a><a href="/videos/">
-        <li class="mobile-menu-item">Speaking</li>
-      </a><a href="/about">
-        <li class="mobile-menu-item">About</li>
-      </a><a href="/subscribe">
-        <li class="mobile-menu-item">Subscribe</li>
-      </a><a href="/projects">
-        <li class="mobile-menu-item">Projects</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">HsPS.in</a>
-  <br>
-  <i>My thoughts and opinions</i>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/post/">Articles</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/videos/">Speaking</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/about">About</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/subscribe">Subscribe</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/projects">Projects</a>
-      </li>
-  </ul>
-</nav>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ME9J4YD4H0');
-</script>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Sidekiq Graceful Shutdown in Fargate ECS</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2023-07-30 </span>
-        <div class="post-category">
-            <a href="/categories/ecs/"> ECS </a>
-            <a href="/categories/sidekiq/"> Sidekiq </a>
-            <a href="/categories/fargate/"> Fargate </a>
-            </div>
-          <span class="more-meta"> 773 words </span>
-          <span class="more-meta"> 4 mins read </span>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>Sidekiq is the gold standard when it comes to background processing. I have been using since I started working with rails. Sidekiq took care of lot of the complexity of the background processing that allowed developers to concentrate on just there code/business logic.</p>
-<p>One of the beautiful features of sidekiq was how it handled exit (SIGTERM and SIGKILL).</p>
-<p><img src="https://turnoff.us/image/en/dont-sigkill-2.png" alt="Dont Sigkill">
-Source: <a href="https://turnoff.us/geek/dont-sigkill-2/">https://turnoff.us/geek/dont-sigkill-2/</a></p>
-<p>When sidekiq received the sigterm commands it stops accept new jobs, and just focus on finishing the job it is doing now and incase it can&rsquo;t finish, it will requeue the job to another available worker or keep it in the queue for another worker (or the same worker) to pick it up when available.
-This was working so well for years on rails app I was working on, that I didn&rsquo;t even care about it. The mina command would trigger a sidekiq restart allowing sidekiq to gracefully exit and then respawn with the new code.</p>
-<p>The above app was running on two linux servers everything manually configured, but recently to keep up with the growth of the app we moved to amazon ECS. The app was containerized to a docker image, and made to run on about 12 Fargate Instances with ability to auto scale to 36 based on CPU and RAM usage. We grouped instances for various purposes 2 for heavy jobs, 2 for faster (more memory jobs), 2 for file processing, 4 for web, 2 for API.</p>
-<p>Things were all good, the app was scaling well. Little or no slowness for our users, as the instances were scaling well during peak hours and scaling down during off peak hours. Things were all good and perfect in the promise land until we noticed that during deploy our long running jobs were not getting re queued, but dropped. The jobs never got finished, and the clients will have to trigger a re-run manually. As per the information I had collected, AWS ECS was sending a sig term command to the container giving sidekiq the time for a graceful shutdown (Our -t flag was set to 20 seconds). But looking through the logs of the container, and more importantly looking at sidekiq web we noticed that when the new sidekiq servers were setup the old sidekiq servers not shutting down but just dieing.</p>
-<p>The usual flow of sidekiq lifecycle is - <code>running (green)</code> -&gt; <code>quiet (red)</code> -&gt; <code>stop (disappear)</code>.
-But in our case we found that it was just disappearing from the page.</p>
-<p><img src="/images/sidekiq-gracefully-shutdown/green.png" alt="Sidekiq Green"></p>
-<p>Using this peace of information we did more research into how ECS is giving this signal to the running application, and how its getting handled. This page gave us the whole explanation we were looking for: <a href="https://aws.amazon.com/blogs/containers/graceful-shutdowns-with-ecs/">https://aws.amazon.com/blogs/containers/graceful-shutdowns-with-ecs/</a></p>
-<p>Basically the way docker works, when it receives the signal it passes on to the first process of a docker instance. But if your initial process is actually just spawning the child/real process, then they would never get the SIGTERM.</p>
-<p>Eg: if you are running sidekiq like or process like so:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sh -c <span class="s2">&#34;bundle exec -C config/sidekiq.yml -t 20&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>sidekiq will never get the sigterm. Shell ignores SIGTERM by default.</p>
-<p>You can fix this by making sure your command actually runs via <code>exec &quot;$@&quot;</code> and not sh.</p>
-<p>Eg: (From the documentation)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./entry.sh /app app arguements
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">## Redirecting Filehanders</span>
-</span></span><span class="line"><span class="cl">ln -sf /proc/<span class="nv">$$</span>/fd/1 /log/stdout.log
-</span></span><span class="line"><span class="cl">ln -sf /proc/<span class="nv">$$</span>/fd/2 /log/stderr.log
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">## Initialization</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># TODO: put your init steps here</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">## Start Process</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># exec into process and take over PID</span>
-</span></span><span class="line"><span class="cl">&gt;/log/stdout.log 2&gt;/log/stderr.log <span class="nb">exec</span> <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Now this is what being done in most docker app. You add an <code>entrypoint.sh</code> like above and not <code>sh -c</code> like how we were doing.</p>
-<p>The second option is to use a process manager like <code>tini</code> or <code>dumb-init</code>. These two makes it a bit more easier for us to manage thing as what it does is, it take the <code>SIGTERM</code> it receives and passes it to all of its children.</p>
-<p>I decided to use <code>tini</code> as this is the one that amazon seems to be promoting and is already available in amazon docker environment.</p>
-<p>So we changed our docker command to:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tini -s -- bundle <span class="nb">exec</span> sidekiq -C config/sidekiq.yml -t <span class="m">20</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The <code>-s</code> make tini take over PID 1, if tini started as any other PID. Docker gives the sig command to PID 1, so its important tini runs as pid 1.</p>
-<p>After making the above change, when we send the ECS service force-deployment, it gracefully shutdown the sidekiq worker like before. It became quiet, try to finish the job and when it couldn&rsquo;t it rescheduled it.</p>
-    </div>
-
-    
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/ecs/">ecs</a>
-          <a href="/tags/fargate/">fargate</a>
-          <a href="/tags/aws/">aws</a>
-          <a href="/tags/ruby/">ruby</a>
-          <a href="/tags/sidekiq/">sidekiq</a>
-          </div>
-      
-      
-        <div class="related-posts">
-          <h3>Related Articles</h3>
-          <ul>
-            
-              <li>
-                <a href="/post/ruby-wasm/">About Web Assembly. Example for Ruby Web Assembly</a>
-                <span class="related-post-date">2023-05-19</span>
-              </li>
-            
-              <li>
-                <a href="/post/validating-yaml-files-in-ruby/">Validating YAML Files in Ruby</a>
-                <span class="related-post-date">2022-08-22</span>
-              </li>
-            
-              <li>
-                <a href="/post/access-history-in-irb/">Access History in IRB</a>
-                <span class="related-post-date">2022-07-17</span>
-              </li>
-            
-              <li>
-                <a href="/post/using-string-as-active-record-enum/">Using String in Active Record(Rails) Enum</a>
-                <span class="related-post-date">2022-05-31</span>
-              </li>
-            
-              <li>
-                <a href="/post/splat-operator-in-ruby/">Splat Operator in Ruby</a>
-                <span class="related-post-date">2013-09-25</span>
-              </li>
-            
-          </ul>
-        </div>
-      <div class="author-post-intro">
-  <p>
-    Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
-    devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
-    full-stack development, linux, go, rust and DevOps projects.
-  </p>
-  <p>
-    If you're interested in collaborating or have a project in mind, feel free to <a href="mailto:projects@hsps.in">email me</a>.
-  </p>
-  <div class="author-subscribe">
-    <p class="subscribe-label">Get new posts delivered to your inbox:</p>
-    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <form
-      action="https://app.kit.com/forms/7897017/subscriptions"
-      class="seva-form formkit-form"
-      method="post"
-      data-sv-form="7897017"
-      data-uid="52c1473349"
-      data-format="inline"
-      data-version="5"
-      data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
-    >
-      <div class="subscribe-form-row">
-        <input
-          class="formkit-input"
-          name="email_address"
-          aria-label="Email Address"
-          placeholder="your@email.com"
-          required=""
-          type="email"
-        />
-        <button data-element="submit" class="formkit-submit formkit-submit">
-          <div class="formkit-spinner"><div></div><div></div><div></div></div>
-          <span>Subscribe</span>
-        </button>
-      </div>
-      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-    </form>
-  </div>
-</div>
-
-      <nav class="post-nav">
-        <a class="prev" href="/post/rails-copy-assets-bundler-cache-to-speed-up-build/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Rails Copy Assets bundler Cache to Speed Up Build</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/ruby-wasm/">
-            <span class="next-text nav-default">About Web Assembly. Example for Ruby Web Assembly</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        <div class="giscus"></div>
-  <script src="https://giscus.app/client.js"
-          data-repo="coderhs/coderhs.github.io"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk="
-          data-category="General"
-          data-category-id="DIC_kwDOEWBlkc4CjKPc"
-          data-mapping="pathname"
-          data-strict="1"
-          data-reactions-enabled="1"
-          data-emit-metadata="1"
-          data-input-position="top"
-          data-theme="light"
-          data-lang="en"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-  </script>
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2011 - 
-    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-
-
-
-
-
-
-
-
-  
-  <script>
-    (function() {
-      var progressBar = document.getElementById('reading-progress');
-      if (!progressBar) return;
-      window.addEventListener('scroll', function() {
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        if (docHeight > 0) {
-          var scrollPercent = (scrollTop / docHeight) * 100;
-          progressBar.style.width = scrollPercent + '%';
-        }
-      });
-    })();
-  </script>
-
-  
-  <script>
-    (function() {
-      var codeBlocks = document.querySelectorAll('.highlight > .chroma, figure.highlight');
-      codeBlocks.forEach(function(block) {
-        var btn = document.createElement('button');
-        btn.className = 'copy-code-btn';
-        btn.textContent = 'Copy';
-        btn.addEventListener('click', function() {
-          var code = block.querySelector('code');
-          if (!code) {
-            code = block.querySelector('.code pre');
-          }
-          if (code) {
-            navigator.clipboard.writeText(code.textContent).then(function() {
-              btn.textContent = 'Copied!';
-              setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
-            });
-          }
-        });
-        block.style.position = 'relative';
-        block.appendChild(btn);
-      });
-    })();
-  </script>
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Sidekiq Graceful Shutdown on ECS Fargate: Fix Lost Jobs with tini | hsps.in</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel=stylesheet><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Harisankar P S"><meta name=description content="Why Sidekiq jobs get lost during ECS Fargate deploys, and how running tini as PID 1 forwards SIGTERM so Sidekiq can shut down gracefully."><meta name=keywords content="ecs,fargate,aws,ruby,sidekiq"><meta name=generator content="Hugo 0.152.2 with theme even"><link rel=canonical href=https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="Sidekiq Graceful Shutdown on ECS Fargate: Fix Lost Jobs with tini"><meta property="og:url" content="https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/"><meta property="og:description" content="Why Sidekiq jobs get lost during ECS Fargate deploys, and how running tini as PID 1 forwards SIGTERM so Sidekiq can shut down gracefully."><meta property="article:published_time" content="2023-07-30T00:10:21-07:00"><meta property="article:modified_time" content="2026-11-06T23:23:15Z"><meta property="article:author" content="Harisankar P S"><meta property="article:tag" content="ecs"><meta property="article:tag" content="fargate"><meta property="article:tag" content="aws"><meta property="article:tag" content="ruby"><meta property="article:tag" content="sidekiq"><meta property="og:image" content="https://hsps.in/images/og-base_hu_bf15edcb40be0e49.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Sidekiq Graceful Shutdown on ECS Fargate: Fix Lost Jobs with tini"><meta name=twitter:description content="Why Sidekiq jobs get lost during ECS Fargate deploys, and how running tini as PID 1 forwards SIGTERM so Sidekiq can shut down gracefully."><meta name=twitter:image content="https://hsps.in/images/og-base_hu_bf15edcb40be0e49.png"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Sidekiq Graceful Shutdown on ECS Fargate: Fix Lost Jobs with tini","url":"https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/","datePublished":"2023-07-30T00:10:21-07:00","dateModified":"2026-11-06T23:23:15Z","author":{"@type":"Person","name":"Harisankar P S","url":"https://hsps.in/about"},"publisher":{"@type":"Person","name":"Harisankar P S"},"description":"Why Sidekiq jobs get lost during ECS Fargate deploys, and how running tini as PID 1 forwards SIGTERM so Sidekiq can shut down gracefully.","wordCount":773,"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsps.in/post/sidekiq-graceful-shutdown-in-fargate-ecs/"},"image":"https://hsps.in/images/og-base_hu_bf15edcb40be0e49.png","keywords":["ecs","fargate","aws","ruby","sidekiq"]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hsps.in/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://hsps.in/post/"},{"@type":"ListItem","position":3,"name":"Sidekiq Graceful Shutdown on ECS Fargate: Fix Lost Jobs with tini"}]}</script></head><body><div class=reading-progress id=reading-progress></div><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>HsPS.in</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Articles</li></a><a href=/videos/><li class=mobile-menu-item>Speaking</li></a><a href=/about><li class=mobile-menu-item>About</li></a><a href=/subscribe><li class=mobile-menu-item>Subscribe</li></a><a href=/projects><li class=mobile-menu-item>Projects</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>HsPS.in</a><br><i>My thoughts and opinions</i></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/post/>Articles</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/videos/>Speaking</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/about>About</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/subscribe>Subscribe</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/projects>Projects</a></li></ul></nav><script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-ME9J4YD4H0")</script></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Sidekiq Graceful Shutdown on ECS Fargate: Fix Lost Jobs with tini</h1><div class=post-meta><span class=post-time>2023-07-30</span><div class=post-category><a href=/categories/ecs/>ECS </a><a href=/categories/sidekiq/>Sidekiq </a><a href=/categories/fargate/>Fargate</a></div><span class=more-meta>773 words </span><span class=more-meta>4 mins read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents></nav></div></div><div class=post-content><p>Sidekiq is the gold standard when it comes to background processing. I have been using since I started working with rails. Sidekiq took care of lot of the complexity of the background processing that allowed developers to concentrate on just there code/business logic.</p><p>One of the beautiful features of sidekiq was how it handled exit (SIGTERM and SIGKILL).</p><p><img src=https://turnoff.us/image/en/dont-sigkill-2.png alt="Dont Sigkill">
+Source: <a href=https://turnoff.us/geek/dont-sigkill-2/>https://turnoff.us/geek/dont-sigkill-2/</a></p><p>When sidekiq received the sigterm commands it stops accept new jobs, and just focus on finishing the job it is doing now and incase it can&rsquo;t finish, it will requeue the job to another available worker or keep it in the queue for another worker (or the same worker) to pick it up when available.
+This was working so well for years on rails app I was working on, that I didn&rsquo;t even care about it. The mina command would trigger a sidekiq restart allowing sidekiq to gracefully exit and then respawn with the new code.</p><p>The above app was running on two linux servers everything manually configured, but recently to keep up with the growth of the app we moved to amazon ECS. The app was containerized to a docker image, and made to run on about 12 Fargate Instances with ability to auto scale to 36 based on CPU and RAM usage. We grouped instances for various purposes 2 for heavy jobs, 2 for faster (more memory jobs), 2 for file processing, 4 for web, 2 for API.</p><p>Things were all good, the app was scaling well. Little or no slowness for our users, as the instances were scaling well during peak hours and scaling down during off peak hours. Things were all good and perfect in the promise land until we noticed that during deploy our long running jobs were not getting re queued, but dropped. The jobs never got finished, and the clients will have to trigger a re-run manually. As per the information I had collected, AWS ECS was sending a sig term command to the container giving sidekiq the time for a graceful shutdown (Our -t flag was set to 20 seconds). But looking through the logs of the container, and more importantly looking at sidekiq web we noticed that when the new sidekiq servers were setup the old sidekiq servers not shutting down but just dieing.</p><p>The usual flow of sidekiq lifecycle is - <code>running (green)</code> -> <code>quiet (red)</code> -> <code>stop (disappear)</code>.
+But in our case we found that it was just disappearing from the page.</p><p><img src=/images/sidekiq-gracefully-shutdown/green.png alt="Sidekiq Green"></p><p>Using this peace of information we did more research into how ECS is giving this signal to the running application, and how its getting handled. This page gave us the whole explanation we were looking for: <a href=https://aws.amazon.com/blogs/containers/graceful-shutdowns-with-ecs/>https://aws.amazon.com/blogs/containers/graceful-shutdowns-with-ecs/</a></p><p>Basically the way docker works, when it receives the signal it passes on to the first process of a docker instance. But if your initial process is actually just spawning the child/real process, then they would never get the SIGTERM.</p><p>Eg: if you are running sidekiq like or process like so:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>sh -c <span class=s2>&#34;bundle exec -C config/sidekiq.yml -t 20&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>sidekiq will never get the sigterm. Shell ignores SIGTERM by default.</p><p>You can fix this by making sure your command actually runs via <code>exec "$@"</code> and not sh.</p><p>Eg: (From the documentation)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>./entry.sh /app app arguements
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=cp>#!/bin/sh
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=c1>## Redirecting Filehanders</span>
+</span></span><span class=line><span class=cl>ln -sf /proc/<span class=nv>$$</span>/fd/1 /log/stdout.log
+</span></span><span class=line><span class=cl>ln -sf /proc/<span class=nv>$$</span>/fd/2 /log/stderr.log
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>## Initialization</span>
+</span></span><span class=line><span class=cl><span class=c1># TODO: put your init steps here</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>## Start Process</span>
+</span></span><span class=line><span class=cl><span class=c1># exec into process and take over PID</span>
+</span></span><span class=line><span class=cl>&gt;/log/stdout.log 2&gt;/log/stderr.log <span class=nb>exec</span> <span class=s2>&#34;</span><span class=nv>$@</span><span class=s2>&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Now this is what being done in most docker app. You add an <code>entrypoint.sh</code> like above and not <code>sh -c</code> like how we were doing.</p><p>The second option is to use a process manager like <code>tini</code> or <code>dumb-init</code>. These two makes it a bit more easier for us to manage thing as what it does is, it take the <code>SIGTERM</code> it receives and passes it to all of its children.</p><p>I decided to use <code>tini</code> as this is the one that amazon seems to be promoting and is already available in amazon docker environment.</p><p>So we changed our docker command to:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>tini -s -- bundle <span class=nb>exec</span> sidekiq -C config/sidekiq.yml -t <span class=m>20</span>
+</span></span></code></pre></td></tr></table></div></div><p>The <code>-s</code> make tini take over PID 1, if tini started as any other PID. Docker gives the sig command to PID 1, so its important tini runs as pid 1.</p><p>After making the above change, when we send the ECS service force-deployment, it gracefully shutdown the sidekiq worker like before. It became quiet, try to finish the job and when it couldn&rsquo;t it rescheduled it.</p></div><footer class=post-footer><div class=post-tags><a href=/tags/ecs/>ecs</a>
+<a href=/tags/fargate/>fargate</a>
+<a href=/tags/aws/>aws</a>
+<a href=/tags/ruby/>ruby</a>
+<a href=/tags/sidekiq/>sidekiq</a></div><div class=related-posts><h3>Related Articles</h3><ul><li><a href=/post/ruby-wasm/>About Web Assembly. Example for Ruby Web Assembly</a>
+<span class=related-post-date>2023-05-19</span></li><li><a href=/post/validating-yaml-files-in-ruby/>Validating YAML Files in Ruby</a>
+<span class=related-post-date>2022-08-22</span></li><li><a href=/post/access-history-in-irb/>Access History in IRB</a>
+<span class=related-post-date>2022-07-17</span></li><li><a href=/post/using-string-as-active-record-enum/>Rails Enum with String Values: Store Strings Instead of Integers</a>
+<span class=related-post-date>2022-05-31</span></li><li><a href=/post/splat-operator-in-ruby/>Splat Operator in Ruby</a>
+<span class=related-post-date>2013-09-25</span></li></ul></div><div class=author-post-intro><p>Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
+devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
+full-stack development, linux, go, rust and DevOps projects.</p><p>If you're interested in collaborating or have a project in mind, feel free to <a href=mailto:projects@hsps.in>email me</a>.</p><div class=author-subscribe><p class=subscribe-label>Get new posts delivered to your inbox:</p><script src=https://f.convertkit.com/ckjs/ck.5.js></script><form action=https://app.kit.com/forms/7897017/subscriptions class="seva-form formkit-form" method=post data-sv-form=7897017 data-uid=52c1473349 data-format=inline data-version=5 data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'><div class=subscribe-form-row><input class=formkit-input name=email_address aria-label="Email Address" placeholder=your@email.com required type=email>
+<button data-element=submit class="formkit-submit formkit-submit"><div class=formkit-spinner><div></div><div></div><div></div></div><span>Subscribe</span></button></div><ul class="formkit-alert formkit-alert-error" data-element=errors data-group=alert></ul></form></div></div><nav class=post-nav><a class=prev href=/post/rails-copy-assets-bundler-cache-to-speed-up-build/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">Rails Copy Assets bundler Cache to Speed Up Build</span>
+<span class="prev-text nav-mobile">Prev</span>
+</a><a class=next href=/post/ruby-wasm/><span class="next-text nav-default">About Web Assembly. Example for Ruby Web Assembly</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div class=giscus></div><script src=https://giscus.app/client.js data-repo=coderhs/coderhs.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk=" data-category=General data-category-id=DIC_kwDOEWBlkc4CjKPc data-mapping=pathname data-strict=1 data-reactions-enabled=1 data-emit-metadata=1 data-input-position=top data-theme=light data-lang=en data-loading=lazy crossorigin=anonymous async></script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/coderhs class="iconfont icon-github" title=github></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span><span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span><span class=copyright-year>&copy;
+2011 -
+2026<span class=heart><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script><script>(function(){var e=document.getElementById("reading-progress");if(!e)return;window.addEventListener("scroll",function(){var n,s=window.scrollY||document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight;t>0&&(n=s/t*100,e.style.width=n+"%")})})()</script><script>(function(){var e=document.querySelectorAll(".highlight > .chroma, figure.highlight");e.forEach(function(e){var t=document.createElement("button");t.className="copy-code-btn",t.textContent="Copy",t.addEventListener("click",function(){var n=e.querySelector("code");n||(n=e.querySelector(".code pre")),n&&navigator.clipboard.writeText(n.textContent).then(function(){t.textContent="Copied!",setTimeout(function(){t.textContent="Copy"},2e3)})}),e.style.position="relative",e.appendChild(t)})})()</script></body></html>

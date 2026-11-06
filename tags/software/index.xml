@@ -1,27 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Software on Harisankar P S | Ruby on Rails Developer</title>
-    <link>https://hsps.in/tags/software/</link>
-    <description>Recent content in Software on Harisankar P S | Ruby on Rails Developer</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Tue, 05 Aug 2025 10:57:22 +0530</lastBuildDate>
-    <atom:link href="https://hsps.in/tags/software/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>🏗️ Understanding the Builder Pattern with Ruby Examples</title>
-      <link>https://hsps.in/post/object-or-software-builder-pattern-in-ruby/</link>
-      <pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate>
-      <guid>https://hsps.in/post/object-or-software-builder-pattern-in-ruby/</guid>
-      <description>&lt;p&gt;Design patterns are only useful when they help solve real world problems in ways that feel natural in your language. In Ruby, one such pattern that fits like a glove is the &lt;strong&gt;Builder Pattern&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You&amp;rsquo;ll find it everywhere, from constructing HTML forms in Rails to building command-line interfaces or even assembling HTTP requests.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-what-is-the-builder-pattern&#34;&gt;📦 What Is the Builder Pattern?&lt;/h2&gt;&#xA;&lt;p&gt;In real world projects, we often model things as objects. The idea is that objects are instances of a common blueprint, sharing the same structure but differing in a few properties like name, age, etc. However, when there are many properties to configure and you need more control over how the final object is built, that&amp;rsquo;s where the Builder pattern becomes useful. It helps construct complex objects step by step without cluttering your code with long initializers or deeply nested logic.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;strong&gt;Builder Pattern&lt;/strong&gt; is used to construct complex objects step-by-step. Rather than stuffing all parameters into a huge constructor, you build an object one piece at a time, usually using a &lt;strong&gt;fluent interface&lt;/strong&gt; (method chaining).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Create Your Own Ubuntu</title>
-      <link>https://hsps.in/post/create-your-own-ubuntu/</link>
-      <pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate>
-      <guid>https://hsps.in/post/create-your-own-ubuntu/</guid>
-      <description>&lt;p&gt;Many a times I wanted to create my own customized ubuntu, why???&lt;/p&gt;&#xA;&lt;p&gt;Well 3 reasons&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;I hate having to download the same set of softwares over and over gain, while I reinstall OS.&lt;/li&gt;&#xA;&lt;li&gt;Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection.&#xA;I think its cool.&lt;/li&gt;&#xA;&lt;li&gt;So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default. Its the same Ubuntu itself, no change in the internal structure. (Just that we can have more software at the first installation itself)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To build such a version is actually easy, there is a software/tool called Ubuntu Customization Kit. So hackers out there why don&amp;rsquo;t you give it a shot.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Software on Harisankar P S | Ruby on Rails Developer</title><link>https://hsps.in/tags/software/</link><description>Recent content in Software on Harisankar P S | Ruby on Rails Developer</description><generator>Hugo</generator><language>en</language><copyright>Harisankar P S</copyright><lastBuildDate>Fri, 20 Mar 2026 14:38:40 +0530</lastBuildDate><atom:link href="https://hsps.in/tags/software/index.xml" rel="self" type="application/rss+xml"/><item><title>🏗️ Understanding the Builder Pattern with Ruby Examples</title><link>https://hsps.in/post/object-or-software-builder-pattern-in-ruby/</link><pubDate>Tue, 05 Aug 2025 10:57:22 +0530</pubDate><guid>https://hsps.in/post/object-or-software-builder-pattern-in-ruby/</guid><description>&lt;p&gt;Design patterns are only useful when they help solve real world problems in ways that feel natural in your language. In Ruby, one such pattern that fits like a glove is the &lt;strong&gt;Builder Pattern&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You&amp;rsquo;ll find it everywhere, from constructing HTML forms in Rails to building command-line interfaces or even assembling HTTP requests.&lt;/p&gt;
+&lt;h2 id="-what-is-the-builder-pattern"&gt;📦 What Is the Builder Pattern?&lt;/h2&gt;
+&lt;p&gt;In real world projects, we often model things as objects. The idea is that objects are instances of a common blueprint, sharing the same structure but differing in a few properties like name, age, etc. However, when there are many properties to configure and you need more control over how the final object is built, that&amp;rsquo;s where the Builder pattern becomes useful. It helps construct complex objects step by step without cluttering your code with long initializers or deeply nested logic.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Builder Pattern&lt;/strong&gt; is used to construct complex objects step-by-step. Rather than stuffing all parameters into a huge constructor, you build an object one piece at a time, usually using a &lt;strong&gt;fluent interface&lt;/strong&gt; (method chaining).&lt;/p&gt;</description></item><item><title>Create Your Own Ubuntu</title><link>https://hsps.in/post/create-your-own-ubuntu/</link><pubDate>Wed, 25 Jan 2012 00:07:30 -0700</pubDate><guid>https://hsps.in/post/create-your-own-ubuntu/</guid><description>&lt;p&gt;Many a times I wanted to create my own customized ubuntu, why???&lt;/p&gt;
+&lt;p&gt;Well 3 reasons&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I hate having to download the same set of softwares over and over gain, while I reinstall OS.&lt;/li&gt;
+&lt;li&gt;Lot of my friends want the same set of softwares that I use, so making an ISO will help those out without a stable and unlimited net connection.
+I think its cool.&lt;/li&gt;
+&lt;li&gt;So I have decided to make my own customized ubuntu with lot of programming tools, documentations and compilers added on to it by default. Its the same Ubuntu itself, no change in the internal structure. (Just that we can have more software at the first installation itself)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To build such a version is actually easy, there is a software/tool called Ubuntu Customization Kit. So hackers out there why don&amp;rsquo;t you give it a shot.&lt;/p&gt;</description></item></channel></rss>

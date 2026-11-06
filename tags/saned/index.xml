@@ -1,20 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Saned on Harisankar P S | Ruby on Rails Developer</title>
-    <link>https://hsps.in/tags/saned/</link>
-    <description>Recent content in Saned on Harisankar P S | Ruby on Rails Developer</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Harisankar P S</copyright>
-    <lastBuildDate>Fri, 04 Oct 2024 02:11:12 -0700</lastBuildDate>
-    <atom:link href="https://hsps.in/tags/saned/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Test Scanner (scanner emulator) in SANE - Linux</title>
-      <link>https://hsps.in/post/test-scanner-in-sane/</link>
-      <pubDate>Fri, 04 Oct 2024 02:11:12 -0700</pubDate>
-      <guid>https://hsps.in/post/test-scanner-in-sane/</guid>
-      <description>&lt;p&gt;2024 &lt;a href=&#34;https://hacktoberfest.com/&#34;&gt;Hacktoberfest&lt;/a&gt; has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the &lt;a href=&#34;https://github.com/CoolCat467/Scanner-Server&#34;&gt;Scanner Server&lt;/a&gt;. It offers a web interface for using scanners, which seemed pretty interesting.&lt;/p&gt;&#xA;&lt;p&gt;I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saned on Harisankar P S | Ruby on Rails Developer</title><link>https://hsps.in/tags/saned/</link><description>Recent content in Saned on Harisankar P S | Ruby on Rails Developer</description><generator>Hugo</generator><language>en</language><copyright>Harisankar P S</copyright><lastBuildDate>Sat, 14 Feb 2026 15:11:47 +0530</lastBuildDate><atom:link href="https://hsps.in/tags/saned/index.xml" rel="self" type="application/rss+xml"/><item><title>Test Scanner (scanner emulator) in SANE - Linux</title><link>https://hsps.in/post/test-scanner-in-sane/</link><pubDate>Fri, 04 Oct 2024 02:11:12 -0700</pubDate><guid>https://hsps.in/post/test-scanner-in-sane/</guid><description>&lt;p&gt;2024 &lt;a href="https://hacktoberfest.com/"&gt;Hacktoberfest&lt;/a&gt; has begun, and I decided to dive into some open-source contributions! One project that caught my eye was the &lt;a href="https://github.com/CoolCat467/Scanner-Server"&gt;Scanner Server&lt;/a&gt;. It offers a web interface for using scanners, which seemed pretty interesting.&lt;/p&gt;
+&lt;p&gt;I was eager to contribute but quickly realized I didn’t have a scanner to test it with 😅. Fortunately, Linux’s SANE (Scanner Access Now Easy) software comes to the rescue! It includes a feature that lets you select a test scanner model. With this, you always have a virtual scanner called “test” available. While it only scans a black image, it behaves just like a real scanner for all practical purposes.&lt;/p&gt;</description></item></channel></rss>

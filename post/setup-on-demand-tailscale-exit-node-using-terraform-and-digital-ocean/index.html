@@ -1,602 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean - Harisankar P S | Ruby on Rails Developer</title>
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Step-by-step guide to creating an on-demand Tailscale exit node on DigitalOcean using Terraform for cost-effective, flexible VPN access." /><meta name="keywords" content="tailscale, on-demand, VPN, Digital Ocean, terraform, server" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.152.2 with theme even" />
-
-
-<link rel="canonical" href="https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<link href="/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-
-<meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean" />
-<meta property="og:url" content="https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/" />
-<meta property="og:description" content="Step-by-step guide to creating an on-demand Tailscale exit node on DigitalOcean using Terraform for cost-effective, flexible VPN access." />
-<meta property="article:published_time" content="2024-10-08T20:11:58-07:00" />
-<meta property="article:modified_time" content="2024-10-08T20:11:58-07:00" />
-<meta property="article:author" content="Harisankar P S" />
-<meta property="article:tag" content="tailscale" />
-<meta property="article:tag" content="on-demand" />
-<meta property="article:tag" content="VPN" />
-<meta property="article:tag" content="Digital Ocean" />
-<meta property="article:tag" content="terraform" />
-<meta property="article:tag" content="server" />
-<meta property="og:image" content="https://hsps.in/images/og-base_hu_36cf51289e581e2.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean" />
-<meta name="twitter:description" content="Step-by-step guide to creating an on-demand Tailscale exit node on DigitalOcean using Terraform for cost-effective, flexible VPN access." />
-<meta name="twitter:image" content="https://hsps.in/images/og-base_hu_36cf51289e581e2.png" />
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean",
-  "url": "https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/",
-  "datePublished": "2024-10-08T20:11:58-07:00",
-  "dateModified": "2024-10-08T20:11:58-07:00",
-  "author": {
-    "@type": "Person",
-    "name": "Harisankar P S",
-    "url": "https://hsps.in/about"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Harisankar P S"
-  },
-  "description": "Step-by-step guide to creating an on-demand Tailscale exit node on DigitalOcean using Terraform for cost-effective, flexible VPN access.",
-  "wordCount":  826 ,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/"
-  },
-  "image": "https://hsps.in/images/og-base_hu_36cf51289e581e2.png",
-  "keywords": ["tailscale","on-demand","VPN","Digital Ocean","terraform","server"]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://hsps.in/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Articles",
-      "item": "https://hsps.in/post/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean",
-      "item": "https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/"
-    }
-  ]
-}
-</script>
-
-
-</head>
-<body>
-  <div class="reading-progress" id="reading-progress"></div>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">HsPS.in</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/post/">
-        <li class="mobile-menu-item">Articles</li>
-      </a><a href="/videos/">
-        <li class="mobile-menu-item">Speaking</li>
-      </a><a href="/about">
-        <li class="mobile-menu-item">About</li>
-      </a><a href="/subscribe">
-        <li class="mobile-menu-item">Subscribe</li>
-      </a><a href="/projects">
-        <li class="mobile-menu-item">Projects</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">HsPS.in</a>
-  <br>
-  <i>My thoughts and opinions</i>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/post/">Articles</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/videos/">Speaking</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/about">About</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/subscribe">Subscribe</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/projects">Projects</a>
-      </li>
-  </ul>
-</nav>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ME9J4YD4H0');
-</script>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2024-10-08 </span>
-        <div class="post-category">
-            <a href="/categories/tailscale/"> tailscale </a>
-            <a href="/categories/terraform/"> terraform </a>
-            </div>
-          <span class="more-meta"> 826 words </span>
-          <span class="more-meta"> 4 mins read </span>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#remote-development-made-simple">Remote Development Made Simple</a></li>
-        <li><a href="#what-is-tailscale">What is Tailscale?</a></li>
-        <li><a href="#using-an-exit-node-for-secure-browsing">Using an Exit Node for Secure Browsing</a></li>
-        <li><a href="#on-demand-exit-node-setup">On-Demand Exit Node Setup</a></li>
-        <li><a href="#step-by-step-guide">Step-by-Step Guide</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.</p>
-<p>By connecting my phone to Tailscale and using JuiceSSH, an Android app for SSH access, I could SSH into my home machine, deploy applications, and run maintenance scripts—all from my phone. Peaceful trips away from my desk.</p>
-<h2 id="remote-development-made-simple">Remote Development Made Simple</h2>
-<p>Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code&rsquo;s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.</p>
-<p>I even took it a step further by installing <a href="https://github.com/coder/code-server">code-server</a> on my dev machine. This allowed me to access a full-fledged development environment from my samsung tablet via Tailscale.</p>
-<h2 id="what-is-tailscale">What is Tailscale?</h2>
-<p>For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.</p>
-<p>By connecting my devices and home lab to this VPN, I gained the ability to access my computers remotely from anywhere.</p>
-<h2 id="using-an-exit-node-for-secure-browsing">Using an Exit Node for Secure Browsing</h2>
-<p>Tailscale allows you to set up one of your devices as an exit node. This means that when you&rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.</p>
-<blockquote>
-<p><strong>Note:</strong> Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.</p>
-</blockquote>
-<h2 id="on-demand-exit-node-setup">On-Demand Exit Node Setup</h2>
-<p>While I don&rsquo;t use the exit node frequently, it’s invaluable when I travel. Recently, I needed a US IP to access a client application, which I easily set up by deploying Tailscale on a VPS. This is a more cost-effective solution than commercial VPNs for such specific needs. A DigitalOcean server costs about $4/month, but since I only need it on-demand, I can destroy it when not in use, avoiding unnecessary costs.</p>
-<p>This led me to write a Terraform configuration for creating a DigitalOcean server with Tailscale installed as an exit node. The setup takes around 4 minutes to be ready, and I can destroy the server when I’m done to save costs. I can also switch locations easily using Terraform or change cloud providers if needed.</p>
-<h2 id="step-by-step-guide">Step-by-Step Guide</h2>
-<p>This article provides a step-by-step guide to setting up an on-demand Tailscale exit node. It assumes familiarity with Tailscale, Linux, and Git.</p>
-<ol>
-<li>
-<p><strong>Install Terraform</strong>: Follow the <a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli">installation instructions</a> from HashiCorp.</p>
-</li>
-<li>
-<p><strong>Clone the Repository</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone git@github.com:coderhs/on_demand_tailscale_exit_node.git
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong>Setup Terraform Configuration</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> on_demand_tailscale_exit_node
-</span></span><span class="line"><span class="cl">cp terraform.tfvars.example terraform.tfvars
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Fill in the <code>terraform.tfvars</code> file with your values:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="n">digitalocean_token</span> <span class="o">=</span> <span class="s2">&#34;your_digitalocean_token&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">tailscale_auth_key</span> <span class="o">=</span> <span class="s2">&#34;your_tailscale_auth_key&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">ssh_fingerprint</span> <span class="o">=</span> <span class="s2">&#34;your_ssh_fingerprint&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">digitalocean_location</span> <span class="o">=</span> <span class="s2">&#34;desired_location&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>For first-time DigitalOcean users, <a href="https://m.do.co/c/07c7e5c8be6f">sign up here</a>.</p>
-</li>
-<li>
-<p><strong>Set Up SSH Key</strong>: Upload your SSH public key to DigitalOcean. Retrieve the SSH fingerprint and the private key path. <a href="https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/">DigitalOcean&rsquo;s guide</a> provides detailed instructions.</p>
-<p>Copy your private key to the key folder in the repo, with the name do.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cp ~/path/to/private/key ./key/do
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong>Create a DigitalOcean Token</strong>: Follow the <a href="https://docs.digitalocean.com/reference/api/create-personal-access-token/">DigitalOcean API token guide</a> and set the scope to manage droplets.</p>
-</li>
-<li>
-<p><strong>Tailscale Configuration</strong>: Update your Tailscale ACL settings:</p>
-<ul>
-<li>
-<p>Go to <a href="https://login.tailscale.com/admin/acls/file">Tailscale ACLs</a> and add the following:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;tagOwners&#34;</span><span class="err">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;tag:Connector&#34;</span><span class="p">:</span> <span class="p">[],</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
-</span></span><span class="line"><span class="cl"><span class="s2">&#34;autoApprovers&#34;</span><span class="err">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;exitNode&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;tag:Connector&#34;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// if You want the exit node to have a static IP in your network then uncomment the below line
-</span></span></span><span class="line"><span class="cl"><span class="c1">// &#34;nodeAttrs&#34;: [
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//	{
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//		&#34;target&#34;: [&#34;tag:Connector&#34;],
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//		&#34;ipPool&#34;: [&#34;100.81.0.1/32&#34;],
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//	},
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">// ],
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>Generate an authentication key following <a href="https://tailscale.com/kb/1085/auth-keys#generate-an-auth-key">Tailscale’s instructions</a>. Choose <strong>ephemeral</strong>, <strong>reusable</strong>, and assign the tag <strong>Connector</strong>.</p>
-</li>
-</ul>
-<p><img src="/images/on_demand_tailscale_node/tailscale_auth_key.png" alt="Auth Key"></p>
-</li>
-<li>
-<p><strong>Deploy the Exit Node</strong>: Decide on the server location using <a href="https://docs.digitalocean.com/platform/regional-availability/">DigitalOcean’s location codes</a>. Once ready, run:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">terraform apply
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The server should be available in your Tailscale network as &ldquo;tailscale-exit-node&rdquo; within 4-5 minutes.</p>
-</li>
-<li>
-<p><strong>Activate the Exit Node</strong>:</p>
-<ul>
-<li>
-<p>For Linux:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo tailscale up --exit-node<span class="o">=</span>tailscale-exit-node --snat-subnet-routes<span class="o">=</span><span class="nb">false</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>To disable the exit node:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo tailscale up --exit-node<span class="o">=</span> --snat-subnet-routes<span class="o">=</span><span class="nb">false</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-</li>
-<li>
-<p><strong>Destroy the Server</strong>:</p>
-</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">terraform destroy
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>With this setup, you have a flexible, on-demand Tailscale exit node running on DigitalOcean.</p>
-    </div>
-
-    
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/tailscale/">tailscale</a>
-          <a href="/tags/on-demand/">on-demand</a>
-          <a href="/tags/vpn/">VPN</a>
-          <a href="/tags/digital-ocean/">Digital Ocean</a>
-          <a href="/tags/terraform/">terraform</a>
-          <a href="/tags/server/">server</a>
-          </div>
-      
-      
-        <div class="related-posts">
-          <h3>Related Articles</h3>
-          <ul>
-            
-              <li>
-                <a href="/post/wildcard-domain-in-pi-hole/">Wildcard Domain in Pi Hole</a>
-                <span class="related-post-date">2022-09-04</span>
-              </li>
-            
-          </ul>
-        </div>
-      <div class="author-post-intro">
-  <p>
-    Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
-    devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
-    full-stack development, linux, go, rust and DevOps projects.
-  </p>
-  <p>
-    If you're interested in collaborating or have a project in mind, feel free to <a href="mailto:projects@hsps.in">email me</a>.
-  </p>
-  <div class="author-subscribe">
-    <p class="subscribe-label">Get new posts delivered to your inbox:</p>
-    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <form
-      action="https://app.kit.com/forms/7897017/subscriptions"
-      class="seva-form formkit-form"
-      method="post"
-      data-sv-form="7897017"
-      data-uid="52c1473349"
-      data-format="inline"
-      data-version="5"
-      data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
-    >
-      <div class="subscribe-form-row">
-        <input
-          class="formkit-input"
-          name="email_address"
-          aria-label="Email Address"
-          placeholder="your@email.com"
-          required=""
-          type="email"
-        />
-        <button data-element="submit" class="formkit-submit formkit-submit">
-          <div class="formkit-spinner"><div></div><div></div><div></div></div>
-          <span>Subscribe</span>
-        </button>
-      </div>
-      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-    </form>
-  </div>
-</div>
-
-      <nav class="post-nav">
-        <a class="prev" href="/post/run-rails-db-migrate-on-ecs-task-aws/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Running Rails Migrations in AWS ECS Using AWS CLI</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/change-action-mailer-settings-from-rails-console/">
-            <span class="next-text nav-default">Change Action Mailer Settings From Rails Console</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        <div class="giscus"></div>
-  <script src="https://giscus.app/client.js"
-          data-repo="coderhs/coderhs.github.io"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk="
-          data-category="General"
-          data-category-id="DIC_kwDOEWBlkc4CjKPc"
-          data-mapping="pathname"
-          data-strict="1"
-          data-reactions-enabled="1"
-          data-emit-metadata="1"
-          data-input-position="top"
-          data-theme="light"
-          data-lang="en"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-  </script>
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2011 - 
-    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-
-
-
-
-
-
-
-
-  
-  <script>
-    (function() {
-      var progressBar = document.getElementById('reading-progress');
-      if (!progressBar) return;
-      window.addEventListener('scroll', function() {
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        if (docHeight > 0) {
-          var scrollPercent = (scrollTop / docHeight) * 100;
-          progressBar.style.width = scrollPercent + '%';
-        }
-      });
-    })();
-  </script>
-
-  
-  <script>
-    (function() {
-      var codeBlocks = document.querySelectorAll('.highlight > .chroma, figure.highlight');
-      codeBlocks.forEach(function(block) {
-        var btn = document.createElement('button');
-        btn.className = 'copy-code-btn';
-        btn.textContent = 'Copy';
-        btn.addEventListener('click', function() {
-          var code = block.querySelector('code');
-          if (!code) {
-            code = block.querySelector('.code pre');
-          }
-          if (code) {
-            navigator.clipboard.writeText(code.textContent).then(function() {
-              btn.textContent = 'Copied!';
-              setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
-            });
-          }
-        });
-        block.style.position = 'relative';
-        block.appendChild(btn);
-      });
-    })();
-  </script>
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean | hsps.in</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel=stylesheet><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Harisankar P S"><meta name=description content="Step-by-step guide to creating an on-demand Tailscale exit node on DigitalOcean using Terraform for cost-effective, flexible VPN access."><meta name=keywords content="tailscale,on-demand,VPN,Digital Ocean,terraform,server"><meta name=generator content="Hugo 0.152.2 with theme even"><link rel=canonical href=https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean"><meta property="og:url" content="https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/"><meta property="og:description" content="Step-by-step guide to creating an on-demand Tailscale exit node on DigitalOcean using Terraform for cost-effective, flexible VPN access."><meta property="article:published_time" content="2024-10-08T20:11:58-07:00"><meta property="article:modified_time" content="2026-02-14T15:11:47+05:30"><meta property="article:author" content="Harisankar P S"><meta property="article:tag" content="tailscale"><meta property="article:tag" content="on-demand"><meta property="article:tag" content="VPN"><meta property="article:tag" content="Digital Ocean"><meta property="article:tag" content="terraform"><meta property="article:tag" content="server"><meta property="og:image" content="https://hsps.in/images/og-base_hu_36cf51289e581e2.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean"><meta name=twitter:description content="Step-by-step guide to creating an on-demand Tailscale exit node on DigitalOcean using Terraform for cost-effective, flexible VPN access."><meta name=twitter:image content="https://hsps.in/images/og-base_hu_36cf51289e581e2.png"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean","url":"https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/","datePublished":"2024-10-08T20:11:58-07:00","dateModified":"2026-02-14T15:11:47\u002b05:30","author":{"@type":"Person","name":"Harisankar P S","url":"https://hsps.in/about"},"publisher":{"@type":"Person","name":"Harisankar P S"},"description":"Step-by-step guide to creating an on-demand Tailscale exit node on DigitalOcean using Terraform for cost-effective, flexible VPN access.","wordCount":826,"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsps.in/post/setup-on-demand-tailscale-exit-node-using-terraform-and-digital-ocean/"},"image":"https://hsps.in/images/og-base_hu_36cf51289e581e2.png","keywords":["tailscale","on-demand","VPN","Digital Ocean","terraform","server"]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hsps.in/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://hsps.in/post/"},{"@type":"ListItem","position":3,"name":"Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean"}]}</script></head><body><div class=reading-progress id=reading-progress></div><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>HsPS.in</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Articles</li></a><a href=/videos/><li class=mobile-menu-item>Speaking</li></a><a href=/about><li class=mobile-menu-item>About</li></a><a href=/subscribe><li class=mobile-menu-item>Subscribe</li></a><a href=/projects><li class=mobile-menu-item>Projects</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>HsPS.in</a><br><i>My thoughts and opinions</i></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/post/>Articles</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/videos/>Speaking</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/about>About</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/subscribe>Subscribe</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/projects>Projects</a></li></ul></nav><script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-ME9J4YD4H0")</script></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Setup on Demand Tailscale Exit Node Using Terraform and DigitalOcean</h1><div class=post-meta><span class=post-time>2024-10-08</span><div class=post-category><a href=/categories/tailscale/>tailscale </a><a href=/categories/terraform/>terraform</a></div><span class=more-meta>826 words </span><span class=more-meta>4 mins read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#remote-development-made-simple>Remote Development Made Simple</a></li><li><a href=#what-is-tailscale>What is Tailscale?</a></li><li><a href=#using-an-exit-node-for-secure-browsing>Using an Exit Node for Secure Browsing</a></li><li><a href=#on-demand-exit-node-setup>On-Demand Exit Node Setup</a></li><li><a href=#step-by-step-guide>Step-by-Step Guide</a></li></ul></li></ul></nav></div></div><div class=post-content><p>Over the past two years since I began using Tailscale, it has become an invaluable tool. Tailscale has enabled me to achieve many tasks that previously required complex setups. One of the most significant achievements was being able to SSH into my home development machine directly from my phone 😄.</p><p>By connecting my phone to Tailscale and using JuiceSSH, an Android app for SSH access, I could SSH into my home machine, deploy applications, and run maintenance scripts—all from my phone. Peaceful trips away from my desk.</p><h2 id=remote-development-made-simple>Remote Development Made Simple</h2><p>Tailscale has also made remote development seamless. By installing Tailscale on a laptop, I was able to use VS Code&rsquo;s Remote Development feature to access my home development machine via SSH. This setup allowed me to work from any laptop without the need to install databases or development tools locally. Even a basic Chromebook or an ultra-light laptop turned into a powerful development workstation, as all the actual computing happened on my home machine over SSH.</p><p>I even took it a step further by installing <a href=https://github.com/coder/code-server>code-server</a> on my dev machine. This allowed me to access a full-fledged development environment from my samsung tablet via Tailscale.</p><h2 id=what-is-tailscale>What is Tailscale?</h2><p>For those unfamiliar, Tailscale is a VPN software based on WireGuard. It allows you to create a secure network between your devices effortlessly. All you need to do is install Tailscale on your device, start the program, and your device joins the network—no advanced configuration required. It’s an easy-to-use, straightforward VPN solution.</p><p>By connecting my devices and home lab to this VPN, I gained the ability to access my computers remotely from anywhere.</p><h2 id=using-an-exit-node-for-secure-browsing>Using an Exit Node for Secure Browsing</h2><p>Tailscale allows you to set up one of your devices as an exit node. This means that when you&rsquo;re using another device, you can route all your internet traffic through the exit node. For example, when I’m traveling, I set up my home computer as an exit node, ensuring that my internet traffic behaves as if I&rsquo;m accessing it from home. This not only secures my browsing but also obscures my activities from public networks like those at hotels, cafes, or Airbnbs, as all they see is traffic going to Tailscale’s network, fully encrypted.</p><blockquote><p><strong>Note:</strong> Tailscale attempts to establish direct connections between devices. When that’s not possible, it uses relay servers.</p></blockquote><h2 id=on-demand-exit-node-setup>On-Demand Exit Node Setup</h2><p>While I don&rsquo;t use the exit node frequently, it’s invaluable when I travel. Recently, I needed a US IP to access a client application, which I easily set up by deploying Tailscale on a VPS. This is a more cost-effective solution than commercial VPNs for such specific needs. A DigitalOcean server costs about $4/month, but since I only need it on-demand, I can destroy it when not in use, avoiding unnecessary costs.</p><p>This led me to write a Terraform configuration for creating a DigitalOcean server with Tailscale installed as an exit node. The setup takes around 4 minutes to be ready, and I can destroy the server when I’m done to save costs. I can also switch locations easily using Terraform or change cloud providers if needed.</p><h2 id=step-by-step-guide>Step-by-Step Guide</h2><p>This article provides a step-by-step guide to setting up an on-demand Tailscale exit node. It assumes familiarity with Tailscale, Linux, and Git.</p><ol><li><p><strong>Install Terraform</strong>: Follow the <a href=https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli>installation instructions</a> from HashiCorp.</p></li><li><p><strong>Clone the Repository</strong>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>git clone git@github.com:coderhs/on_demand_tailscale_exit_node.git
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Setup Terraform Configuration</strong>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=nb>cd</span> on_demand_tailscale_exit_node
+</span></span><span class=line><span class=cl>cp terraform.tfvars.example terraform.tfvars
+</span></span></code></pre></td></tr></table></div></div><p>Fill in the <code>terraform.tfvars</code> file with your values:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=n>digitalocean_token</span> <span class=o>=</span> <span class=s2>&#34;your_digitalocean_token&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>tailscale_auth_key</span> <span class=o>=</span> <span class=s2>&#34;your_tailscale_auth_key&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>ssh_fingerprint</span> <span class=o>=</span> <span class=s2>&#34;your_ssh_fingerprint&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>digitalocean_location</span> <span class=o>=</span> <span class=s2>&#34;desired_location&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>For first-time DigitalOcean users, <a href=https://m.do.co/c/07c7e5c8be6f>sign up here</a>.</p></li><li><p><strong>Set Up SSH Key</strong>: Upload your SSH public key to DigitalOcean. Retrieve the SSH fingerprint and the private key path. <a href=https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/>DigitalOcean&rsquo;s guide</a> provides detailed instructions.</p><p>Copy your private key to the key folder in the repo, with the name do.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>cp ~/path/to/private/key ./key/do
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Create a DigitalOcean Token</strong>: Follow the <a href=https://docs.digitalocean.com/reference/api/create-personal-access-token/>DigitalOcean API token guide</a> and set the scope to manage droplets.</p></li><li><p><strong>Tailscale Configuration</strong>: Update your Tailscale ACL settings:</p><ul><li><p>Go to <a href=https://login.tailscale.com/admin/acls/file>Tailscale ACLs</a> and add the following:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=s2>&#34;tagOwners&#34;</span><span class=err>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;tag:Connector&#34;</span><span class=p>:</span> <span class=p>[],</span>
+</span></span><span class=line><span class=cl><span class=p>}</span><span class=err>,</span>
+</span></span><span class=line><span class=cl><span class=s2>&#34;autoApprovers&#34;</span><span class=err>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;exitNode&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;tag:Connector&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl><span class=p>}</span><span class=err>,</span>
+</span></span><span class=line><span class=cl><span class=c1>// if You want the exit node to have a static IP in your network then uncomment the below line
+</span></span></span><span class=line><span class=cl><span class=c1>// &#34;nodeAttrs&#34;: [
+</span></span></span><span class=line><span class=cl><span class=c1></span> <span class=c1>//	{
+</span></span></span><span class=line><span class=cl><span class=c1></span> <span class=c1>//		&#34;target&#34;: [&#34;tag:Connector&#34;],
+</span></span></span><span class=line><span class=cl><span class=c1></span> <span class=c1>//		&#34;ipPool&#34;: [&#34;100.81.0.1/32&#34;],
+</span></span></span><span class=line><span class=cl><span class=c1></span> <span class=c1>//	},
+</span></span></span><span class=line><span class=cl><span class=c1></span> <span class=c1>// ],
+</span></span></span></code></pre></td></tr></table></div></div></li><li><p>Generate an authentication key following <a href=https://tailscale.com/kb/1085/auth-keys#generate-an-auth-key>Tailscale’s instructions</a>. Choose <strong>ephemeral</strong>, <strong>reusable</strong>, and assign the tag <strong>Connector</strong>.</p></li></ul><p><img src=/images/on_demand_tailscale_node/tailscale_auth_key.png alt="Auth Key"></p></li><li><p><strong>Deploy the Exit Node</strong>: Decide on the server location using <a href=https://docs.digitalocean.com/platform/regional-availability/>DigitalOcean’s location codes</a>. Once ready, run:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>terraform apply
+</span></span></code></pre></td></tr></table></div></div><p>The server should be available in your Tailscale network as &ldquo;tailscale-exit-node&rdquo; within 4-5 minutes.</p></li><li><p><strong>Activate the Exit Node</strong>:</p><ul><li><p>For Linux:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>sudo tailscale up --exit-node<span class=o>=</span>tailscale-exit-node --snat-subnet-routes<span class=o>=</span><span class=nb>false</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p>To disable the exit node:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>sudo tailscale up --exit-node<span class=o>=</span> --snat-subnet-routes<span class=o>=</span><span class=nb>false</span>
+</span></span></code></pre></td></tr></table></div></div></li></ul></li><li><p><strong>Destroy the Server</strong>:</p></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>terraform destroy
+</span></span></code></pre></td></tr></table></div></div><p>With this setup, you have a flexible, on-demand Tailscale exit node running on DigitalOcean.</p></div><footer class=post-footer><div class=post-tags><a href=/tags/tailscale/>tailscale</a>
+<a href=/tags/on-demand/>on-demand</a>
+<a href=/tags/vpn/>VPN</a>
+<a href=/tags/digital-ocean/>Digital Ocean</a>
+<a href=/tags/terraform/>terraform</a>
+<a href=/tags/server/>server</a></div><div class=related-posts><h3>Related Articles</h3><ul><li><a href=/post/wildcard-domain-in-pi-hole/>Wildcard Domain in Pi Hole</a>
+<span class=related-post-date>2022-09-04</span></li></ul></div><div class=author-post-intro><p>Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
+devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
+full-stack development, linux, go, rust and DevOps projects.</p><p>If you're interested in collaborating or have a project in mind, feel free to <a href=mailto:projects@hsps.in>email me</a>.</p><div class=author-subscribe><p class=subscribe-label>Get new posts delivered to your inbox:</p><script src=https://f.convertkit.com/ckjs/ck.5.js></script><form action=https://app.kit.com/forms/7897017/subscriptions class="seva-form formkit-form" method=post data-sv-form=7897017 data-uid=52c1473349 data-format=inline data-version=5 data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'><div class=subscribe-form-row><input class=formkit-input name=email_address aria-label="Email Address" placeholder=your@email.com required type=email>
+<button data-element=submit class="formkit-submit formkit-submit"><div class=formkit-spinner><div></div><div></div><div></div></div><span>Subscribe</span></button></div><ul class="formkit-alert formkit-alert-error" data-element=errors data-group=alert></ul></form></div></div><nav class=post-nav><a class=prev href=/post/run-rails-db-migrate-on-ecs-task-aws/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">Running Rails Migrations in AWS ECS Using AWS CLI</span>
+<span class="prev-text nav-mobile">Prev</span>
+</a><a class=next href=/post/change-action-mailer-settings-from-rails-console/><span class="next-text nav-default">Change Action Mailer Settings From Rails Console</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div class=giscus></div><script src=https://giscus.app/client.js data-repo=coderhs/coderhs.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk=" data-category=General data-category-id=DIC_kwDOEWBlkc4CjKPc data-mapping=pathname data-strict=1 data-reactions-enabled=1 data-emit-metadata=1 data-input-position=top data-theme=light data-lang=en data-loading=lazy crossorigin=anonymous async></script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/coderhs class="iconfont icon-github" title=github></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span><span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span><span class=copyright-year>&copy;
+2011 -
+2026<span class=heart><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script><script>(function(){var e=document.getElementById("reading-progress");if(!e)return;window.addEventListener("scroll",function(){var n,s=window.scrollY||document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight;t>0&&(n=s/t*100,e.style.width=n+"%")})})()</script><script>(function(){var e=document.querySelectorAll(".highlight > .chroma, figure.highlight");e.forEach(function(e){var t=document.createElement("button");t.className="copy-code-btn",t.textContent="Copy",t.addEventListener("click",function(){var n=e.querySelector("code");n||(n=e.querySelector(".code pre")),n&&navigator.clipboard.writeText(n.textContent).then(function(){t.textContent="Copied!",setTimeout(function(){t.textContent="Copy"},2e3)})}),e.style.position="relative",e.appendChild(t)})})()</script></body></html>

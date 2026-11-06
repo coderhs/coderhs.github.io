@@ -1,634 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Caching Rendered PDFs in Rails with Active Storage - Harisankar P S | Ruby on Rails Developer</title>
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Harisankar P S" /><meta name="description" content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails" /><meta name="keywords" content="pdf, wicked_pdf, cache, active storage, performance" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.152.2 with theme even" />
-
-
-<link rel="canonical" href="https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<link href="/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-
-<meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Caching Rendered PDFs in Rails with Active Storage" />
-<meta property="og:url" content="https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/" />
-<meta property="og:description" content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails" />
-<meta property="article:published_time" content="2025-07-26T21:47:37&#43;05:30" />
-<meta property="article:modified_time" content="2025-07-26T21:47:37&#43;05:30" />
-<meta property="article:author" content="Harisankar P S" />
-<meta property="article:tag" content="pdf" />
-<meta property="article:tag" content="wicked_pdf" />
-<meta property="article:tag" content="cache" />
-<meta property="article:tag" content="active storage" />
-<meta property="article:tag" content="performance" />
-<meta property="og:image" content="https://hsps.in/images/og-base_hu_736fd21ee478769d.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Caching Rendered PDFs in Rails with Active Storage" />
-<meta name="twitter:description" content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails" />
-<meta name="twitter:image" content="https://hsps.in/images/og-base_hu_736fd21ee478769d.png" />
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Caching Rendered PDFs in Rails with Active Storage",
-  "url": "https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/",
-  "datePublished": "2025-07-26T21:47:37\u002b05:30",
-  "dateModified": "2025-07-26T21:47:37\u002b05:30",
-  "author": {
-    "@type": "Person",
-    "name": "Harisankar P S",
-    "url": "https://hsps.in/about"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Harisankar P S"
-  },
-  "description": "Stop Re-rendering PDFs: Cache Them with Active Storage in Rails",
-  "wordCount":  630 ,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/"
-  },
-  "image": "https://hsps.in/images/og-base_hu_736fd21ee478769d.png",
-  "keywords": ["pdf","wicked_pdf","cache","active storage","performance"]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://hsps.in/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Articles",
-      "item": "https://hsps.in/post/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Caching Rendered PDFs in Rails with Active Storage",
-      "item": "https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/"
-    }
-  ]
-}
-</script>
-
-
-</head>
-<body>
-  <div class="reading-progress" id="reading-progress"></div>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">HsPS.in</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/post/">
-        <li class="mobile-menu-item">Articles</li>
-      </a><a href="/videos/">
-        <li class="mobile-menu-item">Speaking</li>
-      </a><a href="/about">
-        <li class="mobile-menu-item">About</li>
-      </a><a href="/subscribe">
-        <li class="mobile-menu-item">Subscribe</li>
-      </a><a href="/projects">
-        <li class="mobile-menu-item">Projects</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">HsPS.in</a>
-  <br>
-  <i>My thoughts and opinions</i>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/post/">Articles</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/videos/">Speaking</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/about">About</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/subscribe">Subscribe</a>
-      </li><li class="menu-item" style="margin-right: 1rem;">
-        <a class="menu-item-link" href="/projects">Projects</a>
-      </li>
-  </ul>
-</nav>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ME9J4YD4H0');
-</script>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Caching Rendered PDFs in Rails with Active Storage</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2025-07-26 </span>
-        <div class="post-category">
-            <a href="/categories/rails/"> rails </a>
-            </div>
-          <span class="more-meta"> 630 words </span>
-          <span class="more-meta"> 3 mins read </span>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#the-idea-cache-on-first-render">The Idea: Cache on First Render</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#when-to-invalidate-the-cache">When to Invalidate the Cache</a></li>
-        <li><a href="#summary">Summary</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>As I was working on <a href="https://easyclientlog.com">easyclientlog.com</a>, building its invoice system that allows freelancers/consultants to generates PDFs. Working with PDF generating is that, its takes time and CPU cycles. But most of the time
-the pdf only needs to be generated once, and the content seldom changes. So rendering the same thing over and over just didn’t feel right. So I used a simple trick that I’ve followed in many of my prior Rails apps: upload the PDF on first render, store it using Active Storage, and reuse that file on the next access.</p>
-<h2 id="the-idea-cache-on-first-render">The Idea: Cache on First Render</h2>
-<p>When the PDF is generated the first time, we attach it to the record using Active Storage. This could be an invoice, report, or any other object. The next time we need to show or download the PDF, we skip the rendering step and simply serve the uploaded file.</p>
-<p>This avoids unnecessary rendering and speeds up response times, especially for large documents or when generating in bulk.</p>
-<h2 id="how-it-works">How It Works</h2>
-<p>Let’s say we have an <code>Invoice</code> model. We attach the PDF like this:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Invoice</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
-</span></span><span class="line"><span class="cl">  <span class="n">has_one_attached</span> <span class="ss">:pdf</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Now in the PDF rendering service, we check if the file already exists. If yes, we use it. If not, we generate the PDF and attach it.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">InvoicePdfService</span>
-</span></span><span class="line"><span class="cl">  <span class="kp">include</span> <span class="no">ActionView</span><span class="o">::</span><span class="no">Helpers</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">invoice</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@invoice</span> <span class="o">=</span> <span class="n">invoice</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">generate</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="s2">&#34;Generating PDF for invoice </span><span class="si">#{</span><span class="vi">@invoice</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="s2">&#34;Invoice line_items: </span><span class="si">#{</span><span class="vi">@invoice</span><span class="o">.</span><span class="n">line_items</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># If PDF already attached, return it</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">attached?</span>
-</span></span><span class="line"><span class="cl">      <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="s2">&#34;Returning cached PDF for invoice </span><span class="si">#{</span><span class="vi">@invoice</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">download</span>
-</span></span><span class="line"><span class="cl">    <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">html_content</span> <span class="o">=</span> <span class="n">render_invoice_html</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="s2">&#34;Generated HTML length: </span><span class="si">#{</span><span class="n">html_content</span><span class="o">.</span><span class="n">length</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">pdf_data</span> <span class="o">=</span> <span class="no">WickedPdf</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">pdf_from_string</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">      <span class="n">html_content</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="n">pdf_options</span>
-</span></span><span class="line"><span class="cl">    <span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># Attach the PDF to the invoice for future use</span>
-</span></span><span class="line"><span class="cl">    <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">io</span><span class="p">:</span> <span class="no">StringIO</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">pdf_data</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">filename</span><span class="p">:</span> <span class="s2">&#34;invoice-</span><span class="si">#{</span><span class="vi">@invoice</span><span class="o">.</span><span class="n">invoice_number</span><span class="si">}</span><span class="s2">.pdf&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">content_type</span><span class="p">:</span> <span class="s1">&#39;application/pdf&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">pdf_data</span>
-</span></span><span class="line"><span class="cl">  <span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">e</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span> <span class="s2">&#34;PDF generation failed: </span><span class="si">#{</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span> <span class="n">e</span><span class="o">.</span><span class="n">backtrace</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">raise</span> <span class="n">e</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kp">private</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">render_invoice_html</span>
-</span></span><span class="line"><span class="cl">    <span class="no">ApplicationController</span><span class="o">.</span><span class="n">render</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">template</span><span class="p">:</span> <span class="s1">&#39;invoices/pdf&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">layout</span><span class="p">:</span> <span class="s1">&#39;layouts/pdf&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">assigns</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="ss">invoice</span><span class="p">:</span> <span class="vi">@invoice</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="ss">currency</span><span class="p">:</span> <span class="vi">@invoice</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">invoice_setting</span><span class="o">&amp;.</span><span class="n">currency</span> <span class="o">||</span> <span class="s1">&#39;$&#39;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">e</span>
-</span></span><span class="line"><span class="cl">    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span> <span class="s2">&#34;Template rendering failed: </span><span class="si">#{</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">raise</span> <span class="n">e</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">pdf_options</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">page_size</span><span class="p">:</span> <span class="s1">&#39;A4&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">margin_top</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">margin_right</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">margin_bottom</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">margin_left</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">encoding</span><span class="p">:</span> <span class="s1">&#39;UTF-8&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">orientation</span><span class="p">:</span> <span class="s1">&#39;Portrait&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">print_media_type</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">disable_smart_shrinking</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">lowquality</span><span class="p">:</span> <span class="kp">false</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">zoom</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">dpi</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">enable_local_file_access</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">javascript_delay</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">no_stop_slow_scripts</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">enable_plugins</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="ss">load_error_handling</span><span class="p">:</span> <span class="s1">&#39;ignore&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="when-to-invalidate-the-cache">When to Invalidate the Cache</h2>
-<p>In our case, the cache/storage is cleared by deleting the attached PDF when the invoice is updated:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">update</span>
-</span></span><span class="line"><span class="cl">  <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">purge</span> <span class="k">if</span> <span class="vi">@invoice</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">attached?</span>
-</span></span><span class="line"><span class="cl">  <span class="vi">@invoice</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">invoice_params</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This deletes the old file. Active Storage will take care of removing it from the cloud (S3, GCS, etc.) in the background.</p>
-<p>Alternatively, you could skip deletion and just change the filename by including <code>updated_at</code>. This way, older versions are not used, and Active Storage can expire old files on its own using lifecycle rules.</p>
-<h2 id="summary">Summary</h2>
-<p>Instead of rendering the same PDF again and again, use Active Storage to cache it. Attach the file on first render and reuse it. Delete it when updating the record, or use the <code>updated_at</code> time in the filename and compare on file download if
-the pdf has changed.</p>
-<p>This trick has helped me improve performance and simplify my code in apps where PDFs are generated regularly. Hope it helps you too.</p>
-<p>Note: If you are adding some dynamic data to your PDF like download time, then this method can&rsquo;t be used.</p>
-    </div>
-
-    
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/pdf/">pdf</a>
-          <a href="/tags/wicked_pdf/">wicked_pdf</a>
-          <a href="/tags/cache/">cache</a>
-          <a href="/tags/active-storage/">active storage</a>
-          <a href="/tags/performance/">performance</a>
-          </div>
-      
-      
-        <div class="related-posts">
-          <h3>Related Articles</h3>
-          <ul>
-            
-              <li>
-                <a href="/post/storing-postgresql-data-in-a-different-partition-for-performance/">Storing PostgreSQL Data in a Different Partition for Performance</a>
-                <span class="related-post-date">2025-01-15</span>
-              </li>
-            
-              <li>
-                <a href="/post/store-rpm-packages-in-cache/">Store RPM Packages in Cache</a>
-                <span class="related-post-date">2012-01-29</span>
-              </li>
-            
-              <li>
-                <a href="/post/setup-master-slave-database-on-postgresql-17/">Setup Read Replica (master-slave) Database on Postgresql 17</a>
-                <span class="related-post-date">2024-10-24</span>
-              </li>
-            
-          </ul>
-        </div>
-      <div class="author-post-intro">
-  <p>
-    Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
-    devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
-    full-stack development, linux, go, rust and DevOps projects.
-  </p>
-  <p>
-    If you're interested in collaborating or have a project in mind, feel free to <a href="mailto:projects@hsps.in">email me</a>.
-  </p>
-  <div class="author-subscribe">
-    <p class="subscribe-label">Get new posts delivered to your inbox:</p>
-    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <form
-      action="https://app.kit.com/forms/7897017/subscriptions"
-      class="seva-form formkit-form"
-      method="post"
-      data-sv-form="7897017"
-      data-uid="52c1473349"
-      data-format="inline"
-      data-version="5"
-      data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
-    >
-      <div class="subscribe-form-row">
-        <input
-          class="formkit-input"
-          name="email_address"
-          aria-label="Email Address"
-          placeholder="your@email.com"
-          required=""
-          type="email"
-        />
-        <button data-element="submit" class="formkit-submit formkit-submit">
-          <div class="formkit-spinner"><div></div><div></div><div></div></div>
-          <span>Subscribe</span>
-        </button>
-      </div>
-      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-    </form>
-  </div>
-</div>
-
-      <nav class="post-nav">
-        <a class="prev" href="/post/object-or-software-builder-pattern-in-ruby/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">🏗️ Understanding the Builder Pattern with Ruby Examples</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/rails-current-attributes/">
-            <span class="next-text nav-default">A Complete Guide to Rails.current_attributes (ActiveSupport::CurrentAttributes)</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        <div class="giscus"></div>
-  <script src="https://giscus.app/client.js"
-          data-repo="coderhs/coderhs.github.io"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk="
-          data-category="General"
-          data-category-id="DIC_kwDOEWBlkc4CjKPc"
-          data-mapping="pathname"
-          data-strict="1"
-          data-reactions-enabled="1"
-          data-emit-metadata="1"
-          data-input-position="top"
-          data-theme="light"
-          data-lang="en"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-  </script>
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="https://github.com/coderhs" class="iconfont icon-github" title="github"></a>
-  
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2011 - 
-    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-
-
-
-
-
-
-
-
-  
-  <script>
-    (function() {
-      var progressBar = document.getElementById('reading-progress');
-      if (!progressBar) return;
-      window.addEventListener('scroll', function() {
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        if (docHeight > 0) {
-          var scrollPercent = (scrollTop / docHeight) * 100;
-          progressBar.style.width = scrollPercent + '%';
-        }
-      });
-    })();
-  </script>
-
-  
-  <script>
-    (function() {
-      var codeBlocks = document.querySelectorAll('.highlight > .chroma, figure.highlight');
-      codeBlocks.forEach(function(block) {
-        var btn = document.createElement('button');
-        btn.className = 'copy-code-btn';
-        btn.textContent = 'Copy';
-        btn.addEventListener('click', function() {
-          var code = block.querySelector('code');
-          if (!code) {
-            code = block.querySelector('.code pre');
-          }
-          if (code) {
-            navigator.clipboard.writeText(code.textContent).then(function() {
-              btn.textContent = 'Copied!';
-              setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
-            });
-          }
-        });
-        block.style.position = 'relative';
-        block.appendChild(btn);
-      });
-    })();
-  </script>
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Caching Rendered PDFs in Rails with Active Storage | hsps.in</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel=stylesheet><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Harisankar P S"><meta name=description content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails"><meta name=keywords content="pdf,wicked_pdf,cache,active storage,performance"><meta name=generator content="Hugo 0.152.2 with theme even"><link rel=canonical href=https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.4b8d38150cffb222fc5c75641f4b036f7a679a6734fad752c4c780cc9d028fe7.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:site_name" content="Harisankar P S | Ruby on Rails Developer"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="Caching Rendered PDFs in Rails with Active Storage"><meta property="og:url" content="https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/"><meta property="og:description" content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails"><meta property="article:published_time" content="2025-07-26T21:47:37+05:30"><meta property="article:modified_time" content="2026-02-14T15:11:47+05:30"><meta property="article:author" content="Harisankar P S"><meta property="article:tag" content="pdf"><meta property="article:tag" content="wicked_pdf"><meta property="article:tag" content="cache"><meta property="article:tag" content="active storage"><meta property="article:tag" content="performance"><meta property="og:image" content="https://hsps.in/images/og-base_hu_736fd21ee478769d.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Caching Rendered PDFs in Rails with Active Storage"><meta name=twitter:description content="Stop Re-rendering PDFs: Cache Them with Active Storage in Rails"><meta name=twitter:image content="https://hsps.in/images/og-base_hu_736fd21ee478769d.png"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Caching Rendered PDFs in Rails with Active Storage","url":"https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/","datePublished":"2025-07-26T21:47:37\u002b05:30","dateModified":"2026-02-14T15:11:47\u002b05:30","author":{"@type":"Person","name":"Harisankar P S","url":"https://hsps.in/about"},"publisher":{"@type":"Person","name":"Harisankar P S"},"description":"Stop Re-rendering PDFs: Cache Them with Active Storage in Rails","wordCount":630,"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsps.in/post/using-file-upload-to-cache-serving-pdf-files/"},"image":"https://hsps.in/images/og-base_hu_736fd21ee478769d.png","keywords":["pdf","wicked_pdf","cache","active storage","performance"]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hsps.in/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://hsps.in/post/"},{"@type":"ListItem","position":3,"name":"Caching Rendered PDFs in Rails with Active Storage"}]}</script></head><body><div class=reading-progress id=reading-progress></div><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>HsPS.in</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Articles</li></a><a href=/videos/><li class=mobile-menu-item>Speaking</li></a><a href=/about><li class=mobile-menu-item>About</li></a><a href=/subscribe><li class=mobile-menu-item>Subscribe</li></a><a href=/projects><li class=mobile-menu-item>Projects</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>HsPS.in</a><br><i>My thoughts and opinions</i></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/post/>Articles</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/videos/>Speaking</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/about>About</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/subscribe>Subscribe</a></li><li class=menu-item style=margin-right:1rem><a class=menu-item-link href=/projects>Projects</a></li></ul></nav><script async src="https://www.googletagmanager.com/gtag/js?id=G-ME9J4YD4H0"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-ME9J4YD4H0")</script></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Caching Rendered PDFs in Rails with Active Storage</h1><div class=post-meta><span class=post-time>2025-07-26</span><div class=post-category><a href=/categories/rails/>rails</a></div><span class=more-meta>630 words </span><span class=more-meta>3 mins read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#the-idea-cache-on-first-render>The Idea: Cache on First Render</a></li><li><a href=#how-it-works>How It Works</a></li><li><a href=#when-to-invalidate-the-cache>When to Invalidate the Cache</a></li><li><a href=#summary>Summary</a></li></ul></li></ul></nav></div></div><div class=post-content><p>As I was working on <a href=https://easyclientlog.com>easyclientlog.com</a>, building its invoice system that allows freelancers/consultants to generates PDFs. Working with PDF generating is that, its takes time and CPU cycles. But most of the time
+the pdf only needs to be generated once, and the content seldom changes. So rendering the same thing over and over just didn’t feel right. So I used a simple trick that I’ve followed in many of my prior Rails apps: upload the PDF on first render, store it using Active Storage, and reuse that file on the next access.</p><h2 id=the-idea-cache-on-first-render>The Idea: Cache on First Render</h2><p>When the PDF is generated the first time, we attach it to the record using Active Storage. This could be an invoice, report, or any other object. The next time we need to show or download the PDF, we skip the rendering step and simply serve the uploaded file.</p><p>This avoids unnecessary rendering and speeds up response times, especially for large documents or when generating in bulk.</p><h2 id=how-it-works>How It Works</h2><p>Let’s say we have an <code>Invoice</code> model. We attach the PDF like this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=k>class</span> <span class=nc>Invoice</span> <span class=o>&lt;</span> <span class=no>ApplicationRecord</span>
+</span></span><span class=line><span class=cl>  <span class=n>has_one_attached</span> <span class=ss>:pdf</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><p>Now in the PDF rendering service, we check if the file already exists. If yes, we use it. If not, we generate the PDF and attach it.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=k>class</span> <span class=nc>InvoicePdfService</span>
+</span></span><span class=line><span class=cl>  <span class=kp>include</span> <span class=no>ActionView</span><span class=o>::</span><span class=no>Helpers</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>initialize</span><span class=p>(</span><span class=n>invoice</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@invoice</span> <span class=o>=</span> <span class=n>invoice</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>generate</span>
+</span></span><span class=line><span class=cl>    <span class=no>Rails</span><span class=o>.</span><span class=n>logger</span><span class=o>.</span><span class=n>info</span> <span class=s2>&#34;Generating PDF for invoice </span><span class=si>#{</span><span class=vi>@invoice</span><span class=o>.</span><span class=n>id</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=no>Rails</span><span class=o>.</span><span class=n>logger</span><span class=o>.</span><span class=n>info</span> <span class=s2>&#34;Invoice line_items: </span><span class=si>#{</span><span class=vi>@invoice</span><span class=o>.</span><span class=n>line_items</span><span class=o>.</span><span class=n>inspect</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># If PDF already attached, return it</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=vi>@invoice</span><span class=o>.</span><span class=n>pdf</span><span class=o>.</span><span class=n>attached?</span>
+</span></span><span class=line><span class=cl>      <span class=no>Rails</span><span class=o>.</span><span class=n>logger</span><span class=o>.</span><span class=n>info</span> <span class=s2>&#34;Returning cached PDF for invoice </span><span class=si>#{</span><span class=vi>@invoice</span><span class=o>.</span><span class=n>id</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=vi>@invoice</span><span class=o>.</span><span class=n>pdf</span><span class=o>.</span><span class=n>download</span>
+</span></span><span class=line><span class=cl>    <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>html_content</span> <span class=o>=</span> <span class=n>render_invoice_html</span>
+</span></span><span class=line><span class=cl>    <span class=no>Rails</span><span class=o>.</span><span class=n>logger</span><span class=o>.</span><span class=n>info</span> <span class=s2>&#34;Generated HTML length: </span><span class=si>#{</span><span class=n>html_content</span><span class=o>.</span><span class=n>length</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>pdf_data</span> <span class=o>=</span> <span class=no>WickedPdf</span><span class=o>.</span><span class=n>new</span><span class=o>.</span><span class=n>pdf_from_string</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=n>html_content</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=n>pdf_options</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=c1># Attach the PDF to the invoice for future use</span>
+</span></span><span class=line><span class=cl>    <span class=vi>@invoice</span><span class=o>.</span><span class=n>pdf</span><span class=o>.</span><span class=n>attach</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=ss>io</span><span class=p>:</span> <span class=no>StringIO</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>pdf_data</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>      <span class=ss>filename</span><span class=p>:</span> <span class=s2>&#34;invoice-</span><span class=si>#{</span><span class=vi>@invoice</span><span class=o>.</span><span class=n>invoice_number</span><span class=si>}</span><span class=s2>.pdf&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>content_type</span><span class=p>:</span> <span class=s1>&#39;application/pdf&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>pdf_data</span>
+</span></span><span class=line><span class=cl>  <span class=k>rescue</span> <span class=o>=&gt;</span> <span class=n>e</span>
+</span></span><span class=line><span class=cl>    <span class=no>Rails</span><span class=o>.</span><span class=n>logger</span><span class=o>.</span><span class=n>error</span> <span class=s2>&#34;PDF generation failed: </span><span class=si>#{</span><span class=n>e</span><span class=o>.</span><span class=n>message</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=no>Rails</span><span class=o>.</span><span class=n>logger</span><span class=o>.</span><span class=n>error</span> <span class=n>e</span><span class=o>.</span><span class=n>backtrace</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>raise</span> <span class=n>e</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kp>private</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>render_invoice_html</span>
+</span></span><span class=line><span class=cl>    <span class=no>ApplicationController</span><span class=o>.</span><span class=n>render</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=ss>template</span><span class=p>:</span> <span class=s1>&#39;invoices/pdf&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>layout</span><span class=p>:</span> <span class=s1>&#39;layouts/pdf&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>assigns</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=ss>invoice</span><span class=p>:</span> <span class=vi>@invoice</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=ss>currency</span><span class=p>:</span> <span class=vi>@invoice</span><span class=o>.</span><span class=n>team</span><span class=o>.</span><span class=n>invoice_setting</span><span class=o>&amp;.</span><span class=n>currency</span> <span class=o>||</span> <span class=s1>&#39;$&#39;</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>rescue</span> <span class=o>=&gt;</span> <span class=n>e</span>
+</span></span><span class=line><span class=cl>    <span class=no>Rails</span><span class=o>.</span><span class=n>logger</span><span class=o>.</span><span class=n>error</span> <span class=s2>&#34;Template rendering failed: </span><span class=si>#{</span><span class=n>e</span><span class=o>.</span><span class=n>message</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=k>raise</span> <span class=n>e</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>pdf_options</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=ss>page_size</span><span class=p>:</span> <span class=s1>&#39;A4&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>margin_top</span><span class=p>:</span> <span class=mi>0</span><span class=o>.</span><span class=mi>75</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>margin_right</span><span class=p>:</span> <span class=mi>0</span><span class=o>.</span><span class=mi>75</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>margin_bottom</span><span class=p>:</span> <span class=mi>0</span><span class=o>.</span><span class=mi>75</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>margin_left</span><span class=p>:</span> <span class=mi>0</span><span class=o>.</span><span class=mi>75</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>encoding</span><span class=p>:</span> <span class=s1>&#39;UTF-8&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>orientation</span><span class=p>:</span> <span class=s1>&#39;Portrait&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>print_media_type</span><span class=p>:</span> <span class=kp>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>disable_smart_shrinking</span><span class=p>:</span> <span class=kp>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>lowquality</span><span class=p>:</span> <span class=kp>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>zoom</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>dpi</span><span class=p>:</span> <span class=mi>300</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>enable_local_file_access</span><span class=p>:</span> <span class=kp>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>javascript_delay</span><span class=p>:</span> <span class=mi>500</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>no_stop_slow_scripts</span><span class=p>:</span> <span class=kp>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>enable_plugins</span><span class=p>:</span> <span class=kp>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=ss>load_error_handling</span><span class=p>:</span> <span class=s1>&#39;ignore&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>end</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=when-to-invalidate-the-cache>When to Invalidate the Cache</h2><p>In our case, the cache/storage is cleared by deleting the attached PDF when the invoice is updated:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=k>def</span> <span class=nf>update</span>
+</span></span><span class=line><span class=cl>  <span class=vi>@invoice</span><span class=o>.</span><span class=n>pdf</span><span class=o>.</span><span class=n>purge</span> <span class=k>if</span> <span class=vi>@invoice</span><span class=o>.</span><span class=n>pdf</span><span class=o>.</span><span class=n>attached?</span>
+</span></span><span class=line><span class=cl>  <span class=vi>@invoice</span><span class=o>.</span><span class=n>update</span><span class=p>(</span><span class=n>invoice_params</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></td></tr></table></div></div><p>This deletes the old file. Active Storage will take care of removing it from the cloud (S3, GCS, etc.) in the background.</p><p>Alternatively, you could skip deletion and just change the filename by including <code>updated_at</code>. This way, older versions are not used, and Active Storage can expire old files on its own using lifecycle rules.</p><h2 id=summary>Summary</h2><p>Instead of rendering the same PDF again and again, use Active Storage to cache it. Attach the file on first render and reuse it. Delete it when updating the record, or use the <code>updated_at</code> time in the filename and compare on file download if
+the pdf has changed.</p><p>This trick has helped me improve performance and simplify my code in apps where PDFs are generated regularly. Hope it helps you too.</p><p>Note: If you are adding some dynamic data to your PDF like download time, then this method can&rsquo;t be used.</p></div><footer class=post-footer><div class=post-tags><a href=/tags/pdf/>pdf</a>
+<a href=/tags/wicked_pdf/>wicked_pdf</a>
+<a href=/tags/cache/>cache</a>
+<a href=/tags/active-storage/>active storage</a>
+<a href=/tags/performance/>performance</a></div><div class=related-posts><h3>Related Articles</h3><ul><li><a href=/post/storing-postgresql-data-in-a-different-partition-for-performance/>Storing PostgreSQL Data in a Different Partition for Performance</a>
+<span class=related-post-date>2025-01-15</span></li><li><a href=/post/store-rpm-packages-in-cache/>Store RPM Packages in Cache</a>
+<span class=related-post-date>2012-01-29</span></li><li><a href=/post/setup-master-slave-database-on-postgresql-17/>Setup Read Replica (master-slave) Database on Postgresql 17</a>
+<span class=related-post-date>2024-10-24</span></li></ul></div><div class=author-post-intro><p>Hi, I'm Harisankar P S! I'm a Senior Software Architect, and this blog is where I share my thoughts on programming,
+devops, anything noteworthy. My primary focus is Ruby on Rails, but I also explore
+full-stack development, linux, go, rust and DevOps projects.</p><p>If you're interested in collaborating or have a project in mind, feel free to <a href=mailto:projects@hsps.in>email me</a>.</p><div class=author-subscribe><p class=subscribe-label>Get new posts delivered to your inbox:</p><script src=https://f.convertkit.com/ckjs/ck.5.js></script><form action=https://app.kit.com/forms/7897017/subscriptions class="seva-form formkit-form" method=post data-sv-form=7897017 data-uid=52c1473349 data-format=inline data-version=5 data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://hsps.in"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'><div class=subscribe-form-row><input class=formkit-input name=email_address aria-label="Email Address" placeholder=your@email.com required type=email>
+<button data-element=submit class="formkit-submit formkit-submit"><div class=formkit-spinner><div></div><div></div><div></div></div><span>Subscribe</span></button></div><ul class="formkit-alert formkit-alert-error" data-element=errors data-group=alert></ul></form></div></div><nav class=post-nav><a class=prev href=/post/object-or-software-builder-pattern-in-ruby/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">🏗️ Understanding the Builder Pattern with Ruby Examples</span>
+<span class="prev-text nav-mobile">Prev</span>
+</a><a class=next href=/post/rails-current-attributes/><span class="next-text nav-default">ActiveSupport::CurrentAttributes in Rails: A Complete Guide</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div class=giscus></div><script src=https://giscus.app/client.js data-repo=coderhs/coderhs.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkyOTE1MzAxMjk=" data-category=General data-category-id=DIC_kwDOEWBlkc4CjKPc data-mapping=pathname data-strict=1 data-reactions-enabled=1 data-emit-metadata=1 data-input-position=top data-theme=light data-lang=en data-loading=lazy crossorigin=anonymous async></script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/coderhs class="iconfont icon-github" title=github></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span><span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span><span class=copyright-year>&copy;
+2011 -
+2026<span class=heart><i class="iconfont icon-heart"></i></span><span>Harisankar P S</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script><script>(function(){var e=document.getElementById("reading-progress");if(!e)return;window.addEventListener("scroll",function(){var n,s=window.scrollY||document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight;t>0&&(n=s/t*100,e.style.width=n+"%")})})()</script><script>(function(){var e=document.querySelectorAll(".highlight > .chroma, figure.highlight");e.forEach(function(e){var t=document.createElement("button");t.className="copy-code-btn",t.textContent="Copy",t.addEventListener("click",function(){var n=e.querySelector("code");n||(n=e.querySelector(".code pre")),n&&navigator.clipboard.writeText(n.textContent).then(function(){t.textContent="Copied!",setTimeout(function(){t.textContent="Copy"},2e3)})}),e.style.position="relative",e.appendChild(t)})})()</script></body></html>
